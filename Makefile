@@ -1,5 +1,5 @@
-IMAGE_NAME ?= k8s-gen
-IMAGE_PREFIX ?= jsonnetlibs
+IMAGE_NAME ?= jsonnet-libs-k8s
+IMAGE_PREFIX ?= quay.io/influxdb
 IMAGE_TAG ?= 0.0.5
 
 OUTPUT_DIR ?= ${PWD}/gen
@@ -37,7 +37,7 @@ debug:
 		-e SSH_KEY="$${SSH_KEY}" \
 		$(IMAGE_PREFIX)/$(IMAGE_NAME):$(IMAGE_TAG)
 
-all: libs/*
+all: build libs/*
 
 libs/*:
 	mkdir -p $(ABS_OUTPUT_DIR) && \
@@ -55,7 +55,6 @@ libs/*:
 
 # TODO Move this to k8s-infra-containers
 build:
-	echo "Not implemted yet" && exit 1
-	#docker build -t $(IMAGE_PREFIX)/$(IMAGE_NAME):$(IMAGE_TAG) .
+	docker pull $(IMAGE_PREFIX)/$(IMAGE_NAME):$(IMAGE_TAG)
 
 .PHONY: clean configure debug run all libs/* build
