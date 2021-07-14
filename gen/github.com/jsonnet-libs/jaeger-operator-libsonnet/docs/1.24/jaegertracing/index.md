@@ -1,5 +1,5 @@
 ---
-permalink: /1.6/jaegertracing/
+permalink: /1.24/jaegertracing/
 ---
 
 # jaegertracing
