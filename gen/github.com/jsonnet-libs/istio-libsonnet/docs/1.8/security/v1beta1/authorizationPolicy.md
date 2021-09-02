@@ -277,7 +277,7 @@ Optional.
 
 ## obj spec.provider
 
-Specifies detailed configuration of the CUSTOM action.
+
 
 ### fn spec.provider.withName
 

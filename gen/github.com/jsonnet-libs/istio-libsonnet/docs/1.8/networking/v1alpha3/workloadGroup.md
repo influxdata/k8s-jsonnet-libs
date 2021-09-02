@@ -361,7 +361,7 @@ Number of seconds after which the probe times out.
 
 ## obj spec.probe.exec
 
-Health is determined by how the command that is executed exited.
+health is determined by how the command that is executed exited.
 
 ### fn spec.probe.exec.withCommand
 
@@ -369,7 +369,7 @@ Health is determined by how the command that is executed exited.
 withCommand(command)
 ```
 
-Command to run.
+command to run.
 
 ### fn spec.probe.exec.withCommandMixin
 
@@ -377,7 +377,7 @@ Command to run.
 withCommandMixin(command)
 ```
 
-Command to run.
+command to run.
 
 **Note:** This function appends passed data to existing values
 
@@ -399,7 +399,7 @@ Host name to connect to, defaults to the pod IP.
 withHttpHeaders(httpHeaders)
 ```
 
-Headers the proxy will pass on to make the request.
+headers the proxy will pass on to make the request.
 
 ### fn spec.probe.httpGet.withHttpHeadersMixin
 
@@ -407,7 +407,7 @@ Headers the proxy will pass on to make the request.
 withHttpHeadersMixin(httpHeaders)
 ```
 
-Headers the proxy will pass on to make the request.
+headers the proxy will pass on to make the request.
 
 **Note:** This function appends passed data to existing values
 
@@ -425,7 +425,7 @@ Path to access on the HTTP server.
 withPort(port)
 ```
 
-Port on which the endpoint lives.
+port on which the endpoint lives.
 
 ### fn spec.probe.httpGet.withScheme
 
@@ -437,7 +437,7 @@ withScheme(scheme)
 
 ## obj spec.probe.tcpSocket
 
-Health is determined by if the proxy is able to connect.
+health is determined by if the proxy is able to connect.
 
 ### fn spec.probe.tcpSocket.withHost
 
