@@ -53,7 +53,7 @@
   } + self.metadata.withName(name=name),
   '#spec':: d.obj(help='Configuration for access control on workloads. See more details at: https://istio.io/docs/reference/config/security/authorization-policy.html'),
   spec: {
-    '#provider':: d.obj(help='Specifies detailed configuration of the CUSTOM action.'),
+    '#provider':: d.obj(help=''),
     provider: {
       '#withName':: d.fn(help='Specifies the name of the extension provider.', args=[d.arg(name='name', type=d.T.string)]),
       withName(name): { spec+: { provider+: { name: name } } },

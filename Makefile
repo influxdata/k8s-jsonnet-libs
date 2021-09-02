@@ -1,6 +1,6 @@
 IMAGE_NAME ?= jsonnet-libs-k8s
 IMAGE_PREFIX ?= quay.io/influxdb
-IMAGE_TAG ?= 0.0.5
+IMAGE_TAG ?= 0.0.5-1
 
 OUTPUT_DIR ?= ${PWD}/gen
 ABS_OUTPUT_DIR := $(shell realpath $(OUTPUT_DIR))
