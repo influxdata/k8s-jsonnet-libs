@@ -1,13 +1,16 @@
 local config = import 'jsonnet/config.jsonnet';
 
+local versions = ['1.7'];
+
 config.new(
   name='eck-operator',
   specs=[
     {
-      output: '1.6',
+      output: version,
       prefix: '^co\\.elastic\\.k8s\\..*',
-      crds: ['https://raw.githubusercontent.com/elastic/cloud-on-k8s/7c39ff040e1e15b3e9b41ceb9779fd9101e938cb/config/crds/v1/all-crds.yaml'],
+      crds: ['https://raw.githubusercontent.com/elastic/cloud-on-k8s/%s.0/config/crds/v1/all-crds.yaml' % version],
       localName: 'eck-operator',
-    },
+    }
+    for version in versions
   ]
 )
