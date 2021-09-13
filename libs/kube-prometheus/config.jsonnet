@@ -18,5 +18,20 @@ config.new(
       ],
       localName: 'kube_prometheus',
     },
+    {
+      output: '0.9',
+      prefix: '^com\\.coreos\\.monitoring\\..*',
+      crds: [
+        'https://raw.githubusercontent.com/prometheus-operator/kube-prometheus/release-0.9/manifests/setup/prometheus-operator-0alertmanagerConfigCustomResourceDefinition.yaml',
+        'https://raw.githubusercontent.com/prometheus-operator/kube-prometheus/release-0.9/manifests/setup/prometheus-operator-0alertmanagerCustomResourceDefinition.yaml',
+        'https://raw.githubusercontent.com/prometheus-operator/kube-prometheus/release-0.9/manifests/setup/prometheus-operator-0podmonitorCustomResourceDefinition.yaml',
+        'https://raw.githubusercontent.com/prometheus-operator/kube-prometheus/release-0.9/manifests/setup/prometheus-operator-0probeCustomResourceDefinition.yaml',
+        'https://raw.githubusercontent.com/prometheus-operator/kube-prometheus/release-0.9/manifests/setup/prometheus-operator-0prometheusCustomResourceDefinition.yaml',
+        'https://raw.githubusercontent.com/prometheus-operator/kube-prometheus/release-0.9/manifests/setup/prometheus-operator-0prometheusruleCustomResourceDefinition.yaml',
+        'https://raw.githubusercontent.com/prometheus-operator/kube-prometheus/release-0.9/manifests/setup/prometheus-operator-0servicemonitorCustomResourceDefinition.yaml',
+        'https://raw.githubusercontent.com/prometheus-operator/kube-prometheus/release-0.9/manifests/setup/prometheus-operator-0thanosrulerCustomResourceDefinition.yaml',
+      ],
+      localName: 'kube_prometheus',
+    },
   ]
 )
