@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "dependencies": [
+    {
+      "source": {
+        "git": {
+          "remote": "https://github.com/strimzi/strimzi-kafka-operator.git",
+          "subdir": "examples/metrics"
+        }
+      },
+      "version": "36beadf66a04c0c6e16e371433d97b16dffa9545",
+      "sum": "Wsrg42SrXaQX92DFlfy5N6Ut2CnSjr7ssRZFaGs648o="
+    }
+  ],
+  "legacyImports": false
+}

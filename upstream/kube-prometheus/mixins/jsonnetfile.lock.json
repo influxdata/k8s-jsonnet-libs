@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "dependencies": [
+    {
+      "source": {
+        "git": {
+          "remote": "https://github.com/bitnami-labs/sealed-secrets.git",
+          "subdir": "/contrib/prometheus-mixin"
+        }
+      },
+      "version": "62cfb264f53e9a378ef1b8df051ac4d8a2af5da0",
+      "sum": "qDct2mK6dgO7KPi63Vlmfloti1unmtGSgbG89ZoJlRc="
+    },
+    {
+      "source": {
+        "git": {
+          "remote": "https://github.com/grafana/grafonnet-lib.git",
+          "subdir": "grafonnet"
+        }
+      },
+      "version": "0c49b36ea721dd9ef7c9ff56996c29d23aa664b5",
+      "sum": "vUH+3msK772knkeUIFgQQmIWKpeD7CZohXeDV4vcJmU="
+    },
+    {
+      "source": {
+        "git": {
+          "remote": "https://github.com/povilasv/coredns-mixin.git",
+          "subdir": ""
+        }
+      },
+      "version": "2d5064f4007e8c964992bd7395fd1feb1d8ec8f9",
+      "sum": "mTiOKTrdoNjaR0dLr9qY9Ka5M0TN7/7d6uUqxVHdJuo="
+    },
+    {
+      "source": {
+        "git": {
+          "remote": "https://gitlab.com/uneeq-oss/cert-manager-mixin.git",
+          "subdir": ""
+        }
+      },
+      "version": "eae22f642aaa5d422e4766f6811df2158fc05539",
+      "sum": "DOg3fzS0OWrjjRPVsKgxID/rk9AC3ESQ4gDELc2RNgM="
+    }
+  ],
+  "legacyImports": false
+}
