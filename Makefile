@@ -57,4 +57,31 @@ libs/*:
 build:
 	docker pull $(IMAGE_PREFIX)/$(IMAGE_NAME):$(IMAGE_TAG)
 
-.PHONY: clean configure debug run all libs/* build
+# Vendor all code we can find in upstream
+#JSONNETFILE_UPSTREAM=$(shell find upstream/ -type f -name 'jsonnetfile.json')
+JSONNETFILE_DIRS=$(dir $(wildcard ./upstream/*/jsonnetfile.json) $(wildcard ./upstream/*/*/jsonnetfile.json))
+
+upstream/jsonnet/install:
+	@for dir in $(JSONNETFILE_DIRS); do \
+		set -e; \
+		pushd $$dir >/dev/null; \
+		echo "Running JB install in $$dir"; \
+		jb install; \
+		popd >/dev/null; \
+		set +e; \
+	done
+
+## Update packages from jsonnetfile.json with jsonnet-bundler
+upstream/jsonnet/update:
+	@for dir in $(JSONNETFILE_DIRS); do \
+		set -e; \
+		pushd $$dir >/dev/null; \
+		echo "Running JB update in $$dir"; \
+		jb update; \
+		popd >/dev/null; \
+		set +e; \
+	done
+
+upstream: upstream/jsonnet/install
+
+.PHONY: clean configure debug run all libs/* build upstream upstream/jsonnet/install upstream/jsonnet/update
