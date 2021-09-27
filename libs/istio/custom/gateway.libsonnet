@@ -35,11 +35,13 @@ local customResources = {
 
 {
   custom+: {
-    v1alpha3+: {
-      gateway+: customResources,
-    },
-    v1beta1+: {
-      gateway+: customResources,
+    networking+: {
+      v1alpha3+: {
+        gateway+: customResources,
+      },
+      v1beta1+: {
+        gateway+: customResources,
+      },
     },
   },
 }
