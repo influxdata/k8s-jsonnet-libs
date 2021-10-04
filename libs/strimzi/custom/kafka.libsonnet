@@ -12,7 +12,7 @@ local patch = {
           },
         },
       }
-      for key in ['kafka', 'zookeeper', 'cruiseControl', 'entityOperator']
+      for key in ['kafka', 'zookeeper', 'cruiseControl', 'entityOperator', 'kafkaExporter']
     },
   },
 };
