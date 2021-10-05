@@ -1,4 +1,4 @@
-local patch = {
+local patchAnnotationsLabels = {
 
   kafka+: {
     spec+: {
@@ -17,8 +17,20 @@ local patch = {
   },
 };
 
+local patchWithConfig = {
+  kafka+: {
+    spec+: {
+      [key]+: {
+        withConfigMixin(config): { spec+: { [key]+: { config+: config } } },
+      }
+      for key in ['kafka', 'zookeeper', 'cruiseControl']
+    },
+  },
+
+};
+
 {
   kafka+: {
-    v1beta2+: patch,
+    v1beta2+: patchAnnotationsLabels + patchWithConfig,
   },
 }
