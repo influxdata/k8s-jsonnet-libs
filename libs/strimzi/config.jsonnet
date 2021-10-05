@@ -8,6 +8,7 @@ config.new(
     {
       output: version,
       prefix: '^io\\.strimzi\\..*',
+      patchDir: 'custom',
       crds: ['https://github.com/strimzi/strimzi-kafka-operator/releases/download/%(version)s.0/strimzi-crds-%(version)s.0.yaml' % { version: version }],
       localName: 'strimzi',
     }
