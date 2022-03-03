@@ -35,6 +35,7 @@ permalink: /0.24/kafka/v1beta2/kafkaConnectS2I/
   * [`fn withBootstrapServers(bootstrapServers)`](#fn-specwithbootstrapservers)
   * [`fn withClientRackInitImage(clientRackInitImage)`](#fn-specwithclientrackinitimage)
   * [`fn withConfig(config)`](#fn-specwithconfig)
+  * [`fn withConfigMixin(config)`](#fn-specwithconfigmixin)
   * [`fn withImage(image)`](#fn-specwithimage)
   * [`fn withInsecureSourceRepository(insecureSourceRepository)`](#fn-specwithinsecuresourcerepository)
   * [`fn withReplicas(replicas)`](#fn-specwithreplicas)
@@ -78,10 +79,14 @@ permalink: /0.24/kafka/v1beta2/kafkaConnectS2I/
       * [`fn withType(type)`](#fn-specbuildoutputwithtype)
     * [`obj spec.build.resources`](#obj-specbuildresources)
       * [`fn withLimits(limits)`](#fn-specbuildresourceswithlimits)
+      * [`fn withLimitsMixin(limits)`](#fn-specbuildresourceswithlimitsmixin)
       * [`fn withRequests(requests)`](#fn-specbuildresourceswithrequests)
+      * [`fn withRequestsMixin(requests)`](#fn-specbuildresourceswithrequestsmixin)
   * [`obj spec.buildResources`](#obj-specbuildresources)
     * [`fn withLimits(limits)`](#fn-specbuildresourceswithlimits)
+    * [`fn withLimitsMixin(limits)`](#fn-specbuildresourceswithlimitsmixin)
     * [`fn withRequests(requests)`](#fn-specbuildresourceswithrequests)
+    * [`fn withRequestsMixin(requests)`](#fn-specbuildresourceswithrequestsmixin)
   * [`obj spec.externalConfiguration`](#obj-specexternalconfiguration)
     * [`fn withEnv(env)`](#fn-specexternalconfigurationwithenv)
     * [`fn withEnvMixin(env)`](#fn-specexternalconfigurationwithenvmixin)
@@ -95,6 +100,7 @@ permalink: /0.24/kafka/v1beta2/kafkaConnectS2I/
     * [`fn withJavaSystemProperties(javaSystemProperties)`](#fn-specjvmoptionswithjavasystemproperties)
     * [`fn withJavaSystemPropertiesMixin(javaSystemProperties)`](#fn-specjvmoptionswithjavasystempropertiesmixin)
     * [`fn withXX(XX)`](#fn-specjvmoptionswithxx)
+    * [`fn withXXMixin(XX)`](#fn-specjvmoptionswithxxmixin)
     * [`fn withXms(Xms)`](#fn-specjvmoptionswithxms)
     * [`fn withXmx(Xmx)`](#fn-specjvmoptionswithxmx)
   * [`obj spec.livenessProbe`](#obj-speclivenessprobe)
@@ -105,6 +111,7 @@ permalink: /0.24/kafka/v1beta2/kafkaConnectS2I/
     * [`fn withTimeoutSeconds(timeoutSeconds)`](#fn-speclivenessprobewithtimeoutseconds)
   * [`obj spec.logging`](#obj-speclogging)
     * [`fn withLoggers(loggers)`](#fn-specloggingwithloggers)
+    * [`fn withLoggersMixin(loggers)`](#fn-specloggingwithloggersmixin)
     * [`fn withType(type)`](#fn-specloggingwithtype)
     * [`obj spec.logging.valueFrom`](#obj-specloggingvaluefrom)
       * [`obj spec.logging.valueFrom.configMapKeyRef`](#obj-specloggingvaluefromconfigmapkeyref)
@@ -128,7 +135,9 @@ permalink: /0.24/kafka/v1beta2/kafkaConnectS2I/
     * [`fn withTimeoutSeconds(timeoutSeconds)`](#fn-specreadinessprobewithtimeoutseconds)
   * [`obj spec.resources`](#obj-specresources)
     * [`fn withLimits(limits)`](#fn-specresourceswithlimits)
+    * [`fn withLimitsMixin(limits)`](#fn-specresourceswithlimitsmixin)
     * [`fn withRequests(requests)`](#fn-specresourceswithrequests)
+    * [`fn withRequestsMixin(requests)`](#fn-specresourceswithrequestsmixin)
   * [`obj spec.template`](#obj-spectemplate)
     * [`obj spec.template.apiService`](#obj-spectemplateapiservice)
       * [`fn withIpFamilies(ipFamilies)`](#fn-spectemplateapiservicewithipfamilies)
@@ -136,11 +145,15 @@ permalink: /0.24/kafka/v1beta2/kafkaConnectS2I/
       * [`fn withIpFamilyPolicy(ipFamilyPolicy)`](#fn-spectemplateapiservicewithipfamilypolicy)
       * [`obj spec.template.apiService.metadata`](#obj-spectemplateapiservicemetadata)
         * [`fn withAnnotations(annotations)`](#fn-spectemplateapiservicemetadatawithannotations)
+        * [`fn withAnnotationsMixin(annotations)`](#fn-spectemplateapiservicemetadatawithannotationsmixin)
         * [`fn withLabels(labels)`](#fn-spectemplateapiservicemetadatawithlabels)
+        * [`fn withLabelsMixin(labels)`](#fn-spectemplateapiservicemetadatawithlabelsmixin)
     * [`obj spec.template.buildConfig`](#obj-spectemplatebuildconfig)
       * [`obj spec.template.buildConfig.metadata`](#obj-spectemplatebuildconfigmetadata)
         * [`fn withAnnotations(annotations)`](#fn-spectemplatebuildconfigmetadatawithannotations)
+        * [`fn withAnnotationsMixin(annotations)`](#fn-spectemplatebuildconfigmetadatawithannotationsmixin)
         * [`fn withLabels(labels)`](#fn-spectemplatebuildconfigmetadatawithlabels)
+        * [`fn withLabelsMixin(labels)`](#fn-spectemplatebuildconfigmetadatawithlabelsmixin)
     * [`obj spec.template.buildContainer`](#obj-spectemplatebuildcontainer)
       * [`fn withEnv(env)`](#fn-spectemplatebuildcontainerwithenv)
       * [`fn withEnvMixin(env)`](#fn-spectemplatebuildcontainerwithenvmixin)
@@ -201,7 +214,9 @@ permalink: /0.24/kafka/v1beta2/kafkaConnectS2I/
           * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-spectemplatebuildpodaffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
       * [`obj spec.template.buildPod.metadata`](#obj-spectemplatebuildpodmetadata)
         * [`fn withAnnotations(annotations)`](#fn-spectemplatebuildpodmetadatawithannotations)
+        * [`fn withAnnotationsMixin(annotations)`](#fn-spectemplatebuildpodmetadatawithannotationsmixin)
         * [`fn withLabels(labels)`](#fn-spectemplatebuildpodmetadatawithlabels)
+        * [`fn withLabelsMixin(labels)`](#fn-spectemplatebuildpodmetadatawithlabelsmixin)
       * [`obj spec.template.buildPod.securityContext`](#obj-spectemplatebuildpodsecuritycontext)
         * [`fn withFsGroup(fsGroup)`](#fn-spectemplatebuildpodsecuritycontextwithfsgroup)
         * [`fn withFsGroupChangePolicy(fsGroupChangePolicy)`](#fn-spectemplatebuildpodsecuritycontextwithfsgroupchangepolicy)
@@ -227,11 +242,15 @@ permalink: /0.24/kafka/v1beta2/kafkaConnectS2I/
     * [`obj spec.template.buildServiceAccount`](#obj-spectemplatebuildserviceaccount)
       * [`obj spec.template.buildServiceAccount.metadata`](#obj-spectemplatebuildserviceaccountmetadata)
         * [`fn withAnnotations(annotations)`](#fn-spectemplatebuildserviceaccountmetadatawithannotations)
+        * [`fn withAnnotationsMixin(annotations)`](#fn-spectemplatebuildserviceaccountmetadatawithannotationsmixin)
         * [`fn withLabels(labels)`](#fn-spectemplatebuildserviceaccountmetadatawithlabels)
+        * [`fn withLabelsMixin(labels)`](#fn-spectemplatebuildserviceaccountmetadatawithlabelsmixin)
     * [`obj spec.template.clusterRoleBinding`](#obj-spectemplateclusterrolebinding)
       * [`obj spec.template.clusterRoleBinding.metadata`](#obj-spectemplateclusterrolebindingmetadata)
         * [`fn withAnnotations(annotations)`](#fn-spectemplateclusterrolebindingmetadatawithannotations)
+        * [`fn withAnnotationsMixin(annotations)`](#fn-spectemplateclusterrolebindingmetadatawithannotationsmixin)
         * [`fn withLabels(labels)`](#fn-spectemplateclusterrolebindingmetadatawithlabels)
+        * [`fn withLabelsMixin(labels)`](#fn-spectemplateclusterrolebindingmetadatawithlabelsmixin)
     * [`obj spec.template.connectContainer`](#obj-spectemplateconnectcontainer)
       * [`fn withEnv(env)`](#fn-spectemplateconnectcontainerwithenv)
       * [`fn withEnvMixin(env)`](#fn-spectemplateconnectcontainerwithenvmixin)
@@ -264,7 +283,9 @@ permalink: /0.24/kafka/v1beta2/kafkaConnectS2I/
       * [`fn withDeploymentStrategy(deploymentStrategy)`](#fn-spectemplatedeploymentwithdeploymentstrategy)
       * [`obj spec.template.deployment.metadata`](#obj-spectemplatedeploymentmetadata)
         * [`fn withAnnotations(annotations)`](#fn-spectemplatedeploymentmetadatawithannotations)
+        * [`fn withAnnotationsMixin(annotations)`](#fn-spectemplatedeploymentmetadatawithannotationsmixin)
         * [`fn withLabels(labels)`](#fn-spectemplatedeploymentmetadatawithlabels)
+        * [`fn withLabelsMixin(labels)`](#fn-spectemplatedeploymentmetadatawithlabelsmixin)
     * [`obj spec.template.initContainer`](#obj-spectemplateinitcontainer)
       * [`fn withEnv(env)`](#fn-spectemplateinitcontainerwithenv)
       * [`fn withEnvMixin(env)`](#fn-spectemplateinitcontainerwithenvmixin)
@@ -325,7 +346,9 @@ permalink: /0.24/kafka/v1beta2/kafkaConnectS2I/
           * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-spectemplatepodaffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
       * [`obj spec.template.pod.metadata`](#obj-spectemplatepodmetadata)
         * [`fn withAnnotations(annotations)`](#fn-spectemplatepodmetadatawithannotations)
+        * [`fn withAnnotationsMixin(annotations)`](#fn-spectemplatepodmetadatawithannotationsmixin)
         * [`fn withLabels(labels)`](#fn-spectemplatepodmetadatawithlabels)
+        * [`fn withLabelsMixin(labels)`](#fn-spectemplatepodmetadatawithlabelsmixin)
       * [`obj spec.template.pod.securityContext`](#obj-spectemplatepodsecuritycontext)
         * [`fn withFsGroup(fsGroup)`](#fn-spectemplatepodsecuritycontextwithfsgroup)
         * [`fn withFsGroupChangePolicy(fsGroupChangePolicy)`](#fn-spectemplatepodsecuritycontextwithfsgroupchangepolicy)
@@ -352,11 +375,15 @@ permalink: /0.24/kafka/v1beta2/kafkaConnectS2I/
       * [`fn withMaxUnavailable(maxUnavailable)`](#fn-spectemplatepoddisruptionbudgetwithmaxunavailable)
       * [`obj spec.template.podDisruptionBudget.metadata`](#obj-spectemplatepoddisruptionbudgetmetadata)
         * [`fn withAnnotations(annotations)`](#fn-spectemplatepoddisruptionbudgetmetadatawithannotations)
+        * [`fn withAnnotationsMixin(annotations)`](#fn-spectemplatepoddisruptionbudgetmetadatawithannotationsmixin)
         * [`fn withLabels(labels)`](#fn-spectemplatepoddisruptionbudgetmetadatawithlabels)
+        * [`fn withLabelsMixin(labels)`](#fn-spectemplatepoddisruptionbudgetmetadatawithlabelsmixin)
     * [`obj spec.template.serviceAccount`](#obj-spectemplateserviceaccount)
       * [`obj spec.template.serviceAccount.metadata`](#obj-spectemplateserviceaccountmetadata)
         * [`fn withAnnotations(annotations)`](#fn-spectemplateserviceaccountmetadatawithannotations)
+        * [`fn withAnnotationsMixin(annotations)`](#fn-spectemplateserviceaccountmetadatawithannotationsmixin)
         * [`fn withLabels(labels)`](#fn-spectemplateserviceaccountmetadatawithlabels)
+        * [`fn withLabelsMixin(labels)`](#fn-spectemplateserviceaccountmetadatawithlabelsmixin)
   * [`obj spec.tls`](#obj-spectls)
     * [`fn withTrustedCertificates(trustedCertificates)`](#fn-spectlswithtrustedcertificates)
     * [`fn withTrustedCertificatesMixin(trustedCertificates)`](#fn-spectlswithtrustedcertificatesmixin)
@@ -371,11 +398,11 @@ permalink: /0.24/kafka/v1beta2/kafkaConnectS2I/
 new(name)
 ```
 
-new returns an instance of Kafkaconnects2i
+new returns an instance of KafkaConnectS2I
 
 ## obj metadata
 
-ObjectMeta is metadata that all persisted resources must have, which includes all objects users must create.
+"ObjectMeta is metadata that all persisted resources must have, which includes all objects users must create."
 
 ### fn metadata.withAnnotations
 
@@ -383,7 +410,7 @@ ObjectMeta is metadata that all persisted resources must have, which includes al
 withAnnotations(annotations)
 ```
 
-Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: http://kubernetes.io/docs/user-guide/annotations
+"Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: http://kubernetes.io/docs/user-guide/annotations"
 
 ### fn metadata.withAnnotationsMixin
 
@@ -391,7 +418,7 @@ Annotations is an unstructured key value map stored with a resource that may be 
 withAnnotationsMixin(annotations)
 ```
 
-Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: http://kubernetes.io/docs/user-guide/annotations
+"Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: http://kubernetes.io/docs/user-guide/annotations"
 
 **Note:** This function appends passed data to existing values
 
@@ -401,7 +428,7 @@ Annotations is an unstructured key value map stored with a resource that may be 
 withClusterName(clusterName)
 ```
 
-The name of the cluster which the object belongs to. This is used to distinguish resources with same name and namespace in different clusters. This field is not set anywhere right now and apiserver is going to ignore it if set in create or update request.
+"The name of the cluster which the object belongs to. This is used to distinguish resources with same name and namespace in different clusters. This field is not set anywhere right now and apiserver is going to ignore it if set in create or update request."
 
 ### fn metadata.withCreationTimestamp
 
@@ -409,7 +436,7 @@ The name of the cluster which the object belongs to. This is used to distinguish
 withCreationTimestamp(creationTimestamp)
 ```
 
-Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers.
+"Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers."
 
 ### fn metadata.withDeletionGracePeriodSeconds
 
@@ -417,7 +444,7 @@ Time is a wrapper around time.Time which supports correct marshaling to YAML and
 withDeletionGracePeriodSeconds(deletionGracePeriodSeconds)
 ```
 
-Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only.
+"Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only."
 
 ### fn metadata.withDeletionTimestamp
 
@@ -425,7 +452,7 @@ Number of seconds allowed for this object to gracefully terminate before it will
 withDeletionTimestamp(deletionTimestamp)
 ```
 
-Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers.
+"Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers."
 
 ### fn metadata.withFinalizers
 
@@ -433,7 +460,7 @@ Time is a wrapper around time.Time which supports correct marshaling to YAML and
 withFinalizers(finalizers)
 ```
 
-Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order.  Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list.
+"Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order.  Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list."
 
 ### fn metadata.withFinalizersMixin
 
@@ -441,7 +468,7 @@ Must be empty before the object is deleted from the registry. Each entry is an i
 withFinalizersMixin(finalizers)
 ```
 
-Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order.  Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list.
+"Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order.  Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list."
 
 **Note:** This function appends passed data to existing values
 
@@ -451,11 +478,7 @@ Must be empty before the object is deleted from the registry. Each entry is an i
 withGenerateName(generateName)
 ```
 
-GenerateName is an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server.
-
-If this field is specified and the generated name exists, the server will NOT return a 409 - instead, it will either return 201 Created or 500 with Reason ServerTimeout indicating a unique name could not be found in the time allotted, and the client should retry (optionally after the time indicated in the Retry-After header).
-
-Applied only if Name is not specified. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#idempotency
+"GenerateName is an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server.\n\nIf this field is specified and the generated name exists, the server will NOT return a 409 - instead, it will either return 201 Created or 500 with Reason ServerTimeout indicating a unique name could not be found in the time allotted, and the client should retry (optionally after the time indicated in the Retry-After header).\n\nApplied only if Name is not specified. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#idempotency"
 
 ### fn metadata.withGeneration
 
@@ -463,7 +486,7 @@ Applied only if Name is not specified. More info: https://git.k8s.io/community/c
 withGeneration(generation)
 ```
 
-A sequence number representing a specific generation of the desired state. Populated by the system. Read-only.
+"A sequence number representing a specific generation of the desired state. Populated by the system. Read-only."
 
 ### fn metadata.withLabels
 
@@ -471,7 +494,7 @@ A sequence number representing a specific generation of the desired state. Popul
 withLabels(labels)
 ```
 
-Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
+"Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels"
 
 ### fn metadata.withLabelsMixin
 
@@ -479,7 +502,7 @@ Map of string keys and values that can be used to organize and categorize (scope
 withLabelsMixin(labels)
 ```
 
-Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
+"Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels"
 
 **Note:** This function appends passed data to existing values
 
@@ -489,7 +512,7 @@ Map of string keys and values that can be used to organize and categorize (scope
 withManagedFields(managedFields)
 ```
 
-ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like 'ci-cd'. The set of fields is always in the version that the workflow used when modifying the object.
+"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
 
 ### fn metadata.withManagedFieldsMixin
 
@@ -497,7 +520,7 @@ ManagedFields maps workflow-id and version to the set of fields that are managed
 withManagedFieldsMixin(managedFields)
 ```
 
-ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like 'ci-cd'. The set of fields is always in the version that the workflow used when modifying the object.
+"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
 
 **Note:** This function appends passed data to existing values
 
@@ -507,7 +530,7 @@ ManagedFields maps workflow-id and version to the set of fields that are managed
 withName(name)
 ```
 
-Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+"Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names"
 
 ### fn metadata.withNamespace
 
@@ -515,9 +538,7 @@ Name must be unique within a namespace. Is required when creating resources, alt
 withNamespace(namespace)
 ```
 
-Namespace defines the space within which each name must be unique. An empty namespace is equivalent to the "default" namespace, but "default" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty.
-
-Must be a DNS_LABEL. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/namespaces
+"Namespace defines the space within which each name must be unique. An empty namespace is equivalent to the \"default\" namespace, but \"default\" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty.\n\nMust be a DNS_LABEL. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/namespaces"
 
 ### fn metadata.withOwnerReferences
 
@@ -525,7 +546,7 @@ Must be a DNS_LABEL. Cannot be updated. More info: http://kubernetes.io/docs/use
 withOwnerReferences(ownerReferences)
 ```
 
-List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller.
+"List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller."
 
 ### fn metadata.withOwnerReferencesMixin
 
@@ -533,7 +554,7 @@ List of objects depended by this object. If ALL objects in the list have been de
 withOwnerReferencesMixin(ownerReferences)
 ```
 
-List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller.
+"List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller."
 
 **Note:** This function appends passed data to existing values
 
@@ -543,9 +564,7 @@ List of objects depended by this object. If ALL objects in the list have been de
 withResourceVersion(resourceVersion)
 ```
 
-An opaque value that represents the internal version of this object that can be used by clients to determine when objects have changed. May be used for optimistic concurrency, change detection, and the watch operation on a resource or set of resources. Clients must treat these values as opaque and passed unmodified back to the server. They may only be valid for a particular resource or set of resources.
-
-Populated by the system. Read-only. Value must be treated as opaque by clients and . More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency
+"An opaque value that represents the internal version of this object that can be used by clients to determine when objects have changed. May be used for optimistic concurrency, change detection, and the watch operation on a resource or set of resources. Clients must treat these values as opaque and passed unmodified back to the server. They may only be valid for a particular resource or set of resources.\n\nPopulated by the system. Read-only. Value must be treated as opaque by clients and . More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency"
 
 ### fn metadata.withSelfLink
 
@@ -553,9 +572,7 @@ Populated by the system. Read-only. Value must be treated as opaque by clients a
 withSelfLink(selfLink)
 ```
 
-SelfLink is a URL representing this object. Populated by the system. Read-only.
-
-DEPRECATED Kubernetes will stop propagating this field in 1.20 release and the field is planned to be removed in 1.21 release.
+"SelfLink is a URL representing this object. Populated by the system. Read-only.\n\nDEPRECATED Kubernetes will stop propagating this field in 1.20 release and the field is planned to be removed in 1.21 release."
 
 ### fn metadata.withUid
 
@@ -563,13 +580,11 @@ DEPRECATED Kubernetes will stop propagating this field in 1.20 release and the f
 withUid(uid)
 ```
 
-UID is the unique in time and space value for this object. It is typically generated by the server on successful creation of a resource and is not allowed to change on PUT operations.
-
-Populated by the system. Read-only. More info: http://kubernetes.io/docs/user-guide/identifiers#uids
+"UID is the unique in time and space value for this object. It is typically generated by the server on successful creation of a resource and is not allowed to change on PUT operations.\n\nPopulated by the system. Read-only. More info: http://kubernetes.io/docs/user-guide/identifiers#uids"
 
 ## obj spec
 
-The specification of the Kafka Connect Source-to-Image (S2I) cluster.
+"The specification of the Kafka Connect Source-to-Image (S2I) cluster."
 
 ### fn spec.withBootstrapServers
 
@@ -577,7 +592,7 @@ The specification of the Kafka Connect Source-to-Image (S2I) cluster.
 withBootstrapServers(bootstrapServers)
 ```
 
-Bootstrap servers to connect to. This should be given as a comma separated list of _<hostname>_:‍_<port>_ pairs.
+"Bootstrap servers to connect to. This should be given as a comma separated list of _<hostname>_:\u200d_<port>_ pairs."
 
 ### fn spec.withClientRackInitImage
 
@@ -585,7 +600,7 @@ Bootstrap servers to connect to. This should be given as a comma separated list 
 withClientRackInitImage(clientRackInitImage)
 ```
 
-The image of the init container used for initializing the `client.rack`.
+"The image of the init container used for initializing the `client.rack`."
 
 ### fn spec.withConfig
 
@@ -593,7 +608,17 @@ The image of the init container used for initializing the `client.rack`.
 withConfig(config)
 ```
 
-The Kafka Connect configuration. Properties with the following prefixes cannot be set: ssl., sasl., security., listeners, plugin.path, rest., bootstrap.servers, consumer.interceptor.classes, producer.interceptor.classes (with the exception of: ssl.endpoint.identification.algorithm, ssl.cipher.suites, ssl.protocol, ssl.enabled.protocols).
+"The Kafka Connect configuration. Properties with the following prefixes cannot be set: ssl., sasl., security., listeners, plugin.path, rest., bootstrap.servers, consumer.interceptor.classes, producer.interceptor.classes (with the exception of: ssl.endpoint.identification.algorithm, ssl.cipher.suites, ssl.protocol, ssl.enabled.protocols)."
+
+### fn spec.withConfigMixin
+
+```ts
+withConfigMixin(config)
+```
+
+"The Kafka Connect configuration. Properties with the following prefixes cannot be set: ssl., sasl., security., listeners, plugin.path, rest., bootstrap.servers, consumer.interceptor.classes, producer.interceptor.classes (with the exception of: ssl.endpoint.identification.algorithm, ssl.cipher.suites, ssl.protocol, ssl.enabled.protocols)."
+
+**Note:** This function appends passed data to existing values
 
 ### fn spec.withImage
 
@@ -601,7 +626,7 @@ The Kafka Connect configuration. Properties with the following prefixes cannot b
 withImage(image)
 ```
 
-The docker image for the pods.
+"The docker image for the pods."
 
 ### fn spec.withInsecureSourceRepository
 
@@ -609,7 +634,7 @@ The docker image for the pods.
 withInsecureSourceRepository(insecureSourceRepository)
 ```
 
-When true this configures the source repository with the 'Local' reference policy and an import policy that accepts insecure source tags.
+"When true this configures the source repository with the 'Local' reference policy and an import policy that accepts insecure source tags."
 
 ### fn spec.withReplicas
 
@@ -617,7 +642,7 @@ When true this configures the source repository with the 'Local' reference polic
 withReplicas(replicas)
 ```
 
-The number of pods in the Kafka Connect group.
+"The number of pods in the Kafka Connect group."
 
 ### fn spec.withVersion
 
@@ -625,11 +650,11 @@ The number of pods in the Kafka Connect group.
 withVersion(version)
 ```
 
-The Kafka Connect version. Defaults to {DefaultKafkaVersion}. Consult the user documentation to understand the process required to upgrade or downgrade the version.
+"The Kafka Connect version. Defaults to {DefaultKafkaVersion}. Consult the user documentation to understand the process required to upgrade or downgrade the version."
 
 ## obj spec.authentication
 
-Authentication configuration for Kafka Connect.
+"Authentication configuration for Kafka Connect."
 
 ### fn spec.authentication.withAccessTokenIsJwt
 
@@ -637,7 +662,7 @@ Authentication configuration for Kafka Connect.
 withAccessTokenIsJwt(accessTokenIsJwt)
 ```
 
-Configure whether access token should be treated as JWT. This should be set to `false` if the authorization server returns opaque tokens. Defaults to `true`.
+"Configure whether access token should be treated as JWT. This should be set to `false` if the authorization server returns opaque tokens. Defaults to `true`."
 
 ### fn spec.authentication.withAudience
 
@@ -645,7 +670,7 @@ Configure whether access token should be treated as JWT. This should be set to `
 withAudience(audience)
 ```
 
-OAuth audience to use when authenticating against the authorization server. Some authorization servers require the audience to be explicitly set. The possible values depend on how the authorization server is configured. By default, `audience` is not specified when performing the token endpoint request.
+"OAuth audience to use when authenticating against the authorization server. Some authorization servers require the audience to be explicitly set. The possible values depend on how the authorization server is configured. By default, `audience` is not specified when performing the token endpoint request."
 
 ### fn spec.authentication.withClientId
 
@@ -653,7 +678,7 @@ OAuth audience to use when authenticating against the authorization server. Some
 withClientId(clientId)
 ```
 
-OAuth Client ID which the Kafka client can use to authenticate against the OAuth server and use the token endpoint URI.
+"OAuth Client ID which the Kafka client can use to authenticate against the OAuth server and use the token endpoint URI."
 
 ### fn spec.authentication.withDisableTlsHostnameVerification
 
@@ -661,7 +686,7 @@ OAuth Client ID which the Kafka client can use to authenticate against the OAuth
 withDisableTlsHostnameVerification(disableTlsHostnameVerification)
 ```
 
-Enable or disable TLS hostname verification. Default value is `false`.
+"Enable or disable TLS hostname verification. Default value is `false`."
 
 ### fn spec.authentication.withMaxTokenExpirySeconds
 
@@ -669,7 +694,7 @@ Enable or disable TLS hostname verification. Default value is `false`.
 withMaxTokenExpirySeconds(maxTokenExpirySeconds)
 ```
 
-Set or limit time-to-live of the access tokens to the specified number of seconds. This should be set if the authorization server returns opaque tokens.
+"Set or limit time-to-live of the access tokens to the specified number of seconds. This should be set if the authorization server returns opaque tokens."
 
 ### fn spec.authentication.withScope
 
@@ -677,7 +702,7 @@ Set or limit time-to-live of the access tokens to the specified number of second
 withScope(scope)
 ```
 
-OAuth scope to use when authenticating against the authorization server. Some authorization servers require this to be set. The possible values depend on how authorization server is configured. By default `scope` is not specified when doing the token endpoint request.
+"OAuth scope to use when authenticating against the authorization server. Some authorization servers require this to be set. The possible values depend on how authorization server is configured. By default `scope` is not specified when doing the token endpoint request."
 
 ### fn spec.authentication.withTlsTrustedCertificates
 
@@ -685,7 +710,7 @@ OAuth scope to use when authenticating against the authorization server. Some au
 withTlsTrustedCertificates(tlsTrustedCertificates)
 ```
 
-Trusted certificates for TLS connection to the OAuth server.
+"Trusted certificates for TLS connection to the OAuth server."
 
 ### fn spec.authentication.withTlsTrustedCertificatesMixin
 
@@ -693,7 +718,7 @@ Trusted certificates for TLS connection to the OAuth server.
 withTlsTrustedCertificatesMixin(tlsTrustedCertificates)
 ```
 
-Trusted certificates for TLS connection to the OAuth server.
+"Trusted certificates for TLS connection to the OAuth server."
 
 **Note:** This function appends passed data to existing values
 
@@ -703,7 +728,7 @@ Trusted certificates for TLS connection to the OAuth server.
 withTokenEndpointUri(tokenEndpointUri)
 ```
 
-Authorization server token endpoint URI.
+"Authorization server token endpoint URI."
 
 ### fn spec.authentication.withType
 
@@ -711,7 +736,7 @@ Authorization server token endpoint URI.
 withType(type)
 ```
 
-Authentication type. Currently the only supported types are `tls`, `scram-sha-512`, and `plain`. `scram-sha-512` type uses SASL SCRAM-SHA-512 Authentication. `plain` type uses SASL PLAIN Authentication. `oauth` type uses SASL OAUTHBEARER Authentication. The `tls` type uses TLS Client Authentication. The `tls` type is supported only over TLS connections.
+"Authentication type. Currently the only supported types are `tls`, `scram-sha-512`, and `plain`. `scram-sha-512` type uses SASL SCRAM-SHA-512 Authentication. `plain` type uses SASL PLAIN Authentication. `oauth` type uses SASL OAUTHBEARER Authentication. The `tls` type uses TLS Client Authentication. The `tls` type is supported only over TLS connections."
 
 ### fn spec.authentication.withUsername
 
@@ -719,11 +744,11 @@ Authentication type. Currently the only supported types are `tls`, `scram-sha-51
 withUsername(username)
 ```
 
-Username used for the authentication.
+"Username used for the authentication."
 
 ## obj spec.authentication.accessToken
 
-Link to Kubernetes Secret containing the access token which was obtained from the authorization server.
+"Link to Kubernetes Secret containing the access token which was obtained from the authorization server."
 
 ### fn spec.authentication.accessToken.withKey
 
@@ -731,7 +756,7 @@ Link to Kubernetes Secret containing the access token which was obtained from th
 withKey(key)
 ```
 
-The key under which the secret value is stored in the Kubernetes Secret.
+"The key under which the secret value is stored in the Kubernetes Secret."
 
 ### fn spec.authentication.accessToken.withSecretName
 
@@ -739,11 +764,11 @@ The key under which the secret value is stored in the Kubernetes Secret.
 withSecretName(secretName)
 ```
 
-The name of the Kubernetes Secret containing the secret value.
+"The name of the Kubernetes Secret containing the secret value."
 
 ## obj spec.authentication.certificateAndKey
 
-Reference to the `Secret` which holds the certificate and private key pair.
+"Reference to the `Secret` which holds the certificate and private key pair."
 
 ### fn spec.authentication.certificateAndKey.withCertificate
 
@@ -751,7 +776,7 @@ Reference to the `Secret` which holds the certificate and private key pair.
 withCertificate(certificate)
 ```
 
-The name of the file certificate in the Secret.
+"The name of the file certificate in the Secret."
 
 ### fn spec.authentication.certificateAndKey.withKey
 
@@ -759,7 +784,7 @@ The name of the file certificate in the Secret.
 withKey(key)
 ```
 
-The name of the private key in the Secret.
+"The name of the private key in the Secret."
 
 ### fn spec.authentication.certificateAndKey.withSecretName
 
@@ -767,11 +792,11 @@ The name of the private key in the Secret.
 withSecretName(secretName)
 ```
 
-The name of the Secret containing the certificate.
+"The name of the Secret containing the certificate."
 
 ## obj spec.authentication.clientSecret
 
-Link to Kubernetes Secret containing the OAuth client secret which the Kafka client can use to authenticate against the OAuth server and use the token endpoint URI.
+"Link to Kubernetes Secret containing the OAuth client secret which the Kafka client can use to authenticate against the OAuth server and use the token endpoint URI."
 
 ### fn spec.authentication.clientSecret.withKey
 
@@ -779,7 +804,7 @@ Link to Kubernetes Secret containing the OAuth client secret which the Kafka cli
 withKey(key)
 ```
 
-The key under which the secret value is stored in the Kubernetes Secret.
+"The key under which the secret value is stored in the Kubernetes Secret."
 
 ### fn spec.authentication.clientSecret.withSecretName
 
@@ -787,11 +812,11 @@ The key under which the secret value is stored in the Kubernetes Secret.
 withSecretName(secretName)
 ```
 
-The name of the Kubernetes Secret containing the secret value.
+"The name of the Kubernetes Secret containing the secret value."
 
 ## obj spec.authentication.passwordSecret
 
-Reference to the `Secret` which holds the password.
+"Reference to the `Secret` which holds the password."
 
 ### fn spec.authentication.passwordSecret.withPassword
 
@@ -799,7 +824,7 @@ Reference to the `Secret` which holds the password.
 withPassword(password)
 ```
 
-The name of the key in the Secret under which the password is stored.
+"The name of the key in the Secret under which the password is stored."
 
 ### fn spec.authentication.passwordSecret.withSecretName
 
@@ -807,11 +832,11 @@ The name of the key in the Secret under which the password is stored.
 withSecretName(secretName)
 ```
 
-The name of the Secret containing the password.
+"The name of the Secret containing the password."
 
 ## obj spec.authentication.refreshToken
 
-Link to Kubernetes Secret containing the refresh token which can be used to obtain access token from the authorization server.
+"Link to Kubernetes Secret containing the refresh token which can be used to obtain access token from the authorization server."
 
 ### fn spec.authentication.refreshToken.withKey
 
@@ -819,7 +844,7 @@ Link to Kubernetes Secret containing the refresh token which can be used to obta
 withKey(key)
 ```
 
-The key under which the secret value is stored in the Kubernetes Secret.
+"The key under which the secret value is stored in the Kubernetes Secret."
 
 ### fn spec.authentication.refreshToken.withSecretName
 
@@ -827,11 +852,11 @@ The key under which the secret value is stored in the Kubernetes Secret.
 withSecretName(secretName)
 ```
 
-The name of the Kubernetes Secret containing the secret value.
+"The name of the Kubernetes Secret containing the secret value."
 
 ## obj spec.build
 
-Configures how the Connect container image should be built. Optional.
+"Configures how the Connect container image should be built. Optional."
 
 ### fn spec.build.withPlugins
 
@@ -839,7 +864,7 @@ Configures how the Connect container image should be built. Optional.
 withPlugins(plugins)
 ```
 
-List of connector plugins which should be added to the Kafka Connect. Required.
+"List of connector plugins which should be added to the Kafka Connect. Required."
 
 ### fn spec.build.withPluginsMixin
 
@@ -847,13 +872,13 @@ List of connector plugins which should be added to the Kafka Connect. Required.
 withPluginsMixin(plugins)
 ```
 
-List of connector plugins which should be added to the Kafka Connect. Required.
+"List of connector plugins which should be added to the Kafka Connect. Required."
 
 **Note:** This function appends passed data to existing values
 
 ## obj spec.build.output
 
-Configures where should the newly built image be stored. Required.
+"Configures where should the newly built image be stored. Required."
 
 ### fn spec.build.output.withAdditionalKanikoOptions
 
@@ -861,7 +886,7 @@ Configures where should the newly built image be stored. Required.
 withAdditionalKanikoOptions(additionalKanikoOptions)
 ```
 
-Configures additional options which will be passed to the Kaniko executor when building the new Connect image. Allowed options are: --customPlatform, --insecure, --insecure-pull, --insecure-registry, --log-format, --log-timestamp, --registry-mirror, --reproducible, --single-snapshot, --skip-tls-verify, --skip-tls-verify-pull, --skip-tls-verify-registry, --verbosity, --snapshotMode, --use-new-run. These options will be used only on Kubernetes where the Kaniko executor is used. They will be ignored on OpenShift. The options are described in the link:https://github.com/GoogleContainerTools/kaniko[Kaniko GitHub repository^]. Changing this field does not trigger new build of the Kafka Connect image.
+"Configures additional options which will be passed to the Kaniko executor when building the new Connect image. Allowed options are: --customPlatform, --insecure, --insecure-pull, --insecure-registry, --log-format, --log-timestamp, --registry-mirror, --reproducible, --single-snapshot, --skip-tls-verify, --skip-tls-verify-pull, --skip-tls-verify-registry, --verbosity, --snapshotMode, --use-new-run. These options will be used only on Kubernetes where the Kaniko executor is used. They will be ignored on OpenShift. The options are described in the link:https://github.com/GoogleContainerTools/kaniko[Kaniko GitHub repository^]. Changing this field does not trigger new build of the Kafka Connect image."
 
 ### fn spec.build.output.withAdditionalKanikoOptionsMixin
 
@@ -869,7 +894,7 @@ Configures additional options which will be passed to the Kaniko executor when b
 withAdditionalKanikoOptionsMixin(additionalKanikoOptions)
 ```
 
-Configures additional options which will be passed to the Kaniko executor when building the new Connect image. Allowed options are: --customPlatform, --insecure, --insecure-pull, --insecure-registry, --log-format, --log-timestamp, --registry-mirror, --reproducible, --single-snapshot, --skip-tls-verify, --skip-tls-verify-pull, --skip-tls-verify-registry, --verbosity, --snapshotMode, --use-new-run. These options will be used only on Kubernetes where the Kaniko executor is used. They will be ignored on OpenShift. The options are described in the link:https://github.com/GoogleContainerTools/kaniko[Kaniko GitHub repository^]. Changing this field does not trigger new build of the Kafka Connect image.
+"Configures additional options which will be passed to the Kaniko executor when building the new Connect image. Allowed options are: --customPlatform, --insecure, --insecure-pull, --insecure-registry, --log-format, --log-timestamp, --registry-mirror, --reproducible, --single-snapshot, --skip-tls-verify, --skip-tls-verify-pull, --skip-tls-verify-registry, --verbosity, --snapshotMode, --use-new-run. These options will be used only on Kubernetes where the Kaniko executor is used. They will be ignored on OpenShift. The options are described in the link:https://github.com/GoogleContainerTools/kaniko[Kaniko GitHub repository^]. Changing this field does not trigger new build of the Kafka Connect image."
 
 **Note:** This function appends passed data to existing values
 
@@ -879,7 +904,7 @@ Configures additional options which will be passed to the Kaniko executor when b
 withImage(image)
 ```
 
-The name of the image which will be built. Required.
+"The name of the image which will be built. Required."
 
 ### fn spec.build.output.withPushSecret
 
@@ -887,7 +912,7 @@ The name of the image which will be built. Required.
 withPushSecret(pushSecret)
 ```
 
-Container Registry Secret with the credentials for pushing the newly built image.
+"Container Registry Secret with the credentials for pushing the newly built image."
 
 ### fn spec.build.output.withType
 
@@ -895,11 +920,11 @@ Container Registry Secret with the credentials for pushing the newly built image
 withType(type)
 ```
 
-Output type. Must be either `docker` for pushing the newly build image to Docker compatible registry or `imagestream` for pushing the image to OpenShift ImageStream. Required.
+"Output type. Must be either `docker` for pushing the newly build image to Docker compatible registry or `imagestream` for pushing the image to OpenShift ImageStream. Required."
 
 ## obj spec.build.resources
 
-CPU and memory resources to reserve for the build.
+"CPU and memory resources to reserve for the build."
 
 ### fn spec.build.resources.withLimits
 
@@ -909,6 +934,16 @@ withLimits(limits)
 
 
 
+### fn spec.build.resources.withLimitsMixin
+
+```ts
+withLimitsMixin(limits)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ### fn spec.build.resources.withRequests
 
 ```ts
@@ -917,9 +952,19 @@ withRequests(requests)
 
 
 
+### fn spec.build.resources.withRequestsMixin
+
+```ts
+withRequestsMixin(requests)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ## obj spec.buildResources
 
-CPU and memory resources to reserve.
+"CPU and memory resources to reserve."
 
 ### fn spec.buildResources.withLimits
 
@@ -929,6 +974,16 @@ withLimits(limits)
 
 
 
+### fn spec.buildResources.withLimitsMixin
+
+```ts
+withLimitsMixin(limits)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ### fn spec.buildResources.withRequests
 
 ```ts
@@ -937,9 +992,19 @@ withRequests(requests)
 
 
 
+### fn spec.buildResources.withRequestsMixin
+
+```ts
+withRequestsMixin(requests)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ## obj spec.externalConfiguration
 
-Pass data from Secrets or ConfigMaps to the Kafka Connect pods and use them to configure connectors.
+"Pass data from Secrets or ConfigMaps to the Kafka Connect pods and use them to configure connectors."
 
 ### fn spec.externalConfiguration.withEnv
 
@@ -947,7 +1012,7 @@ Pass data from Secrets or ConfigMaps to the Kafka Connect pods and use them to c
 withEnv(env)
 ```
 
-Makes data from a Secret or ConfigMap available in the Kafka Connect pods as environment variables.
+"Makes data from a Secret or ConfigMap available in the Kafka Connect pods as environment variables."
 
 ### fn spec.externalConfiguration.withEnvMixin
 
@@ -955,7 +1020,7 @@ Makes data from a Secret or ConfigMap available in the Kafka Connect pods as env
 withEnvMixin(env)
 ```
 
-Makes data from a Secret or ConfigMap available in the Kafka Connect pods as environment variables.
+"Makes data from a Secret or ConfigMap available in the Kafka Connect pods as environment variables."
 
 **Note:** This function appends passed data to existing values
 
@@ -965,7 +1030,7 @@ Makes data from a Secret or ConfigMap available in the Kafka Connect pods as env
 withVolumes(volumes)
 ```
 
-Makes data from a Secret or ConfigMap available in the Kafka Connect pods as volumes.
+"Makes data from a Secret or ConfigMap available in the Kafka Connect pods as volumes."
 
 ### fn spec.externalConfiguration.withVolumesMixin
 
@@ -973,17 +1038,17 @@ Makes data from a Secret or ConfigMap available in the Kafka Connect pods as vol
 withVolumesMixin(volumes)
 ```
 
-Makes data from a Secret or ConfigMap available in the Kafka Connect pods as volumes.
+"Makes data from a Secret or ConfigMap available in the Kafka Connect pods as volumes."
 
 **Note:** This function appends passed data to existing values
 
 ## obj spec.jmxOptions
 
-JMX Options.
+"JMX Options."
 
 ## obj spec.jmxOptions.authentication
 
-Authentication configuration for connecting to the JMX port.
+"Authentication configuration for connecting to the JMX port."
 
 ### fn spec.jmxOptions.authentication.withType
 
@@ -991,11 +1056,11 @@ Authentication configuration for connecting to the JMX port.
 withType(type)
 ```
 
-Authentication type. Currently the only supported types are `password`.`password` type creates a username and protected port with no TLS.
+"Authentication type. Currently the only supported types are `password`.`password` type creates a username and protected port with no TLS."
 
 ## obj spec.jvmOptions
 
-JVM Options for pods.
+"JVM Options for pods."
 
 ### fn spec.jvmOptions.withGcLoggingEnabled
 
@@ -1003,7 +1068,7 @@ JVM Options for pods.
 withGcLoggingEnabled(gcLoggingEnabled)
 ```
 
-Specifies whether the Garbage Collection logging is enabled. The default is false.
+"Specifies whether the Garbage Collection logging is enabled. The default is false."
 
 ### fn spec.jvmOptions.withJavaSystemProperties
 
@@ -1011,7 +1076,7 @@ Specifies whether the Garbage Collection logging is enabled. The default is fals
 withJavaSystemProperties(javaSystemProperties)
 ```
 
-A map of additional system properties which will be passed using the `-D` option to the JVM.
+"A map of additional system properties which will be passed using the `-D` option to the JVM."
 
 ### fn spec.jvmOptions.withJavaSystemPropertiesMixin
 
@@ -1019,7 +1084,7 @@ A map of additional system properties which will be passed using the `-D` option
 withJavaSystemPropertiesMixin(javaSystemProperties)
 ```
 
-A map of additional system properties which will be passed using the `-D` option to the JVM.
+"A map of additional system properties which will be passed using the `-D` option to the JVM."
 
 **Note:** This function appends passed data to existing values
 
@@ -1029,7 +1094,17 @@ A map of additional system properties which will be passed using the `-D` option
 withXX(XX)
 ```
 
-A map of -XX options to the JVM.
+"A map of -XX options to the JVM."
+
+### fn spec.jvmOptions.withXXMixin
+
+```ts
+withXXMixin(XX)
+```
+
+"A map of -XX options to the JVM."
+
+**Note:** This function appends passed data to existing values
 
 ### fn spec.jvmOptions.withXms
 
@@ -1037,7 +1112,7 @@ A map of -XX options to the JVM.
 withXms(Xms)
 ```
 
--Xms option to to the JVM.
+"-Xms option to to the JVM."
 
 ### fn spec.jvmOptions.withXmx
 
@@ -1045,11 +1120,11 @@ withXms(Xms)
 withXmx(Xmx)
 ```
 
--Xmx option to to the JVM.
+"-Xmx option to to the JVM."
 
 ## obj spec.livenessProbe
 
-Pod liveness checking.
+"Pod liveness checking."
 
 ### fn spec.livenessProbe.withFailureThreshold
 
@@ -1057,7 +1132,7 @@ Pod liveness checking.
 withFailureThreshold(failureThreshold)
 ```
 
-Minimum consecutive failures for the probe to be considered failed after having succeeded. Defaults to 3. Minimum value is 1.
+"Minimum consecutive failures for the probe to be considered failed after having succeeded. Defaults to 3. Minimum value is 1."
 
 ### fn spec.livenessProbe.withInitialDelaySeconds
 
@@ -1065,7 +1140,7 @@ Minimum consecutive failures for the probe to be considered failed after having 
 withInitialDelaySeconds(initialDelaySeconds)
 ```
 
-The initial delay before first the health is first checked. Default to 15 seconds. Minimum value is 0.
+"The initial delay before first the health is first checked. Default to 15 seconds. Minimum value is 0."
 
 ### fn spec.livenessProbe.withPeriodSeconds
 
@@ -1073,7 +1148,7 @@ The initial delay before first the health is first checked. Default to 15 second
 withPeriodSeconds(periodSeconds)
 ```
 
-How often (in seconds) to perform the probe. Default to 10 seconds. Minimum value is 1.
+"How often (in seconds) to perform the probe. Default to 10 seconds. Minimum value is 1."
 
 ### fn spec.livenessProbe.withSuccessThreshold
 
@@ -1081,7 +1156,7 @@ How often (in seconds) to perform the probe. Default to 10 seconds. Minimum valu
 withSuccessThreshold(successThreshold)
 ```
 
-Minimum consecutive successes for the probe to be considered successful after having failed. Defaults to 1. Must be 1 for liveness. Minimum value is 1.
+"Minimum consecutive successes for the probe to be considered successful after having failed. Defaults to 1. Must be 1 for liveness. Minimum value is 1."
 
 ### fn spec.livenessProbe.withTimeoutSeconds
 
@@ -1089,11 +1164,11 @@ Minimum consecutive successes for the probe to be considered successful after ha
 withTimeoutSeconds(timeoutSeconds)
 ```
 
-The timeout for each attempted health check. Default to 5 seconds. Minimum value is 1.
+"The timeout for each attempted health check. Default to 5 seconds. Minimum value is 1."
 
 ## obj spec.logging
 
-Logging configuration for Kafka Connect.
+"Logging configuration for Kafka Connect."
 
 ### fn spec.logging.withLoggers
 
@@ -1101,7 +1176,17 @@ Logging configuration for Kafka Connect.
 withLoggers(loggers)
 ```
 
-A Map from logger name to logger level.
+"A Map from logger name to logger level."
+
+### fn spec.logging.withLoggersMixin
+
+```ts
+withLoggersMixin(loggers)
+```
+
+"A Map from logger name to logger level."
+
+**Note:** This function appends passed data to existing values
 
 ### fn spec.logging.withType
 
@@ -1109,15 +1194,15 @@ A Map from logger name to logger level.
 withType(type)
 ```
 
-Logging type, must be either 'inline' or 'external'.
+"Logging type, must be either 'inline' or 'external'."
 
 ## obj spec.logging.valueFrom
 
-`ConfigMap` entry where the logging configuration is stored. 
+"`ConfigMap` entry where the logging configuration is stored. "
 
 ## obj spec.logging.valueFrom.configMapKeyRef
 
-Reference to the key in the ConfigMap containing the configuration.
+"Reference to the key in the ConfigMap containing the configuration."
 
 ### fn spec.logging.valueFrom.configMapKeyRef.withKey
 
@@ -1145,7 +1230,7 @@ withOptional(optional)
 
 ## obj spec.metricsConfig
 
-Metrics configuration.
+"Metrics configuration."
 
 ### fn spec.metricsConfig.withType
 
@@ -1153,15 +1238,15 @@ Metrics configuration.
 withType(type)
 ```
 
-Metrics type. Only 'jmxPrometheusExporter' supported currently.
+"Metrics type. Only 'jmxPrometheusExporter' supported currently."
 
 ## obj spec.metricsConfig.valueFrom
 
-ConfigMap entry where the Prometheus JMX Exporter configuration is stored. For details of the structure of this configuration, see the {JMXExporter}.
+"ConfigMap entry where the Prometheus JMX Exporter configuration is stored. For details of the structure of this configuration, see the {JMXExporter}."
 
 ## obj spec.metricsConfig.valueFrom.configMapKeyRef
 
-Reference to the key in the ConfigMap containing the configuration.
+"Reference to the key in the ConfigMap containing the configuration."
 
 ### fn spec.metricsConfig.valueFrom.configMapKeyRef.withKey
 
@@ -1189,7 +1274,7 @@ withOptional(optional)
 
 ## obj spec.rack
 
-Configuration of the node label which will be used as the client.rack consumer configuration.
+"Configuration of the node label which will be used as the client.rack consumer configuration."
 
 ### fn spec.rack.withTopologyKey
 
@@ -1197,11 +1282,11 @@ Configuration of the node label which will be used as the client.rack consumer c
 withTopologyKey(topologyKey)
 ```
 
-A key that matches labels assigned to the Kubernetes cluster nodes. The value of the label is used to set the broker's `broker.rack` config and `client.rack` in Kafka Connect.
+"A key that matches labels assigned to the Kubernetes cluster nodes. The value of the label is used to set the broker's `broker.rack` config and `client.rack` in Kafka Connect."
 
 ## obj spec.readinessProbe
 
-Pod readiness checking.
+"Pod readiness checking."
 
 ### fn spec.readinessProbe.withFailureThreshold
 
@@ -1209,7 +1294,7 @@ Pod readiness checking.
 withFailureThreshold(failureThreshold)
 ```
 
-Minimum consecutive failures for the probe to be considered failed after having succeeded. Defaults to 3. Minimum value is 1.
+"Minimum consecutive failures for the probe to be considered failed after having succeeded. Defaults to 3. Minimum value is 1."
 
 ### fn spec.readinessProbe.withInitialDelaySeconds
 
@@ -1217,7 +1302,7 @@ Minimum consecutive failures for the probe to be considered failed after having 
 withInitialDelaySeconds(initialDelaySeconds)
 ```
 
-The initial delay before first the health is first checked. Default to 15 seconds. Minimum value is 0.
+"The initial delay before first the health is first checked. Default to 15 seconds. Minimum value is 0."
 
 ### fn spec.readinessProbe.withPeriodSeconds
 
@@ -1225,7 +1310,7 @@ The initial delay before first the health is first checked. Default to 15 second
 withPeriodSeconds(periodSeconds)
 ```
 
-How often (in seconds) to perform the probe. Default to 10 seconds. Minimum value is 1.
+"How often (in seconds) to perform the probe. Default to 10 seconds. Minimum value is 1."
 
 ### fn spec.readinessProbe.withSuccessThreshold
 
@@ -1233,7 +1318,7 @@ How often (in seconds) to perform the probe. Default to 10 seconds. Minimum valu
 withSuccessThreshold(successThreshold)
 ```
 
-Minimum consecutive successes for the probe to be considered successful after having failed. Defaults to 1. Must be 1 for liveness. Minimum value is 1.
+"Minimum consecutive successes for the probe to be considered successful after having failed. Defaults to 1. Must be 1 for liveness. Minimum value is 1."
 
 ### fn spec.readinessProbe.withTimeoutSeconds
 
@@ -1241,11 +1326,11 @@ Minimum consecutive successes for the probe to be considered successful after ha
 withTimeoutSeconds(timeoutSeconds)
 ```
 
-The timeout for each attempted health check. Default to 5 seconds. Minimum value is 1.
+"The timeout for each attempted health check. Default to 5 seconds. Minimum value is 1."
 
 ## obj spec.resources
 
-The maximum limits for CPU and memory resources and the requested initial resources.
+"The maximum limits for CPU and memory resources and the requested initial resources."
 
 ### fn spec.resources.withLimits
 
@@ -1255,6 +1340,16 @@ withLimits(limits)
 
 
 
+### fn spec.resources.withLimitsMixin
+
+```ts
+withLimitsMixin(limits)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ### fn spec.resources.withRequests
 
 ```ts
@@ -1263,13 +1358,23 @@ withRequests(requests)
 
 
 
+### fn spec.resources.withRequestsMixin
+
+```ts
+withRequestsMixin(requests)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ## obj spec.template
 
-Template for Kafka Connect and Kafka Connect S2I resources. The template allows users to specify how the `Deployment`, `Pods` and `Service` are generated.
+"Template for Kafka Connect and Kafka Connect S2I resources. The template allows users to specify how the `Deployment`, `Pods` and `Service` are generated."
 
 ## obj spec.template.apiService
 
-Template for Kafka Connect API `Service`.
+"Template for Kafka Connect API `Service`."
 
 ### fn spec.template.apiService.withIpFamilies
 
@@ -1277,7 +1382,7 @@ Template for Kafka Connect API `Service`.
 withIpFamilies(ipFamilies)
 ```
 
-Specifies the IP Families used by the service. Available options are `IPv4` and `IPv6. If unspecified, Kubernetes will choose the default value based on the `ipFamilyPolicy` setting. Available on Kubernetes 1.20 and newer.
+"Specifies the IP Families used by the service. Available options are `IPv4` and `IPv6. If unspecified, Kubernetes will choose the default value based on the `ipFamilyPolicy` setting. Available on Kubernetes 1.20 and newer."
 
 ### fn spec.template.apiService.withIpFamiliesMixin
 
@@ -1285,7 +1390,7 @@ Specifies the IP Families used by the service. Available options are `IPv4` and 
 withIpFamiliesMixin(ipFamilies)
 ```
 
-Specifies the IP Families used by the service. Available options are `IPv4` and `IPv6. If unspecified, Kubernetes will choose the default value based on the `ipFamilyPolicy` setting. Available on Kubernetes 1.20 and newer.
+"Specifies the IP Families used by the service. Available options are `IPv4` and `IPv6. If unspecified, Kubernetes will choose the default value based on the `ipFamilyPolicy` setting. Available on Kubernetes 1.20 and newer."
 
 **Note:** This function appends passed data to existing values
 
@@ -1295,11 +1400,11 @@ Specifies the IP Families used by the service. Available options are `IPv4` and 
 withIpFamilyPolicy(ipFamilyPolicy)
 ```
 
-Specifies the IP Family Policy used by the service. Available options are `SingleStack`, `PreferDualStack` and `RequireDualStack`. `SingleStack` is for a single IP family. `PreferDualStack` is for two IP families on dual-stack configured clusters or a single IP family on single-stack clusters. `RequireDualStack` fails unless there are two IP families on dual-stack configured clusters. If unspecified, Kubernetes will choose the default value based on the service type. Available on Kubernetes 1.20 and newer.
+"Specifies the IP Family Policy used by the service. Available options are `SingleStack`, `PreferDualStack` and `RequireDualStack`. `SingleStack` is for a single IP family. `PreferDualStack` is for two IP families on dual-stack configured clusters or a single IP family on single-stack clusters. `RequireDualStack` fails unless there are two IP families on dual-stack configured clusters. If unspecified, Kubernetes will choose the default value based on the service type. Available on Kubernetes 1.20 and newer."
 
 ## obj spec.template.apiService.metadata
 
-Metadata applied to the resource.
+"Metadata applied to the resource."
 
 ### fn spec.template.apiService.metadata.withAnnotations
 
@@ -1307,7 +1412,17 @@ Metadata applied to the resource.
 withAnnotations(annotations)
 ```
 
-Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`.
+"Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+### fn spec.template.apiService.metadata.withAnnotationsMixin
+
+```ts
+withAnnotationsMixin(annotations)
+```
+
+"Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+**Note:** This function appends passed data to existing values
 
 ### fn spec.template.apiService.metadata.withLabels
 
@@ -1315,15 +1430,25 @@ Annotations added to the resource template. Can be applied to different resource
 withLabels(labels)
 ```
 
-Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`.
+"Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+### fn spec.template.apiService.metadata.withLabelsMixin
+
+```ts
+withLabelsMixin(labels)
+```
+
+"Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+**Note:** This function appends passed data to existing values
 
 ## obj spec.template.buildConfig
 
-Template for the Kafka Connect BuildConfig used to build new container images. The BuildConfig is used only on OpenShift.
+"Template for the Kafka Connect BuildConfig used to build new container images. The BuildConfig is used only on OpenShift."
 
 ## obj spec.template.buildConfig.metadata
 
-Metadata applied to the resource.
+"Metadata applied to the resource."
 
 ### fn spec.template.buildConfig.metadata.withAnnotations
 
@@ -1331,7 +1456,17 @@ Metadata applied to the resource.
 withAnnotations(annotations)
 ```
 
-Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`.
+"Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+### fn spec.template.buildConfig.metadata.withAnnotationsMixin
+
+```ts
+withAnnotationsMixin(annotations)
+```
+
+"Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+**Note:** This function appends passed data to existing values
 
 ### fn spec.template.buildConfig.metadata.withLabels
 
@@ -1339,11 +1474,21 @@ Annotations added to the resource template. Can be applied to different resource
 withLabels(labels)
 ```
 
-Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`.
+"Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+### fn spec.template.buildConfig.metadata.withLabelsMixin
+
+```ts
+withLabelsMixin(labels)
+```
+
+"Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+**Note:** This function appends passed data to existing values
 
 ## obj spec.template.buildContainer
 
-Template for the Kafka Connect Build container. The build container is used only on Kubernetes.
+"Template for the Kafka Connect Build container. The build container is used only on Kubernetes."
 
 ### fn spec.template.buildContainer.withEnv
 
@@ -1351,7 +1496,7 @@ Template for the Kafka Connect Build container. The build container is used only
 withEnv(env)
 ```
 
-Environment variables which should be applied to the container.
+"Environment variables which should be applied to the container."
 
 ### fn spec.template.buildContainer.withEnvMixin
 
@@ -1359,13 +1504,13 @@ Environment variables which should be applied to the container.
 withEnvMixin(env)
 ```
 
-Environment variables which should be applied to the container.
+"Environment variables which should be applied to the container."
 
 **Note:** This function appends passed data to existing values
 
 ## obj spec.template.buildContainer.securityContext
 
-Security context for the container.
+"Security context for the container."
 
 ### fn spec.template.buildContainer.securityContext.withAllowPrivilegeEscalation
 
@@ -1549,7 +1694,7 @@ withRunAsUserName(runAsUserName)
 
 ## obj spec.template.buildPod
 
-Template for Kafka Connect Build `Pods`. The build pod is used only on Kubernetes.
+"Template for Kafka Connect Build `Pods`. The build pod is used only on Kubernetes."
 
 ### fn spec.template.buildPod.withEnableServiceLinks
 
@@ -1557,7 +1702,7 @@ Template for Kafka Connect Build `Pods`. The build pod is used only on Kubernete
 withEnableServiceLinks(enableServiceLinks)
 ```
 
-Indicates whether information about services should be injected into Pod's environment variables.
+"Indicates whether information about services should be injected into Pod's environment variables."
 
 ### fn spec.template.buildPod.withHostAliases
 
@@ -1565,7 +1710,7 @@ Indicates whether information about services should be injected into Pod's envir
 withHostAliases(hostAliases)
 ```
 
-The pod's HostAliases. HostAliases is an optional list of hosts and IPs that will be injected into the Pod's hosts file if specified.
+"The pod's HostAliases. HostAliases is an optional list of hosts and IPs that will be injected into the Pod's hosts file if specified."
 
 ### fn spec.template.buildPod.withHostAliasesMixin
 
@@ -1573,7 +1718,7 @@ The pod's HostAliases. HostAliases is an optional list of hosts and IPs that wil
 withHostAliasesMixin(hostAliases)
 ```
 
-The pod's HostAliases. HostAliases is an optional list of hosts and IPs that will be injected into the Pod's hosts file if specified.
+"The pod's HostAliases. HostAliases is an optional list of hosts and IPs that will be injected into the Pod's hosts file if specified."
 
 **Note:** This function appends passed data to existing values
 
@@ -1583,7 +1728,7 @@ The pod's HostAliases. HostAliases is an optional list of hosts and IPs that wil
 withImagePullSecrets(imagePullSecrets)
 ```
 
-List of references to secrets in the same namespace to use for pulling any of the images used by this Pod. When the `STRIMZI_IMAGE_PULL_SECRETS` environment variable in Cluster Operator and the `imagePullSecrets` option are specified, only the `imagePullSecrets` variable is used and the `STRIMZI_IMAGE_PULL_SECRETS` variable is ignored.
+"List of references to secrets in the same namespace to use for pulling any of the images used by this Pod. When the `STRIMZI_IMAGE_PULL_SECRETS` environment variable in Cluster Operator and the `imagePullSecrets` option are specified, only the `imagePullSecrets` variable is used and the `STRIMZI_IMAGE_PULL_SECRETS` variable is ignored."
 
 ### fn spec.template.buildPod.withImagePullSecretsMixin
 
@@ -1591,7 +1736,7 @@ List of references to secrets in the same namespace to use for pulling any of th
 withImagePullSecretsMixin(imagePullSecrets)
 ```
 
-List of references to secrets in the same namespace to use for pulling any of the images used by this Pod. When the `STRIMZI_IMAGE_PULL_SECRETS` environment variable in Cluster Operator and the `imagePullSecrets` option are specified, only the `imagePullSecrets` variable is used and the `STRIMZI_IMAGE_PULL_SECRETS` variable is ignored.
+"List of references to secrets in the same namespace to use for pulling any of the images used by this Pod. When the `STRIMZI_IMAGE_PULL_SECRETS` environment variable in Cluster Operator and the `imagePullSecrets` option are specified, only the `imagePullSecrets` variable is used and the `STRIMZI_IMAGE_PULL_SECRETS` variable is ignored."
 
 **Note:** This function appends passed data to existing values
 
@@ -1601,7 +1746,7 @@ List of references to secrets in the same namespace to use for pulling any of th
 withPriorityClassName(priorityClassName)
 ```
 
-The name of the priority class used to assign priority to the pods. For more information about priority classes, see {K8sPriorityClass}.
+"The name of the priority class used to assign priority to the pods. For more information about priority classes, see {K8sPriorityClass}."
 
 ### fn spec.template.buildPod.withSchedulerName
 
@@ -1609,7 +1754,7 @@ The name of the priority class used to assign priority to the pods. For more inf
 withSchedulerName(schedulerName)
 ```
 
-The name of the scheduler used to dispatch this `Pod`. If not specified, the default scheduler will be used.
+"The name of the scheduler used to dispatch this `Pod`. If not specified, the default scheduler will be used."
 
 ### fn spec.template.buildPod.withTerminationGracePeriodSeconds
 
@@ -1617,7 +1762,7 @@ The name of the scheduler used to dispatch this `Pod`. If not specified, the def
 withTerminationGracePeriodSeconds(terminationGracePeriodSeconds)
 ```
 
-The grace period is the duration in seconds after the processes running in the pod are sent a termination signal, and the time when the processes are forcibly halted with a kill signal. Set this value to longer than the expected cleanup time for your process. Value must be a non-negative integer. A zero value indicates delete immediately. You might need to increase the grace period for very large Kafka clusters, so that the Kafka brokers have enough time to transfer their work to another broker before they are terminated. Defaults to 30 seconds.
+"The grace period is the duration in seconds after the processes running in the pod are sent a termination signal, and the time when the processes are forcibly halted with a kill signal. Set this value to longer than the expected cleanup time for your process. Value must be a non-negative integer. A zero value indicates delete immediately. You might need to increase the grace period for very large Kafka clusters, so that the Kafka brokers have enough time to transfer their work to another broker before they are terminated. Defaults to 30 seconds."
 
 ### fn spec.template.buildPod.withTolerations
 
@@ -1625,7 +1770,7 @@ The grace period is the duration in seconds after the processes running in the p
 withTolerations(tolerations)
 ```
 
-The pod's tolerations.
+"The pod's tolerations."
 
 ### fn spec.template.buildPod.withTolerationsMixin
 
@@ -1633,7 +1778,7 @@ The pod's tolerations.
 withTolerationsMixin(tolerations)
 ```
 
-The pod's tolerations.
+"The pod's tolerations."
 
 **Note:** This function appends passed data to existing values
 
@@ -1643,7 +1788,7 @@ The pod's tolerations.
 withTopologySpreadConstraints(topologySpreadConstraints)
 ```
 
-The pod's topology spread constraints.
+"The pod's topology spread constraints."
 
 ### fn spec.template.buildPod.withTopologySpreadConstraintsMixin
 
@@ -1651,13 +1796,13 @@ The pod's topology spread constraints.
 withTopologySpreadConstraintsMixin(topologySpreadConstraints)
 ```
 
-The pod's topology spread constraints.
+"The pod's topology spread constraints."
 
 **Note:** This function appends passed data to existing values
 
 ## obj spec.template.buildPod.affinity
 
-The pod's affinity rules.
+"The pod's affinity rules."
 
 ## obj spec.template.buildPod.affinity.nodeAffinity
 
@@ -1785,7 +1930,7 @@ withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringScheduling
 
 ## obj spec.template.buildPod.metadata
 
-Metadata applied to the resource.
+"Metadata applied to the resource."
 
 ### fn spec.template.buildPod.metadata.withAnnotations
 
@@ -1793,7 +1938,17 @@ Metadata applied to the resource.
 withAnnotations(annotations)
 ```
 
-Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`.
+"Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+### fn spec.template.buildPod.metadata.withAnnotationsMixin
+
+```ts
+withAnnotationsMixin(annotations)
+```
+
+"Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+**Note:** This function appends passed data to existing values
 
 ### fn spec.template.buildPod.metadata.withLabels
 
@@ -1801,11 +1956,21 @@ Annotations added to the resource template. Can be applied to different resource
 withLabels(labels)
 ```
 
-Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`.
+"Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+### fn spec.template.buildPod.metadata.withLabelsMixin
+
+```ts
+withLabelsMixin(labels)
+```
+
+"Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+**Note:** This function appends passed data to existing values
 
 ## obj spec.template.buildPod.securityContext
 
-Configures pod-level security attributes and common container settings.
+"Configures pod-level security attributes and common container settings."
 
 ### fn spec.template.buildPod.securityContext.withFsGroup
 
@@ -1969,11 +2134,11 @@ withRunAsUserName(runAsUserName)
 
 ## obj spec.template.buildServiceAccount
 
-Template for the Kafka Connect Build service account.
+"Template for the Kafka Connect Build service account."
 
 ## obj spec.template.buildServiceAccount.metadata
 
-Metadata applied to the resource.
+"Metadata applied to the resource."
 
 ### fn spec.template.buildServiceAccount.metadata.withAnnotations
 
@@ -1981,7 +2146,17 @@ Metadata applied to the resource.
 withAnnotations(annotations)
 ```
 
-Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`.
+"Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+### fn spec.template.buildServiceAccount.metadata.withAnnotationsMixin
+
+```ts
+withAnnotationsMixin(annotations)
+```
+
+"Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+**Note:** This function appends passed data to existing values
 
 ### fn spec.template.buildServiceAccount.metadata.withLabels
 
@@ -1989,15 +2164,25 @@ Annotations added to the resource template. Can be applied to different resource
 withLabels(labels)
 ```
 
-Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`.
+"Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+### fn spec.template.buildServiceAccount.metadata.withLabelsMixin
+
+```ts
+withLabelsMixin(labels)
+```
+
+"Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+**Note:** This function appends passed data to existing values
 
 ## obj spec.template.clusterRoleBinding
 
-Template for the Kafka Connect ClusterRoleBinding.
+"Template for the Kafka Connect ClusterRoleBinding."
 
 ## obj spec.template.clusterRoleBinding.metadata
 
-Metadata applied to the resource.
+"Metadata applied to the resource."
 
 ### fn spec.template.clusterRoleBinding.metadata.withAnnotations
 
@@ -2005,7 +2190,17 @@ Metadata applied to the resource.
 withAnnotations(annotations)
 ```
 
-Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`.
+"Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+### fn spec.template.clusterRoleBinding.metadata.withAnnotationsMixin
+
+```ts
+withAnnotationsMixin(annotations)
+```
+
+"Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+**Note:** This function appends passed data to existing values
 
 ### fn spec.template.clusterRoleBinding.metadata.withLabels
 
@@ -2013,11 +2208,21 @@ Annotations added to the resource template. Can be applied to different resource
 withLabels(labels)
 ```
 
-Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`.
+"Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+### fn spec.template.clusterRoleBinding.metadata.withLabelsMixin
+
+```ts
+withLabelsMixin(labels)
+```
+
+"Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+**Note:** This function appends passed data to existing values
 
 ## obj spec.template.connectContainer
 
-Template for the Kafka Connect container.
+"Template for the Kafka Connect container."
 
 ### fn spec.template.connectContainer.withEnv
 
@@ -2025,7 +2230,7 @@ Template for the Kafka Connect container.
 withEnv(env)
 ```
 
-Environment variables which should be applied to the container.
+"Environment variables which should be applied to the container."
 
 ### fn spec.template.connectContainer.withEnvMixin
 
@@ -2033,13 +2238,13 @@ Environment variables which should be applied to the container.
 withEnvMixin(env)
 ```
 
-Environment variables which should be applied to the container.
+"Environment variables which should be applied to the container."
 
 **Note:** This function appends passed data to existing values
 
 ## obj spec.template.connectContainer.securityContext
 
-Security context for the container.
+"Security context for the container."
 
 ### fn spec.template.connectContainer.securityContext.withAllowPrivilegeEscalation
 
@@ -2223,7 +2428,7 @@ withRunAsUserName(runAsUserName)
 
 ## obj spec.template.deployment
 
-Template for Kafka Connect `Deployment`.
+"Template for Kafka Connect `Deployment`."
 
 ### fn spec.template.deployment.withDeploymentStrategy
 
@@ -2231,11 +2436,11 @@ Template for Kafka Connect `Deployment`.
 withDeploymentStrategy(deploymentStrategy)
 ```
 
-DeploymentStrategy which will be used for this Deployment. Valid values are `RollingUpdate` and `Recreate`. Defaults to `RollingUpdate`.
+"DeploymentStrategy which will be used for this Deployment. Valid values are `RollingUpdate` and `Recreate`. Defaults to `RollingUpdate`."
 
 ## obj spec.template.deployment.metadata
 
-Metadata applied to the resource.
+"Metadata applied to the resource."
 
 ### fn spec.template.deployment.metadata.withAnnotations
 
@@ -2243,7 +2448,17 @@ Metadata applied to the resource.
 withAnnotations(annotations)
 ```
 
-Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`.
+"Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+### fn spec.template.deployment.metadata.withAnnotationsMixin
+
+```ts
+withAnnotationsMixin(annotations)
+```
+
+"Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+**Note:** This function appends passed data to existing values
 
 ### fn spec.template.deployment.metadata.withLabels
 
@@ -2251,11 +2466,21 @@ Annotations added to the resource template. Can be applied to different resource
 withLabels(labels)
 ```
 
-Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`.
+"Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+### fn spec.template.deployment.metadata.withLabelsMixin
+
+```ts
+withLabelsMixin(labels)
+```
+
+"Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+**Note:** This function appends passed data to existing values
 
 ## obj spec.template.initContainer
 
-Template for the Kafka init container.
+"Template for the Kafka init container."
 
 ### fn spec.template.initContainer.withEnv
 
@@ -2263,7 +2488,7 @@ Template for the Kafka init container.
 withEnv(env)
 ```
 
-Environment variables which should be applied to the container.
+"Environment variables which should be applied to the container."
 
 ### fn spec.template.initContainer.withEnvMixin
 
@@ -2271,13 +2496,13 @@ Environment variables which should be applied to the container.
 withEnvMixin(env)
 ```
 
-Environment variables which should be applied to the container.
+"Environment variables which should be applied to the container."
 
 **Note:** This function appends passed data to existing values
 
 ## obj spec.template.initContainer.securityContext
 
-Security context for the container.
+"Security context for the container."
 
 ### fn spec.template.initContainer.securityContext.withAllowPrivilegeEscalation
 
@@ -2461,7 +2686,7 @@ withRunAsUserName(runAsUserName)
 
 ## obj spec.template.pod
 
-Template for Kafka Connect `Pods`.
+"Template for Kafka Connect `Pods`."
 
 ### fn spec.template.pod.withEnableServiceLinks
 
@@ -2469,7 +2694,7 @@ Template for Kafka Connect `Pods`.
 withEnableServiceLinks(enableServiceLinks)
 ```
 
-Indicates whether information about services should be injected into Pod's environment variables.
+"Indicates whether information about services should be injected into Pod's environment variables."
 
 ### fn spec.template.pod.withHostAliases
 
@@ -2477,7 +2702,7 @@ Indicates whether information about services should be injected into Pod's envir
 withHostAliases(hostAliases)
 ```
 
-The pod's HostAliases. HostAliases is an optional list of hosts and IPs that will be injected into the Pod's hosts file if specified.
+"The pod's HostAliases. HostAliases is an optional list of hosts and IPs that will be injected into the Pod's hosts file if specified."
 
 ### fn spec.template.pod.withHostAliasesMixin
 
@@ -2485,7 +2710,7 @@ The pod's HostAliases. HostAliases is an optional list of hosts and IPs that wil
 withHostAliasesMixin(hostAliases)
 ```
 
-The pod's HostAliases. HostAliases is an optional list of hosts and IPs that will be injected into the Pod's hosts file if specified.
+"The pod's HostAliases. HostAliases is an optional list of hosts and IPs that will be injected into the Pod's hosts file if specified."
 
 **Note:** This function appends passed data to existing values
 
@@ -2495,7 +2720,7 @@ The pod's HostAliases. HostAliases is an optional list of hosts and IPs that wil
 withImagePullSecrets(imagePullSecrets)
 ```
 
-List of references to secrets in the same namespace to use for pulling any of the images used by this Pod. When the `STRIMZI_IMAGE_PULL_SECRETS` environment variable in Cluster Operator and the `imagePullSecrets` option are specified, only the `imagePullSecrets` variable is used and the `STRIMZI_IMAGE_PULL_SECRETS` variable is ignored.
+"List of references to secrets in the same namespace to use for pulling any of the images used by this Pod. When the `STRIMZI_IMAGE_PULL_SECRETS` environment variable in Cluster Operator and the `imagePullSecrets` option are specified, only the `imagePullSecrets` variable is used and the `STRIMZI_IMAGE_PULL_SECRETS` variable is ignored."
 
 ### fn spec.template.pod.withImagePullSecretsMixin
 
@@ -2503,7 +2728,7 @@ List of references to secrets in the same namespace to use for pulling any of th
 withImagePullSecretsMixin(imagePullSecrets)
 ```
 
-List of references to secrets in the same namespace to use for pulling any of the images used by this Pod. When the `STRIMZI_IMAGE_PULL_SECRETS` environment variable in Cluster Operator and the `imagePullSecrets` option are specified, only the `imagePullSecrets` variable is used and the `STRIMZI_IMAGE_PULL_SECRETS` variable is ignored.
+"List of references to secrets in the same namespace to use for pulling any of the images used by this Pod. When the `STRIMZI_IMAGE_PULL_SECRETS` environment variable in Cluster Operator and the `imagePullSecrets` option are specified, only the `imagePullSecrets` variable is used and the `STRIMZI_IMAGE_PULL_SECRETS` variable is ignored."
 
 **Note:** This function appends passed data to existing values
 
@@ -2513,7 +2738,7 @@ List of references to secrets in the same namespace to use for pulling any of th
 withPriorityClassName(priorityClassName)
 ```
 
-The name of the priority class used to assign priority to the pods. For more information about priority classes, see {K8sPriorityClass}.
+"The name of the priority class used to assign priority to the pods. For more information about priority classes, see {K8sPriorityClass}."
 
 ### fn spec.template.pod.withSchedulerName
 
@@ -2521,7 +2746,7 @@ The name of the priority class used to assign priority to the pods. For more inf
 withSchedulerName(schedulerName)
 ```
 
-The name of the scheduler used to dispatch this `Pod`. If not specified, the default scheduler will be used.
+"The name of the scheduler used to dispatch this `Pod`. If not specified, the default scheduler will be used."
 
 ### fn spec.template.pod.withTerminationGracePeriodSeconds
 
@@ -2529,7 +2754,7 @@ The name of the scheduler used to dispatch this `Pod`. If not specified, the def
 withTerminationGracePeriodSeconds(terminationGracePeriodSeconds)
 ```
 
-The grace period is the duration in seconds after the processes running in the pod are sent a termination signal, and the time when the processes are forcibly halted with a kill signal. Set this value to longer than the expected cleanup time for your process. Value must be a non-negative integer. A zero value indicates delete immediately. You might need to increase the grace period for very large Kafka clusters, so that the Kafka brokers have enough time to transfer their work to another broker before they are terminated. Defaults to 30 seconds.
+"The grace period is the duration in seconds after the processes running in the pod are sent a termination signal, and the time when the processes are forcibly halted with a kill signal. Set this value to longer than the expected cleanup time for your process. Value must be a non-negative integer. A zero value indicates delete immediately. You might need to increase the grace period for very large Kafka clusters, so that the Kafka brokers have enough time to transfer their work to another broker before they are terminated. Defaults to 30 seconds."
 
 ### fn spec.template.pod.withTolerations
 
@@ -2537,7 +2762,7 @@ The grace period is the duration in seconds after the processes running in the p
 withTolerations(tolerations)
 ```
 
-The pod's tolerations.
+"The pod's tolerations."
 
 ### fn spec.template.pod.withTolerationsMixin
 
@@ -2545,7 +2770,7 @@ The pod's tolerations.
 withTolerationsMixin(tolerations)
 ```
 
-The pod's tolerations.
+"The pod's tolerations."
 
 **Note:** This function appends passed data to existing values
 
@@ -2555,7 +2780,7 @@ The pod's tolerations.
 withTopologySpreadConstraints(topologySpreadConstraints)
 ```
 
-The pod's topology spread constraints.
+"The pod's topology spread constraints."
 
 ### fn spec.template.pod.withTopologySpreadConstraintsMixin
 
@@ -2563,13 +2788,13 @@ The pod's topology spread constraints.
 withTopologySpreadConstraintsMixin(topologySpreadConstraints)
 ```
 
-The pod's topology spread constraints.
+"The pod's topology spread constraints."
 
 **Note:** This function appends passed data to existing values
 
 ## obj spec.template.pod.affinity
 
-The pod's affinity rules.
+"The pod's affinity rules."
 
 ## obj spec.template.pod.affinity.nodeAffinity
 
@@ -2697,7 +2922,7 @@ withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringScheduling
 
 ## obj spec.template.pod.metadata
 
-Metadata applied to the resource.
+"Metadata applied to the resource."
 
 ### fn spec.template.pod.metadata.withAnnotations
 
@@ -2705,7 +2930,17 @@ Metadata applied to the resource.
 withAnnotations(annotations)
 ```
 
-Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`.
+"Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+### fn spec.template.pod.metadata.withAnnotationsMixin
+
+```ts
+withAnnotationsMixin(annotations)
+```
+
+"Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+**Note:** This function appends passed data to existing values
 
 ### fn spec.template.pod.metadata.withLabels
 
@@ -2713,11 +2948,21 @@ Annotations added to the resource template. Can be applied to different resource
 withLabels(labels)
 ```
 
-Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`.
+"Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+### fn spec.template.pod.metadata.withLabelsMixin
+
+```ts
+withLabelsMixin(labels)
+```
+
+"Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+**Note:** This function appends passed data to existing values
 
 ## obj spec.template.pod.securityContext
 
-Configures pod-level security attributes and common container settings.
+"Configures pod-level security attributes and common container settings."
 
 ### fn spec.template.pod.securityContext.withFsGroup
 
@@ -2881,7 +3126,7 @@ withRunAsUserName(runAsUserName)
 
 ## obj spec.template.podDisruptionBudget
 
-Template for Kafka Connect `PodDisruptionBudget`.
+"Template for Kafka Connect `PodDisruptionBudget`."
 
 ### fn spec.template.podDisruptionBudget.withMaxUnavailable
 
@@ -2889,11 +3134,11 @@ Template for Kafka Connect `PodDisruptionBudget`.
 withMaxUnavailable(maxUnavailable)
 ```
 
-Maximum number of unavailable pods to allow automatic Pod eviction. A Pod eviction is allowed when the `maxUnavailable` number of pods or fewer are unavailable after the eviction. Setting this value to 0 prevents all voluntary evictions, so the pods must be evicted manually. Defaults to 1.
+"Maximum number of unavailable pods to allow automatic Pod eviction. A Pod eviction is allowed when the `maxUnavailable` number of pods or fewer are unavailable after the eviction. Setting this value to 0 prevents all voluntary evictions, so the pods must be evicted manually. Defaults to 1."
 
 ## obj spec.template.podDisruptionBudget.metadata
 
-Metadata to apply to the `PodDistruptionBugetTemplate` resource.
+"Metadata to apply to the `PodDistruptionBugetTemplate` resource."
 
 ### fn spec.template.podDisruptionBudget.metadata.withAnnotations
 
@@ -2901,7 +3146,17 @@ Metadata to apply to the `PodDistruptionBugetTemplate` resource.
 withAnnotations(annotations)
 ```
 
-Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`.
+"Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+### fn spec.template.podDisruptionBudget.metadata.withAnnotationsMixin
+
+```ts
+withAnnotationsMixin(annotations)
+```
+
+"Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+**Note:** This function appends passed data to existing values
 
 ### fn spec.template.podDisruptionBudget.metadata.withLabels
 
@@ -2909,15 +3164,25 @@ Annotations added to the resource template. Can be applied to different resource
 withLabels(labels)
 ```
 
-Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`.
+"Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+### fn spec.template.podDisruptionBudget.metadata.withLabelsMixin
+
+```ts
+withLabelsMixin(labels)
+```
+
+"Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+**Note:** This function appends passed data to existing values
 
 ## obj spec.template.serviceAccount
 
-Template for the Kafka Connect service account.
+"Template for the Kafka Connect service account."
 
 ## obj spec.template.serviceAccount.metadata
 
-Metadata applied to the resource.
+"Metadata applied to the resource."
 
 ### fn spec.template.serviceAccount.metadata.withAnnotations
 
@@ -2925,7 +3190,17 @@ Metadata applied to the resource.
 withAnnotations(annotations)
 ```
 
-Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`.
+"Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+### fn spec.template.serviceAccount.metadata.withAnnotationsMixin
+
+```ts
+withAnnotationsMixin(annotations)
+```
+
+"Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+**Note:** This function appends passed data to existing values
 
 ### fn spec.template.serviceAccount.metadata.withLabels
 
@@ -2933,11 +3208,21 @@ Annotations added to the resource template. Can be applied to different resource
 withLabels(labels)
 ```
 
-Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`.
+"Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+### fn spec.template.serviceAccount.metadata.withLabelsMixin
+
+```ts
+withLabelsMixin(labels)
+```
+
+"Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+**Note:** This function appends passed data to existing values
 
 ## obj spec.tls
 
-TLS configuration.
+"TLS configuration."
 
 ### fn spec.tls.withTrustedCertificates
 
@@ -2945,7 +3230,7 @@ TLS configuration.
 withTrustedCertificates(trustedCertificates)
 ```
 
-Trusted certificates for TLS connection.
+"Trusted certificates for TLS connection."
 
 ### fn spec.tls.withTrustedCertificatesMixin
 
@@ -2953,13 +3238,13 @@ Trusted certificates for TLS connection.
 withTrustedCertificatesMixin(trustedCertificates)
 ```
 
-Trusted certificates for TLS connection.
+"Trusted certificates for TLS connection."
 
 **Note:** This function appends passed data to existing values
 
 ## obj spec.tracing
 
-The configuration of tracing in Kafka Connect.
+"The configuration of tracing in Kafka Connect."
 
 ### fn spec.tracing.withType
 
@@ -2967,4 +3252,4 @@ The configuration of tracing in Kafka Connect.
 withType(type)
 ```
 
-Type of the tracing used. Currently the only supported type is `jaeger` for Jaeger tracing.
+"Type of the tracing used. Currently the only supported type is `jaeger` for Jaeger tracing."

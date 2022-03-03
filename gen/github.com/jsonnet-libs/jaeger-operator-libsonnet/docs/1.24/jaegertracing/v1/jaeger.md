@@ -32,11 +32,10 @@ permalink: /1.24/jaegertracing/v1/jaeger/
   * [`fn withSelfLink(selfLink)`](#fn-metadatawithselflink)
   * [`fn withUid(uid)`](#fn-metadatawithuid)
 * [`obj spec`](#obj-spec)
-  * [`fn withAgent(agent)`](#fn-specwithagent)
   * [`fn withAnnotations(annotations)`](#fn-specwithannotations)
+  * [`fn withAnnotationsMixin(annotations)`](#fn-specwithannotationsmixin)
   * [`fn withLabels(labels)`](#fn-specwithlabels)
   * [`fn withLabelsMixin(labels)`](#fn-specwithlabelsmixin)
-  * [`fn withResources(resources)`](#fn-specwithresources)
   * [`fn withServiceAccount(serviceAccount)`](#fn-specwithserviceaccount)
   * [`fn withStrategy(strategy)`](#fn-specwithstrategy)
   * [`fn withTolerations(tolerations)`](#fn-specwithtolerations)
@@ -62,14 +61,108 @@ permalink: /1.24/jaegertracing/v1/jaeger/
       * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specaffinitypodantiaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
       * [`fn withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specaffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecution)
       * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specaffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
+  * [`obj spec.agent`](#obj-specagent)
+    * [`fn withAnnotations(annotations)`](#fn-specagentwithannotations)
+    * [`fn withAnnotationsMixin(annotations)`](#fn-specagentwithannotationsmixin)
+    * [`fn withConfig(config)`](#fn-specagentwithconfig)
+    * [`fn withConfigMixin(config)`](#fn-specagentwithconfigmixin)
+    * [`fn withDnsPolicy(dnsPolicy)`](#fn-specagentwithdnspolicy)
+    * [`fn withHostNetwork(hostNetwork)`](#fn-specagentwithhostnetwork)
+    * [`fn withImage(image)`](#fn-specagentwithimage)
+    * [`fn withImagePullSecrets(imagePullSecrets)`](#fn-specagentwithimagepullsecrets)
+    * [`fn withImagePullSecretsMixin(imagePullSecrets)`](#fn-specagentwithimagepullsecretsmixin)
+    * [`fn withLabels(labels)`](#fn-specagentwithlabels)
+    * [`fn withLabelsMixin(labels)`](#fn-specagentwithlabelsmixin)
+    * [`fn withOptions(options)`](#fn-specagentwithoptions)
+    * [`fn withOptionsMixin(options)`](#fn-specagentwithoptionsmixin)
+    * [`fn withPriorityClassName(priorityClassName)`](#fn-specagentwithpriorityclassname)
+    * [`fn withServiceAccount(serviceAccount)`](#fn-specagentwithserviceaccount)
+    * [`fn withStrategy(strategy)`](#fn-specagentwithstrategy)
+    * [`fn withTolerations(tolerations)`](#fn-specagentwithtolerations)
+    * [`fn withTolerationsMixin(tolerations)`](#fn-specagentwithtolerationsmixin)
+    * [`fn withVolumeMounts(volumeMounts)`](#fn-specagentwithvolumemounts)
+    * [`fn withVolumeMountsMixin(volumeMounts)`](#fn-specagentwithvolumemountsmixin)
+    * [`fn withVolumes(volumes)`](#fn-specagentwithvolumes)
+    * [`fn withVolumesMixin(volumes)`](#fn-specagentwithvolumesmixin)
+    * [`obj spec.agent.affinity`](#obj-specagentaffinity)
+      * [`obj spec.agent.affinity.nodeAffinity`](#obj-specagentaffinitynodeaffinity)
+        * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specagentaffinitynodeaffinitywithpreferredduringschedulingignoredduringexecution)
+        * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specagentaffinitynodeaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
+        * [`obj spec.agent.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-specagentaffinitynodeaffinityrequiredduringschedulingignoredduringexecution)
+          * [`fn withNodeSelectorTerms(nodeSelectorTerms)`](#fn-specagentaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionwithnodeselectorterms)
+          * [`fn withNodeSelectorTermsMixin(nodeSelectorTerms)`](#fn-specagentaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionwithnodeselectortermsmixin)
+      * [`obj spec.agent.affinity.podAffinity`](#obj-specagentaffinitypodaffinity)
+        * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specagentaffinitypodaffinitywithpreferredduringschedulingignoredduringexecution)
+        * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specagentaffinitypodaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
+        * [`fn withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specagentaffinitypodaffinitywithrequiredduringschedulingignoredduringexecution)
+        * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specagentaffinitypodaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
+      * [`obj spec.agent.affinity.podAntiAffinity`](#obj-specagentaffinitypodantiaffinity)
+        * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specagentaffinitypodantiaffinitywithpreferredduringschedulingignoredduringexecution)
+        * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specagentaffinitypodantiaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
+        * [`fn withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specagentaffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecution)
+        * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specagentaffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
+    * [`obj spec.agent.resources`](#obj-specagentresources)
+      * [`fn withLimits(limits)`](#fn-specagentresourceswithlimits)
+      * [`fn withLimitsMixin(limits)`](#fn-specagentresourceswithlimitsmixin)
+      * [`fn withRequests(requests)`](#fn-specagentresourceswithrequests)
+      * [`fn withRequestsMixin(requests)`](#fn-specagentresourceswithrequestsmixin)
+    * [`obj spec.agent.securityContext`](#obj-specagentsecuritycontext)
+      * [`fn withFsGroup(fsGroup)`](#fn-specagentsecuritycontextwithfsgroup)
+      * [`fn withFsGroupChangePolicy(fsGroupChangePolicy)`](#fn-specagentsecuritycontextwithfsgroupchangepolicy)
+      * [`fn withRunAsGroup(runAsGroup)`](#fn-specagentsecuritycontextwithrunasgroup)
+      * [`fn withRunAsNonRoot(runAsNonRoot)`](#fn-specagentsecuritycontextwithrunasnonroot)
+      * [`fn withRunAsUser(runAsUser)`](#fn-specagentsecuritycontextwithrunasuser)
+      * [`fn withSupplementalGroups(supplementalGroups)`](#fn-specagentsecuritycontextwithsupplementalgroups)
+      * [`fn withSupplementalGroupsMixin(supplementalGroups)`](#fn-specagentsecuritycontextwithsupplementalgroupsmixin)
+      * [`fn withSysctls(sysctls)`](#fn-specagentsecuritycontextwithsysctls)
+      * [`fn withSysctlsMixin(sysctls)`](#fn-specagentsecuritycontextwithsysctlsmixin)
+      * [`obj spec.agent.securityContext.seLinuxOptions`](#obj-specagentsecuritycontextselinuxoptions)
+        * [`fn withLevel(level)`](#fn-specagentsecuritycontextselinuxoptionswithlevel)
+        * [`fn withRole(role)`](#fn-specagentsecuritycontextselinuxoptionswithrole)
+        * [`fn withType(type)`](#fn-specagentsecuritycontextselinuxoptionswithtype)
+        * [`fn withUser(user)`](#fn-specagentsecuritycontextselinuxoptionswithuser)
+      * [`obj spec.agent.securityContext.seccompProfile`](#obj-specagentsecuritycontextseccompprofile)
+        * [`fn withLocalhostProfile(localhostProfile)`](#fn-specagentsecuritycontextseccompprofilewithlocalhostprofile)
+        * [`fn withType(type)`](#fn-specagentsecuritycontextseccompprofilewithtype)
+      * [`obj spec.agent.securityContext.windowsOptions`](#obj-specagentsecuritycontextwindowsoptions)
+        * [`fn withGmsaCredentialSpec(gmsaCredentialSpec)`](#fn-specagentsecuritycontextwindowsoptionswithgmsacredentialspec)
+        * [`fn withGmsaCredentialSpecName(gmsaCredentialSpecName)`](#fn-specagentsecuritycontextwindowsoptionswithgmsacredentialspecname)
+        * [`fn withRunAsUserName(runAsUserName)`](#fn-specagentsecuritycontextwindowsoptionswithrunasusername)
+    * [`obj spec.agent.sidecarSecurityContext`](#obj-specagentsidecarsecuritycontext)
+      * [`fn withAllowPrivilegeEscalation(allowPrivilegeEscalation)`](#fn-specagentsidecarsecuritycontextwithallowprivilegeescalation)
+      * [`fn withPrivileged(privileged)`](#fn-specagentsidecarsecuritycontextwithprivileged)
+      * [`fn withProcMount(procMount)`](#fn-specagentsidecarsecuritycontextwithprocmount)
+      * [`fn withReadOnlyRootFilesystem(readOnlyRootFilesystem)`](#fn-specagentsidecarsecuritycontextwithreadonlyrootfilesystem)
+      * [`fn withRunAsGroup(runAsGroup)`](#fn-specagentsidecarsecuritycontextwithrunasgroup)
+      * [`fn withRunAsNonRoot(runAsNonRoot)`](#fn-specagentsidecarsecuritycontextwithrunasnonroot)
+      * [`fn withRunAsUser(runAsUser)`](#fn-specagentsidecarsecuritycontextwithrunasuser)
+      * [`obj spec.agent.sidecarSecurityContext.capabilities`](#obj-specagentsidecarsecuritycontextcapabilities)
+        * [`fn withAdd(add)`](#fn-specagentsidecarsecuritycontextcapabilitieswithadd)
+        * [`fn withAddMixin(add)`](#fn-specagentsidecarsecuritycontextcapabilitieswithaddmixin)
+        * [`fn withDrop(drop)`](#fn-specagentsidecarsecuritycontextcapabilitieswithdrop)
+        * [`fn withDropMixin(drop)`](#fn-specagentsidecarsecuritycontextcapabilitieswithdropmixin)
+      * [`obj spec.agent.sidecarSecurityContext.seLinuxOptions`](#obj-specagentsidecarsecuritycontextselinuxoptions)
+        * [`fn withLevel(level)`](#fn-specagentsidecarsecuritycontextselinuxoptionswithlevel)
+        * [`fn withRole(role)`](#fn-specagentsidecarsecuritycontextselinuxoptionswithrole)
+        * [`fn withType(type)`](#fn-specagentsidecarsecuritycontextselinuxoptionswithtype)
+        * [`fn withUser(user)`](#fn-specagentsidecarsecuritycontextselinuxoptionswithuser)
+      * [`obj spec.agent.sidecarSecurityContext.seccompProfile`](#obj-specagentsidecarsecuritycontextseccompprofile)
+        * [`fn withLocalhostProfile(localhostProfile)`](#fn-specagentsidecarsecuritycontextseccompprofilewithlocalhostprofile)
+        * [`fn withType(type)`](#fn-specagentsidecarsecuritycontextseccompprofilewithtype)
+      * [`obj spec.agent.sidecarSecurityContext.windowsOptions`](#obj-specagentsidecarsecuritycontextwindowsoptions)
+        * [`fn withGmsaCredentialSpec(gmsaCredentialSpec)`](#fn-specagentsidecarsecuritycontextwindowsoptionswithgmsacredentialspec)
+        * [`fn withGmsaCredentialSpecName(gmsaCredentialSpecName)`](#fn-specagentsidecarsecuritycontextwindowsoptionswithgmsacredentialspecname)
+        * [`fn withRunAsUserName(runAsUserName)`](#fn-specagentsidecarsecuritycontextwindowsoptionswithrunasusername)
   * [`obj spec.allInOne`](#obj-specallinone)
     * [`fn withAnnotations(annotations)`](#fn-specallinonewithannotations)
+    * [`fn withAnnotationsMixin(annotations)`](#fn-specallinonewithannotationsmixin)
     * [`fn withConfig(config)`](#fn-specallinonewithconfig)
+    * [`fn withConfigMixin(config)`](#fn-specallinonewithconfigmixin)
     * [`fn withImage(image)`](#fn-specallinonewithimage)
     * [`fn withLabels(labels)`](#fn-specallinonewithlabels)
     * [`fn withLabelsMixin(labels)`](#fn-specallinonewithlabelsmixin)
     * [`fn withOptions(options)`](#fn-specallinonewithoptions)
-    * [`fn withResources(resources)`](#fn-specallinonewithresources)
+    * [`fn withOptionsMixin(options)`](#fn-specallinonewithoptionsmixin)
     * [`fn withServiceAccount(serviceAccount)`](#fn-specallinonewithserviceaccount)
     * [`fn withTolerations(tolerations)`](#fn-specallinonewithtolerations)
     * [`fn withTolerationsMixin(tolerations)`](#fn-specallinonewithtolerationsmixin)
@@ -95,6 +188,11 @@ permalink: /1.24/jaegertracing/v1/jaeger/
         * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specallinoneaffinitypodantiaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
         * [`fn withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specallinoneaffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecution)
         * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specallinoneaffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
+    * [`obj spec.allInOne.resources`](#obj-specallinoneresources)
+      * [`fn withLimits(limits)`](#fn-specallinoneresourceswithlimits)
+      * [`fn withLimitsMixin(limits)`](#fn-specallinoneresourceswithlimitsmixin)
+      * [`fn withRequests(requests)`](#fn-specallinoneresourceswithrequests)
+      * [`fn withRequestsMixin(requests)`](#fn-specallinoneresourceswithrequestsmixin)
     * [`obj spec.allInOne.securityContext`](#obj-specallinonesecuritycontext)
       * [`fn withFsGroup(fsGroup)`](#fn-specallinonesecuritycontextwithfsgroup)
       * [`fn withFsGroupChangePolicy(fsGroupChangePolicy)`](#fn-specallinonesecuritycontextwithfsgroupchangepolicy)
@@ -124,17 +222,19 @@ permalink: /1.24/jaegertracing/v1/jaeger/
         * [`fn withMaxUnavailable(maxUnavailable)`](#fn-specallinonestrategyrollingupdatewithmaxunavailable)
   * [`obj spec.collector`](#obj-speccollector)
     * [`fn withAnnotations(annotations)`](#fn-speccollectorwithannotations)
+    * [`fn withAnnotationsMixin(annotations)`](#fn-speccollectorwithannotationsmixin)
     * [`fn withAutoscale(autoscale)`](#fn-speccollectorwithautoscale)
     * [`fn withConfig(config)`](#fn-speccollectorwithconfig)
+    * [`fn withConfigMixin(config)`](#fn-speccollectorwithconfigmixin)
     * [`fn withImage(image)`](#fn-speccollectorwithimage)
     * [`fn withLabels(labels)`](#fn-speccollectorwithlabels)
     * [`fn withLabelsMixin(labels)`](#fn-speccollectorwithlabelsmixin)
     * [`fn withMaxReplicas(maxReplicas)`](#fn-speccollectorwithmaxreplicas)
     * [`fn withMinReplicas(minReplicas)`](#fn-speccollectorwithminreplicas)
     * [`fn withOptions(options)`](#fn-speccollectorwithoptions)
+    * [`fn withOptionsMixin(options)`](#fn-speccollectorwithoptionsmixin)
     * [`fn withPriorityClassName(priorityClassName)`](#fn-speccollectorwithpriorityclassname)
     * [`fn withReplicas(replicas)`](#fn-speccollectorwithreplicas)
-    * [`fn withResources(resources)`](#fn-speccollectorwithresources)
     * [`fn withServiceAccount(serviceAccount)`](#fn-speccollectorwithserviceaccount)
     * [`fn withServiceType(serviceType)`](#fn-speccollectorwithservicetype)
     * [`fn withTolerations(tolerations)`](#fn-speccollectorwithtolerations)
@@ -160,6 +260,11 @@ permalink: /1.24/jaegertracing/v1/jaeger/
         * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-speccollectoraffinitypodantiaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
         * [`fn withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-speccollectoraffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecution)
         * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-speccollectoraffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
+    * [`obj spec.collector.resources`](#obj-speccollectorresources)
+      * [`fn withLimits(limits)`](#fn-speccollectorresourceswithlimits)
+      * [`fn withLimitsMixin(limits)`](#fn-speccollectorresourceswithlimitsmixin)
+      * [`fn withRequests(requests)`](#fn-speccollectorresourceswithrequests)
+      * [`fn withRequestsMixin(requests)`](#fn-speccollectorresourceswithrequestsmixin)
     * [`obj spec.collector.securityContext`](#obj-speccollectorsecuritycontext)
       * [`fn withFsGroup(fsGroup)`](#fn-speccollectorsecuritycontextwithfsgroup)
       * [`fn withFsGroupChangePolicy(fsGroupChangePolicy)`](#fn-speccollectorsecuritycontextwithfsgroupchangepolicy)
@@ -189,16 +294,18 @@ permalink: /1.24/jaegertracing/v1/jaeger/
         * [`fn withMaxUnavailable(maxUnavailable)`](#fn-speccollectorstrategyrollingupdatewithmaxunavailable)
   * [`obj spec.ingester`](#obj-specingester)
     * [`fn withAnnotations(annotations)`](#fn-specingesterwithannotations)
+    * [`fn withAnnotationsMixin(annotations)`](#fn-specingesterwithannotationsmixin)
     * [`fn withAutoscale(autoscale)`](#fn-specingesterwithautoscale)
     * [`fn withConfig(config)`](#fn-specingesterwithconfig)
+    * [`fn withConfigMixin(config)`](#fn-specingesterwithconfigmixin)
     * [`fn withImage(image)`](#fn-specingesterwithimage)
     * [`fn withLabels(labels)`](#fn-specingesterwithlabels)
     * [`fn withLabelsMixin(labels)`](#fn-specingesterwithlabelsmixin)
     * [`fn withMaxReplicas(maxReplicas)`](#fn-specingesterwithmaxreplicas)
     * [`fn withMinReplicas(minReplicas)`](#fn-specingesterwithminreplicas)
     * [`fn withOptions(options)`](#fn-specingesterwithoptions)
+    * [`fn withOptionsMixin(options)`](#fn-specingesterwithoptionsmixin)
     * [`fn withReplicas(replicas)`](#fn-specingesterwithreplicas)
-    * [`fn withResources(resources)`](#fn-specingesterwithresources)
     * [`fn withServiceAccount(serviceAccount)`](#fn-specingesterwithserviceaccount)
     * [`fn withTolerations(tolerations)`](#fn-specingesterwithtolerations)
     * [`fn withTolerationsMixin(tolerations)`](#fn-specingesterwithtolerationsmixin)
@@ -223,6 +330,11 @@ permalink: /1.24/jaegertracing/v1/jaeger/
         * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specingesteraffinitypodantiaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
         * [`fn withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specingesteraffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecution)
         * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specingesteraffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
+    * [`obj spec.ingester.resources`](#obj-specingesterresources)
+      * [`fn withLimits(limits)`](#fn-specingesterresourceswithlimits)
+      * [`fn withLimitsMixin(limits)`](#fn-specingesterresourceswithlimitsmixin)
+      * [`fn withRequests(requests)`](#fn-specingesterresourceswithrequests)
+      * [`fn withRequestsMixin(requests)`](#fn-specingesterresourceswithrequestsmixin)
     * [`obj spec.ingester.securityContext`](#obj-specingestersecuritycontext)
       * [`fn withFsGroup(fsGroup)`](#fn-specingestersecuritycontextwithfsgroup)
       * [`fn withFsGroupChangePolicy(fsGroupChangePolicy)`](#fn-specingestersecuritycontextwithfsgroupchangepolicy)
@@ -252,13 +364,14 @@ permalink: /1.24/jaegertracing/v1/jaeger/
         * [`fn withMaxUnavailable(maxUnavailable)`](#fn-specingesterstrategyrollingupdatewithmaxunavailable)
   * [`obj spec.ingress`](#obj-specingress)
     * [`fn withAnnotations(annotations)`](#fn-specingresswithannotations)
+    * [`fn withAnnotationsMixin(annotations)`](#fn-specingresswithannotationsmixin)
     * [`fn withEnabled(enabled)`](#fn-specingresswithenabled)
     * [`fn withHosts(hosts)`](#fn-specingresswithhosts)
     * [`fn withHostsMixin(hosts)`](#fn-specingresswithhostsmixin)
     * [`fn withLabels(labels)`](#fn-specingresswithlabels)
     * [`fn withLabelsMixin(labels)`](#fn-specingresswithlabelsmixin)
     * [`fn withOptions(options)`](#fn-specingresswithoptions)
-    * [`fn withResources(resources)`](#fn-specingresswithresources)
+    * [`fn withOptionsMixin(options)`](#fn-specingresswithoptionsmixin)
     * [`fn withSecretName(secretName)`](#fn-specingresswithsecretname)
     * [`fn withSecurity(security)`](#fn-specingresswithsecurity)
     * [`fn withServiceAccount(serviceAccount)`](#fn-specingresswithserviceaccount)
@@ -292,6 +405,11 @@ permalink: /1.24/jaegertracing/v1/jaeger/
       * [`fn withHtpasswdFile(htpasswdFile)`](#fn-specingressopenshiftwithhtpasswdfile)
       * [`fn withSar(sar)`](#fn-specingressopenshiftwithsar)
       * [`fn withSkipLogout(skipLogout)`](#fn-specingressopenshiftwithskiplogout)
+    * [`obj spec.ingress.resources`](#obj-specingressresources)
+      * [`fn withLimits(limits)`](#fn-specingressresourceswithlimits)
+      * [`fn withLimitsMixin(limits)`](#fn-specingressresourceswithlimitsmixin)
+      * [`fn withRequests(requests)`](#fn-specingressresourceswithrequests)
+      * [`fn withRequestsMixin(requests)`](#fn-specingressresourceswithrequestsmixin)
     * [`obj spec.ingress.securityContext`](#obj-specingresssecuritycontext)
       * [`fn withFsGroup(fsGroup)`](#fn-specingresssecuritycontextwithfsgroup)
       * [`fn withFsGroupChangePolicy(fsGroupChangePolicy)`](#fn-specingresssecuritycontextwithfsgroupchangepolicy)
@@ -316,14 +434,15 @@ permalink: /1.24/jaegertracing/v1/jaeger/
         * [`fn withRunAsUserName(runAsUserName)`](#fn-specingresssecuritycontextwindowsoptionswithrunasusername)
   * [`obj spec.query`](#obj-specquery)
     * [`fn withAnnotations(annotations)`](#fn-specquerywithannotations)
+    * [`fn withAnnotationsMixin(annotations)`](#fn-specquerywithannotationsmixin)
     * [`fn withImage(image)`](#fn-specquerywithimage)
     * [`fn withLabels(labels)`](#fn-specquerywithlabels)
     * [`fn withLabelsMixin(labels)`](#fn-specquerywithlabelsmixin)
     * [`fn withNodePort(nodePort)`](#fn-specquerywithnodeport)
     * [`fn withOptions(options)`](#fn-specquerywithoptions)
+    * [`fn withOptionsMixin(options)`](#fn-specquerywithoptionsmixin)
     * [`fn withPriorityClassName(priorityClassName)`](#fn-specquerywithpriorityclassname)
     * [`fn withReplicas(replicas)`](#fn-specquerywithreplicas)
-    * [`fn withResources(resources)`](#fn-specquerywithresources)
     * [`fn withServiceAccount(serviceAccount)`](#fn-specquerywithserviceaccount)
     * [`fn withServiceType(serviceType)`](#fn-specquerywithservicetype)
     * [`fn withTolerations(tolerations)`](#fn-specquerywithtolerations)
@@ -350,6 +469,11 @@ permalink: /1.24/jaegertracing/v1/jaeger/
         * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specqueryaffinitypodantiaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
         * [`fn withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specqueryaffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecution)
         * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specqueryaffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
+    * [`obj spec.query.resources`](#obj-specqueryresources)
+      * [`fn withLimits(limits)`](#fn-specqueryresourceswithlimits)
+      * [`fn withLimitsMixin(limits)`](#fn-specqueryresourceswithlimitsmixin)
+      * [`fn withRequests(requests)`](#fn-specqueryresourceswithrequests)
+      * [`fn withRequestsMixin(requests)`](#fn-specqueryresourceswithrequestsmixin)
     * [`obj spec.query.securityContext`](#obj-specquerysecuritycontext)
       * [`fn withFsGroup(fsGroup)`](#fn-specquerysecuritycontextwithfsgroup)
       * [`fn withFsGroupChangePolicy(fsGroupChangePolicy)`](#fn-specquerysecuritycontextwithfsgroupchangepolicy)
@@ -377,8 +501,14 @@ permalink: /1.24/jaegertracing/v1/jaeger/
       * [`obj spec.query.strategy.rollingUpdate`](#obj-specquerystrategyrollingupdate)
         * [`fn withMaxSurge(maxSurge)`](#fn-specquerystrategyrollingupdatewithmaxsurge)
         * [`fn withMaxUnavailable(maxUnavailable)`](#fn-specquerystrategyrollingupdatewithmaxunavailable)
+  * [`obj spec.resources`](#obj-specresources)
+    * [`fn withLimits(limits)`](#fn-specresourceswithlimits)
+    * [`fn withLimitsMixin(limits)`](#fn-specresourceswithlimitsmixin)
+    * [`fn withRequests(requests)`](#fn-specresourceswithrequests)
+    * [`fn withRequestsMixin(requests)`](#fn-specresourceswithrequestsmixin)
   * [`obj spec.sampling`](#obj-specsampling)
     * [`fn withOptions(options)`](#fn-specsamplingwithoptions)
+    * [`fn withOptionsMixin(options)`](#fn-specsamplingwithoptionsmixin)
   * [`obj spec.securityContext`](#obj-specsecuritycontext)
     * [`fn withFsGroup(fsGroup)`](#fn-specsecuritycontextwithfsgroup)
     * [`fn withFsGroupChangePolicy(fsGroupChangePolicy)`](#fn-specsecuritycontextwithfsgroupchangepolicy)
@@ -403,6 +533,7 @@ permalink: /1.24/jaegertracing/v1/jaeger/
       * [`fn withRunAsUserName(runAsUserName)`](#fn-specsecuritycontextwindowsoptionswithrunasusername)
   * [`obj spec.storage`](#obj-specstorage)
     * [`fn withOptions(options)`](#fn-specstoragewithoptions)
+    * [`fn withOptionsMixin(options)`](#fn-specstoragewithoptionsmixin)
     * [`fn withSecretName(secretName)`](#fn-specstoragewithsecretname)
     * [`fn withType(type)`](#fn-specstoragewithtype)
     * [`obj spec.storage.cassandraCreateSchema`](#obj-specstoragecassandracreateschema)
@@ -432,6 +563,7 @@ permalink: /1.24/jaegertracing/v1/jaeger/
           * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specstoragecassandracreateschemaaffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
     * [`obj spec.storage.dependencies`](#obj-specstoragedependencies)
       * [`fn withAnnotations(annotations)`](#fn-specstoragedependencieswithannotations)
+      * [`fn withAnnotationsMixin(annotations)`](#fn-specstoragedependencieswithannotationsmixin)
       * [`fn withBackoffLimit(backoffLimit)`](#fn-specstoragedependencieswithbackofflimit)
       * [`fn withCassandraClientAuthEnabled(cassandraClientAuthEnabled)`](#fn-specstoragedependencieswithcassandraclientauthenabled)
       * [`fn withElasticsearchClientNodeOnly(elasticsearchClientNodeOnly)`](#fn-specstoragedependencieswithelasticsearchclientnodeonly)
@@ -442,7 +574,6 @@ permalink: /1.24/jaegertracing/v1/jaeger/
       * [`fn withJavaOpts(javaOpts)`](#fn-specstoragedependencieswithjavaopts)
       * [`fn withLabels(labels)`](#fn-specstoragedependencieswithlabels)
       * [`fn withLabelsMixin(labels)`](#fn-specstoragedependencieswithlabelsmixin)
-      * [`fn withResources(resources)`](#fn-specstoragedependencieswithresources)
       * [`fn withSchedule(schedule)`](#fn-specstoragedependencieswithschedule)
       * [`fn withServiceAccount(serviceAccount)`](#fn-specstoragedependencieswithserviceaccount)
       * [`fn withSparkMaster(sparkMaster)`](#fn-specstoragedependencieswithsparkmaster)
@@ -471,6 +602,11 @@ permalink: /1.24/jaegertracing/v1/jaeger/
           * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specstoragedependenciesaffinitypodantiaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
           * [`fn withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specstoragedependenciesaffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecution)
           * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specstoragedependenciesaffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
+      * [`obj spec.storage.dependencies.resources`](#obj-specstoragedependenciesresources)
+        * [`fn withLimits(limits)`](#fn-specstoragedependenciesresourceswithlimits)
+        * [`fn withLimitsMixin(limits)`](#fn-specstoragedependenciesresourceswithlimitsmixin)
+        * [`fn withRequests(requests)`](#fn-specstoragedependenciesresourceswithrequests)
+        * [`fn withRequestsMixin(requests)`](#fn-specstoragedependenciesresourceswithrequestsmixin)
       * [`obj spec.storage.dependencies.securityContext`](#obj-specstoragedependenciessecuritycontext)
         * [`fn withFsGroup(fsGroup)`](#fn-specstoragedependenciessecuritycontextwithfsgroup)
         * [`fn withFsGroupChangePolicy(fsGroupChangePolicy)`](#fn-specstoragedependenciessecuritycontextwithfsgroupchangepolicy)
@@ -511,13 +647,13 @@ permalink: /1.24/jaegertracing/v1/jaeger/
         * [`fn withStorageClassName(storageClassName)`](#fn-specstorageelasticsearchstoragewithstorageclassname)
     * [`obj spec.storage.esIndexCleaner`](#obj-specstorageesindexcleaner)
       * [`fn withAnnotations(annotations)`](#fn-specstorageesindexcleanerwithannotations)
+      * [`fn withAnnotationsMixin(annotations)`](#fn-specstorageesindexcleanerwithannotationsmixin)
       * [`fn withBackoffLimit(backoffLimit)`](#fn-specstorageesindexcleanerwithbackofflimit)
       * [`fn withEnabled(enabled)`](#fn-specstorageesindexcleanerwithenabled)
       * [`fn withImage(image)`](#fn-specstorageesindexcleanerwithimage)
       * [`fn withLabels(labels)`](#fn-specstorageesindexcleanerwithlabels)
       * [`fn withLabelsMixin(labels)`](#fn-specstorageesindexcleanerwithlabelsmixin)
       * [`fn withNumberOfDays(numberOfDays)`](#fn-specstorageesindexcleanerwithnumberofdays)
-      * [`fn withResources(resources)`](#fn-specstorageesindexcleanerwithresources)
       * [`fn withSchedule(schedule)`](#fn-specstorageesindexcleanerwithschedule)
       * [`fn withServiceAccount(serviceAccount)`](#fn-specstorageesindexcleanerwithserviceaccount)
       * [`fn withSuccessfulJobsHistoryLimit(successfulJobsHistoryLimit)`](#fn-specstorageesindexcleanerwithsuccessfuljobshistorylimit)
@@ -545,6 +681,11 @@ permalink: /1.24/jaegertracing/v1/jaeger/
           * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specstorageesindexcleaneraffinitypodantiaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
           * [`fn withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specstorageesindexcleaneraffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecution)
           * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specstorageesindexcleaneraffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
+      * [`obj spec.storage.esIndexCleaner.resources`](#obj-specstorageesindexcleanerresources)
+        * [`fn withLimits(limits)`](#fn-specstorageesindexcleanerresourceswithlimits)
+        * [`fn withLimitsMixin(limits)`](#fn-specstorageesindexcleanerresourceswithlimitsmixin)
+        * [`fn withRequests(requests)`](#fn-specstorageesindexcleanerresourceswithrequests)
+        * [`fn withRequestsMixin(requests)`](#fn-specstorageesindexcleanerresourceswithrequestsmixin)
       * [`obj spec.storage.esIndexCleaner.securityContext`](#obj-specstorageesindexcleanersecuritycontext)
         * [`fn withFsGroup(fsGroup)`](#fn-specstorageesindexcleanersecuritycontextwithfsgroup)
         * [`fn withFsGroupChangePolicy(fsGroupChangePolicy)`](#fn-specstorageesindexcleanersecuritycontextwithfsgroupchangepolicy)
@@ -569,13 +710,13 @@ permalink: /1.24/jaegertracing/v1/jaeger/
           * [`fn withRunAsUserName(runAsUserName)`](#fn-specstorageesindexcleanersecuritycontextwindowsoptionswithrunasusername)
     * [`obj spec.storage.esRollover`](#obj-specstorageesrollover)
       * [`fn withAnnotations(annotations)`](#fn-specstorageesrolloverwithannotations)
+      * [`fn withAnnotationsMixin(annotations)`](#fn-specstorageesrolloverwithannotationsmixin)
       * [`fn withBackoffLimit(backoffLimit)`](#fn-specstorageesrolloverwithbackofflimit)
       * [`fn withConditions(conditions)`](#fn-specstorageesrolloverwithconditions)
       * [`fn withImage(image)`](#fn-specstorageesrolloverwithimage)
       * [`fn withLabels(labels)`](#fn-specstorageesrolloverwithlabels)
       * [`fn withLabelsMixin(labels)`](#fn-specstorageesrolloverwithlabelsmixin)
       * [`fn withReadTTL(readTTL)`](#fn-specstorageesrolloverwithreadttl)
-      * [`fn withResources(resources)`](#fn-specstorageesrolloverwithresources)
       * [`fn withSchedule(schedule)`](#fn-specstorageesrolloverwithschedule)
       * [`fn withServiceAccount(serviceAccount)`](#fn-specstorageesrolloverwithserviceaccount)
       * [`fn withSuccessfulJobsHistoryLimit(successfulJobsHistoryLimit)`](#fn-specstorageesrolloverwithsuccessfuljobshistorylimit)
@@ -603,6 +744,11 @@ permalink: /1.24/jaegertracing/v1/jaeger/
           * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specstorageesrolloveraffinitypodantiaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
           * [`fn withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specstorageesrolloveraffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecution)
           * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specstorageesrolloveraffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
+      * [`obj spec.storage.esRollover.resources`](#obj-specstorageesrolloverresources)
+        * [`fn withLimits(limits)`](#fn-specstorageesrolloverresourceswithlimits)
+        * [`fn withLimitsMixin(limits)`](#fn-specstorageesrolloverresourceswithlimitsmixin)
+        * [`fn withRequests(requests)`](#fn-specstorageesrolloverresourceswithrequests)
+        * [`fn withRequestsMixin(requests)`](#fn-specstorageesrolloverresourceswithrequestsmixin)
       * [`obj spec.storage.esRollover.securityContext`](#obj-specstorageesrolloversecuritycontext)
         * [`fn withFsGroup(fsGroup)`](#fn-specstorageesrolloversecuritycontextwithfsgroup)
         * [`fn withFsGroupChangePolicy(fsGroupChangePolicy)`](#fn-specstorageesrolloversecuritycontextwithfsgroupchangepolicy)
@@ -627,6 +773,7 @@ permalink: /1.24/jaegertracing/v1/jaeger/
           * [`fn withRunAsUserName(runAsUserName)`](#fn-specstorageesrolloversecuritycontextwindowsoptionswithrunasusername)
   * [`obj spec.ui`](#obj-specui)
     * [`fn withOptions(options)`](#fn-specuiwithoptions)
+    * [`fn withOptionsMixin(options)`](#fn-specuiwithoptionsmixin)
 
 ## Fields
 
@@ -640,7 +787,7 @@ new returns an instance of Jaeger
 
 ## obj metadata
 
-ObjectMeta is metadata that all persisted resources must have, which includes all objects users must create.
+"ObjectMeta is metadata that all persisted resources must have, which includes all objects users must create."
 
 ### fn metadata.withAnnotations
 
@@ -648,7 +795,7 @@ ObjectMeta is metadata that all persisted resources must have, which includes al
 withAnnotations(annotations)
 ```
 
-Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: http://kubernetes.io/docs/user-guide/annotations
+"Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: http://kubernetes.io/docs/user-guide/annotations"
 
 ### fn metadata.withAnnotationsMixin
 
@@ -656,7 +803,7 @@ Annotations is an unstructured key value map stored with a resource that may be 
 withAnnotationsMixin(annotations)
 ```
 
-Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: http://kubernetes.io/docs/user-guide/annotations
+"Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: http://kubernetes.io/docs/user-guide/annotations"
 
 **Note:** This function appends passed data to existing values
 
@@ -666,7 +813,7 @@ Annotations is an unstructured key value map stored with a resource that may be 
 withClusterName(clusterName)
 ```
 
-The name of the cluster which the object belongs to. This is used to distinguish resources with same name and namespace in different clusters. This field is not set anywhere right now and apiserver is going to ignore it if set in create or update request.
+"The name of the cluster which the object belongs to. This is used to distinguish resources with same name and namespace in different clusters. This field is not set anywhere right now and apiserver is going to ignore it if set in create or update request."
 
 ### fn metadata.withCreationTimestamp
 
@@ -674,7 +821,7 @@ The name of the cluster which the object belongs to. This is used to distinguish
 withCreationTimestamp(creationTimestamp)
 ```
 
-Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers.
+"Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers."
 
 ### fn metadata.withDeletionGracePeriodSeconds
 
@@ -682,7 +829,7 @@ Time is a wrapper around time.Time which supports correct marshaling to YAML and
 withDeletionGracePeriodSeconds(deletionGracePeriodSeconds)
 ```
 
-Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only.
+"Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only."
 
 ### fn metadata.withDeletionTimestamp
 
@@ -690,7 +837,7 @@ Number of seconds allowed for this object to gracefully terminate before it will
 withDeletionTimestamp(deletionTimestamp)
 ```
 
-Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers.
+"Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers."
 
 ### fn metadata.withFinalizers
 
@@ -698,7 +845,7 @@ Time is a wrapper around time.Time which supports correct marshaling to YAML and
 withFinalizers(finalizers)
 ```
 
-Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order.  Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list.
+"Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order.  Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list."
 
 ### fn metadata.withFinalizersMixin
 
@@ -706,7 +853,7 @@ Must be empty before the object is deleted from the registry. Each entry is an i
 withFinalizersMixin(finalizers)
 ```
 
-Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order.  Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list.
+"Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order.  Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list."
 
 **Note:** This function appends passed data to existing values
 
@@ -716,11 +863,7 @@ Must be empty before the object is deleted from the registry. Each entry is an i
 withGenerateName(generateName)
 ```
 
-GenerateName is an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server.
-
-If this field is specified and the generated name exists, the server will NOT return a 409 - instead, it will either return 201 Created or 500 with Reason ServerTimeout indicating a unique name could not be found in the time allotted, and the client should retry (optionally after the time indicated in the Retry-After header).
-
-Applied only if Name is not specified. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#idempotency
+"GenerateName is an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server.\n\nIf this field is specified and the generated name exists, the server will NOT return a 409 - instead, it will either return 201 Created or 500 with Reason ServerTimeout indicating a unique name could not be found in the time allotted, and the client should retry (optionally after the time indicated in the Retry-After header).\n\nApplied only if Name is not specified. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#idempotency"
 
 ### fn metadata.withGeneration
 
@@ -728,7 +871,7 @@ Applied only if Name is not specified. More info: https://git.k8s.io/community/c
 withGeneration(generation)
 ```
 
-A sequence number representing a specific generation of the desired state. Populated by the system. Read-only.
+"A sequence number representing a specific generation of the desired state. Populated by the system. Read-only."
 
 ### fn metadata.withLabels
 
@@ -736,7 +879,7 @@ A sequence number representing a specific generation of the desired state. Popul
 withLabels(labels)
 ```
 
-Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
+"Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels"
 
 ### fn metadata.withLabelsMixin
 
@@ -744,7 +887,7 @@ Map of string keys and values that can be used to organize and categorize (scope
 withLabelsMixin(labels)
 ```
 
-Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
+"Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels"
 
 **Note:** This function appends passed data to existing values
 
@@ -754,7 +897,7 @@ Map of string keys and values that can be used to organize and categorize (scope
 withManagedFields(managedFields)
 ```
 
-ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like 'ci-cd'. The set of fields is always in the version that the workflow used when modifying the object.
+"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
 
 ### fn metadata.withManagedFieldsMixin
 
@@ -762,7 +905,7 @@ ManagedFields maps workflow-id and version to the set of fields that are managed
 withManagedFieldsMixin(managedFields)
 ```
 
-ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like 'ci-cd'. The set of fields is always in the version that the workflow used when modifying the object.
+"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
 
 **Note:** This function appends passed data to existing values
 
@@ -772,7 +915,7 @@ ManagedFields maps workflow-id and version to the set of fields that are managed
 withName(name)
 ```
 
-Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+"Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names"
 
 ### fn metadata.withNamespace
 
@@ -780,9 +923,7 @@ Name must be unique within a namespace. Is required when creating resources, alt
 withNamespace(namespace)
 ```
 
-Namespace defines the space within which each name must be unique. An empty namespace is equivalent to the "default" namespace, but "default" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty.
-
-Must be a DNS_LABEL. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/namespaces
+"Namespace defines the space within which each name must be unique. An empty namespace is equivalent to the \"default\" namespace, but \"default\" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty.\n\nMust be a DNS_LABEL. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/namespaces"
 
 ### fn metadata.withOwnerReferences
 
@@ -790,7 +931,7 @@ Must be a DNS_LABEL. Cannot be updated. More info: http://kubernetes.io/docs/use
 withOwnerReferences(ownerReferences)
 ```
 
-List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller.
+"List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller."
 
 ### fn metadata.withOwnerReferencesMixin
 
@@ -798,7 +939,7 @@ List of objects depended by this object. If ALL objects in the list have been de
 withOwnerReferencesMixin(ownerReferences)
 ```
 
-List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller.
+"List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller."
 
 **Note:** This function appends passed data to existing values
 
@@ -808,9 +949,7 @@ List of objects depended by this object. If ALL objects in the list have been de
 withResourceVersion(resourceVersion)
 ```
 
-An opaque value that represents the internal version of this object that can be used by clients to determine when objects have changed. May be used for optimistic concurrency, change detection, and the watch operation on a resource or set of resources. Clients must treat these values as opaque and passed unmodified back to the server. They may only be valid for a particular resource or set of resources.
-
-Populated by the system. Read-only. Value must be treated as opaque by clients and . More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency
+"An opaque value that represents the internal version of this object that can be used by clients to determine when objects have changed. May be used for optimistic concurrency, change detection, and the watch operation on a resource or set of resources. Clients must treat these values as opaque and passed unmodified back to the server. They may only be valid for a particular resource or set of resources.\n\nPopulated by the system. Read-only. Value must be treated as opaque by clients and . More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency"
 
 ### fn metadata.withSelfLink
 
@@ -818,9 +957,7 @@ Populated by the system. Read-only. Value must be treated as opaque by clients a
 withSelfLink(selfLink)
 ```
 
-SelfLink is a URL representing this object. Populated by the system. Read-only.
-
-DEPRECATED Kubernetes will stop propagating this field in 1.20 release and the field is planned to be removed in 1.21 release.
+"SelfLink is a URL representing this object. Populated by the system. Read-only.\n\nDEPRECATED Kubernetes will stop propagating this field in 1.20 release and the field is planned to be removed in 1.21 release."
 
 ### fn metadata.withUid
 
@@ -828,19 +965,9 @@ DEPRECATED Kubernetes will stop propagating this field in 1.20 release and the f
 withUid(uid)
 ```
 
-UID is the unique in time and space value for this object. It is typically generated by the server on successful creation of a resource and is not allowed to change on PUT operations.
-
-Populated by the system. Read-only. More info: http://kubernetes.io/docs/user-guide/identifiers#uids
+"UID is the unique in time and space value for this object. It is typically generated by the server on successful creation of a resource and is not allowed to change on PUT operations.\n\nPopulated by the system. Read-only. More info: http://kubernetes.io/docs/user-guide/identifiers#uids"
 
 ## obj spec
-
-
-
-### fn spec.withAgent
-
-```ts
-withAgent(agent)
-```
 
 
 
@@ -851,6 +978,16 @@ withAnnotations(annotations)
 ```
 
 
+
+### fn spec.withAnnotationsMixin
+
+```ts
+withAnnotationsMixin(annotations)
+```
+
+
+
+**Note:** This function appends passed data to existing values
 
 ### fn spec.withLabels
 
@@ -869,14 +1006,6 @@ withLabelsMixin(labels)
 
 
 **Note:** This function appends passed data to existing values
-
-### fn spec.withResources
-
-```ts
-withResources(resources)
-```
-
-
 
 ### fn spec.withServiceAccount
 
@@ -1076,6 +1205,718 @@ withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringScheduling
 
 **Note:** This function appends passed data to existing values
 
+## obj spec.agent
+
+
+
+### fn spec.agent.withAnnotations
+
+```ts
+withAnnotations(annotations)
+```
+
+
+
+### fn spec.agent.withAnnotationsMixin
+
+```ts
+withAnnotationsMixin(annotations)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.agent.withConfig
+
+```ts
+withConfig(config)
+```
+
+
+
+### fn spec.agent.withConfigMixin
+
+```ts
+withConfigMixin(config)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.agent.withDnsPolicy
+
+```ts
+withDnsPolicy(dnsPolicy)
+```
+
+
+
+### fn spec.agent.withHostNetwork
+
+```ts
+withHostNetwork(hostNetwork)
+```
+
+
+
+### fn spec.agent.withImage
+
+```ts
+withImage(image)
+```
+
+
+
+### fn spec.agent.withImagePullSecrets
+
+```ts
+withImagePullSecrets(imagePullSecrets)
+```
+
+
+
+### fn spec.agent.withImagePullSecretsMixin
+
+```ts
+withImagePullSecretsMixin(imagePullSecrets)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.agent.withLabels
+
+```ts
+withLabels(labels)
+```
+
+
+
+### fn spec.agent.withLabelsMixin
+
+```ts
+withLabelsMixin(labels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.agent.withOptions
+
+```ts
+withOptions(options)
+```
+
+
+
+### fn spec.agent.withOptionsMixin
+
+```ts
+withOptionsMixin(options)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.agent.withPriorityClassName
+
+```ts
+withPriorityClassName(priorityClassName)
+```
+
+
+
+### fn spec.agent.withServiceAccount
+
+```ts
+withServiceAccount(serviceAccount)
+```
+
+
+
+### fn spec.agent.withStrategy
+
+```ts
+withStrategy(strategy)
+```
+
+
+
+### fn spec.agent.withTolerations
+
+```ts
+withTolerations(tolerations)
+```
+
+
+
+### fn spec.agent.withTolerationsMixin
+
+```ts
+withTolerationsMixin(tolerations)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.agent.withVolumeMounts
+
+```ts
+withVolumeMounts(volumeMounts)
+```
+
+
+
+### fn spec.agent.withVolumeMountsMixin
+
+```ts
+withVolumeMountsMixin(volumeMounts)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.agent.withVolumes
+
+```ts
+withVolumes(volumes)
+```
+
+
+
+### fn spec.agent.withVolumesMixin
+
+```ts
+withVolumesMixin(volumes)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.agent.affinity
+
+
+
+## obj spec.agent.affinity.nodeAffinity
+
+
+
+### fn spec.agent.affinity.nodeAffinity.withPreferredDuringSchedulingIgnoredDuringExecution
+
+```ts
+withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+### fn spec.agent.affinity.nodeAffinity.withPreferredDuringSchedulingIgnoredDuringExecutionMixin
+
+```ts
+withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.agent.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.agent.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNodeSelectorTerms
+
+```ts
+withNodeSelectorTerms(nodeSelectorTerms)
+```
+
+
+
+### fn spec.agent.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNodeSelectorTermsMixin
+
+```ts
+withNodeSelectorTermsMixin(nodeSelectorTerms)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.agent.affinity.podAffinity
+
+
+
+### fn spec.agent.affinity.podAffinity.withPreferredDuringSchedulingIgnoredDuringExecution
+
+```ts
+withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+### fn spec.agent.affinity.podAffinity.withPreferredDuringSchedulingIgnoredDuringExecutionMixin
+
+```ts
+withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.agent.affinity.podAffinity.withRequiredDuringSchedulingIgnoredDuringExecution
+
+```ts
+withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+### fn spec.agent.affinity.podAffinity.withRequiredDuringSchedulingIgnoredDuringExecutionMixin
+
+```ts
+withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.agent.affinity.podAntiAffinity
+
+
+
+### fn spec.agent.affinity.podAntiAffinity.withPreferredDuringSchedulingIgnoredDuringExecution
+
+```ts
+withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+### fn spec.agent.affinity.podAntiAffinity.withPreferredDuringSchedulingIgnoredDuringExecutionMixin
+
+```ts
+withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.agent.affinity.podAntiAffinity.withRequiredDuringSchedulingIgnoredDuringExecution
+
+```ts
+withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+### fn spec.agent.affinity.podAntiAffinity.withRequiredDuringSchedulingIgnoredDuringExecutionMixin
+
+```ts
+withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.agent.resources
+
+
+
+### fn spec.agent.resources.withLimits
+
+```ts
+withLimits(limits)
+```
+
+
+
+### fn spec.agent.resources.withLimitsMixin
+
+```ts
+withLimitsMixin(limits)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.agent.resources.withRequests
+
+```ts
+withRequests(requests)
+```
+
+
+
+### fn spec.agent.resources.withRequestsMixin
+
+```ts
+withRequestsMixin(requests)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.agent.securityContext
+
+
+
+### fn spec.agent.securityContext.withFsGroup
+
+```ts
+withFsGroup(fsGroup)
+```
+
+
+
+### fn spec.agent.securityContext.withFsGroupChangePolicy
+
+```ts
+withFsGroupChangePolicy(fsGroupChangePolicy)
+```
+
+
+
+### fn spec.agent.securityContext.withRunAsGroup
+
+```ts
+withRunAsGroup(runAsGroup)
+```
+
+
+
+### fn spec.agent.securityContext.withRunAsNonRoot
+
+```ts
+withRunAsNonRoot(runAsNonRoot)
+```
+
+
+
+### fn spec.agent.securityContext.withRunAsUser
+
+```ts
+withRunAsUser(runAsUser)
+```
+
+
+
+### fn spec.agent.securityContext.withSupplementalGroups
+
+```ts
+withSupplementalGroups(supplementalGroups)
+```
+
+
+
+### fn spec.agent.securityContext.withSupplementalGroupsMixin
+
+```ts
+withSupplementalGroupsMixin(supplementalGroups)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.agent.securityContext.withSysctls
+
+```ts
+withSysctls(sysctls)
+```
+
+
+
+### fn spec.agent.securityContext.withSysctlsMixin
+
+```ts
+withSysctlsMixin(sysctls)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.agent.securityContext.seLinuxOptions
+
+
+
+### fn spec.agent.securityContext.seLinuxOptions.withLevel
+
+```ts
+withLevel(level)
+```
+
+
+
+### fn spec.agent.securityContext.seLinuxOptions.withRole
+
+```ts
+withRole(role)
+```
+
+
+
+### fn spec.agent.securityContext.seLinuxOptions.withType
+
+```ts
+withType(type)
+```
+
+
+
+### fn spec.agent.securityContext.seLinuxOptions.withUser
+
+```ts
+withUser(user)
+```
+
+
+
+## obj spec.agent.securityContext.seccompProfile
+
+
+
+### fn spec.agent.securityContext.seccompProfile.withLocalhostProfile
+
+```ts
+withLocalhostProfile(localhostProfile)
+```
+
+
+
+### fn spec.agent.securityContext.seccompProfile.withType
+
+```ts
+withType(type)
+```
+
+
+
+## obj spec.agent.securityContext.windowsOptions
+
+
+
+### fn spec.agent.securityContext.windowsOptions.withGmsaCredentialSpec
+
+```ts
+withGmsaCredentialSpec(gmsaCredentialSpec)
+```
+
+
+
+### fn spec.agent.securityContext.windowsOptions.withGmsaCredentialSpecName
+
+```ts
+withGmsaCredentialSpecName(gmsaCredentialSpecName)
+```
+
+
+
+### fn spec.agent.securityContext.windowsOptions.withRunAsUserName
+
+```ts
+withRunAsUserName(runAsUserName)
+```
+
+
+
+## obj spec.agent.sidecarSecurityContext
+
+
+
+### fn spec.agent.sidecarSecurityContext.withAllowPrivilegeEscalation
+
+```ts
+withAllowPrivilegeEscalation(allowPrivilegeEscalation)
+```
+
+
+
+### fn spec.agent.sidecarSecurityContext.withPrivileged
+
+```ts
+withPrivileged(privileged)
+```
+
+
+
+### fn spec.agent.sidecarSecurityContext.withProcMount
+
+```ts
+withProcMount(procMount)
+```
+
+
+
+### fn spec.agent.sidecarSecurityContext.withReadOnlyRootFilesystem
+
+```ts
+withReadOnlyRootFilesystem(readOnlyRootFilesystem)
+```
+
+
+
+### fn spec.agent.sidecarSecurityContext.withRunAsGroup
+
+```ts
+withRunAsGroup(runAsGroup)
+```
+
+
+
+### fn spec.agent.sidecarSecurityContext.withRunAsNonRoot
+
+```ts
+withRunAsNonRoot(runAsNonRoot)
+```
+
+
+
+### fn spec.agent.sidecarSecurityContext.withRunAsUser
+
+```ts
+withRunAsUser(runAsUser)
+```
+
+
+
+## obj spec.agent.sidecarSecurityContext.capabilities
+
+
+
+### fn spec.agent.sidecarSecurityContext.capabilities.withAdd
+
+```ts
+withAdd(add)
+```
+
+
+
+### fn spec.agent.sidecarSecurityContext.capabilities.withAddMixin
+
+```ts
+withAddMixin(add)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.agent.sidecarSecurityContext.capabilities.withDrop
+
+```ts
+withDrop(drop)
+```
+
+
+
+### fn spec.agent.sidecarSecurityContext.capabilities.withDropMixin
+
+```ts
+withDropMixin(drop)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.agent.sidecarSecurityContext.seLinuxOptions
+
+
+
+### fn spec.agent.sidecarSecurityContext.seLinuxOptions.withLevel
+
+```ts
+withLevel(level)
+```
+
+
+
+### fn spec.agent.sidecarSecurityContext.seLinuxOptions.withRole
+
+```ts
+withRole(role)
+```
+
+
+
+### fn spec.agent.sidecarSecurityContext.seLinuxOptions.withType
+
+```ts
+withType(type)
+```
+
+
+
+### fn spec.agent.sidecarSecurityContext.seLinuxOptions.withUser
+
+```ts
+withUser(user)
+```
+
+
+
+## obj spec.agent.sidecarSecurityContext.seccompProfile
+
+
+
+### fn spec.agent.sidecarSecurityContext.seccompProfile.withLocalhostProfile
+
+```ts
+withLocalhostProfile(localhostProfile)
+```
+
+
+
+### fn spec.agent.sidecarSecurityContext.seccompProfile.withType
+
+```ts
+withType(type)
+```
+
+
+
+## obj spec.agent.sidecarSecurityContext.windowsOptions
+
+
+
+### fn spec.agent.sidecarSecurityContext.windowsOptions.withGmsaCredentialSpec
+
+```ts
+withGmsaCredentialSpec(gmsaCredentialSpec)
+```
+
+
+
+### fn spec.agent.sidecarSecurityContext.windowsOptions.withGmsaCredentialSpecName
+
+```ts
+withGmsaCredentialSpecName(gmsaCredentialSpecName)
+```
+
+
+
+### fn spec.agent.sidecarSecurityContext.windowsOptions.withRunAsUserName
+
+```ts
+withRunAsUserName(runAsUserName)
+```
+
+
+
 ## obj spec.allInOne
 
 
@@ -1088,6 +1929,16 @@ withAnnotations(annotations)
 
 
 
+### fn spec.allInOne.withAnnotationsMixin
+
+```ts
+withAnnotationsMixin(annotations)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ### fn spec.allInOne.withConfig
 
 ```ts
@@ -1095,6 +1946,16 @@ withConfig(config)
 ```
 
 
+
+### fn spec.allInOne.withConfigMixin
+
+```ts
+withConfigMixin(config)
+```
+
+
+
+**Note:** This function appends passed data to existing values
 
 ### fn spec.allInOne.withImage
 
@@ -1130,13 +1991,15 @@ withOptions(options)
 
 
 
-### fn spec.allInOne.withResources
+### fn spec.allInOne.withOptionsMixin
 
 ```ts
-withResources(resources)
+withOptionsMixin(options)
 ```
 
 
+
+**Note:** This function appends passed data to existing values
 
 ### fn spec.allInOne.withServiceAccount
 
@@ -1330,6 +2193,46 @@ withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnor
 
 ```ts
 withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.allInOne.resources
+
+
+
+### fn spec.allInOne.resources.withLimits
+
+```ts
+withLimits(limits)
+```
+
+
+
+### fn spec.allInOne.resources.withLimitsMixin
+
+```ts
+withLimitsMixin(limits)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.allInOne.resources.withRequests
+
+```ts
+withRequests(requests)
+```
+
+
+
+### fn spec.allInOne.resources.withRequestsMixin
+
+```ts
+withRequestsMixin(requests)
 ```
 
 
@@ -1544,6 +2447,16 @@ withAnnotations(annotations)
 
 
 
+### fn spec.collector.withAnnotationsMixin
+
+```ts
+withAnnotationsMixin(annotations)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ### fn spec.collector.withAutoscale
 
 ```ts
@@ -1559,6 +2472,16 @@ withConfig(config)
 ```
 
 
+
+### fn spec.collector.withConfigMixin
+
+```ts
+withConfigMixin(config)
+```
+
+
+
+**Note:** This function appends passed data to existing values
 
 ### fn spec.collector.withImage
 
@@ -1610,6 +2533,16 @@ withOptions(options)
 
 
 
+### fn spec.collector.withOptionsMixin
+
+```ts
+withOptionsMixin(options)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ### fn spec.collector.withPriorityClassName
 
 ```ts
@@ -1622,14 +2555,6 @@ withPriorityClassName(priorityClassName)
 
 ```ts
 withReplicas(replicas)
-```
-
-
-
-### fn spec.collector.withResources
-
-```ts
-withResources(resources)
 ```
 
 
@@ -1826,6 +2751,46 @@ withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnor
 
 ```ts
 withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.collector.resources
+
+
+
+### fn spec.collector.resources.withLimits
+
+```ts
+withLimits(limits)
+```
+
+
+
+### fn spec.collector.resources.withLimitsMixin
+
+```ts
+withLimitsMixin(limits)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.collector.resources.withRequests
+
+```ts
+withRequests(requests)
+```
+
+
+
+### fn spec.collector.resources.withRequestsMixin
+
+```ts
+withRequestsMixin(requests)
 ```
 
 
@@ -2040,6 +3005,16 @@ withAnnotations(annotations)
 
 
 
+### fn spec.ingester.withAnnotationsMixin
+
+```ts
+withAnnotationsMixin(annotations)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ### fn spec.ingester.withAutoscale
 
 ```ts
@@ -2055,6 +3030,16 @@ withConfig(config)
 ```
 
 
+
+### fn spec.ingester.withConfigMixin
+
+```ts
+withConfigMixin(config)
+```
+
+
+
+**Note:** This function appends passed data to existing values
 
 ### fn spec.ingester.withImage
 
@@ -2106,18 +3091,20 @@ withOptions(options)
 
 
 
-### fn spec.ingester.withReplicas
+### fn spec.ingester.withOptionsMixin
 
 ```ts
-withReplicas(replicas)
+withOptionsMixin(options)
 ```
 
 
 
-### fn spec.ingester.withResources
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingester.withReplicas
 
 ```ts
-withResources(resources)
+withReplicas(replicas)
 ```
 
 
@@ -2306,6 +3293,46 @@ withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnor
 
 ```ts
 withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.ingester.resources
+
+
+
+### fn spec.ingester.resources.withLimits
+
+```ts
+withLimits(limits)
+```
+
+
+
+### fn spec.ingester.resources.withLimitsMixin
+
+```ts
+withLimitsMixin(limits)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingester.resources.withRequests
+
+```ts
+withRequests(requests)
+```
+
+
+
+### fn spec.ingester.resources.withRequestsMixin
+
+```ts
+withRequestsMixin(requests)
 ```
 
 
@@ -2520,6 +3547,16 @@ withAnnotations(annotations)
 
 
 
+### fn spec.ingress.withAnnotationsMixin
+
+```ts
+withAnnotationsMixin(annotations)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ### fn spec.ingress.withEnabled
 
 ```ts
@@ -2572,13 +3609,15 @@ withOptions(options)
 
 
 
-### fn spec.ingress.withResources
+### fn spec.ingress.withOptionsMixin
 
 ```ts
-withResources(resources)
+withOptionsMixin(options)
 ```
 
 
+
+**Note:** This function appends passed data to existing values
 
 ### fn spec.ingress.withSecretName
 
@@ -2840,6 +3879,46 @@ withSkipLogout(skipLogout)
 
 
 
+## obj spec.ingress.resources
+
+
+
+### fn spec.ingress.resources.withLimits
+
+```ts
+withLimits(limits)
+```
+
+
+
+### fn spec.ingress.resources.withLimitsMixin
+
+```ts
+withLimitsMixin(limits)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingress.resources.withRequests
+
+```ts
+withRequests(requests)
+```
+
+
+
+### fn spec.ingress.resources.withRequestsMixin
+
+```ts
+withRequestsMixin(requests)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ## obj spec.ingress.securityContext
 
 
@@ -3016,6 +4095,16 @@ withAnnotations(annotations)
 
 
 
+### fn spec.query.withAnnotationsMixin
+
+```ts
+withAnnotationsMixin(annotations)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ### fn spec.query.withImage
 
 ```ts
@@ -3058,6 +4147,16 @@ withOptions(options)
 
 
 
+### fn spec.query.withOptionsMixin
+
+```ts
+withOptionsMixin(options)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ### fn spec.query.withPriorityClassName
 
 ```ts
@@ -3070,14 +4169,6 @@ withPriorityClassName(priorityClassName)
 
 ```ts
 withReplicas(replicas)
-```
-
-
-
-### fn spec.query.withResources
-
-```ts
-withResources(resources)
 ```
 
 
@@ -3288,6 +4379,46 @@ withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringScheduling
 
 **Note:** This function appends passed data to existing values
 
+## obj spec.query.resources
+
+
+
+### fn spec.query.resources.withLimits
+
+```ts
+withLimits(limits)
+```
+
+
+
+### fn spec.query.resources.withLimitsMixin
+
+```ts
+withLimitsMixin(limits)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.query.resources.withRequests
+
+```ts
+withRequests(requests)
+```
+
+
+
+### fn spec.query.resources.withRequestsMixin
+
+```ts
+withRequestsMixin(requests)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ## obj spec.query.securityContext
 
 
@@ -3484,6 +4615,46 @@ withMaxUnavailable(maxUnavailable)
 
 
 
+## obj spec.resources
+
+
+
+### fn spec.resources.withLimits
+
+```ts
+withLimits(limits)
+```
+
+
+
+### fn spec.resources.withLimitsMixin
+
+```ts
+withLimitsMixin(limits)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.resources.withRequests
+
+```ts
+withRequests(requests)
+```
+
+
+
+### fn spec.resources.withRequestsMixin
+
+```ts
+withRequestsMixin(requests)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ## obj spec.sampling
 
 
@@ -3495,6 +4666,16 @@ withOptions(options)
 ```
 
 
+
+### fn spec.sampling.withOptionsMixin
+
+```ts
+withOptionsMixin(options)
+```
+
+
+
+**Note:** This function appends passed data to existing values
 
 ## obj spec.securityContext
 
@@ -3671,6 +4852,16 @@ withOptions(options)
 ```
 
 
+
+### fn spec.storage.withOptionsMixin
+
+```ts
+withOptionsMixin(options)
+```
+
+
+
+**Note:** This function appends passed data to existing values
 
 ### fn spec.storage.withSecretName
 
@@ -3888,6 +5079,16 @@ withAnnotations(annotations)
 
 
 
+### fn spec.storage.dependencies.withAnnotationsMixin
+
+```ts
+withAnnotationsMixin(annotations)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ### fn spec.storage.dependencies.withBackoffLimit
 
 ```ts
@@ -3969,14 +5170,6 @@ withLabelsMixin(labels)
 
 
 **Note:** This function appends passed data to existing values
-
-### fn spec.storage.dependencies.withResources
-
-```ts
-withResources(resources)
-```
-
-
 
 ### fn spec.storage.dependencies.withSchedule
 
@@ -4194,6 +5387,46 @@ withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnor
 
 ```ts
 withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.dependencies.resources
+
+
+
+### fn spec.storage.dependencies.resources.withLimits
+
+```ts
+withLimits(limits)
+```
+
+
+
+### fn spec.storage.dependencies.resources.withLimitsMixin
+
+```ts
+withLimitsMixin(limits)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.dependencies.resources.withRequests
+
+```ts
+withRequests(requests)
+```
+
+
+
+### fn spec.storage.dependencies.resources.withRequestsMixin
+
+```ts
+withRequestsMixin(requests)
 ```
 
 
@@ -4500,6 +5733,16 @@ withAnnotations(annotations)
 
 
 
+### fn spec.storage.esIndexCleaner.withAnnotationsMixin
+
+```ts
+withAnnotationsMixin(annotations)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ### fn spec.storage.esIndexCleaner.withBackoffLimit
 
 ```ts
@@ -4546,14 +5789,6 @@ withLabelsMixin(labels)
 
 ```ts
 withNumberOfDays(numberOfDays)
-```
-
-
-
-### fn spec.storage.esIndexCleaner.withResources
-
-```ts
-withResources(resources)
 ```
 
 
@@ -4772,6 +6007,46 @@ withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringScheduling
 
 **Note:** This function appends passed data to existing values
 
+## obj spec.storage.esIndexCleaner.resources
+
+
+
+### fn spec.storage.esIndexCleaner.resources.withLimits
+
+```ts
+withLimits(limits)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.resources.withLimitsMixin
+
+```ts
+withLimitsMixin(limits)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.esIndexCleaner.resources.withRequests
+
+```ts
+withRequests(requests)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.resources.withRequestsMixin
+
+```ts
+withRequestsMixin(requests)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ## obj spec.storage.esIndexCleaner.securityContext
 
 
@@ -4948,6 +6223,16 @@ withAnnotations(annotations)
 
 
 
+### fn spec.storage.esRollover.withAnnotationsMixin
+
+```ts
+withAnnotationsMixin(annotations)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ### fn spec.storage.esRollover.withBackoffLimit
 
 ```ts
@@ -4994,14 +6279,6 @@ withLabelsMixin(labels)
 
 ```ts
 withReadTTL(readTTL)
-```
-
-
-
-### fn spec.storage.esRollover.withResources
-
-```ts
-withResources(resources)
 ```
 
 
@@ -5220,6 +6497,46 @@ withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringScheduling
 
 **Note:** This function appends passed data to existing values
 
+## obj spec.storage.esRollover.resources
+
+
+
+### fn spec.storage.esRollover.resources.withLimits
+
+```ts
+withLimits(limits)
+```
+
+
+
+### fn spec.storage.esRollover.resources.withLimitsMixin
+
+```ts
+withLimitsMixin(limits)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.esRollover.resources.withRequests
+
+```ts
+withRequests(requests)
+```
+
+
+
+### fn spec.storage.esRollover.resources.withRequestsMixin
+
+```ts
+withRequestsMixin(requests)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ## obj spec.storage.esRollover.securityContext
 
 
@@ -5394,3 +6711,14 @@ withRunAsUserName(runAsUserName)
 withOptions(options)
 ```
 
+
+
+### fn spec.ui.withOptionsMixin
+
+```ts
+withOptionsMixin(options)
+```
+
+
+
+**Note:** This function appends passed data to existing values
