@@ -1,6 +1,6 @@
 local config = import 'jsonnet/config.jsonnet';
 
-local versions = ['0.24', '0.25'];
+local versions = ['0.27', '0.28'];
 
 config.new(
   name='strimzi',
