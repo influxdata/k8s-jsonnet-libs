@@ -8,10 +8,19 @@ permalink: /1.20/autoscaling/v2beta1/crossVersionObjectReference/
 
 ## Index
 
+* [`fn withApiVersion(apiversion)`](#fn-withapiversion)
 * [`fn withKind(kind)`](#fn-withkind)
 * [`fn withName(name)`](#fn-withname)
 
 ## Fields
+
+### fn withApiVersion
+
+```ts
+withApiVersion(apiversion)
+```
+
+API version of the referent
 
 ### fn withKind
 

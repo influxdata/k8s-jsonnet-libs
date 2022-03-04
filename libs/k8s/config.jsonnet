@@ -1,10 +1,10 @@
 local config = import 'jsonnet/config.jsonnet';
 local versions = [
+  //'1.23',
+  '1.22',
   '1.21',
   '1.20',
   '1.19',
-  '1.18',
-  '1.17',
 ];
 
 config.new(
@@ -13,7 +13,7 @@ config.new(
     {
       output: version,
       openapi: 'https://raw.githubusercontent.com/kubernetes/kubernetes/release-' + version + '/api/openapi-spec/swagger.json',
-      prefix: '^io\\.k8s\\.(api|kube-aggregator\\.pkg\\.apis)\\..*',
+      prefix: '^io\\.k8s\\.(api|(kube-aggregator|apimachinery)\\.pkg\\.apis)\\..*',
       patchDir: 'custom/core',
       extensionsDir: 'extensions/core',
       localName: 'k',
