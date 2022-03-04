@@ -1,10 +1,10 @@
 ---
-permalink: /0.8/monitoring/v1/prometheusRule/
+permalink: /0.10/monitoring/v1alpha1/alertmanagerConfig/
 ---
 
-# monitoring.v1.prometheusRule
+# monitoring.v1alpha1.alertmanagerConfig
 
-"PrometheusRule defines recording and alerting rules for a Prometheus instance"
+"AlertmanagerConfig defines a namespaced AlertmanagerConfig to be aggregated across multiple namespaces configuring one Alertmanager cluster."
 
 ## Index
 
@@ -32,8 +32,26 @@ permalink: /0.8/monitoring/v1/prometheusRule/
   * [`fn withSelfLink(selfLink)`](#fn-metadatawithselflink)
   * [`fn withUid(uid)`](#fn-metadatawithuid)
 * [`obj spec`](#obj-spec)
-  * [`fn withGroups(groups)`](#fn-specwithgroups)
-  * [`fn withGroupsMixin(groups)`](#fn-specwithgroupsmixin)
+  * [`fn withInhibitRules(inhibitRules)`](#fn-specwithinhibitrules)
+  * [`fn withInhibitRulesMixin(inhibitRules)`](#fn-specwithinhibitrulesmixin)
+  * [`fn withMuteTimeIntervals(muteTimeIntervals)`](#fn-specwithmutetimeintervals)
+  * [`fn withMuteTimeIntervalsMixin(muteTimeIntervals)`](#fn-specwithmutetimeintervalsmixin)
+  * [`fn withReceivers(receivers)`](#fn-specwithreceivers)
+  * [`fn withReceiversMixin(receivers)`](#fn-specwithreceiversmixin)
+  * [`obj spec.route`](#obj-specroute)
+    * [`fn withContinue(continue)`](#fn-specroutewithcontinue)
+    * [`fn withGroupBy(groupBy)`](#fn-specroutewithgroupby)
+    * [`fn withGroupByMixin(groupBy)`](#fn-specroutewithgroupbymixin)
+    * [`fn withGroupInterval(groupInterval)`](#fn-specroutewithgroupinterval)
+    * [`fn withGroupWait(groupWait)`](#fn-specroutewithgroupwait)
+    * [`fn withMatchers(matchers)`](#fn-specroutewithmatchers)
+    * [`fn withMatchersMixin(matchers)`](#fn-specroutewithmatchersmixin)
+    * [`fn withMuteTimeIntervals(muteTimeIntervals)`](#fn-specroutewithmutetimeintervals)
+    * [`fn withMuteTimeIntervalsMixin(muteTimeIntervals)`](#fn-specroutewithmutetimeintervalsmixin)
+    * [`fn withReceiver(receiver)`](#fn-specroutewithreceiver)
+    * [`fn withRepeatInterval(repeatInterval)`](#fn-specroutewithrepeatinterval)
+    * [`fn withRoutes(routes)`](#fn-specroutewithroutes)
+    * [`fn withRoutesMixin(routes)`](#fn-specroutewithroutesmixin)
 
 ## Fields
 
@@ -43,7 +61,7 @@ permalink: /0.8/monitoring/v1/prometheusRule/
 new(name)
 ```
 
-new returns an instance of PrometheusRule
+new returns an instance of AlertmanagerConfig
 
 ## obj metadata
 
@@ -229,22 +247,174 @@ withUid(uid)
 
 ## obj spec
 
-"Specification of desired alerting rule definitions for Prometheus."
+"AlertmanagerConfigSpec is a specification of the desired behavior of the Alertmanager configuration. By definition, the Alertmanager configuration only applies to alerts for which the `namespace` label is equal to the namespace of the AlertmanagerConfig resource."
 
-### fn spec.withGroups
-
-```ts
-withGroups(groups)
-```
-
-"Content of Prometheus rule file"
-
-### fn spec.withGroupsMixin
+### fn spec.withInhibitRules
 
 ```ts
-withGroupsMixin(groups)
+withInhibitRules(inhibitRules)
 ```
 
-"Content of Prometheus rule file"
+"List of inhibition rules. The rules will only apply to alerts matching the resource’s namespace."
+
+### fn spec.withInhibitRulesMixin
+
+```ts
+withInhibitRulesMixin(inhibitRules)
+```
+
+"List of inhibition rules. The rules will only apply to alerts matching the resource’s namespace."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.withMuteTimeIntervals
+
+```ts
+withMuteTimeIntervals(muteTimeIntervals)
+```
+
+"List of MuteTimeInterval specifying when the routes should be muted."
+
+### fn spec.withMuteTimeIntervalsMixin
+
+```ts
+withMuteTimeIntervalsMixin(muteTimeIntervals)
+```
+
+"List of MuteTimeInterval specifying when the routes should be muted."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.withReceivers
+
+```ts
+withReceivers(receivers)
+```
+
+"List of receivers."
+
+### fn spec.withReceiversMixin
+
+```ts
+withReceiversMixin(receivers)
+```
+
+"List of receivers."
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.route
+
+"The Alertmanager route definition for alerts matching the resource’s namespace. If present, it will be added to the generated Alertmanager configuration as a first-level route."
+
+### fn spec.route.withContinue
+
+```ts
+withContinue(continue)
+```
+
+"Boolean indicating whether an alert should continue matching subsequent sibling nodes. It will always be overridden to true for the first-level route by the Prometheus operator."
+
+### fn spec.route.withGroupBy
+
+```ts
+withGroupBy(groupBy)
+```
+
+"List of labels to group by. Labels must not be repeated (unique list). Special label \"...\" (aggregate by all possible labels), if provided, must be the only element in the list."
+
+### fn spec.route.withGroupByMixin
+
+```ts
+withGroupByMixin(groupBy)
+```
+
+"List of labels to group by. Labels must not be repeated (unique list). Special label \"...\" (aggregate by all possible labels), if provided, must be the only element in the list."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.route.withGroupInterval
+
+```ts
+withGroupInterval(groupInterval)
+```
+
+"How long to wait before sending an updated notification. Must match the regular expression`^(([0-9]+)y)?(([0-9]+)w)?(([0-9]+)d)?(([0-9]+)h)?(([0-9]+)m)?(([0-9]+)s)?(([0-9]+)ms)?$` Example: \"5m\
+
+### fn spec.route.withGroupWait
+
+```ts
+withGroupWait(groupWait)
+```
+
+"How long to wait before sending the initial notification. Must match the regular expression`^(([0-9]+)y)?(([0-9]+)w)?(([0-9]+)d)?(([0-9]+)h)?(([0-9]+)m)?(([0-9]+)s)?(([0-9]+)ms)?$` Example: \"30s\
+
+### fn spec.route.withMatchers
+
+```ts
+withMatchers(matchers)
+```
+
+"List of matchers that the alert’s labels should match. For the first level route, the operator removes any existing equality and regexp matcher on the `namespace` label and adds a `namespace: <object namespace>` matcher."
+
+### fn spec.route.withMatchersMixin
+
+```ts
+withMatchersMixin(matchers)
+```
+
+"List of matchers that the alert’s labels should match. For the first level route, the operator removes any existing equality and regexp matcher on the `namespace` label and adds a `namespace: <object namespace>` matcher."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.route.withMuteTimeIntervals
+
+```ts
+withMuteTimeIntervals(muteTimeIntervals)
+```
+
+"Note: this comment applies to the field definition above but appears below otherwise it gets included in the generated manifest. CRD schema doesn't support self-referential types for now (see https://github.com/kubernetes/kubernetes/issues/62872). We have to use an alternative type to circumvent the limitation. The downside is that the Kube API can't validate the data beyond the fact that it is a valid JSON representation. MuteTimeIntervals is a list of MuteTimeInterval names that will mute this route when matched,"
+
+### fn spec.route.withMuteTimeIntervalsMixin
+
+```ts
+withMuteTimeIntervalsMixin(muteTimeIntervals)
+```
+
+"Note: this comment applies to the field definition above but appears below otherwise it gets included in the generated manifest. CRD schema doesn't support self-referential types for now (see https://github.com/kubernetes/kubernetes/issues/62872). We have to use an alternative type to circumvent the limitation. The downside is that the Kube API can't validate the data beyond the fact that it is a valid JSON representation. MuteTimeIntervals is a list of MuteTimeInterval names that will mute this route when matched,"
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.route.withReceiver
+
+```ts
+withReceiver(receiver)
+```
+
+"Name of the receiver for this route. If not empty, it should be listed in the `receivers` field."
+
+### fn spec.route.withRepeatInterval
+
+```ts
+withRepeatInterval(repeatInterval)
+```
+
+"How long to wait before repeating the last notification. Must match the regular expression`^(([0-9]+)y)?(([0-9]+)w)?(([0-9]+)d)?(([0-9]+)h)?(([0-9]+)m)?(([0-9]+)s)?(([0-9]+)ms)?$` Example: \"4h\
+
+### fn spec.route.withRoutes
+
+```ts
+withRoutes(routes)
+```
+
+"Child routes."
+
+### fn spec.route.withRoutesMixin
+
+```ts
+withRoutesMixin(routes)
+```
+
+"Child routes."
 
 **Note:** This function appends passed data to existing values

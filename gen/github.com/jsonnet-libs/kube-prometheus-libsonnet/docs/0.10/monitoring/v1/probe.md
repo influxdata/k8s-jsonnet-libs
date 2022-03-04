@@ -1,5 +1,5 @@
 ---
-permalink: /0.8/monitoring/v1/probe/
+permalink: /0.10/monitoring/v1/probe/
 ---
 
 # monitoring.v1.probe
@@ -34,8 +34,21 @@ permalink: /0.8/monitoring/v1/probe/
 * [`obj spec`](#obj-spec)
   * [`fn withInterval(interval)`](#fn-specwithinterval)
   * [`fn withJobName(jobName)`](#fn-specwithjobname)
+  * [`fn withLabelLimit(labelLimit)`](#fn-specwithlabellimit)
+  * [`fn withLabelNameLengthLimit(labelNameLengthLimit)`](#fn-specwithlabelnamelengthlimit)
+  * [`fn withLabelValueLengthLimit(labelValueLengthLimit)`](#fn-specwithlabelvaluelengthlimit)
+  * [`fn withMetricRelabelings(metricRelabelings)`](#fn-specwithmetricrelabelings)
+  * [`fn withMetricRelabelingsMixin(metricRelabelings)`](#fn-specwithmetricrelabelingsmixin)
   * [`fn withModule(module)`](#fn-specwithmodule)
+  * [`fn withSampleLimit(sampleLimit)`](#fn-specwithsamplelimit)
   * [`fn withScrapeTimeout(scrapeTimeout)`](#fn-specwithscrapetimeout)
+  * [`fn withTargetLimit(targetLimit)`](#fn-specwithtargetlimit)
+  * [`obj spec.authorization`](#obj-specauthorization)
+    * [`fn withType(type)`](#fn-specauthorizationwithtype)
+    * [`obj spec.authorization.credentials`](#obj-specauthorizationcredentials)
+      * [`fn withKey(key)`](#fn-specauthorizationcredentialswithkey)
+      * [`fn withName(name)`](#fn-specauthorizationcredentialswithname)
+      * [`fn withOptional(optional)`](#fn-specauthorizationcredentialswithoptional)
   * [`obj spec.basicAuth`](#obj-specbasicauth)
     * [`obj spec.basicAuth.password`](#obj-specbasicauthpassword)
       * [`fn withKey(key)`](#fn-specbasicauthpasswordwithkey)
@@ -49,8 +62,28 @@ permalink: /0.8/monitoring/v1/probe/
     * [`fn withKey(key)`](#fn-specbearertokensecretwithkey)
     * [`fn withName(name)`](#fn-specbearertokensecretwithname)
     * [`fn withOptional(optional)`](#fn-specbearertokensecretwithoptional)
+  * [`obj spec.oauth2`](#obj-specoauth2)
+    * [`fn withEndpointParams(endpointParams)`](#fn-specoauth2withendpointparams)
+    * [`fn withEndpointParamsMixin(endpointParams)`](#fn-specoauth2withendpointparamsmixin)
+    * [`fn withScopes(scopes)`](#fn-specoauth2withscopes)
+    * [`fn withScopesMixin(scopes)`](#fn-specoauth2withscopesmixin)
+    * [`fn withTokenUrl(tokenUrl)`](#fn-specoauth2withtokenurl)
+    * [`obj spec.oauth2.clientId`](#obj-specoauth2clientid)
+      * [`obj spec.oauth2.clientId.configMap`](#obj-specoauth2clientidconfigmap)
+        * [`fn withKey(key)`](#fn-specoauth2clientidconfigmapwithkey)
+        * [`fn withName(name)`](#fn-specoauth2clientidconfigmapwithname)
+        * [`fn withOptional(optional)`](#fn-specoauth2clientidconfigmapwithoptional)
+      * [`obj spec.oauth2.clientId.secret`](#obj-specoauth2clientidsecret)
+        * [`fn withKey(key)`](#fn-specoauth2clientidsecretwithkey)
+        * [`fn withName(name)`](#fn-specoauth2clientidsecretwithname)
+        * [`fn withOptional(optional)`](#fn-specoauth2clientidsecretwithoptional)
+    * [`obj spec.oauth2.clientSecret`](#obj-specoauth2clientsecret)
+      * [`fn withKey(key)`](#fn-specoauth2clientsecretwithkey)
+      * [`fn withName(name)`](#fn-specoauth2clientsecretwithname)
+      * [`fn withOptional(optional)`](#fn-specoauth2clientsecretwithoptional)
   * [`obj spec.prober`](#obj-specprober)
     * [`fn withPath(path)`](#fn-specproberwithpath)
+    * [`fn withProxyUrl(proxyUrl)`](#fn-specproberwithproxyurl)
     * [`fn withScheme(scheme)`](#fn-specproberwithscheme)
     * [`fn withUrl(url)`](#fn-specproberwithurl)
   * [`obj spec.targets`](#obj-spectargets)
@@ -311,6 +344,48 @@ withJobName(jobName)
 
 "The job name assigned to scraped metrics by default."
 
+### fn spec.withLabelLimit
+
+```ts
+withLabelLimit(labelLimit)
+```
+
+"Per-scrape limit on number of labels that will be accepted for a sample. Only valid in Prometheus versions 2.27.0 and newer."
+
+### fn spec.withLabelNameLengthLimit
+
+```ts
+withLabelNameLengthLimit(labelNameLengthLimit)
+```
+
+"Per-scrape limit on length of labels name that will be accepted for a sample. Only valid in Prometheus versions 2.27.0 and newer."
+
+### fn spec.withLabelValueLengthLimit
+
+```ts
+withLabelValueLengthLimit(labelValueLengthLimit)
+```
+
+"Per-scrape limit on length of labels value that will be accepted for a sample. Only valid in Prometheus versions 2.27.0 and newer."
+
+### fn spec.withMetricRelabelings
+
+```ts
+withMetricRelabelings(metricRelabelings)
+```
+
+"MetricRelabelConfigs to apply to samples before ingestion."
+
+### fn spec.withMetricRelabelingsMixin
+
+```ts
+withMetricRelabelingsMixin(metricRelabelings)
+```
+
+"MetricRelabelConfigs to apply to samples before ingestion."
+
+**Note:** This function appends passed data to existing values
+
 ### fn spec.withModule
 
 ```ts
@@ -319,6 +394,14 @@ withModule(module)
 
 "The module to use for probing specifying how to probe the target. Example module configuring in the blackbox exporter: https://github.com/prometheus/blackbox_exporter/blob/master/example.yml"
 
+### fn spec.withSampleLimit
+
+```ts
+withSampleLimit(sampleLimit)
+```
+
+"SampleLimit defines per-scrape limit on number of scraped samples that will be accepted."
+
 ### fn spec.withScrapeTimeout
 
 ```ts
@@ -326,6 +409,54 @@ withScrapeTimeout(scrapeTimeout)
 ```
 
 "Timeout for scraping metrics from the Prometheus exporter."
+
+### fn spec.withTargetLimit
+
+```ts
+withTargetLimit(targetLimit)
+```
+
+"TargetLimit defines a limit on the number of scraped targets that will be accepted."
+
+## obj spec.authorization
+
+"Authorization section for this endpoint"
+
+### fn spec.authorization.withType
+
+```ts
+withType(type)
+```
+
+"Set the authentication type. Defaults to Bearer, Basic will cause an error"
+
+## obj spec.authorization.credentials
+
+"The secret's key that contains the credentials of the request"
+
+### fn spec.authorization.credentials.withKey
+
+```ts
+withKey(key)
+```
+
+"The key of the secret to select from.  Must be a valid secret key."
+
+### fn spec.authorization.credentials.withName
+
+```ts
+withName(name)
+```
+
+"Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names TODO: Add other useful fields. apiVersion, kind, uid?"
+
+### fn spec.authorization.credentials.withOptional
+
+```ts
+withOptional(optional)
+```
+
+"Specify whether the Secret or its key must be defined"
 
 ## obj spec.basicAuth
 
@@ -415,6 +546,142 @@ withOptional(optional)
 
 "Specify whether the Secret or its key must be defined"
 
+## obj spec.oauth2
+
+"OAuth2 for the URL. Only valid in Prometheus versions 2.27.0 and newer."
+
+### fn spec.oauth2.withEndpointParams
+
+```ts
+withEndpointParams(endpointParams)
+```
+
+"Parameters to append to the token URL"
+
+### fn spec.oauth2.withEndpointParamsMixin
+
+```ts
+withEndpointParamsMixin(endpointParams)
+```
+
+"Parameters to append to the token URL"
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.oauth2.withScopes
+
+```ts
+withScopes(scopes)
+```
+
+"OAuth2 scopes used for the token request"
+
+### fn spec.oauth2.withScopesMixin
+
+```ts
+withScopesMixin(scopes)
+```
+
+"OAuth2 scopes used for the token request"
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.oauth2.withTokenUrl
+
+```ts
+withTokenUrl(tokenUrl)
+```
+
+"The URL to fetch the token from"
+
+## obj spec.oauth2.clientId
+
+"The secret or configmap containing the OAuth2 client id"
+
+## obj spec.oauth2.clientId.configMap
+
+"ConfigMap containing data to use for the targets."
+
+### fn spec.oauth2.clientId.configMap.withKey
+
+```ts
+withKey(key)
+```
+
+"The key to select."
+
+### fn spec.oauth2.clientId.configMap.withName
+
+```ts
+withName(name)
+```
+
+"Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names TODO: Add other useful fields. apiVersion, kind, uid?"
+
+### fn spec.oauth2.clientId.configMap.withOptional
+
+```ts
+withOptional(optional)
+```
+
+"Specify whether the ConfigMap or its key must be defined"
+
+## obj spec.oauth2.clientId.secret
+
+"Secret containing data to use for the targets."
+
+### fn spec.oauth2.clientId.secret.withKey
+
+```ts
+withKey(key)
+```
+
+"The key of the secret to select from.  Must be a valid secret key."
+
+### fn spec.oauth2.clientId.secret.withName
+
+```ts
+withName(name)
+```
+
+"Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names TODO: Add other useful fields. apiVersion, kind, uid?"
+
+### fn spec.oauth2.clientId.secret.withOptional
+
+```ts
+withOptional(optional)
+```
+
+"Specify whether the Secret or its key must be defined"
+
+## obj spec.oauth2.clientSecret
+
+"The secret containing the OAuth2 client secret"
+
+### fn spec.oauth2.clientSecret.withKey
+
+```ts
+withKey(key)
+```
+
+"The key of the secret to select from.  Must be a valid secret key."
+
+### fn spec.oauth2.clientSecret.withName
+
+```ts
+withName(name)
+```
+
+"Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names TODO: Add other useful fields. apiVersion, kind, uid?"
+
+### fn spec.oauth2.clientSecret.withOptional
+
+```ts
+withOptional(optional)
+```
+
+"Specify whether the Secret or its key must be defined"
+
 ## obj spec.prober
 
 "Specification for the prober to use for probing targets. The prober.URL parameter is required. Targets cannot be probed if left empty."
@@ -426,6 +693,14 @@ withPath(path)
 ```
 
 "Path to collect metrics from. Defaults to `/probe`."
+
+### fn spec.prober.withProxyUrl
+
+```ts
+withProxyUrl(proxyUrl)
+```
+
+"Optional ProxyURL."
 
 ### fn spec.prober.withScheme
 

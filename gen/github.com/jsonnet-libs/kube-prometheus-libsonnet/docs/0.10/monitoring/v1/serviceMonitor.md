@@ -1,5 +1,5 @@
 ---
-permalink: /0.8/monitoring/v1/serviceMonitor/
+permalink: /0.10/monitoring/v1/serviceMonitor/
 ---
 
 # monitoring.v1.serviceMonitor
@@ -35,6 +35,9 @@ permalink: /0.8/monitoring/v1/serviceMonitor/
   * [`fn withEndpoints(endpoints)`](#fn-specwithendpoints)
   * [`fn withEndpointsMixin(endpoints)`](#fn-specwithendpointsmixin)
   * [`fn withJobLabel(jobLabel)`](#fn-specwithjoblabel)
+  * [`fn withLabelLimit(labelLimit)`](#fn-specwithlabellimit)
+  * [`fn withLabelNameLengthLimit(labelNameLengthLimit)`](#fn-specwithlabelnamelengthlimit)
+  * [`fn withLabelValueLengthLimit(labelValueLengthLimit)`](#fn-specwithlabelvaluelengthlimit)
   * [`fn withPodTargetLabels(podTargetLabels)`](#fn-specwithpodtargetlabels)
   * [`fn withPodTargetLabelsMixin(podTargetLabels)`](#fn-specwithpodtargetlabelsmixin)
   * [`fn withSampleLimit(sampleLimit)`](#fn-specwithsamplelimit)
@@ -271,7 +274,31 @@ withEndpointsMixin(endpoints)
 withJobLabel(jobLabel)
 ```
 
-"The label to use to retrieve the job name from."
+"Chooses the label of the Kubernetes `Endpoints`. Its value will be used for the `job`-label's value of the created metrics. \n Default & fallback value: the name of the respective Kubernetes `Endpoint`."
+
+### fn spec.withLabelLimit
+
+```ts
+withLabelLimit(labelLimit)
+```
+
+"Per-scrape limit on number of labels that will be accepted for a sample. Only valid in Prometheus versions 2.27.0 and newer."
+
+### fn spec.withLabelNameLengthLimit
+
+```ts
+withLabelNameLengthLimit(labelNameLengthLimit)
+```
+
+"Per-scrape limit on length of labels name that will be accepted for a sample. Only valid in Prometheus versions 2.27.0 and newer."
+
+### fn spec.withLabelValueLengthLimit
+
+```ts
+withLabelValueLengthLimit(labelValueLengthLimit)
+```
+
+"Per-scrape limit on length of labels value that will be accepted for a sample. Only valid in Prometheus versions 2.27.0 and newer."
 
 ### fn spec.withPodTargetLabels
 
@@ -279,7 +306,7 @@ withJobLabel(jobLabel)
 withPodTargetLabels(podTargetLabels)
 ```
 
-"PodTargetLabels transfers labels on the Kubernetes Pod onto the target."
+"PodTargetLabels transfers labels on the Kubernetes `Pod` onto the created metrics."
 
 ### fn spec.withPodTargetLabelsMixin
 
@@ -287,7 +314,7 @@ withPodTargetLabels(podTargetLabels)
 withPodTargetLabelsMixin(podTargetLabels)
 ```
 
-"PodTargetLabels transfers labels on the Kubernetes Pod onto the target."
+"PodTargetLabels transfers labels on the Kubernetes `Pod` onto the created metrics."
 
 **Note:** This function appends passed data to existing values
 
@@ -305,7 +332,7 @@ withSampleLimit(sampleLimit)
 withTargetLabels(targetLabels)
 ```
 
-"TargetLabels transfers labels on the Kubernetes Service onto the target."
+"TargetLabels transfers labels from the Kubernetes `Service` onto the created metrics. All labels set in `selector.matchLabels` are automatically transferred."
 
 ### fn spec.withTargetLabelsMixin
 
@@ -313,7 +340,7 @@ withTargetLabels(targetLabels)
 withTargetLabelsMixin(targetLabels)
 ```
 
-"TargetLabels transfers labels on the Kubernetes Service onto the target."
+"TargetLabels transfers labels from the Kubernetes `Service` onto the created metrics. All labels set in `selector.matchLabels` are automatically transferred."
 
 **Note:** This function appends passed data to existing values
 
@@ -327,7 +354,7 @@ withTargetLimit(targetLimit)
 
 ## obj spec.namespaceSelector
 
-"Selector to select which namespaces the Endpoints objects are discovered from."
+"Selector to select which namespaces the Kubernetes Endpoints objects are discovered from."
 
 ### fn spec.namespaceSelector.withAny
 

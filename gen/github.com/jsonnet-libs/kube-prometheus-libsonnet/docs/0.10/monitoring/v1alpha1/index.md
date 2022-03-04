@@ -1,5 +1,5 @@
 ---
-permalink: /0.8/monitoring/v1alpha1/
+permalink: /0.10/monitoring/v1alpha1/
 ---
 
 # monitoring.v1alpha1

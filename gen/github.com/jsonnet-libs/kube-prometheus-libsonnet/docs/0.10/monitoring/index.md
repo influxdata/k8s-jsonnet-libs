@@ -1,5 +1,5 @@
 ---
-permalink: /0.8/monitoring/
+permalink: /0.10/monitoring/
 ---
 
 # monitoring

@@ -1,10 +1,10 @@
 ---
-permalink: /0.8/monitoring/v1/podMonitor/
+permalink: /0.10/monitoring/v1/prometheusRule/
 ---
 
-# monitoring.v1.podMonitor
+# monitoring.v1.prometheusRule
 
-"PodMonitor defines monitoring for a set of pods."
+"PrometheusRule defines recording and alerting rules for a Prometheus instance"
 
 ## Index
 
@@ -32,22 +32,8 @@ permalink: /0.8/monitoring/v1/podMonitor/
   * [`fn withSelfLink(selfLink)`](#fn-metadatawithselflink)
   * [`fn withUid(uid)`](#fn-metadatawithuid)
 * [`obj spec`](#obj-spec)
-  * [`fn withJobLabel(jobLabel)`](#fn-specwithjoblabel)
-  * [`fn withPodMetricsEndpoints(podMetricsEndpoints)`](#fn-specwithpodmetricsendpoints)
-  * [`fn withPodMetricsEndpointsMixin(podMetricsEndpoints)`](#fn-specwithpodmetricsendpointsmixin)
-  * [`fn withPodTargetLabels(podTargetLabels)`](#fn-specwithpodtargetlabels)
-  * [`fn withPodTargetLabelsMixin(podTargetLabels)`](#fn-specwithpodtargetlabelsmixin)
-  * [`fn withSampleLimit(sampleLimit)`](#fn-specwithsamplelimit)
-  * [`fn withTargetLimit(targetLimit)`](#fn-specwithtargetlimit)
-  * [`obj spec.namespaceSelector`](#obj-specnamespaceselector)
-    * [`fn withAny(any)`](#fn-specnamespaceselectorwithany)
-    * [`fn withMatchNames(matchNames)`](#fn-specnamespaceselectorwithmatchnames)
-    * [`fn withMatchNamesMixin(matchNames)`](#fn-specnamespaceselectorwithmatchnamesmixin)
-  * [`obj spec.selector`](#obj-specselector)
-    * [`fn withMatchExpressions(matchExpressions)`](#fn-specselectorwithmatchexpressions)
-    * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specselectorwithmatchexpressionsmixin)
-    * [`fn withMatchLabels(matchLabels)`](#fn-specselectorwithmatchlabels)
-    * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specselectorwithmatchlabelsmixin)
+  * [`fn withGroups(groups)`](#fn-specwithgroups)
+  * [`fn withGroupsMixin(groups)`](#fn-specwithgroupsmixin)
 
 ## Fields
 
@@ -57,7 +43,7 @@ permalink: /0.8/monitoring/v1/podMonitor/
 new(name)
 ```
 
-new returns an instance of PodMonitor
+new returns an instance of PrometheusRule
 
 ## obj metadata
 
@@ -243,134 +229,22 @@ withUid(uid)
 
 ## obj spec
 
-"Specification of desired Pod selection for target discovery by Prometheus."
+"Specification of desired alerting rule definitions for Prometheus."
 
-### fn spec.withJobLabel
-
-```ts
-withJobLabel(jobLabel)
-```
-
-"The label to use to retrieve the job name from."
-
-### fn spec.withPodMetricsEndpoints
+### fn spec.withGroups
 
 ```ts
-withPodMetricsEndpoints(podMetricsEndpoints)
+withGroups(groups)
 ```
 
-"A list of endpoints allowed as part of this PodMonitor."
+"Content of Prometheus rule file"
 
-### fn spec.withPodMetricsEndpointsMixin
+### fn spec.withGroupsMixin
 
 ```ts
-withPodMetricsEndpointsMixin(podMetricsEndpoints)
+withGroupsMixin(groups)
 ```
 
-"A list of endpoints allowed as part of this PodMonitor."
-
-**Note:** This function appends passed data to existing values
-
-### fn spec.withPodTargetLabels
-
-```ts
-withPodTargetLabels(podTargetLabels)
-```
-
-"PodTargetLabels transfers labels on the Kubernetes Pod onto the target."
-
-### fn spec.withPodTargetLabelsMixin
-
-```ts
-withPodTargetLabelsMixin(podTargetLabels)
-```
-
-"PodTargetLabels transfers labels on the Kubernetes Pod onto the target."
-
-**Note:** This function appends passed data to existing values
-
-### fn spec.withSampleLimit
-
-```ts
-withSampleLimit(sampleLimit)
-```
-
-"SampleLimit defines per-scrape limit on number of scraped samples that will be accepted."
-
-### fn spec.withTargetLimit
-
-```ts
-withTargetLimit(targetLimit)
-```
-
-"TargetLimit defines a limit on the number of scraped targets that will be accepted."
-
-## obj spec.namespaceSelector
-
-"Selector to select which namespaces the Endpoints objects are discovered from."
-
-### fn spec.namespaceSelector.withAny
-
-```ts
-withAny(any)
-```
-
-"Boolean describing whether all namespaces are selected in contrast to a list restricting them."
-
-### fn spec.namespaceSelector.withMatchNames
-
-```ts
-withMatchNames(matchNames)
-```
-
-"List of namespace names."
-
-### fn spec.namespaceSelector.withMatchNamesMixin
-
-```ts
-withMatchNamesMixin(matchNames)
-```
-
-"List of namespace names."
-
-**Note:** This function appends passed data to existing values
-
-## obj spec.selector
-
-"Selector to select Pod objects."
-
-### fn spec.selector.withMatchExpressions
-
-```ts
-withMatchExpressions(matchExpressions)
-```
-
-"matchExpressions is a list of label selector requirements. The requirements are ANDed."
-
-### fn spec.selector.withMatchExpressionsMixin
-
-```ts
-withMatchExpressionsMixin(matchExpressions)
-```
-
-"matchExpressions is a list of label selector requirements. The requirements are ANDed."
-
-**Note:** This function appends passed data to existing values
-
-### fn spec.selector.withMatchLabels
-
-```ts
-withMatchLabels(matchLabels)
-```
-
-"matchLabels is a map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is \"key\", the operator is \"In\", and the values array contains only \"value\". The requirements are ANDed."
-
-### fn spec.selector.withMatchLabelsMixin
-
-```ts
-withMatchLabelsMixin(matchLabels)
-```
-
-"matchLabels is a map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is \"key\", the operator is \"In\", and the values array contains only \"value\". The requirements are ANDed."
+"Content of Prometheus rule file"
 
 **Note:** This function appends passed data to existing values

@@ -1,10 +1,10 @@
 ---
-permalink: /0.8/monitoring/v1alpha1/alertmanagerConfig/
+permalink: /0.10/monitoring/v1/podMonitor/
 ---
 
-# monitoring.v1alpha1.alertmanagerConfig
+# monitoring.v1.podMonitor
 
-"AlertmanagerConfig defines a namespaced AlertmanagerConfig to be aggregated across multiple namespaces configuring one Alertmanager cluster."
+"PodMonitor defines monitoring for a set of pods."
 
 ## Index
 
@@ -32,22 +32,25 @@ permalink: /0.8/monitoring/v1alpha1/alertmanagerConfig/
   * [`fn withSelfLink(selfLink)`](#fn-metadatawithselflink)
   * [`fn withUid(uid)`](#fn-metadatawithuid)
 * [`obj spec`](#obj-spec)
-  * [`fn withInhibitRules(inhibitRules)`](#fn-specwithinhibitrules)
-  * [`fn withInhibitRulesMixin(inhibitRules)`](#fn-specwithinhibitrulesmixin)
-  * [`fn withReceivers(receivers)`](#fn-specwithreceivers)
-  * [`fn withReceiversMixin(receivers)`](#fn-specwithreceiversmixin)
-  * [`obj spec.route`](#obj-specroute)
-    * [`fn withContinue(continue)`](#fn-specroutewithcontinue)
-    * [`fn withGroupBy(groupBy)`](#fn-specroutewithgroupby)
-    * [`fn withGroupByMixin(groupBy)`](#fn-specroutewithgroupbymixin)
-    * [`fn withGroupInterval(groupInterval)`](#fn-specroutewithgroupinterval)
-    * [`fn withGroupWait(groupWait)`](#fn-specroutewithgroupwait)
-    * [`fn withMatchers(matchers)`](#fn-specroutewithmatchers)
-    * [`fn withMatchersMixin(matchers)`](#fn-specroutewithmatchersmixin)
-    * [`fn withReceiver(receiver)`](#fn-specroutewithreceiver)
-    * [`fn withRepeatInterval(repeatInterval)`](#fn-specroutewithrepeatinterval)
-    * [`fn withRoutes(routes)`](#fn-specroutewithroutes)
-    * [`fn withRoutesMixin(routes)`](#fn-specroutewithroutesmixin)
+  * [`fn withJobLabel(jobLabel)`](#fn-specwithjoblabel)
+  * [`fn withLabelLimit(labelLimit)`](#fn-specwithlabellimit)
+  * [`fn withLabelNameLengthLimit(labelNameLengthLimit)`](#fn-specwithlabelnamelengthlimit)
+  * [`fn withLabelValueLengthLimit(labelValueLengthLimit)`](#fn-specwithlabelvaluelengthlimit)
+  * [`fn withPodMetricsEndpoints(podMetricsEndpoints)`](#fn-specwithpodmetricsendpoints)
+  * [`fn withPodMetricsEndpointsMixin(podMetricsEndpoints)`](#fn-specwithpodmetricsendpointsmixin)
+  * [`fn withPodTargetLabels(podTargetLabels)`](#fn-specwithpodtargetlabels)
+  * [`fn withPodTargetLabelsMixin(podTargetLabels)`](#fn-specwithpodtargetlabelsmixin)
+  * [`fn withSampleLimit(sampleLimit)`](#fn-specwithsamplelimit)
+  * [`fn withTargetLimit(targetLimit)`](#fn-specwithtargetlimit)
+  * [`obj spec.namespaceSelector`](#obj-specnamespaceselector)
+    * [`fn withAny(any)`](#fn-specnamespaceselectorwithany)
+    * [`fn withMatchNames(matchNames)`](#fn-specnamespaceselectorwithmatchnames)
+    * [`fn withMatchNamesMixin(matchNames)`](#fn-specnamespaceselectorwithmatchnamesmixin)
+  * [`obj spec.selector`](#obj-specselector)
+    * [`fn withMatchExpressions(matchExpressions)`](#fn-specselectorwithmatchexpressions)
+    * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specselectorwithmatchexpressionsmixin)
+    * [`fn withMatchLabels(matchLabels)`](#fn-specselectorwithmatchlabels)
+    * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specselectorwithmatchlabelsmixin)
 
 ## Fields
 
@@ -57,7 +60,7 @@ permalink: /0.8/monitoring/v1alpha1/alertmanagerConfig/
 new(name)
 ```
 
-new returns an instance of AlertmanagerConfig
+new returns an instance of PodMonitor
 
 ## obj metadata
 
@@ -243,138 +246,158 @@ withUid(uid)
 
 ## obj spec
 
-"AlertmanagerConfigSpec is a specification of the desired behavior of the Alertmanager configuration. By definition, the Alertmanager configuration only applies to alerts for which the `namespace` label is equal to the namespace of the AlertmanagerConfig resource."
+"Specification of desired Pod selection for target discovery by Prometheus."
 
-### fn spec.withInhibitRules
-
-```ts
-withInhibitRules(inhibitRules)
-```
-
-"List of inhibition rules. The rules will only apply to alerts matching the resource’s namespace."
-
-### fn spec.withInhibitRulesMixin
+### fn spec.withJobLabel
 
 ```ts
-withInhibitRulesMixin(inhibitRules)
+withJobLabel(jobLabel)
 ```
 
-"List of inhibition rules. The rules will only apply to alerts matching the resource’s namespace."
+"The label to use to retrieve the job name from."
+
+### fn spec.withLabelLimit
+
+```ts
+withLabelLimit(labelLimit)
+```
+
+"Per-scrape limit on number of labels that will be accepted for a sample. Only valid in Prometheus versions 2.27.0 and newer."
+
+### fn spec.withLabelNameLengthLimit
+
+```ts
+withLabelNameLengthLimit(labelNameLengthLimit)
+```
+
+"Per-scrape limit on length of labels name that will be accepted for a sample. Only valid in Prometheus versions 2.27.0 and newer."
+
+### fn spec.withLabelValueLengthLimit
+
+```ts
+withLabelValueLengthLimit(labelValueLengthLimit)
+```
+
+"Per-scrape limit on length of labels value that will be accepted for a sample. Only valid in Prometheus versions 2.27.0 and newer."
+
+### fn spec.withPodMetricsEndpoints
+
+```ts
+withPodMetricsEndpoints(podMetricsEndpoints)
+```
+
+"A list of endpoints allowed as part of this PodMonitor."
+
+### fn spec.withPodMetricsEndpointsMixin
+
+```ts
+withPodMetricsEndpointsMixin(podMetricsEndpoints)
+```
+
+"A list of endpoints allowed as part of this PodMonitor."
 
 **Note:** This function appends passed data to existing values
 
-### fn spec.withReceivers
+### fn spec.withPodTargetLabels
 
 ```ts
-withReceivers(receivers)
+withPodTargetLabels(podTargetLabels)
 ```
 
-"List of receivers."
+"PodTargetLabels transfers labels on the Kubernetes Pod onto the target."
 
-### fn spec.withReceiversMixin
+### fn spec.withPodTargetLabelsMixin
 
 ```ts
-withReceiversMixin(receivers)
+withPodTargetLabelsMixin(podTargetLabels)
 ```
 
-"List of receivers."
+"PodTargetLabels transfers labels on the Kubernetes Pod onto the target."
 
 **Note:** This function appends passed data to existing values
 
-## obj spec.route
-
-"The Alertmanager route definition for alerts matching the resource’s namespace. If present, it will be added to the generated Alertmanager configuration as a first-level route."
-
-### fn spec.route.withContinue
+### fn spec.withSampleLimit
 
 ```ts
-withContinue(continue)
+withSampleLimit(sampleLimit)
 ```
 
-"Boolean indicating whether an alert should continue matching subsequent sibling nodes. It will always be overridden to true for the first-level route by the Prometheus operator."
+"SampleLimit defines per-scrape limit on number of scraped samples that will be accepted."
 
-### fn spec.route.withGroupBy
+### fn spec.withTargetLimit
 
 ```ts
-withGroupBy(groupBy)
+withTargetLimit(targetLimit)
 ```
 
-"List of labels to group by."
+"TargetLimit defines a limit on the number of scraped targets that will be accepted."
 
-### fn spec.route.withGroupByMixin
+## obj spec.namespaceSelector
+
+"Selector to select which namespaces the Endpoints objects are discovered from."
+
+### fn spec.namespaceSelector.withAny
 
 ```ts
-withGroupByMixin(groupBy)
+withAny(any)
 ```
 
-"List of labels to group by."
+"Boolean describing whether all namespaces are selected in contrast to a list restricting them."
+
+### fn spec.namespaceSelector.withMatchNames
+
+```ts
+withMatchNames(matchNames)
+```
+
+"List of namespace names."
+
+### fn spec.namespaceSelector.withMatchNamesMixin
+
+```ts
+withMatchNamesMixin(matchNames)
+```
+
+"List of namespace names."
 
 **Note:** This function appends passed data to existing values
 
-### fn spec.route.withGroupInterval
+## obj spec.selector
+
+"Selector to select Pod objects."
+
+### fn spec.selector.withMatchExpressions
 
 ```ts
-withGroupInterval(groupInterval)
+withMatchExpressions(matchExpressions)
 ```
 
-"How long to wait before sending an updated notification. Must match the regular expression `[0-9]+(ms|s|m|h)` (milliseconds seconds minutes hours)."
+"matchExpressions is a list of label selector requirements. The requirements are ANDed."
 
-### fn spec.route.withGroupWait
+### fn spec.selector.withMatchExpressionsMixin
 
 ```ts
-withGroupWait(groupWait)
+withMatchExpressionsMixin(matchExpressions)
 ```
 
-"How long to wait before sending the initial notification. Must match the regular expression `[0-9]+(ms|s|m|h)` (milliseconds seconds minutes hours)."
-
-### fn spec.route.withMatchers
-
-```ts
-withMatchers(matchers)
-```
-
-"List of matchers that the alert’s labels should match. For the first level route, the operator removes any existing equality and regexp matcher on the `namespace` label and adds a `namespace: <object namespace>` matcher."
-
-### fn spec.route.withMatchersMixin
-
-```ts
-withMatchersMixin(matchers)
-```
-
-"List of matchers that the alert’s labels should match. For the first level route, the operator removes any existing equality and regexp matcher on the `namespace` label and adds a `namespace: <object namespace>` matcher."
+"matchExpressions is a list of label selector requirements. The requirements are ANDed."
 
 **Note:** This function appends passed data to existing values
 
-### fn spec.route.withReceiver
+### fn spec.selector.withMatchLabels
 
 ```ts
-withReceiver(receiver)
+withMatchLabels(matchLabels)
 ```
 
-"Name of the receiver for this route. If not empty, it should be listed in the `receivers` field."
+"matchLabels is a map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is \"key\", the operator is \"In\", and the values array contains only \"value\". The requirements are ANDed."
 
-### fn spec.route.withRepeatInterval
+### fn spec.selector.withMatchLabelsMixin
 
 ```ts
-withRepeatInterval(repeatInterval)
+withMatchLabelsMixin(matchLabels)
 ```
 
-"How long to wait before repeating the last notification. Must match the regular expression `[0-9]+(ms|s|m|h)` (milliseconds seconds minutes hours)."
-
-### fn spec.route.withRoutes
-
-```ts
-withRoutes(routes)
-```
-
-"Child routes."
-
-### fn spec.route.withRoutesMixin
-
-```ts
-withRoutesMixin(routes)
-```
-
-"Child routes."
+"matchLabels is a map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is \"key\", the operator is \"In\", and the values array contains only \"value\". The requirements are ANDed."
 
 **Note:** This function appends passed data to existing values

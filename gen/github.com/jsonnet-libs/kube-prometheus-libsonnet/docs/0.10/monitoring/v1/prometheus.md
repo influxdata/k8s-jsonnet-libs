@@ -1,5 +1,5 @@
 ---
-permalink: /0.8/monitoring/v1/prometheus/
+permalink: /0.10/monitoring/v1/prometheus/
 ---
 
 # monitoring.v1.prometheus
@@ -42,6 +42,10 @@ permalink: /0.8/monitoring/v1/prometheus/
   * [`fn withEnableAdminAPI(enableAdminAPI)`](#fn-specwithenableadminapi)
   * [`fn withEnableFeatures(enableFeatures)`](#fn-specwithenablefeatures)
   * [`fn withEnableFeaturesMixin(enableFeatures)`](#fn-specwithenablefeaturesmixin)
+  * [`fn withEnforcedBodySizeLimit(enforcedBodySizeLimit)`](#fn-specwithenforcedbodysizelimit)
+  * [`fn withEnforcedLabelLimit(enforcedLabelLimit)`](#fn-specwithenforcedlabellimit)
+  * [`fn withEnforcedLabelNameLengthLimit(enforcedLabelNameLengthLimit)`](#fn-specwithenforcedlabelnamelengthlimit)
+  * [`fn withEnforcedLabelValueLengthLimit(enforcedLabelValueLengthLimit)`](#fn-specwithenforcedlabelvaluelengthlimit)
   * [`fn withEnforcedNamespaceLabel(enforcedNamespaceLabel)`](#fn-specwithenforcednamespacelabel)
   * [`fn withEnforcedSampleLimit(enforcedSampleLimit)`](#fn-specwithenforcedsamplelimit)
   * [`fn withEnforcedTargetLimit(enforcedTargetLimit)`](#fn-specwithenforcedtargetlimit)
@@ -58,6 +62,7 @@ permalink: /0.8/monitoring/v1/prometheus/
   * [`fn withListenLocal(listenLocal)`](#fn-specwithlistenlocal)
   * [`fn withLogFormat(logFormat)`](#fn-specwithlogformat)
   * [`fn withLogLevel(logLevel)`](#fn-specwithloglevel)
+  * [`fn withMinReadySeconds(minReadySeconds)`](#fn-specwithminreadyseconds)
   * [`fn withNodeSelector(nodeSelector)`](#fn-specwithnodeselector)
   * [`fn withNodeSelectorMixin(nodeSelector)`](#fn-specwithnodeselectormixin)
   * [`fn withOverrideHonorLabels(overrideHonorLabels)`](#fn-specwithoverridehonorlabels)
@@ -132,6 +137,13 @@ permalink: /0.8/monitoring/v1/prometheus/
     * [`fn withBearerToken(bearerToken)`](#fn-specapiserverconfigwithbearertoken)
     * [`fn withBearerTokenFile(bearerTokenFile)`](#fn-specapiserverconfigwithbearertokenfile)
     * [`fn withHost(host)`](#fn-specapiserverconfigwithhost)
+    * [`obj spec.apiserverConfig.authorization`](#obj-specapiserverconfigauthorization)
+      * [`fn withCredentialsFile(credentialsFile)`](#fn-specapiserverconfigauthorizationwithcredentialsfile)
+      * [`fn withType(type)`](#fn-specapiserverconfigauthorizationwithtype)
+      * [`obj spec.apiserverConfig.authorization.credentials`](#obj-specapiserverconfigauthorizationcredentials)
+        * [`fn withKey(key)`](#fn-specapiserverconfigauthorizationcredentialswithkey)
+        * [`fn withName(name)`](#fn-specapiserverconfigauthorizationcredentialswithname)
+        * [`fn withOptional(optional)`](#fn-specapiserverconfigauthorizationcredentialswithoptional)
     * [`obj spec.apiserverConfig.basicAuth`](#obj-specapiserverconfigbasicauth)
       * [`obj spec.apiserverConfig.basicAuth.password`](#obj-specapiserverconfigbasicauthpassword)
         * [`fn withKey(key)`](#fn-specapiserverconfigbasicauthpasswordwithkey)
@@ -237,9 +249,13 @@ permalink: /0.8/monitoring/v1/prometheus/
       * [`fn withRole(role)`](#fn-specsecuritycontextselinuxoptionswithrole)
       * [`fn withType(type)`](#fn-specsecuritycontextselinuxoptionswithtype)
       * [`fn withUser(user)`](#fn-specsecuritycontextselinuxoptionswithuser)
+    * [`obj spec.securityContext.seccompProfile`](#obj-specsecuritycontextseccompprofile)
+      * [`fn withLocalhostProfile(localhostProfile)`](#fn-specsecuritycontextseccompprofilewithlocalhostprofile)
+      * [`fn withType(type)`](#fn-specsecuritycontextseccompprofilewithtype)
     * [`obj spec.securityContext.windowsOptions`](#obj-specsecuritycontextwindowsoptions)
       * [`fn withGmsaCredentialSpec(gmsaCredentialSpec)`](#fn-specsecuritycontextwindowsoptionswithgmsacredentialspec)
       * [`fn withGmsaCredentialSpecName(gmsaCredentialSpecName)`](#fn-specsecuritycontextwindowsoptionswithgmsacredentialspecname)
+      * [`fn withHostProcess(hostProcess)`](#fn-specsecuritycontextwindowsoptionswithhostprocess)
       * [`fn withRunAsUserName(runAsUserName)`](#fn-specsecuritycontextwindowsoptionswithrunasusername)
   * [`obj spec.serviceMonitorNamespaceSelector`](#obj-specservicemonitornamespaceselector)
     * [`fn withMatchExpressions(matchExpressions)`](#fn-specservicemonitornamespaceselectorwithmatchexpressions)
@@ -256,6 +272,34 @@ permalink: /0.8/monitoring/v1/prometheus/
     * [`obj spec.storage.emptyDir`](#obj-specstorageemptydir)
       * [`fn withMedium(medium)`](#fn-specstorageemptydirwithmedium)
       * [`fn withSizeLimit(sizeLimit)`](#fn-specstorageemptydirwithsizelimit)
+    * [`obj spec.storage.ephemeral`](#obj-specstorageephemeral)
+      * [`obj spec.storage.ephemeral.volumeClaimTemplate`](#obj-specstorageephemeralvolumeclaimtemplate)
+        * [`fn withMetadata(metadata)`](#fn-specstorageephemeralvolumeclaimtemplatewithmetadata)
+        * [`fn withMetadataMixin(metadata)`](#fn-specstorageephemeralvolumeclaimtemplatewithmetadatamixin)
+        * [`obj spec.storage.ephemeral.volumeClaimTemplate.spec`](#obj-specstorageephemeralvolumeclaimtemplatespec)
+          * [`fn withAccessModes(accessModes)`](#fn-specstorageephemeralvolumeclaimtemplatespecwithaccessmodes)
+          * [`fn withAccessModesMixin(accessModes)`](#fn-specstorageephemeralvolumeclaimtemplatespecwithaccessmodesmixin)
+          * [`fn withStorageClassName(storageClassName)`](#fn-specstorageephemeralvolumeclaimtemplatespecwithstorageclassname)
+          * [`fn withVolumeMode(volumeMode)`](#fn-specstorageephemeralvolumeclaimtemplatespecwithvolumemode)
+          * [`fn withVolumeName(volumeName)`](#fn-specstorageephemeralvolumeclaimtemplatespecwithvolumename)
+          * [`obj spec.storage.ephemeral.volumeClaimTemplate.spec.dataSource`](#obj-specstorageephemeralvolumeclaimtemplatespecdatasource)
+            * [`fn withApiGroup(apiGroup)`](#fn-specstorageephemeralvolumeclaimtemplatespecdatasourcewithapigroup)
+            * [`fn withKind(kind)`](#fn-specstorageephemeralvolumeclaimtemplatespecdatasourcewithkind)
+            * [`fn withName(name)`](#fn-specstorageephemeralvolumeclaimtemplatespecdatasourcewithname)
+          * [`obj spec.storage.ephemeral.volumeClaimTemplate.spec.dataSourceRef`](#obj-specstorageephemeralvolumeclaimtemplatespecdatasourceref)
+            * [`fn withApiGroup(apiGroup)`](#fn-specstorageephemeralvolumeclaimtemplatespecdatasourcerefwithapigroup)
+            * [`fn withKind(kind)`](#fn-specstorageephemeralvolumeclaimtemplatespecdatasourcerefwithkind)
+            * [`fn withName(name)`](#fn-specstorageephemeralvolumeclaimtemplatespecdatasourcerefwithname)
+          * [`obj spec.storage.ephemeral.volumeClaimTemplate.spec.resources`](#obj-specstorageephemeralvolumeclaimtemplatespecresources)
+            * [`fn withLimits(limits)`](#fn-specstorageephemeralvolumeclaimtemplatespecresourceswithlimits)
+            * [`fn withLimitsMixin(limits)`](#fn-specstorageephemeralvolumeclaimtemplatespecresourceswithlimitsmixin)
+            * [`fn withRequests(requests)`](#fn-specstorageephemeralvolumeclaimtemplatespecresourceswithrequests)
+            * [`fn withRequestsMixin(requests)`](#fn-specstorageephemeralvolumeclaimtemplatespecresourceswithrequestsmixin)
+          * [`obj spec.storage.ephemeral.volumeClaimTemplate.spec.selector`](#obj-specstorageephemeralvolumeclaimtemplatespecselector)
+            * [`fn withMatchExpressions(matchExpressions)`](#fn-specstorageephemeralvolumeclaimtemplatespecselectorwithmatchexpressions)
+            * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specstorageephemeralvolumeclaimtemplatespecselectorwithmatchexpressionsmixin)
+            * [`fn withMatchLabels(matchLabels)`](#fn-specstorageephemeralvolumeclaimtemplatespecselectorwithmatchlabels)
+            * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specstorageephemeralvolumeclaimtemplatespecselectorwithmatchlabelsmixin)
     * [`obj spec.storage.volumeClaimTemplate`](#obj-specstoragevolumeclaimtemplate)
       * [`fn withApiVersion(apiVersion)`](#fn-specstoragevolumeclaimtemplatewithapiversion)
       * [`fn withKind(kind)`](#fn-specstoragevolumeclaimtemplatewithkind)
@@ -275,6 +319,10 @@ permalink: /0.8/monitoring/v1/prometheus/
           * [`fn withApiGroup(apiGroup)`](#fn-specstoragevolumeclaimtemplatespecdatasourcewithapigroup)
           * [`fn withKind(kind)`](#fn-specstoragevolumeclaimtemplatespecdatasourcewithkind)
           * [`fn withName(name)`](#fn-specstoragevolumeclaimtemplatespecdatasourcewithname)
+        * [`obj spec.storage.volumeClaimTemplate.spec.dataSourceRef`](#obj-specstoragevolumeclaimtemplatespecdatasourceref)
+          * [`fn withApiGroup(apiGroup)`](#fn-specstoragevolumeclaimtemplatespecdatasourcerefwithapigroup)
+          * [`fn withKind(kind)`](#fn-specstoragevolumeclaimtemplatespecdatasourcerefwithkind)
+          * [`fn withName(name)`](#fn-specstoragevolumeclaimtemplatespecdatasourcerefwithname)
         * [`obj spec.storage.volumeClaimTemplate.spec.resources`](#obj-specstoragevolumeclaimtemplatespecresources)
           * [`fn withLimits(limits)`](#fn-specstoragevolumeclaimtemplatespecresourceswithlimits)
           * [`fn withLimitsMixin(limits)`](#fn-specstoragevolumeclaimtemplatespecresourceswithlimitsmixin)
@@ -293,10 +341,13 @@ permalink: /0.8/monitoring/v1/prometheus/
     * [`fn withLogLevel(logLevel)`](#fn-specthanoswithloglevel)
     * [`fn withMinTime(minTime)`](#fn-specthanoswithmintime)
     * [`fn withObjectStorageConfigFile(objectStorageConfigFile)`](#fn-specthanoswithobjectstorageconfigfile)
+    * [`fn withReadyTimeout(readyTimeout)`](#fn-specthanoswithreadytimeout)
     * [`fn withSha(sha)`](#fn-specthanoswithsha)
     * [`fn withTag(tag)`](#fn-specthanoswithtag)
     * [`fn withTracingConfigFile(tracingConfigFile)`](#fn-specthanoswithtracingconfigfile)
     * [`fn withVersion(version)`](#fn-specthanoswithversion)
+    * [`fn withVolumeMounts(volumeMounts)`](#fn-specthanoswithvolumemounts)
+    * [`fn withVolumeMountsMixin(volumeMounts)`](#fn-specthanoswithvolumemountsmixin)
     * [`obj spec.thanos.grpcServerTlsConfig`](#obj-specthanosgrpcservertlsconfig)
       * [`fn withCaFile(caFile)`](#fn-specthanosgrpcservertlsconfigwithcafile)
       * [`fn withCertFile(certFile)`](#fn-specthanosgrpcservertlsconfigwithcertfile)
@@ -340,6 +391,37 @@ permalink: /0.8/monitoring/v1/prometheus/
       * [`fn withOptional(optional)`](#fn-specthanostracingconfigwithoptional)
   * [`obj spec.web`](#obj-specweb)
     * [`fn withPageTitle(pageTitle)`](#fn-specwebwithpagetitle)
+    * [`obj spec.web.tlsConfig`](#obj-specwebtlsconfig)
+      * [`fn withCipherSuites(cipherSuites)`](#fn-specwebtlsconfigwithciphersuites)
+      * [`fn withCipherSuitesMixin(cipherSuites)`](#fn-specwebtlsconfigwithciphersuitesmixin)
+      * [`fn withClientAuthType(clientAuthType)`](#fn-specwebtlsconfigwithclientauthtype)
+      * [`fn withCurvePreferences(curvePreferences)`](#fn-specwebtlsconfigwithcurvepreferences)
+      * [`fn withCurvePreferencesMixin(curvePreferences)`](#fn-specwebtlsconfigwithcurvepreferencesmixin)
+      * [`fn withMaxVersion(maxVersion)`](#fn-specwebtlsconfigwithmaxversion)
+      * [`fn withMinVersion(minVersion)`](#fn-specwebtlsconfigwithminversion)
+      * [`fn withPreferServerCipherSuites(preferServerCipherSuites)`](#fn-specwebtlsconfigwithpreferserverciphersuites)
+      * [`obj spec.web.tlsConfig.cert`](#obj-specwebtlsconfigcert)
+        * [`obj spec.web.tlsConfig.cert.configMap`](#obj-specwebtlsconfigcertconfigmap)
+          * [`fn withKey(key)`](#fn-specwebtlsconfigcertconfigmapwithkey)
+          * [`fn withName(name)`](#fn-specwebtlsconfigcertconfigmapwithname)
+          * [`fn withOptional(optional)`](#fn-specwebtlsconfigcertconfigmapwithoptional)
+        * [`obj spec.web.tlsConfig.cert.secret`](#obj-specwebtlsconfigcertsecret)
+          * [`fn withKey(key)`](#fn-specwebtlsconfigcertsecretwithkey)
+          * [`fn withName(name)`](#fn-specwebtlsconfigcertsecretwithname)
+          * [`fn withOptional(optional)`](#fn-specwebtlsconfigcertsecretwithoptional)
+      * [`obj spec.web.tlsConfig.client_ca`](#obj-specwebtlsconfigclient_ca)
+        * [`obj spec.web.tlsConfig.client_ca.configMap`](#obj-specwebtlsconfigclient_caconfigmap)
+          * [`fn withKey(key)`](#fn-specwebtlsconfigclient_caconfigmapwithkey)
+          * [`fn withName(name)`](#fn-specwebtlsconfigclient_caconfigmapwithname)
+          * [`fn withOptional(optional)`](#fn-specwebtlsconfigclient_caconfigmapwithoptional)
+        * [`obj spec.web.tlsConfig.client_ca.secret`](#obj-specwebtlsconfigclient_casecret)
+          * [`fn withKey(key)`](#fn-specwebtlsconfigclient_casecretwithkey)
+          * [`fn withName(name)`](#fn-specwebtlsconfigclient_casecretwithname)
+          * [`fn withOptional(optional)`](#fn-specwebtlsconfigclient_casecretwithoptional)
+      * [`obj spec.web.tlsConfig.keySecret`](#obj-specwebtlsconfigkeysecret)
+        * [`fn withKey(key)`](#fn-specwebtlsconfigkeysecretwithkey)
+        * [`fn withName(name)`](#fn-specwebtlsconfigkeysecretwithname)
+        * [`fn withOptional(optional)`](#fn-specwebtlsconfigkeysecretwithoptional)
 
 ## Fields
 
@@ -623,13 +705,45 @@ withEnableFeaturesMixin(enableFeatures)
 
 **Note:** This function appends passed data to existing values
 
+### fn spec.withEnforcedBodySizeLimit
+
+```ts
+withEnforcedBodySizeLimit(enforcedBodySizeLimit)
+```
+
+"EnforcedBodySizeLimit defines the maximum size of uncompressed response body that will be accepted by Prometheus. Targets responding with a body larger than this many bytes will cause the scrape to fail. Example: 100MB. If defined, the limit will apply to all service/pod monitors and probes. This is an experimental feature, this behaviour could change or be removed in the future. Only valid in Prometheus versions 2.28.0 and newer."
+
+### fn spec.withEnforcedLabelLimit
+
+```ts
+withEnforcedLabelLimit(enforcedLabelLimit)
+```
+
+"Per-scrape limit on number of labels that will be accepted for a sample. If more than this number of labels are present post metric-relabeling, the entire scrape will be treated as failed. 0 means no limit. Only valid in Prometheus versions 2.27.0 and newer."
+
+### fn spec.withEnforcedLabelNameLengthLimit
+
+```ts
+withEnforcedLabelNameLengthLimit(enforcedLabelNameLengthLimit)
+```
+
+"Per-scrape limit on length of labels name that will be accepted for a sample. If a label name is longer than this number post metric-relabeling, the entire scrape will be treated as failed. 0 means no limit. Only valid in Prometheus versions 2.27.0 and newer."
+
+### fn spec.withEnforcedLabelValueLengthLimit
+
+```ts
+withEnforcedLabelValueLengthLimit(enforcedLabelValueLengthLimit)
+```
+
+"Per-scrape limit on length of labels value that will be accepted for a sample. If a label value is longer than this number post metric-relabeling, the entire scrape will be treated as failed. 0 means no limit. Only valid in Prometheus versions 2.27.0 and newer."
+
 ### fn spec.withEnforcedNamespaceLabel
 
 ```ts
 withEnforcedNamespaceLabel(enforcedNamespaceLabel)
 ```
 
-"EnforcedNamespaceLabel enforces adding a namespace label of origin for each alert and metric that is user created. The label value will always be the namespace of the object that is being created."
+"EnforcedNamespaceLabel If set, a label will be added to \n 1. all user-metrics (created by `ServiceMonitor`, `PodMonitor` and `ProbeConfig` object) and 2. in all `PrometheusRule` objects (except the ones excluded in `prometheusRulesExcludedFromEnforce`) to    * alerting & recording rules and    * the metrics used in their expressions (`expr`). \n Label name is this field's value. Label value is the namespace of the created object (mentioned above)."
 
 ### fn spec.withEnforcedSampleLimit
 
@@ -645,7 +759,7 @@ withEnforcedSampleLimit(enforcedSampleLimit)
 withEnforcedTargetLimit(enforcedTargetLimit)
 ```
 
-"EnforcedTargetLimit defines a global limit on the number of scraped targets. This overrides any TargetLimit set per ServiceMonitor or/and PodMonitor. It is meant to be used by admins to enforce the TargetLimit to keep overall number of targets under the desired limit. Note that if TargetLimit is higher that value will be taken instead."
+"EnforcedTargetLimit defines a global limit on the number of scraped targets.  This overrides any TargetLimit set per ServiceMonitor or/and PodMonitor.  It is meant to be used by admins to enforce the TargetLimit to keep the overall number of targets under the desired limit. Note that if TargetLimit is lower, that value will be taken instead, except if either value is zero, in which case the non-zero value will be used.  If both values are zero, no limit is enforced."
 
 ### fn spec.withEvaluationInterval
 
@@ -653,7 +767,7 @@ withEnforcedTargetLimit(enforcedTargetLimit)
 withEvaluationInterval(evaluationInterval)
 ```
 
-"Interval between consecutive evaluations."
+"Interval between consecutive evaluations. Default: `1m`"
 
 ### fn spec.withExternalLabels
 
@@ -721,7 +835,7 @@ withImagePullSecretsMixin(imagePullSecrets)
 withInitContainers(initContainers)
 ```
 
-"InitContainers allows adding initContainers to the pod definition. Those can be used to e.g. fetch secrets for injection into the Prometheus configuration from external sources. Any errors during the execution of an initContainer will lead to a restart of the Pod. More info: https://kubernetes.io/docs/concepts/workloads/pods/init-containers/ Using initContainers for any use case other then secret fetching is entirely outside the scope of what the maintainers will support and by doing so, you accept that this behaviour may break at any time without notice."
+"InitContainers allows adding initContainers to the pod definition. Those can be used to e.g. fetch secrets for injection into the Prometheus configuration from external sources. Any errors during the execution of an initContainer will lead to a restart of the Pod. More info: https://kubernetes.io/docs/concepts/workloads/pods/init-containers/ InitContainers described here modify an operator generated init containers if they share the same name and modifications are done via a strategic merge patch. The current init container name is: `init-config-reloader`. Overriding init containers is entirely outside the scope of what the maintainers will support and by doing so, you accept that this behaviour may break at any time without notice."
 
 ### fn spec.withInitContainersMixin
 
@@ -729,7 +843,7 @@ withInitContainers(initContainers)
 withInitContainersMixin(initContainers)
 ```
 
-"InitContainers allows adding initContainers to the pod definition. Those can be used to e.g. fetch secrets for injection into the Prometheus configuration from external sources. Any errors during the execution of an initContainer will lead to a restart of the Pod. More info: https://kubernetes.io/docs/concepts/workloads/pods/init-containers/ Using initContainers for any use case other then secret fetching is entirely outside the scope of what the maintainers will support and by doing so, you accept that this behaviour may break at any time without notice."
+"InitContainers allows adding initContainers to the pod definition. Those can be used to e.g. fetch secrets for injection into the Prometheus configuration from external sources. Any errors during the execution of an initContainer will lead to a restart of the Pod. More info: https://kubernetes.io/docs/concepts/workloads/pods/init-containers/ InitContainers described here modify an operator generated init containers if they share the same name and modifications are done via a strategic merge patch. The current init container name is: `init-config-reloader`. Overriding init containers is entirely outside the scope of what the maintainers will support and by doing so, you accept that this behaviour may break at any time without notice."
 
 **Note:** This function appends passed data to existing values
 
@@ -756,6 +870,14 @@ withLogLevel(logLevel)
 ```
 
 "Log level for Prometheus to be configured with."
+
+### fn spec.withMinReadySeconds
+
+```ts
+withMinReadySeconds(minReadySeconds)
+```
+
+"Minimum number of seconds for which a newly created pod should be ready without any of its container crashing for it to be considered available. Defaults to 0 (pod will be considered available as soon as it is ready) This is an alpha field and requires enabling StatefulSetMinReadySeconds feature gate."
 
 ### fn spec.withNodeSelector
 
@@ -931,7 +1053,7 @@ withRoutePrefix(routePrefix)
 withScrapeInterval(scrapeInterval)
 ```
 
-"Interval between consecutive scrapes."
+"Interval between consecutive scrapes. Default: `1m`"
 
 ### fn spec.withScrapeTimeout
 
@@ -1340,6 +1462,54 @@ withHost(host)
 ```
 
 "Host of apiserver. A valid string consisting of a hostname or IP followed by an optional port number"
+
+## obj spec.apiserverConfig.authorization
+
+"Authorization section for accessing apiserver"
+
+### fn spec.apiserverConfig.authorization.withCredentialsFile
+
+```ts
+withCredentialsFile(credentialsFile)
+```
+
+"File to read a secret from, mutually exclusive with Credentials (from SafeAuthorization)"
+
+### fn spec.apiserverConfig.authorization.withType
+
+```ts
+withType(type)
+```
+
+"Set the authentication type. Defaults to Bearer, Basic will cause an error"
+
+## obj spec.apiserverConfig.authorization.credentials
+
+"The secret's key that contains the credentials of the request"
+
+### fn spec.apiserverConfig.authorization.credentials.withKey
+
+```ts
+withKey(key)
+```
+
+"The key of the secret to select from.  Must be a valid secret key."
+
+### fn spec.apiserverConfig.authorization.credentials.withName
+
+```ts
+withName(name)
+```
+
+"Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names TODO: Add other useful fields. apiVersion, kind, uid?"
+
+### fn spec.apiserverConfig.authorization.credentials.withOptional
+
+```ts
+withOptional(optional)
+```
+
+"Specify whether the Secret or its key must be defined"
 
 ## obj spec.apiserverConfig.basicAuth
 
@@ -1859,7 +2029,7 @@ withTimeout(timeout)
 withLimits(limits)
 ```
 
-"Limits describes the maximum amount of compute resources allowed. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/"
+"Limits describes the maximum amount of compute resources allowed. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/"
 
 ### fn spec.resources.withLimitsMixin
 
@@ -1867,7 +2037,7 @@ withLimits(limits)
 withLimitsMixin(limits)
 ```
 
-"Limits describes the maximum amount of compute resources allowed. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/"
+"Limits describes the maximum amount of compute resources allowed. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/"
 
 **Note:** This function appends passed data to existing values
 
@@ -1877,7 +2047,7 @@ withLimitsMixin(limits)
 withRequests(requests)
 ```
 
-"Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/"
+"Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/"
 
 ### fn spec.resources.withRequestsMixin
 
@@ -1885,7 +2055,7 @@ withRequests(requests)
 withRequestsMixin(requests)
 ```
 
-"Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/"
+"Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/"
 
 **Note:** This function appends passed data to existing values
 
@@ -2011,7 +2181,7 @@ withResendDelay(resendDelay)
 withFsGroup(fsGroup)
 ```
 
-"A special supplemental group that applies to all containers in a pod. Some volume types allow the Kubelet to change the ownership of that volume to be owned by the pod: \n 1. The owning GID will be the FSGroup 2. The setgid bit is set (new files created in the volume will be owned by FSGroup) 3. The permission bits are OR'd with rw-rw---- \n If unset, the Kubelet will not modify the ownership and permissions of any volume."
+"A special supplemental group that applies to all containers in a pod. Some volume types allow the Kubelet to change the ownership of that volume to be owned by the pod: \n 1. The owning GID will be the FSGroup 2. The setgid bit is set (new files created in the volume will be owned by FSGroup) 3. The permission bits are OR'd with rw-rw---- \n If unset, the Kubelet will not modify the ownership and permissions of any volume. Note that this field cannot be set when spec.os.name is windows."
 
 ### fn spec.securityContext.withFsGroupChangePolicy
 
@@ -2019,7 +2189,7 @@ withFsGroup(fsGroup)
 withFsGroupChangePolicy(fsGroupChangePolicy)
 ```
 
-"fsGroupChangePolicy defines behavior of changing ownership and permission of the volume before being exposed inside Pod. This field will only apply to volume types which support fsGroup based ownership(and permissions). It will have no effect on ephemeral volume types such as: secret, configmaps and emptydir. Valid values are \"OnRootMismatch\" and \"Always\". If not specified defaults to \"Always\"."
+"fsGroupChangePolicy defines behavior of changing ownership and permission of the volume before being exposed inside Pod. This field will only apply to volume types which support fsGroup based ownership(and permissions). It will have no effect on ephemeral volume types such as: secret, configmaps and emptydir. Valid values are \"OnRootMismatch\" and \"Always\". If not specified, \"Always\" is used. Note that this field cannot be set when spec.os.name is windows."
 
 ### fn spec.securityContext.withRunAsGroup
 
@@ -2027,7 +2197,7 @@ withFsGroupChangePolicy(fsGroupChangePolicy)
 withRunAsGroup(runAsGroup)
 ```
 
-"The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in SecurityContext.  If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence for that container."
+"The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in SecurityContext.  If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence for that container. Note that this field cannot be set when spec.os.name is windows."
 
 ### fn spec.securityContext.withRunAsNonRoot
 
@@ -2043,7 +2213,7 @@ withRunAsNonRoot(runAsNonRoot)
 withRunAsUser(runAsUser)
 ```
 
-"The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in SecurityContext.  If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence for that container."
+"The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in SecurityContext.  If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence for that container. Note that this field cannot be set when spec.os.name is windows."
 
 ### fn spec.securityContext.withSupplementalGroups
 
@@ -2051,7 +2221,7 @@ withRunAsUser(runAsUser)
 withSupplementalGroups(supplementalGroups)
 ```
 
-"A list of groups applied to the first process run in each container, in addition to the container's primary GID.  If unspecified, no groups will be added to any container."
+"A list of groups applied to the first process run in each container, in addition to the container's primary GID.  If unspecified, no groups will be added to any container. Note that this field cannot be set when spec.os.name is windows."
 
 ### fn spec.securityContext.withSupplementalGroupsMixin
 
@@ -2059,7 +2229,7 @@ withSupplementalGroups(supplementalGroups)
 withSupplementalGroupsMixin(supplementalGroups)
 ```
 
-"A list of groups applied to the first process run in each container, in addition to the container's primary GID.  If unspecified, no groups will be added to any container."
+"A list of groups applied to the first process run in each container, in addition to the container's primary GID.  If unspecified, no groups will be added to any container. Note that this field cannot be set when spec.os.name is windows."
 
 **Note:** This function appends passed data to existing values
 
@@ -2069,7 +2239,7 @@ withSupplementalGroupsMixin(supplementalGroups)
 withSysctls(sysctls)
 ```
 
-"Sysctls hold a list of namespaced sysctls used for the pod. Pods with unsupported sysctls (by the container runtime) might fail to launch."
+"Sysctls hold a list of namespaced sysctls used for the pod. Pods with unsupported sysctls (by the container runtime) might fail to launch. Note that this field cannot be set when spec.os.name is windows."
 
 ### fn spec.securityContext.withSysctlsMixin
 
@@ -2077,13 +2247,13 @@ withSysctls(sysctls)
 withSysctlsMixin(sysctls)
 ```
 
-"Sysctls hold a list of namespaced sysctls used for the pod. Pods with unsupported sysctls (by the container runtime) might fail to launch."
+"Sysctls hold a list of namespaced sysctls used for the pod. Pods with unsupported sysctls (by the container runtime) might fail to launch. Note that this field cannot be set when spec.os.name is windows."
 
 **Note:** This function appends passed data to existing values
 
 ## obj spec.securityContext.seLinuxOptions
 
-"The SELinux context to be applied to all containers. If unspecified, the container runtime will allocate a random SELinux context for each container.  May also be set in SecurityContext.  If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence for that container."
+"The SELinux context to be applied to all containers. If unspecified, the container runtime will allocate a random SELinux context for each container.  May also be set in SecurityContext.  If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence for that container. Note that this field cannot be set when spec.os.name is windows."
 
 ### fn spec.securityContext.seLinuxOptions.withLevel
 
@@ -2117,9 +2287,29 @@ withUser(user)
 
 "User is a SELinux user label that applies to the container."
 
+## obj spec.securityContext.seccompProfile
+
+"The seccomp options to use by the containers in this pod. Note that this field cannot be set when spec.os.name is windows."
+
+### fn spec.securityContext.seccompProfile.withLocalhostProfile
+
+```ts
+withLocalhostProfile(localhostProfile)
+```
+
+"localhostProfile indicates a profile defined in a file on the node should be used. The profile must be preconfigured on the node to work. Must be a descending path, relative to the kubelet's configured seccomp profile location. Must only be set if type is \"Localhost\"."
+
+### fn spec.securityContext.seccompProfile.withType
+
+```ts
+withType(type)
+```
+
+"type indicates which kind of seccomp profile will be applied. Valid options are: \n Localhost - a profile defined in a file on the node should be used. RuntimeDefault - the container runtime default profile should be used. Unconfined - no profile should be applied."
+
 ## obj spec.securityContext.windowsOptions
 
-"The Windows specific settings applied to all containers. If unspecified, the options within a container's SecurityContext will be used. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence."
+"The Windows specific settings applied to all containers. If unspecified, the options within a container's SecurityContext will be used. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence. Note that this field cannot be set when spec.os.name is linux."
 
 ### fn spec.securityContext.windowsOptions.withGmsaCredentialSpec
 
@@ -2136,6 +2326,14 @@ withGmsaCredentialSpecName(gmsaCredentialSpecName)
 ```
 
 "GMSACredentialSpecName is the name of the GMSA credential spec to use."
+
+### fn spec.securityContext.windowsOptions.withHostProcess
+
+```ts
+withHostProcess(hostProcess)
+```
+
+"HostProcess determines if a container should be run as a 'Host Process' container. This field is alpha-level and will only be honored by components that enable the WindowsHostProcessContainers feature flag. Setting this field without the feature flag will result in errors when validating the Pod. All of a Pod's containers must have the same effective HostProcess value (it is not allowed to have a mix of HostProcess containers and non-HostProcess containers).  In addition, if HostProcess is true then HostNetwork must also be set to true."
 
 ### fn spec.securityContext.windowsOptions.withRunAsUserName
 
@@ -2257,6 +2455,214 @@ withSizeLimit(sizeLimit)
 
 "Total amount of local storage required for this EmptyDir volume. The size limit is also applicable for memory medium. The maximum usage on memory medium EmptyDir would be the minimum value between the SizeLimit specified here and the sum of memory limits of all containers in a pod. The default is nil which means that the limit is undefined. More info: http://kubernetes.io/docs/user-guide/volumes#emptydir"
 
+## obj spec.storage.ephemeral
+
+"EphemeralVolumeSource to be used by the Prometheus StatefulSets. This is a beta field in k8s 1.21, for lower versions, starting with k8s 1.19, it requires enabling the GenericEphemeralVolume feature gate. More info: https://kubernetes.io/docs/concepts/storage/ephemeral-volumes/#generic-ephemeral-volumes"
+
+## obj spec.storage.ephemeral.volumeClaimTemplate
+
+"Will be used to create a stand-alone PVC to provision the volume. The pod in which this EphemeralVolumeSource is embedded will be the owner of the PVC, i.e. the PVC will be deleted together with the pod.  The name of the PVC will be `<pod name>-<volume name>` where `<volume name>` is the name from the `PodSpec.Volumes` array entry. Pod validation will reject the pod if the concatenated name is not valid for a PVC (for example, too long). \n An existing PVC with that name that is not owned by the pod will *not* be used for the pod to avoid using an unrelated volume by mistake. Starting the pod is then blocked until the unrelated PVC is removed. If such a pre-created PVC is meant to be used by the pod, the PVC has to updated with an owner reference to the pod once the pod exists. Normally this should not be necessary, but it may be useful when manually reconstructing a broken cluster. \n This field is read-only and no changes will be made by Kubernetes to the PVC after it has been created. \n Required, must not be nil."
+
+### fn spec.storage.ephemeral.volumeClaimTemplate.withMetadata
+
+```ts
+withMetadata(metadata)
+```
+
+"May contain labels and annotations that will be copied into the PVC when creating it. No other fields are allowed and will be rejected during validation."
+
+### fn spec.storage.ephemeral.volumeClaimTemplate.withMetadataMixin
+
+```ts
+withMetadataMixin(metadata)
+```
+
+"May contain labels and annotations that will be copied into the PVC when creating it. No other fields are allowed and will be rejected during validation."
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.ephemeral.volumeClaimTemplate.spec
+
+"The specification for the PersistentVolumeClaim. The entire content is copied unchanged into the PVC that gets created from this template. The same fields as in a PersistentVolumeClaim are also valid here."
+
+### fn spec.storage.ephemeral.volumeClaimTemplate.spec.withAccessModes
+
+```ts
+withAccessModes(accessModes)
+```
+
+"AccessModes contains the desired access modes the volume should have. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#access-modes-1"
+
+### fn spec.storage.ephemeral.volumeClaimTemplate.spec.withAccessModesMixin
+
+```ts
+withAccessModesMixin(accessModes)
+```
+
+"AccessModes contains the desired access modes the volume should have. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#access-modes-1"
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.ephemeral.volumeClaimTemplate.spec.withStorageClassName
+
+```ts
+withStorageClassName(storageClassName)
+```
+
+"Name of the StorageClass required by the claim. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#class-1"
+
+### fn spec.storage.ephemeral.volumeClaimTemplate.spec.withVolumeMode
+
+```ts
+withVolumeMode(volumeMode)
+```
+
+"volumeMode defines what type of volume is required by the claim. Value of Filesystem is implied when not included in claim spec."
+
+### fn spec.storage.ephemeral.volumeClaimTemplate.spec.withVolumeName
+
+```ts
+withVolumeName(volumeName)
+```
+
+"VolumeName is the binding reference to the PersistentVolume backing this claim."
+
+## obj spec.storage.ephemeral.volumeClaimTemplate.spec.dataSource
+
+"This field can be used to specify either: * An existing VolumeSnapshot object (snapshot.storage.k8s.io/VolumeSnapshot) * An existing PVC (PersistentVolumeClaim) If the provisioner or an external controller can support the specified data source, it will create a new volume based on the contents of the specified data source. If the AnyVolumeDataSource feature gate is enabled, this field will always have the same contents as the DataSourceRef field."
+
+### fn spec.storage.ephemeral.volumeClaimTemplate.spec.dataSource.withApiGroup
+
+```ts
+withApiGroup(apiGroup)
+```
+
+"APIGroup is the group for the resource being referenced. If APIGroup is not specified, the specified Kind must be in the core API group. For any other third-party types, APIGroup is required."
+
+### fn spec.storage.ephemeral.volumeClaimTemplate.spec.dataSource.withKind
+
+```ts
+withKind(kind)
+```
+
+"Kind is the type of resource being referenced"
+
+### fn spec.storage.ephemeral.volumeClaimTemplate.spec.dataSource.withName
+
+```ts
+withName(name)
+```
+
+"Name is the name of resource being referenced"
+
+## obj spec.storage.ephemeral.volumeClaimTemplate.spec.dataSourceRef
+
+"Specifies the object from which to populate the volume with data, if a non-empty volume is desired. This may be any local object from a non-empty API group (non core object) or a PersistentVolumeClaim object. When this field is specified, volume binding will only succeed if the type of the specified object matches some installed volume populator or dynamic provisioner. This field will replace the functionality of the DataSource field and as such if both fields are non-empty, they must have the same value. For backwards compatibility, both fields (DataSource and DataSourceRef) will be set to the same value automatically if one of them is empty and the other is non-empty. There are two important differences between DataSource and DataSourceRef: * While DataSource only allows two specific types of objects, DataSourceRef   allows any non-core object, as well as PersistentVolumeClaim objects. * While DataSource ignores disallowed values (dropping them), DataSourceRef   preserves all values, and generates an error if a disallowed value is   specified. (Alpha) Using this field requires the AnyVolumeDataSource feature gate to be enabled."
+
+### fn spec.storage.ephemeral.volumeClaimTemplate.spec.dataSourceRef.withApiGroup
+
+```ts
+withApiGroup(apiGroup)
+```
+
+"APIGroup is the group for the resource being referenced. If APIGroup is not specified, the specified Kind must be in the core API group. For any other third-party types, APIGroup is required."
+
+### fn spec.storage.ephemeral.volumeClaimTemplate.spec.dataSourceRef.withKind
+
+```ts
+withKind(kind)
+```
+
+"Kind is the type of resource being referenced"
+
+### fn spec.storage.ephemeral.volumeClaimTemplate.spec.dataSourceRef.withName
+
+```ts
+withName(name)
+```
+
+"Name is the name of resource being referenced"
+
+## obj spec.storage.ephemeral.volumeClaimTemplate.spec.resources
+
+"Resources represents the minimum resources the volume should have. If RecoverVolumeExpansionFailure feature is enabled users are allowed to specify resource requirements that are lower than previous value but must still be higher than capacity recorded in the status field of the claim. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#resources"
+
+### fn spec.storage.ephemeral.volumeClaimTemplate.spec.resources.withLimits
+
+```ts
+withLimits(limits)
+```
+
+"Limits describes the maximum amount of compute resources allowed. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/"
+
+### fn spec.storage.ephemeral.volumeClaimTemplate.spec.resources.withLimitsMixin
+
+```ts
+withLimitsMixin(limits)
+```
+
+"Limits describes the maximum amount of compute resources allowed. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/"
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.ephemeral.volumeClaimTemplate.spec.resources.withRequests
+
+```ts
+withRequests(requests)
+```
+
+"Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/"
+
+### fn spec.storage.ephemeral.volumeClaimTemplate.spec.resources.withRequestsMixin
+
+```ts
+withRequestsMixin(requests)
+```
+
+"Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/"
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.ephemeral.volumeClaimTemplate.spec.selector
+
+"A label query over volumes to consider for binding."
+
+### fn spec.storage.ephemeral.volumeClaimTemplate.spec.selector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+"matchExpressions is a list of label selector requirements. The requirements are ANDed."
+
+### fn spec.storage.ephemeral.volumeClaimTemplate.spec.selector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+"matchExpressions is a list of label selector requirements. The requirements are ANDed."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.ephemeral.volumeClaimTemplate.spec.selector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+"matchLabels is a map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is \"key\", the operator is \"In\", and the values array contains only \"value\". The requirements are ANDed."
+
+### fn spec.storage.ephemeral.volumeClaimTemplate.spec.selector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+"matchLabels is a map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is \"key\", the operator is \"In\", and the values array contains only \"value\". The requirements are ANDed."
+
+**Note:** This function appends passed data to existing values
+
 ## obj spec.storage.volumeClaimTemplate
 
 "A PVC spec to be used by the Prometheus StatefulSets."
@@ -2373,7 +2779,7 @@ withVolumeName(volumeName)
 
 ## obj spec.storage.volumeClaimTemplate.spec.dataSource
 
-"This field can be used to specify either: * An existing VolumeSnapshot object (snapshot.storage.k8s.io/VolumeSnapshot - Beta) * An existing PVC (PersistentVolumeClaim) * An existing custom resource/object that implements data population (Alpha) In order to use VolumeSnapshot object types, the appropriate feature gate must be enabled (VolumeSnapshotDataSource or AnyVolumeDataSource) If the provisioner or an external controller can support the specified data source, it will create a new volume based on the contents of the specified data source. If the specified data source is not supported, the volume will not be created and the failure will be reported as an event. In the future, we plan to support more data source types and the behavior of the provisioner may change."
+"This field can be used to specify either: * An existing VolumeSnapshot object (snapshot.storage.k8s.io/VolumeSnapshot) * An existing PVC (PersistentVolumeClaim) If the provisioner or an external controller can support the specified data source, it will create a new volume based on the contents of the specified data source. If the AnyVolumeDataSource feature gate is enabled, this field will always have the same contents as the DataSourceRef field."
 
 ### fn spec.storage.volumeClaimTemplate.spec.dataSource.withApiGroup
 
@@ -2399,9 +2805,37 @@ withName(name)
 
 "Name is the name of resource being referenced"
 
+## obj spec.storage.volumeClaimTemplate.spec.dataSourceRef
+
+"Specifies the object from which to populate the volume with data, if a non-empty volume is desired. This may be any local object from a non-empty API group (non core object) or a PersistentVolumeClaim object. When this field is specified, volume binding will only succeed if the type of the specified object matches some installed volume populator or dynamic provisioner. This field will replace the functionality of the DataSource field and as such if both fields are non-empty, they must have the same value. For backwards compatibility, both fields (DataSource and DataSourceRef) will be set to the same value automatically if one of them is empty and the other is non-empty. There are two important differences between DataSource and DataSourceRef: * While DataSource only allows two specific types of objects, DataSourceRef   allows any non-core object, as well as PersistentVolumeClaim objects. * While DataSource ignores disallowed values (dropping them), DataSourceRef   preserves all values, and generates an error if a disallowed value is   specified. (Alpha) Using this field requires the AnyVolumeDataSource feature gate to be enabled."
+
+### fn spec.storage.volumeClaimTemplate.spec.dataSourceRef.withApiGroup
+
+```ts
+withApiGroup(apiGroup)
+```
+
+"APIGroup is the group for the resource being referenced. If APIGroup is not specified, the specified Kind must be in the core API group. For any other third-party types, APIGroup is required."
+
+### fn spec.storage.volumeClaimTemplate.spec.dataSourceRef.withKind
+
+```ts
+withKind(kind)
+```
+
+"Kind is the type of resource being referenced"
+
+### fn spec.storage.volumeClaimTemplate.spec.dataSourceRef.withName
+
+```ts
+withName(name)
+```
+
+"Name is the name of resource being referenced"
+
 ## obj spec.storage.volumeClaimTemplate.spec.resources
 
-"Resources represents the minimum resources the volume should have. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#resources"
+"Resources represents the minimum resources the volume should have. If RecoverVolumeExpansionFailure feature is enabled users are allowed to specify resource requirements that are lower than previous value but must still be higher than capacity recorded in the status field of the claim. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#resources"
 
 ### fn spec.storage.volumeClaimTemplate.spec.resources.withLimits
 
@@ -2409,7 +2843,7 @@ withName(name)
 withLimits(limits)
 ```
 
-"Limits describes the maximum amount of compute resources allowed. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/"
+"Limits describes the maximum amount of compute resources allowed. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/"
 
 ### fn spec.storage.volumeClaimTemplate.spec.resources.withLimitsMixin
 
@@ -2417,7 +2851,7 @@ withLimits(limits)
 withLimitsMixin(limits)
 ```
 
-"Limits describes the maximum amount of compute resources allowed. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/"
+"Limits describes the maximum amount of compute resources allowed. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/"
 
 **Note:** This function appends passed data to existing values
 
@@ -2427,7 +2861,7 @@ withLimitsMixin(limits)
 withRequests(requests)
 ```
 
-"Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/"
+"Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/"
 
 ### fn spec.storage.volumeClaimTemplate.spec.resources.withRequestsMixin
 
@@ -2435,7 +2869,7 @@ withRequests(requests)
 withRequestsMixin(requests)
 ```
 
-"Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/"
+"Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/"
 
 **Note:** This function appends passed data to existing values
 
@@ -2539,6 +2973,14 @@ withObjectStorageConfigFile(objectStorageConfigFile)
 
 "ObjectStorageConfigFile specifies the path of the object storage configuration file. When used alongside with ObjectStorageConfig, ObjectStorageConfigFile takes precedence."
 
+### fn spec.thanos.withReadyTimeout
+
+```ts
+withReadyTimeout(readyTimeout)
+```
+
+"ReadyTimeout is the maximum time Thanos sidecar will wait for Prometheus to start. Eg 10m"
+
 ### fn spec.thanos.withSha
 
 ```ts
@@ -2570,6 +3012,24 @@ withVersion(version)
 ```
 
 "Version describes the version of Thanos to use."
+
+### fn spec.thanos.withVolumeMounts
+
+```ts
+withVolumeMounts(volumeMounts)
+```
+
+"VolumeMounts allows configuration of additional VolumeMounts on the output StatefulSet definition. VolumeMounts specified will be appended to other VolumeMounts in the thanos-sidecar container."
+
+### fn spec.thanos.withVolumeMountsMixin
+
+```ts
+withVolumeMountsMixin(volumeMounts)
+```
+
+"VolumeMounts allows configuration of additional VolumeMounts on the output StatefulSet definition. VolumeMounts specified will be appended to other VolumeMounts in the thanos-sidecar container."
+
+**Note:** This function appends passed data to existing values
 
 ## obj spec.thanos.grpcServerTlsConfig
 
@@ -2801,7 +3261,7 @@ withOptional(optional)
 withLimits(limits)
 ```
 
-"Limits describes the maximum amount of compute resources allowed. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/"
+"Limits describes the maximum amount of compute resources allowed. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/"
 
 ### fn spec.thanos.resources.withLimitsMixin
 
@@ -2809,7 +3269,7 @@ withLimits(limits)
 withLimitsMixin(limits)
 ```
 
-"Limits describes the maximum amount of compute resources allowed. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/"
+"Limits describes the maximum amount of compute resources allowed. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/"
 
 **Note:** This function appends passed data to existing values
 
@@ -2819,7 +3279,7 @@ withLimitsMixin(limits)
 withRequests(requests)
 ```
 
-"Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/"
+"Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/"
 
 ### fn spec.thanos.resources.withRequestsMixin
 
@@ -2827,7 +3287,7 @@ withRequests(requests)
 withRequestsMixin(requests)
 ```
 
-"Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/"
+"Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/"
 
 **Note:** This function appends passed data to existing values
 
@@ -2870,3 +3330,223 @@ withPageTitle(pageTitle)
 ```
 
 "The prometheus web page title"
+
+## obj spec.web.tlsConfig
+
+"WebTLSConfig defines the TLS parameters for HTTPS."
+
+### fn spec.web.tlsConfig.withCipherSuites
+
+```ts
+withCipherSuites(cipherSuites)
+```
+
+"List of supported cipher suites for TLS versions up to TLS 1.2. If empty, Go default cipher suites are used. Available cipher suites are documented in the go documentation: https://golang.org/pkg/crypto/tls/#pkg-constants"
+
+### fn spec.web.tlsConfig.withCipherSuitesMixin
+
+```ts
+withCipherSuitesMixin(cipherSuites)
+```
+
+"List of supported cipher suites for TLS versions up to TLS 1.2. If empty, Go default cipher suites are used. Available cipher suites are documented in the go documentation: https://golang.org/pkg/crypto/tls/#pkg-constants"
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.web.tlsConfig.withClientAuthType
+
+```ts
+withClientAuthType(clientAuthType)
+```
+
+"Server policy for client authentication. Maps to ClientAuth Policies. For more detail on clientAuth options: https://golang.org/pkg/crypto/tls/#ClientAuthType"
+
+### fn spec.web.tlsConfig.withCurvePreferences
+
+```ts
+withCurvePreferences(curvePreferences)
+```
+
+"Elliptic curves that will be used in an ECDHE handshake, in preference order. Available curves are documented in the go documentation: https://golang.org/pkg/crypto/tls/#CurveID"
+
+### fn spec.web.tlsConfig.withCurvePreferencesMixin
+
+```ts
+withCurvePreferencesMixin(curvePreferences)
+```
+
+"Elliptic curves that will be used in an ECDHE handshake, in preference order. Available curves are documented in the go documentation: https://golang.org/pkg/crypto/tls/#CurveID"
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.web.tlsConfig.withMaxVersion
+
+```ts
+withMaxVersion(maxVersion)
+```
+
+"Maximum TLS version that is acceptable. Defaults to TLS13."
+
+### fn spec.web.tlsConfig.withMinVersion
+
+```ts
+withMinVersion(minVersion)
+```
+
+"Minimum TLS version that is acceptable. Defaults to TLS12."
+
+### fn spec.web.tlsConfig.withPreferServerCipherSuites
+
+```ts
+withPreferServerCipherSuites(preferServerCipherSuites)
+```
+
+"Controls whether the server selects the client's most preferred cipher suite, or the server's most preferred cipher suite. If true then the server's preference, as expressed in the order of elements in cipherSuites, is used."
+
+## obj spec.web.tlsConfig.cert
+
+"Contains the TLS certificate for the server."
+
+## obj spec.web.tlsConfig.cert.configMap
+
+"ConfigMap containing data to use for the targets."
+
+### fn spec.web.tlsConfig.cert.configMap.withKey
+
+```ts
+withKey(key)
+```
+
+"The key to select."
+
+### fn spec.web.tlsConfig.cert.configMap.withName
+
+```ts
+withName(name)
+```
+
+"Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names TODO: Add other useful fields. apiVersion, kind, uid?"
+
+### fn spec.web.tlsConfig.cert.configMap.withOptional
+
+```ts
+withOptional(optional)
+```
+
+"Specify whether the ConfigMap or its key must be defined"
+
+## obj spec.web.tlsConfig.cert.secret
+
+"Secret containing data to use for the targets."
+
+### fn spec.web.tlsConfig.cert.secret.withKey
+
+```ts
+withKey(key)
+```
+
+"The key of the secret to select from.  Must be a valid secret key."
+
+### fn spec.web.tlsConfig.cert.secret.withName
+
+```ts
+withName(name)
+```
+
+"Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names TODO: Add other useful fields. apiVersion, kind, uid?"
+
+### fn spec.web.tlsConfig.cert.secret.withOptional
+
+```ts
+withOptional(optional)
+```
+
+"Specify whether the Secret or its key must be defined"
+
+## obj spec.web.tlsConfig.client_ca
+
+"Contains the CA certificate for client certificate authentication to the server."
+
+## obj spec.web.tlsConfig.client_ca.configMap
+
+"ConfigMap containing data to use for the targets."
+
+### fn spec.web.tlsConfig.client_ca.configMap.withKey
+
+```ts
+withKey(key)
+```
+
+"The key to select."
+
+### fn spec.web.tlsConfig.client_ca.configMap.withName
+
+```ts
+withName(name)
+```
+
+"Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names TODO: Add other useful fields. apiVersion, kind, uid?"
+
+### fn spec.web.tlsConfig.client_ca.configMap.withOptional
+
+```ts
+withOptional(optional)
+```
+
+"Specify whether the ConfigMap or its key must be defined"
+
+## obj spec.web.tlsConfig.client_ca.secret
+
+"Secret containing data to use for the targets."
+
+### fn spec.web.tlsConfig.client_ca.secret.withKey
+
+```ts
+withKey(key)
+```
+
+"The key of the secret to select from.  Must be a valid secret key."
+
+### fn spec.web.tlsConfig.client_ca.secret.withName
+
+```ts
+withName(name)
+```
+
+"Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names TODO: Add other useful fields. apiVersion, kind, uid?"
+
+### fn spec.web.tlsConfig.client_ca.secret.withOptional
+
+```ts
+withOptional(optional)
+```
+
+"Specify whether the Secret or its key must be defined"
+
+## obj spec.web.tlsConfig.keySecret
+
+"Secret containing the TLS key for the server."
+
+### fn spec.web.tlsConfig.keySecret.withKey
+
+```ts
+withKey(key)
+```
+
+"The key of the secret to select from.  Must be a valid secret key."
+
+### fn spec.web.tlsConfig.keySecret.withName
+
+```ts
+withName(name)
+```
+
+"Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names TODO: Add other useful fields. apiVersion, kind, uid?"
+
+### fn spec.web.tlsConfig.keySecret.withOptional
+
+```ts
+withOptional(optional)
+```
+
+"Specify whether the Secret or its key must be defined"
