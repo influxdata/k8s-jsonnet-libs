@@ -5,7 +5,7 @@ config.new(
   name='bank-vault-operator',
   specs=[
     {
-      output: 'v0.4.1',
+      output: 'v1.15.3',
       localName: 'bank_vault_operator',
       # prefix Regex that should match the reverse of the CRDs spec.group
       # for example `group: vault.banzaicloud.com`

@@ -1,5 +1,5 @@
 ---
-permalink: /v0.4.1/vault/v1alpha1/
+permalink: /v1.15.3/vault/v1alpha1/
 ---
 
 # vault.v1alpha1
