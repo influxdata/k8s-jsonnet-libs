@@ -25,7 +25,7 @@ local patch = {
   },
 
   '#mapContainersWithName': d.fn('`mapContainersWithName` is like `mapContainers`, but only applies to those containers in the `names` array',
-    [d.arg('names', d.T.array), d.arg('f', d.T.func)]),
+                                 [d.arg('names', d.T.array), d.arg('f', d.T.func)]),
   mapContainersWithName(names, f)::
     local nameSet = if std.type(names) == 'array' then std.set(names) else std.set([names]);
     local inNameSet(name) = std.length(std.setInter(nameSet, std.set([name]))) > 0;
