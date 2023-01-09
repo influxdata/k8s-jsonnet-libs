@@ -1,10 +1,10 @@
 ---
-permalink: /0.7.1/generators/v1alpha1/gcrAccessToken/
+permalink: /0.7.1/nogroup/v1alpha1/pushSecret/
 ---
 
-# generators.v1alpha1.gcrAccessToken
+# nogroup.v1alpha1.pushSecret
 
-"GCRAccessToken generates an GCP access token that can be used to authenticate with GCR."
+
 
 ## Index
 
@@ -32,22 +32,15 @@ permalink: /0.7.1/generators/v1alpha1/gcrAccessToken/
   * [`fn withSelfLink(selfLink)`](#fn-metadatawithselflink)
   * [`fn withUid(uid)`](#fn-metadatawithuid)
 * [`obj spec`](#obj-spec)
-  * [`fn withProjectID(projectID)`](#fn-specwithprojectid)
-  * [`obj spec.auth`](#obj-specauth)
-    * [`obj spec.auth.secretRef`](#obj-specauthsecretref)
-      * [`obj spec.auth.secretRef.secretAccessKeySecretRef`](#obj-specauthsecretrefsecretaccesskeysecretref)
-        * [`fn withKey(key)`](#fn-specauthsecretrefsecretaccesskeysecretrefwithkey)
-        * [`fn withName(name)`](#fn-specauthsecretrefsecretaccesskeysecretrefwithname)
-        * [`fn withNamespace(namespace)`](#fn-specauthsecretrefsecretaccesskeysecretrefwithnamespace)
-    * [`obj spec.auth.workloadIdentity`](#obj-specauthworkloadidentity)
-      * [`fn withClusterLocation(clusterLocation)`](#fn-specauthworkloadidentitywithclusterlocation)
-      * [`fn withClusterName(clusterName)`](#fn-specauthworkloadidentitywithclustername)
-      * [`fn withClusterProjectID(clusterProjectID)`](#fn-specauthworkloadidentitywithclusterprojectid)
-      * [`obj spec.auth.workloadIdentity.serviceAccountRef`](#obj-specauthworkloadidentityserviceaccountref)
-        * [`fn withAudiences(audiences)`](#fn-specauthworkloadidentityserviceaccountrefwithaudiences)
-        * [`fn withAudiencesMixin(audiences)`](#fn-specauthworkloadidentityserviceaccountrefwithaudiencesmixin)
-        * [`fn withName(name)`](#fn-specauthworkloadidentityserviceaccountrefwithname)
-        * [`fn withNamespace(namespace)`](#fn-specauthworkloadidentityserviceaccountrefwithnamespace)
+  * [`fn withData(data)`](#fn-specwithdata)
+  * [`fn withDataMixin(data)`](#fn-specwithdatamixin)
+  * [`fn withDeletionPolicy(deletionPolicy)`](#fn-specwithdeletionpolicy)
+  * [`fn withRefreshInterval(refreshInterval)`](#fn-specwithrefreshinterval)
+  * [`fn withSecretStoreRefs(secretStoreRefs)`](#fn-specwithsecretstorerefs)
+  * [`fn withSecretStoreRefsMixin(secretStoreRefs)`](#fn-specwithsecretstorerefsmixin)
+  * [`obj spec.selector`](#obj-specselector)
+    * [`obj spec.selector.secret`](#obj-specselectorsecret)
+      * [`fn withName(name)`](#fn-specselectorsecretwithname)
 
 ## Fields
 
@@ -57,7 +50,7 @@ permalink: /0.7.1/generators/v1alpha1/gcrAccessToken/
 new(name)
 ```
 
-new returns an instance of GCRAccessToken
+new returns an instance of PushSecret
 
 ## obj metadata
 
@@ -243,114 +236,72 @@ withUid(uid)
 
 ## obj spec
 
+"PushSecretSpec configures the behavior of the PushSecret."
 
-
-### fn spec.withProjectID
-
-```ts
-withProjectID(projectID)
-```
-
-"ProjectID defines which project to use to authenticate with"
-
-## obj spec.auth
-
-"Auth defines the means for authenticating with GCP"
-
-## obj spec.auth.secretRef
-
-
-
-## obj spec.auth.secretRef.secretAccessKeySecretRef
-
-"The SecretAccessKey is used for authentication"
-
-### fn spec.auth.secretRef.secretAccessKeySecretRef.withKey
+### fn spec.withData
 
 ```ts
-withKey(key)
+withData(data)
 ```
 
-"The key of the entry in the Secret resource's `data` field to be used. Some instances of this field may be defaulted, in others it may be required."
+"Secret Data that should be pushed to providers"
 
-### fn spec.auth.secretRef.secretAccessKeySecretRef.withName
+### fn spec.withDataMixin
 
 ```ts
-withName(name)
+withDataMixin(data)
 ```
 
-"The name of the Secret resource being referred to."
-
-### fn spec.auth.secretRef.secretAccessKeySecretRef.withNamespace
-
-```ts
-withNamespace(namespace)
-```
-
-"Namespace of the resource being referred to. Ignored if referent is not cluster-scoped. cluster-scoped defaults to the namespace of the referent."
-
-## obj spec.auth.workloadIdentity
-
-
-
-### fn spec.auth.workloadIdentity.withClusterLocation
-
-```ts
-withClusterLocation(clusterLocation)
-```
-
-
-
-### fn spec.auth.workloadIdentity.withClusterName
-
-```ts
-withClusterName(clusterName)
-```
-
-
-
-### fn spec.auth.workloadIdentity.withClusterProjectID
-
-```ts
-withClusterProjectID(clusterProjectID)
-```
-
-
-
-## obj spec.auth.workloadIdentity.serviceAccountRef
-
-"A reference to a ServiceAccount resource."
-
-### fn spec.auth.workloadIdentity.serviceAccountRef.withAudiences
-
-```ts
-withAudiences(audiences)
-```
-
-"Audience specifies the `aud` claim for the service account token If the service account uses a well-known annotation for e.g. IRSA or GCP Workload Identity then this audiences will be appended to the list"
-
-### fn spec.auth.workloadIdentity.serviceAccountRef.withAudiencesMixin
-
-```ts
-withAudiencesMixin(audiences)
-```
-
-"Audience specifies the `aud` claim for the service account token If the service account uses a well-known annotation for e.g. IRSA or GCP Workload Identity then this audiences will be appended to the list"
+"Secret Data that should be pushed to providers"
 
 **Note:** This function appends passed data to existing values
 
-### fn spec.auth.workloadIdentity.serviceAccountRef.withName
+### fn spec.withDeletionPolicy
+
+```ts
+withDeletionPolicy(deletionPolicy)
+```
+
+"Deletion Policy to handle Secrets in the provider. Possible Values: \"Delete/None\". Defaults to \"None\"."
+
+### fn spec.withRefreshInterval
+
+```ts
+withRefreshInterval(refreshInterval)
+```
+
+"The Interval to which External Secrets will try to push a secret definition"
+
+### fn spec.withSecretStoreRefs
+
+```ts
+withSecretStoreRefs(secretStoreRefs)
+```
+
+
+
+### fn spec.withSecretStoreRefsMixin
+
+```ts
+withSecretStoreRefsMixin(secretStoreRefs)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.selector
+
+"The Secret Selector (k8s source) for the Push Secret"
+
+## obj spec.selector.secret
+
+"Select a Secret to Push."
+
+### fn spec.selector.secret.withName
 
 ```ts
 withName(name)
 ```
 
-"The name of the ServiceAccount resource being referred to."
-
-### fn spec.auth.workloadIdentity.serviceAccountRef.withNamespace
-
-```ts
-withNamespace(namespace)
-```
-
-"Namespace of the resource being referred to. Ignored if referent is not cluster-scoped. cluster-scoped defaults to the namespace of the referent."
+"Name of the Secret. The Secret must exist in the same namespace as the PushSecret manifest."

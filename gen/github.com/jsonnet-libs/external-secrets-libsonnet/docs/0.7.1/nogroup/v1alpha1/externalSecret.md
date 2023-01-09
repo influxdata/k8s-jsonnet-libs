@@ -1,10 +1,10 @@
 ---
-permalink: /0.7.1/generators/v1alpha1/password/
+permalink: /0.7.1/nogroup/v1alpha1/externalSecret/
 ---
 
-# generators.v1alpha1.password
+# nogroup.v1alpha1.externalSecret
 
-"Password generates a random password based on the configuration parameters in spec. You can specify the length, characterset and other attributes."
+"ExternalSecret is the Schema for the external-secrets API."
 
 ## Index
 
@@ -32,12 +32,30 @@ permalink: /0.7.1/generators/v1alpha1/password/
   * [`fn withSelfLink(selfLink)`](#fn-metadatawithselflink)
   * [`fn withUid(uid)`](#fn-metadatawithuid)
 * [`obj spec`](#obj-spec)
-  * [`fn withAllowRepeat(allowRepeat)`](#fn-specwithallowrepeat)
-  * [`fn withDigits(digits)`](#fn-specwithdigits)
-  * [`fn withLength(length)`](#fn-specwithlength)
-  * [`fn withNoUpper(noUpper)`](#fn-specwithnoupper)
-  * [`fn withSymbolCharacters(symbolCharacters)`](#fn-specwithsymbolcharacters)
-  * [`fn withSymbols(symbols)`](#fn-specwithsymbols)
+  * [`fn withData(data)`](#fn-specwithdata)
+  * [`fn withDataFrom(dataFrom)`](#fn-specwithdatafrom)
+  * [`fn withDataFromMixin(dataFrom)`](#fn-specwithdatafrommixin)
+  * [`fn withDataMixin(data)`](#fn-specwithdatamixin)
+  * [`fn withRefreshInterval(refreshInterval)`](#fn-specwithrefreshinterval)
+  * [`obj spec.secretStoreRef`](#obj-specsecretstoreref)
+    * [`fn withKind(kind)`](#fn-specsecretstorerefwithkind)
+    * [`fn withName(name)`](#fn-specsecretstorerefwithname)
+  * [`obj spec.target`](#obj-spectarget)
+    * [`fn withCreationPolicy(creationPolicy)`](#fn-spectargetwithcreationpolicy)
+    * [`fn withImmutable(immutable)`](#fn-spectargetwithimmutable)
+    * [`fn withName(name)`](#fn-spectargetwithname)
+    * [`obj spec.target.template`](#obj-spectargettemplate)
+      * [`fn withData(data)`](#fn-spectargettemplatewithdata)
+      * [`fn withDataMixin(data)`](#fn-spectargettemplatewithdatamixin)
+      * [`fn withEngineVersion(engineVersion)`](#fn-spectargettemplatewithengineversion)
+      * [`fn withTemplateFrom(templateFrom)`](#fn-spectargettemplatewithtemplatefrom)
+      * [`fn withTemplateFromMixin(templateFrom)`](#fn-spectargettemplatewithtemplatefrommixin)
+      * [`fn withType(type)`](#fn-spectargettemplatewithtype)
+      * [`obj spec.target.template.metadata`](#obj-spectargettemplatemetadata)
+        * [`fn withAnnotations(annotations)`](#fn-spectargettemplatemetadatawithannotations)
+        * [`fn withAnnotationsMixin(annotations)`](#fn-spectargettemplatemetadatawithannotationsmixin)
+        * [`fn withLabels(labels)`](#fn-spectargettemplatemetadatawithlabels)
+        * [`fn withLabelsMixin(labels)`](#fn-spectargettemplatemetadatawithlabelsmixin)
 
 ## Fields
 
@@ -47,7 +65,7 @@ permalink: /0.7.1/generators/v1alpha1/password/
 new(name)
 ```
 
-new returns an instance of Password
+new returns an instance of ExternalSecret
 
 ## obj metadata
 
@@ -233,52 +251,192 @@ withUid(uid)
 
 ## obj spec
 
-"PasswordSpec controls the behavior of the password generator."
+"ExternalSecretSpec defines the desired state of ExternalSecret."
 
-### fn spec.withAllowRepeat
-
-```ts
-withAllowRepeat(allowRepeat)
-```
-
-"set AllowRepeat to true to allow repeating characters."
-
-### fn spec.withDigits
+### fn spec.withData
 
 ```ts
-withDigits(digits)
+withData(data)
 ```
 
-"Digits specifies the number of digits in the generated password. If omitted it defaults to 25% of the length of the password"
+"Data defines the connection between the Kubernetes Secret keys and the Provider data"
 
-### fn spec.withLength
+### fn spec.withDataFrom
 
 ```ts
-withLength(length)
+withDataFrom(dataFrom)
 ```
 
-"Length of the password to be generated. Defaults to 24"
+"DataFrom is used to fetch all properties from a specific Provider data If multiple entries are specified, the Secret keys are merged in the specified order"
 
-### fn spec.withNoUpper
+### fn spec.withDataFromMixin
 
 ```ts
-withNoUpper(noUpper)
+withDataFromMixin(dataFrom)
 ```
 
-"Set NoUpper to disable uppercase characters"
+"DataFrom is used to fetch all properties from a specific Provider data If multiple entries are specified, the Secret keys are merged in the specified order"
 
-### fn spec.withSymbolCharacters
+**Note:** This function appends passed data to existing values
+
+### fn spec.withDataMixin
 
 ```ts
-withSymbolCharacters(symbolCharacters)
+withDataMixin(data)
 ```
 
-"SymbolCharacters specifies the special characters that should be used in the generated password."
+"Data defines the connection between the Kubernetes Secret keys and the Provider data"
 
-### fn spec.withSymbols
+**Note:** This function appends passed data to existing values
+
+### fn spec.withRefreshInterval
 
 ```ts
-withSymbols(symbols)
+withRefreshInterval(refreshInterval)
 ```
 
-"Symbols specifies the number of symbol characters in the generated password. If omitted it defaults to 25% of the length of the password"
+"RefreshInterval is the amount of time before the values are read again from the SecretStore provider Valid time units are \"ns\", \"us\" (or \"µs\"), \"ms\", \"s\", \"m\", \"h\" May be set to zero to fetch and create it once. Defaults to 1h."
+
+## obj spec.secretStoreRef
+
+"SecretStoreRef defines which SecretStore to fetch the ExternalSecret data."
+
+### fn spec.secretStoreRef.withKind
+
+```ts
+withKind(kind)
+```
+
+"Kind of the SecretStore resource (SecretStore or ClusterSecretStore) Defaults to `SecretStore`"
+
+### fn spec.secretStoreRef.withName
+
+```ts
+withName(name)
+```
+
+"Name of the SecretStore resource"
+
+## obj spec.target
+
+"ExternalSecretTarget defines the Kubernetes Secret to be created There can be only one target per ExternalSecret."
+
+### fn spec.target.withCreationPolicy
+
+```ts
+withCreationPolicy(creationPolicy)
+```
+
+"CreationPolicy defines rules on how to create the resulting Secret Defaults to 'Owner'"
+
+### fn spec.target.withImmutable
+
+```ts
+withImmutable(immutable)
+```
+
+"Immutable defines if the final secret will be immutable"
+
+### fn spec.target.withName
+
+```ts
+withName(name)
+```
+
+"Name defines the name of the Secret resource to be managed This field is immutable Defaults to the .metadata.name of the ExternalSecret resource"
+
+## obj spec.target.template
+
+"Template defines a blueprint for the created Secret resource."
+
+### fn spec.target.template.withData
+
+```ts
+withData(data)
+```
+
+
+
+### fn spec.target.template.withDataMixin
+
+```ts
+withDataMixin(data)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.target.template.withEngineVersion
+
+```ts
+withEngineVersion(engineVersion)
+```
+
+"EngineVersion specifies the template engine version that should be used to compile/execute the template specified in .data and .templateFrom[]."
+
+### fn spec.target.template.withTemplateFrom
+
+```ts
+withTemplateFrom(templateFrom)
+```
+
+
+
+### fn spec.target.template.withTemplateFromMixin
+
+```ts
+withTemplateFromMixin(templateFrom)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.target.template.withType
+
+```ts
+withType(type)
+```
+
+
+
+## obj spec.target.template.metadata
+
+"ExternalSecretTemplateMetadata defines metadata fields for the Secret blueprint."
+
+### fn spec.target.template.metadata.withAnnotations
+
+```ts
+withAnnotations(annotations)
+```
+
+
+
+### fn spec.target.template.metadata.withAnnotationsMixin
+
+```ts
+withAnnotationsMixin(annotations)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.target.template.metadata.withLabels
+
+```ts
+withLabels(labels)
+```
+
+
+
+### fn spec.target.template.metadata.withLabelsMixin
+
+```ts
+withLabelsMixin(labels)
+```
+
+
+
+**Note:** This function appends passed data to existing values

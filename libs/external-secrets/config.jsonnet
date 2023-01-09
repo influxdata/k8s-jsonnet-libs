@@ -22,18 +22,19 @@ config.new(
       localName: 'external_secrets',
     }
     for version in versions
-  ] + [
-    {
-      output: version[0],
-      prefix: '^io\\.external-secrets\\.generators\\..*',
-      crds: [
-        (path % version[1]) + 'generators.external-secrets.io_acraccesstokens.yaml',
-        (path % version[1]) + 'generators.external-secrets.io_ecrauthorizationtokens.yaml',
-        (path % version[1]) + 'generators.external-secrets.io_gcraccesstokens.yaml',
-        (path % version[1]) + 'generators.external-secrets.io_passwords.yaml',
-      ],
-      localName: 'external_secrets',
-    }
-    for version in versions
   ]
+  //+ [
+  //  {
+  //    output: version[0],
+  //    prefix: '^io\\.external-secrets\\.generators\\..*',
+  //    crds: [
+  //      (path % version[1]) + 'generators.external-secrets.io_acraccesstokens.yaml',
+  //      (path % version[1]) + 'generators.external-secrets.io_ecrauthorizationtokens.yaml',
+  //      (path % version[1]) + 'generators.external-secrets.io_gcraccesstokens.yaml',
+  //      (path % version[1]) + 'generators.external-secrets.io_passwords.yaml',
+  //    ],
+  //    localName: 'external_secrets',
+  //  }
+  //  for version in versions
+  //]
 )

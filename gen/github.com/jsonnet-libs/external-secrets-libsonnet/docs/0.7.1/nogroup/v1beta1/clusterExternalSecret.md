@@ -1,10 +1,10 @@
 ---
-permalink: /0.7.1/generators/v1alpha1/ecrAuthorizationToken/
+permalink: /0.7.1/nogroup/v1beta1/clusterExternalSecret/
 ---
 
-# generators.v1alpha1.ecrAuthorizationToken
+# nogroup.v1beta1.clusterExternalSecret
 
-"ECRAuthorizationTokenSpec uses the GetAuthorizationToken API to retrieve an authorization token. The authorization token is valid for 12 hours. The authorizationToken returned is a base64 encoded string that can be decoded and used in a docker login command to authenticate to a registry. For more information, see Registry authentication (https://docs.aws.amazon.com/AmazonECR/latest/userguide/Registries.html#registry_auth) in the Amazon Elastic Container Registry User Guide."
+"ClusterExternalSecret is the Schema for the clusterexternalsecrets API."
 
 ## Index
 
@@ -32,28 +32,39 @@ permalink: /0.7.1/generators/v1alpha1/ecrAuthorizationToken/
   * [`fn withSelfLink(selfLink)`](#fn-metadatawithselflink)
   * [`fn withUid(uid)`](#fn-metadatawithuid)
 * [`obj spec`](#obj-spec)
-  * [`fn withRegion(region)`](#fn-specwithregion)
-  * [`fn withRole(role)`](#fn-specwithrole)
-  * [`obj spec.auth`](#obj-specauth)
-    * [`obj spec.auth.jwt`](#obj-specauthjwt)
-      * [`obj spec.auth.jwt.serviceAccountRef`](#obj-specauthjwtserviceaccountref)
-        * [`fn withAudiences(audiences)`](#fn-specauthjwtserviceaccountrefwithaudiences)
-        * [`fn withAudiencesMixin(audiences)`](#fn-specauthjwtserviceaccountrefwithaudiencesmixin)
-        * [`fn withName(name)`](#fn-specauthjwtserviceaccountrefwithname)
-        * [`fn withNamespace(namespace)`](#fn-specauthjwtserviceaccountrefwithnamespace)
-    * [`obj spec.auth.secretRef`](#obj-specauthsecretref)
-      * [`obj spec.auth.secretRef.accessKeyIDSecretRef`](#obj-specauthsecretrefaccesskeyidsecretref)
-        * [`fn withKey(key)`](#fn-specauthsecretrefaccesskeyidsecretrefwithkey)
-        * [`fn withName(name)`](#fn-specauthsecretrefaccesskeyidsecretrefwithname)
-        * [`fn withNamespace(namespace)`](#fn-specauthsecretrefaccesskeyidsecretrefwithnamespace)
-      * [`obj spec.auth.secretRef.secretAccessKeySecretRef`](#obj-specauthsecretrefsecretaccesskeysecretref)
-        * [`fn withKey(key)`](#fn-specauthsecretrefsecretaccesskeysecretrefwithkey)
-        * [`fn withName(name)`](#fn-specauthsecretrefsecretaccesskeysecretrefwithname)
-        * [`fn withNamespace(namespace)`](#fn-specauthsecretrefsecretaccesskeysecretrefwithnamespace)
-      * [`obj spec.auth.secretRef.sessionTokenSecretRef`](#obj-specauthsecretrefsessiontokensecretref)
-        * [`fn withKey(key)`](#fn-specauthsecretrefsessiontokensecretrefwithkey)
-        * [`fn withName(name)`](#fn-specauthsecretrefsessiontokensecretrefwithname)
-        * [`fn withNamespace(namespace)`](#fn-specauthsecretrefsessiontokensecretrefwithnamespace)
+  * [`fn withExternalSecretName(externalSecretName)`](#fn-specwithexternalsecretname)
+  * [`fn withRefreshTime(refreshTime)`](#fn-specwithrefreshtime)
+  * [`obj spec.externalSecretSpec`](#obj-specexternalsecretspec)
+    * [`fn withData(data)`](#fn-specexternalsecretspecwithdata)
+    * [`fn withDataFrom(dataFrom)`](#fn-specexternalsecretspecwithdatafrom)
+    * [`fn withDataFromMixin(dataFrom)`](#fn-specexternalsecretspecwithdatafrommixin)
+    * [`fn withDataMixin(data)`](#fn-specexternalsecretspecwithdatamixin)
+    * [`fn withRefreshInterval(refreshInterval)`](#fn-specexternalsecretspecwithrefreshinterval)
+    * [`obj spec.externalSecretSpec.secretStoreRef`](#obj-specexternalsecretspecsecretstoreref)
+      * [`fn withKind(kind)`](#fn-specexternalsecretspecsecretstorerefwithkind)
+      * [`fn withName(name)`](#fn-specexternalsecretspecsecretstorerefwithname)
+    * [`obj spec.externalSecretSpec.target`](#obj-specexternalsecretspectarget)
+      * [`fn withCreationPolicy(creationPolicy)`](#fn-specexternalsecretspectargetwithcreationpolicy)
+      * [`fn withDeletionPolicy(deletionPolicy)`](#fn-specexternalsecretspectargetwithdeletionpolicy)
+      * [`fn withImmutable(immutable)`](#fn-specexternalsecretspectargetwithimmutable)
+      * [`fn withName(name)`](#fn-specexternalsecretspectargetwithname)
+      * [`obj spec.externalSecretSpec.target.template`](#obj-specexternalsecretspectargettemplate)
+        * [`fn withData(data)`](#fn-specexternalsecretspectargettemplatewithdata)
+        * [`fn withDataMixin(data)`](#fn-specexternalsecretspectargettemplatewithdatamixin)
+        * [`fn withEngineVersion(engineVersion)`](#fn-specexternalsecretspectargettemplatewithengineversion)
+        * [`fn withTemplateFrom(templateFrom)`](#fn-specexternalsecretspectargettemplatewithtemplatefrom)
+        * [`fn withTemplateFromMixin(templateFrom)`](#fn-specexternalsecretspectargettemplatewithtemplatefrommixin)
+        * [`fn withType(type)`](#fn-specexternalsecretspectargettemplatewithtype)
+        * [`obj spec.externalSecretSpec.target.template.metadata`](#obj-specexternalsecretspectargettemplatemetadata)
+          * [`fn withAnnotations(annotations)`](#fn-specexternalsecretspectargettemplatemetadatawithannotations)
+          * [`fn withAnnotationsMixin(annotations)`](#fn-specexternalsecretspectargettemplatemetadatawithannotationsmixin)
+          * [`fn withLabels(labels)`](#fn-specexternalsecretspectargettemplatemetadatawithlabels)
+          * [`fn withLabelsMixin(labels)`](#fn-specexternalsecretspectargettemplatemetadatawithlabelsmixin)
+  * [`obj spec.namespaceSelector`](#obj-specnamespaceselector)
+    * [`fn withMatchExpressions(matchExpressions)`](#fn-specnamespaceselectorwithmatchexpressions)
+    * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specnamespaceselectorwithmatchexpressionsmixin)
+    * [`fn withMatchLabels(matchLabels)`](#fn-specnamespaceselectorwithmatchlabels)
+    * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specnamespaceselectorwithmatchlabelsmixin)
 
 ## Fields
 
@@ -63,7 +74,7 @@ permalink: /0.7.1/generators/v1alpha1/ecrAuthorizationToken/
 new(name)
 ```
 
-new returns an instance of ECRAuthorizationToken
+new returns an instance of ClusterExternalSecret
 
 ## obj metadata
 
@@ -249,154 +260,260 @@ withUid(uid)
 
 ## obj spec
 
+"ClusterExternalSecretSpec defines the desired state of ClusterExternalSecret."
 
-
-### fn spec.withRegion
-
-```ts
-withRegion(region)
-```
-
-"Region specifies the region to operate in."
-
-### fn spec.withRole
+### fn spec.withExternalSecretName
 
 ```ts
-withRole(role)
+withExternalSecretName(externalSecretName)
 ```
 
-"You can assume a role before making calls to the desired AWS service."
+"The name of the external secrets to be created defaults to the name of the ClusterExternalSecret"
 
-## obj spec.auth
-
-"Auth defines how to authenticate with AWS"
-
-## obj spec.auth.jwt
-
-"Authenticate against AWS using service account tokens."
-
-## obj spec.auth.jwt.serviceAccountRef
-
-"A reference to a ServiceAccount resource."
-
-### fn spec.auth.jwt.serviceAccountRef.withAudiences
+### fn spec.withRefreshTime
 
 ```ts
-withAudiences(audiences)
+withRefreshTime(refreshTime)
 ```
 
-"Audience specifies the `aud` claim for the service account token If the service account uses a well-known annotation for e.g. IRSA or GCP Workload Identity then this audiences will be appended to the list"
+"The time in which the controller should reconcile it's objects and recheck namespaces for labels."
 
-### fn spec.auth.jwt.serviceAccountRef.withAudiencesMixin
+## obj spec.externalSecretSpec
+
+"The spec for the ExternalSecrets to be created"
+
+### fn spec.externalSecretSpec.withData
 
 ```ts
-withAudiencesMixin(audiences)
+withData(data)
 ```
 
-"Audience specifies the `aud` claim for the service account token If the service account uses a well-known annotation for e.g. IRSA or GCP Workload Identity then this audiences will be appended to the list"
+"Data defines the connection between the Kubernetes Secret keys and the Provider data"
+
+### fn spec.externalSecretSpec.withDataFrom
+
+```ts
+withDataFrom(dataFrom)
+```
+
+"DataFrom is used to fetch all properties from a specific Provider data If multiple entries are specified, the Secret keys are merged in the specified order"
+
+### fn spec.externalSecretSpec.withDataFromMixin
+
+```ts
+withDataFromMixin(dataFrom)
+```
+
+"DataFrom is used to fetch all properties from a specific Provider data If multiple entries are specified, the Secret keys are merged in the specified order"
 
 **Note:** This function appends passed data to existing values
 
-### fn spec.auth.jwt.serviceAccountRef.withName
+### fn spec.externalSecretSpec.withDataMixin
+
+```ts
+withDataMixin(data)
+```
+
+"Data defines the connection between the Kubernetes Secret keys and the Provider data"
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.externalSecretSpec.withRefreshInterval
+
+```ts
+withRefreshInterval(refreshInterval)
+```
+
+"RefreshInterval is the amount of time before the values are read again from the SecretStore provider Valid time units are \"ns\", \"us\" (or \"µs\"), \"ms\", \"s\", \"m\", \"h\" May be set to zero to fetch and create it once. Defaults to 1h."
+
+## obj spec.externalSecretSpec.secretStoreRef
+
+"SecretStoreRef defines which SecretStore to fetch the ExternalSecret data."
+
+### fn spec.externalSecretSpec.secretStoreRef.withKind
+
+```ts
+withKind(kind)
+```
+
+"Kind of the SecretStore resource (SecretStore or ClusterSecretStore) Defaults to `SecretStore`"
+
+### fn spec.externalSecretSpec.secretStoreRef.withName
 
 ```ts
 withName(name)
 ```
 
-"The name of the ServiceAccount resource being referred to."
+"Name of the SecretStore resource"
 
-### fn spec.auth.jwt.serviceAccountRef.withNamespace
+## obj spec.externalSecretSpec.target
 
-```ts
-withNamespace(namespace)
-```
+"ExternalSecretTarget defines the Kubernetes Secret to be created There can be only one target per ExternalSecret."
 
-"Namespace of the resource being referred to. Ignored if referent is not cluster-scoped. cluster-scoped defaults to the namespace of the referent."
-
-## obj spec.auth.secretRef
-
-"AWSAuthSecretRef holds secret references for AWS credentials both AccessKeyID and SecretAccessKey must be defined in order to properly authenticate."
-
-## obj spec.auth.secretRef.accessKeyIDSecretRef
-
-"The AccessKeyID is used for authentication"
-
-### fn spec.auth.secretRef.accessKeyIDSecretRef.withKey
+### fn spec.externalSecretSpec.target.withCreationPolicy
 
 ```ts
-withKey(key)
+withCreationPolicy(creationPolicy)
 ```
 
-"The key of the entry in the Secret resource's `data` field to be used. Some instances of this field may be defaulted, in others it may be required."
+"CreationPolicy defines rules on how to create the resulting Secret Defaults to 'Owner'"
 
-### fn spec.auth.secretRef.accessKeyIDSecretRef.withName
+### fn spec.externalSecretSpec.target.withDeletionPolicy
 
 ```ts
-withName(name)
+withDeletionPolicy(deletionPolicy)
 ```
 
-"The name of the Secret resource being referred to."
+"DeletionPolicy defines rules on how to delete the resulting Secret Defaults to 'Retain'"
 
-### fn spec.auth.secretRef.accessKeyIDSecretRef.withNamespace
+### fn spec.externalSecretSpec.target.withImmutable
 
 ```ts
-withNamespace(namespace)
+withImmutable(immutable)
 ```
 
-"Namespace of the resource being referred to. Ignored if referent is not cluster-scoped. cluster-scoped defaults to the namespace of the referent."
+"Immutable defines if the final secret will be immutable"
 
-## obj spec.auth.secretRef.secretAccessKeySecretRef
-
-"The SecretAccessKey is used for authentication"
-
-### fn spec.auth.secretRef.secretAccessKeySecretRef.withKey
-
-```ts
-withKey(key)
-```
-
-"The key of the entry in the Secret resource's `data` field to be used. Some instances of this field may be defaulted, in others it may be required."
-
-### fn spec.auth.secretRef.secretAccessKeySecretRef.withName
+### fn spec.externalSecretSpec.target.withName
 
 ```ts
 withName(name)
 ```
 
-"The name of the Secret resource being referred to."
+"Name defines the name of the Secret resource to be managed This field is immutable Defaults to the .metadata.name of the ExternalSecret resource"
 
-### fn spec.auth.secretRef.secretAccessKeySecretRef.withNamespace
+## obj spec.externalSecretSpec.target.template
 
-```ts
-withNamespace(namespace)
-```
+"Template defines a blueprint for the created Secret resource."
 
-"Namespace of the resource being referred to. Ignored if referent is not cluster-scoped. cluster-scoped defaults to the namespace of the referent."
-
-## obj spec.auth.secretRef.sessionTokenSecretRef
-
-"The SessionToken used for authentication This must be defined if AccessKeyID and SecretAccessKey are temporary credentials see: https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html"
-
-### fn spec.auth.secretRef.sessionTokenSecretRef.withKey
+### fn spec.externalSecretSpec.target.template.withData
 
 ```ts
-withKey(key)
+withData(data)
 ```
 
-"The key of the entry in the Secret resource's `data` field to be used. Some instances of this field may be defaulted, in others it may be required."
 
-### fn spec.auth.secretRef.sessionTokenSecretRef.withName
+
+### fn spec.externalSecretSpec.target.template.withDataMixin
 
 ```ts
-withName(name)
+withDataMixin(data)
 ```
 
-"The name of the Secret resource being referred to."
 
-### fn spec.auth.secretRef.sessionTokenSecretRef.withNamespace
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.externalSecretSpec.target.template.withEngineVersion
 
 ```ts
-withNamespace(namespace)
+withEngineVersion(engineVersion)
 ```
 
-"Namespace of the resource being referred to. Ignored if referent is not cluster-scoped. cluster-scoped defaults to the namespace of the referent."
+
+
+### fn spec.externalSecretSpec.target.template.withTemplateFrom
+
+```ts
+withTemplateFrom(templateFrom)
+```
+
+
+
+### fn spec.externalSecretSpec.target.template.withTemplateFromMixin
+
+```ts
+withTemplateFromMixin(templateFrom)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.externalSecretSpec.target.template.withType
+
+```ts
+withType(type)
+```
+
+
+
+## obj spec.externalSecretSpec.target.template.metadata
+
+"ExternalSecretTemplateMetadata defines metadata fields for the Secret blueprint."
+
+### fn spec.externalSecretSpec.target.template.metadata.withAnnotations
+
+```ts
+withAnnotations(annotations)
+```
+
+
+
+### fn spec.externalSecretSpec.target.template.metadata.withAnnotationsMixin
+
+```ts
+withAnnotationsMixin(annotations)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.externalSecretSpec.target.template.metadata.withLabels
+
+```ts
+withLabels(labels)
+```
+
+
+
+### fn spec.externalSecretSpec.target.template.metadata.withLabelsMixin
+
+```ts
+withLabelsMixin(labels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.namespaceSelector
+
+"The labels to select by to find the Namespaces to create the ExternalSecrets in."
+
+### fn spec.namespaceSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+"matchExpressions is a list of label selector requirements. The requirements are ANDed."
+
+### fn spec.namespaceSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+"matchExpressions is a list of label selector requirements. The requirements are ANDed."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.namespaceSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+"matchLabels is a map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is \"key\", the operator is \"In\", and the values array contains only \"value\". The requirements are ANDed."
+
+### fn spec.namespaceSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+"matchLabels is a map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is \"key\", the operator is \"In\", and the values array contains only \"value\". The requirements are ANDed."
+
+**Note:** This function appends passed data to existing values
