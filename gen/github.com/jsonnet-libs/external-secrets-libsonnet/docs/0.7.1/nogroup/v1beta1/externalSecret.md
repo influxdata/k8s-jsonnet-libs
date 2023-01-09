@@ -1,10 +1,10 @@
 ---
-permalink: /0.7.1/generators/v1alpha1/acrAccessToken/
+permalink: /0.7.1/nogroup/v1beta1/externalSecret/
 ---
 
-# generators.v1alpha1.acrAccessToken
+# nogroup.v1beta1.externalSecret
 
-"ACRAccessToken returns a Azure Container Registry token that can be used for pushing/pulling images. Note: by default it will return an ACR Refresh Token with full access (depending on the identity). This can be scoped down to the repository level using .spec.scope. In case scope is defined it will return an ACR Access Token. \n See docs: https://github.com/Azure/acr/blob/main/docs/AAD-OAuth.md"
+"ExternalSecret is the Schema for the external-secrets API."
 
 ## Index
 
@@ -32,29 +32,31 @@ permalink: /0.7.1/generators/v1alpha1/acrAccessToken/
   * [`fn withSelfLink(selfLink)`](#fn-metadatawithselflink)
   * [`fn withUid(uid)`](#fn-metadatawithuid)
 * [`obj spec`](#obj-spec)
-  * [`fn withEnvironmentType(environmentType)`](#fn-specwithenvironmenttype)
-  * [`fn withRegistry(registry)`](#fn-specwithregistry)
-  * [`fn withScope(scope)`](#fn-specwithscope)
-  * [`fn withTenantId(tenantId)`](#fn-specwithtenantid)
-  * [`obj spec.auth`](#obj-specauth)
-    * [`obj spec.auth.managedIdentity`](#obj-specauthmanagedidentity)
-      * [`fn withIdentityId(identityId)`](#fn-specauthmanagedidentitywithidentityid)
-    * [`obj spec.auth.servicePrincipal`](#obj-specauthserviceprincipal)
-      * [`obj spec.auth.servicePrincipal.secretRef`](#obj-specauthserviceprincipalsecretref)
-        * [`obj spec.auth.servicePrincipal.secretRef.clientId`](#obj-specauthserviceprincipalsecretrefclientid)
-          * [`fn withKey(key)`](#fn-specauthserviceprincipalsecretrefclientidwithkey)
-          * [`fn withName(name)`](#fn-specauthserviceprincipalsecretrefclientidwithname)
-          * [`fn withNamespace(namespace)`](#fn-specauthserviceprincipalsecretrefclientidwithnamespace)
-        * [`obj spec.auth.servicePrincipal.secretRef.clientSecret`](#obj-specauthserviceprincipalsecretrefclientsecret)
-          * [`fn withKey(key)`](#fn-specauthserviceprincipalsecretrefclientsecretwithkey)
-          * [`fn withName(name)`](#fn-specauthserviceprincipalsecretrefclientsecretwithname)
-          * [`fn withNamespace(namespace)`](#fn-specauthserviceprincipalsecretrefclientsecretwithnamespace)
-    * [`obj spec.auth.workloadIdentity`](#obj-specauthworkloadidentity)
-      * [`obj spec.auth.workloadIdentity.serviceAccountRef`](#obj-specauthworkloadidentityserviceaccountref)
-        * [`fn withAudiences(audiences)`](#fn-specauthworkloadidentityserviceaccountrefwithaudiences)
-        * [`fn withAudiencesMixin(audiences)`](#fn-specauthworkloadidentityserviceaccountrefwithaudiencesmixin)
-        * [`fn withName(name)`](#fn-specauthworkloadidentityserviceaccountrefwithname)
-        * [`fn withNamespace(namespace)`](#fn-specauthworkloadidentityserviceaccountrefwithnamespace)
+  * [`fn withData(data)`](#fn-specwithdata)
+  * [`fn withDataFrom(dataFrom)`](#fn-specwithdatafrom)
+  * [`fn withDataFromMixin(dataFrom)`](#fn-specwithdatafrommixin)
+  * [`fn withDataMixin(data)`](#fn-specwithdatamixin)
+  * [`fn withRefreshInterval(refreshInterval)`](#fn-specwithrefreshinterval)
+  * [`obj spec.secretStoreRef`](#obj-specsecretstoreref)
+    * [`fn withKind(kind)`](#fn-specsecretstorerefwithkind)
+    * [`fn withName(name)`](#fn-specsecretstorerefwithname)
+  * [`obj spec.target`](#obj-spectarget)
+    * [`fn withCreationPolicy(creationPolicy)`](#fn-spectargetwithcreationpolicy)
+    * [`fn withDeletionPolicy(deletionPolicy)`](#fn-spectargetwithdeletionpolicy)
+    * [`fn withImmutable(immutable)`](#fn-spectargetwithimmutable)
+    * [`fn withName(name)`](#fn-spectargetwithname)
+    * [`obj spec.target.template`](#obj-spectargettemplate)
+      * [`fn withData(data)`](#fn-spectargettemplatewithdata)
+      * [`fn withDataMixin(data)`](#fn-spectargettemplatewithdatamixin)
+      * [`fn withEngineVersion(engineVersion)`](#fn-spectargettemplatewithengineversion)
+      * [`fn withTemplateFrom(templateFrom)`](#fn-spectargettemplatewithtemplatefrom)
+      * [`fn withTemplateFromMixin(templateFrom)`](#fn-spectargettemplatewithtemplatefrommixin)
+      * [`fn withType(type)`](#fn-spectargettemplatewithtype)
+      * [`obj spec.target.template.metadata`](#obj-spectargettemplatemetadata)
+        * [`fn withAnnotations(annotations)`](#fn-spectargettemplatemetadatawithannotations)
+        * [`fn withAnnotationsMixin(annotations)`](#fn-spectargettemplatemetadatawithannotationsmixin)
+        * [`fn withLabels(labels)`](#fn-spectargettemplatemetadatawithlabels)
+        * [`fn withLabelsMixin(labels)`](#fn-spectargettemplatemetadatawithlabelsmixin)
 
 ## Fields
 
@@ -64,7 +66,7 @@ permalink: /0.7.1/generators/v1alpha1/acrAccessToken/
 new(name)
 ```
 
-new returns an instance of ACRAccessToken
+new returns an instance of ExternalSecret
 
 ## obj metadata
 
@@ -250,158 +252,200 @@ withUid(uid)
 
 ## obj spec
 
-"ACRAccessTokenSpec defines how to generate the access token e.g. how to authenticate and which registry to use. see: https://github.com/Azure/acr/blob/main/docs/AAD-OAuth.md#overview"
+"ExternalSecretSpec defines the desired state of ExternalSecret."
 
-### fn spec.withEnvironmentType
-
-```ts
-withEnvironmentType(environmentType)
-```
-
-"EnvironmentType specifies the Azure cloud environment endpoints to use for connecting and authenticating with Azure. By default it points to the public cloud AAD endpoint. The following endpoints are available, also see here: https://github.com/Azure/go-autorest/blob/main/autorest/azure/environments.go#L152 PublicCloud, USGovernmentCloud, ChinaCloud, GermanCloud"
-
-### fn spec.withRegistry
+### fn spec.withData
 
 ```ts
-withRegistry(registry)
+withData(data)
 ```
 
-"the domain name of the ACR registry e.g. foobarexample.azurecr.io"
+"Data defines the connection between the Kubernetes Secret keys and the Provider data"
 
-### fn spec.withScope
+### fn spec.withDataFrom
 
 ```ts
-withScope(scope)
+withDataFrom(dataFrom)
 ```
 
-"Define the scope for the access token, e.g. pull/push access for a repository. if not provided it will return a refresh token that has full scope. Note: you need to pin it down to the repository level, there is no wildcard available. \n examples: repository:my-repository:pull,push repository:my-repository:pull \n see docs for details: https://docs.docker.com/registry/spec/auth/scope/"
+"DataFrom is used to fetch all properties from a specific Provider data If multiple entries are specified, the Secret keys are merged in the specified order"
 
-### fn spec.withTenantId
+### fn spec.withDataFromMixin
 
 ```ts
-withTenantId(tenantId)
+withDataFromMixin(dataFrom)
 ```
 
-"TenantID configures the Azure Tenant to send requests to. Required for ServicePrincipal auth type."
-
-## obj spec.auth
-
-
-
-## obj spec.auth.managedIdentity
-
-"ManagedIdentity uses Azure Managed Identity to authenticate with Azure."
-
-### fn spec.auth.managedIdentity.withIdentityId
-
-```ts
-withIdentityId(identityId)
-```
-
-"If multiple Managed Identity is assigned to the pod, you can select the one to be used"
-
-## obj spec.auth.servicePrincipal
-
-"ServicePrincipal uses Azure Service Principal credentials to authenticate with Azure."
-
-## obj spec.auth.servicePrincipal.secretRef
-
-"Configuration used to authenticate with Azure using static credentials stored in a Kind=Secret."
-
-## obj spec.auth.servicePrincipal.secretRef.clientId
-
-"The Azure clientId of the service principle used for authentication."
-
-### fn spec.auth.servicePrincipal.secretRef.clientId.withKey
-
-```ts
-withKey(key)
-```
-
-"The key of the entry in the Secret resource's `data` field to be used. Some instances of this field may be defaulted, in others it may be required."
-
-### fn spec.auth.servicePrincipal.secretRef.clientId.withName
-
-```ts
-withName(name)
-```
-
-"The name of the Secret resource being referred to."
-
-### fn spec.auth.servicePrincipal.secretRef.clientId.withNamespace
-
-```ts
-withNamespace(namespace)
-```
-
-"Namespace of the resource being referred to. Ignored if referent is not cluster-scoped. cluster-scoped defaults to the namespace of the referent."
-
-## obj spec.auth.servicePrincipal.secretRef.clientSecret
-
-"The Azure ClientSecret of the service principle used for authentication."
-
-### fn spec.auth.servicePrincipal.secretRef.clientSecret.withKey
-
-```ts
-withKey(key)
-```
-
-"The key of the entry in the Secret resource's `data` field to be used. Some instances of this field may be defaulted, in others it may be required."
-
-### fn spec.auth.servicePrincipal.secretRef.clientSecret.withName
-
-```ts
-withName(name)
-```
-
-"The name of the Secret resource being referred to."
-
-### fn spec.auth.servicePrincipal.secretRef.clientSecret.withNamespace
-
-```ts
-withNamespace(namespace)
-```
-
-"Namespace of the resource being referred to. Ignored if referent is not cluster-scoped. cluster-scoped defaults to the namespace of the referent."
-
-## obj spec.auth.workloadIdentity
-
-"WorkloadIdentity uses Azure Workload Identity to authenticate with Azure."
-
-## obj spec.auth.workloadIdentity.serviceAccountRef
-
-"ServiceAccountRef specified the service account that should be used when authenticating with WorkloadIdentity."
-
-### fn spec.auth.workloadIdentity.serviceAccountRef.withAudiences
-
-```ts
-withAudiences(audiences)
-```
-
-"Audience specifies the `aud` claim for the service account token If the service account uses a well-known annotation for e.g. IRSA or GCP Workload Identity then this audiences will be appended to the list"
-
-### fn spec.auth.workloadIdentity.serviceAccountRef.withAudiencesMixin
-
-```ts
-withAudiencesMixin(audiences)
-```
-
-"Audience specifies the `aud` claim for the service account token If the service account uses a well-known annotation for e.g. IRSA or GCP Workload Identity then this audiences will be appended to the list"
+"DataFrom is used to fetch all properties from a specific Provider data If multiple entries are specified, the Secret keys are merged in the specified order"
 
 **Note:** This function appends passed data to existing values
 
-### fn spec.auth.workloadIdentity.serviceAccountRef.withName
+### fn spec.withDataMixin
+
+```ts
+withDataMixin(data)
+```
+
+"Data defines the connection between the Kubernetes Secret keys and the Provider data"
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.withRefreshInterval
+
+```ts
+withRefreshInterval(refreshInterval)
+```
+
+"RefreshInterval is the amount of time before the values are read again from the SecretStore provider Valid time units are \"ns\", \"us\" (or \"µs\"), \"ms\", \"s\", \"m\", \"h\" May be set to zero to fetch and create it once. Defaults to 1h."
+
+## obj spec.secretStoreRef
+
+"SecretStoreRef defines which SecretStore to fetch the ExternalSecret data."
+
+### fn spec.secretStoreRef.withKind
+
+```ts
+withKind(kind)
+```
+
+"Kind of the SecretStore resource (SecretStore or ClusterSecretStore) Defaults to `SecretStore`"
+
+### fn spec.secretStoreRef.withName
 
 ```ts
 withName(name)
 ```
 
-"The name of the ServiceAccount resource being referred to."
+"Name of the SecretStore resource"
 
-### fn spec.auth.workloadIdentity.serviceAccountRef.withNamespace
+## obj spec.target
+
+"ExternalSecretTarget defines the Kubernetes Secret to be created There can be only one target per ExternalSecret."
+
+### fn spec.target.withCreationPolicy
 
 ```ts
-withNamespace(namespace)
+withCreationPolicy(creationPolicy)
 ```
 
-"Namespace of the resource being referred to. Ignored if referent is not cluster-scoped. cluster-scoped defaults to the namespace of the referent."
+"CreationPolicy defines rules on how to create the resulting Secret Defaults to 'Owner'"
+
+### fn spec.target.withDeletionPolicy
+
+```ts
+withDeletionPolicy(deletionPolicy)
+```
+
+"DeletionPolicy defines rules on how to delete the resulting Secret Defaults to 'Retain'"
+
+### fn spec.target.withImmutable
+
+```ts
+withImmutable(immutable)
+```
+
+"Immutable defines if the final secret will be immutable"
+
+### fn spec.target.withName
+
+```ts
+withName(name)
+```
+
+"Name defines the name of the Secret resource to be managed This field is immutable Defaults to the .metadata.name of the ExternalSecret resource"
+
+## obj spec.target.template
+
+"Template defines a blueprint for the created Secret resource."
+
+### fn spec.target.template.withData
+
+```ts
+withData(data)
+```
+
+
+
+### fn spec.target.template.withDataMixin
+
+```ts
+withDataMixin(data)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.target.template.withEngineVersion
+
+```ts
+withEngineVersion(engineVersion)
+```
+
+
+
+### fn spec.target.template.withTemplateFrom
+
+```ts
+withTemplateFrom(templateFrom)
+```
+
+
+
+### fn spec.target.template.withTemplateFromMixin
+
+```ts
+withTemplateFromMixin(templateFrom)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.target.template.withType
+
+```ts
+withType(type)
+```
+
+
+
+## obj spec.target.template.metadata
+
+"ExternalSecretTemplateMetadata defines metadata fields for the Secret blueprint."
+
+### fn spec.target.template.metadata.withAnnotations
+
+```ts
+withAnnotations(annotations)
+```
+
+
+
+### fn spec.target.template.metadata.withAnnotationsMixin
+
+```ts
+withAnnotationsMixin(annotations)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.target.template.metadata.withLabels
+
+```ts
+withLabels(labels)
+```
+
+
+
+### fn spec.target.template.metadata.withLabelsMixin
+
+```ts
+withLabelsMixin(labels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
