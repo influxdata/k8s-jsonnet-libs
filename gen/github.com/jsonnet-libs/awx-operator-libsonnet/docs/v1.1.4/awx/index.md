@@ -1,5 +1,5 @@
 ---
-permalink: /v0.30.0/awx/
+permalink: /v1.1.4/awx/
 ---
 
 # awx
