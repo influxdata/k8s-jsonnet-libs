@@ -1,5 +1,5 @@
 ---
-permalink: /v1.0.0/awx/v1beta1/
+permalink: /v2.3.0/awx/v1beta1/
 ---
 
 # awx.v1beta1

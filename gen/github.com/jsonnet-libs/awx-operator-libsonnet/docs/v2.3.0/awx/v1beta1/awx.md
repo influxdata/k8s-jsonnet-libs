@@ -1,5 +1,5 @@
 ---
-permalink: /v1.0.0/awx/v1beta1/awx/
+permalink: /v2.3.0/awx/v1beta1/awx/
 ---
 
 # awx.v1beta1.awx
@@ -32,6 +32,8 @@ permalink: /v1.0.0/awx/v1beta1/awx/
   * [`fn withSelfLink(selfLink)`](#fn-metadatawithselflink)
   * [`fn withUid(uid)`](#fn-metadatawithuid)
 * [`obj spec`](#obj-spec)
+  * [`fn withAdditional_labels(additional_labels)`](#fn-specwithadditional_labels)
+  * [`fn withAdditional_labelsMixin(additional_labels)`](#fn-specwithadditional_labelsmixin)
   * [`fn withAdmin_email(admin_email)`](#fn-specwithadmin_email)
   * [`fn withAdmin_password_secret(admin_password_secret)`](#fn-specwithadmin_password_secret)
   * [`fn withAdmin_user(admin_user)`](#fn-specwithadmin_user)
@@ -56,6 +58,8 @@ permalink: /v1.0.0/awx/v1beta1/awx/
   * [`fn withExtra_settingsMixin(extra_settings)`](#fn-specwithextra_settingsmixin)
   * [`fn withExtra_volumes(extra_volumes)`](#fn-specwithextra_volumes)
   * [`fn withGarbage_collect_secrets(garbage_collect_secrets)`](#fn-specwithgarbage_collect_secrets)
+  * [`fn withHost_aliases(host_aliases)`](#fn-specwithhost_aliases)
+  * [`fn withHost_aliasesMixin(host_aliases)`](#fn-specwithhost_aliasesmixin)
   * [`fn withHostname(hostname)`](#fn-specwithhostname)
   * [`fn withImage(image)`](#fn-specwithimage)
   * [`fn withImage_pull_policy(image_pull_policy)`](#fn-specwithimage_pull_policy)
@@ -66,6 +70,7 @@ permalink: /v1.0.0/awx/v1beta1/awx/
   * [`fn withIngress_annotations(ingress_annotations)`](#fn-specwithingress_annotations)
   * [`fn withIngress_api_version(ingress_api_version)`](#fn-specwithingress_api_version)
   * [`fn withIngress_class_name(ingress_class_name)`](#fn-specwithingress_class_name)
+  * [`fn withIngress_controller(ingress_controller)`](#fn-specwithingress_controller)
   * [`fn withIngress_path(ingress_path)`](#fn-specwithingress_path)
   * [`fn withIngress_path_type(ingress_path_type)`](#fn-specwithingress_path_type)
   * [`fn withIngress_tls_secret(ingress_tls_secret)`](#fn-specwithingress_tls_secret)
@@ -74,9 +79,12 @@ permalink: /v1.0.0/awx/v1beta1/awx/
   * [`fn withInit_container_extra_volume_mounts(init_container_extra_volume_mounts)`](#fn-specwithinit_container_extra_volume_mounts)
   * [`fn withInit_container_image(init_container_image)`](#fn-specwithinit_container_image)
   * [`fn withInit_container_image_version(init_container_image_version)`](#fn-specwithinit_container_image_version)
+  * [`fn withInit_projects_container_image(init_projects_container_image)`](#fn-specwithinit_projects_container_image)
+  * [`fn withIpv6_disabled(ipv6_disabled)`](#fn-specwithipv6_disabled)
   * [`fn withKind(kind)`](#fn-specwithkind)
   * [`fn withLdap_cacert_secret(ldap_cacert_secret)`](#fn-specwithldap_cacert_secret)
   * [`fn withLdap_password_secret(ldap_password_secret)`](#fn-specwithldap_password_secret)
+  * [`fn withLoadbalancer_ip(loadbalancer_ip)`](#fn-specwithloadbalancer_ip)
   * [`fn withLoadbalancer_port(loadbalancer_port)`](#fn-specwithloadbalancer_port)
   * [`fn withLoadbalancer_protocol(loadbalancer_protocol)`](#fn-specwithloadbalancer_protocol)
   * [`fn withNo_log(no_log)`](#fn-specwithno_log)
@@ -90,6 +98,10 @@ permalink: /v1.0.0/awx/v1beta1/awx/
   * [`fn withPostgres_image(postgres_image)`](#fn-specwithpostgres_image)
   * [`fn withPostgres_image_version(postgres_image_version)`](#fn-specwithpostgres_image_version)
   * [`fn withPostgres_keep_pvc_after_upgrade(postgres_keep_pvc_after_upgrade)`](#fn-specwithpostgres_keep_pvc_after_upgrade)
+  * [`fn withPostgres_keepalives(postgres_keepalives)`](#fn-specwithpostgres_keepalives)
+  * [`fn withPostgres_keepalives_count(postgres_keepalives_count)`](#fn-specwithpostgres_keepalives_count)
+  * [`fn withPostgres_keepalives_idle(postgres_keepalives_idle)`](#fn-specwithpostgres_keepalives_idle)
+  * [`fn withPostgres_keepalives_interval(postgres_keepalives_interval)`](#fn-specwithpostgres_keepalives_interval)
   * [`fn withPostgres_label_selector(postgres_label_selector)`](#fn-specwithpostgres_label_selector)
   * [`fn withPostgres_priority_class(postgres_priority_class)`](#fn-specwithpostgres_priority_class)
   * [`fn withPostgres_selector(postgres_selector)`](#fn-specwithpostgres_selector)
@@ -119,21 +131,49 @@ permalink: /v1.0.0/awx/v1beta1/awx/
   * [`fn withService_type(service_type)`](#fn-specwithservice_type)
   * [`fn withSession_cookie_secure(session_cookie_secure)`](#fn-specwithsession_cookie_secure)
   * [`fn withSet_self_labels(set_self_labels)`](#fn-specwithset_self_labels)
+  * [`fn withTask_annotations(task_annotations)`](#fn-specwithtask_annotations)
   * [`fn withTask_args(task_args)`](#fn-specwithtask_args)
   * [`fn withTask_argsMixin(task_args)`](#fn-specwithtask_argsmixin)
   * [`fn withTask_command(task_command)`](#fn-specwithtask_command)
   * [`fn withTask_commandMixin(task_command)`](#fn-specwithtask_commandmixin)
   * [`fn withTask_extra_env(task_extra_env)`](#fn-specwithtask_extra_env)
   * [`fn withTask_extra_volume_mounts(task_extra_volume_mounts)`](#fn-specwithtask_extra_volume_mounts)
+  * [`fn withTask_node_selector(task_node_selector)`](#fn-specwithtask_node_selector)
   * [`fn withTask_privileged(task_privileged)`](#fn-specwithtask_privileged)
+  * [`fn withTask_replicas(task_replicas)`](#fn-specwithtask_replicas)
+  * [`fn withTask_tolerations(task_tolerations)`](#fn-specwithtask_tolerations)
+  * [`fn withTask_topology_spread_constraints(task_topology_spread_constraints)`](#fn-specwithtask_topology_spread_constraints)
+  * [`fn withTermination_grace_period_seconds(termination_grace_period_seconds)`](#fn-specwithtermination_grace_period_seconds)
   * [`fn withTolerations(tolerations)`](#fn-specwithtolerations)
   * [`fn withTopology_spread_constraints(topology_spread_constraints)`](#fn-specwithtopology_spread_constraints)
+  * [`fn withWeb_annotations(web_annotations)`](#fn-specwithweb_annotations)
   * [`fn withWeb_args(web_args)`](#fn-specwithweb_args)
   * [`fn withWeb_argsMixin(web_args)`](#fn-specwithweb_argsmixin)
   * [`fn withWeb_command(web_command)`](#fn-specwithweb_command)
   * [`fn withWeb_commandMixin(web_command)`](#fn-specwithweb_commandmixin)
   * [`fn withWeb_extra_env(web_extra_env)`](#fn-specwithweb_extra_env)
   * [`fn withWeb_extra_volume_mounts(web_extra_volume_mounts)`](#fn-specwithweb_extra_volume_mounts)
+  * [`fn withWeb_node_selector(web_node_selector)`](#fn-specwithweb_node_selector)
+  * [`fn withWeb_replicas(web_replicas)`](#fn-specwithweb_replicas)
+  * [`fn withWeb_tolerations(web_tolerations)`](#fn-specwithweb_tolerations)
+  * [`fn withWeb_topology_spread_constraints(web_topology_spread_constraints)`](#fn-specwithweb_topology_spread_constraints)
+  * [`obj spec.affinity`](#obj-specaffinity)
+    * [`obj spec.affinity.nodeAffinity`](#obj-specaffinitynodeaffinity)
+      * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specaffinitynodeaffinitywithpreferredduringschedulingignoredduringexecution)
+      * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specaffinitynodeaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
+      * [`obj spec.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-specaffinitynodeaffinityrequiredduringschedulingignoredduringexecution)
+        * [`fn withNodeSelectorTerms(nodeSelectorTerms)`](#fn-specaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionwithnodeselectorterms)
+        * [`fn withNodeSelectorTermsMixin(nodeSelectorTerms)`](#fn-specaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionwithnodeselectortermsmixin)
+    * [`obj spec.affinity.podAffinity`](#obj-specaffinitypodaffinity)
+      * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specaffinitypodaffinitywithpreferredduringschedulingignoredduringexecution)
+      * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specaffinitypodaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
+      * [`fn withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specaffinitypodaffinitywithrequiredduringschedulingignoredduringexecution)
+      * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specaffinitypodaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
+    * [`obj spec.affinity.podAntiAffinity`](#obj-specaffinitypodantiaffinity)
+      * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specaffinitypodantiaffinitywithpreferredduringschedulingignoredduringexecution)
+      * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specaffinitypodantiaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
+      * [`fn withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specaffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecution)
+      * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specaffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
   * [`obj spec.ee_resource_requirements`](#obj-specee_resource_requirements)
     * [`obj spec.ee_resource_requirements.limits`](#obj-specee_resource_requirementslimits)
       * [`fn withCpu(cpu)`](#fn-specee_resource_requirementslimitswithcpu)
@@ -143,6 +183,15 @@ permalink: /v1.0.0/awx/v1beta1/awx/
       * [`fn withCpu(cpu)`](#fn-specee_resource_requirementsrequestswithcpu)
       * [`fn withMemory(memory)`](#fn-specee_resource_requirementsrequestswithmemory)
       * [`fn withStorage(storage)`](#fn-specee_resource_requirementsrequestswithstorage)
+  * [`obj spec.init_container_resource_requirements`](#obj-specinit_container_resource_requirements)
+    * [`obj spec.init_container_resource_requirements.limits`](#obj-specinit_container_resource_requirementslimits)
+      * [`fn withCpu(cpu)`](#fn-specinit_container_resource_requirementslimitswithcpu)
+      * [`fn withMemory(memory)`](#fn-specinit_container_resource_requirementslimitswithmemory)
+      * [`fn withStorage(storage)`](#fn-specinit_container_resource_requirementslimitswithstorage)
+    * [`obj spec.init_container_resource_requirements.requests`](#obj-specinit_container_resource_requirementsrequests)
+      * [`fn withCpu(cpu)`](#fn-specinit_container_resource_requirementsrequestswithcpu)
+      * [`fn withMemory(memory)`](#fn-specinit_container_resource_requirementsrequestswithmemory)
+      * [`fn withStorage(storage)`](#fn-specinit_container_resource_requirementsrequestswithstorage)
   * [`obj spec.postgres_init_container_resource_requirements`](#obj-specpostgres_init_container_resource_requirements)
     * [`obj spec.postgres_init_container_resource_requirements.limits`](#obj-specpostgres_init_container_resource_requirementslimits)
       * [`fn withCpu(cpu)`](#fn-specpostgres_init_container_resource_requirementslimitswithcpu)
@@ -173,6 +222,32 @@ permalink: /v1.0.0/awx/v1beta1/awx/
       * [`fn withCpu(cpu)`](#fn-specredis_resource_requirementsrequestswithcpu)
       * [`fn withMemory(memory)`](#fn-specredis_resource_requirementsrequestswithmemory)
       * [`fn withStorage(storage)`](#fn-specredis_resource_requirementsrequestswithstorage)
+  * [`obj spec.rsyslog_resource_requirements`](#obj-specrsyslog_resource_requirements)
+    * [`obj spec.rsyslog_resource_requirements.limits`](#obj-specrsyslog_resource_requirementslimits)
+      * [`fn withCpu(cpu)`](#fn-specrsyslog_resource_requirementslimitswithcpu)
+      * [`fn withMemory(memory)`](#fn-specrsyslog_resource_requirementslimitswithmemory)
+      * [`fn withStorage(storage)`](#fn-specrsyslog_resource_requirementslimitswithstorage)
+    * [`obj spec.rsyslog_resource_requirements.requests`](#obj-specrsyslog_resource_requirementsrequests)
+      * [`fn withCpu(cpu)`](#fn-specrsyslog_resource_requirementsrequestswithcpu)
+      * [`fn withMemory(memory)`](#fn-specrsyslog_resource_requirementsrequestswithmemory)
+      * [`fn withStorage(storage)`](#fn-specrsyslog_resource_requirementsrequestswithstorage)
+  * [`obj spec.task_affinity`](#obj-spectask_affinity)
+    * [`obj spec.task_affinity.nodeAffinity`](#obj-spectask_affinitynodeaffinity)
+      * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-spectask_affinitynodeaffinitywithpreferredduringschedulingignoredduringexecution)
+      * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-spectask_affinitynodeaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
+      * [`obj spec.task_affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-spectask_affinitynodeaffinityrequiredduringschedulingignoredduringexecution)
+        * [`fn withNodeSelectorTerms(nodeSelectorTerms)`](#fn-spectask_affinitynodeaffinityrequiredduringschedulingignoredduringexecutionwithnodeselectorterms)
+        * [`fn withNodeSelectorTermsMixin(nodeSelectorTerms)`](#fn-spectask_affinitynodeaffinityrequiredduringschedulingignoredduringexecutionwithnodeselectortermsmixin)
+    * [`obj spec.task_affinity.podAffinity`](#obj-spectask_affinitypodaffinity)
+      * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-spectask_affinitypodaffinitywithpreferredduringschedulingignoredduringexecution)
+      * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-spectask_affinitypodaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
+      * [`fn withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-spectask_affinitypodaffinitywithrequiredduringschedulingignoredduringexecution)
+      * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-spectask_affinitypodaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
+    * [`obj spec.task_affinity.podAntiAffinity`](#obj-spectask_affinitypodantiaffinity)
+      * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-spectask_affinitypodantiaffinitywithpreferredduringschedulingignoredduringexecution)
+      * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-spectask_affinitypodantiaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
+      * [`fn withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-spectask_affinitypodantiaffinitywithrequiredduringschedulingignoredduringexecution)
+      * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-spectask_affinitypodantiaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
   * [`obj spec.task_resource_requirements`](#obj-spectask_resource_requirements)
     * [`obj spec.task_resource_requirements.limits`](#obj-spectask_resource_requirementslimits)
       * [`fn withCpu(cpu)`](#fn-spectask_resource_requirementslimitswithcpu)
@@ -182,6 +257,23 @@ permalink: /v1.0.0/awx/v1beta1/awx/
       * [`fn withCpu(cpu)`](#fn-spectask_resource_requirementsrequestswithcpu)
       * [`fn withMemory(memory)`](#fn-spectask_resource_requirementsrequestswithmemory)
       * [`fn withStorage(storage)`](#fn-spectask_resource_requirementsrequestswithstorage)
+  * [`obj spec.web_affinity`](#obj-specweb_affinity)
+    * [`obj spec.web_affinity.nodeAffinity`](#obj-specweb_affinitynodeaffinity)
+      * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specweb_affinitynodeaffinitywithpreferredduringschedulingignoredduringexecution)
+      * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specweb_affinitynodeaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
+      * [`obj spec.web_affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-specweb_affinitynodeaffinityrequiredduringschedulingignoredduringexecution)
+        * [`fn withNodeSelectorTerms(nodeSelectorTerms)`](#fn-specweb_affinitynodeaffinityrequiredduringschedulingignoredduringexecutionwithnodeselectorterms)
+        * [`fn withNodeSelectorTermsMixin(nodeSelectorTerms)`](#fn-specweb_affinitynodeaffinityrequiredduringschedulingignoredduringexecutionwithnodeselectortermsmixin)
+    * [`obj spec.web_affinity.podAffinity`](#obj-specweb_affinitypodaffinity)
+      * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specweb_affinitypodaffinitywithpreferredduringschedulingignoredduringexecution)
+      * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specweb_affinitypodaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
+      * [`fn withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specweb_affinitypodaffinitywithrequiredduringschedulingignoredduringexecution)
+      * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specweb_affinitypodaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
+    * [`obj spec.web_affinity.podAntiAffinity`](#obj-specweb_affinitypodantiaffinity)
+      * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specweb_affinitypodantiaffinitywithpreferredduringschedulingignoredduringexecution)
+      * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specweb_affinitypodantiaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
+      * [`fn withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specweb_affinitypodantiaffinitywithrequiredduringschedulingignoredduringexecution)
+      * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specweb_affinitypodantiaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
   * [`obj spec.web_resource_requirements`](#obj-specweb_resource_requirements)
     * [`obj spec.web_resource_requirements.limits`](#obj-specweb_resource_requirementslimits)
       * [`fn withCpu(cpu)`](#fn-specweb_resource_requirementslimitswithcpu)
@@ -388,6 +480,24 @@ withUid(uid)
 
 
 
+### fn spec.withAdditional_labels
+
+```ts
+withAdditional_labels(additional_labels)
+```
+
+"Additional labels defined on the resource, which should be propagated to child resources"
+
+### fn spec.withAdditional_labelsMixin
+
+```ts
+withAdditional_labelsMixin(additional_labels)
+```
+
+"Additional labels defined on the resource, which should be propagated to child resources"
+
+**Note:** This function appends passed data to existing values
+
 ### fn spec.withAdmin_email
 
 ```ts
@@ -418,7 +528,7 @@ withAdmin_user(admin_user)
 withAnnotations(annotations)
 ```
 
-"annotations for the pods"
+"Common annotations for both Web and Task deployments."
 
 ### fn spec.withApi_version
 
@@ -584,6 +694,24 @@ withGarbage_collect_secrets(garbage_collect_secrets)
 
 "Whether or not to remove secrets upon instance removal"
 
+### fn spec.withHost_aliases
+
+```ts
+withHost_aliases(host_aliases)
+```
+
+"HostAliases for app containers"
+
+### fn spec.withHost_aliasesMixin
+
+```ts
+withHost_aliasesMixin(host_aliases)
+```
+
+"HostAliases for app containers"
+
+**Note:** This function appends passed data to existing values
+
 ### fn spec.withHostname
 
 ```ts
@@ -666,6 +794,14 @@ withIngress_class_name(ingress_class_name)
 
 "The name of ingress class to use instead of the cluster default."
 
+### fn spec.withIngress_controller
+
+```ts
+withIngress_controller(ingress_controller)
+```
+
+"Special configuration for specific Ingress Controllers"
+
 ### fn spec.withIngress_path
 
 ```ts
@@ -730,6 +866,22 @@ withInit_container_image_version(init_container_image_version)
 
 "Init container image version to use"
 
+### fn spec.withInit_projects_container_image
+
+```ts
+withInit_projects_container_image(init_projects_container_image)
+```
+
+"Registry path to the init projects container to use"
+
+### fn spec.withIpv6_disabled
+
+```ts
+withIpv6_disabled(ipv6_disabled)
+```
+
+"Disable web container's nginx ipv6 listener"
+
 ### fn spec.withKind
 
 ```ts
@@ -753,6 +905,14 @@ withLdap_password_secret(ldap_password_secret)
 ```
 
 "Secret where can be found the LDAP bind password"
+
+### fn spec.withLoadbalancer_ip
+
+```ts
+withLoadbalancer_ip(loadbalancer_ip)
+```
+
+"Assign LoadBalancer IP address"
 
 ### fn spec.withLoadbalancer_port
 
@@ -859,6 +1019,38 @@ withPostgres_keep_pvc_after_upgrade(postgres_keep_pvc_after_upgrade)
 ```
 
 "Specify whether or not to keep the old PVC after PostgreSQL upgrades"
+
+### fn spec.withPostgres_keepalives
+
+```ts
+withPostgres_keepalives(postgres_keepalives)
+```
+
+"Controls whether client-side TCP keepalives are used for Postgres connections."
+
+### fn spec.withPostgres_keepalives_count
+
+```ts
+withPostgres_keepalives_count(postgres_keepalives_count)
+```
+
+"Controls the number of TCP keepalives that can be lost before the client's connection to the server is considered dead."
+
+### fn spec.withPostgres_keepalives_idle
+
+```ts
+withPostgres_keepalives_idle(postgres_keepalives_idle)
+```
+
+"Controls the number of seconds of inactivity after which TCP should send a keepalive message to the server."
+
+### fn spec.withPostgres_keepalives_interval
+
+```ts
+withPostgres_keepalives_interval(postgres_keepalives_interval)
+```
+
+"Controls the number of seconds after which a TCP keepalive message that is not acknowledged by the server should be retransmitted."
 
 ### fn spec.withPostgres_label_selector
 
@@ -1096,6 +1288,14 @@ withSet_self_labels(set_self_labels)
 
 "Maintain some of the recommended `app.kubernetes.io/*` labels on the resource (self)"
 
+### fn spec.withTask_annotations
+
+```ts
+withTask_annotations(task_annotations)
+```
+
+"Task deployment annotations. This will override the general annotations parameter for the Task deployment."
+
 ### fn spec.withTask_args
 
 ```ts
@@ -1148,6 +1348,14 @@ withTask_extra_volume_mounts(task_extra_volume_mounts)
 
 "Specify volume mounts to be added to Task container"
 
+### fn spec.withTask_node_selector
+
+```ts
+withTask_node_selector(task_node_selector)
+```
+
+"nodeSelector for the task pods"
+
 ### fn spec.withTask_privileged
 
 ```ts
@@ -1155,6 +1363,38 @@ withTask_privileged(task_privileged)
 ```
 
 "If a privileged security context should be enabled"
+
+### fn spec.withTask_replicas
+
+```ts
+withTask_replicas(task_replicas)
+```
+
+"Number of task instance replicas"
+
+### fn spec.withTask_tolerations
+
+```ts
+withTask_tolerations(task_tolerations)
+```
+
+"node tolerations for the task pods"
+
+### fn spec.withTask_topology_spread_constraints
+
+```ts
+withTask_topology_spread_constraints(task_topology_spread_constraints)
+```
+
+"topology rule(s) for the task pods"
+
+### fn spec.withTermination_grace_period_seconds
+
+```ts
+withTermination_grace_period_seconds(termination_grace_period_seconds)
+```
+
+"Optional duration in seconds pods needs to terminate gracefully"
 
 ### fn spec.withTolerations
 
@@ -1171,6 +1411,14 @@ withTopology_spread_constraints(topology_spread_constraints)
 ```
 
 "topology rule(s) for the pods"
+
+### fn spec.withWeb_annotations
+
+```ts
+withWeb_annotations(web_annotations)
+```
+
+"Web deployment annotations. This will override the general annotations parameter for the Web deployment."
 
 ### fn spec.withWeb_args
 
@@ -1223,6 +1471,166 @@ withWeb_extra_volume_mounts(web_extra_volume_mounts)
 ```
 
 "Specify volume mounts to be added to the Web container"
+
+### fn spec.withWeb_node_selector
+
+```ts
+withWeb_node_selector(web_node_selector)
+```
+
+"nodeSelector for the web pods"
+
+### fn spec.withWeb_replicas
+
+```ts
+withWeb_replicas(web_replicas)
+```
+
+"Number of web instance replicas"
+
+### fn spec.withWeb_tolerations
+
+```ts
+withWeb_tolerations(web_tolerations)
+```
+
+"node tolerations for the web pods"
+
+### fn spec.withWeb_topology_spread_constraints
+
+```ts
+withWeb_topology_spread_constraints(web_topology_spread_constraints)
+```
+
+"topology rule(s) for the web pods"
+
+## obj spec.affinity
+
+"If specified, the pod's scheduling constraints"
+
+## obj spec.affinity.nodeAffinity
+
+
+
+### fn spec.affinity.nodeAffinity.withPreferredDuringSchedulingIgnoredDuringExecution
+
+```ts
+withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+### fn spec.affinity.nodeAffinity.withPreferredDuringSchedulingIgnoredDuringExecutionMixin
+
+```ts
+withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNodeSelectorTerms
+
+```ts
+withNodeSelectorTerms(nodeSelectorTerms)
+```
+
+
+
+### fn spec.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNodeSelectorTermsMixin
+
+```ts
+withNodeSelectorTermsMixin(nodeSelectorTerms)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.affinity.podAffinity
+
+
+
+### fn spec.affinity.podAffinity.withPreferredDuringSchedulingIgnoredDuringExecution
+
+```ts
+withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+### fn spec.affinity.podAffinity.withPreferredDuringSchedulingIgnoredDuringExecutionMixin
+
+```ts
+withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.affinity.podAffinity.withRequiredDuringSchedulingIgnoredDuringExecution
+
+```ts
+withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+### fn spec.affinity.podAffinity.withRequiredDuringSchedulingIgnoredDuringExecutionMixin
+
+```ts
+withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.affinity.podAntiAffinity
+
+
+
+### fn spec.affinity.podAntiAffinity.withPreferredDuringSchedulingIgnoredDuringExecution
+
+```ts
+withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+### fn spec.affinity.podAntiAffinity.withPreferredDuringSchedulingIgnoredDuringExecutionMixin
+
+```ts
+withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.affinity.podAntiAffinity.withRequiredDuringSchedulingIgnoredDuringExecution
+
+```ts
+withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+### fn spec.affinity.podAntiAffinity.withRequiredDuringSchedulingIgnoredDuringExecutionMixin
+
+```ts
+withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+**Note:** This function appends passed data to existing values
 
 ## obj spec.ee_resource_requirements
 
@@ -1277,6 +1685,66 @@ withMemory(memory)
 
 
 ### fn spec.ee_resource_requirements.requests.withStorage
+
+```ts
+withStorage(storage)
+```
+
+
+
+## obj spec.init_container_resource_requirements
+
+"Resource requirements for the init container"
+
+## obj spec.init_container_resource_requirements.limits
+
+
+
+### fn spec.init_container_resource_requirements.limits.withCpu
+
+```ts
+withCpu(cpu)
+```
+
+
+
+### fn spec.init_container_resource_requirements.limits.withMemory
+
+```ts
+withMemory(memory)
+```
+
+
+
+### fn spec.init_container_resource_requirements.limits.withStorage
+
+```ts
+withStorage(storage)
+```
+
+
+
+## obj spec.init_container_resource_requirements.requests
+
+
+
+### fn spec.init_container_resource_requirements.requests.withCpu
+
+```ts
+withCpu(cpu)
+```
+
+
+
+### fn spec.init_container_resource_requirements.requests.withMemory
+
+```ts
+withMemory(memory)
+```
+
+
+
+### fn spec.init_container_resource_requirements.requests.withStorage
 
 ```ts
 withStorage(storage)
@@ -1476,6 +1944,194 @@ withStorage(storage)
 
 
 
+## obj spec.rsyslog_resource_requirements
+
+"Resource requirements for the rsyslog container"
+
+## obj spec.rsyslog_resource_requirements.limits
+
+
+
+### fn spec.rsyslog_resource_requirements.limits.withCpu
+
+```ts
+withCpu(cpu)
+```
+
+
+
+### fn spec.rsyslog_resource_requirements.limits.withMemory
+
+```ts
+withMemory(memory)
+```
+
+
+
+### fn spec.rsyslog_resource_requirements.limits.withStorage
+
+```ts
+withStorage(storage)
+```
+
+
+
+## obj spec.rsyslog_resource_requirements.requests
+
+
+
+### fn spec.rsyslog_resource_requirements.requests.withCpu
+
+```ts
+withCpu(cpu)
+```
+
+
+
+### fn spec.rsyslog_resource_requirements.requests.withMemory
+
+```ts
+withMemory(memory)
+```
+
+
+
+### fn spec.rsyslog_resource_requirements.requests.withStorage
+
+```ts
+withStorage(storage)
+```
+
+
+
+## obj spec.task_affinity
+
+"If specified, the pod's scheduling constraints"
+
+## obj spec.task_affinity.nodeAffinity
+
+
+
+### fn spec.task_affinity.nodeAffinity.withPreferredDuringSchedulingIgnoredDuringExecution
+
+```ts
+withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+### fn spec.task_affinity.nodeAffinity.withPreferredDuringSchedulingIgnoredDuringExecutionMixin
+
+```ts
+withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.task_affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.task_affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNodeSelectorTerms
+
+```ts
+withNodeSelectorTerms(nodeSelectorTerms)
+```
+
+
+
+### fn spec.task_affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNodeSelectorTermsMixin
+
+```ts
+withNodeSelectorTermsMixin(nodeSelectorTerms)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.task_affinity.podAffinity
+
+
+
+### fn spec.task_affinity.podAffinity.withPreferredDuringSchedulingIgnoredDuringExecution
+
+```ts
+withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+### fn spec.task_affinity.podAffinity.withPreferredDuringSchedulingIgnoredDuringExecutionMixin
+
+```ts
+withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.task_affinity.podAffinity.withRequiredDuringSchedulingIgnoredDuringExecution
+
+```ts
+withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+### fn spec.task_affinity.podAffinity.withRequiredDuringSchedulingIgnoredDuringExecutionMixin
+
+```ts
+withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.task_affinity.podAntiAffinity
+
+
+
+### fn spec.task_affinity.podAntiAffinity.withPreferredDuringSchedulingIgnoredDuringExecution
+
+```ts
+withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+### fn spec.task_affinity.podAntiAffinity.withPreferredDuringSchedulingIgnoredDuringExecutionMixin
+
+```ts
+withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.task_affinity.podAntiAffinity.withRequiredDuringSchedulingIgnoredDuringExecution
+
+```ts
+withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+### fn spec.task_affinity.podAntiAffinity.withRequiredDuringSchedulingIgnoredDuringExecutionMixin
+
+```ts
+withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ## obj spec.task_resource_requirements
 
 "Resource requirements for the task container"
@@ -1535,6 +2191,134 @@ withStorage(storage)
 ```
 
 
+
+## obj spec.web_affinity
+
+"If specified, the pod's scheduling constraints"
+
+## obj spec.web_affinity.nodeAffinity
+
+
+
+### fn spec.web_affinity.nodeAffinity.withPreferredDuringSchedulingIgnoredDuringExecution
+
+```ts
+withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+### fn spec.web_affinity.nodeAffinity.withPreferredDuringSchedulingIgnoredDuringExecutionMixin
+
+```ts
+withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.web_affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.web_affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNodeSelectorTerms
+
+```ts
+withNodeSelectorTerms(nodeSelectorTerms)
+```
+
+
+
+### fn spec.web_affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNodeSelectorTermsMixin
+
+```ts
+withNodeSelectorTermsMixin(nodeSelectorTerms)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.web_affinity.podAffinity
+
+
+
+### fn spec.web_affinity.podAffinity.withPreferredDuringSchedulingIgnoredDuringExecution
+
+```ts
+withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+### fn spec.web_affinity.podAffinity.withPreferredDuringSchedulingIgnoredDuringExecutionMixin
+
+```ts
+withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.web_affinity.podAffinity.withRequiredDuringSchedulingIgnoredDuringExecution
+
+```ts
+withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+### fn spec.web_affinity.podAffinity.withRequiredDuringSchedulingIgnoredDuringExecutionMixin
+
+```ts
+withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.web_affinity.podAntiAffinity
+
+
+
+### fn spec.web_affinity.podAntiAffinity.withPreferredDuringSchedulingIgnoredDuringExecution
+
+```ts
+withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+### fn spec.web_affinity.podAntiAffinity.withPreferredDuringSchedulingIgnoredDuringExecutionMixin
+
+```ts
+withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.web_affinity.podAntiAffinity.withRequiredDuringSchedulingIgnoredDuringExecution
+
+```ts
+withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+### fn spec.web_affinity.podAntiAffinity.withRequiredDuringSchedulingIgnoredDuringExecutionMixin
+
+```ts
+withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+**Note:** This function appends passed data to existing values
 
 ## obj spec.web_resource_requirements
 
