@@ -1,6 +1,6 @@
 IMAGE_NAME ?= jsonnet-libs-k8s
 IMAGE_PREFIX ?= quay.io/influxdb
-IMAGE_TAG ?= 0.0.6-rc0
+IMAGE_TAG ?= 0.0.7-rc0
 
 OUTPUT_DIR ?= ${PWD}/gen
 ABS_OUTPUT_DIR := $(shell realpath $(OUTPUT_DIR))
@@ -51,7 +51,7 @@ libs/*:
 		-e GIT_COMMITTER_NAME="$(GIT_COMMITTER_NAME)" \
 		-e GIT_COMMITTER_EMAIL="$(GIT_COMMITTER_EMAIL)" \
 		-e SSH_KEY="$${SSH_KEY}" \
-		$(IMAGE_PREFIX)/$(IMAGE_NAME):$(IMAGE_TAG) /config /output
+		$(IMAGE_NAME):$(IMAGE_TAG) /config /output
 
 # TODO Move this to k8s-infra-containers
 build:
