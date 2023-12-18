@@ -51,10 +51,10 @@ libs/*:
 		-e GIT_COMMITTER_NAME="$(GIT_COMMITTER_NAME)" \
 		-e GIT_COMMITTER_EMAIL="$(GIT_COMMITTER_EMAIL)" \
 		-e SSH_KEY="$${SSH_KEY}" \
-		$(IMAGE_NAME):$(IMAGE_TAG) /config /output
+		$(IMAGE_PREFIX)/$(IMAGE_NAME):$(IMAGE_TAG) /config /output
 
 # TODO Move this to k8s-infra-containers
 build:
-	docker pull $(IMAGE_PREFIX)/$(IMAGE_NAME):$(IMAGE_TAG)
+echo	docker pull $(IMAGE_PREFIX)/$(IMAGE_NAME):$(IMAGE_TAG)
 
 .PHONY: clean configure debug run all libs/* build
