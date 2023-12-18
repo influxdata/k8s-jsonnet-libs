@@ -22,8 +22,6 @@ permalink: /provider-aws/0.33/dax/v1alpha1/parameterGroup/
   * [`fn withGeneration(generation)`](#fn-metadatawithgeneration)
   * [`fn withLabels(labels)`](#fn-metadatawithlabels)
   * [`fn withLabelsMixin(labels)`](#fn-metadatawithlabelsmixin)
-  * [`fn withManagedFields(managedFields)`](#fn-metadatawithmanagedfields)
-  * [`fn withManagedFieldsMixin(managedFields)`](#fn-metadatawithmanagedfieldsmixin)
   * [`fn withName(name)`](#fn-metadatawithname)
   * [`fn withNamespace(namespace)`](#fn-metadatawithnamespace)
   * [`fn withOwnerReferences(ownerReferences)`](#fn-metadatawithownerreferences)
@@ -38,6 +36,9 @@ permalink: /provider-aws/0.33/dax/v1alpha1/parameterGroup/
     * [`fn withParameterNameValues(parameterNameValues)`](#fn-specforproviderwithparameternamevalues)
     * [`fn withParameterNameValuesMixin(parameterNameValues)`](#fn-specforproviderwithparameternamevaluesmixin)
     * [`fn withRegion(region)`](#fn-specforproviderwithregion)
+    * [`obj spec.forProvider.parameterNameValues`](#obj-specforproviderparameternamevalues)
+      * [`fn withParameterName(parameterName)`](#fn-specforproviderparameternamevalueswithparametername)
+      * [`fn withParameterValue(parameterValue)`](#fn-specforproviderparameternamevalueswithparametervalue)
   * [`obj spec.providerConfigRef`](#obj-specproviderconfigref)
     * [`fn withName(name)`](#fn-specproviderconfigrefwithname)
     * [`obj spec.providerConfigRef.policy`](#obj-specproviderconfigrefpolicy)
@@ -181,24 +182,6 @@ withLabelsMixin(labels)
 
 **Note:** This function appends passed data to existing values
 
-### fn metadata.withManagedFields
-
-```ts
-withManagedFields(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
-
-### fn metadata.withManagedFieldsMixin
-
-```ts
-withManagedFieldsMixin(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
-
-**Note:** This function appends passed data to existing values
-
 ### fn metadata.withName
 
 ```ts
@@ -306,6 +289,26 @@ withRegion(region)
 ```
 
 "Region is which region the ParameterGroup will be created."
+
+## obj spec.forProvider.parameterNameValues
+
+"An array of name-value pairs for the parameters in the group. Each element in the array represents a single parameter. \n record-ttl-millis and query-ttl-millis are the only supported parameter names. For more details, see Configuring TTL Settings (https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.cluster-management.html#DAX.cluster-management.custom-settings.ttl)."
+
+### fn spec.forProvider.parameterNameValues.withParameterName
+
+```ts
+withParameterName(parameterName)
+```
+
+
+
+### fn spec.forProvider.parameterNameValues.withParameterValue
+
+```ts
+withParameterValue(parameterValue)
+```
+
+
 
 ## obj spec.providerConfigRef
 

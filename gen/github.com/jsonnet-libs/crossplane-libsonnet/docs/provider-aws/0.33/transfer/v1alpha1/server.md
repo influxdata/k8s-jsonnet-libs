@@ -22,8 +22,6 @@ permalink: /provider-aws/0.33/transfer/v1alpha1/server/
   * [`fn withGeneration(generation)`](#fn-metadatawithgeneration)
   * [`fn withLabels(labels)`](#fn-metadatawithlabels)
   * [`fn withLabelsMixin(labels)`](#fn-metadatawithlabelsmixin)
-  * [`fn withManagedFields(managedFields)`](#fn-metadatawithmanagedfields)
-  * [`fn withManagedFieldsMixin(managedFields)`](#fn-metadatawithmanagedfieldsmixin)
   * [`fn withName(name)`](#fn-metadatawithname)
   * [`fn withNamespace(namespace)`](#fn-metadatawithnamespace)
   * [`fn withOwnerReferences(ownerReferences)`](#fn-metadatawithownerreferences)
@@ -73,6 +71,11 @@ permalink: /provider-aws/0.33/transfer/v1alpha1/server/
       * [`fn withSubnetIDsMixin(subnetIDs)`](#fn-specforproviderendpointdetailswithsubnetidsmixin)
       * [`fn withVpcEndpointID(vpcEndpointID)`](#fn-specforproviderendpointdetailswithvpcendpointid)
       * [`fn withVpcID(vpcID)`](#fn-specforproviderendpointdetailswithvpcid)
+      * [`obj spec.forProvider.endpointDetails.addressAllocationIDRefs`](#obj-specforproviderendpointdetailsaddressallocationidrefs)
+        * [`fn withName(name)`](#fn-specforproviderendpointdetailsaddressallocationidrefswithname)
+        * [`obj spec.forProvider.endpointDetails.addressAllocationIDRefs.policy`](#obj-specforproviderendpointdetailsaddressallocationidrefspolicy)
+          * [`fn withResolution(resolution)`](#fn-specforproviderendpointdetailsaddressallocationidrefspolicywithresolution)
+          * [`fn withResolve(resolve)`](#fn-specforproviderendpointdetailsaddressallocationidrefspolicywithresolve)
       * [`obj spec.forProvider.endpointDetails.addressAllocationIDSelector`](#obj-specforproviderendpointdetailsaddressallocationidselector)
         * [`fn withMatchControllerRef(matchControllerRef)`](#fn-specforproviderendpointdetailsaddressallocationidselectorwithmatchcontrollerref)
         * [`fn withMatchLabels(matchLabels)`](#fn-specforproviderendpointdetailsaddressallocationidselectorwithmatchlabels)
@@ -80,6 +83,11 @@ permalink: /provider-aws/0.33/transfer/v1alpha1/server/
         * [`obj spec.forProvider.endpointDetails.addressAllocationIDSelector.policy`](#obj-specforproviderendpointdetailsaddressallocationidselectorpolicy)
           * [`fn withResolution(resolution)`](#fn-specforproviderendpointdetailsaddressallocationidselectorpolicywithresolution)
           * [`fn withResolve(resolve)`](#fn-specforproviderendpointdetailsaddressallocationidselectorpolicywithresolve)
+      * [`obj spec.forProvider.endpointDetails.securityGroupIDRefs`](#obj-specforproviderendpointdetailssecuritygroupidrefs)
+        * [`fn withName(name)`](#fn-specforproviderendpointdetailssecuritygroupidrefswithname)
+        * [`obj spec.forProvider.endpointDetails.securityGroupIDRefs.policy`](#obj-specforproviderendpointdetailssecuritygroupidrefspolicy)
+          * [`fn withResolution(resolution)`](#fn-specforproviderendpointdetailssecuritygroupidrefspolicywithresolution)
+          * [`fn withResolve(resolve)`](#fn-specforproviderendpointdetailssecuritygroupidrefspolicywithresolve)
       * [`obj spec.forProvider.endpointDetails.securityGroupIDSelector`](#obj-specforproviderendpointdetailssecuritygroupidselector)
         * [`fn withMatchControllerRef(matchControllerRef)`](#fn-specforproviderendpointdetailssecuritygroupidselectorwithmatchcontrollerref)
         * [`fn withMatchLabels(matchLabels)`](#fn-specforproviderendpointdetailssecuritygroupidselectorwithmatchlabels)
@@ -87,6 +95,11 @@ permalink: /provider-aws/0.33/transfer/v1alpha1/server/
         * [`obj spec.forProvider.endpointDetails.securityGroupIDSelector.policy`](#obj-specforproviderendpointdetailssecuritygroupidselectorpolicy)
           * [`fn withResolution(resolution)`](#fn-specforproviderendpointdetailssecuritygroupidselectorpolicywithresolution)
           * [`fn withResolve(resolve)`](#fn-specforproviderendpointdetailssecuritygroupidselectorpolicywithresolve)
+      * [`obj spec.forProvider.endpointDetails.subnetIDRefs`](#obj-specforproviderendpointdetailssubnetidrefs)
+        * [`fn withName(name)`](#fn-specforproviderendpointdetailssubnetidrefswithname)
+        * [`obj spec.forProvider.endpointDetails.subnetIDRefs.policy`](#obj-specforproviderendpointdetailssubnetidrefspolicy)
+          * [`fn withResolution(resolution)`](#fn-specforproviderendpointdetailssubnetidrefspolicywithresolution)
+          * [`fn withResolve(resolve)`](#fn-specforproviderendpointdetailssubnetidrefspolicywithresolve)
       * [`obj spec.forProvider.endpointDetails.subnetIDSelector`](#obj-specforproviderendpointdetailssubnetidselector)
         * [`fn withMatchControllerRef(matchControllerRef)`](#fn-specforproviderendpointdetailssubnetidselectorwithmatchcontrollerref)
         * [`fn withMatchLabels(matchLabels)`](#fn-specforproviderendpointdetailssubnetidselectorwithmatchlabels)
@@ -134,9 +147,15 @@ permalink: /provider-aws/0.33/transfer/v1alpha1/server/
       * [`obj spec.forProvider.loggingRoleSelector.policy`](#obj-specforproviderloggingroleselectorpolicy)
         * [`fn withResolution(resolution)`](#fn-specforproviderloggingroleselectorpolicywithresolution)
         * [`fn withResolve(resolve)`](#fn-specforproviderloggingroleselectorpolicywithresolve)
+    * [`obj spec.forProvider.tags`](#obj-specforprovidertags)
+      * [`fn withKey(key)`](#fn-specforprovidertagswithkey)
+      * [`fn withValue(value)`](#fn-specforprovidertagswithvalue)
     * [`obj spec.forProvider.workflowDetails`](#obj-specforproviderworkflowdetails)
       * [`fn withOnUpload(onUpload)`](#fn-specforproviderworkflowdetailswithonupload)
       * [`fn withOnUploadMixin(onUpload)`](#fn-specforproviderworkflowdetailswithonuploadmixin)
+      * [`obj spec.forProvider.workflowDetails.onUpload`](#obj-specforproviderworkflowdetailsonupload)
+        * [`fn withExecutionRole(executionRole)`](#fn-specforproviderworkflowdetailsonuploadwithexecutionrole)
+        * [`fn withWorkflowID(workflowID)`](#fn-specforproviderworkflowdetailsonuploadwithworkflowid)
   * [`obj spec.providerConfigRef`](#obj-specproviderconfigref)
     * [`fn withName(name)`](#fn-specproviderconfigrefwithname)
     * [`obj spec.providerConfigRef.policy`](#obj-specproviderconfigrefpolicy)
@@ -277,24 +296,6 @@ withLabelsMixin(labels)
 ```
 
 "Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels"
-
-**Note:** This function appends passed data to existing values
-
-### fn metadata.withManagedFields
-
-```ts
-withManagedFields(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
-
-### fn metadata.withManagedFieldsMixin
-
-```ts
-withManagedFieldsMixin(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
 
 **Note:** This function appends passed data to existing values
 
@@ -682,6 +683,38 @@ withVpcID(vpcID)
 
 "The VPC ID of the VPC in which a server's endpoint will be hosted. \n This property can only be set when EndpointType is set to VPC."
 
+## obj spec.forProvider.endpointDetails.addressAllocationIDRefs
+
+"AddressAllocationIDRefs is a list of references to AddressAllocationID used to set the AddressAllocationIDs."
+
+### fn spec.forProvider.endpointDetails.addressAllocationIDRefs.withName
+
+```ts
+withName(name)
+```
+
+"Name of the referenced object."
+
+## obj spec.forProvider.endpointDetails.addressAllocationIDRefs.policy
+
+"Policies for referencing."
+
+### fn spec.forProvider.endpointDetails.addressAllocationIDRefs.policy.withResolution
+
+```ts
+withResolution(resolution)
+```
+
+"Resolution specifies whether resolution of this reference is required. The default is 'Required', which means the reconcile will fail if the reference cannot be resolved. 'Optional' means this reference will be a no-op if it cannot be resolved."
+
+### fn spec.forProvider.endpointDetails.addressAllocationIDRefs.policy.withResolve
+
+```ts
+withResolve(resolve)
+```
+
+"Resolve specifies when this reference should be resolved. The default is 'IfNotPresent', which will attempt to resolve the reference only when the corresponding field is not present. Use 'Always' to resolve the reference on every reconcile."
+
 ## obj spec.forProvider.endpointDetails.addressAllocationIDSelector
 
 "AddressAllocationIDSelector selects references to AddressAllocationID used to set the AddressAllocationIDs."
@@ -732,6 +765,38 @@ withResolve(resolve)
 
 "Resolve specifies when this reference should be resolved. The default is 'IfNotPresent', which will attempt to resolve the reference only when the corresponding field is not present. Use 'Always' to resolve the reference on every reconcile."
 
+## obj spec.forProvider.endpointDetails.securityGroupIDRefs
+
+"SecurityGroupIDRefs is a list of references to SecurityGroups used to set the SecurityGroupIDs."
+
+### fn spec.forProvider.endpointDetails.securityGroupIDRefs.withName
+
+```ts
+withName(name)
+```
+
+"Name of the referenced object."
+
+## obj spec.forProvider.endpointDetails.securityGroupIDRefs.policy
+
+"Policies for referencing."
+
+### fn spec.forProvider.endpointDetails.securityGroupIDRefs.policy.withResolution
+
+```ts
+withResolution(resolution)
+```
+
+"Resolution specifies whether resolution of this reference is required. The default is 'Required', which means the reconcile will fail if the reference cannot be resolved. 'Optional' means this reference will be a no-op if it cannot be resolved."
+
+### fn spec.forProvider.endpointDetails.securityGroupIDRefs.policy.withResolve
+
+```ts
+withResolve(resolve)
+```
+
+"Resolve specifies when this reference should be resolved. The default is 'IfNotPresent', which will attempt to resolve the reference only when the corresponding field is not present. Use 'Always' to resolve the reference on every reconcile."
+
 ## obj spec.forProvider.endpointDetails.securityGroupIDSelector
 
 "SecurityGroupIDsSelector selects references to SecurityGroupID used to set the SecurityGroupIDs."
@@ -775,6 +840,38 @@ withResolution(resolution)
 "Resolution specifies whether resolution of this reference is required. The default is 'Required', which means the reconcile will fail if the reference cannot be resolved. 'Optional' means this reference will be a no-op if it cannot be resolved."
 
 ### fn spec.forProvider.endpointDetails.securityGroupIDSelector.policy.withResolve
+
+```ts
+withResolve(resolve)
+```
+
+"Resolve specifies when this reference should be resolved. The default is 'IfNotPresent', which will attempt to resolve the reference only when the corresponding field is not present. Use 'Always' to resolve the reference on every reconcile."
+
+## obj spec.forProvider.endpointDetails.subnetIDRefs
+
+"SubnetIDRefs is a list of references to Subnets used to set the SubnetIDs."
+
+### fn spec.forProvider.endpointDetails.subnetIDRefs.withName
+
+```ts
+withName(name)
+```
+
+"Name of the referenced object."
+
+## obj spec.forProvider.endpointDetails.subnetIDRefs.policy
+
+"Policies for referencing."
+
+### fn spec.forProvider.endpointDetails.subnetIDRefs.policy.withResolution
+
+```ts
+withResolution(resolution)
+```
+
+"Resolution specifies whether resolution of this reference is required. The default is 'Required', which means the reconcile will fail if the reference cannot be resolved. 'Optional' means this reference will be a no-op if it cannot be resolved."
+
+### fn spec.forProvider.endpointDetails.subnetIDRefs.policy.withResolve
 
 ```ts
 withResolve(resolve)
@@ -1106,6 +1203,26 @@ withResolve(resolve)
 
 "Resolve specifies when this reference should be resolved. The default is 'IfNotPresent', which will attempt to resolve the reference only when the corresponding field is not present. Use 'Always' to resolve the reference on every reconcile."
 
+## obj spec.forProvider.tags
+
+"Key-value pairs that can be used to group and search for servers."
+
+### fn spec.forProvider.tags.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.forProvider.tags.withValue
+
+```ts
+withValue(value)
+```
+
+
+
 ## obj spec.forProvider.workflowDetails
 
 "Specifies the workflow ID for the workflow to assign and the execution role used for executing the workflow."
@@ -1127,6 +1244,26 @@ withOnUploadMixin(onUpload)
 
 
 **Note:** This function appends passed data to existing values
+
+## obj spec.forProvider.workflowDetails.onUpload
+
+
+
+### fn spec.forProvider.workflowDetails.onUpload.withExecutionRole
+
+```ts
+withExecutionRole(executionRole)
+```
+
+
+
+### fn spec.forProvider.workflowDetails.onUpload.withWorkflowID
+
+```ts
+withWorkflowID(workflowID)
+```
+
+
 
 ## obj spec.providerConfigRef
 

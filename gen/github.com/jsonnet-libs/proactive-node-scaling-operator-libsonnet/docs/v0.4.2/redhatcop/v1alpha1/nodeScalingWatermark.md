@@ -22,8 +22,6 @@ permalink: /v0.4.2/redhatcop/v1alpha1/nodeScalingWatermark/
   * [`fn withGeneration(generation)`](#fn-metadatawithgeneration)
   * [`fn withLabels(labels)`](#fn-metadatawithlabels)
   * [`fn withLabelsMixin(labels)`](#fn-metadatawithlabelsmixin)
-  * [`fn withManagedFields(managedFields)`](#fn-metadatawithmanagedfields)
-  * [`fn withManagedFieldsMixin(managedFields)`](#fn-metadatawithmanagedfieldsmixin)
   * [`fn withName(name)`](#fn-metadatawithname)
   * [`fn withNamespace(namespace)`](#fn-metadatawithnamespace)
   * [`fn withOwnerReferences(ownerReferences)`](#fn-metadatawithownerreferences)
@@ -41,6 +39,12 @@ permalink: /v0.4.2/redhatcop/v1alpha1/nodeScalingWatermark/
   * [`fn withTolerations(tolerations)`](#fn-specwithtolerations)
   * [`fn withTolerationsMixin(tolerations)`](#fn-specwithtolerationsmixin)
   * [`fn withWatermarkPercentage(watermarkPercentage)`](#fn-specwithwatermarkpercentage)
+  * [`obj spec.tolerations`](#obj-spectolerations)
+    * [`fn withEffect(effect)`](#fn-spectolerationswitheffect)
+    * [`fn withKey(key)`](#fn-spectolerationswithkey)
+    * [`fn withOperator(operator)`](#fn-spectolerationswithoperator)
+    * [`fn withTolerationSeconds(tolerationSeconds)`](#fn-spectolerationswithtolerationseconds)
+    * [`fn withValue(value)`](#fn-spectolerationswithvalue)
 
 ## Fields
 
@@ -155,24 +159,6 @@ withLabelsMixin(labels)
 ```
 
 "Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels"
-
-**Note:** This function appends passed data to existing values
-
-### fn metadata.withManagedFields
-
-```ts
-withManagedFields(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
-
-### fn metadata.withManagedFieldsMixin
-
-```ts
-withManagedFieldsMixin(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
 
 **Note:** This function appends passed data to existing values
 
@@ -315,3 +301,47 @@ withWatermarkPercentage(watermarkPercentage)
 ```
 
 "WatermarkPercentage: percentage of aggregated capacity of the selectd nodes after which the cluster should start scaling"
+
+## obj spec.tolerations
+
+
+
+### fn spec.tolerations.withEffect
+
+```ts
+withEffect(effect)
+```
+
+"Effect indicates the taint effect to match. Empty means match all taint effects. When specified, allowed values are NoSchedule, PreferNoSchedule and NoExecute."
+
+### fn spec.tolerations.withKey
+
+```ts
+withKey(key)
+```
+
+"Key is the taint key that the toleration applies to. Empty means match all taint keys. If the key is empty, operator must be Exists; this combination means to match all values and all keys."
+
+### fn spec.tolerations.withOperator
+
+```ts
+withOperator(operator)
+```
+
+"Operator represents a key's relationship to the value. Valid operators are Exists and Equal. Defaults to Equal. Exists is equivalent to wildcard for value, so that a pod can tolerate all taints of a particular category."
+
+### fn spec.tolerations.withTolerationSeconds
+
+```ts
+withTolerationSeconds(tolerationSeconds)
+```
+
+"TolerationSeconds represents the period of time the toleration (which must be of effect NoExecute, otherwise this field is ignored) tolerates the taint. By default, it is not set, which means tolerate the taint forever (do not evict). Zero and negative values will be treated as 0 (evict immediately) by the system."
+
+### fn spec.tolerations.withValue
+
+```ts
+withValue(value)
+```
+
+"Value is the taint value the toleration matches to. If the operator is Exists, the value should be empty, otherwise just a regular string."

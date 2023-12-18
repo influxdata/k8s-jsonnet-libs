@@ -22,8 +22,6 @@ permalink: /provider-aws/0.33/aws/v1beta1/providerConfig/
   * [`fn withGeneration(generation)`](#fn-metadatawithgeneration)
   * [`fn withLabels(labels)`](#fn-metadatawithlabels)
   * [`fn withLabelsMixin(labels)`](#fn-metadatawithlabelsmixin)
-  * [`fn withManagedFields(managedFields)`](#fn-metadatawithmanagedfields)
-  * [`fn withManagedFieldsMixin(managedFields)`](#fn-metadatawithmanagedfieldsmixin)
   * [`fn withName(name)`](#fn-metadatawithname)
   * [`fn withNamespace(namespace)`](#fn-metadatawithnamespace)
   * [`fn withOwnerReferences(ownerReferences)`](#fn-metadatawithownerreferences)
@@ -41,6 +39,9 @@ permalink: /provider-aws/0.33/aws/v1beta1/providerConfig/
     * [`fn withTagsMixin(tags)`](#fn-specassumerolewithtagsmixin)
     * [`fn withTransitiveTagKeys(transitiveTagKeys)`](#fn-specassumerolewithtransitivetagkeys)
     * [`fn withTransitiveTagKeysMixin(transitiveTagKeys)`](#fn-specassumerolewithtransitivetagkeysmixin)
+    * [`obj spec.assumeRole.tags`](#obj-specassumeroletags)
+      * [`fn withKey(key)`](#fn-specassumeroletagswithkey)
+      * [`fn withValue(value)`](#fn-specassumeroletagswithvalue)
   * [`obj spec.assumeRoleWithWebIdentity`](#obj-specassumerolewithwebidentity)
     * [`fn withRoleARN(roleARN)`](#fn-specassumerolewithwebidentitywithrolearn)
     * [`fn withRoleSessionName(roleSessionName)`](#fn-specassumerolewithwebidentitywithrolesessionname)
@@ -184,24 +185,6 @@ withLabelsMixin(labels)
 
 **Note:** This function appends passed data to existing values
 
-### fn metadata.withManagedFields
-
-```ts
-withManagedFields(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
-
-### fn metadata.withManagedFieldsMixin
-
-```ts
-withManagedFieldsMixin(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
-
-**Note:** This function appends passed data to existing values
-
 ### fn metadata.withName
 
 ```ts
@@ -335,6 +318,26 @@ withTransitiveTagKeysMixin(transitiveTagKeys)
 "TransitiveTagKeys is a list of keys for session tags that you want to set as transitive. If you set a tag key as transitive, the corresponding key and value passes to subsequent sessions in a role chain. For more information, see Chaining Roles with Session Tags (https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html#id_session-tags_role-chaining)."
 
 **Note:** This function appends passed data to existing values
+
+## obj spec.assumeRole.tags
+
+"Tags is list of session tags that you want to pass. Each session tag consists of a key name and an associated value. For more information about session tags, see Tagging STS Sessions (https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html)."
+
+### fn spec.assumeRole.tags.withKey
+
+```ts
+withKey(key)
+```
+
+"Name of the tag. Key is a required field"
+
+### fn spec.assumeRole.tags.withValue
+
+```ts
+withValue(value)
+```
+
+"Value of the tag. Value is a required field"
 
 ## obj spec.assumeRoleWithWebIdentity
 

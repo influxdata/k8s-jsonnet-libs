@@ -22,8 +22,6 @@ permalink: /provider-gcp/0.22/dns/v1alpha1/policy/
   * [`fn withGeneration(generation)`](#fn-metadatawithgeneration)
   * [`fn withLabels(labels)`](#fn-metadatawithlabels)
   * [`fn withLabelsMixin(labels)`](#fn-metadatawithlabelsmixin)
-  * [`fn withManagedFields(managedFields)`](#fn-metadatawithmanagedfields)
-  * [`fn withManagedFieldsMixin(managedFields)`](#fn-metadatawithmanagedfieldsmixin)
   * [`fn withName(name)`](#fn-metadatawithname)
   * [`fn withNamespace(namespace)`](#fn-metadatawithnamespace)
   * [`fn withOwnerReferences(ownerReferences)`](#fn-metadatawithownerreferences)
@@ -42,6 +40,11 @@ permalink: /provider-gcp/0.22/dns/v1alpha1/policy/
     * [`obj spec.forProvider.alternativeNameServerConfig`](#obj-specforprovideralternativenameserverconfig)
       * [`fn withTargetNameServers(targetNameServers)`](#fn-specforprovideralternativenameserverconfigwithtargetnameservers)
       * [`fn withTargetNameServersMixin(targetNameServers)`](#fn-specforprovideralternativenameserverconfigwithtargetnameserversmixin)
+      * [`obj spec.forProvider.alternativeNameServerConfig.targetNameServers`](#obj-specforprovideralternativenameserverconfigtargetnameservers)
+        * [`fn withForwardingPath(forwardingPath)`](#fn-specforprovideralternativenameserverconfigtargetnameserverswithforwardingpath)
+        * [`fn withIpv4Address(ipv4Address)`](#fn-specforprovideralternativenameserverconfigtargetnameserverswithipv4address)
+    * [`obj spec.forProvider.networks`](#obj-specforprovidernetworks)
+      * [`fn withNetworkUrl(networkUrl)`](#fn-specforprovidernetworkswithnetworkurl)
   * [`obj spec.providerConfigRef`](#obj-specproviderconfigref)
     * [`fn withName(name)`](#fn-specproviderconfigrefwithname)
     * [`obj spec.providerConfigRef.policy`](#obj-specproviderconfigrefpolicy)
@@ -185,24 +188,6 @@ withLabelsMixin(labels)
 
 **Note:** This function appends passed data to existing values
 
-### fn metadata.withManagedFields
-
-```ts
-withManagedFields(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
-
-### fn metadata.withManagedFieldsMixin
-
-```ts
-withManagedFieldsMixin(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
-
-**Note:** This function appends passed data to existing values
-
 ### fn metadata.withName
 
 ```ts
@@ -340,6 +325,38 @@ withTargetNameServersMixin(targetNameServers)
 "TargetNameServers: Sets an alternative name server for the associated networks. When specified, all DNS queries are forwarded to a name server that you choose. Names such as .internal are not available when an alternative name server is specified."
 
 **Note:** This function appends passed data to existing values
+
+## obj spec.forProvider.alternativeNameServerConfig.targetNameServers
+
+"TargetNameServers: Sets an alternative name server for the associated networks. When specified, all DNS queries are forwarded to a name server that you choose. Names such as .internal are not available when an alternative name server is specified."
+
+### fn spec.forProvider.alternativeNameServerConfig.targetNameServers.withForwardingPath
+
+```ts
+withForwardingPath(forwardingPath)
+```
+
+"ForwardingPath: Forwarding path for this TargetNameServer. If unset or set to DEFAULT, Cloud DNS makes forwarding decisions based on  address ranges; that is, RFC1918 addresses go to the VPC network, non-RFC1918 addresses go to the internet. When set to PRIVATE, Cloud DNS always sends queries through the VPC network for this target. Possible values: \"default\" - Cloud DNS makes forwarding decision based on IP address ranges; that is, RFC1918 addresses forward to the target through the VPC and non-RFC1918 addresses forward to the target through the internet \"private\" - Cloud DNS always forwards to this target through the VPC."
+
+### fn spec.forProvider.alternativeNameServerConfig.targetNameServers.withIpv4Address
+
+```ts
+withIpv4Address(ipv4Address)
+```
+
+"Ipv4Address: IPv4 address to forward to."
+
+## obj spec.forProvider.networks
+
+"Networks: List of network names specifying networks to which this policy is applied."
+
+### fn spec.forProvider.networks.withNetworkUrl
+
+```ts
+withNetworkUrl(networkUrl)
+```
+
+"NetworkUrl: The fully qualified URL of the VPC network to bind to."
 
 ## obj spec.providerConfigRef
 

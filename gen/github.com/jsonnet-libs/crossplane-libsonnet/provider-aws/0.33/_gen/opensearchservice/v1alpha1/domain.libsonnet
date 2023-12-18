@@ -27,10 +27,6 @@
     withLabels(labels): { metadata+: { labels: labels } },
     '#withLabelsMixin':: d.fn(help='"Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels"\n\n**Note:** This function appends passed data to existing values', args=[d.arg(name='labels', type=d.T.object)]),
     withLabelsMixin(labels): { metadata+: { labels+: labels } },
-    '#withManagedFields':: d.fn(help="\"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \\\"ci-cd\\\". The set of fields is always in the version that the workflow used when modifying the object.\"", args=[d.arg(name='managedFields', type=d.T.array)]),
-    withManagedFields(managedFields): { metadata+: { managedFields: if std.isArray(v=managedFields) then managedFields else [managedFields] } },
-    '#withManagedFieldsMixin':: d.fn(help="\"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \\\"ci-cd\\\". The set of fields is always in the version that the workflow used when modifying the object.\"\n\n**Note:** This function appends passed data to existing values", args=[d.arg(name='managedFields', type=d.T.array)]),
-    withManagedFieldsMixin(managedFields): { metadata+: { managedFields+: if std.isArray(v=managedFields) then managedFields else [managedFields] } },
     '#withName':: d.fn(help='"Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names"', args=[d.arg(name='name', type=d.T.string)]),
     withName(name): { metadata+: { name: name } },
     '#withNamespace':: d.fn(help='"Namespace defines the space within which each name must be unique. An empty namespace is equivalent to the \\"default\\" namespace, but \\"default\\" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty.\\n\\nMust be a DNS_LABEL. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/namespaces"', args=[d.arg(name='namespace', type=d.T.string)]),
@@ -50,7 +46,9 @@
   new(name): {
     apiVersion: 'opensearchservice.aws.crossplane.io/v1alpha1',
     kind: 'Domain',
-  } + self.metadata.withName(name=name),
+  } + self.metadata.withName(name=name) + self.metadata.withAnnotations(annotations={
+    'tanka.dev/namespaced': 'false',
+  }),
   '#spec':: d.obj(help='"DomainSpec defines the desired state of Domain"'),
   spec: {
     '#forProvider':: d.obj(help='"DomainParameters defines the desired state of Domain"'),
@@ -95,6 +93,20 @@
       },
       '#autoTuneOptions':: d.obj(help='"Specifies Auto-Tune options."'),
       autoTuneOptions: {
+        '#maintenanceSchedules':: d.obj(help=''),
+        maintenanceSchedules: {
+          '#duration':: d.obj(help='"The maintenance schedule duration: duration value and duration unit. See Auto-Tune for Amazon OpenSearch Service (https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html) for more information."'),
+          duration: {
+            '#withUnit':: d.fn(help='"The unit of a maintenance schedule duration. Valid value is HOUR. See Auto-Tune for Amazon OpenSearch Service (https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html) for more information."', args=[d.arg(name='unit', type=d.T.string)]),
+            withUnit(unit): { duration+: { unit: unit } },
+            '#withValue':: d.fn(help='"Integer to specify the value of a maintenance schedule duration. See Auto-Tune for Amazon OpenSearch Service (https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html) for more information."', args=[d.arg(name='value', type=d.T.integer)]),
+            withValue(value): { duration+: { value: value } },
+          },
+          '#withCronExpressionForRecurrence':: d.fn(help='', args=[d.arg(name='cronExpressionForRecurrence', type=d.T.string)]),
+          withCronExpressionForRecurrence(cronExpressionForRecurrence): { cronExpressionForRecurrence: cronExpressionForRecurrence },
+          '#withStartAt':: d.fn(help='', args=[d.arg(name='startAt', type=d.T.string)]),
+          withStartAt(startAt): { startAt: startAt },
+        },
         '#withDesiredState':: d.fn(help='"The Auto-Tune desired state. Valid values are ENABLED and DISABLED."', args=[d.arg(name='desiredState', type=d.T.string)]),
         withDesiredState(desiredState): { spec+: { forProvider+: { autoTuneOptions+: { desiredState: desiredState } } } },
         '#withMaintenanceSchedules':: d.fn(help='', args=[d.arg(name='maintenanceSchedules', type=d.T.array)]),
@@ -179,6 +191,13 @@
       nodeToNodeEncryptionOptions: {
         '#withEnabled':: d.fn(help='', args=[d.arg(name='enabled', type=d.T.boolean)]),
         withEnabled(enabled): { spec+: { forProvider+: { nodeToNodeEncryptionOptions+: { enabled: enabled } } } },
+      },
+      '#tags':: d.obj(help='"A list of Tag added during domain creation."'),
+      tags: {
+        '#withKey':: d.fn(help="\"A string of length from 1 to 128 characters that specifies the key for a tag. Tag keys must be unique for the domain to which they're attached.\"", args=[d.arg(name='key', type=d.T.string)]),
+        withKey(key): { key: key },
+        '#withValue':: d.fn(help="\"A string of length from 0 to 256 characters that specifies the value for a tag. Tag values can be null and don't have to be unique in a tag set.\"", args=[d.arg(name='value', type=d.T.string)]),
+        withValue(value): { value: value },
       },
       '#vpcOptions':: d.obj(help='"Options to specify the subnets and security groups for a VPC endpoint. For more information, see Launching your Amazon OpenSearch Service domains using a VPC (http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html)."'),
       vpcOptions: {

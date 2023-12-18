@@ -22,8 +22,6 @@ permalink: /provider-gcp/0.17/container/v1beta1/gkeCluster/
   * [`fn withGeneration(generation)`](#fn-metadatawithgeneration)
   * [`fn withLabels(labels)`](#fn-metadatawithlabels)
   * [`fn withLabelsMixin(labels)`](#fn-metadatawithlabelsmixin)
-  * [`fn withManagedFields(managedFields)`](#fn-metadatawithmanagedfields)
-  * [`fn withManagedFieldsMixin(managedFields)`](#fn-metadatawithmanagedfieldsmixin)
   * [`fn withName(name)`](#fn-metadatawithname)
   * [`fn withNamespace(namespace)`](#fn-metadatawithnamespace)
   * [`fn withOwnerReferences(ownerReferences)`](#fn-metadatawithownerreferences)
@@ -82,6 +80,10 @@ permalink: /provider-gcp/0.17/container/v1beta1/gkeCluster/
         * [`fn withOauthScopes(oauthScopes)`](#fn-specforproviderautoscalingautoprovisioningnodepooldefaultswithoauthscopes)
         * [`fn withOauthScopesMixin(oauthScopes)`](#fn-specforproviderautoscalingautoprovisioningnodepooldefaultswithoauthscopesmixin)
         * [`fn withServiceAccount(serviceAccount)`](#fn-specforproviderautoscalingautoprovisioningnodepooldefaultswithserviceaccount)
+      * [`obj spec.forProvider.autoscaling.resourceLimits`](#obj-specforproviderautoscalingresourcelimits)
+        * [`fn withMaximum(maximum)`](#fn-specforproviderautoscalingresourcelimitswithmaximum)
+        * [`fn withMinimum(minimum)`](#fn-specforproviderautoscalingresourcelimitswithminimum)
+        * [`fn withResourceType(resourceType)`](#fn-specforproviderautoscalingresourcelimitswithresourcetype)
     * [`obj spec.forProvider.binaryAuthorization`](#obj-specforproviderbinaryauthorization)
       * [`fn withEnabled(enabled)`](#fn-specforproviderbinaryauthorizationwithenabled)
     * [`obj spec.forProvider.databaseEncryption`](#obj-specforproviderdatabaseencryption)
@@ -114,6 +116,9 @@ permalink: /provider-gcp/0.17/container/v1beta1/gkeCluster/
       * [`fn withCidrBlocks(cidrBlocks)`](#fn-specforprovidermasterauthorizednetworksconfigwithcidrblocks)
       * [`fn withCidrBlocksMixin(cidrBlocks)`](#fn-specforprovidermasterauthorizednetworksconfigwithcidrblocksmixin)
       * [`fn withEnabled(enabled)`](#fn-specforprovidermasterauthorizednetworksconfigwithenabled)
+      * [`obj spec.forProvider.masterAuthorizedNetworksConfig.cidrBlocks`](#obj-specforprovidermasterauthorizednetworksconfigcidrblocks)
+        * [`fn withCidrBlock(cidrBlock)`](#fn-specforprovidermasterauthorizednetworksconfigcidrblockswithcidrblock)
+        * [`fn withDisplayName(displayName)`](#fn-specforprovidermasterauthorizednetworksconfigcidrblockswithdisplayname)
     * [`obj spec.forProvider.networkConfig`](#obj-specforprovidernetworkconfig)
       * [`fn withEnableIntraNodeVisibility(enableIntraNodeVisibility)`](#fn-specforprovidernetworkconfigwithenableintranodevisibility)
     * [`obj spec.forProvider.networkPolicy`](#obj-specforprovidernetworkpolicy)
@@ -271,24 +276,6 @@ withLabelsMixin(labels)
 ```
 
 "Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels"
-
-**Note:** This function appends passed data to existing values
-
-### fn metadata.withManagedFields
-
-```ts
-withManagedFields(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
-
-### fn metadata.withManagedFieldsMixin
-
-```ts
-withManagedFieldsMixin(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
 
 **Note:** This function appends passed data to existing values
 
@@ -708,6 +695,34 @@ withServiceAccount(serviceAccount)
 
 "ServiceAccount: The Google Cloud Platform Service Account to be used by the node VMs. If service_account is specified, scopes should be empty."
 
+## obj spec.forProvider.autoscaling.resourceLimits
+
+"ResourceLimits: Contains global constraints regarding minimum and maximum amount of resources in the cluster."
+
+### fn spec.forProvider.autoscaling.resourceLimits.withMaximum
+
+```ts
+withMaximum(maximum)
+```
+
+"Maximum: Maximum amount of the resource in the cluster."
+
+### fn spec.forProvider.autoscaling.resourceLimits.withMinimum
+
+```ts
+withMinimum(minimum)
+```
+
+"Minimum: Minimum amount of the resource in the cluster."
+
+### fn spec.forProvider.autoscaling.resourceLimits.withResourceType
+
+```ts
+withResourceType(resourceType)
+```
+
+"ResourceType: Resource name \"cpu\", \"memory\" or gpu-specific string."
+
 ## obj spec.forProvider.binaryAuthorization
 
 "BinaryAuthorization: Configuration for Binary Authorization."
@@ -921,6 +936,26 @@ withEnabled(enabled)
 ```
 
 "Enabled: Whether or not master authorized networks is enabled."
+
+## obj spec.forProvider.masterAuthorizedNetworksConfig.cidrBlocks
+
+"CidrBlocks: cidr_blocks define up to 50 external networks that could access Kubernetes master through HTTPS."
+
+### fn spec.forProvider.masterAuthorizedNetworksConfig.cidrBlocks.withCidrBlock
+
+```ts
+withCidrBlock(cidrBlock)
+```
+
+"CidrBlock: cidr_block must be specified in CIDR notation."
+
+### fn spec.forProvider.masterAuthorizedNetworksConfig.cidrBlocks.withDisplayName
+
+```ts
+withDisplayName(displayName)
+```
+
+"DisplayName: display_name is an optional field for users to identify CIDR blocks."
 
 ## obj spec.forProvider.networkConfig
 

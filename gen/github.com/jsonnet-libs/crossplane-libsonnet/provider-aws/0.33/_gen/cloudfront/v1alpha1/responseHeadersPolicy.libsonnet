@@ -27,10 +27,6 @@
     withLabels(labels): { metadata+: { labels: labels } },
     '#withLabelsMixin':: d.fn(help='"Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels"\n\n**Note:** This function appends passed data to existing values', args=[d.arg(name='labels', type=d.T.object)]),
     withLabelsMixin(labels): { metadata+: { labels+: labels } },
-    '#withManagedFields':: d.fn(help="\"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \\\"ci-cd\\\". The set of fields is always in the version that the workflow used when modifying the object.\"", args=[d.arg(name='managedFields', type=d.T.array)]),
-    withManagedFields(managedFields): { metadata+: { managedFields: if std.isArray(v=managedFields) then managedFields else [managedFields] } },
-    '#withManagedFieldsMixin':: d.fn(help="\"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \\\"ci-cd\\\". The set of fields is always in the version that the workflow used when modifying the object.\"\n\n**Note:** This function appends passed data to existing values", args=[d.arg(name='managedFields', type=d.T.array)]),
-    withManagedFieldsMixin(managedFields): { metadata+: { managedFields+: if std.isArray(v=managedFields) then managedFields else [managedFields] } },
     '#withName':: d.fn(help='"Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names"', args=[d.arg(name='name', type=d.T.string)]),
     withName(name): { metadata+: { name: name } },
     '#withNamespace':: d.fn(help='"Namespace defines the space within which each name must be unique. An empty namespace is equivalent to the \\"default\\" namespace, but \\"default\\" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty.\\n\\nMust be a DNS_LABEL. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/namespaces"', args=[d.arg(name='namespace', type=d.T.string)]),
@@ -50,7 +46,9 @@
   new(name): {
     apiVersion: 'cloudfront.aws.crossplane.io/v1alpha1',
     kind: 'ResponseHeadersPolicy',
-  } + self.metadata.withName(name=name),
+  } + self.metadata.withName(name=name) + self.metadata.withAnnotations(annotations={
+    'tanka.dev/namespaced': 'false',
+  }),
   '#spec':: d.obj(help='"ResponseHeadersPolicySpec defines the desired state of ResponseHeadersPolicy"'),
   spec: {
     '#forProvider':: d.obj(help='"ResponseHeadersPolicyParameters defines the desired state of ResponseHeadersPolicy"'),
@@ -96,6 +94,15 @@
         },
         '#customHeadersConfig':: d.obj(help='"A list of HTTP response header names and their values. CloudFront includes these headers in HTTP responses that it sends for requests that match a cache behavior that’s associated with this response headers policy."'),
         customHeadersConfig: {
+          '#items':: d.obj(help=''),
+          items: {
+            '#withHeader':: d.fn(help='', args=[d.arg(name='header', type=d.T.string)]),
+            withHeader(header): { header: header },
+            '#withOverride':: d.fn(help='', args=[d.arg(name='override', type=d.T.boolean)]),
+            withOverride(override): { override: override },
+            '#withValue':: d.fn(help='', args=[d.arg(name='value', type=d.T.string)]),
+            withValue(value): { value: value },
+          },
           '#withItems':: d.fn(help='', args=[d.arg(name='items', type=d.T.array)]),
           withItems(items): { spec+: { forProvider+: { responseHeadersPolicyConfig+: { customHeadersConfig+: { items: if std.isArray(v=items) then items else [items] } } } } },
           '#withItemsMixin':: d.fn(help='\n\n**Note:** This function appends passed data to existing values', args=[d.arg(name='items', type=d.T.array)]),

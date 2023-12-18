@@ -22,8 +22,6 @@ permalink: /provider-aws/0.33/ec2/v1alpha1/launchTemplate/
   * [`fn withGeneration(generation)`](#fn-metadatawithgeneration)
   * [`fn withLabels(labels)`](#fn-metadatawithlabels)
   * [`fn withLabelsMixin(labels)`](#fn-metadatawithlabelsmixin)
-  * [`fn withManagedFields(managedFields)`](#fn-metadatawithmanagedfields)
-  * [`fn withManagedFieldsMixin(managedFields)`](#fn-metadatawithmanagedfieldsmixin)
   * [`fn withName(name)`](#fn-metadatawithname)
   * [`fn withNamespace(namespace)`](#fn-metadatawithnamespace)
   * [`fn withOwnerReferences(ownerReferences)`](#fn-metadatawithownerreferences)
@@ -67,6 +65,19 @@ permalink: /provider-aws/0.33/ec2/v1alpha1/launchTemplate/
       * [`fn withTagSpecifications(tagSpecifications)`](#fn-specforproviderlaunchtemplatedatawithtagspecifications)
       * [`fn withTagSpecificationsMixin(tagSpecifications)`](#fn-specforproviderlaunchtemplatedatawithtagspecificationsmixin)
       * [`fn withUserData(userData)`](#fn-specforproviderlaunchtemplatedatawithuserdata)
+      * [`obj spec.forProvider.launchTemplateData.blockDeviceMappings`](#obj-specforproviderlaunchtemplatedatablockdevicemappings)
+        * [`fn withDeviceName(deviceName)`](#fn-specforproviderlaunchtemplatedatablockdevicemappingswithdevicename)
+        * [`fn withNoDevice(noDevice)`](#fn-specforproviderlaunchtemplatedatablockdevicemappingswithnodevice)
+        * [`fn withVirtualName(virtualName)`](#fn-specforproviderlaunchtemplatedatablockdevicemappingswithvirtualname)
+        * [`obj spec.forProvider.launchTemplateData.blockDeviceMappings.ebs`](#obj-specforproviderlaunchtemplatedatablockdevicemappingsebs)
+          * [`fn withDeleteOnTermination(deleteOnTermination)`](#fn-specforproviderlaunchtemplatedatablockdevicemappingsebswithdeleteontermination)
+          * [`fn withEncrypted(encrypted)`](#fn-specforproviderlaunchtemplatedatablockdevicemappingsebswithencrypted)
+          * [`fn withIops(iops)`](#fn-specforproviderlaunchtemplatedatablockdevicemappingsebswithiops)
+          * [`fn withKmsKeyID(kmsKeyID)`](#fn-specforproviderlaunchtemplatedatablockdevicemappingsebswithkmskeyid)
+          * [`fn withSnapshotID(snapshotID)`](#fn-specforproviderlaunchtemplatedatablockdevicemappingsebswithsnapshotid)
+          * [`fn withThroughput(throughput)`](#fn-specforproviderlaunchtemplatedatablockdevicemappingsebswiththroughput)
+          * [`fn withVolumeSize(volumeSize)`](#fn-specforproviderlaunchtemplatedatablockdevicemappingsebswithvolumesize)
+          * [`fn withVolumeType(volumeType)`](#fn-specforproviderlaunchtemplatedatablockdevicemappingsebswithvolumetype)
       * [`obj spec.forProvider.launchTemplateData.capacityReservationSpecification`](#obj-specforproviderlaunchtemplatedatacapacityreservationspecification)
         * [`fn withCapacityReservationPreference(capacityReservationPreference)`](#fn-specforproviderlaunchtemplatedatacapacityreservationspecificationwithcapacityreservationpreference)
         * [`obj spec.forProvider.launchTemplateData.capacityReservationSpecification.capacityReservationTarget`](#obj-specforproviderlaunchtemplatedatacapacityreservationspecificationcapacityreservationtarget)
@@ -77,6 +88,11 @@ permalink: /provider-aws/0.33/ec2/v1alpha1/launchTemplate/
         * [`fn withThreadsPerCore(threadsPerCore)`](#fn-specforproviderlaunchtemplatedatacpuoptionswiththreadspercore)
       * [`obj spec.forProvider.launchTemplateData.creditSpecification`](#obj-specforproviderlaunchtemplatedatacreditspecification)
         * [`fn withCpuCredits(cpuCredits)`](#fn-specforproviderlaunchtemplatedatacreditspecificationwithcpucredits)
+      * [`obj spec.forProvider.launchTemplateData.elasticGPUSpecifications`](#obj-specforproviderlaunchtemplatedataelasticgpuspecifications)
+        * [`fn withType_(type_)`](#fn-specforproviderlaunchtemplatedataelasticgpuspecificationswithtype_)
+      * [`obj spec.forProvider.launchTemplateData.elasticInferenceAccelerators`](#obj-specforproviderlaunchtemplatedataelasticinferenceaccelerators)
+        * [`fn withCount(count)`](#fn-specforproviderlaunchtemplatedataelasticinferenceacceleratorswithcount)
+        * [`fn withType_(type_)`](#fn-specforproviderlaunchtemplatedataelasticinferenceacceleratorswithtype_)
       * [`obj spec.forProvider.launchTemplateData.enclaveOptions`](#obj-specforproviderlaunchtemplatedataenclaveoptions)
         * [`fn withEnabled(enabled)`](#fn-specforproviderlaunchtemplatedataenclaveoptionswithenabled)
       * [`obj spec.forProvider.launchTemplateData.hibernationOptions`](#obj-specforproviderlaunchtemplatedatahibernationoptions)
@@ -137,6 +153,8 @@ permalink: /provider-aws/0.33/ec2/v1alpha1/launchTemplate/
         * [`obj spec.forProvider.launchTemplateData.instanceRequirements.vCPUCount`](#obj-specforproviderlaunchtemplatedatainstancerequirementsvcpucount)
           * [`fn withMax(max)`](#fn-specforproviderlaunchtemplatedatainstancerequirementsvcpucountwithmax)
           * [`fn withMin(min)`](#fn-specforproviderlaunchtemplatedatainstancerequirementsvcpucountwithmin)
+      * [`obj spec.forProvider.launchTemplateData.licenseSpecifications`](#obj-specforproviderlaunchtemplatedatalicensespecifications)
+        * [`fn withLicenseConfigurationARN(licenseConfigurationARN)`](#fn-specforproviderlaunchtemplatedatalicensespecificationswithlicenseconfigurationarn)
       * [`obj spec.forProvider.launchTemplateData.metadataOptions`](#obj-specforproviderlaunchtemplatedatametadataoptions)
         * [`fn withHttpEndpoint(httpEndpoint)`](#fn-specforproviderlaunchtemplatedatametadataoptionswithhttpendpoint)
         * [`fn withHttpProtocolIPv6(httpProtocolIPv6)`](#fn-specforproviderlaunchtemplatedatametadataoptionswithhttpprotocolipv6)
@@ -144,6 +162,40 @@ permalink: /provider-aws/0.33/ec2/v1alpha1/launchTemplate/
         * [`fn withHttpTokens(httpTokens)`](#fn-specforproviderlaunchtemplatedatametadataoptionswithhttptokens)
       * [`obj spec.forProvider.launchTemplateData.monitoring`](#obj-specforproviderlaunchtemplatedatamonitoring)
         * [`fn withEnabled(enabled)`](#fn-specforproviderlaunchtemplatedatamonitoringwithenabled)
+      * [`obj spec.forProvider.launchTemplateData.networkInterfaces`](#obj-specforproviderlaunchtemplatedatanetworkinterfaces)
+        * [`fn withAssociateCarrierIPAddress(associateCarrierIPAddress)`](#fn-specforproviderlaunchtemplatedatanetworkinterfaceswithassociatecarrieripaddress)
+        * [`fn withAssociatePublicIPAddress(associatePublicIPAddress)`](#fn-specforproviderlaunchtemplatedatanetworkinterfaceswithassociatepublicipaddress)
+        * [`fn withDeleteOnTermination(deleteOnTermination)`](#fn-specforproviderlaunchtemplatedatanetworkinterfaceswithdeleteontermination)
+        * [`fn withDescription(description)`](#fn-specforproviderlaunchtemplatedatanetworkinterfaceswithdescription)
+        * [`fn withDeviceIndex(deviceIndex)`](#fn-specforproviderlaunchtemplatedatanetworkinterfaceswithdeviceindex)
+        * [`fn withGroups(groups)`](#fn-specforproviderlaunchtemplatedatanetworkinterfaceswithgroups)
+        * [`fn withGroupsMixin(groups)`](#fn-specforproviderlaunchtemplatedatanetworkinterfaceswithgroupsmixin)
+        * [`fn withInterfaceType(interfaceType)`](#fn-specforproviderlaunchtemplatedatanetworkinterfaceswithinterfacetype)
+        * [`fn withIpv4PrefixCount(ipv4PrefixCount)`](#fn-specforproviderlaunchtemplatedatanetworkinterfaceswithipv4prefixcount)
+        * [`fn withIpv4Prefixes(ipv4Prefixes)`](#fn-specforproviderlaunchtemplatedatanetworkinterfaceswithipv4prefixes)
+        * [`fn withIpv4PrefixesMixin(ipv4Prefixes)`](#fn-specforproviderlaunchtemplatedatanetworkinterfaceswithipv4prefixesmixin)
+        * [`fn withIpv6AddressCount(ipv6AddressCount)`](#fn-specforproviderlaunchtemplatedatanetworkinterfaceswithipv6addresscount)
+        * [`fn withIpv6Addresses(ipv6Addresses)`](#fn-specforproviderlaunchtemplatedatanetworkinterfaceswithipv6addresses)
+        * [`fn withIpv6AddressesMixin(ipv6Addresses)`](#fn-specforproviderlaunchtemplatedatanetworkinterfaceswithipv6addressesmixin)
+        * [`fn withIpv6PrefixCount(ipv6PrefixCount)`](#fn-specforproviderlaunchtemplatedatanetworkinterfaceswithipv6prefixcount)
+        * [`fn withIpv6Prefixes(ipv6Prefixes)`](#fn-specforproviderlaunchtemplatedatanetworkinterfaceswithipv6prefixes)
+        * [`fn withIpv6PrefixesMixin(ipv6Prefixes)`](#fn-specforproviderlaunchtemplatedatanetworkinterfaceswithipv6prefixesmixin)
+        * [`fn withNetworkCardIndex(networkCardIndex)`](#fn-specforproviderlaunchtemplatedatanetworkinterfaceswithnetworkcardindex)
+        * [`fn withNetworkInterfaceID(networkInterfaceID)`](#fn-specforproviderlaunchtemplatedatanetworkinterfaceswithnetworkinterfaceid)
+        * [`fn withPrivateIPAddress(privateIPAddress)`](#fn-specforproviderlaunchtemplatedatanetworkinterfaceswithprivateipaddress)
+        * [`fn withPrivateIPAddresses(privateIPAddresses)`](#fn-specforproviderlaunchtemplatedatanetworkinterfaceswithprivateipaddresses)
+        * [`fn withPrivateIPAddressesMixin(privateIPAddresses)`](#fn-specforproviderlaunchtemplatedatanetworkinterfaceswithprivateipaddressesmixin)
+        * [`fn withSecondaryPrivateIPAddressCount(secondaryPrivateIPAddressCount)`](#fn-specforproviderlaunchtemplatedatanetworkinterfaceswithsecondaryprivateipaddresscount)
+        * [`fn withSubnetID(subnetID)`](#fn-specforproviderlaunchtemplatedatanetworkinterfaceswithsubnetid)
+        * [`obj spec.forProvider.launchTemplateData.networkInterfaces.ipv4Prefixes`](#obj-specforproviderlaunchtemplatedatanetworkinterfacesipv4prefixes)
+          * [`fn withIpv4Prefix(ipv4Prefix)`](#fn-specforproviderlaunchtemplatedatanetworkinterfacesipv4prefixeswithipv4prefix)
+        * [`obj spec.forProvider.launchTemplateData.networkInterfaces.ipv6Addresses`](#obj-specforproviderlaunchtemplatedatanetworkinterfacesipv6addresses)
+          * [`fn withIpv6Address(ipv6Address)`](#fn-specforproviderlaunchtemplatedatanetworkinterfacesipv6addresseswithipv6address)
+        * [`obj spec.forProvider.launchTemplateData.networkInterfaces.ipv6Prefixes`](#obj-specforproviderlaunchtemplatedatanetworkinterfacesipv6prefixes)
+          * [`fn withIpv6Prefix(ipv6Prefix)`](#fn-specforproviderlaunchtemplatedatanetworkinterfacesipv6prefixeswithipv6prefix)
+        * [`obj spec.forProvider.launchTemplateData.networkInterfaces.privateIPAddresses`](#obj-specforproviderlaunchtemplatedatanetworkinterfacesprivateipaddresses)
+          * [`fn withPrimary(primary)`](#fn-specforproviderlaunchtemplatedatanetworkinterfacesprivateipaddresseswithprimary)
+          * [`fn withPrivateIPAddress(privateIPAddress)`](#fn-specforproviderlaunchtemplatedatanetworkinterfacesprivateipaddresseswithprivateipaddress)
       * [`obj spec.forProvider.launchTemplateData.placement`](#obj-specforproviderlaunchtemplatedataplacement)
         * [`fn withAffinity(affinity)`](#fn-specforproviderlaunchtemplatedataplacementwithaffinity)
         * [`fn withAvailabilityZone(availabilityZone)`](#fn-specforproviderlaunchtemplatedataplacementwithavailabilityzone)
@@ -153,6 +205,23 @@ permalink: /provider-aws/0.33/ec2/v1alpha1/launchTemplate/
         * [`fn withPartitionNumber(partitionNumber)`](#fn-specforproviderlaunchtemplatedataplacementwithpartitionnumber)
         * [`fn withSpreadDomain(spreadDomain)`](#fn-specforproviderlaunchtemplatedataplacementwithspreaddomain)
         * [`fn withTenancy(tenancy)`](#fn-specforproviderlaunchtemplatedataplacementwithtenancy)
+      * [`obj spec.forProvider.launchTemplateData.tagSpecifications`](#obj-specforproviderlaunchtemplatedatatagspecifications)
+        * [`fn withResourceType(resourceType)`](#fn-specforproviderlaunchtemplatedatatagspecificationswithresourcetype)
+        * [`fn withTags(tags)`](#fn-specforproviderlaunchtemplatedatatagspecificationswithtags)
+        * [`fn withTagsMixin(tags)`](#fn-specforproviderlaunchtemplatedatatagspecificationswithtagsmixin)
+        * [`obj spec.forProvider.launchTemplateData.tagSpecifications.tags`](#obj-specforproviderlaunchtemplatedatatagspecificationstags)
+          * [`fn withKey(key)`](#fn-specforproviderlaunchtemplatedatatagspecificationstagswithkey)
+          * [`fn withValue(value)`](#fn-specforproviderlaunchtemplatedatatagspecificationstagswithvalue)
+    * [`obj spec.forProvider.tagSpecifications`](#obj-specforprovidertagspecifications)
+      * [`fn withResourceType(resourceType)`](#fn-specforprovidertagspecificationswithresourcetype)
+      * [`fn withTags(tags)`](#fn-specforprovidertagspecificationswithtags)
+      * [`fn withTagsMixin(tags)`](#fn-specforprovidertagspecificationswithtagsmixin)
+      * [`obj spec.forProvider.tagSpecifications.tags`](#obj-specforprovidertagspecificationstags)
+        * [`fn withKey(key)`](#fn-specforprovidertagspecificationstagswithkey)
+        * [`fn withValue(value)`](#fn-specforprovidertagspecificationstagswithvalue)
+    * [`obj spec.forProvider.tags`](#obj-specforprovidertags)
+      * [`fn withKey(key)`](#fn-specforprovidertagswithkey)
+      * [`fn withValue(value)`](#fn-specforprovidertagswithvalue)
   * [`obj spec.providerConfigRef`](#obj-specproviderconfigref)
     * [`fn withName(name)`](#fn-specproviderconfigrefwithname)
     * [`obj spec.providerConfigRef.policy`](#obj-specproviderconfigrefpolicy)
@@ -293,24 +362,6 @@ withLabelsMixin(labels)
 ```
 
 "Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels"
-
-**Note:** This function appends passed data to existing values
-
-### fn metadata.withManagedFields
-
-```ts
-withManagedFields(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
-
-### fn metadata.withManagedFieldsMixin
-
-```ts
-withManagedFieldsMixin(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
 
 **Note:** This function appends passed data to existing values
 
@@ -668,6 +719,102 @@ withUserData(userData)
 
 
 
+## obj spec.forProvider.launchTemplateData.blockDeviceMappings
+
+
+
+### fn spec.forProvider.launchTemplateData.blockDeviceMappings.withDeviceName
+
+```ts
+withDeviceName(deviceName)
+```
+
+
+
+### fn spec.forProvider.launchTemplateData.blockDeviceMappings.withNoDevice
+
+```ts
+withNoDevice(noDevice)
+```
+
+
+
+### fn spec.forProvider.launchTemplateData.blockDeviceMappings.withVirtualName
+
+```ts
+withVirtualName(virtualName)
+```
+
+
+
+## obj spec.forProvider.launchTemplateData.blockDeviceMappings.ebs
+
+"The parameters for a block device for an EBS volume."
+
+### fn spec.forProvider.launchTemplateData.blockDeviceMappings.ebs.withDeleteOnTermination
+
+```ts
+withDeleteOnTermination(deleteOnTermination)
+```
+
+
+
+### fn spec.forProvider.launchTemplateData.blockDeviceMappings.ebs.withEncrypted
+
+```ts
+withEncrypted(encrypted)
+```
+
+
+
+### fn spec.forProvider.launchTemplateData.blockDeviceMappings.ebs.withIops
+
+```ts
+withIops(iops)
+```
+
+
+
+### fn spec.forProvider.launchTemplateData.blockDeviceMappings.ebs.withKmsKeyID
+
+```ts
+withKmsKeyID(kmsKeyID)
+```
+
+
+
+### fn spec.forProvider.launchTemplateData.blockDeviceMappings.ebs.withSnapshotID
+
+```ts
+withSnapshotID(snapshotID)
+```
+
+
+
+### fn spec.forProvider.launchTemplateData.blockDeviceMappings.ebs.withThroughput
+
+```ts
+withThroughput(throughput)
+```
+
+
+
+### fn spec.forProvider.launchTemplateData.blockDeviceMappings.ebs.withVolumeSize
+
+```ts
+withVolumeSize(volumeSize)
+```
+
+
+
+### fn spec.forProvider.launchTemplateData.blockDeviceMappings.ebs.withVolumeType
+
+```ts
+withVolumeType(volumeType)
+```
+
+
+
 ## obj spec.forProvider.launchTemplateData.capacityReservationSpecification
 
 "Describes an instance's Capacity Reservation targeting option. You can specify only one option at a time. Use the CapacityReservationPreference parameter to configure the instance to run in On-Demand capacity or to run in any open Capacity Reservation that has matching attributes (instance type, platform, Availability Zone). Use the CapacityReservationTarget parameter to explicitly target a specific Capacity Reservation or a Capacity Reservation group."
@@ -728,6 +875,38 @@ withThreadsPerCore(threadsPerCore)
 
 ```ts
 withCpuCredits(cpuCredits)
+```
+
+
+
+## obj spec.forProvider.launchTemplateData.elasticGPUSpecifications
+
+
+
+### fn spec.forProvider.launchTemplateData.elasticGPUSpecifications.withType_
+
+```ts
+withType_(type_)
+```
+
+
+
+## obj spec.forProvider.launchTemplateData.elasticInferenceAccelerators
+
+
+
+### fn spec.forProvider.launchTemplateData.elasticInferenceAccelerators.withCount
+
+```ts
+withCount(count)
+```
+
+
+
+### fn spec.forProvider.launchTemplateData.elasticInferenceAccelerators.withType_
+
+```ts
+withType_(type_)
 ```
 
 
@@ -1170,6 +1349,18 @@ withMin(min)
 
 
 
+## obj spec.forProvider.launchTemplateData.licenseSpecifications
+
+
+
+### fn spec.forProvider.launchTemplateData.licenseSpecifications.withLicenseConfigurationARN
+
+```ts
+withLicenseConfigurationARN(licenseConfigurationARN)
+```
+
+
+
 ## obj spec.forProvider.launchTemplateData.metadataOptions
 
 "The metadata options for the instance. For more information, see Instance Metadata and User Data (https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html) in the Amazon Elastic Compute Cloud User Guide."
@@ -1214,6 +1405,268 @@ withHttpTokens(httpTokens)
 
 ```ts
 withEnabled(enabled)
+```
+
+
+
+## obj spec.forProvider.launchTemplateData.networkInterfaces
+
+
+
+### fn spec.forProvider.launchTemplateData.networkInterfaces.withAssociateCarrierIPAddress
+
+```ts
+withAssociateCarrierIPAddress(associateCarrierIPAddress)
+```
+
+
+
+### fn spec.forProvider.launchTemplateData.networkInterfaces.withAssociatePublicIPAddress
+
+```ts
+withAssociatePublicIPAddress(associatePublicIPAddress)
+```
+
+
+
+### fn spec.forProvider.launchTemplateData.networkInterfaces.withDeleteOnTermination
+
+```ts
+withDeleteOnTermination(deleteOnTermination)
+```
+
+
+
+### fn spec.forProvider.launchTemplateData.networkInterfaces.withDescription
+
+```ts
+withDescription(description)
+```
+
+
+
+### fn spec.forProvider.launchTemplateData.networkInterfaces.withDeviceIndex
+
+```ts
+withDeviceIndex(deviceIndex)
+```
+
+
+
+### fn spec.forProvider.launchTemplateData.networkInterfaces.withGroups
+
+```ts
+withGroups(groups)
+```
+
+
+
+### fn spec.forProvider.launchTemplateData.networkInterfaces.withGroupsMixin
+
+```ts
+withGroupsMixin(groups)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.forProvider.launchTemplateData.networkInterfaces.withInterfaceType
+
+```ts
+withInterfaceType(interfaceType)
+```
+
+
+
+### fn spec.forProvider.launchTemplateData.networkInterfaces.withIpv4PrefixCount
+
+```ts
+withIpv4PrefixCount(ipv4PrefixCount)
+```
+
+
+
+### fn spec.forProvider.launchTemplateData.networkInterfaces.withIpv4Prefixes
+
+```ts
+withIpv4Prefixes(ipv4Prefixes)
+```
+
+
+
+### fn spec.forProvider.launchTemplateData.networkInterfaces.withIpv4PrefixesMixin
+
+```ts
+withIpv4PrefixesMixin(ipv4Prefixes)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.forProvider.launchTemplateData.networkInterfaces.withIpv6AddressCount
+
+```ts
+withIpv6AddressCount(ipv6AddressCount)
+```
+
+
+
+### fn spec.forProvider.launchTemplateData.networkInterfaces.withIpv6Addresses
+
+```ts
+withIpv6Addresses(ipv6Addresses)
+```
+
+
+
+### fn spec.forProvider.launchTemplateData.networkInterfaces.withIpv6AddressesMixin
+
+```ts
+withIpv6AddressesMixin(ipv6Addresses)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.forProvider.launchTemplateData.networkInterfaces.withIpv6PrefixCount
+
+```ts
+withIpv6PrefixCount(ipv6PrefixCount)
+```
+
+
+
+### fn spec.forProvider.launchTemplateData.networkInterfaces.withIpv6Prefixes
+
+```ts
+withIpv6Prefixes(ipv6Prefixes)
+```
+
+
+
+### fn spec.forProvider.launchTemplateData.networkInterfaces.withIpv6PrefixesMixin
+
+```ts
+withIpv6PrefixesMixin(ipv6Prefixes)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.forProvider.launchTemplateData.networkInterfaces.withNetworkCardIndex
+
+```ts
+withNetworkCardIndex(networkCardIndex)
+```
+
+
+
+### fn spec.forProvider.launchTemplateData.networkInterfaces.withNetworkInterfaceID
+
+```ts
+withNetworkInterfaceID(networkInterfaceID)
+```
+
+
+
+### fn spec.forProvider.launchTemplateData.networkInterfaces.withPrivateIPAddress
+
+```ts
+withPrivateIPAddress(privateIPAddress)
+```
+
+
+
+### fn spec.forProvider.launchTemplateData.networkInterfaces.withPrivateIPAddresses
+
+```ts
+withPrivateIPAddresses(privateIPAddresses)
+```
+
+
+
+### fn spec.forProvider.launchTemplateData.networkInterfaces.withPrivateIPAddressesMixin
+
+```ts
+withPrivateIPAddressesMixin(privateIPAddresses)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.forProvider.launchTemplateData.networkInterfaces.withSecondaryPrivateIPAddressCount
+
+```ts
+withSecondaryPrivateIPAddressCount(secondaryPrivateIPAddressCount)
+```
+
+
+
+### fn spec.forProvider.launchTemplateData.networkInterfaces.withSubnetID
+
+```ts
+withSubnetID(subnetID)
+```
+
+
+
+## obj spec.forProvider.launchTemplateData.networkInterfaces.ipv4Prefixes
+
+
+
+### fn spec.forProvider.launchTemplateData.networkInterfaces.ipv4Prefixes.withIpv4Prefix
+
+```ts
+withIpv4Prefix(ipv4Prefix)
+```
+
+
+
+## obj spec.forProvider.launchTemplateData.networkInterfaces.ipv6Addresses
+
+
+
+### fn spec.forProvider.launchTemplateData.networkInterfaces.ipv6Addresses.withIpv6Address
+
+```ts
+withIpv6Address(ipv6Address)
+```
+
+
+
+## obj spec.forProvider.launchTemplateData.networkInterfaces.ipv6Prefixes
+
+
+
+### fn spec.forProvider.launchTemplateData.networkInterfaces.ipv6Prefixes.withIpv6Prefix
+
+```ts
+withIpv6Prefix(ipv6Prefix)
+```
+
+
+
+## obj spec.forProvider.launchTemplateData.networkInterfaces.privateIPAddresses
+
+
+
+### fn spec.forProvider.launchTemplateData.networkInterfaces.privateIPAddresses.withPrimary
+
+```ts
+withPrimary(primary)
+```
+
+
+
+### fn spec.forProvider.launchTemplateData.networkInterfaces.privateIPAddresses.withPrivateIPAddress
+
+```ts
+withPrivateIPAddress(privateIPAddress)
 ```
 
 
@@ -1282,6 +1735,126 @@ withSpreadDomain(spreadDomain)
 
 ```ts
 withTenancy(tenancy)
+```
+
+
+
+## obj spec.forProvider.launchTemplateData.tagSpecifications
+
+
+
+### fn spec.forProvider.launchTemplateData.tagSpecifications.withResourceType
+
+```ts
+withResourceType(resourceType)
+```
+
+
+
+### fn spec.forProvider.launchTemplateData.tagSpecifications.withTags
+
+```ts
+withTags(tags)
+```
+
+
+
+### fn spec.forProvider.launchTemplateData.tagSpecifications.withTagsMixin
+
+```ts
+withTagsMixin(tags)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.forProvider.launchTemplateData.tagSpecifications.tags
+
+
+
+### fn spec.forProvider.launchTemplateData.tagSpecifications.tags.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.forProvider.launchTemplateData.tagSpecifications.tags.withValue
+
+```ts
+withValue(value)
+```
+
+
+
+## obj spec.forProvider.tagSpecifications
+
+"The tags to apply to the launch template during creation."
+
+### fn spec.forProvider.tagSpecifications.withResourceType
+
+```ts
+withResourceType(resourceType)
+```
+
+
+
+### fn spec.forProvider.tagSpecifications.withTags
+
+```ts
+withTags(tags)
+```
+
+
+
+### fn spec.forProvider.tagSpecifications.withTagsMixin
+
+```ts
+withTagsMixin(tags)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.forProvider.tagSpecifications.tags
+
+
+
+### fn spec.forProvider.tagSpecifications.tags.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.forProvider.tagSpecifications.tags.withValue
+
+```ts
+withValue(value)
+```
+
+
+
+## obj spec.forProvider.tags
+
+"Metadata tagging key value pairs"
+
+### fn spec.forProvider.tags.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.forProvider.tags.withValue
+
+```ts
+withValue(value)
 ```
 
 

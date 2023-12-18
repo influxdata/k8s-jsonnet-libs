@@ -22,8 +22,6 @@ permalink: /provider-aws/0.33/redshift/v1alpha1/cluster/
   * [`fn withGeneration(generation)`](#fn-metadatawithgeneration)
   * [`fn withLabels(labels)`](#fn-metadatawithlabels)
   * [`fn withLabelsMixin(labels)`](#fn-metadatawithlabelsmixin)
-  * [`fn withManagedFields(managedFields)`](#fn-metadatawithmanagedfields)
-  * [`fn withManagedFieldsMixin(managedFields)`](#fn-metadatawithmanagedfieldsmixin)
   * [`fn withName(name)`](#fn-metadatawithname)
   * [`fn withNamespace(namespace)`](#fn-metadatawithnamespace)
   * [`fn withOwnerReferences(ownerReferences)`](#fn-metadatawithownerreferences)
@@ -77,6 +75,11 @@ permalink: /provider-aws/0.33/redshift/v1alpha1/cluster/
     * [`fn withVpcSecurityGroupIDRefsMixin(vpcSecurityGroupIDRefs)`](#fn-specforproviderwithvpcsecuritygroupidrefsmixin)
     * [`fn withVpcSecurityGroupIds(vpcSecurityGroupIds)`](#fn-specforproviderwithvpcsecuritygroupids)
     * [`fn withVpcSecurityGroupIdsMixin(vpcSecurityGroupIds)`](#fn-specforproviderwithvpcsecuritygroupidsmixin)
+    * [`obj spec.forProvider.clusterSecurityGroupRefs`](#obj-specforproviderclustersecuritygrouprefs)
+      * [`fn withName(name)`](#fn-specforproviderclustersecuritygrouprefswithname)
+      * [`obj spec.forProvider.clusterSecurityGroupRefs.policy`](#obj-specforproviderclustersecuritygrouprefspolicy)
+        * [`fn withResolution(resolution)`](#fn-specforproviderclustersecuritygrouprefspolicywithresolution)
+        * [`fn withResolve(resolve)`](#fn-specforproviderclustersecuritygrouprefspolicywithresolve)
     * [`obj spec.forProvider.clusterSecurityGroupSelector`](#obj-specforproviderclustersecuritygroupselector)
       * [`fn withMatchControllerRef(matchControllerRef)`](#fn-specforproviderclustersecuritygroupselectorwithmatchcontrollerref)
       * [`fn withMatchLabels(matchLabels)`](#fn-specforproviderclustersecuritygroupselectorwithmatchlabels)
@@ -84,6 +87,11 @@ permalink: /provider-aws/0.33/redshift/v1alpha1/cluster/
       * [`obj spec.forProvider.clusterSecurityGroupSelector.policy`](#obj-specforproviderclustersecuritygroupselectorpolicy)
         * [`fn withResolution(resolution)`](#fn-specforproviderclustersecuritygroupselectorpolicywithresolution)
         * [`fn withResolve(resolve)`](#fn-specforproviderclustersecuritygroupselectorpolicywithresolve)
+    * [`obj spec.forProvider.iamRoleRefs`](#obj-specforprovideriamrolerefs)
+      * [`fn withName(name)`](#fn-specforprovideriamrolerefswithname)
+      * [`obj spec.forProvider.iamRoleRefs.policy`](#obj-specforprovideriamrolerefspolicy)
+        * [`fn withResolution(resolution)`](#fn-specforprovideriamrolerefspolicywithresolution)
+        * [`fn withResolve(resolve)`](#fn-specforprovideriamrolerefspolicywithresolve)
     * [`obj spec.forProvider.iamRoleSelector`](#obj-specforprovideriamroleselector)
       * [`fn withMatchControllerRef(matchControllerRef)`](#fn-specforprovideriamroleselectorwithmatchcontrollerref)
       * [`fn withMatchLabels(matchLabels)`](#fn-specforprovideriamroleselectorwithmatchlabels)
@@ -91,6 +99,14 @@ permalink: /provider-aws/0.33/redshift/v1alpha1/cluster/
       * [`obj spec.forProvider.iamRoleSelector.policy`](#obj-specforprovideriamroleselectorpolicy)
         * [`fn withResolution(resolution)`](#fn-specforprovideriamroleselectorpolicywithresolution)
         * [`fn withResolve(resolve)`](#fn-specforprovideriamroleselectorpolicywithresolve)
+    * [`obj spec.forProvider.tags`](#obj-specforprovidertags)
+      * [`fn withTag(tag)`](#fn-specforprovidertagswithtag)
+      * [`fn withValue(value)`](#fn-specforprovidertagswithvalue)
+    * [`obj spec.forProvider.vpcSecurityGroupIDRefs`](#obj-specforprovidervpcsecuritygroupidrefs)
+      * [`fn withName(name)`](#fn-specforprovidervpcsecuritygroupidrefswithname)
+      * [`obj spec.forProvider.vpcSecurityGroupIDRefs.policy`](#obj-specforprovidervpcsecuritygroupidrefspolicy)
+        * [`fn withResolution(resolution)`](#fn-specforprovidervpcsecuritygroupidrefspolicywithresolution)
+        * [`fn withResolve(resolve)`](#fn-specforprovidervpcsecuritygroupidrefspolicywithresolve)
     * [`obj spec.forProvider.vpcSecurityGroupIDSelector`](#obj-specforprovidervpcsecuritygroupidselector)
       * [`fn withMatchControllerRef(matchControllerRef)`](#fn-specforprovidervpcsecuritygroupidselectorwithmatchcontrollerref)
       * [`fn withMatchLabels(matchLabels)`](#fn-specforprovidervpcsecuritygroupidselectorwithmatchlabels)
@@ -238,24 +254,6 @@ withLabelsMixin(labels)
 ```
 
 "Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels"
-
-**Note:** This function appends passed data to existing values
-
-### fn metadata.withManagedFields
-
-```ts
-withManagedFields(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
-
-### fn metadata.withManagedFieldsMixin
-
-```ts
-withManagedFieldsMixin(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
 
 **Note:** This function appends passed data to existing values
 
@@ -691,6 +689,38 @@ withVpcSecurityGroupIdsMixin(vpcSecurityGroupIds)
 
 **Note:** This function appends passed data to existing values
 
+## obj spec.forProvider.clusterSecurityGroupRefs
+
+"ClusterSecurityGroupRefs are references to ClusterSecurityGroups used to set the ClusterSecurityGroups."
+
+### fn spec.forProvider.clusterSecurityGroupRefs.withName
+
+```ts
+withName(name)
+```
+
+"Name of the referenced object."
+
+## obj spec.forProvider.clusterSecurityGroupRefs.policy
+
+"Policies for referencing."
+
+### fn spec.forProvider.clusterSecurityGroupRefs.policy.withResolution
+
+```ts
+withResolution(resolution)
+```
+
+"Resolution specifies whether resolution of this reference is required. The default is 'Required', which means the reconcile will fail if the reference cannot be resolved. 'Optional' means this reference will be a no-op if it cannot be resolved."
+
+### fn spec.forProvider.clusterSecurityGroupRefs.policy.withResolve
+
+```ts
+withResolve(resolve)
+```
+
+"Resolve specifies when this reference should be resolved. The default is 'IfNotPresent', which will attempt to resolve the reference only when the corresponding field is not present. Use 'Always' to resolve the reference on every reconcile."
+
 ## obj spec.forProvider.clusterSecurityGroupSelector
 
 "ClusterSecurityGroupSelector selects references to ClusterSecurityGroups used to set the ClusterSecurityGroups."
@@ -741,6 +771,38 @@ withResolve(resolve)
 
 "Resolve specifies when this reference should be resolved. The default is 'IfNotPresent', which will attempt to resolve the reference only when the corresponding field is not present. Use 'Always' to resolve the reference on every reconcile."
 
+## obj spec.forProvider.iamRoleRefs
+
+"IAMRoleRefs are references to IAMRoles used to set the IAMRoles."
+
+### fn spec.forProvider.iamRoleRefs.withName
+
+```ts
+withName(name)
+```
+
+"Name of the referenced object."
+
+## obj spec.forProvider.iamRoleRefs.policy
+
+"Policies for referencing."
+
+### fn spec.forProvider.iamRoleRefs.policy.withResolution
+
+```ts
+withResolution(resolution)
+```
+
+"Resolution specifies whether resolution of this reference is required. The default is 'Required', which means the reconcile will fail if the reference cannot be resolved. 'Optional' means this reference will be a no-op if it cannot be resolved."
+
+### fn spec.forProvider.iamRoleRefs.policy.withResolve
+
+```ts
+withResolve(resolve)
+```
+
+"Resolve specifies when this reference should be resolved. The default is 'IfNotPresent', which will attempt to resolve the reference only when the corresponding field is not present. Use 'Always' to resolve the reference on every reconcile."
+
 ## obj spec.forProvider.iamRoleSelector
 
 "IAMRoleSelector selects references to IAMRoles used to set the IAMRoles."
@@ -784,6 +846,58 @@ withResolution(resolution)
 "Resolution specifies whether resolution of this reference is required. The default is 'Required', which means the reconcile will fail if the reference cannot be resolved. 'Optional' means this reference will be a no-op if it cannot be resolved."
 
 ### fn spec.forProvider.iamRoleSelector.policy.withResolve
+
+```ts
+withResolve(resolve)
+```
+
+"Resolve specifies when this reference should be resolved. The default is 'IfNotPresent', which will attempt to resolve the reference only when the corresponding field is not present. Use 'Always' to resolve the reference on every reconcile."
+
+## obj spec.forProvider.tags
+
+"Tags indicates a list of tags for the clusters."
+
+### fn spec.forProvider.tags.withTag
+
+```ts
+withTag(tag)
+```
+
+"The key of the tag."
+
+### fn spec.forProvider.tags.withValue
+
+```ts
+withValue(value)
+```
+
+"The value of the tag."
+
+## obj spec.forProvider.vpcSecurityGroupIDRefs
+
+"VPCSecurityGroupIDRefs are references to VPCSecurityGroups used to set the VPCSecurityGroupIDs."
+
+### fn spec.forProvider.vpcSecurityGroupIDRefs.withName
+
+```ts
+withName(name)
+```
+
+"Name of the referenced object."
+
+## obj spec.forProvider.vpcSecurityGroupIDRefs.policy
+
+"Policies for referencing."
+
+### fn spec.forProvider.vpcSecurityGroupIDRefs.policy.withResolution
+
+```ts
+withResolution(resolution)
+```
+
+"Resolution specifies whether resolution of this reference is required. The default is 'Required', which means the reconcile will fail if the reference cannot be resolved. 'Optional' means this reference will be a no-op if it cannot be resolved."
+
+### fn spec.forProvider.vpcSecurityGroupIDRefs.policy.withResolve
 
 ```ts
 withResolve(resolve)

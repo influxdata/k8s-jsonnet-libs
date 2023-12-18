@@ -27,10 +27,6 @@
     withLabels(labels): { metadata+: { labels: labels } },
     '#withLabelsMixin':: d.fn(help='"Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels"\n\n**Note:** This function appends passed data to existing values', args=[d.arg(name='labels', type=d.T.object)]),
     withLabelsMixin(labels): { metadata+: { labels+: labels } },
-    '#withManagedFields':: d.fn(help="\"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \\\"ci-cd\\\". The set of fields is always in the version that the workflow used when modifying the object.\"", args=[d.arg(name='managedFields', type=d.T.array)]),
-    withManagedFields(managedFields): { metadata+: { managedFields: if std.isArray(v=managedFields) then managedFields else [managedFields] } },
-    '#withManagedFieldsMixin':: d.fn(help="\"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \\\"ci-cd\\\". The set of fields is always in the version that the workflow used when modifying the object.\"\n\n**Note:** This function appends passed data to existing values", args=[d.arg(name='managedFields', type=d.T.array)]),
-    withManagedFieldsMixin(managedFields): { metadata+: { managedFields+: if std.isArray(v=managedFields) then managedFields else [managedFields] } },
     '#withName':: d.fn(help='"Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names"', args=[d.arg(name='name', type=d.T.string)]),
     withName(name): { metadata+: { name: name } },
     '#withNamespace':: d.fn(help='"Namespace defines the space within which each name must be unique. An empty namespace is equivalent to the \\"default\\" namespace, but \\"default\\" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty.\\n\\nMust be a DNS_LABEL. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/namespaces"', args=[d.arg(name='namespace', type=d.T.string)]),
@@ -50,11 +46,20 @@
   new(name): {
     apiVersion: 'transfer.aws.crossplane.io/v1alpha1',
     kind: 'User',
-  } + self.metadata.withName(name=name),
+  } + self.metadata.withName(name=name) + self.metadata.withAnnotations(annotations={
+    'tanka.dev/namespaced': 'false',
+  }),
   '#spec':: d.obj(help='"UserSpec defines the desired state of User"'),
   spec: {
     '#forProvider':: d.obj(help='"UserParameters defines the desired state of User"'),
     forProvider: {
+      '#homeDirectoryMappings':: d.obj(help='"Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the Entry and Target pair, where Entry shows how the path is made visible and Target is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM) role provides access to paths in Target. This value can only be set when HomeDirectoryType is set to LOGICAL. \\n The following is an Entry and Target pair example. \\n [ { \\"Entry\\": \\"/directory1\\", \\"Target\\": \\"/bucket_name/home/mydirectory\\" } ] \\n In most cases, you can use this value instead of the session policy to lock your user down to the designated home directory (\\"chroot\\"). To do this, you can set Entry to / and set Target to the HomeDirectory parameter value. \\n The following is an Entry and Target pair example for chroot. \\n [ { \\"Entry:\\": \\"/\\", \\"Target\\": \\"/bucket_name/home/mydirectory\\" } ] \\n If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your directory. If using the CLI, use the s3api or efsapi call instead of s3 or efs so you can use the put-object operation. For example, you use the following: aws s3api put-object --bucket bucketname --key path/to/folder/. Make sure that the end of the key name ends in a / for it to be considered a folder."'),
+      homeDirectoryMappings: {
+        '#withEntry':: d.fn(help='', args=[d.arg(name='entry', type=d.T.string)]),
+        withEntry(entry): { entry: entry },
+        '#withTarget':: d.fn(help='', args=[d.arg(name='target', type=d.T.string)]),
+        withTarget(target): { target: target },
+      },
       '#posixProfile':: d.obj(help="\"Specifies the full POSIX identity, including user ID (Uid), group ID (Gid), and any secondary groups IDs (SecondaryGids), that controls your users' access to your Amazon EFS file systems. The POSIX permissions that are set on files and directories in Amazon EFS determine the level of access your users get when transferring files into and out of your Amazon EFS file systems.\""),
       posixProfile: {
         '#withGid':: d.fn(help='', args=[d.arg(name='gid', type=d.T.integer)]),
@@ -121,6 +126,13 @@
         withMatchLabels(matchLabels): { spec+: { forProvider+: { serverIDSelector+: { matchLabels: matchLabels } } } },
         '#withMatchLabelsMixin':: d.fn(help='"MatchLabels ensures an object with matching labels is selected."\n\n**Note:** This function appends passed data to existing values', args=[d.arg(name='matchLabels', type=d.T.object)]),
         withMatchLabelsMixin(matchLabels): { spec+: { forProvider+: { serverIDSelector+: { matchLabels+: matchLabels } } } },
+      },
+      '#tags':: d.obj(help='"Key-value pairs that can be used to group and search for users. Tags are metadata attached to users for any purpose."'),
+      tags: {
+        '#withKey':: d.fn(help='', args=[d.arg(name='key', type=d.T.string)]),
+        withKey(key): { key: key },
+        '#withValue':: d.fn(help='', args=[d.arg(name='value', type=d.T.string)]),
+        withValue(value): { value: value },
       },
       '#withHomeDirectory':: d.fn(help='"The landing directory (folder) for a user when they log in to the server using the client. \\n A HomeDirectory example is /bucket_name/home/mydirectory."', args=[d.arg(name='homeDirectory', type=d.T.string)]),
       withHomeDirectory(homeDirectory): { spec+: { forProvider+: { homeDirectory: homeDirectory } } },

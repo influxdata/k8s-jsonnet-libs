@@ -22,8 +22,6 @@ permalink: /provider-aws/0.33/cognitoidentityprovider/v1alpha1/userPool/
   * [`fn withGeneration(generation)`](#fn-metadatawithgeneration)
   * [`fn withLabels(labels)`](#fn-metadatawithlabels)
   * [`fn withLabelsMixin(labels)`](#fn-metadatawithlabelsmixin)
-  * [`fn withManagedFields(managedFields)`](#fn-metadatawithmanagedfields)
-  * [`fn withManagedFieldsMixin(managedFields)`](#fn-metadatawithmanagedfieldsmixin)
   * [`fn withName(name)`](#fn-metadatawithname)
   * [`fn withNamespace(namespace)`](#fn-metadatawithnamespace)
   * [`fn withOwnerReferences(ownerReferences)`](#fn-metadatawithownerreferences)
@@ -54,6 +52,9 @@ permalink: /provider-aws/0.33/cognitoidentityprovider/v1alpha1/userPool/
     * [`obj spec.forProvider.accountRecoverySetting`](#obj-specforprovideraccountrecoverysetting)
       * [`fn withRecoveryMechanisms(recoveryMechanisms)`](#fn-specforprovideraccountrecoverysettingwithrecoverymechanisms)
       * [`fn withRecoveryMechanismsMixin(recoveryMechanisms)`](#fn-specforprovideraccountrecoverysettingwithrecoverymechanismsmixin)
+      * [`obj spec.forProvider.accountRecoverySetting.recoveryMechanisms`](#obj-specforprovideraccountrecoverysettingrecoverymechanisms)
+        * [`fn withName(name)`](#fn-specforprovideraccountrecoverysettingrecoverymechanismswithname)
+        * [`fn withPriority(priority)`](#fn-specforprovideraccountrecoverysettingrecoverymechanismswithpriority)
     * [`obj spec.forProvider.adminCreateUserConfig`](#obj-specforprovideradmincreateuserconfig)
       * [`fn withAllowAdminCreateUserOnly(allowAdminCreateUserOnly)`](#fn-specforprovideradmincreateuserconfigwithallowadmincreateuseronly)
       * [`fn withUnusedAccountValidityDays(unusedAccountValidityDays)`](#fn-specforprovideradmincreateuserconfigwithunusedaccountvaliditydays)
@@ -96,6 +97,18 @@ permalink: /provider-aws/0.33/cognitoidentityprovider/v1alpha1/userPool/
         * [`fn withRequireSymbols(requireSymbols)`](#fn-specforproviderpoliciespasswordpolicywithrequiresymbols)
         * [`fn withRequireUppercase(requireUppercase)`](#fn-specforproviderpoliciespasswordpolicywithrequireuppercase)
         * [`fn withTemporaryPasswordValidityDays(temporaryPasswordValidityDays)`](#fn-specforproviderpoliciespasswordpolicywithtemporarypasswordvaliditydays)
+    * [`obj spec.forProvider.schema`](#obj-specforproviderschema)
+      * [`fn withAttributeDataType(attributeDataType)`](#fn-specforproviderschemawithattributedatatype)
+      * [`fn withDeveloperOnlyAttribute(developerOnlyAttribute)`](#fn-specforproviderschemawithdeveloperonlyattribute)
+      * [`fn withMutable(mutable)`](#fn-specforproviderschemawithmutable)
+      * [`fn withName(name)`](#fn-specforproviderschemawithname)
+      * [`fn withRequired(required)`](#fn-specforproviderschemawithrequired)
+      * [`obj spec.forProvider.schema.numberAttributeConstraints`](#obj-specforproviderschemanumberattributeconstraints)
+        * [`fn withMaxValue(maxValue)`](#fn-specforproviderschemanumberattributeconstraintswithmaxvalue)
+        * [`fn withMinValue(minValue)`](#fn-specforproviderschemanumberattributeconstraintswithminvalue)
+      * [`obj spec.forProvider.schema.stringAttributeConstraints`](#obj-specforproviderschemastringattributeconstraints)
+        * [`fn withMaxLength(maxLength)`](#fn-specforproviderschemastringattributeconstraintswithmaxlength)
+        * [`fn withMinLength(minLength)`](#fn-specforproviderschemastringattributeconstraintswithminlength)
     * [`obj spec.forProvider.smsConfiguration`](#obj-specforprovidersmsconfiguration)
       * [`fn withExternalID(externalID)`](#fn-specforprovidersmsconfigurationwithexternalid)
       * [`fn withSnsCallerARN(snsCallerARN)`](#fn-specforprovidersmsconfigurationwithsnscallerarn)
@@ -250,24 +263,6 @@ withLabelsMixin(labels)
 ```
 
 "Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels"
-
-**Note:** This function appends passed data to existing values
-
-### fn metadata.withManagedFields
-
-```ts
-withManagedFields(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
-
-### fn metadata.withManagedFieldsMixin
-
-```ts
-withManagedFieldsMixin(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
 
 **Note:** This function appends passed data to existing values
 
@@ -512,6 +507,26 @@ withRecoveryMechanismsMixin(recoveryMechanisms)
 
 
 **Note:** This function appends passed data to existing values
+
+## obj spec.forProvider.accountRecoverySetting.recoveryMechanisms
+
+
+
+### fn spec.forProvider.accountRecoverySetting.recoveryMechanisms.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.forProvider.accountRecoverySetting.recoveryMechanisms.withPriority
+
+```ts
+withPriority(priority)
+```
+
+
 
 ## obj spec.forProvider.adminCreateUserConfig
 
@@ -809,6 +824,90 @@ withRequireUppercase(requireUppercase)
 
 ```ts
 withTemporaryPasswordValidityDays(temporaryPasswordValidityDays)
+```
+
+
+
+## obj spec.forProvider.schema
+
+"An array of schema attributes for the new user pool. These attributes can be standard or custom attributes."
+
+### fn spec.forProvider.schema.withAttributeDataType
+
+```ts
+withAttributeDataType(attributeDataType)
+```
+
+
+
+### fn spec.forProvider.schema.withDeveloperOnlyAttribute
+
+```ts
+withDeveloperOnlyAttribute(developerOnlyAttribute)
+```
+
+
+
+### fn spec.forProvider.schema.withMutable
+
+```ts
+withMutable(mutable)
+```
+
+
+
+### fn spec.forProvider.schema.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.forProvider.schema.withRequired
+
+```ts
+withRequired(required)
+```
+
+
+
+## obj spec.forProvider.schema.numberAttributeConstraints
+
+"The minimum and maximum value of an attribute that is of the number data type."
+
+### fn spec.forProvider.schema.numberAttributeConstraints.withMaxValue
+
+```ts
+withMaxValue(maxValue)
+```
+
+
+
+### fn spec.forProvider.schema.numberAttributeConstraints.withMinValue
+
+```ts
+withMinValue(minValue)
+```
+
+
+
+## obj spec.forProvider.schema.stringAttributeConstraints
+
+"The constraints associated with a string attribute."
+
+### fn spec.forProvider.schema.stringAttributeConstraints.withMaxLength
+
+```ts
+withMaxLength(maxLength)
+```
+
+
+
+### fn spec.forProvider.schema.stringAttributeConstraints.withMinLength
+
+```ts
+withMinLength(minLength)
 ```
 
 

@@ -27,10 +27,6 @@
     withLabels(labels): { metadata+: { labels: labels } },
     '#withLabelsMixin':: d.fn(help='"Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels"\n\n**Note:** This function appends passed data to existing values', args=[d.arg(name='labels', type=d.T.object)]),
     withLabelsMixin(labels): { metadata+: { labels+: labels } },
-    '#withManagedFields':: d.fn(help="\"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \\\"ci-cd\\\". The set of fields is always in the version that the workflow used when modifying the object.\"", args=[d.arg(name='managedFields', type=d.T.array)]),
-    withManagedFields(managedFields): { metadata+: { managedFields: if std.isArray(v=managedFields) then managedFields else [managedFields] } },
-    '#withManagedFieldsMixin':: d.fn(help="\"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \\\"ci-cd\\\". The set of fields is always in the version that the workflow used when modifying the object.\"\n\n**Note:** This function appends passed data to existing values", args=[d.arg(name='managedFields', type=d.T.array)]),
-    withManagedFieldsMixin(managedFields): { metadata+: { managedFields+: if std.isArray(v=managedFields) then managedFields else [managedFields] } },
     '#withName':: d.fn(help='"Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names"', args=[d.arg(name='name', type=d.T.string)]),
     withName(name): { metadata+: { name: name } },
     '#withNamespace':: d.fn(help='"Namespace defines the space within which each name must be unique. An empty namespace is equivalent to the \\"default\\" namespace, but \\"default\\" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty.\\n\\nMust be a DNS_LABEL. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/namespaces"', args=[d.arg(name='namespace', type=d.T.string)]),
@@ -50,9 +46,18 @@
   new(name): {
     apiVersion: 'operator.tigera.io/v1',
     kind: 'ImageSet',
-  } + self.metadata.withName(name=name),
+  } + self.metadata.withName(name=name) + self.metadata.withAnnotations(annotations={
+    'tanka.dev/namespaced': 'false',
+  }),
   '#spec':: d.obj(help='"ImageSetSpec defines the desired state of ImageSet."'),
   spec: {
+    '#images':: d.obj(help='"Images is the list of images to use digests. All images that the operator will deploy must be specified."'),
+    images: {
+      '#withDigest':: d.fn(help='"Digest is the image identifier that will be used for the Image. The field should not include a leading `@` and must be prefixed with `sha256:`."', args=[d.arg(name='digest', type=d.T.string)]),
+      withDigest(digest): { digest: digest },
+      '#withImage':: d.fn(help='"Image is an image that the operator deploys and instead of using the built in tag the operator will use the Digest for the image identifier. The value should be the image name without registry or tag or digest. For the image `docker.io/calico/node:v3.17.1` it should be represented as `calico/node`"', args=[d.arg(name='image', type=d.T.string)]),
+      withImage(image): { image: image },
+    },
     '#withImages':: d.fn(help='"Images is the list of images to use digests. All images that the operator will deploy must be specified."', args=[d.arg(name='images', type=d.T.array)]),
     withImages(images): { spec+: { images: if std.isArray(v=images) then images else [images] } },
     '#withImagesMixin':: d.fn(help='"Images is the list of images to use digests. All images that the operator will deploy must be specified."\n\n**Note:** This function appends passed data to existing values', args=[d.arg(name='images', type=d.T.array)]),

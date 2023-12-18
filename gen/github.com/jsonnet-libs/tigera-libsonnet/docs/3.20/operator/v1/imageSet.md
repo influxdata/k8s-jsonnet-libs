@@ -22,8 +22,6 @@ permalink: /3.20/operator/v1/imageSet/
   * [`fn withGeneration(generation)`](#fn-metadatawithgeneration)
   * [`fn withLabels(labels)`](#fn-metadatawithlabels)
   * [`fn withLabelsMixin(labels)`](#fn-metadatawithlabelsmixin)
-  * [`fn withManagedFields(managedFields)`](#fn-metadatawithmanagedfields)
-  * [`fn withManagedFieldsMixin(managedFields)`](#fn-metadatawithmanagedfieldsmixin)
   * [`fn withName(name)`](#fn-metadatawithname)
   * [`fn withNamespace(namespace)`](#fn-metadatawithnamespace)
   * [`fn withOwnerReferences(ownerReferences)`](#fn-metadatawithownerreferences)
@@ -34,6 +32,9 @@ permalink: /3.20/operator/v1/imageSet/
 * [`obj spec`](#obj-spec)
   * [`fn withImages(images)`](#fn-specwithimages)
   * [`fn withImagesMixin(images)`](#fn-specwithimagesmixin)
+  * [`obj spec.images`](#obj-specimages)
+    * [`fn withDigest(digest)`](#fn-specimageswithdigest)
+    * [`fn withImage(image)`](#fn-specimageswithimage)
 
 ## Fields
 
@@ -151,24 +152,6 @@ withLabelsMixin(labels)
 
 **Note:** This function appends passed data to existing values
 
-### fn metadata.withManagedFields
-
-```ts
-withManagedFields(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
-
-### fn metadata.withManagedFieldsMixin
-
-```ts
-withManagedFieldsMixin(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
-
-**Note:** This function appends passed data to existing values
-
 ### fn metadata.withName
 
 ```ts
@@ -248,3 +231,23 @@ withImagesMixin(images)
 "Images is the list of images to use digests. All images that the operator will deploy must be specified."
 
 **Note:** This function appends passed data to existing values
+
+## obj spec.images
+
+"Images is the list of images to use digests. All images that the operator will deploy must be specified."
+
+### fn spec.images.withDigest
+
+```ts
+withDigest(digest)
+```
+
+"Digest is the image identifier that will be used for the Image. The field should not include a leading `@` and must be prefixed with `sha256:`."
+
+### fn spec.images.withImage
+
+```ts
+withImage(image)
+```
+
+"Image is an image that the operator deploys and instead of using the built in tag the operator will use the Digest for the image identifier. The value should be the image name without registry or tag or digest. For the image `docker.io/calico/node:v3.17.1` it should be represented as `calico/node`"

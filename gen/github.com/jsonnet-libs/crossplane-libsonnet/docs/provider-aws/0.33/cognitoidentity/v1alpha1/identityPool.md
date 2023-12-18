@@ -22,8 +22,6 @@ permalink: /provider-aws/0.33/cognitoidentity/v1alpha1/identityPool/
   * [`fn withGeneration(generation)`](#fn-metadatawithgeneration)
   * [`fn withLabels(labels)`](#fn-metadatawithlabels)
   * [`fn withLabelsMixin(labels)`](#fn-metadatawithlabelsmixin)
-  * [`fn withManagedFields(managedFields)`](#fn-metadatawithmanagedfields)
-  * [`fn withManagedFieldsMixin(managedFields)`](#fn-metadatawithmanagedfieldsmixin)
   * [`fn withName(name)`](#fn-metadatawithname)
   * [`fn withNamespace(namespace)`](#fn-metadatawithnamespace)
   * [`fn withOwnerReferences(ownerReferences)`](#fn-metadatawithownerreferences)
@@ -51,6 +49,39 @@ permalink: /provider-aws/0.33/cognitoidentity/v1alpha1/identityPool/
     * [`fn withSamlProviderARNsMixin(samlProviderARNs)`](#fn-specforproviderwithsamlproviderarnsmixin)
     * [`fn withSupportedLoginProviders(supportedLoginProviders)`](#fn-specforproviderwithsupportedloginproviders)
     * [`fn withSupportedLoginProvidersMixin(supportedLoginProviders)`](#fn-specforproviderwithsupportedloginprovidersmixin)
+    * [`obj spec.forProvider.cognitoIdentityProviders`](#obj-specforprovidercognitoidentityproviders)
+      * [`fn withClientId(clientId)`](#fn-specforprovidercognitoidentityproviderswithclientid)
+      * [`fn withProviderName(providerName)`](#fn-specforprovidercognitoidentityproviderswithprovidername)
+      * [`fn withServerSideTokenCheck(serverSideTokenCheck)`](#fn-specforprovidercognitoidentityproviderswithserversidetokencheck)
+      * [`obj spec.forProvider.cognitoIdentityProviders.clientIdRef`](#obj-specforprovidercognitoidentityprovidersclientidref)
+        * [`fn withName(name)`](#fn-specforprovidercognitoidentityprovidersclientidrefwithname)
+        * [`obj spec.forProvider.cognitoIdentityProviders.clientIdRef.policy`](#obj-specforprovidercognitoidentityprovidersclientidrefpolicy)
+          * [`fn withResolution(resolution)`](#fn-specforprovidercognitoidentityprovidersclientidrefpolicywithresolution)
+          * [`fn withResolve(resolve)`](#fn-specforprovidercognitoidentityprovidersclientidrefpolicywithresolve)
+      * [`obj spec.forProvider.cognitoIdentityProviders.clientIdSelector`](#obj-specforprovidercognitoidentityprovidersclientidselector)
+        * [`fn withMatchControllerRef(matchControllerRef)`](#fn-specforprovidercognitoidentityprovidersclientidselectorwithmatchcontrollerref)
+        * [`fn withMatchLabels(matchLabels)`](#fn-specforprovidercognitoidentityprovidersclientidselectorwithmatchlabels)
+        * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specforprovidercognitoidentityprovidersclientidselectorwithmatchlabelsmixin)
+        * [`obj spec.forProvider.cognitoIdentityProviders.clientIdSelector.policy`](#obj-specforprovidercognitoidentityprovidersclientidselectorpolicy)
+          * [`fn withResolution(resolution)`](#fn-specforprovidercognitoidentityprovidersclientidselectorpolicywithresolution)
+          * [`fn withResolve(resolve)`](#fn-specforprovidercognitoidentityprovidersclientidselectorpolicywithresolve)
+      * [`obj spec.forProvider.cognitoIdentityProviders.providerNameRef`](#obj-specforprovidercognitoidentityprovidersprovidernameref)
+        * [`fn withName(name)`](#fn-specforprovidercognitoidentityprovidersprovidernamerefwithname)
+        * [`obj spec.forProvider.cognitoIdentityProviders.providerNameRef.policy`](#obj-specforprovidercognitoidentityprovidersprovidernamerefpolicy)
+          * [`fn withResolution(resolution)`](#fn-specforprovidercognitoidentityprovidersprovidernamerefpolicywithresolution)
+          * [`fn withResolve(resolve)`](#fn-specforprovidercognitoidentityprovidersprovidernamerefpolicywithresolve)
+      * [`obj spec.forProvider.cognitoIdentityProviders.providerNameSelector`](#obj-specforprovidercognitoidentityprovidersprovidernameselector)
+        * [`fn withMatchControllerRef(matchControllerRef)`](#fn-specforprovidercognitoidentityprovidersprovidernameselectorwithmatchcontrollerref)
+        * [`fn withMatchLabels(matchLabels)`](#fn-specforprovidercognitoidentityprovidersprovidernameselectorwithmatchlabels)
+        * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specforprovidercognitoidentityprovidersprovidernameselectorwithmatchlabelsmixin)
+        * [`obj spec.forProvider.cognitoIdentityProviders.providerNameSelector.policy`](#obj-specforprovidercognitoidentityprovidersprovidernameselectorpolicy)
+          * [`fn withResolution(resolution)`](#fn-specforprovidercognitoidentityprovidersprovidernameselectorpolicywithresolution)
+          * [`fn withResolve(resolve)`](#fn-specforprovidercognitoidentityprovidersprovidernameselectorpolicywithresolve)
+    * [`obj spec.forProvider.openIdConnectProviderARNRefs`](#obj-specforprovideropenidconnectproviderarnrefs)
+      * [`fn withName(name)`](#fn-specforprovideropenidconnectproviderarnrefswithname)
+      * [`obj spec.forProvider.openIdConnectProviderARNRefs.policy`](#obj-specforprovideropenidconnectproviderarnrefspolicy)
+        * [`fn withResolution(resolution)`](#fn-specforprovideropenidconnectproviderarnrefspolicywithresolution)
+        * [`fn withResolve(resolve)`](#fn-specforprovideropenidconnectproviderarnrefspolicywithresolve)
     * [`obj spec.forProvider.openIdConnectProviderARNSelector`](#obj-specforprovideropenidconnectproviderarnselector)
       * [`fn withMatchControllerRef(matchControllerRef)`](#fn-specforprovideropenidconnectproviderarnselectorwithmatchcontrollerref)
       * [`fn withMatchLabels(matchLabels)`](#fn-specforprovideropenidconnectproviderarnselectorwithmatchlabels)
@@ -198,24 +229,6 @@ withLabelsMixin(labels)
 ```
 
 "Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels"
-
-**Note:** This function appends passed data to existing values
-
-### fn metadata.withManagedFields
-
-```ts
-withManagedFields(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
-
-### fn metadata.withManagedFieldsMixin
-
-```ts
-withManagedFieldsMixin(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
 
 **Note:** This function appends passed data to existing values
 
@@ -440,6 +453,230 @@ withSupportedLoginProvidersMixin(supportedLoginProviders)
 "Optional key:value pairs mapping provider names to provider app IDs."
 
 **Note:** This function appends passed data to existing values
+
+## obj spec.forProvider.cognitoIdentityProviders
+
+"An array of Amazon Cognito user pools and their client IDs."
+
+### fn spec.forProvider.cognitoIdentityProviders.withClientId
+
+```ts
+withClientId(clientId)
+```
+
+"The client ID for the Amazon Cognito user pool client."
+
+### fn spec.forProvider.cognitoIdentityProviders.withProviderName
+
+```ts
+withProviderName(providerName)
+```
+
+"The provider name for an Amazon Cognito user pool."
+
+### fn spec.forProvider.cognitoIdentityProviders.withServerSideTokenCheck
+
+```ts
+withServerSideTokenCheck(serverSideTokenCheck)
+```
+
+"Whether the server-side token validation is enabled for the identity provider’s token."
+
+## obj spec.forProvider.cognitoIdentityProviders.clientIdRef
+
+"ClientIDRef is a reference to an ClientID."
+
+### fn spec.forProvider.cognitoIdentityProviders.clientIdRef.withName
+
+```ts
+withName(name)
+```
+
+"Name of the referenced object."
+
+## obj spec.forProvider.cognitoIdentityProviders.clientIdRef.policy
+
+"Policies for referencing."
+
+### fn spec.forProvider.cognitoIdentityProviders.clientIdRef.policy.withResolution
+
+```ts
+withResolution(resolution)
+```
+
+"Resolution specifies whether resolution of this reference is required. The default is 'Required', which means the reconcile will fail if the reference cannot be resolved. 'Optional' means this reference will be a no-op if it cannot be resolved."
+
+### fn spec.forProvider.cognitoIdentityProviders.clientIdRef.policy.withResolve
+
+```ts
+withResolve(resolve)
+```
+
+"Resolve specifies when this reference should be resolved. The default is 'IfNotPresent', which will attempt to resolve the reference only when the corresponding field is not present. Use 'Always' to resolve the reference on every reconcile."
+
+## obj spec.forProvider.cognitoIdentityProviders.clientIdSelector
+
+"ClientIDSelector selects references to ClientID."
+
+### fn spec.forProvider.cognitoIdentityProviders.clientIdSelector.withMatchControllerRef
+
+```ts
+withMatchControllerRef(matchControllerRef)
+```
+
+"MatchControllerRef ensures an object with the same controller reference as the selecting object is selected."
+
+### fn spec.forProvider.cognitoIdentityProviders.clientIdSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+"MatchLabels ensures an object with matching labels is selected."
+
+### fn spec.forProvider.cognitoIdentityProviders.clientIdSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+"MatchLabels ensures an object with matching labels is selected."
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.forProvider.cognitoIdentityProviders.clientIdSelector.policy
+
+"Policies for selection."
+
+### fn spec.forProvider.cognitoIdentityProviders.clientIdSelector.policy.withResolution
+
+```ts
+withResolution(resolution)
+```
+
+"Resolution specifies whether resolution of this reference is required. The default is 'Required', which means the reconcile will fail if the reference cannot be resolved. 'Optional' means this reference will be a no-op if it cannot be resolved."
+
+### fn spec.forProvider.cognitoIdentityProviders.clientIdSelector.policy.withResolve
+
+```ts
+withResolve(resolve)
+```
+
+"Resolve specifies when this reference should be resolved. The default is 'IfNotPresent', which will attempt to resolve the reference only when the corresponding field is not present. Use 'Always' to resolve the reference on every reconcile."
+
+## obj spec.forProvider.cognitoIdentityProviders.providerNameRef
+
+"ProviderNameRef is a reference to an ProviderName."
+
+### fn spec.forProvider.cognitoIdentityProviders.providerNameRef.withName
+
+```ts
+withName(name)
+```
+
+"Name of the referenced object."
+
+## obj spec.forProvider.cognitoIdentityProviders.providerNameRef.policy
+
+"Policies for referencing."
+
+### fn spec.forProvider.cognitoIdentityProviders.providerNameRef.policy.withResolution
+
+```ts
+withResolution(resolution)
+```
+
+"Resolution specifies whether resolution of this reference is required. The default is 'Required', which means the reconcile will fail if the reference cannot be resolved. 'Optional' means this reference will be a no-op if it cannot be resolved."
+
+### fn spec.forProvider.cognitoIdentityProviders.providerNameRef.policy.withResolve
+
+```ts
+withResolve(resolve)
+```
+
+"Resolve specifies when this reference should be resolved. The default is 'IfNotPresent', which will attempt to resolve the reference only when the corresponding field is not present. Use 'Always' to resolve the reference on every reconcile."
+
+## obj spec.forProvider.cognitoIdentityProviders.providerNameSelector
+
+"ProviderNameSelector selects references to ProviderName."
+
+### fn spec.forProvider.cognitoIdentityProviders.providerNameSelector.withMatchControllerRef
+
+```ts
+withMatchControllerRef(matchControllerRef)
+```
+
+"MatchControllerRef ensures an object with the same controller reference as the selecting object is selected."
+
+### fn spec.forProvider.cognitoIdentityProviders.providerNameSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+"MatchLabels ensures an object with matching labels is selected."
+
+### fn spec.forProvider.cognitoIdentityProviders.providerNameSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+"MatchLabels ensures an object with matching labels is selected."
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.forProvider.cognitoIdentityProviders.providerNameSelector.policy
+
+"Policies for selection."
+
+### fn spec.forProvider.cognitoIdentityProviders.providerNameSelector.policy.withResolution
+
+```ts
+withResolution(resolution)
+```
+
+"Resolution specifies whether resolution of this reference is required. The default is 'Required', which means the reconcile will fail if the reference cannot be resolved. 'Optional' means this reference will be a no-op if it cannot be resolved."
+
+### fn spec.forProvider.cognitoIdentityProviders.providerNameSelector.policy.withResolve
+
+```ts
+withResolve(resolve)
+```
+
+"Resolve specifies when this reference should be resolved. The default is 'IfNotPresent', which will attempt to resolve the reference only when the corresponding field is not present. Use 'Always' to resolve the reference on every reconcile."
+
+## obj spec.forProvider.openIdConnectProviderARNRefs
+
+"OpenIDConnectProviderARNRefs is a list of references to OpenIDConnectProviderARNs."
+
+### fn spec.forProvider.openIdConnectProviderARNRefs.withName
+
+```ts
+withName(name)
+```
+
+"Name of the referenced object."
+
+## obj spec.forProvider.openIdConnectProviderARNRefs.policy
+
+"Policies for referencing."
+
+### fn spec.forProvider.openIdConnectProviderARNRefs.policy.withResolution
+
+```ts
+withResolution(resolution)
+```
+
+"Resolution specifies whether resolution of this reference is required. The default is 'Required', which means the reconcile will fail if the reference cannot be resolved. 'Optional' means this reference will be a no-op if it cannot be resolved."
+
+### fn spec.forProvider.openIdConnectProviderARNRefs.policy.withResolve
+
+```ts
+withResolve(resolve)
+```
+
+"Resolve specifies when this reference should be resolved. The default is 'IfNotPresent', which will attempt to resolve the reference only when the corresponding field is not present. Use 'Always' to resolve the reference on every reconcile."
 
 ## obj spec.forProvider.openIdConnectProviderARNSelector
 

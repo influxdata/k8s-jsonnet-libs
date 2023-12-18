@@ -22,8 +22,6 @@ permalink: /provider-aws/0.33/cache/v1beta1/replicationGroup/
   * [`fn withGeneration(generation)`](#fn-metadatawithgeneration)
   * [`fn withLabels(labels)`](#fn-metadatawithlabels)
   * [`fn withLabelsMixin(labels)`](#fn-metadatawithlabelsmixin)
-  * [`fn withManagedFields(managedFields)`](#fn-metadatawithmanagedfields)
-  * [`fn withManagedFieldsMixin(managedFields)`](#fn-metadatawithmanagedfieldsmixin)
   * [`fn withName(name)`](#fn-metadatawithname)
   * [`fn withNamespace(namespace)`](#fn-metadatawithnamespace)
   * [`fn withOwnerReferences(ownerReferences)`](#fn-metadatawithownerreferences)
@@ -75,6 +73,11 @@ permalink: /provider-aws/0.33/cache/v1beta1/replicationGroup/
     * [`fn withTags(tags)`](#fn-specforproviderwithtags)
     * [`fn withTagsMixin(tags)`](#fn-specforproviderwithtagsmixin)
     * [`fn withTransitEncryptionEnabled(transitEncryptionEnabled)`](#fn-specforproviderwithtransitencryptionenabled)
+    * [`obj spec.forProvider.cacheSecurityGroupNameRefs`](#obj-specforprovidercachesecuritygroupnamerefs)
+      * [`fn withName(name)`](#fn-specforprovidercachesecuritygroupnamerefswithname)
+      * [`obj spec.forProvider.cacheSecurityGroupNameRefs.policy`](#obj-specforprovidercachesecuritygroupnamerefspolicy)
+        * [`fn withResolution(resolution)`](#fn-specforprovidercachesecuritygroupnamerefspolicywithresolution)
+        * [`fn withResolve(resolve)`](#fn-specforprovidercachesecuritygroupnamerefspolicywithresolve)
     * [`obj spec.forProvider.cacheSecurityGroupNameSelector`](#obj-specforprovidercachesecuritygroupnameselector)
       * [`fn withMatchControllerRef(matchControllerRef)`](#fn-specforprovidercachesecuritygroupnameselectorwithmatchcontrollerref)
       * [`fn withMatchLabels(matchLabels)`](#fn-specforprovidercachesecuritygroupnameselectorwithmatchlabels)
@@ -99,6 +102,12 @@ permalink: /provider-aws/0.33/cache/v1beta1/replicationGroup/
       * [`obj spec.forProvider.cacheSubnetGroupNameSelector.policy`](#obj-specforprovidercachesubnetgroupnameselectorpolicy)
         * [`fn withResolution(resolution)`](#fn-specforprovidercachesubnetgroupnameselectorpolicywithresolution)
         * [`fn withResolve(resolve)`](#fn-specforprovidercachesubnetgroupnameselectorpolicywithresolve)
+    * [`obj spec.forProvider.nodeGroupConfiguration`](#obj-specforprovidernodegroupconfiguration)
+      * [`fn withPrimaryAvailabilityZone(primaryAvailabilityZone)`](#fn-specforprovidernodegroupconfigurationwithprimaryavailabilityzone)
+      * [`fn withReplicaAvailabilityZones(replicaAvailabilityZones)`](#fn-specforprovidernodegroupconfigurationwithreplicaavailabilityzones)
+      * [`fn withReplicaAvailabilityZonesMixin(replicaAvailabilityZones)`](#fn-specforprovidernodegroupconfigurationwithreplicaavailabilityzonesmixin)
+      * [`fn withReplicaCount(replicaCount)`](#fn-specforprovidernodegroupconfigurationwithreplicacount)
+      * [`fn withSlots(slots)`](#fn-specforprovidernodegroupconfigurationwithslots)
     * [`obj spec.forProvider.notificationTopicArnRef`](#obj-specforprovidernotificationtopicarnref)
       * [`fn withName(name)`](#fn-specforprovidernotificationtopicarnrefwithname)
       * [`obj spec.forProvider.notificationTopicArnRef.policy`](#obj-specforprovidernotificationtopicarnrefpolicy)
@@ -111,6 +120,11 @@ permalink: /provider-aws/0.33/cache/v1beta1/replicationGroup/
       * [`obj spec.forProvider.notificationTopicArnSelector.policy`](#obj-specforprovidernotificationtopicarnselectorpolicy)
         * [`fn withResolution(resolution)`](#fn-specforprovidernotificationtopicarnselectorpolicywithresolution)
         * [`fn withResolve(resolve)`](#fn-specforprovidernotificationtopicarnselectorpolicywithresolve)
+    * [`obj spec.forProvider.securityGroupIdRefs`](#obj-specforprovidersecuritygroupidrefs)
+      * [`fn withName(name)`](#fn-specforprovidersecuritygroupidrefswithname)
+      * [`obj spec.forProvider.securityGroupIdRefs.policy`](#obj-specforprovidersecuritygroupidrefspolicy)
+        * [`fn withResolution(resolution)`](#fn-specforprovidersecuritygroupidrefspolicywithresolution)
+        * [`fn withResolve(resolve)`](#fn-specforprovidersecuritygroupidrefspolicywithresolve)
     * [`obj spec.forProvider.securityGroupIdSelector`](#obj-specforprovidersecuritygroupidselector)
       * [`fn withMatchControllerRef(matchControllerRef)`](#fn-specforprovidersecuritygroupidselectorwithmatchcontrollerref)
       * [`fn withMatchLabels(matchLabels)`](#fn-specforprovidersecuritygroupidselectorwithmatchlabels)
@@ -118,6 +132,9 @@ permalink: /provider-aws/0.33/cache/v1beta1/replicationGroup/
       * [`obj spec.forProvider.securityGroupIdSelector.policy`](#obj-specforprovidersecuritygroupidselectorpolicy)
         * [`fn withResolution(resolution)`](#fn-specforprovidersecuritygroupidselectorpolicywithresolution)
         * [`fn withResolve(resolve)`](#fn-specforprovidersecuritygroupidselectorpolicywithresolve)
+    * [`obj spec.forProvider.tags`](#obj-specforprovidertags)
+      * [`fn withKey(key)`](#fn-specforprovidertagswithkey)
+      * [`fn withValue(value)`](#fn-specforprovidertagswithvalue)
   * [`obj spec.providerConfigRef`](#obj-specproviderconfigref)
     * [`fn withName(name)`](#fn-specproviderconfigrefwithname)
     * [`obj spec.providerConfigRef.policy`](#obj-specproviderconfigrefpolicy)
@@ -258,24 +275,6 @@ withLabelsMixin(labels)
 ```
 
 "Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels"
-
-**Note:** This function appends passed data to existing values
-
-### fn metadata.withManagedFields
-
-```ts
-withManagedFields(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
-
-### fn metadata.withManagedFieldsMixin
-
-```ts
-withManagedFieldsMixin(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
 
 **Note:** This function appends passed data to existing values
 
@@ -697,6 +696,38 @@ withTransitEncryptionEnabled(transitEncryptionEnabled)
 
 "TransitEncryptionEnabled enables in-transit encryption when set to true. \n You cannot modify the value of TransitEncryptionEnabled after the cluster is created. To enable in-transit encryption on a cluster you must TransitEncryptionEnabled to true when you create a cluster. \n This parameter is valid only if the Engine parameter is redis, the EngineVersion parameter is 3.2.6 or 4.x, and the cluster is being created in an Amazon VPC. \n If you enable in-transit encryption, you must also specify a value for CacheSubnetGroup. \n Required: Only available when creating a replication group in an Amazon VPC using redis version 3.2.6 or 4.x. \n Default: false \n For HIPAA compliance, you must specify TransitEncryptionEnabled as true, an AuthToken, and a CacheSubnetGroup."
 
+## obj spec.forProvider.cacheSecurityGroupNameRefs
+
+"CacheSecurityGroupNameRefs are references to SecurityGroups used to set the CacheSecurityGroupNames."
+
+### fn spec.forProvider.cacheSecurityGroupNameRefs.withName
+
+```ts
+withName(name)
+```
+
+"Name of the referenced object."
+
+## obj spec.forProvider.cacheSecurityGroupNameRefs.policy
+
+"Policies for referencing."
+
+### fn spec.forProvider.cacheSecurityGroupNameRefs.policy.withResolution
+
+```ts
+withResolution(resolution)
+```
+
+"Resolution specifies whether resolution of this reference is required. The default is 'Required', which means the reconcile will fail if the reference cannot be resolved. 'Optional' means this reference will be a no-op if it cannot be resolved."
+
+### fn spec.forProvider.cacheSecurityGroupNameRefs.policy.withResolve
+
+```ts
+withResolve(resolve)
+```
+
+"Resolve specifies when this reference should be resolved. The default is 'IfNotPresent', which will attempt to resolve the reference only when the corresponding field is not present. Use 'Always' to resolve the reference on every reconcile."
+
 ## obj spec.forProvider.cacheSecurityGroupNameSelector
 
 "CacheSecurityGroupNameSelector selects references to SecurityGroups."
@@ -861,6 +892,52 @@ withResolve(resolve)
 
 "Resolve specifies when this reference should be resolved. The default is 'IfNotPresent', which will attempt to resolve the reference only when the corresponding field is not present. Use 'Always' to resolve the reference on every reconcile."
 
+## obj spec.forProvider.nodeGroupConfiguration
+
+"NodeGroupConfigurationSpec specifies a list of node group (shard) configuration options. \n If you're creating a Redis (cluster mode disabled) or a Redis (cluster mode enabled) replication group, you can use this parameter to individually configure each node group (shard), or you can omit this parameter. However, when seeding a Redis (cluster mode enabled) cluster from a S3 rdb file, you must configure each node group (shard) using this parameter because you must specify the slots for each node group."
+
+### fn spec.forProvider.nodeGroupConfiguration.withPrimaryAvailabilityZone
+
+```ts
+withPrimaryAvailabilityZone(primaryAvailabilityZone)
+```
+
+"PrimaryAvailabilityZone specifies the Availability Zone where the primary node of this node group (shard) is launched."
+
+### fn spec.forProvider.nodeGroupConfiguration.withReplicaAvailabilityZones
+
+```ts
+withReplicaAvailabilityZones(replicaAvailabilityZones)
+```
+
+"ReplicaAvailabilityZones specifies a list of Availability Zones to be used for the read replicas. The number of Availability Zones in this list must match the value of ReplicaCount or ReplicasPerNodeGroup if not specified."
+
+### fn spec.forProvider.nodeGroupConfiguration.withReplicaAvailabilityZonesMixin
+
+```ts
+withReplicaAvailabilityZonesMixin(replicaAvailabilityZones)
+```
+
+"ReplicaAvailabilityZones specifies a list of Availability Zones to be used for the read replicas. The number of Availability Zones in this list must match the value of ReplicaCount or ReplicasPerNodeGroup if not specified."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.forProvider.nodeGroupConfiguration.withReplicaCount
+
+```ts
+withReplicaCount(replicaCount)
+```
+
+"ReplicaCount specifies the number of read replica nodes in this node group (shard)."
+
+### fn spec.forProvider.nodeGroupConfiguration.withSlots
+
+```ts
+withSlots(slots)
+```
+
+"Slots specifies the keyspace for a particular node group. Keyspaces range from 0 to 16,383. The string is in the format startkey-endkey. \n Example: \"0-3999\
+
 ## obj spec.forProvider.notificationTopicArnRef
 
 "NotificationTopicARNRef references an SNS Topic to retrieve its NotificationTopicARN"
@@ -943,6 +1020,38 @@ withResolve(resolve)
 
 "Resolve specifies when this reference should be resolved. The default is 'IfNotPresent', which will attempt to resolve the reference only when the corresponding field is not present. Use 'Always' to resolve the reference on every reconcile."
 
+## obj spec.forProvider.securityGroupIdRefs
+
+"SecurityGroupIDRefs are references to SecurityGroups used to set the SecurityGroupIDs."
+
+### fn spec.forProvider.securityGroupIdRefs.withName
+
+```ts
+withName(name)
+```
+
+"Name of the referenced object."
+
+## obj spec.forProvider.securityGroupIdRefs.policy
+
+"Policies for referencing."
+
+### fn spec.forProvider.securityGroupIdRefs.policy.withResolution
+
+```ts
+withResolution(resolution)
+```
+
+"Resolution specifies whether resolution of this reference is required. The default is 'Required', which means the reconcile will fail if the reference cannot be resolved. 'Optional' means this reference will be a no-op if it cannot be resolved."
+
+### fn spec.forProvider.securityGroupIdRefs.policy.withResolve
+
+```ts
+withResolve(resolve)
+```
+
+"Resolve specifies when this reference should be resolved. The default is 'IfNotPresent', which will attempt to resolve the reference only when the corresponding field is not present. Use 'Always' to resolve the reference on every reconcile."
+
 ## obj spec.forProvider.securityGroupIdSelector
 
 "SecurityGroupIDSelector selects references to SecurityGroups used to set the SecurityGroupIDs."
@@ -992,6 +1101,26 @@ withResolve(resolve)
 ```
 
 "Resolve specifies when this reference should be resolved. The default is 'IfNotPresent', which will attempt to resolve the reference only when the corresponding field is not present. Use 'Always' to resolve the reference on every reconcile."
+
+## obj spec.forProvider.tags
+
+"A list of cost allocation tags to be added to this resource. A tag is a key-value pair."
+
+### fn spec.forProvider.tags.withKey
+
+```ts
+withKey(key)
+```
+
+"Key for the tag."
+
+### fn spec.forProvider.tags.withValue
+
+```ts
+withValue(value)
+```
+
+"Value of the tag."
 
 ## obj spec.providerConfigRef
 

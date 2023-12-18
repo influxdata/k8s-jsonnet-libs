@@ -22,8 +22,6 @@ permalink: /0.7.1/nogroup/v1beta1/clusterExternalSecret/
   * [`fn withGeneration(generation)`](#fn-metadatawithgeneration)
   * [`fn withLabels(labels)`](#fn-metadatawithlabels)
   * [`fn withLabelsMixin(labels)`](#fn-metadatawithlabelsmixin)
-  * [`fn withManagedFields(managedFields)`](#fn-metadatawithmanagedfields)
-  * [`fn withManagedFieldsMixin(managedFields)`](#fn-metadatawithmanagedfieldsmixin)
   * [`fn withName(name)`](#fn-metadatawithname)
   * [`fn withNamespace(namespace)`](#fn-metadatawithnamespace)
   * [`fn withOwnerReferences(ownerReferences)`](#fn-metadatawithownerreferences)
@@ -40,6 +38,53 @@ permalink: /0.7.1/nogroup/v1beta1/clusterExternalSecret/
     * [`fn withDataFromMixin(dataFrom)`](#fn-specexternalsecretspecwithdatafrommixin)
     * [`fn withDataMixin(data)`](#fn-specexternalsecretspecwithdatamixin)
     * [`fn withRefreshInterval(refreshInterval)`](#fn-specexternalsecretspecwithrefreshinterval)
+    * [`obj spec.externalSecretSpec.data`](#obj-specexternalsecretspecdata)
+      * [`fn withSecretKey(secretKey)`](#fn-specexternalsecretspecdatawithsecretkey)
+      * [`obj spec.externalSecretSpec.data.remoteRef`](#obj-specexternalsecretspecdataremoteref)
+        * [`fn withConversionStrategy(conversionStrategy)`](#fn-specexternalsecretspecdataremoterefwithconversionstrategy)
+        * [`fn withDecodingStrategy(decodingStrategy)`](#fn-specexternalsecretspecdataremoterefwithdecodingstrategy)
+        * [`fn withKey(key)`](#fn-specexternalsecretspecdataremoterefwithkey)
+        * [`fn withMetadataPolicy(metadataPolicy)`](#fn-specexternalsecretspecdataremoterefwithmetadatapolicy)
+        * [`fn withProperty(property)`](#fn-specexternalsecretspecdataremoterefwithproperty)
+        * [`fn withVersion(version)`](#fn-specexternalsecretspecdataremoterefwithversion)
+      * [`obj spec.externalSecretSpec.data.sourceRef`](#obj-specexternalsecretspecdatasourceref)
+        * [`obj spec.externalSecretSpec.data.sourceRef.generatorRef`](#obj-specexternalsecretspecdatasourcerefgeneratorref)
+          * [`fn withApiVersion(apiVersion)`](#fn-specexternalsecretspecdatasourcerefgeneratorrefwithapiversion)
+          * [`fn withKind(kind)`](#fn-specexternalsecretspecdatasourcerefgeneratorrefwithkind)
+          * [`fn withName(name)`](#fn-specexternalsecretspecdatasourcerefgeneratorrefwithname)
+        * [`obj spec.externalSecretSpec.data.sourceRef.storeRef`](#obj-specexternalsecretspecdatasourcerefstoreref)
+          * [`fn withKind(kind)`](#fn-specexternalsecretspecdatasourcerefstorerefwithkind)
+          * [`fn withName(name)`](#fn-specexternalsecretspecdatasourcerefstorerefwithname)
+    * [`obj spec.externalSecretSpec.dataFrom`](#obj-specexternalsecretspecdatafrom)
+      * [`fn withRewrite(rewrite)`](#fn-specexternalsecretspecdatafromwithrewrite)
+      * [`fn withRewriteMixin(rewrite)`](#fn-specexternalsecretspecdatafromwithrewritemixin)
+      * [`obj spec.externalSecretSpec.dataFrom.extract`](#obj-specexternalsecretspecdatafromextract)
+        * [`fn withConversionStrategy(conversionStrategy)`](#fn-specexternalsecretspecdatafromextractwithconversionstrategy)
+        * [`fn withDecodingStrategy(decodingStrategy)`](#fn-specexternalsecretspecdatafromextractwithdecodingstrategy)
+        * [`fn withKey(key)`](#fn-specexternalsecretspecdatafromextractwithkey)
+        * [`fn withMetadataPolicy(metadataPolicy)`](#fn-specexternalsecretspecdatafromextractwithmetadatapolicy)
+        * [`fn withProperty(property)`](#fn-specexternalsecretspecdatafromextractwithproperty)
+        * [`fn withVersion(version)`](#fn-specexternalsecretspecdatafromextractwithversion)
+      * [`obj spec.externalSecretSpec.dataFrom.find`](#obj-specexternalsecretspecdatafromfind)
+        * [`fn withConversionStrategy(conversionStrategy)`](#fn-specexternalsecretspecdatafromfindwithconversionstrategy)
+        * [`fn withDecodingStrategy(decodingStrategy)`](#fn-specexternalsecretspecdatafromfindwithdecodingstrategy)
+        * [`fn withPath(path)`](#fn-specexternalsecretspecdatafromfindwithpath)
+        * [`fn withTags(tags)`](#fn-specexternalsecretspecdatafromfindwithtags)
+        * [`fn withTagsMixin(tags)`](#fn-specexternalsecretspecdatafromfindwithtagsmixin)
+        * [`obj spec.externalSecretSpec.dataFrom.find.name`](#obj-specexternalsecretspecdatafromfindname)
+          * [`fn withRegexp(regexp)`](#fn-specexternalsecretspecdatafromfindnamewithregexp)
+      * [`obj spec.externalSecretSpec.dataFrom.rewrite`](#obj-specexternalsecretspecdatafromrewrite)
+        * [`obj spec.externalSecretSpec.dataFrom.rewrite.regexp`](#obj-specexternalsecretspecdatafromrewriteregexp)
+          * [`fn withSource(source)`](#fn-specexternalsecretspecdatafromrewriteregexpwithsource)
+          * [`fn withTarget(target)`](#fn-specexternalsecretspecdatafromrewriteregexpwithtarget)
+      * [`obj spec.externalSecretSpec.dataFrom.sourceRef`](#obj-specexternalsecretspecdatafromsourceref)
+        * [`obj spec.externalSecretSpec.dataFrom.sourceRef.generatorRef`](#obj-specexternalsecretspecdatafromsourcerefgeneratorref)
+          * [`fn withApiVersion(apiVersion)`](#fn-specexternalsecretspecdatafromsourcerefgeneratorrefwithapiversion)
+          * [`fn withKind(kind)`](#fn-specexternalsecretspecdatafromsourcerefgeneratorrefwithkind)
+          * [`fn withName(name)`](#fn-specexternalsecretspecdatafromsourcerefgeneratorrefwithname)
+        * [`obj spec.externalSecretSpec.dataFrom.sourceRef.storeRef`](#obj-specexternalsecretspecdatafromsourcerefstoreref)
+          * [`fn withKind(kind)`](#fn-specexternalsecretspecdatafromsourcerefstorerefwithkind)
+          * [`fn withName(name)`](#fn-specexternalsecretspecdatafromsourcerefstorerefwithname)
     * [`obj spec.externalSecretSpec.secretStoreRef`](#obj-specexternalsecretspecsecretstoreref)
       * [`fn withKind(kind)`](#fn-specexternalsecretspecsecretstorerefwithkind)
       * [`fn withName(name)`](#fn-specexternalsecretspecsecretstorerefwithname)
@@ -60,11 +105,33 @@ permalink: /0.7.1/nogroup/v1beta1/clusterExternalSecret/
           * [`fn withAnnotationsMixin(annotations)`](#fn-specexternalsecretspectargettemplatemetadatawithannotationsmixin)
           * [`fn withLabels(labels)`](#fn-specexternalsecretspectargettemplatemetadatawithlabels)
           * [`fn withLabelsMixin(labels)`](#fn-specexternalsecretspectargettemplatemetadatawithlabelsmixin)
+        * [`obj spec.externalSecretSpec.target.template.templateFrom`](#obj-specexternalsecretspectargettemplatetemplatefrom)
+          * [`fn withLiteral(literal)`](#fn-specexternalsecretspectargettemplatetemplatefromwithliteral)
+          * [`fn withTarget(target)`](#fn-specexternalsecretspectargettemplatetemplatefromwithtarget)
+          * [`obj spec.externalSecretSpec.target.template.templateFrom.configMap`](#obj-specexternalsecretspectargettemplatetemplatefromconfigmap)
+            * [`fn withItems(items)`](#fn-specexternalsecretspectargettemplatetemplatefromconfigmapwithitems)
+            * [`fn withItemsMixin(items)`](#fn-specexternalsecretspectargettemplatetemplatefromconfigmapwithitemsmixin)
+            * [`fn withName(name)`](#fn-specexternalsecretspectargettemplatetemplatefromconfigmapwithname)
+            * [`obj spec.externalSecretSpec.target.template.templateFrom.configMap.items`](#obj-specexternalsecretspectargettemplatetemplatefromconfigmapitems)
+              * [`fn withKey(key)`](#fn-specexternalsecretspectargettemplatetemplatefromconfigmapitemswithkey)
+              * [`fn withTemplateAs(templateAs)`](#fn-specexternalsecretspectargettemplatetemplatefromconfigmapitemswithtemplateas)
+          * [`obj spec.externalSecretSpec.target.template.templateFrom.secret`](#obj-specexternalsecretspectargettemplatetemplatefromsecret)
+            * [`fn withItems(items)`](#fn-specexternalsecretspectargettemplatetemplatefromsecretwithitems)
+            * [`fn withItemsMixin(items)`](#fn-specexternalsecretspectargettemplatetemplatefromsecretwithitemsmixin)
+            * [`fn withName(name)`](#fn-specexternalsecretspectargettemplatetemplatefromsecretwithname)
+            * [`obj spec.externalSecretSpec.target.template.templateFrom.secret.items`](#obj-specexternalsecretspectargettemplatetemplatefromsecretitems)
+              * [`fn withKey(key)`](#fn-specexternalsecretspectargettemplatetemplatefromsecretitemswithkey)
+              * [`fn withTemplateAs(templateAs)`](#fn-specexternalsecretspectargettemplatetemplatefromsecretitemswithtemplateas)
   * [`obj spec.namespaceSelector`](#obj-specnamespaceselector)
     * [`fn withMatchExpressions(matchExpressions)`](#fn-specnamespaceselectorwithmatchexpressions)
     * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specnamespaceselectorwithmatchexpressionsmixin)
     * [`fn withMatchLabels(matchLabels)`](#fn-specnamespaceselectorwithmatchlabels)
     * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specnamespaceselectorwithmatchlabelsmixin)
+    * [`obj spec.namespaceSelector.matchExpressions`](#obj-specnamespaceselectormatchexpressions)
+      * [`fn withKey(key)`](#fn-specnamespaceselectormatchexpressionswithkey)
+      * [`fn withOperator(operator)`](#fn-specnamespaceselectormatchexpressionswithoperator)
+      * [`fn withValues(values)`](#fn-specnamespaceselectormatchexpressionswithvalues)
+      * [`fn withValuesMixin(values)`](#fn-specnamespaceselectormatchexpressionswithvaluesmixin)
 
 ## Fields
 
@@ -179,24 +246,6 @@ withLabelsMixin(labels)
 ```
 
 "Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels"
-
-**Note:** This function appends passed data to existing values
-
-### fn metadata.withManagedFields
-
-```ts
-withManagedFields(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
-
-### fn metadata.withManagedFieldsMixin
-
-```ts
-withManagedFieldsMixin(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
 
 **Note:** This function appends passed data to existing values
 
@@ -325,6 +374,330 @@ withRefreshInterval(refreshInterval)
 ```
 
 "RefreshInterval is the amount of time before the values are read again from the SecretStore provider Valid time units are \"ns\", \"us\" (or \"µs\"), \"ms\", \"s\", \"m\", \"h\" May be set to zero to fetch and create it once. Defaults to 1h."
+
+## obj spec.externalSecretSpec.data
+
+"Data defines the connection between the Kubernetes Secret keys and the Provider data"
+
+### fn spec.externalSecretSpec.data.withSecretKey
+
+```ts
+withSecretKey(secretKey)
+```
+
+"SecretKey defines the key in which the controller stores the value. This is the key in the Kind=Secret"
+
+## obj spec.externalSecretSpec.data.remoteRef
+
+"RemoteRef points to the remote secret and defines which secret (version/property/..) to fetch."
+
+### fn spec.externalSecretSpec.data.remoteRef.withConversionStrategy
+
+```ts
+withConversionStrategy(conversionStrategy)
+```
+
+"Used to define a conversion Strategy"
+
+### fn spec.externalSecretSpec.data.remoteRef.withDecodingStrategy
+
+```ts
+withDecodingStrategy(decodingStrategy)
+```
+
+"Used to define a decoding Strategy"
+
+### fn spec.externalSecretSpec.data.remoteRef.withKey
+
+```ts
+withKey(key)
+```
+
+"Key is the key used in the Provider, mandatory"
+
+### fn spec.externalSecretSpec.data.remoteRef.withMetadataPolicy
+
+```ts
+withMetadataPolicy(metadataPolicy)
+```
+
+"Policy for fetching tags/labels from provider secrets, possible options are Fetch, None. Defaults to None"
+
+### fn spec.externalSecretSpec.data.remoteRef.withProperty
+
+```ts
+withProperty(property)
+```
+
+"Used to select a specific property of the Provider value (if a map), if supported"
+
+### fn spec.externalSecretSpec.data.remoteRef.withVersion
+
+```ts
+withVersion(version)
+```
+
+"Used to select a specific version of the Provider value, if supported"
+
+## obj spec.externalSecretSpec.data.sourceRef
+
+"SourceRef allows you to override the source from which the value will pulled from."
+
+## obj spec.externalSecretSpec.data.sourceRef.generatorRef
+
+"GeneratorRef points to a generator custom resource in"
+
+### fn spec.externalSecretSpec.data.sourceRef.generatorRef.withApiVersion
+
+```ts
+withApiVersion(apiVersion)
+```
+
+"Specify the apiVersion of the generator resource"
+
+### fn spec.externalSecretSpec.data.sourceRef.generatorRef.withKind
+
+```ts
+withKind(kind)
+```
+
+"Specify the Kind of the resource, e.g. Password, ACRAccessToken etc."
+
+### fn spec.externalSecretSpec.data.sourceRef.generatorRef.withName
+
+```ts
+withName(name)
+```
+
+"Specify the name of the generator resource"
+
+## obj spec.externalSecretSpec.data.sourceRef.storeRef
+
+"SecretStoreRef defines which SecretStore to fetch the ExternalSecret data."
+
+### fn spec.externalSecretSpec.data.sourceRef.storeRef.withKind
+
+```ts
+withKind(kind)
+```
+
+"Kind of the SecretStore resource (SecretStore or ClusterSecretStore) Defaults to `SecretStore`"
+
+### fn spec.externalSecretSpec.data.sourceRef.storeRef.withName
+
+```ts
+withName(name)
+```
+
+"Name of the SecretStore resource"
+
+## obj spec.externalSecretSpec.dataFrom
+
+"DataFrom is used to fetch all properties from a specific Provider data If multiple entries are specified, the Secret keys are merged in the specified order"
+
+### fn spec.externalSecretSpec.dataFrom.withRewrite
+
+```ts
+withRewrite(rewrite)
+```
+
+"Used to rewrite secret Keys after getting them from the secret Provider Multiple Rewrite operations can be provided. They are applied in a layered order (first to last)"
+
+### fn spec.externalSecretSpec.dataFrom.withRewriteMixin
+
+```ts
+withRewriteMixin(rewrite)
+```
+
+"Used to rewrite secret Keys after getting them from the secret Provider Multiple Rewrite operations can be provided. They are applied in a layered order (first to last)"
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.externalSecretSpec.dataFrom.extract
+
+"Used to extract multiple key/value pairs from one secret Note: Extract does not support sourceRef.Generator or sourceRef.GeneratorRef."
+
+### fn spec.externalSecretSpec.dataFrom.extract.withConversionStrategy
+
+```ts
+withConversionStrategy(conversionStrategy)
+```
+
+"Used to define a conversion Strategy"
+
+### fn spec.externalSecretSpec.dataFrom.extract.withDecodingStrategy
+
+```ts
+withDecodingStrategy(decodingStrategy)
+```
+
+"Used to define a decoding Strategy"
+
+### fn spec.externalSecretSpec.dataFrom.extract.withKey
+
+```ts
+withKey(key)
+```
+
+"Key is the key used in the Provider, mandatory"
+
+### fn spec.externalSecretSpec.dataFrom.extract.withMetadataPolicy
+
+```ts
+withMetadataPolicy(metadataPolicy)
+```
+
+"Policy for fetching tags/labels from provider secrets, possible options are Fetch, None. Defaults to None"
+
+### fn spec.externalSecretSpec.dataFrom.extract.withProperty
+
+```ts
+withProperty(property)
+```
+
+"Used to select a specific property of the Provider value (if a map), if supported"
+
+### fn spec.externalSecretSpec.dataFrom.extract.withVersion
+
+```ts
+withVersion(version)
+```
+
+"Used to select a specific version of the Provider value, if supported"
+
+## obj spec.externalSecretSpec.dataFrom.find
+
+"Used to find secrets based on tags or regular expressions Note: Find does not support sourceRef.Generator or sourceRef.GeneratorRef."
+
+### fn spec.externalSecretSpec.dataFrom.find.withConversionStrategy
+
+```ts
+withConversionStrategy(conversionStrategy)
+```
+
+"Used to define a conversion Strategy"
+
+### fn spec.externalSecretSpec.dataFrom.find.withDecodingStrategy
+
+```ts
+withDecodingStrategy(decodingStrategy)
+```
+
+"Used to define a decoding Strategy"
+
+### fn spec.externalSecretSpec.dataFrom.find.withPath
+
+```ts
+withPath(path)
+```
+
+"A root path to start the find operations."
+
+### fn spec.externalSecretSpec.dataFrom.find.withTags
+
+```ts
+withTags(tags)
+```
+
+"Find secrets based on tags."
+
+### fn spec.externalSecretSpec.dataFrom.find.withTagsMixin
+
+```ts
+withTagsMixin(tags)
+```
+
+"Find secrets based on tags."
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.externalSecretSpec.dataFrom.find.name
+
+"Finds secrets based on the name."
+
+### fn spec.externalSecretSpec.dataFrom.find.name.withRegexp
+
+```ts
+withRegexp(regexp)
+```
+
+"Finds secrets base"
+
+## obj spec.externalSecretSpec.dataFrom.rewrite
+
+"Used to rewrite secret Keys after getting them from the secret Provider Multiple Rewrite operations can be provided. They are applied in a layered order (first to last)"
+
+## obj spec.externalSecretSpec.dataFrom.rewrite.regexp
+
+"Used to rewrite with regular expressions. The resulting key will be the output of a regexp.ReplaceAll operation."
+
+### fn spec.externalSecretSpec.dataFrom.rewrite.regexp.withSource
+
+```ts
+withSource(source)
+```
+
+"Used to define the regular expression of a re.Compiler."
+
+### fn spec.externalSecretSpec.dataFrom.rewrite.regexp.withTarget
+
+```ts
+withTarget(target)
+```
+
+"Used to define the target pattern of a ReplaceAll operation."
+
+## obj spec.externalSecretSpec.dataFrom.sourceRef
+
+"SourceRef points to a store or generator which contains secret values ready to use. Use this in combination with Extract or Find pull values out of a specific SecretStore. When sourceRef points to a generator Extract or Find is not supported. The generator returns a static map of values"
+
+## obj spec.externalSecretSpec.dataFrom.sourceRef.generatorRef
+
+"GeneratorRef points to a generator custom resource in"
+
+### fn spec.externalSecretSpec.dataFrom.sourceRef.generatorRef.withApiVersion
+
+```ts
+withApiVersion(apiVersion)
+```
+
+"Specify the apiVersion of the generator resource"
+
+### fn spec.externalSecretSpec.dataFrom.sourceRef.generatorRef.withKind
+
+```ts
+withKind(kind)
+```
+
+"Specify the Kind of the resource, e.g. Password, ACRAccessToken etc."
+
+### fn spec.externalSecretSpec.dataFrom.sourceRef.generatorRef.withName
+
+```ts
+withName(name)
+```
+
+"Specify the name of the generator resource"
+
+## obj spec.externalSecretSpec.dataFrom.sourceRef.storeRef
+
+"SecretStoreRef defines which SecretStore to fetch the ExternalSecret data."
+
+### fn spec.externalSecretSpec.dataFrom.sourceRef.storeRef.withKind
+
+```ts
+withKind(kind)
+```
+
+"Kind of the SecretStore resource (SecretStore or ClusterSecretStore) Defaults to `SecretStore`"
+
+### fn spec.externalSecretSpec.dataFrom.sourceRef.storeRef.withName
+
+```ts
+withName(name)
+```
+
+"Name of the SecretStore resource"
 
 ## obj spec.externalSecretSpec.secretStoreRef
 
@@ -478,6 +851,126 @@ withLabelsMixin(labels)
 
 **Note:** This function appends passed data to existing values
 
+## obj spec.externalSecretSpec.target.template.templateFrom
+
+
+
+### fn spec.externalSecretSpec.target.template.templateFrom.withLiteral
+
+```ts
+withLiteral(literal)
+```
+
+
+
+### fn spec.externalSecretSpec.target.template.templateFrom.withTarget
+
+```ts
+withTarget(target)
+```
+
+
+
+## obj spec.externalSecretSpec.target.template.templateFrom.configMap
+
+
+
+### fn spec.externalSecretSpec.target.template.templateFrom.configMap.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.externalSecretSpec.target.template.templateFrom.configMap.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.externalSecretSpec.target.template.templateFrom.configMap.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.externalSecretSpec.target.template.templateFrom.configMap.items
+
+
+
+### fn spec.externalSecretSpec.target.template.templateFrom.configMap.items.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.externalSecretSpec.target.template.templateFrom.configMap.items.withTemplateAs
+
+```ts
+withTemplateAs(templateAs)
+```
+
+
+
+## obj spec.externalSecretSpec.target.template.templateFrom.secret
+
+
+
+### fn spec.externalSecretSpec.target.template.templateFrom.secret.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.externalSecretSpec.target.template.templateFrom.secret.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.externalSecretSpec.target.template.templateFrom.secret.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.externalSecretSpec.target.template.templateFrom.secret.items
+
+
+
+### fn spec.externalSecretSpec.target.template.templateFrom.secret.items.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.externalSecretSpec.target.template.templateFrom.secret.items.withTemplateAs
+
+```ts
+withTemplateAs(templateAs)
+```
+
+
+
 ## obj spec.namespaceSelector
 
 "The labels to select by to find the Namespaces to create the ExternalSecrets in."
@@ -515,5 +1008,43 @@ withMatchLabelsMixin(matchLabels)
 ```
 
 "matchLabels is a map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is \"key\", the operator is \"In\", and the values array contains only \"value\". The requirements are ANDed."
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.namespaceSelector.matchExpressions
+
+"matchExpressions is a list of label selector requirements. The requirements are ANDed."
+
+### fn spec.namespaceSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+"key is the label key that the selector applies to."
+
+### fn spec.namespaceSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+"operator represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists and DoesNotExist."
+
+### fn spec.namespaceSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+"values is an array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. This array is replaced during a strategic merge patch."
+
+### fn spec.namespaceSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+"values is an array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. This array is replaced during a strategic merge patch."
 
 **Note:** This function appends passed data to existing values

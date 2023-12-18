@@ -22,8 +22,6 @@ permalink: /provider-aws/0.33/docdb/v1alpha1/dbSubnetGroup/
   * [`fn withGeneration(generation)`](#fn-metadatawithgeneration)
   * [`fn withLabels(labels)`](#fn-metadatawithlabels)
   * [`fn withLabelsMixin(labels)`](#fn-metadatawithlabelsmixin)
-  * [`fn withManagedFields(managedFields)`](#fn-metadatawithmanagedfields)
-  * [`fn withManagedFieldsMixin(managedFields)`](#fn-metadatawithmanagedfieldsmixin)
   * [`fn withName(name)`](#fn-metadatawithname)
   * [`fn withNamespace(namespace)`](#fn-metadatawithnamespace)
   * [`fn withOwnerReferences(ownerReferences)`](#fn-metadatawithownerreferences)
@@ -42,6 +40,11 @@ permalink: /provider-aws/0.33/docdb/v1alpha1/dbSubnetGroup/
     * [`fn withSubnetIDsRefsMixin(subnetIDsRefs)`](#fn-specforproviderwithsubnetidsrefsmixin)
     * [`fn withTags(tags)`](#fn-specforproviderwithtags)
     * [`fn withTagsMixin(tags)`](#fn-specforproviderwithtagsmixin)
+    * [`obj spec.forProvider.subnetIDsRefs`](#obj-specforprovidersubnetidsrefs)
+      * [`fn withName(name)`](#fn-specforprovidersubnetidsrefswithname)
+      * [`obj spec.forProvider.subnetIDsRefs.policy`](#obj-specforprovidersubnetidsrefspolicy)
+        * [`fn withResolution(resolution)`](#fn-specforprovidersubnetidsrefspolicywithresolution)
+        * [`fn withResolve(resolve)`](#fn-specforprovidersubnetidsrefspolicywithresolve)
     * [`obj spec.forProvider.subnetIDsSelector`](#obj-specforprovidersubnetidsselector)
       * [`fn withMatchControllerRef(matchControllerRef)`](#fn-specforprovidersubnetidsselectorwithmatchcontrollerref)
       * [`fn withMatchLabels(matchLabels)`](#fn-specforprovidersubnetidsselectorwithmatchlabels)
@@ -49,6 +52,9 @@ permalink: /provider-aws/0.33/docdb/v1alpha1/dbSubnetGroup/
       * [`obj spec.forProvider.subnetIDsSelector.policy`](#obj-specforprovidersubnetidsselectorpolicy)
         * [`fn withResolution(resolution)`](#fn-specforprovidersubnetidsselectorpolicywithresolution)
         * [`fn withResolve(resolve)`](#fn-specforprovidersubnetidsselectorpolicywithresolve)
+    * [`obj spec.forProvider.tags`](#obj-specforprovidertags)
+      * [`fn withKey(key)`](#fn-specforprovidertagswithkey)
+      * [`fn withValue(value)`](#fn-specforprovidertagswithvalue)
   * [`obj spec.providerConfigRef`](#obj-specproviderconfigref)
     * [`fn withName(name)`](#fn-specproviderconfigrefwithname)
     * [`obj spec.providerConfigRef.policy`](#obj-specproviderconfigrefpolicy)
@@ -189,24 +195,6 @@ withLabelsMixin(labels)
 ```
 
 "Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels"
-
-**Note:** This function appends passed data to existing values
-
-### fn metadata.withManagedFields
-
-```ts
-withManagedFields(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
-
-### fn metadata.withManagedFieldsMixin
-
-```ts
-withManagedFieldsMixin(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
 
 **Note:** This function appends passed data to existing values
 
@@ -354,6 +342,38 @@ withTagsMixin(tags)
 
 **Note:** This function appends passed data to existing values
 
+## obj spec.forProvider.subnetIDsRefs
+
+"TODO(haarchri): when resource is bumped to beta we will convert this field to subnetIdRefs"
+
+### fn spec.forProvider.subnetIDsRefs.withName
+
+```ts
+withName(name)
+```
+
+"Name of the referenced object."
+
+## obj spec.forProvider.subnetIDsRefs.policy
+
+"Policies for referencing."
+
+### fn spec.forProvider.subnetIDsRefs.policy.withResolution
+
+```ts
+withResolution(resolution)
+```
+
+"Resolution specifies whether resolution of this reference is required. The default is 'Required', which means the reconcile will fail if the reference cannot be resolved. 'Optional' means this reference will be a no-op if it cannot be resolved."
+
+### fn spec.forProvider.subnetIDsRefs.policy.withResolve
+
+```ts
+withResolve(resolve)
+```
+
+"Resolve specifies when this reference should be resolved. The default is 'IfNotPresent', which will attempt to resolve the reference only when the corresponding field is not present. Use 'Always' to resolve the reference on every reconcile."
+
 ## obj spec.forProvider.subnetIDsSelector
 
 "TODO(haarchri): when resource is bumped to beta we will convert this field to subnetIdSelector"
@@ -403,6 +423,26 @@ withResolve(resolve)
 ```
 
 "Resolve specifies when this reference should be resolved. The default is 'IfNotPresent', which will attempt to resolve the reference only when the corresponding field is not present. Use 'Always' to resolve the reference on every reconcile."
+
+## obj spec.forProvider.tags
+
+"The tags to be assigned to the subnet group."
+
+### fn spec.forProvider.tags.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.forProvider.tags.withValue
+
+```ts
+withValue(value)
+```
+
+
 
 ## obj spec.providerConfigRef
 

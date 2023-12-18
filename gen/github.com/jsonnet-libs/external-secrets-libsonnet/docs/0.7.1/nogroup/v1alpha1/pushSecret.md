@@ -22,8 +22,6 @@ permalink: /0.7.1/nogroup/v1alpha1/pushSecret/
   * [`fn withGeneration(generation)`](#fn-metadatawithgeneration)
   * [`fn withLabels(labels)`](#fn-metadatawithlabels)
   * [`fn withLabelsMixin(labels)`](#fn-metadatawithlabelsmixin)
-  * [`fn withManagedFields(managedFields)`](#fn-metadatawithmanagedfields)
-  * [`fn withManagedFieldsMixin(managedFields)`](#fn-metadatawithmanagedfieldsmixin)
   * [`fn withName(name)`](#fn-metadatawithname)
   * [`fn withNamespace(namespace)`](#fn-metadatawithnamespace)
   * [`fn withOwnerReferences(ownerReferences)`](#fn-metadatawithownerreferences)
@@ -38,6 +36,24 @@ permalink: /0.7.1/nogroup/v1alpha1/pushSecret/
   * [`fn withRefreshInterval(refreshInterval)`](#fn-specwithrefreshinterval)
   * [`fn withSecretStoreRefs(secretStoreRefs)`](#fn-specwithsecretstorerefs)
   * [`fn withSecretStoreRefsMixin(secretStoreRefs)`](#fn-specwithsecretstorerefsmixin)
+  * [`obj spec.data`](#obj-specdata)
+    * [`obj spec.data.match`](#obj-specdatamatch)
+      * [`fn withSecretKey(secretKey)`](#fn-specdatamatchwithsecretkey)
+      * [`obj spec.data.match.remoteRef`](#obj-specdatamatchremoteref)
+        * [`fn withRemoteKey(remoteKey)`](#fn-specdatamatchremoterefwithremotekey)
+  * [`obj spec.secretStoreRefs`](#obj-specsecretstorerefs)
+    * [`fn withKind(kind)`](#fn-specsecretstorerefswithkind)
+    * [`fn withName(name)`](#fn-specsecretstorerefswithname)
+    * [`obj spec.secretStoreRefs.labelSelector`](#obj-specsecretstorerefslabelselector)
+      * [`fn withMatchExpressions(matchExpressions)`](#fn-specsecretstorerefslabelselectorwithmatchexpressions)
+      * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specsecretstorerefslabelselectorwithmatchexpressionsmixin)
+      * [`fn withMatchLabels(matchLabels)`](#fn-specsecretstorerefslabelselectorwithmatchlabels)
+      * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specsecretstorerefslabelselectorwithmatchlabelsmixin)
+      * [`obj spec.secretStoreRefs.labelSelector.matchExpressions`](#obj-specsecretstorerefslabelselectormatchexpressions)
+        * [`fn withKey(key)`](#fn-specsecretstorerefslabelselectormatchexpressionswithkey)
+        * [`fn withOperator(operator)`](#fn-specsecretstorerefslabelselectormatchexpressionswithoperator)
+        * [`fn withValues(values)`](#fn-specsecretstorerefslabelselectormatchexpressionswithvalues)
+        * [`fn withValuesMixin(values)`](#fn-specsecretstorerefslabelselectormatchexpressionswithvaluesmixin)
   * [`obj spec.selector`](#obj-specselector)
     * [`obj spec.selector.secret`](#obj-specselectorsecret)
       * [`fn withName(name)`](#fn-specselectorsecretwithname)
@@ -158,24 +174,6 @@ withLabelsMixin(labels)
 
 **Note:** This function appends passed data to existing values
 
-### fn metadata.withManagedFields
-
-```ts
-withManagedFields(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
-
-### fn metadata.withManagedFieldsMixin
-
-```ts
-withManagedFieldsMixin(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
-
-**Note:** This function appends passed data to existing values
-
 ### fn metadata.withName
 
 ```ts
@@ -287,6 +285,132 @@ withSecretStoreRefsMixin(secretStoreRefs)
 ```
 
 
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.data
+
+"Secret Data that should be pushed to providers"
+
+## obj spec.data.match
+
+"Match a given Secret Key to be pushed to the provider."
+
+### fn spec.data.match.withSecretKey
+
+```ts
+withSecretKey(secretKey)
+```
+
+"Secret Key to be pushed"
+
+## obj spec.data.match.remoteRef
+
+"Remote Refs to push to providers."
+
+### fn spec.data.match.remoteRef.withRemoteKey
+
+```ts
+withRemoteKey(remoteKey)
+```
+
+"Name of the resulting provider secret."
+
+## obj spec.secretStoreRefs
+
+
+
+### fn spec.secretStoreRefs.withKind
+
+```ts
+withKind(kind)
+```
+
+"Kind of the SecretStore resource (SecretStore or ClusterSecretStore) Defaults to `SecretStore`"
+
+### fn spec.secretStoreRefs.withName
+
+```ts
+withName(name)
+```
+
+"Optionally, sync to the SecretStore of the given name"
+
+## obj spec.secretStoreRefs.labelSelector
+
+"Optionally, sync to secret stores with label selector"
+
+### fn spec.secretStoreRefs.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+"matchExpressions is a list of label selector requirements. The requirements are ANDed."
+
+### fn spec.secretStoreRefs.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+"matchExpressions is a list of label selector requirements. The requirements are ANDed."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.secretStoreRefs.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+"matchLabels is a map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is \"key\", the operator is \"In\", and the values array contains only \"value\". The requirements are ANDed."
+
+### fn spec.secretStoreRefs.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+"matchLabels is a map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is \"key\", the operator is \"In\", and the values array contains only \"value\". The requirements are ANDed."
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.secretStoreRefs.labelSelector.matchExpressions
+
+"matchExpressions is a list of label selector requirements. The requirements are ANDed."
+
+### fn spec.secretStoreRefs.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+"key is the label key that the selector applies to."
+
+### fn spec.secretStoreRefs.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+"operator represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists and DoesNotExist."
+
+### fn spec.secretStoreRefs.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+"values is an array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. This array is replaced during a strategic merge patch."
+
+### fn spec.secretStoreRefs.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+"values is an array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. This array is replaced during a strategic merge patch."
 
 **Note:** This function appends passed data to existing values
 

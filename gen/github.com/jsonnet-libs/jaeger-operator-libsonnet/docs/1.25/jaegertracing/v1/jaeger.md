@@ -22,8 +22,6 @@ permalink: /1.25/jaegertracing/v1/jaeger/
   * [`fn withGeneration(generation)`](#fn-metadatawithgeneration)
   * [`fn withLabels(labels)`](#fn-metadatawithlabels)
   * [`fn withLabelsMixin(labels)`](#fn-metadatawithlabelsmixin)
-  * [`fn withManagedFields(managedFields)`](#fn-metadatawithmanagedfields)
-  * [`fn withManagedFieldsMixin(managedFields)`](#fn-metadatawithmanagedfieldsmixin)
   * [`fn withName(name)`](#fn-metadatawithname)
   * [`fn withNamespace(namespace)`](#fn-metadatawithnamespace)
   * [`fn withOwnerReferences(ownerReferences)`](#fn-metadatawithownerreferences)
@@ -48,19 +46,111 @@ permalink: /1.25/jaegertracing/v1/jaeger/
     * [`obj spec.affinity.nodeAffinity`](#obj-specaffinitynodeaffinity)
       * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specaffinitynodeaffinitywithpreferredduringschedulingignoredduringexecution)
       * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specaffinitynodeaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
+      * [`obj spec.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-specaffinitynodeaffinitypreferredduringschedulingignoredduringexecution)
+        * [`fn withWeight(weight)`](#fn-specaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+        * [`obj spec.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference`](#obj-specaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreference)
+          * [`fn withMatchExpressions(matchExpressions)`](#fn-specaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchexpressions)
+          * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchexpressionsmixin)
+          * [`fn withMatchFields(matchFields)`](#fn-specaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchfields)
+          * [`fn withMatchFieldsMixin(matchFields)`](#fn-specaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchfieldsmixin)
+          * [`obj spec.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions`](#obj-specaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressions)
+            * [`fn withKey(key)`](#fn-specaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithkey)
+            * [`fn withOperator(operator)`](#fn-specaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithoperator)
+            * [`fn withValues(values)`](#fn-specaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithvalues)
+            * [`fn withValuesMixin(values)`](#fn-specaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithvaluesmixin)
+          * [`obj spec.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields`](#obj-specaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfields)
+            * [`fn withKey(key)`](#fn-specaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithkey)
+            * [`fn withOperator(operator)`](#fn-specaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithoperator)
+            * [`fn withValues(values)`](#fn-specaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithvalues)
+            * [`fn withValuesMixin(values)`](#fn-specaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithvaluesmixin)
       * [`obj spec.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-specaffinitynodeaffinityrequiredduringschedulingignoredduringexecution)
         * [`fn withNodeSelectorTerms(nodeSelectorTerms)`](#fn-specaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionwithnodeselectorterms)
         * [`fn withNodeSelectorTermsMixin(nodeSelectorTerms)`](#fn-specaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionwithnodeselectortermsmixin)
+        * [`obj spec.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms`](#obj-specaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectorterms)
+          * [`fn withMatchExpressions(matchExpressions)`](#fn-specaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchexpressions)
+          * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchexpressionsmixin)
+          * [`fn withMatchFields(matchFields)`](#fn-specaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchfields)
+          * [`fn withMatchFieldsMixin(matchFields)`](#fn-specaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchfieldsmixin)
+          * [`obj spec.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions`](#obj-specaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressions)
+            * [`fn withKey(key)`](#fn-specaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithkey)
+            * [`fn withOperator(operator)`](#fn-specaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithoperator)
+            * [`fn withValues(values)`](#fn-specaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithvalues)
+            * [`fn withValuesMixin(values)`](#fn-specaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithvaluesmixin)
+          * [`obj spec.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields`](#obj-specaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfields)
+            * [`fn withKey(key)`](#fn-specaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithkey)
+            * [`fn withOperator(operator)`](#fn-specaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithoperator)
+            * [`fn withValues(values)`](#fn-specaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithvalues)
+            * [`fn withValuesMixin(values)`](#fn-specaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithvaluesmixin)
     * [`obj spec.affinity.podAffinity`](#obj-specaffinitypodaffinity)
       * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specaffinitypodaffinitywithpreferredduringschedulingignoredduringexecution)
       * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specaffinitypodaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
       * [`fn withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specaffinitypodaffinitywithrequiredduringschedulingignoredduringexecution)
       * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specaffinitypodaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
+      * [`obj spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-specaffinitypodaffinitypreferredduringschedulingignoredduringexecution)
+        * [`fn withWeight(weight)`](#fn-specaffinitypodaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+        * [`obj spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm`](#obj-specaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinityterm)
+          * [`fn withNamespaces(namespaces)`](#fn-specaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespaces)
+          * [`fn withNamespacesMixin(namespaces)`](#fn-specaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespacesmixin)
+          * [`fn withTopologyKey(topologyKey)`](#fn-specaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithtopologykey)
+          * [`obj spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector`](#obj-specaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselector)
+            * [`fn withMatchExpressions(matchExpressions)`](#fn-specaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressions)
+            * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressionsmixin)
+            * [`fn withMatchLabels(matchLabels)`](#fn-specaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabels)
+            * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabelsmixin)
+            * [`obj spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions`](#obj-specaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressions)
+              * [`fn withKey(key)`](#fn-specaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithkey)
+              * [`fn withOperator(operator)`](#fn-specaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithoperator)
+              * [`fn withValues(values)`](#fn-specaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvalues)
+              * [`fn withValuesMixin(values)`](#fn-specaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvaluesmixin)
+      * [`obj spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-specaffinitypodaffinityrequiredduringschedulingignoredduringexecution)
+        * [`fn withNamespaces(namespaces)`](#fn-specaffinitypodaffinityrequiredduringschedulingignoredduringexecutionwithnamespaces)
+        * [`fn withNamespacesMixin(namespaces)`](#fn-specaffinitypodaffinityrequiredduringschedulingignoredduringexecutionwithnamespacesmixin)
+        * [`fn withTopologyKey(topologyKey)`](#fn-specaffinitypodaffinityrequiredduringschedulingignoredduringexecutionwithtopologykey)
+        * [`obj spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector`](#obj-specaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselector)
+          * [`fn withMatchExpressions(matchExpressions)`](#fn-specaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressions)
+          * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressionsmixin)
+          * [`fn withMatchLabels(matchLabels)`](#fn-specaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabels)
+          * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabelsmixin)
+          * [`obj spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions`](#obj-specaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressions)
+            * [`fn withKey(key)`](#fn-specaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithkey)
+            * [`fn withOperator(operator)`](#fn-specaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithoperator)
+            * [`fn withValues(values)`](#fn-specaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvalues)
+            * [`fn withValuesMixin(values)`](#fn-specaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvaluesmixin)
     * [`obj spec.affinity.podAntiAffinity`](#obj-specaffinitypodantiaffinity)
       * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specaffinitypodantiaffinitywithpreferredduringschedulingignoredduringexecution)
       * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specaffinitypodantiaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
       * [`fn withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specaffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecution)
       * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specaffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
+      * [`obj spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-specaffinitypodantiaffinitypreferredduringschedulingignoredduringexecution)
+        * [`fn withWeight(weight)`](#fn-specaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+        * [`obj spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm`](#obj-specaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinityterm)
+          * [`fn withNamespaces(namespaces)`](#fn-specaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespaces)
+          * [`fn withNamespacesMixin(namespaces)`](#fn-specaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespacesmixin)
+          * [`fn withTopologyKey(topologyKey)`](#fn-specaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithtopologykey)
+          * [`obj spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector`](#obj-specaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselector)
+            * [`fn withMatchExpressions(matchExpressions)`](#fn-specaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressions)
+            * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressionsmixin)
+            * [`fn withMatchLabels(matchLabels)`](#fn-specaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabels)
+            * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabelsmixin)
+            * [`obj spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions`](#obj-specaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressions)
+              * [`fn withKey(key)`](#fn-specaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithkey)
+              * [`fn withOperator(operator)`](#fn-specaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithoperator)
+              * [`fn withValues(values)`](#fn-specaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvalues)
+              * [`fn withValuesMixin(values)`](#fn-specaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvaluesmixin)
+      * [`obj spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-specaffinitypodantiaffinityrequiredduringschedulingignoredduringexecution)
+        * [`fn withNamespaces(namespaces)`](#fn-specaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionwithnamespaces)
+        * [`fn withNamespacesMixin(namespaces)`](#fn-specaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionwithnamespacesmixin)
+        * [`fn withTopologyKey(topologyKey)`](#fn-specaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionwithtopologykey)
+        * [`obj spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector`](#obj-specaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselector)
+          * [`fn withMatchExpressions(matchExpressions)`](#fn-specaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressions)
+          * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressionsmixin)
+          * [`fn withMatchLabels(matchLabels)`](#fn-specaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabels)
+          * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabelsmixin)
+          * [`obj spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions`](#obj-specaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressions)
+            * [`fn withKey(key)`](#fn-specaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithkey)
+            * [`fn withOperator(operator)`](#fn-specaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithoperator)
+            * [`fn withValues(values)`](#fn-specaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvalues)
+            * [`fn withValuesMixin(values)`](#fn-specaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvaluesmixin)
   * [`obj spec.agent`](#obj-specagent)
     * [`fn withAnnotations(annotations)`](#fn-specagentwithannotations)
     * [`fn withAnnotationsMixin(annotations)`](#fn-specagentwithannotationsmixin)
@@ -88,19 +178,113 @@ permalink: /1.25/jaegertracing/v1/jaeger/
       * [`obj spec.agent.affinity.nodeAffinity`](#obj-specagentaffinitynodeaffinity)
         * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specagentaffinitynodeaffinitywithpreferredduringschedulingignoredduringexecution)
         * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specagentaffinitynodeaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
+        * [`obj spec.agent.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-specagentaffinitynodeaffinitypreferredduringschedulingignoredduringexecution)
+          * [`fn withWeight(weight)`](#fn-specagentaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+          * [`obj spec.agent.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference`](#obj-specagentaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreference)
+            * [`fn withMatchExpressions(matchExpressions)`](#fn-specagentaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchexpressions)
+            * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specagentaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchexpressionsmixin)
+            * [`fn withMatchFields(matchFields)`](#fn-specagentaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchfields)
+            * [`fn withMatchFieldsMixin(matchFields)`](#fn-specagentaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchfieldsmixin)
+            * [`obj spec.agent.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions`](#obj-specagentaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressions)
+              * [`fn withKey(key)`](#fn-specagentaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithkey)
+              * [`fn withOperator(operator)`](#fn-specagentaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithoperator)
+              * [`fn withValues(values)`](#fn-specagentaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithvalues)
+              * [`fn withValuesMixin(values)`](#fn-specagentaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithvaluesmixin)
+            * [`obj spec.agent.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields`](#obj-specagentaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfields)
+              * [`fn withKey(key)`](#fn-specagentaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithkey)
+              * [`fn withOperator(operator)`](#fn-specagentaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithoperator)
+              * [`fn withValues(values)`](#fn-specagentaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithvalues)
+              * [`fn withValuesMixin(values)`](#fn-specagentaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithvaluesmixin)
         * [`obj spec.agent.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-specagentaffinitynodeaffinityrequiredduringschedulingignoredduringexecution)
           * [`fn withNodeSelectorTerms(nodeSelectorTerms)`](#fn-specagentaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionwithnodeselectorterms)
           * [`fn withNodeSelectorTermsMixin(nodeSelectorTerms)`](#fn-specagentaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionwithnodeselectortermsmixin)
+          * [`obj spec.agent.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms`](#obj-specagentaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectorterms)
+            * [`fn withMatchExpressions(matchExpressions)`](#fn-specagentaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchexpressions)
+            * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specagentaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchexpressionsmixin)
+            * [`fn withMatchFields(matchFields)`](#fn-specagentaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchfields)
+            * [`fn withMatchFieldsMixin(matchFields)`](#fn-specagentaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchfieldsmixin)
+            * [`obj spec.agent.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions`](#obj-specagentaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressions)
+              * [`fn withKey(key)`](#fn-specagentaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithkey)
+              * [`fn withOperator(operator)`](#fn-specagentaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithoperator)
+              * [`fn withValues(values)`](#fn-specagentaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithvalues)
+              * [`fn withValuesMixin(values)`](#fn-specagentaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithvaluesmixin)
+            * [`obj spec.agent.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields`](#obj-specagentaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfields)
+              * [`fn withKey(key)`](#fn-specagentaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithkey)
+              * [`fn withOperator(operator)`](#fn-specagentaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithoperator)
+              * [`fn withValues(values)`](#fn-specagentaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithvalues)
+              * [`fn withValuesMixin(values)`](#fn-specagentaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithvaluesmixin)
       * [`obj spec.agent.affinity.podAffinity`](#obj-specagentaffinitypodaffinity)
         * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specagentaffinitypodaffinitywithpreferredduringschedulingignoredduringexecution)
         * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specagentaffinitypodaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
         * [`fn withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specagentaffinitypodaffinitywithrequiredduringschedulingignoredduringexecution)
         * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specagentaffinitypodaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
+        * [`obj spec.agent.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-specagentaffinitypodaffinitypreferredduringschedulingignoredduringexecution)
+          * [`fn withWeight(weight)`](#fn-specagentaffinitypodaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+          * [`obj spec.agent.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm`](#obj-specagentaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinityterm)
+            * [`fn withNamespaces(namespaces)`](#fn-specagentaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespaces)
+            * [`fn withNamespacesMixin(namespaces)`](#fn-specagentaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespacesmixin)
+            * [`fn withTopologyKey(topologyKey)`](#fn-specagentaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithtopologykey)
+            * [`obj spec.agent.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector`](#obj-specagentaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselector)
+              * [`fn withMatchExpressions(matchExpressions)`](#fn-specagentaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressions)
+              * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specagentaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressionsmixin)
+              * [`fn withMatchLabels(matchLabels)`](#fn-specagentaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabels)
+              * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specagentaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabelsmixin)
+              * [`obj spec.agent.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions`](#obj-specagentaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressions)
+                * [`fn withKey(key)`](#fn-specagentaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithkey)
+                * [`fn withOperator(operator)`](#fn-specagentaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithoperator)
+                * [`fn withValues(values)`](#fn-specagentaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvalues)
+                * [`fn withValuesMixin(values)`](#fn-specagentaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvaluesmixin)
+        * [`obj spec.agent.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-specagentaffinitypodaffinityrequiredduringschedulingignoredduringexecution)
+          * [`fn withNamespaces(namespaces)`](#fn-specagentaffinitypodaffinityrequiredduringschedulingignoredduringexecutionwithnamespaces)
+          * [`fn withNamespacesMixin(namespaces)`](#fn-specagentaffinitypodaffinityrequiredduringschedulingignoredduringexecutionwithnamespacesmixin)
+          * [`fn withTopologyKey(topologyKey)`](#fn-specagentaffinitypodaffinityrequiredduringschedulingignoredduringexecutionwithtopologykey)
+          * [`obj spec.agent.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector`](#obj-specagentaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselector)
+            * [`fn withMatchExpressions(matchExpressions)`](#fn-specagentaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressions)
+            * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specagentaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressionsmixin)
+            * [`fn withMatchLabels(matchLabels)`](#fn-specagentaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabels)
+            * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specagentaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabelsmixin)
+            * [`obj spec.agent.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions`](#obj-specagentaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressions)
+              * [`fn withKey(key)`](#fn-specagentaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithkey)
+              * [`fn withOperator(operator)`](#fn-specagentaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithoperator)
+              * [`fn withValues(values)`](#fn-specagentaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvalues)
+              * [`fn withValuesMixin(values)`](#fn-specagentaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvaluesmixin)
       * [`obj spec.agent.affinity.podAntiAffinity`](#obj-specagentaffinitypodantiaffinity)
         * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specagentaffinitypodantiaffinitywithpreferredduringschedulingignoredduringexecution)
         * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specagentaffinitypodantiaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
         * [`fn withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specagentaffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecution)
         * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specagentaffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
+        * [`obj spec.agent.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-specagentaffinitypodantiaffinitypreferredduringschedulingignoredduringexecution)
+          * [`fn withWeight(weight)`](#fn-specagentaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+          * [`obj spec.agent.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm`](#obj-specagentaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinityterm)
+            * [`fn withNamespaces(namespaces)`](#fn-specagentaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespaces)
+            * [`fn withNamespacesMixin(namespaces)`](#fn-specagentaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespacesmixin)
+            * [`fn withTopologyKey(topologyKey)`](#fn-specagentaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithtopologykey)
+            * [`obj spec.agent.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector`](#obj-specagentaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselector)
+              * [`fn withMatchExpressions(matchExpressions)`](#fn-specagentaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressions)
+              * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specagentaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressionsmixin)
+              * [`fn withMatchLabels(matchLabels)`](#fn-specagentaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabels)
+              * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specagentaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabelsmixin)
+              * [`obj spec.agent.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions`](#obj-specagentaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressions)
+                * [`fn withKey(key)`](#fn-specagentaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithkey)
+                * [`fn withOperator(operator)`](#fn-specagentaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithoperator)
+                * [`fn withValues(values)`](#fn-specagentaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvalues)
+                * [`fn withValuesMixin(values)`](#fn-specagentaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvaluesmixin)
+        * [`obj spec.agent.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-specagentaffinitypodantiaffinityrequiredduringschedulingignoredduringexecution)
+          * [`fn withNamespaces(namespaces)`](#fn-specagentaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionwithnamespaces)
+          * [`fn withNamespacesMixin(namespaces)`](#fn-specagentaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionwithnamespacesmixin)
+          * [`fn withTopologyKey(topologyKey)`](#fn-specagentaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionwithtopologykey)
+          * [`obj spec.agent.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector`](#obj-specagentaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselector)
+            * [`fn withMatchExpressions(matchExpressions)`](#fn-specagentaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressions)
+            * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specagentaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressionsmixin)
+            * [`fn withMatchLabels(matchLabels)`](#fn-specagentaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabels)
+            * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specagentaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabelsmixin)
+            * [`obj spec.agent.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions`](#obj-specagentaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressions)
+              * [`fn withKey(key)`](#fn-specagentaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithkey)
+              * [`fn withOperator(operator)`](#fn-specagentaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithoperator)
+              * [`fn withValues(values)`](#fn-specagentaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvalues)
+              * [`fn withValuesMixin(values)`](#fn-specagentaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvaluesmixin)
+    * [`obj spec.agent.imagePullSecrets`](#obj-specagentimagepullsecrets)
+      * [`fn withName(name)`](#fn-specagentimagepullsecretswithname)
     * [`obj spec.agent.resources`](#obj-specagentresources)
       * [`fn withLimits(limits)`](#fn-specagentresourceswithlimits)
       * [`fn withLimitsMixin(limits)`](#fn-specagentresourceswithlimitsmixin)
@@ -124,6 +308,9 @@ permalink: /1.25/jaegertracing/v1/jaeger/
       * [`obj spec.agent.securityContext.seccompProfile`](#obj-specagentsecuritycontextseccompprofile)
         * [`fn withLocalhostProfile(localhostProfile)`](#fn-specagentsecuritycontextseccompprofilewithlocalhostprofile)
         * [`fn withType(type)`](#fn-specagentsecuritycontextseccompprofilewithtype)
+      * [`obj spec.agent.securityContext.sysctls`](#obj-specagentsecuritycontextsysctls)
+        * [`fn withName(name)`](#fn-specagentsecuritycontextsysctlswithname)
+        * [`fn withValue(value)`](#fn-specagentsecuritycontextsysctlswithvalue)
       * [`obj spec.agent.securityContext.windowsOptions`](#obj-specagentsecuritycontextwindowsoptions)
         * [`fn withGmsaCredentialSpec(gmsaCredentialSpec)`](#fn-specagentsecuritycontextwindowsoptionswithgmsacredentialspec)
         * [`fn withGmsaCredentialSpecName(gmsaCredentialSpecName)`](#fn-specagentsecuritycontextwindowsoptionswithgmsacredentialspecname)
@@ -153,6 +340,272 @@ permalink: /1.25/jaegertracing/v1/jaeger/
         * [`fn withGmsaCredentialSpec(gmsaCredentialSpec)`](#fn-specagentsidecarsecuritycontextwindowsoptionswithgmsacredentialspec)
         * [`fn withGmsaCredentialSpecName(gmsaCredentialSpecName)`](#fn-specagentsidecarsecuritycontextwindowsoptionswithgmsacredentialspecname)
         * [`fn withRunAsUserName(runAsUserName)`](#fn-specagentsidecarsecuritycontextwindowsoptionswithrunasusername)
+    * [`obj spec.agent.tolerations`](#obj-specagenttolerations)
+      * [`fn withEffect(effect)`](#fn-specagenttolerationswitheffect)
+      * [`fn withKey(key)`](#fn-specagenttolerationswithkey)
+      * [`fn withOperator(operator)`](#fn-specagenttolerationswithoperator)
+      * [`fn withTolerationSeconds(tolerationSeconds)`](#fn-specagenttolerationswithtolerationseconds)
+      * [`fn withValue(value)`](#fn-specagenttolerationswithvalue)
+    * [`obj spec.agent.volumeMounts`](#obj-specagentvolumemounts)
+      * [`fn withMountPath(mountPath)`](#fn-specagentvolumemountswithmountpath)
+      * [`fn withMountPropagation(mountPropagation)`](#fn-specagentvolumemountswithmountpropagation)
+      * [`fn withName(name)`](#fn-specagentvolumemountswithname)
+      * [`fn withReadOnly(readOnly)`](#fn-specagentvolumemountswithreadonly)
+      * [`fn withSubPath(subPath)`](#fn-specagentvolumemountswithsubpath)
+      * [`fn withSubPathExpr(subPathExpr)`](#fn-specagentvolumemountswithsubpathexpr)
+    * [`obj spec.agent.volumes`](#obj-specagentvolumes)
+      * [`fn withName(name)`](#fn-specagentvolumeswithname)
+      * [`obj spec.agent.volumes.awsElasticBlockStore`](#obj-specagentvolumesawselasticblockstore)
+        * [`fn withFsType(fsType)`](#fn-specagentvolumesawselasticblockstorewithfstype)
+        * [`fn withPartition(partition)`](#fn-specagentvolumesawselasticblockstorewithpartition)
+        * [`fn withReadOnly(readOnly)`](#fn-specagentvolumesawselasticblockstorewithreadonly)
+        * [`fn withVolumeID(volumeID)`](#fn-specagentvolumesawselasticblockstorewithvolumeid)
+      * [`obj spec.agent.volumes.azureDisk`](#obj-specagentvolumesazuredisk)
+        * [`fn withCachingMode(cachingMode)`](#fn-specagentvolumesazurediskwithcachingmode)
+        * [`fn withDiskName(diskName)`](#fn-specagentvolumesazurediskwithdiskname)
+        * [`fn withDiskURI(diskURI)`](#fn-specagentvolumesazurediskwithdiskuri)
+        * [`fn withFsType(fsType)`](#fn-specagentvolumesazurediskwithfstype)
+        * [`fn withKind(kind)`](#fn-specagentvolumesazurediskwithkind)
+        * [`fn withReadOnly(readOnly)`](#fn-specagentvolumesazurediskwithreadonly)
+      * [`obj spec.agent.volumes.azureFile`](#obj-specagentvolumesazurefile)
+        * [`fn withReadOnly(readOnly)`](#fn-specagentvolumesazurefilewithreadonly)
+        * [`fn withSecretName(secretName)`](#fn-specagentvolumesazurefilewithsecretname)
+        * [`fn withShareName(shareName)`](#fn-specagentvolumesazurefilewithsharename)
+      * [`obj spec.agent.volumes.cephfs`](#obj-specagentvolumescephfs)
+        * [`fn withMonitors(monitors)`](#fn-specagentvolumescephfswithmonitors)
+        * [`fn withMonitorsMixin(monitors)`](#fn-specagentvolumescephfswithmonitorsmixin)
+        * [`fn withPath(path)`](#fn-specagentvolumescephfswithpath)
+        * [`fn withReadOnly(readOnly)`](#fn-specagentvolumescephfswithreadonly)
+        * [`fn withSecretFile(secretFile)`](#fn-specagentvolumescephfswithsecretfile)
+        * [`fn withUser(user)`](#fn-specagentvolumescephfswithuser)
+        * [`obj spec.agent.volumes.cephfs.secretRef`](#obj-specagentvolumescephfssecretref)
+          * [`fn withName(name)`](#fn-specagentvolumescephfssecretrefwithname)
+      * [`obj spec.agent.volumes.cinder`](#obj-specagentvolumescinder)
+        * [`fn withFsType(fsType)`](#fn-specagentvolumescinderwithfstype)
+        * [`fn withReadOnly(readOnly)`](#fn-specagentvolumescinderwithreadonly)
+        * [`fn withVolumeID(volumeID)`](#fn-specagentvolumescinderwithvolumeid)
+        * [`obj spec.agent.volumes.cinder.secretRef`](#obj-specagentvolumescindersecretref)
+          * [`fn withName(name)`](#fn-specagentvolumescindersecretrefwithname)
+      * [`obj spec.agent.volumes.configMap`](#obj-specagentvolumesconfigmap)
+        * [`fn withDefaultMode(defaultMode)`](#fn-specagentvolumesconfigmapwithdefaultmode)
+        * [`fn withItems(items)`](#fn-specagentvolumesconfigmapwithitems)
+        * [`fn withItemsMixin(items)`](#fn-specagentvolumesconfigmapwithitemsmixin)
+        * [`fn withName(name)`](#fn-specagentvolumesconfigmapwithname)
+        * [`fn withOptional(optional)`](#fn-specagentvolumesconfigmapwithoptional)
+        * [`obj spec.agent.volumes.configMap.items`](#obj-specagentvolumesconfigmapitems)
+          * [`fn withKey(key)`](#fn-specagentvolumesconfigmapitemswithkey)
+          * [`fn withMode(mode)`](#fn-specagentvolumesconfigmapitemswithmode)
+          * [`fn withPath(path)`](#fn-specagentvolumesconfigmapitemswithpath)
+      * [`obj spec.agent.volumes.csi`](#obj-specagentvolumescsi)
+        * [`fn withDriver(driver)`](#fn-specagentvolumescsiwithdriver)
+        * [`fn withFsType(fsType)`](#fn-specagentvolumescsiwithfstype)
+        * [`fn withReadOnly(readOnly)`](#fn-specagentvolumescsiwithreadonly)
+        * [`fn withVolumeAttributes(volumeAttributes)`](#fn-specagentvolumescsiwithvolumeattributes)
+        * [`fn withVolumeAttributesMixin(volumeAttributes)`](#fn-specagentvolumescsiwithvolumeattributesmixin)
+        * [`obj spec.agent.volumes.csi.nodePublishSecretRef`](#obj-specagentvolumescsinodepublishsecretref)
+          * [`fn withName(name)`](#fn-specagentvolumescsinodepublishsecretrefwithname)
+      * [`obj spec.agent.volumes.downwardAPI`](#obj-specagentvolumesdownwardapi)
+        * [`fn withDefaultMode(defaultMode)`](#fn-specagentvolumesdownwardapiwithdefaultmode)
+        * [`fn withItems(items)`](#fn-specagentvolumesdownwardapiwithitems)
+        * [`fn withItemsMixin(items)`](#fn-specagentvolumesdownwardapiwithitemsmixin)
+        * [`obj spec.agent.volumes.downwardAPI.items`](#obj-specagentvolumesdownwardapiitems)
+          * [`fn withMode(mode)`](#fn-specagentvolumesdownwardapiitemswithmode)
+          * [`fn withPath(path)`](#fn-specagentvolumesdownwardapiitemswithpath)
+          * [`obj spec.agent.volumes.downwardAPI.items.fieldRef`](#obj-specagentvolumesdownwardapiitemsfieldref)
+            * [`fn withApiVersion(apiVersion)`](#fn-specagentvolumesdownwardapiitemsfieldrefwithapiversion)
+            * [`fn withFieldPath(fieldPath)`](#fn-specagentvolumesdownwardapiitemsfieldrefwithfieldpath)
+          * [`obj spec.agent.volumes.downwardAPI.items.resourceFieldRef`](#obj-specagentvolumesdownwardapiitemsresourcefieldref)
+            * [`fn withContainerName(containerName)`](#fn-specagentvolumesdownwardapiitemsresourcefieldrefwithcontainername)
+            * [`fn withDivisor(divisor)`](#fn-specagentvolumesdownwardapiitemsresourcefieldrefwithdivisor)
+            * [`fn withResource(resource)`](#fn-specagentvolumesdownwardapiitemsresourcefieldrefwithresource)
+      * [`obj spec.agent.volumes.emptyDir`](#obj-specagentvolumesemptydir)
+        * [`fn withMedium(medium)`](#fn-specagentvolumesemptydirwithmedium)
+        * [`fn withSizeLimit(sizeLimit)`](#fn-specagentvolumesemptydirwithsizelimit)
+      * [`obj spec.agent.volumes.ephemeral`](#obj-specagentvolumesephemeral)
+        * [`fn withReadOnly(readOnly)`](#fn-specagentvolumesephemeralwithreadonly)
+        * [`obj spec.agent.volumes.ephemeral.volumeClaimTemplate`](#obj-specagentvolumesephemeralvolumeclaimtemplate)
+          * [`fn withMetadata(metadata)`](#fn-specagentvolumesephemeralvolumeclaimtemplatewithmetadata)
+          * [`fn withMetadataMixin(metadata)`](#fn-specagentvolumesephemeralvolumeclaimtemplatewithmetadatamixin)
+          * [`obj spec.agent.volumes.ephemeral.volumeClaimTemplate.spec`](#obj-specagentvolumesephemeralvolumeclaimtemplatespec)
+            * [`fn withAccessModes(accessModes)`](#fn-specagentvolumesephemeralvolumeclaimtemplatespecwithaccessmodes)
+            * [`fn withAccessModesMixin(accessModes)`](#fn-specagentvolumesephemeralvolumeclaimtemplatespecwithaccessmodesmixin)
+            * [`fn withStorageClassName(storageClassName)`](#fn-specagentvolumesephemeralvolumeclaimtemplatespecwithstorageclassname)
+            * [`fn withVolumeMode(volumeMode)`](#fn-specagentvolumesephemeralvolumeclaimtemplatespecwithvolumemode)
+            * [`fn withVolumeName(volumeName)`](#fn-specagentvolumesephemeralvolumeclaimtemplatespecwithvolumename)
+            * [`obj spec.agent.volumes.ephemeral.volumeClaimTemplate.spec.dataSource`](#obj-specagentvolumesephemeralvolumeclaimtemplatespecdatasource)
+              * [`fn withApiGroup(apiGroup)`](#fn-specagentvolumesephemeralvolumeclaimtemplatespecdatasourcewithapigroup)
+              * [`fn withKind(kind)`](#fn-specagentvolumesephemeralvolumeclaimtemplatespecdatasourcewithkind)
+              * [`fn withName(name)`](#fn-specagentvolumesephemeralvolumeclaimtemplatespecdatasourcewithname)
+            * [`obj spec.agent.volumes.ephemeral.volumeClaimTemplate.spec.resources`](#obj-specagentvolumesephemeralvolumeclaimtemplatespecresources)
+              * [`fn withLimits(limits)`](#fn-specagentvolumesephemeralvolumeclaimtemplatespecresourceswithlimits)
+              * [`fn withLimitsMixin(limits)`](#fn-specagentvolumesephemeralvolumeclaimtemplatespecresourceswithlimitsmixin)
+              * [`fn withRequests(requests)`](#fn-specagentvolumesephemeralvolumeclaimtemplatespecresourceswithrequests)
+              * [`fn withRequestsMixin(requests)`](#fn-specagentvolumesephemeralvolumeclaimtemplatespecresourceswithrequestsmixin)
+            * [`obj spec.agent.volumes.ephemeral.volumeClaimTemplate.spec.selector`](#obj-specagentvolumesephemeralvolumeclaimtemplatespecselector)
+              * [`fn withMatchExpressions(matchExpressions)`](#fn-specagentvolumesephemeralvolumeclaimtemplatespecselectorwithmatchexpressions)
+              * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specagentvolumesephemeralvolumeclaimtemplatespecselectorwithmatchexpressionsmixin)
+              * [`fn withMatchLabels(matchLabels)`](#fn-specagentvolumesephemeralvolumeclaimtemplatespecselectorwithmatchlabels)
+              * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specagentvolumesephemeralvolumeclaimtemplatespecselectorwithmatchlabelsmixin)
+              * [`obj spec.agent.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions`](#obj-specagentvolumesephemeralvolumeclaimtemplatespecselectormatchexpressions)
+                * [`fn withKey(key)`](#fn-specagentvolumesephemeralvolumeclaimtemplatespecselectormatchexpressionswithkey)
+                * [`fn withOperator(operator)`](#fn-specagentvolumesephemeralvolumeclaimtemplatespecselectormatchexpressionswithoperator)
+                * [`fn withValues(values)`](#fn-specagentvolumesephemeralvolumeclaimtemplatespecselectormatchexpressionswithvalues)
+                * [`fn withValuesMixin(values)`](#fn-specagentvolumesephemeralvolumeclaimtemplatespecselectormatchexpressionswithvaluesmixin)
+      * [`obj spec.agent.volumes.fc`](#obj-specagentvolumesfc)
+        * [`fn withFsType(fsType)`](#fn-specagentvolumesfcwithfstype)
+        * [`fn withLun(lun)`](#fn-specagentvolumesfcwithlun)
+        * [`fn withReadOnly(readOnly)`](#fn-specagentvolumesfcwithreadonly)
+        * [`fn withTargetWWNs(targetWWNs)`](#fn-specagentvolumesfcwithtargetwwns)
+        * [`fn withTargetWWNsMixin(targetWWNs)`](#fn-specagentvolumesfcwithtargetwwnsmixin)
+        * [`fn withWwids(wwids)`](#fn-specagentvolumesfcwithwwids)
+        * [`fn withWwidsMixin(wwids)`](#fn-specagentvolumesfcwithwwidsmixin)
+      * [`obj spec.agent.volumes.flexVolume`](#obj-specagentvolumesflexvolume)
+        * [`fn withDriver(driver)`](#fn-specagentvolumesflexvolumewithdriver)
+        * [`fn withFsType(fsType)`](#fn-specagentvolumesflexvolumewithfstype)
+        * [`fn withOptions(options)`](#fn-specagentvolumesflexvolumewithoptions)
+        * [`fn withOptionsMixin(options)`](#fn-specagentvolumesflexvolumewithoptionsmixin)
+        * [`fn withReadOnly(readOnly)`](#fn-specagentvolumesflexvolumewithreadonly)
+        * [`obj spec.agent.volumes.flexVolume.secretRef`](#obj-specagentvolumesflexvolumesecretref)
+          * [`fn withName(name)`](#fn-specagentvolumesflexvolumesecretrefwithname)
+      * [`obj spec.agent.volumes.flocker`](#obj-specagentvolumesflocker)
+        * [`fn withDatasetName(datasetName)`](#fn-specagentvolumesflockerwithdatasetname)
+        * [`fn withDatasetUUID(datasetUUID)`](#fn-specagentvolumesflockerwithdatasetuuid)
+      * [`obj spec.agent.volumes.gcePersistentDisk`](#obj-specagentvolumesgcepersistentdisk)
+        * [`fn withFsType(fsType)`](#fn-specagentvolumesgcepersistentdiskwithfstype)
+        * [`fn withPartition(partition)`](#fn-specagentvolumesgcepersistentdiskwithpartition)
+        * [`fn withPdName(pdName)`](#fn-specagentvolumesgcepersistentdiskwithpdname)
+        * [`fn withReadOnly(readOnly)`](#fn-specagentvolumesgcepersistentdiskwithreadonly)
+      * [`obj spec.agent.volumes.gitRepo`](#obj-specagentvolumesgitrepo)
+        * [`fn withDirectory(directory)`](#fn-specagentvolumesgitrepowithdirectory)
+        * [`fn withRepository(repository)`](#fn-specagentvolumesgitrepowithrepository)
+        * [`fn withRevision(revision)`](#fn-specagentvolumesgitrepowithrevision)
+      * [`obj spec.agent.volumes.glusterfs`](#obj-specagentvolumesglusterfs)
+        * [`fn withEndpoints(endpoints)`](#fn-specagentvolumesglusterfswithendpoints)
+        * [`fn withPath(path)`](#fn-specagentvolumesglusterfswithpath)
+        * [`fn withReadOnly(readOnly)`](#fn-specagentvolumesglusterfswithreadonly)
+      * [`obj spec.agent.volumes.hostPath`](#obj-specagentvolumeshostpath)
+        * [`fn withPath(path)`](#fn-specagentvolumeshostpathwithpath)
+        * [`fn withType(type)`](#fn-specagentvolumeshostpathwithtype)
+      * [`obj spec.agent.volumes.iscsi`](#obj-specagentvolumesiscsi)
+        * [`fn withChapAuthDiscovery(chapAuthDiscovery)`](#fn-specagentvolumesiscsiwithchapauthdiscovery)
+        * [`fn withChapAuthSession(chapAuthSession)`](#fn-specagentvolumesiscsiwithchapauthsession)
+        * [`fn withFsType(fsType)`](#fn-specagentvolumesiscsiwithfstype)
+        * [`fn withInitiatorName(initiatorName)`](#fn-specagentvolumesiscsiwithinitiatorname)
+        * [`fn withIqn(iqn)`](#fn-specagentvolumesiscsiwithiqn)
+        * [`fn withIscsiInterface(iscsiInterface)`](#fn-specagentvolumesiscsiwithiscsiinterface)
+        * [`fn withLun(lun)`](#fn-specagentvolumesiscsiwithlun)
+        * [`fn withPortals(portals)`](#fn-specagentvolumesiscsiwithportals)
+        * [`fn withPortalsMixin(portals)`](#fn-specagentvolumesiscsiwithportalsmixin)
+        * [`fn withReadOnly(readOnly)`](#fn-specagentvolumesiscsiwithreadonly)
+        * [`fn withTargetPortal(targetPortal)`](#fn-specagentvolumesiscsiwithtargetportal)
+        * [`obj spec.agent.volumes.iscsi.secretRef`](#obj-specagentvolumesiscsisecretref)
+          * [`fn withName(name)`](#fn-specagentvolumesiscsisecretrefwithname)
+      * [`obj spec.agent.volumes.nfs`](#obj-specagentvolumesnfs)
+        * [`fn withPath(path)`](#fn-specagentvolumesnfswithpath)
+        * [`fn withReadOnly(readOnly)`](#fn-specagentvolumesnfswithreadonly)
+        * [`fn withServer(server)`](#fn-specagentvolumesnfswithserver)
+      * [`obj spec.agent.volumes.persistentVolumeClaim`](#obj-specagentvolumespersistentvolumeclaim)
+        * [`fn withClaimName(claimName)`](#fn-specagentvolumespersistentvolumeclaimwithclaimname)
+        * [`fn withReadOnly(readOnly)`](#fn-specagentvolumespersistentvolumeclaimwithreadonly)
+      * [`obj spec.agent.volumes.photonPersistentDisk`](#obj-specagentvolumesphotonpersistentdisk)
+        * [`fn withFsType(fsType)`](#fn-specagentvolumesphotonpersistentdiskwithfstype)
+        * [`fn withPdID(pdID)`](#fn-specagentvolumesphotonpersistentdiskwithpdid)
+      * [`obj spec.agent.volumes.portworxVolume`](#obj-specagentvolumesportworxvolume)
+        * [`fn withFsType(fsType)`](#fn-specagentvolumesportworxvolumewithfstype)
+        * [`fn withReadOnly(readOnly)`](#fn-specagentvolumesportworxvolumewithreadonly)
+        * [`fn withVolumeID(volumeID)`](#fn-specagentvolumesportworxvolumewithvolumeid)
+      * [`obj spec.agent.volumes.projected`](#obj-specagentvolumesprojected)
+        * [`fn withDefaultMode(defaultMode)`](#fn-specagentvolumesprojectedwithdefaultmode)
+        * [`fn withSources(sources)`](#fn-specagentvolumesprojectedwithsources)
+        * [`fn withSourcesMixin(sources)`](#fn-specagentvolumesprojectedwithsourcesmixin)
+        * [`obj spec.agent.volumes.projected.sources`](#obj-specagentvolumesprojectedsources)
+          * [`obj spec.agent.volumes.projected.sources.configMap`](#obj-specagentvolumesprojectedsourcesconfigmap)
+            * [`fn withItems(items)`](#fn-specagentvolumesprojectedsourcesconfigmapwithitems)
+            * [`fn withItemsMixin(items)`](#fn-specagentvolumesprojectedsourcesconfigmapwithitemsmixin)
+            * [`fn withName(name)`](#fn-specagentvolumesprojectedsourcesconfigmapwithname)
+            * [`fn withOptional(optional)`](#fn-specagentvolumesprojectedsourcesconfigmapwithoptional)
+            * [`obj spec.agent.volumes.projected.sources.configMap.items`](#obj-specagentvolumesprojectedsourcesconfigmapitems)
+              * [`fn withKey(key)`](#fn-specagentvolumesprojectedsourcesconfigmapitemswithkey)
+              * [`fn withMode(mode)`](#fn-specagentvolumesprojectedsourcesconfigmapitemswithmode)
+              * [`fn withPath(path)`](#fn-specagentvolumesprojectedsourcesconfigmapitemswithpath)
+          * [`obj spec.agent.volumes.projected.sources.downwardAPI`](#obj-specagentvolumesprojectedsourcesdownwardapi)
+            * [`fn withItems(items)`](#fn-specagentvolumesprojectedsourcesdownwardapiwithitems)
+            * [`fn withItemsMixin(items)`](#fn-specagentvolumesprojectedsourcesdownwardapiwithitemsmixin)
+            * [`obj spec.agent.volumes.projected.sources.downwardAPI.items`](#obj-specagentvolumesprojectedsourcesdownwardapiitems)
+              * [`fn withMode(mode)`](#fn-specagentvolumesprojectedsourcesdownwardapiitemswithmode)
+              * [`fn withPath(path)`](#fn-specagentvolumesprojectedsourcesdownwardapiitemswithpath)
+              * [`obj spec.agent.volumes.projected.sources.downwardAPI.items.fieldRef`](#obj-specagentvolumesprojectedsourcesdownwardapiitemsfieldref)
+                * [`fn withApiVersion(apiVersion)`](#fn-specagentvolumesprojectedsourcesdownwardapiitemsfieldrefwithapiversion)
+                * [`fn withFieldPath(fieldPath)`](#fn-specagentvolumesprojectedsourcesdownwardapiitemsfieldrefwithfieldpath)
+              * [`obj spec.agent.volumes.projected.sources.downwardAPI.items.resourceFieldRef`](#obj-specagentvolumesprojectedsourcesdownwardapiitemsresourcefieldref)
+                * [`fn withContainerName(containerName)`](#fn-specagentvolumesprojectedsourcesdownwardapiitemsresourcefieldrefwithcontainername)
+                * [`fn withDivisor(divisor)`](#fn-specagentvolumesprojectedsourcesdownwardapiitemsresourcefieldrefwithdivisor)
+                * [`fn withResource(resource)`](#fn-specagentvolumesprojectedsourcesdownwardapiitemsresourcefieldrefwithresource)
+          * [`obj spec.agent.volumes.projected.sources.secret`](#obj-specagentvolumesprojectedsourcessecret)
+            * [`fn withItems(items)`](#fn-specagentvolumesprojectedsourcessecretwithitems)
+            * [`fn withItemsMixin(items)`](#fn-specagentvolumesprojectedsourcessecretwithitemsmixin)
+            * [`fn withName(name)`](#fn-specagentvolumesprojectedsourcessecretwithname)
+            * [`fn withOptional(optional)`](#fn-specagentvolumesprojectedsourcessecretwithoptional)
+            * [`obj spec.agent.volumes.projected.sources.secret.items`](#obj-specagentvolumesprojectedsourcessecretitems)
+              * [`fn withKey(key)`](#fn-specagentvolumesprojectedsourcessecretitemswithkey)
+              * [`fn withMode(mode)`](#fn-specagentvolumesprojectedsourcessecretitemswithmode)
+              * [`fn withPath(path)`](#fn-specagentvolumesprojectedsourcessecretitemswithpath)
+          * [`obj spec.agent.volumes.projected.sources.serviceAccountToken`](#obj-specagentvolumesprojectedsourcesserviceaccounttoken)
+            * [`fn withAudience(audience)`](#fn-specagentvolumesprojectedsourcesserviceaccounttokenwithaudience)
+            * [`fn withExpirationSeconds(expirationSeconds)`](#fn-specagentvolumesprojectedsourcesserviceaccounttokenwithexpirationseconds)
+            * [`fn withPath(path)`](#fn-specagentvolumesprojectedsourcesserviceaccounttokenwithpath)
+      * [`obj spec.agent.volumes.quobyte`](#obj-specagentvolumesquobyte)
+        * [`fn withGroup(group)`](#fn-specagentvolumesquobytewithgroup)
+        * [`fn withReadOnly(readOnly)`](#fn-specagentvolumesquobytewithreadonly)
+        * [`fn withRegistry(registry)`](#fn-specagentvolumesquobytewithregistry)
+        * [`fn withTenant(tenant)`](#fn-specagentvolumesquobytewithtenant)
+        * [`fn withUser(user)`](#fn-specagentvolumesquobytewithuser)
+        * [`fn withVolume(volume)`](#fn-specagentvolumesquobytewithvolume)
+      * [`obj spec.agent.volumes.rbd`](#obj-specagentvolumesrbd)
+        * [`fn withFsType(fsType)`](#fn-specagentvolumesrbdwithfstype)
+        * [`fn withImage(image)`](#fn-specagentvolumesrbdwithimage)
+        * [`fn withKeyring(keyring)`](#fn-specagentvolumesrbdwithkeyring)
+        * [`fn withMonitors(monitors)`](#fn-specagentvolumesrbdwithmonitors)
+        * [`fn withMonitorsMixin(monitors)`](#fn-specagentvolumesrbdwithmonitorsmixin)
+        * [`fn withPool(pool)`](#fn-specagentvolumesrbdwithpool)
+        * [`fn withReadOnly(readOnly)`](#fn-specagentvolumesrbdwithreadonly)
+        * [`fn withUser(user)`](#fn-specagentvolumesrbdwithuser)
+        * [`obj spec.agent.volumes.rbd.secretRef`](#obj-specagentvolumesrbdsecretref)
+          * [`fn withName(name)`](#fn-specagentvolumesrbdsecretrefwithname)
+      * [`obj spec.agent.volumes.scaleIO`](#obj-specagentvolumesscaleio)
+        * [`fn withFsType(fsType)`](#fn-specagentvolumesscaleiowithfstype)
+        * [`fn withGateway(gateway)`](#fn-specagentvolumesscaleiowithgateway)
+        * [`fn withProtectionDomain(protectionDomain)`](#fn-specagentvolumesscaleiowithprotectiondomain)
+        * [`fn withReadOnly(readOnly)`](#fn-specagentvolumesscaleiowithreadonly)
+        * [`fn withSslEnabled(sslEnabled)`](#fn-specagentvolumesscaleiowithsslenabled)
+        * [`fn withStorageMode(storageMode)`](#fn-specagentvolumesscaleiowithstoragemode)
+        * [`fn withStoragePool(storagePool)`](#fn-specagentvolumesscaleiowithstoragepool)
+        * [`fn withSystem(system)`](#fn-specagentvolumesscaleiowithsystem)
+        * [`fn withVolumeName(volumeName)`](#fn-specagentvolumesscaleiowithvolumename)
+        * [`obj spec.agent.volumes.scaleIO.secretRef`](#obj-specagentvolumesscaleiosecretref)
+          * [`fn withName(name)`](#fn-specagentvolumesscaleiosecretrefwithname)
+      * [`obj spec.agent.volumes.secret`](#obj-specagentvolumessecret)
+        * [`fn withDefaultMode(defaultMode)`](#fn-specagentvolumessecretwithdefaultmode)
+        * [`fn withItems(items)`](#fn-specagentvolumessecretwithitems)
+        * [`fn withItemsMixin(items)`](#fn-specagentvolumessecretwithitemsmixin)
+        * [`fn withOptional(optional)`](#fn-specagentvolumessecretwithoptional)
+        * [`fn withSecretName(secretName)`](#fn-specagentvolumessecretwithsecretname)
+        * [`obj spec.agent.volumes.secret.items`](#obj-specagentvolumessecretitems)
+          * [`fn withKey(key)`](#fn-specagentvolumessecretitemswithkey)
+          * [`fn withMode(mode)`](#fn-specagentvolumessecretitemswithmode)
+          * [`fn withPath(path)`](#fn-specagentvolumessecretitemswithpath)
+      * [`obj spec.agent.volumes.storageos`](#obj-specagentvolumesstorageos)
+        * [`fn withFsType(fsType)`](#fn-specagentvolumesstorageoswithfstype)
+        * [`fn withReadOnly(readOnly)`](#fn-specagentvolumesstorageoswithreadonly)
+        * [`fn withVolumeName(volumeName)`](#fn-specagentvolumesstorageoswithvolumename)
+        * [`fn withVolumeNamespace(volumeNamespace)`](#fn-specagentvolumesstorageoswithvolumenamespace)
+        * [`obj spec.agent.volumes.storageos.secretRef`](#obj-specagentvolumesstorageossecretref)
+          * [`fn withName(name)`](#fn-specagentvolumesstorageossecretrefwithname)
+      * [`obj spec.agent.volumes.vsphereVolume`](#obj-specagentvolumesvspherevolume)
+        * [`fn withFsType(fsType)`](#fn-specagentvolumesvspherevolumewithfstype)
+        * [`fn withStoragePolicyID(storagePolicyID)`](#fn-specagentvolumesvspherevolumewithstoragepolicyid)
+        * [`fn withStoragePolicyName(storagePolicyName)`](#fn-specagentvolumesvspherevolumewithstoragepolicyname)
+        * [`fn withVolumePath(volumePath)`](#fn-specagentvolumesvspherevolumewithvolumepath)
   * [`obj spec.allInOne`](#obj-specallinone)
     * [`fn withAnnotations(annotations)`](#fn-specallinonewithannotations)
     * [`fn withAnnotationsMixin(annotations)`](#fn-specallinonewithannotationsmixin)
@@ -175,19 +628,111 @@ permalink: /1.25/jaegertracing/v1/jaeger/
       * [`obj spec.allInOne.affinity.nodeAffinity`](#obj-specallinoneaffinitynodeaffinity)
         * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specallinoneaffinitynodeaffinitywithpreferredduringschedulingignoredduringexecution)
         * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specallinoneaffinitynodeaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
+        * [`obj spec.allInOne.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-specallinoneaffinitynodeaffinitypreferredduringschedulingignoredduringexecution)
+          * [`fn withWeight(weight)`](#fn-specallinoneaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+          * [`obj spec.allInOne.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference`](#obj-specallinoneaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreference)
+            * [`fn withMatchExpressions(matchExpressions)`](#fn-specallinoneaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchexpressions)
+            * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specallinoneaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchexpressionsmixin)
+            * [`fn withMatchFields(matchFields)`](#fn-specallinoneaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchfields)
+            * [`fn withMatchFieldsMixin(matchFields)`](#fn-specallinoneaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchfieldsmixin)
+            * [`obj spec.allInOne.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions`](#obj-specallinoneaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressions)
+              * [`fn withKey(key)`](#fn-specallinoneaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithkey)
+              * [`fn withOperator(operator)`](#fn-specallinoneaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithoperator)
+              * [`fn withValues(values)`](#fn-specallinoneaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithvalues)
+              * [`fn withValuesMixin(values)`](#fn-specallinoneaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithvaluesmixin)
+            * [`obj spec.allInOne.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields`](#obj-specallinoneaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfields)
+              * [`fn withKey(key)`](#fn-specallinoneaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithkey)
+              * [`fn withOperator(operator)`](#fn-specallinoneaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithoperator)
+              * [`fn withValues(values)`](#fn-specallinoneaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithvalues)
+              * [`fn withValuesMixin(values)`](#fn-specallinoneaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithvaluesmixin)
         * [`obj spec.allInOne.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-specallinoneaffinitynodeaffinityrequiredduringschedulingignoredduringexecution)
           * [`fn withNodeSelectorTerms(nodeSelectorTerms)`](#fn-specallinoneaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionwithnodeselectorterms)
           * [`fn withNodeSelectorTermsMixin(nodeSelectorTerms)`](#fn-specallinoneaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionwithnodeselectortermsmixin)
+          * [`obj spec.allInOne.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms`](#obj-specallinoneaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectorterms)
+            * [`fn withMatchExpressions(matchExpressions)`](#fn-specallinoneaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchexpressions)
+            * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specallinoneaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchexpressionsmixin)
+            * [`fn withMatchFields(matchFields)`](#fn-specallinoneaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchfields)
+            * [`fn withMatchFieldsMixin(matchFields)`](#fn-specallinoneaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchfieldsmixin)
+            * [`obj spec.allInOne.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions`](#obj-specallinoneaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressions)
+              * [`fn withKey(key)`](#fn-specallinoneaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithkey)
+              * [`fn withOperator(operator)`](#fn-specallinoneaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithoperator)
+              * [`fn withValues(values)`](#fn-specallinoneaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithvalues)
+              * [`fn withValuesMixin(values)`](#fn-specallinoneaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithvaluesmixin)
+            * [`obj spec.allInOne.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields`](#obj-specallinoneaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfields)
+              * [`fn withKey(key)`](#fn-specallinoneaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithkey)
+              * [`fn withOperator(operator)`](#fn-specallinoneaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithoperator)
+              * [`fn withValues(values)`](#fn-specallinoneaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithvalues)
+              * [`fn withValuesMixin(values)`](#fn-specallinoneaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithvaluesmixin)
       * [`obj spec.allInOne.affinity.podAffinity`](#obj-specallinoneaffinitypodaffinity)
         * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specallinoneaffinitypodaffinitywithpreferredduringschedulingignoredduringexecution)
         * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specallinoneaffinitypodaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
         * [`fn withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specallinoneaffinitypodaffinitywithrequiredduringschedulingignoredduringexecution)
         * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specallinoneaffinitypodaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
+        * [`obj spec.allInOne.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-specallinoneaffinitypodaffinitypreferredduringschedulingignoredduringexecution)
+          * [`fn withWeight(weight)`](#fn-specallinoneaffinitypodaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+          * [`obj spec.allInOne.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm`](#obj-specallinoneaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinityterm)
+            * [`fn withNamespaces(namespaces)`](#fn-specallinoneaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespaces)
+            * [`fn withNamespacesMixin(namespaces)`](#fn-specallinoneaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespacesmixin)
+            * [`fn withTopologyKey(topologyKey)`](#fn-specallinoneaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithtopologykey)
+            * [`obj spec.allInOne.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector`](#obj-specallinoneaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselector)
+              * [`fn withMatchExpressions(matchExpressions)`](#fn-specallinoneaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressions)
+              * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specallinoneaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressionsmixin)
+              * [`fn withMatchLabels(matchLabels)`](#fn-specallinoneaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabels)
+              * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specallinoneaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabelsmixin)
+              * [`obj spec.allInOne.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions`](#obj-specallinoneaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressions)
+                * [`fn withKey(key)`](#fn-specallinoneaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithkey)
+                * [`fn withOperator(operator)`](#fn-specallinoneaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithoperator)
+                * [`fn withValues(values)`](#fn-specallinoneaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvalues)
+                * [`fn withValuesMixin(values)`](#fn-specallinoneaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvaluesmixin)
+        * [`obj spec.allInOne.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-specallinoneaffinitypodaffinityrequiredduringschedulingignoredduringexecution)
+          * [`fn withNamespaces(namespaces)`](#fn-specallinoneaffinitypodaffinityrequiredduringschedulingignoredduringexecutionwithnamespaces)
+          * [`fn withNamespacesMixin(namespaces)`](#fn-specallinoneaffinitypodaffinityrequiredduringschedulingignoredduringexecutionwithnamespacesmixin)
+          * [`fn withTopologyKey(topologyKey)`](#fn-specallinoneaffinitypodaffinityrequiredduringschedulingignoredduringexecutionwithtopologykey)
+          * [`obj spec.allInOne.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector`](#obj-specallinoneaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselector)
+            * [`fn withMatchExpressions(matchExpressions)`](#fn-specallinoneaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressions)
+            * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specallinoneaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressionsmixin)
+            * [`fn withMatchLabels(matchLabels)`](#fn-specallinoneaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabels)
+            * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specallinoneaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabelsmixin)
+            * [`obj spec.allInOne.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions`](#obj-specallinoneaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressions)
+              * [`fn withKey(key)`](#fn-specallinoneaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithkey)
+              * [`fn withOperator(operator)`](#fn-specallinoneaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithoperator)
+              * [`fn withValues(values)`](#fn-specallinoneaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvalues)
+              * [`fn withValuesMixin(values)`](#fn-specallinoneaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvaluesmixin)
       * [`obj spec.allInOne.affinity.podAntiAffinity`](#obj-specallinoneaffinitypodantiaffinity)
         * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specallinoneaffinitypodantiaffinitywithpreferredduringschedulingignoredduringexecution)
         * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specallinoneaffinitypodantiaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
         * [`fn withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specallinoneaffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecution)
         * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specallinoneaffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
+        * [`obj spec.allInOne.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-specallinoneaffinitypodantiaffinitypreferredduringschedulingignoredduringexecution)
+          * [`fn withWeight(weight)`](#fn-specallinoneaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+          * [`obj spec.allInOne.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm`](#obj-specallinoneaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinityterm)
+            * [`fn withNamespaces(namespaces)`](#fn-specallinoneaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespaces)
+            * [`fn withNamespacesMixin(namespaces)`](#fn-specallinoneaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespacesmixin)
+            * [`fn withTopologyKey(topologyKey)`](#fn-specallinoneaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithtopologykey)
+            * [`obj spec.allInOne.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector`](#obj-specallinoneaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselector)
+              * [`fn withMatchExpressions(matchExpressions)`](#fn-specallinoneaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressions)
+              * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specallinoneaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressionsmixin)
+              * [`fn withMatchLabels(matchLabels)`](#fn-specallinoneaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabels)
+              * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specallinoneaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabelsmixin)
+              * [`obj spec.allInOne.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions`](#obj-specallinoneaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressions)
+                * [`fn withKey(key)`](#fn-specallinoneaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithkey)
+                * [`fn withOperator(operator)`](#fn-specallinoneaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithoperator)
+                * [`fn withValues(values)`](#fn-specallinoneaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvalues)
+                * [`fn withValuesMixin(values)`](#fn-specallinoneaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvaluesmixin)
+        * [`obj spec.allInOne.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-specallinoneaffinitypodantiaffinityrequiredduringschedulingignoredduringexecution)
+          * [`fn withNamespaces(namespaces)`](#fn-specallinoneaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionwithnamespaces)
+          * [`fn withNamespacesMixin(namespaces)`](#fn-specallinoneaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionwithnamespacesmixin)
+          * [`fn withTopologyKey(topologyKey)`](#fn-specallinoneaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionwithtopologykey)
+          * [`obj spec.allInOne.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector`](#obj-specallinoneaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselector)
+            * [`fn withMatchExpressions(matchExpressions)`](#fn-specallinoneaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressions)
+            * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specallinoneaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressionsmixin)
+            * [`fn withMatchLabels(matchLabels)`](#fn-specallinoneaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabels)
+            * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specallinoneaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabelsmixin)
+            * [`obj spec.allInOne.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions`](#obj-specallinoneaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressions)
+              * [`fn withKey(key)`](#fn-specallinoneaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithkey)
+              * [`fn withOperator(operator)`](#fn-specallinoneaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithoperator)
+              * [`fn withValues(values)`](#fn-specallinoneaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvalues)
+              * [`fn withValuesMixin(values)`](#fn-specallinoneaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvaluesmixin)
     * [`obj spec.allInOne.resources`](#obj-specallinoneresources)
       * [`fn withLimits(limits)`](#fn-specallinoneresourceswithlimits)
       * [`fn withLimitsMixin(limits)`](#fn-specallinoneresourceswithlimitsmixin)
@@ -211,6 +756,9 @@ permalink: /1.25/jaegertracing/v1/jaeger/
       * [`obj spec.allInOne.securityContext.seccompProfile`](#obj-specallinonesecuritycontextseccompprofile)
         * [`fn withLocalhostProfile(localhostProfile)`](#fn-specallinonesecuritycontextseccompprofilewithlocalhostprofile)
         * [`fn withType(type)`](#fn-specallinonesecuritycontextseccompprofilewithtype)
+      * [`obj spec.allInOne.securityContext.sysctls`](#obj-specallinonesecuritycontextsysctls)
+        * [`fn withName(name)`](#fn-specallinonesecuritycontextsysctlswithname)
+        * [`fn withValue(value)`](#fn-specallinonesecuritycontextsysctlswithvalue)
       * [`obj spec.allInOne.securityContext.windowsOptions`](#obj-specallinonesecuritycontextwindowsoptions)
         * [`fn withGmsaCredentialSpec(gmsaCredentialSpec)`](#fn-specallinonesecuritycontextwindowsoptionswithgmsacredentialspec)
         * [`fn withGmsaCredentialSpecName(gmsaCredentialSpecName)`](#fn-specallinonesecuritycontextwindowsoptionswithgmsacredentialspecname)
@@ -220,6 +768,272 @@ permalink: /1.25/jaegertracing/v1/jaeger/
       * [`obj spec.allInOne.strategy.rollingUpdate`](#obj-specallinonestrategyrollingupdate)
         * [`fn withMaxSurge(maxSurge)`](#fn-specallinonestrategyrollingupdatewithmaxsurge)
         * [`fn withMaxUnavailable(maxUnavailable)`](#fn-specallinonestrategyrollingupdatewithmaxunavailable)
+    * [`obj spec.allInOne.tolerations`](#obj-specallinonetolerations)
+      * [`fn withEffect(effect)`](#fn-specallinonetolerationswitheffect)
+      * [`fn withKey(key)`](#fn-specallinonetolerationswithkey)
+      * [`fn withOperator(operator)`](#fn-specallinonetolerationswithoperator)
+      * [`fn withTolerationSeconds(tolerationSeconds)`](#fn-specallinonetolerationswithtolerationseconds)
+      * [`fn withValue(value)`](#fn-specallinonetolerationswithvalue)
+    * [`obj spec.allInOne.volumeMounts`](#obj-specallinonevolumemounts)
+      * [`fn withMountPath(mountPath)`](#fn-specallinonevolumemountswithmountpath)
+      * [`fn withMountPropagation(mountPropagation)`](#fn-specallinonevolumemountswithmountpropagation)
+      * [`fn withName(name)`](#fn-specallinonevolumemountswithname)
+      * [`fn withReadOnly(readOnly)`](#fn-specallinonevolumemountswithreadonly)
+      * [`fn withSubPath(subPath)`](#fn-specallinonevolumemountswithsubpath)
+      * [`fn withSubPathExpr(subPathExpr)`](#fn-specallinonevolumemountswithsubpathexpr)
+    * [`obj spec.allInOne.volumes`](#obj-specallinonevolumes)
+      * [`fn withName(name)`](#fn-specallinonevolumeswithname)
+      * [`obj spec.allInOne.volumes.awsElasticBlockStore`](#obj-specallinonevolumesawselasticblockstore)
+        * [`fn withFsType(fsType)`](#fn-specallinonevolumesawselasticblockstorewithfstype)
+        * [`fn withPartition(partition)`](#fn-specallinonevolumesawselasticblockstorewithpartition)
+        * [`fn withReadOnly(readOnly)`](#fn-specallinonevolumesawselasticblockstorewithreadonly)
+        * [`fn withVolumeID(volumeID)`](#fn-specallinonevolumesawselasticblockstorewithvolumeid)
+      * [`obj spec.allInOne.volumes.azureDisk`](#obj-specallinonevolumesazuredisk)
+        * [`fn withCachingMode(cachingMode)`](#fn-specallinonevolumesazurediskwithcachingmode)
+        * [`fn withDiskName(diskName)`](#fn-specallinonevolumesazurediskwithdiskname)
+        * [`fn withDiskURI(diskURI)`](#fn-specallinonevolumesazurediskwithdiskuri)
+        * [`fn withFsType(fsType)`](#fn-specallinonevolumesazurediskwithfstype)
+        * [`fn withKind(kind)`](#fn-specallinonevolumesazurediskwithkind)
+        * [`fn withReadOnly(readOnly)`](#fn-specallinonevolumesazurediskwithreadonly)
+      * [`obj spec.allInOne.volumes.azureFile`](#obj-specallinonevolumesazurefile)
+        * [`fn withReadOnly(readOnly)`](#fn-specallinonevolumesazurefilewithreadonly)
+        * [`fn withSecretName(secretName)`](#fn-specallinonevolumesazurefilewithsecretname)
+        * [`fn withShareName(shareName)`](#fn-specallinonevolumesazurefilewithsharename)
+      * [`obj spec.allInOne.volumes.cephfs`](#obj-specallinonevolumescephfs)
+        * [`fn withMonitors(monitors)`](#fn-specallinonevolumescephfswithmonitors)
+        * [`fn withMonitorsMixin(monitors)`](#fn-specallinonevolumescephfswithmonitorsmixin)
+        * [`fn withPath(path)`](#fn-specallinonevolumescephfswithpath)
+        * [`fn withReadOnly(readOnly)`](#fn-specallinonevolumescephfswithreadonly)
+        * [`fn withSecretFile(secretFile)`](#fn-specallinonevolumescephfswithsecretfile)
+        * [`fn withUser(user)`](#fn-specallinonevolumescephfswithuser)
+        * [`obj spec.allInOne.volumes.cephfs.secretRef`](#obj-specallinonevolumescephfssecretref)
+          * [`fn withName(name)`](#fn-specallinonevolumescephfssecretrefwithname)
+      * [`obj spec.allInOne.volumes.cinder`](#obj-specallinonevolumescinder)
+        * [`fn withFsType(fsType)`](#fn-specallinonevolumescinderwithfstype)
+        * [`fn withReadOnly(readOnly)`](#fn-specallinonevolumescinderwithreadonly)
+        * [`fn withVolumeID(volumeID)`](#fn-specallinonevolumescinderwithvolumeid)
+        * [`obj spec.allInOne.volumes.cinder.secretRef`](#obj-specallinonevolumescindersecretref)
+          * [`fn withName(name)`](#fn-specallinonevolumescindersecretrefwithname)
+      * [`obj spec.allInOne.volumes.configMap`](#obj-specallinonevolumesconfigmap)
+        * [`fn withDefaultMode(defaultMode)`](#fn-specallinonevolumesconfigmapwithdefaultmode)
+        * [`fn withItems(items)`](#fn-specallinonevolumesconfigmapwithitems)
+        * [`fn withItemsMixin(items)`](#fn-specallinonevolumesconfigmapwithitemsmixin)
+        * [`fn withName(name)`](#fn-specallinonevolumesconfigmapwithname)
+        * [`fn withOptional(optional)`](#fn-specallinonevolumesconfigmapwithoptional)
+        * [`obj spec.allInOne.volumes.configMap.items`](#obj-specallinonevolumesconfigmapitems)
+          * [`fn withKey(key)`](#fn-specallinonevolumesconfigmapitemswithkey)
+          * [`fn withMode(mode)`](#fn-specallinonevolumesconfigmapitemswithmode)
+          * [`fn withPath(path)`](#fn-specallinonevolumesconfigmapitemswithpath)
+      * [`obj spec.allInOne.volumes.csi`](#obj-specallinonevolumescsi)
+        * [`fn withDriver(driver)`](#fn-specallinonevolumescsiwithdriver)
+        * [`fn withFsType(fsType)`](#fn-specallinonevolumescsiwithfstype)
+        * [`fn withReadOnly(readOnly)`](#fn-specallinonevolumescsiwithreadonly)
+        * [`fn withVolumeAttributes(volumeAttributes)`](#fn-specallinonevolumescsiwithvolumeattributes)
+        * [`fn withVolumeAttributesMixin(volumeAttributes)`](#fn-specallinonevolumescsiwithvolumeattributesmixin)
+        * [`obj spec.allInOne.volumes.csi.nodePublishSecretRef`](#obj-specallinonevolumescsinodepublishsecretref)
+          * [`fn withName(name)`](#fn-specallinonevolumescsinodepublishsecretrefwithname)
+      * [`obj spec.allInOne.volumes.downwardAPI`](#obj-specallinonevolumesdownwardapi)
+        * [`fn withDefaultMode(defaultMode)`](#fn-specallinonevolumesdownwardapiwithdefaultmode)
+        * [`fn withItems(items)`](#fn-specallinonevolumesdownwardapiwithitems)
+        * [`fn withItemsMixin(items)`](#fn-specallinonevolumesdownwardapiwithitemsmixin)
+        * [`obj spec.allInOne.volumes.downwardAPI.items`](#obj-specallinonevolumesdownwardapiitems)
+          * [`fn withMode(mode)`](#fn-specallinonevolumesdownwardapiitemswithmode)
+          * [`fn withPath(path)`](#fn-specallinonevolumesdownwardapiitemswithpath)
+          * [`obj spec.allInOne.volumes.downwardAPI.items.fieldRef`](#obj-specallinonevolumesdownwardapiitemsfieldref)
+            * [`fn withApiVersion(apiVersion)`](#fn-specallinonevolumesdownwardapiitemsfieldrefwithapiversion)
+            * [`fn withFieldPath(fieldPath)`](#fn-specallinonevolumesdownwardapiitemsfieldrefwithfieldpath)
+          * [`obj spec.allInOne.volumes.downwardAPI.items.resourceFieldRef`](#obj-specallinonevolumesdownwardapiitemsresourcefieldref)
+            * [`fn withContainerName(containerName)`](#fn-specallinonevolumesdownwardapiitemsresourcefieldrefwithcontainername)
+            * [`fn withDivisor(divisor)`](#fn-specallinonevolumesdownwardapiitemsresourcefieldrefwithdivisor)
+            * [`fn withResource(resource)`](#fn-specallinonevolumesdownwardapiitemsresourcefieldrefwithresource)
+      * [`obj spec.allInOne.volumes.emptyDir`](#obj-specallinonevolumesemptydir)
+        * [`fn withMedium(medium)`](#fn-specallinonevolumesemptydirwithmedium)
+        * [`fn withSizeLimit(sizeLimit)`](#fn-specallinonevolumesemptydirwithsizelimit)
+      * [`obj spec.allInOne.volumes.ephemeral`](#obj-specallinonevolumesephemeral)
+        * [`fn withReadOnly(readOnly)`](#fn-specallinonevolumesephemeralwithreadonly)
+        * [`obj spec.allInOne.volumes.ephemeral.volumeClaimTemplate`](#obj-specallinonevolumesephemeralvolumeclaimtemplate)
+          * [`fn withMetadata(metadata)`](#fn-specallinonevolumesephemeralvolumeclaimtemplatewithmetadata)
+          * [`fn withMetadataMixin(metadata)`](#fn-specallinonevolumesephemeralvolumeclaimtemplatewithmetadatamixin)
+          * [`obj spec.allInOne.volumes.ephemeral.volumeClaimTemplate.spec`](#obj-specallinonevolumesephemeralvolumeclaimtemplatespec)
+            * [`fn withAccessModes(accessModes)`](#fn-specallinonevolumesephemeralvolumeclaimtemplatespecwithaccessmodes)
+            * [`fn withAccessModesMixin(accessModes)`](#fn-specallinonevolumesephemeralvolumeclaimtemplatespecwithaccessmodesmixin)
+            * [`fn withStorageClassName(storageClassName)`](#fn-specallinonevolumesephemeralvolumeclaimtemplatespecwithstorageclassname)
+            * [`fn withVolumeMode(volumeMode)`](#fn-specallinonevolumesephemeralvolumeclaimtemplatespecwithvolumemode)
+            * [`fn withVolumeName(volumeName)`](#fn-specallinonevolumesephemeralvolumeclaimtemplatespecwithvolumename)
+            * [`obj spec.allInOne.volumes.ephemeral.volumeClaimTemplate.spec.dataSource`](#obj-specallinonevolumesephemeralvolumeclaimtemplatespecdatasource)
+              * [`fn withApiGroup(apiGroup)`](#fn-specallinonevolumesephemeralvolumeclaimtemplatespecdatasourcewithapigroup)
+              * [`fn withKind(kind)`](#fn-specallinonevolumesephemeralvolumeclaimtemplatespecdatasourcewithkind)
+              * [`fn withName(name)`](#fn-specallinonevolumesephemeralvolumeclaimtemplatespecdatasourcewithname)
+            * [`obj spec.allInOne.volumes.ephemeral.volumeClaimTemplate.spec.resources`](#obj-specallinonevolumesephemeralvolumeclaimtemplatespecresources)
+              * [`fn withLimits(limits)`](#fn-specallinonevolumesephemeralvolumeclaimtemplatespecresourceswithlimits)
+              * [`fn withLimitsMixin(limits)`](#fn-specallinonevolumesephemeralvolumeclaimtemplatespecresourceswithlimitsmixin)
+              * [`fn withRequests(requests)`](#fn-specallinonevolumesephemeralvolumeclaimtemplatespecresourceswithrequests)
+              * [`fn withRequestsMixin(requests)`](#fn-specallinonevolumesephemeralvolumeclaimtemplatespecresourceswithrequestsmixin)
+            * [`obj spec.allInOne.volumes.ephemeral.volumeClaimTemplate.spec.selector`](#obj-specallinonevolumesephemeralvolumeclaimtemplatespecselector)
+              * [`fn withMatchExpressions(matchExpressions)`](#fn-specallinonevolumesephemeralvolumeclaimtemplatespecselectorwithmatchexpressions)
+              * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specallinonevolumesephemeralvolumeclaimtemplatespecselectorwithmatchexpressionsmixin)
+              * [`fn withMatchLabels(matchLabels)`](#fn-specallinonevolumesephemeralvolumeclaimtemplatespecselectorwithmatchlabels)
+              * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specallinonevolumesephemeralvolumeclaimtemplatespecselectorwithmatchlabelsmixin)
+              * [`obj spec.allInOne.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions`](#obj-specallinonevolumesephemeralvolumeclaimtemplatespecselectormatchexpressions)
+                * [`fn withKey(key)`](#fn-specallinonevolumesephemeralvolumeclaimtemplatespecselectormatchexpressionswithkey)
+                * [`fn withOperator(operator)`](#fn-specallinonevolumesephemeralvolumeclaimtemplatespecselectormatchexpressionswithoperator)
+                * [`fn withValues(values)`](#fn-specallinonevolumesephemeralvolumeclaimtemplatespecselectormatchexpressionswithvalues)
+                * [`fn withValuesMixin(values)`](#fn-specallinonevolumesephemeralvolumeclaimtemplatespecselectormatchexpressionswithvaluesmixin)
+      * [`obj spec.allInOne.volumes.fc`](#obj-specallinonevolumesfc)
+        * [`fn withFsType(fsType)`](#fn-specallinonevolumesfcwithfstype)
+        * [`fn withLun(lun)`](#fn-specallinonevolumesfcwithlun)
+        * [`fn withReadOnly(readOnly)`](#fn-specallinonevolumesfcwithreadonly)
+        * [`fn withTargetWWNs(targetWWNs)`](#fn-specallinonevolumesfcwithtargetwwns)
+        * [`fn withTargetWWNsMixin(targetWWNs)`](#fn-specallinonevolumesfcwithtargetwwnsmixin)
+        * [`fn withWwids(wwids)`](#fn-specallinonevolumesfcwithwwids)
+        * [`fn withWwidsMixin(wwids)`](#fn-specallinonevolumesfcwithwwidsmixin)
+      * [`obj spec.allInOne.volumes.flexVolume`](#obj-specallinonevolumesflexvolume)
+        * [`fn withDriver(driver)`](#fn-specallinonevolumesflexvolumewithdriver)
+        * [`fn withFsType(fsType)`](#fn-specallinonevolumesflexvolumewithfstype)
+        * [`fn withOptions(options)`](#fn-specallinonevolumesflexvolumewithoptions)
+        * [`fn withOptionsMixin(options)`](#fn-specallinonevolumesflexvolumewithoptionsmixin)
+        * [`fn withReadOnly(readOnly)`](#fn-specallinonevolumesflexvolumewithreadonly)
+        * [`obj spec.allInOne.volumes.flexVolume.secretRef`](#obj-specallinonevolumesflexvolumesecretref)
+          * [`fn withName(name)`](#fn-specallinonevolumesflexvolumesecretrefwithname)
+      * [`obj spec.allInOne.volumes.flocker`](#obj-specallinonevolumesflocker)
+        * [`fn withDatasetName(datasetName)`](#fn-specallinonevolumesflockerwithdatasetname)
+        * [`fn withDatasetUUID(datasetUUID)`](#fn-specallinonevolumesflockerwithdatasetuuid)
+      * [`obj spec.allInOne.volumes.gcePersistentDisk`](#obj-specallinonevolumesgcepersistentdisk)
+        * [`fn withFsType(fsType)`](#fn-specallinonevolumesgcepersistentdiskwithfstype)
+        * [`fn withPartition(partition)`](#fn-specallinonevolumesgcepersistentdiskwithpartition)
+        * [`fn withPdName(pdName)`](#fn-specallinonevolumesgcepersistentdiskwithpdname)
+        * [`fn withReadOnly(readOnly)`](#fn-specallinonevolumesgcepersistentdiskwithreadonly)
+      * [`obj spec.allInOne.volumes.gitRepo`](#obj-specallinonevolumesgitrepo)
+        * [`fn withDirectory(directory)`](#fn-specallinonevolumesgitrepowithdirectory)
+        * [`fn withRepository(repository)`](#fn-specallinonevolumesgitrepowithrepository)
+        * [`fn withRevision(revision)`](#fn-specallinonevolumesgitrepowithrevision)
+      * [`obj spec.allInOne.volumes.glusterfs`](#obj-specallinonevolumesglusterfs)
+        * [`fn withEndpoints(endpoints)`](#fn-specallinonevolumesglusterfswithendpoints)
+        * [`fn withPath(path)`](#fn-specallinonevolumesglusterfswithpath)
+        * [`fn withReadOnly(readOnly)`](#fn-specallinonevolumesglusterfswithreadonly)
+      * [`obj spec.allInOne.volumes.hostPath`](#obj-specallinonevolumeshostpath)
+        * [`fn withPath(path)`](#fn-specallinonevolumeshostpathwithpath)
+        * [`fn withType(type)`](#fn-specallinonevolumeshostpathwithtype)
+      * [`obj spec.allInOne.volumes.iscsi`](#obj-specallinonevolumesiscsi)
+        * [`fn withChapAuthDiscovery(chapAuthDiscovery)`](#fn-specallinonevolumesiscsiwithchapauthdiscovery)
+        * [`fn withChapAuthSession(chapAuthSession)`](#fn-specallinonevolumesiscsiwithchapauthsession)
+        * [`fn withFsType(fsType)`](#fn-specallinonevolumesiscsiwithfstype)
+        * [`fn withInitiatorName(initiatorName)`](#fn-specallinonevolumesiscsiwithinitiatorname)
+        * [`fn withIqn(iqn)`](#fn-specallinonevolumesiscsiwithiqn)
+        * [`fn withIscsiInterface(iscsiInterface)`](#fn-specallinonevolumesiscsiwithiscsiinterface)
+        * [`fn withLun(lun)`](#fn-specallinonevolumesiscsiwithlun)
+        * [`fn withPortals(portals)`](#fn-specallinonevolumesiscsiwithportals)
+        * [`fn withPortalsMixin(portals)`](#fn-specallinonevolumesiscsiwithportalsmixin)
+        * [`fn withReadOnly(readOnly)`](#fn-specallinonevolumesiscsiwithreadonly)
+        * [`fn withTargetPortal(targetPortal)`](#fn-specallinonevolumesiscsiwithtargetportal)
+        * [`obj spec.allInOne.volumes.iscsi.secretRef`](#obj-specallinonevolumesiscsisecretref)
+          * [`fn withName(name)`](#fn-specallinonevolumesiscsisecretrefwithname)
+      * [`obj spec.allInOne.volumes.nfs`](#obj-specallinonevolumesnfs)
+        * [`fn withPath(path)`](#fn-specallinonevolumesnfswithpath)
+        * [`fn withReadOnly(readOnly)`](#fn-specallinonevolumesnfswithreadonly)
+        * [`fn withServer(server)`](#fn-specallinonevolumesnfswithserver)
+      * [`obj spec.allInOne.volumes.persistentVolumeClaim`](#obj-specallinonevolumespersistentvolumeclaim)
+        * [`fn withClaimName(claimName)`](#fn-specallinonevolumespersistentvolumeclaimwithclaimname)
+        * [`fn withReadOnly(readOnly)`](#fn-specallinonevolumespersistentvolumeclaimwithreadonly)
+      * [`obj spec.allInOne.volumes.photonPersistentDisk`](#obj-specallinonevolumesphotonpersistentdisk)
+        * [`fn withFsType(fsType)`](#fn-specallinonevolumesphotonpersistentdiskwithfstype)
+        * [`fn withPdID(pdID)`](#fn-specallinonevolumesphotonpersistentdiskwithpdid)
+      * [`obj spec.allInOne.volumes.portworxVolume`](#obj-specallinonevolumesportworxvolume)
+        * [`fn withFsType(fsType)`](#fn-specallinonevolumesportworxvolumewithfstype)
+        * [`fn withReadOnly(readOnly)`](#fn-specallinonevolumesportworxvolumewithreadonly)
+        * [`fn withVolumeID(volumeID)`](#fn-specallinonevolumesportworxvolumewithvolumeid)
+      * [`obj spec.allInOne.volumes.projected`](#obj-specallinonevolumesprojected)
+        * [`fn withDefaultMode(defaultMode)`](#fn-specallinonevolumesprojectedwithdefaultmode)
+        * [`fn withSources(sources)`](#fn-specallinonevolumesprojectedwithsources)
+        * [`fn withSourcesMixin(sources)`](#fn-specallinonevolumesprojectedwithsourcesmixin)
+        * [`obj spec.allInOne.volumes.projected.sources`](#obj-specallinonevolumesprojectedsources)
+          * [`obj spec.allInOne.volumes.projected.sources.configMap`](#obj-specallinonevolumesprojectedsourcesconfigmap)
+            * [`fn withItems(items)`](#fn-specallinonevolumesprojectedsourcesconfigmapwithitems)
+            * [`fn withItemsMixin(items)`](#fn-specallinonevolumesprojectedsourcesconfigmapwithitemsmixin)
+            * [`fn withName(name)`](#fn-specallinonevolumesprojectedsourcesconfigmapwithname)
+            * [`fn withOptional(optional)`](#fn-specallinonevolumesprojectedsourcesconfigmapwithoptional)
+            * [`obj spec.allInOne.volumes.projected.sources.configMap.items`](#obj-specallinonevolumesprojectedsourcesconfigmapitems)
+              * [`fn withKey(key)`](#fn-specallinonevolumesprojectedsourcesconfigmapitemswithkey)
+              * [`fn withMode(mode)`](#fn-specallinonevolumesprojectedsourcesconfigmapitemswithmode)
+              * [`fn withPath(path)`](#fn-specallinonevolumesprojectedsourcesconfigmapitemswithpath)
+          * [`obj spec.allInOne.volumes.projected.sources.downwardAPI`](#obj-specallinonevolumesprojectedsourcesdownwardapi)
+            * [`fn withItems(items)`](#fn-specallinonevolumesprojectedsourcesdownwardapiwithitems)
+            * [`fn withItemsMixin(items)`](#fn-specallinonevolumesprojectedsourcesdownwardapiwithitemsmixin)
+            * [`obj spec.allInOne.volumes.projected.sources.downwardAPI.items`](#obj-specallinonevolumesprojectedsourcesdownwardapiitems)
+              * [`fn withMode(mode)`](#fn-specallinonevolumesprojectedsourcesdownwardapiitemswithmode)
+              * [`fn withPath(path)`](#fn-specallinonevolumesprojectedsourcesdownwardapiitemswithpath)
+              * [`obj spec.allInOne.volumes.projected.sources.downwardAPI.items.fieldRef`](#obj-specallinonevolumesprojectedsourcesdownwardapiitemsfieldref)
+                * [`fn withApiVersion(apiVersion)`](#fn-specallinonevolumesprojectedsourcesdownwardapiitemsfieldrefwithapiversion)
+                * [`fn withFieldPath(fieldPath)`](#fn-specallinonevolumesprojectedsourcesdownwardapiitemsfieldrefwithfieldpath)
+              * [`obj spec.allInOne.volumes.projected.sources.downwardAPI.items.resourceFieldRef`](#obj-specallinonevolumesprojectedsourcesdownwardapiitemsresourcefieldref)
+                * [`fn withContainerName(containerName)`](#fn-specallinonevolumesprojectedsourcesdownwardapiitemsresourcefieldrefwithcontainername)
+                * [`fn withDivisor(divisor)`](#fn-specallinonevolumesprojectedsourcesdownwardapiitemsresourcefieldrefwithdivisor)
+                * [`fn withResource(resource)`](#fn-specallinonevolumesprojectedsourcesdownwardapiitemsresourcefieldrefwithresource)
+          * [`obj spec.allInOne.volumes.projected.sources.secret`](#obj-specallinonevolumesprojectedsourcessecret)
+            * [`fn withItems(items)`](#fn-specallinonevolumesprojectedsourcessecretwithitems)
+            * [`fn withItemsMixin(items)`](#fn-specallinonevolumesprojectedsourcessecretwithitemsmixin)
+            * [`fn withName(name)`](#fn-specallinonevolumesprojectedsourcessecretwithname)
+            * [`fn withOptional(optional)`](#fn-specallinonevolumesprojectedsourcessecretwithoptional)
+            * [`obj spec.allInOne.volumes.projected.sources.secret.items`](#obj-specallinonevolumesprojectedsourcessecretitems)
+              * [`fn withKey(key)`](#fn-specallinonevolumesprojectedsourcessecretitemswithkey)
+              * [`fn withMode(mode)`](#fn-specallinonevolumesprojectedsourcessecretitemswithmode)
+              * [`fn withPath(path)`](#fn-specallinonevolumesprojectedsourcessecretitemswithpath)
+          * [`obj spec.allInOne.volumes.projected.sources.serviceAccountToken`](#obj-specallinonevolumesprojectedsourcesserviceaccounttoken)
+            * [`fn withAudience(audience)`](#fn-specallinonevolumesprojectedsourcesserviceaccounttokenwithaudience)
+            * [`fn withExpirationSeconds(expirationSeconds)`](#fn-specallinonevolumesprojectedsourcesserviceaccounttokenwithexpirationseconds)
+            * [`fn withPath(path)`](#fn-specallinonevolumesprojectedsourcesserviceaccounttokenwithpath)
+      * [`obj spec.allInOne.volumes.quobyte`](#obj-specallinonevolumesquobyte)
+        * [`fn withGroup(group)`](#fn-specallinonevolumesquobytewithgroup)
+        * [`fn withReadOnly(readOnly)`](#fn-specallinonevolumesquobytewithreadonly)
+        * [`fn withRegistry(registry)`](#fn-specallinonevolumesquobytewithregistry)
+        * [`fn withTenant(tenant)`](#fn-specallinonevolumesquobytewithtenant)
+        * [`fn withUser(user)`](#fn-specallinonevolumesquobytewithuser)
+        * [`fn withVolume(volume)`](#fn-specallinonevolumesquobytewithvolume)
+      * [`obj spec.allInOne.volumes.rbd`](#obj-specallinonevolumesrbd)
+        * [`fn withFsType(fsType)`](#fn-specallinonevolumesrbdwithfstype)
+        * [`fn withImage(image)`](#fn-specallinonevolumesrbdwithimage)
+        * [`fn withKeyring(keyring)`](#fn-specallinonevolumesrbdwithkeyring)
+        * [`fn withMonitors(monitors)`](#fn-specallinonevolumesrbdwithmonitors)
+        * [`fn withMonitorsMixin(monitors)`](#fn-specallinonevolumesrbdwithmonitorsmixin)
+        * [`fn withPool(pool)`](#fn-specallinonevolumesrbdwithpool)
+        * [`fn withReadOnly(readOnly)`](#fn-specallinonevolumesrbdwithreadonly)
+        * [`fn withUser(user)`](#fn-specallinonevolumesrbdwithuser)
+        * [`obj spec.allInOne.volumes.rbd.secretRef`](#obj-specallinonevolumesrbdsecretref)
+          * [`fn withName(name)`](#fn-specallinonevolumesrbdsecretrefwithname)
+      * [`obj spec.allInOne.volumes.scaleIO`](#obj-specallinonevolumesscaleio)
+        * [`fn withFsType(fsType)`](#fn-specallinonevolumesscaleiowithfstype)
+        * [`fn withGateway(gateway)`](#fn-specallinonevolumesscaleiowithgateway)
+        * [`fn withProtectionDomain(protectionDomain)`](#fn-specallinonevolumesscaleiowithprotectiondomain)
+        * [`fn withReadOnly(readOnly)`](#fn-specallinonevolumesscaleiowithreadonly)
+        * [`fn withSslEnabled(sslEnabled)`](#fn-specallinonevolumesscaleiowithsslenabled)
+        * [`fn withStorageMode(storageMode)`](#fn-specallinonevolumesscaleiowithstoragemode)
+        * [`fn withStoragePool(storagePool)`](#fn-specallinonevolumesscaleiowithstoragepool)
+        * [`fn withSystem(system)`](#fn-specallinonevolumesscaleiowithsystem)
+        * [`fn withVolumeName(volumeName)`](#fn-specallinonevolumesscaleiowithvolumename)
+        * [`obj spec.allInOne.volumes.scaleIO.secretRef`](#obj-specallinonevolumesscaleiosecretref)
+          * [`fn withName(name)`](#fn-specallinonevolumesscaleiosecretrefwithname)
+      * [`obj spec.allInOne.volumes.secret`](#obj-specallinonevolumessecret)
+        * [`fn withDefaultMode(defaultMode)`](#fn-specallinonevolumessecretwithdefaultmode)
+        * [`fn withItems(items)`](#fn-specallinonevolumessecretwithitems)
+        * [`fn withItemsMixin(items)`](#fn-specallinonevolumessecretwithitemsmixin)
+        * [`fn withOptional(optional)`](#fn-specallinonevolumessecretwithoptional)
+        * [`fn withSecretName(secretName)`](#fn-specallinonevolumessecretwithsecretname)
+        * [`obj spec.allInOne.volumes.secret.items`](#obj-specallinonevolumessecretitems)
+          * [`fn withKey(key)`](#fn-specallinonevolumessecretitemswithkey)
+          * [`fn withMode(mode)`](#fn-specallinonevolumessecretitemswithmode)
+          * [`fn withPath(path)`](#fn-specallinonevolumessecretitemswithpath)
+      * [`obj spec.allInOne.volumes.storageos`](#obj-specallinonevolumesstorageos)
+        * [`fn withFsType(fsType)`](#fn-specallinonevolumesstorageoswithfstype)
+        * [`fn withReadOnly(readOnly)`](#fn-specallinonevolumesstorageoswithreadonly)
+        * [`fn withVolumeName(volumeName)`](#fn-specallinonevolumesstorageoswithvolumename)
+        * [`fn withVolumeNamespace(volumeNamespace)`](#fn-specallinonevolumesstorageoswithvolumenamespace)
+        * [`obj spec.allInOne.volumes.storageos.secretRef`](#obj-specallinonevolumesstorageossecretref)
+          * [`fn withName(name)`](#fn-specallinonevolumesstorageossecretrefwithname)
+      * [`obj spec.allInOne.volumes.vsphereVolume`](#obj-specallinonevolumesvspherevolume)
+        * [`fn withFsType(fsType)`](#fn-specallinonevolumesvspherevolumewithfstype)
+        * [`fn withStoragePolicyID(storagePolicyID)`](#fn-specallinonevolumesvspherevolumewithstoragepolicyid)
+        * [`fn withStoragePolicyName(storagePolicyName)`](#fn-specallinonevolumesvspherevolumewithstoragepolicyname)
+        * [`fn withVolumePath(volumePath)`](#fn-specallinonevolumesvspherevolumewithvolumepath)
   * [`obj spec.collector`](#obj-speccollector)
     * [`fn withAnnotations(annotations)`](#fn-speccollectorwithannotations)
     * [`fn withAnnotationsMixin(annotations)`](#fn-speccollectorwithannotationsmixin)
@@ -247,19 +1061,111 @@ permalink: /1.25/jaegertracing/v1/jaeger/
       * [`obj spec.collector.affinity.nodeAffinity`](#obj-speccollectoraffinitynodeaffinity)
         * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-speccollectoraffinitynodeaffinitywithpreferredduringschedulingignoredduringexecution)
         * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-speccollectoraffinitynodeaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
+        * [`obj spec.collector.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-speccollectoraffinitynodeaffinitypreferredduringschedulingignoredduringexecution)
+          * [`fn withWeight(weight)`](#fn-speccollectoraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+          * [`obj spec.collector.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference`](#obj-speccollectoraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreference)
+            * [`fn withMatchExpressions(matchExpressions)`](#fn-speccollectoraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchexpressions)
+            * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-speccollectoraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchexpressionsmixin)
+            * [`fn withMatchFields(matchFields)`](#fn-speccollectoraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchfields)
+            * [`fn withMatchFieldsMixin(matchFields)`](#fn-speccollectoraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchfieldsmixin)
+            * [`obj spec.collector.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions`](#obj-speccollectoraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressions)
+              * [`fn withKey(key)`](#fn-speccollectoraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithkey)
+              * [`fn withOperator(operator)`](#fn-speccollectoraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithoperator)
+              * [`fn withValues(values)`](#fn-speccollectoraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithvalues)
+              * [`fn withValuesMixin(values)`](#fn-speccollectoraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithvaluesmixin)
+            * [`obj spec.collector.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields`](#obj-speccollectoraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfields)
+              * [`fn withKey(key)`](#fn-speccollectoraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithkey)
+              * [`fn withOperator(operator)`](#fn-speccollectoraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithoperator)
+              * [`fn withValues(values)`](#fn-speccollectoraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithvalues)
+              * [`fn withValuesMixin(values)`](#fn-speccollectoraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithvaluesmixin)
         * [`obj spec.collector.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-speccollectoraffinitynodeaffinityrequiredduringschedulingignoredduringexecution)
           * [`fn withNodeSelectorTerms(nodeSelectorTerms)`](#fn-speccollectoraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionwithnodeselectorterms)
           * [`fn withNodeSelectorTermsMixin(nodeSelectorTerms)`](#fn-speccollectoraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionwithnodeselectortermsmixin)
+          * [`obj spec.collector.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms`](#obj-speccollectoraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectorterms)
+            * [`fn withMatchExpressions(matchExpressions)`](#fn-speccollectoraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchexpressions)
+            * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-speccollectoraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchexpressionsmixin)
+            * [`fn withMatchFields(matchFields)`](#fn-speccollectoraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchfields)
+            * [`fn withMatchFieldsMixin(matchFields)`](#fn-speccollectoraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchfieldsmixin)
+            * [`obj spec.collector.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions`](#obj-speccollectoraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressions)
+              * [`fn withKey(key)`](#fn-speccollectoraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithkey)
+              * [`fn withOperator(operator)`](#fn-speccollectoraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithoperator)
+              * [`fn withValues(values)`](#fn-speccollectoraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithvalues)
+              * [`fn withValuesMixin(values)`](#fn-speccollectoraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithvaluesmixin)
+            * [`obj spec.collector.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields`](#obj-speccollectoraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfields)
+              * [`fn withKey(key)`](#fn-speccollectoraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithkey)
+              * [`fn withOperator(operator)`](#fn-speccollectoraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithoperator)
+              * [`fn withValues(values)`](#fn-speccollectoraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithvalues)
+              * [`fn withValuesMixin(values)`](#fn-speccollectoraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithvaluesmixin)
       * [`obj spec.collector.affinity.podAffinity`](#obj-speccollectoraffinitypodaffinity)
         * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-speccollectoraffinitypodaffinitywithpreferredduringschedulingignoredduringexecution)
         * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-speccollectoraffinitypodaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
         * [`fn withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-speccollectoraffinitypodaffinitywithrequiredduringschedulingignoredduringexecution)
         * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-speccollectoraffinitypodaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
+        * [`obj spec.collector.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-speccollectoraffinitypodaffinitypreferredduringschedulingignoredduringexecution)
+          * [`fn withWeight(weight)`](#fn-speccollectoraffinitypodaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+          * [`obj spec.collector.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm`](#obj-speccollectoraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinityterm)
+            * [`fn withNamespaces(namespaces)`](#fn-speccollectoraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespaces)
+            * [`fn withNamespacesMixin(namespaces)`](#fn-speccollectoraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespacesmixin)
+            * [`fn withTopologyKey(topologyKey)`](#fn-speccollectoraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithtopologykey)
+            * [`obj spec.collector.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector`](#obj-speccollectoraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselector)
+              * [`fn withMatchExpressions(matchExpressions)`](#fn-speccollectoraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressions)
+              * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-speccollectoraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressionsmixin)
+              * [`fn withMatchLabels(matchLabels)`](#fn-speccollectoraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabels)
+              * [`fn withMatchLabelsMixin(matchLabels)`](#fn-speccollectoraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabelsmixin)
+              * [`obj spec.collector.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions`](#obj-speccollectoraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressions)
+                * [`fn withKey(key)`](#fn-speccollectoraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithkey)
+                * [`fn withOperator(operator)`](#fn-speccollectoraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithoperator)
+                * [`fn withValues(values)`](#fn-speccollectoraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvalues)
+                * [`fn withValuesMixin(values)`](#fn-speccollectoraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvaluesmixin)
+        * [`obj spec.collector.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-speccollectoraffinitypodaffinityrequiredduringschedulingignoredduringexecution)
+          * [`fn withNamespaces(namespaces)`](#fn-speccollectoraffinitypodaffinityrequiredduringschedulingignoredduringexecutionwithnamespaces)
+          * [`fn withNamespacesMixin(namespaces)`](#fn-speccollectoraffinitypodaffinityrequiredduringschedulingignoredduringexecutionwithnamespacesmixin)
+          * [`fn withTopologyKey(topologyKey)`](#fn-speccollectoraffinitypodaffinityrequiredduringschedulingignoredduringexecutionwithtopologykey)
+          * [`obj spec.collector.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector`](#obj-speccollectoraffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselector)
+            * [`fn withMatchExpressions(matchExpressions)`](#fn-speccollectoraffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressions)
+            * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-speccollectoraffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressionsmixin)
+            * [`fn withMatchLabels(matchLabels)`](#fn-speccollectoraffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabels)
+            * [`fn withMatchLabelsMixin(matchLabels)`](#fn-speccollectoraffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabelsmixin)
+            * [`obj spec.collector.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions`](#obj-speccollectoraffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressions)
+              * [`fn withKey(key)`](#fn-speccollectoraffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithkey)
+              * [`fn withOperator(operator)`](#fn-speccollectoraffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithoperator)
+              * [`fn withValues(values)`](#fn-speccollectoraffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvalues)
+              * [`fn withValuesMixin(values)`](#fn-speccollectoraffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvaluesmixin)
       * [`obj spec.collector.affinity.podAntiAffinity`](#obj-speccollectoraffinitypodantiaffinity)
         * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-speccollectoraffinitypodantiaffinitywithpreferredduringschedulingignoredduringexecution)
         * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-speccollectoraffinitypodantiaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
         * [`fn withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-speccollectoraffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecution)
         * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-speccollectoraffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
+        * [`obj spec.collector.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-speccollectoraffinitypodantiaffinitypreferredduringschedulingignoredduringexecution)
+          * [`fn withWeight(weight)`](#fn-speccollectoraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+          * [`obj spec.collector.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm`](#obj-speccollectoraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinityterm)
+            * [`fn withNamespaces(namespaces)`](#fn-speccollectoraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespaces)
+            * [`fn withNamespacesMixin(namespaces)`](#fn-speccollectoraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespacesmixin)
+            * [`fn withTopologyKey(topologyKey)`](#fn-speccollectoraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithtopologykey)
+            * [`obj spec.collector.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector`](#obj-speccollectoraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselector)
+              * [`fn withMatchExpressions(matchExpressions)`](#fn-speccollectoraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressions)
+              * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-speccollectoraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressionsmixin)
+              * [`fn withMatchLabels(matchLabels)`](#fn-speccollectoraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabels)
+              * [`fn withMatchLabelsMixin(matchLabels)`](#fn-speccollectoraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabelsmixin)
+              * [`obj spec.collector.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions`](#obj-speccollectoraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressions)
+                * [`fn withKey(key)`](#fn-speccollectoraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithkey)
+                * [`fn withOperator(operator)`](#fn-speccollectoraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithoperator)
+                * [`fn withValues(values)`](#fn-speccollectoraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvalues)
+                * [`fn withValuesMixin(values)`](#fn-speccollectoraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvaluesmixin)
+        * [`obj spec.collector.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-speccollectoraffinitypodantiaffinityrequiredduringschedulingignoredduringexecution)
+          * [`fn withNamespaces(namespaces)`](#fn-speccollectoraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionwithnamespaces)
+          * [`fn withNamespacesMixin(namespaces)`](#fn-speccollectoraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionwithnamespacesmixin)
+          * [`fn withTopologyKey(topologyKey)`](#fn-speccollectoraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionwithtopologykey)
+          * [`obj spec.collector.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector`](#obj-speccollectoraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselector)
+            * [`fn withMatchExpressions(matchExpressions)`](#fn-speccollectoraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressions)
+            * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-speccollectoraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressionsmixin)
+            * [`fn withMatchLabels(matchLabels)`](#fn-speccollectoraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabels)
+            * [`fn withMatchLabelsMixin(matchLabels)`](#fn-speccollectoraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabelsmixin)
+            * [`obj spec.collector.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions`](#obj-speccollectoraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressions)
+              * [`fn withKey(key)`](#fn-speccollectoraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithkey)
+              * [`fn withOperator(operator)`](#fn-speccollectoraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithoperator)
+              * [`fn withValues(values)`](#fn-speccollectoraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvalues)
+              * [`fn withValuesMixin(values)`](#fn-speccollectoraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvaluesmixin)
     * [`obj spec.collector.resources`](#obj-speccollectorresources)
       * [`fn withLimits(limits)`](#fn-speccollectorresourceswithlimits)
       * [`fn withLimitsMixin(limits)`](#fn-speccollectorresourceswithlimitsmixin)
@@ -283,6 +1189,9 @@ permalink: /1.25/jaegertracing/v1/jaeger/
       * [`obj spec.collector.securityContext.seccompProfile`](#obj-speccollectorsecuritycontextseccompprofile)
         * [`fn withLocalhostProfile(localhostProfile)`](#fn-speccollectorsecuritycontextseccompprofilewithlocalhostprofile)
         * [`fn withType(type)`](#fn-speccollectorsecuritycontextseccompprofilewithtype)
+      * [`obj spec.collector.securityContext.sysctls`](#obj-speccollectorsecuritycontextsysctls)
+        * [`fn withName(name)`](#fn-speccollectorsecuritycontextsysctlswithname)
+        * [`fn withValue(value)`](#fn-speccollectorsecuritycontextsysctlswithvalue)
       * [`obj spec.collector.securityContext.windowsOptions`](#obj-speccollectorsecuritycontextwindowsoptions)
         * [`fn withGmsaCredentialSpec(gmsaCredentialSpec)`](#fn-speccollectorsecuritycontextwindowsoptionswithgmsacredentialspec)
         * [`fn withGmsaCredentialSpecName(gmsaCredentialSpecName)`](#fn-speccollectorsecuritycontextwindowsoptionswithgmsacredentialspecname)
@@ -292,6 +1201,272 @@ permalink: /1.25/jaegertracing/v1/jaeger/
       * [`obj spec.collector.strategy.rollingUpdate`](#obj-speccollectorstrategyrollingupdate)
         * [`fn withMaxSurge(maxSurge)`](#fn-speccollectorstrategyrollingupdatewithmaxsurge)
         * [`fn withMaxUnavailable(maxUnavailable)`](#fn-speccollectorstrategyrollingupdatewithmaxunavailable)
+    * [`obj spec.collector.tolerations`](#obj-speccollectortolerations)
+      * [`fn withEffect(effect)`](#fn-speccollectortolerationswitheffect)
+      * [`fn withKey(key)`](#fn-speccollectortolerationswithkey)
+      * [`fn withOperator(operator)`](#fn-speccollectortolerationswithoperator)
+      * [`fn withTolerationSeconds(tolerationSeconds)`](#fn-speccollectortolerationswithtolerationseconds)
+      * [`fn withValue(value)`](#fn-speccollectortolerationswithvalue)
+    * [`obj spec.collector.volumeMounts`](#obj-speccollectorvolumemounts)
+      * [`fn withMountPath(mountPath)`](#fn-speccollectorvolumemountswithmountpath)
+      * [`fn withMountPropagation(mountPropagation)`](#fn-speccollectorvolumemountswithmountpropagation)
+      * [`fn withName(name)`](#fn-speccollectorvolumemountswithname)
+      * [`fn withReadOnly(readOnly)`](#fn-speccollectorvolumemountswithreadonly)
+      * [`fn withSubPath(subPath)`](#fn-speccollectorvolumemountswithsubpath)
+      * [`fn withSubPathExpr(subPathExpr)`](#fn-speccollectorvolumemountswithsubpathexpr)
+    * [`obj spec.collector.volumes`](#obj-speccollectorvolumes)
+      * [`fn withName(name)`](#fn-speccollectorvolumeswithname)
+      * [`obj spec.collector.volumes.awsElasticBlockStore`](#obj-speccollectorvolumesawselasticblockstore)
+        * [`fn withFsType(fsType)`](#fn-speccollectorvolumesawselasticblockstorewithfstype)
+        * [`fn withPartition(partition)`](#fn-speccollectorvolumesawselasticblockstorewithpartition)
+        * [`fn withReadOnly(readOnly)`](#fn-speccollectorvolumesawselasticblockstorewithreadonly)
+        * [`fn withVolumeID(volumeID)`](#fn-speccollectorvolumesawselasticblockstorewithvolumeid)
+      * [`obj spec.collector.volumes.azureDisk`](#obj-speccollectorvolumesazuredisk)
+        * [`fn withCachingMode(cachingMode)`](#fn-speccollectorvolumesazurediskwithcachingmode)
+        * [`fn withDiskName(diskName)`](#fn-speccollectorvolumesazurediskwithdiskname)
+        * [`fn withDiskURI(diskURI)`](#fn-speccollectorvolumesazurediskwithdiskuri)
+        * [`fn withFsType(fsType)`](#fn-speccollectorvolumesazurediskwithfstype)
+        * [`fn withKind(kind)`](#fn-speccollectorvolumesazurediskwithkind)
+        * [`fn withReadOnly(readOnly)`](#fn-speccollectorvolumesazurediskwithreadonly)
+      * [`obj spec.collector.volumes.azureFile`](#obj-speccollectorvolumesazurefile)
+        * [`fn withReadOnly(readOnly)`](#fn-speccollectorvolumesazurefilewithreadonly)
+        * [`fn withSecretName(secretName)`](#fn-speccollectorvolumesazurefilewithsecretname)
+        * [`fn withShareName(shareName)`](#fn-speccollectorvolumesazurefilewithsharename)
+      * [`obj spec.collector.volumes.cephfs`](#obj-speccollectorvolumescephfs)
+        * [`fn withMonitors(monitors)`](#fn-speccollectorvolumescephfswithmonitors)
+        * [`fn withMonitorsMixin(monitors)`](#fn-speccollectorvolumescephfswithmonitorsmixin)
+        * [`fn withPath(path)`](#fn-speccollectorvolumescephfswithpath)
+        * [`fn withReadOnly(readOnly)`](#fn-speccollectorvolumescephfswithreadonly)
+        * [`fn withSecretFile(secretFile)`](#fn-speccollectorvolumescephfswithsecretfile)
+        * [`fn withUser(user)`](#fn-speccollectorvolumescephfswithuser)
+        * [`obj spec.collector.volumes.cephfs.secretRef`](#obj-speccollectorvolumescephfssecretref)
+          * [`fn withName(name)`](#fn-speccollectorvolumescephfssecretrefwithname)
+      * [`obj spec.collector.volumes.cinder`](#obj-speccollectorvolumescinder)
+        * [`fn withFsType(fsType)`](#fn-speccollectorvolumescinderwithfstype)
+        * [`fn withReadOnly(readOnly)`](#fn-speccollectorvolumescinderwithreadonly)
+        * [`fn withVolumeID(volumeID)`](#fn-speccollectorvolumescinderwithvolumeid)
+        * [`obj spec.collector.volumes.cinder.secretRef`](#obj-speccollectorvolumescindersecretref)
+          * [`fn withName(name)`](#fn-speccollectorvolumescindersecretrefwithname)
+      * [`obj spec.collector.volumes.configMap`](#obj-speccollectorvolumesconfigmap)
+        * [`fn withDefaultMode(defaultMode)`](#fn-speccollectorvolumesconfigmapwithdefaultmode)
+        * [`fn withItems(items)`](#fn-speccollectorvolumesconfigmapwithitems)
+        * [`fn withItemsMixin(items)`](#fn-speccollectorvolumesconfigmapwithitemsmixin)
+        * [`fn withName(name)`](#fn-speccollectorvolumesconfigmapwithname)
+        * [`fn withOptional(optional)`](#fn-speccollectorvolumesconfigmapwithoptional)
+        * [`obj spec.collector.volumes.configMap.items`](#obj-speccollectorvolumesconfigmapitems)
+          * [`fn withKey(key)`](#fn-speccollectorvolumesconfigmapitemswithkey)
+          * [`fn withMode(mode)`](#fn-speccollectorvolumesconfigmapitemswithmode)
+          * [`fn withPath(path)`](#fn-speccollectorvolumesconfigmapitemswithpath)
+      * [`obj spec.collector.volumes.csi`](#obj-speccollectorvolumescsi)
+        * [`fn withDriver(driver)`](#fn-speccollectorvolumescsiwithdriver)
+        * [`fn withFsType(fsType)`](#fn-speccollectorvolumescsiwithfstype)
+        * [`fn withReadOnly(readOnly)`](#fn-speccollectorvolumescsiwithreadonly)
+        * [`fn withVolumeAttributes(volumeAttributes)`](#fn-speccollectorvolumescsiwithvolumeattributes)
+        * [`fn withVolumeAttributesMixin(volumeAttributes)`](#fn-speccollectorvolumescsiwithvolumeattributesmixin)
+        * [`obj spec.collector.volumes.csi.nodePublishSecretRef`](#obj-speccollectorvolumescsinodepublishsecretref)
+          * [`fn withName(name)`](#fn-speccollectorvolumescsinodepublishsecretrefwithname)
+      * [`obj spec.collector.volumes.downwardAPI`](#obj-speccollectorvolumesdownwardapi)
+        * [`fn withDefaultMode(defaultMode)`](#fn-speccollectorvolumesdownwardapiwithdefaultmode)
+        * [`fn withItems(items)`](#fn-speccollectorvolumesdownwardapiwithitems)
+        * [`fn withItemsMixin(items)`](#fn-speccollectorvolumesdownwardapiwithitemsmixin)
+        * [`obj spec.collector.volumes.downwardAPI.items`](#obj-speccollectorvolumesdownwardapiitems)
+          * [`fn withMode(mode)`](#fn-speccollectorvolumesdownwardapiitemswithmode)
+          * [`fn withPath(path)`](#fn-speccollectorvolumesdownwardapiitemswithpath)
+          * [`obj spec.collector.volumes.downwardAPI.items.fieldRef`](#obj-speccollectorvolumesdownwardapiitemsfieldref)
+            * [`fn withApiVersion(apiVersion)`](#fn-speccollectorvolumesdownwardapiitemsfieldrefwithapiversion)
+            * [`fn withFieldPath(fieldPath)`](#fn-speccollectorvolumesdownwardapiitemsfieldrefwithfieldpath)
+          * [`obj spec.collector.volumes.downwardAPI.items.resourceFieldRef`](#obj-speccollectorvolumesdownwardapiitemsresourcefieldref)
+            * [`fn withContainerName(containerName)`](#fn-speccollectorvolumesdownwardapiitemsresourcefieldrefwithcontainername)
+            * [`fn withDivisor(divisor)`](#fn-speccollectorvolumesdownwardapiitemsresourcefieldrefwithdivisor)
+            * [`fn withResource(resource)`](#fn-speccollectorvolumesdownwardapiitemsresourcefieldrefwithresource)
+      * [`obj spec.collector.volumes.emptyDir`](#obj-speccollectorvolumesemptydir)
+        * [`fn withMedium(medium)`](#fn-speccollectorvolumesemptydirwithmedium)
+        * [`fn withSizeLimit(sizeLimit)`](#fn-speccollectorvolumesemptydirwithsizelimit)
+      * [`obj spec.collector.volumes.ephemeral`](#obj-speccollectorvolumesephemeral)
+        * [`fn withReadOnly(readOnly)`](#fn-speccollectorvolumesephemeralwithreadonly)
+        * [`obj spec.collector.volumes.ephemeral.volumeClaimTemplate`](#obj-speccollectorvolumesephemeralvolumeclaimtemplate)
+          * [`fn withMetadata(metadata)`](#fn-speccollectorvolumesephemeralvolumeclaimtemplatewithmetadata)
+          * [`fn withMetadataMixin(metadata)`](#fn-speccollectorvolumesephemeralvolumeclaimtemplatewithmetadatamixin)
+          * [`obj spec.collector.volumes.ephemeral.volumeClaimTemplate.spec`](#obj-speccollectorvolumesephemeralvolumeclaimtemplatespec)
+            * [`fn withAccessModes(accessModes)`](#fn-speccollectorvolumesephemeralvolumeclaimtemplatespecwithaccessmodes)
+            * [`fn withAccessModesMixin(accessModes)`](#fn-speccollectorvolumesephemeralvolumeclaimtemplatespecwithaccessmodesmixin)
+            * [`fn withStorageClassName(storageClassName)`](#fn-speccollectorvolumesephemeralvolumeclaimtemplatespecwithstorageclassname)
+            * [`fn withVolumeMode(volumeMode)`](#fn-speccollectorvolumesephemeralvolumeclaimtemplatespecwithvolumemode)
+            * [`fn withVolumeName(volumeName)`](#fn-speccollectorvolumesephemeralvolumeclaimtemplatespecwithvolumename)
+            * [`obj spec.collector.volumes.ephemeral.volumeClaimTemplate.spec.dataSource`](#obj-speccollectorvolumesephemeralvolumeclaimtemplatespecdatasource)
+              * [`fn withApiGroup(apiGroup)`](#fn-speccollectorvolumesephemeralvolumeclaimtemplatespecdatasourcewithapigroup)
+              * [`fn withKind(kind)`](#fn-speccollectorvolumesephemeralvolumeclaimtemplatespecdatasourcewithkind)
+              * [`fn withName(name)`](#fn-speccollectorvolumesephemeralvolumeclaimtemplatespecdatasourcewithname)
+            * [`obj spec.collector.volumes.ephemeral.volumeClaimTemplate.spec.resources`](#obj-speccollectorvolumesephemeralvolumeclaimtemplatespecresources)
+              * [`fn withLimits(limits)`](#fn-speccollectorvolumesephemeralvolumeclaimtemplatespecresourceswithlimits)
+              * [`fn withLimitsMixin(limits)`](#fn-speccollectorvolumesephemeralvolumeclaimtemplatespecresourceswithlimitsmixin)
+              * [`fn withRequests(requests)`](#fn-speccollectorvolumesephemeralvolumeclaimtemplatespecresourceswithrequests)
+              * [`fn withRequestsMixin(requests)`](#fn-speccollectorvolumesephemeralvolumeclaimtemplatespecresourceswithrequestsmixin)
+            * [`obj spec.collector.volumes.ephemeral.volumeClaimTemplate.spec.selector`](#obj-speccollectorvolumesephemeralvolumeclaimtemplatespecselector)
+              * [`fn withMatchExpressions(matchExpressions)`](#fn-speccollectorvolumesephemeralvolumeclaimtemplatespecselectorwithmatchexpressions)
+              * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-speccollectorvolumesephemeralvolumeclaimtemplatespecselectorwithmatchexpressionsmixin)
+              * [`fn withMatchLabels(matchLabels)`](#fn-speccollectorvolumesephemeralvolumeclaimtemplatespecselectorwithmatchlabels)
+              * [`fn withMatchLabelsMixin(matchLabels)`](#fn-speccollectorvolumesephemeralvolumeclaimtemplatespecselectorwithmatchlabelsmixin)
+              * [`obj spec.collector.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions`](#obj-speccollectorvolumesephemeralvolumeclaimtemplatespecselectormatchexpressions)
+                * [`fn withKey(key)`](#fn-speccollectorvolumesephemeralvolumeclaimtemplatespecselectormatchexpressionswithkey)
+                * [`fn withOperator(operator)`](#fn-speccollectorvolumesephemeralvolumeclaimtemplatespecselectormatchexpressionswithoperator)
+                * [`fn withValues(values)`](#fn-speccollectorvolumesephemeralvolumeclaimtemplatespecselectormatchexpressionswithvalues)
+                * [`fn withValuesMixin(values)`](#fn-speccollectorvolumesephemeralvolumeclaimtemplatespecselectormatchexpressionswithvaluesmixin)
+      * [`obj spec.collector.volumes.fc`](#obj-speccollectorvolumesfc)
+        * [`fn withFsType(fsType)`](#fn-speccollectorvolumesfcwithfstype)
+        * [`fn withLun(lun)`](#fn-speccollectorvolumesfcwithlun)
+        * [`fn withReadOnly(readOnly)`](#fn-speccollectorvolumesfcwithreadonly)
+        * [`fn withTargetWWNs(targetWWNs)`](#fn-speccollectorvolumesfcwithtargetwwns)
+        * [`fn withTargetWWNsMixin(targetWWNs)`](#fn-speccollectorvolumesfcwithtargetwwnsmixin)
+        * [`fn withWwids(wwids)`](#fn-speccollectorvolumesfcwithwwids)
+        * [`fn withWwidsMixin(wwids)`](#fn-speccollectorvolumesfcwithwwidsmixin)
+      * [`obj spec.collector.volumes.flexVolume`](#obj-speccollectorvolumesflexvolume)
+        * [`fn withDriver(driver)`](#fn-speccollectorvolumesflexvolumewithdriver)
+        * [`fn withFsType(fsType)`](#fn-speccollectorvolumesflexvolumewithfstype)
+        * [`fn withOptions(options)`](#fn-speccollectorvolumesflexvolumewithoptions)
+        * [`fn withOptionsMixin(options)`](#fn-speccollectorvolumesflexvolumewithoptionsmixin)
+        * [`fn withReadOnly(readOnly)`](#fn-speccollectorvolumesflexvolumewithreadonly)
+        * [`obj spec.collector.volumes.flexVolume.secretRef`](#obj-speccollectorvolumesflexvolumesecretref)
+          * [`fn withName(name)`](#fn-speccollectorvolumesflexvolumesecretrefwithname)
+      * [`obj spec.collector.volumes.flocker`](#obj-speccollectorvolumesflocker)
+        * [`fn withDatasetName(datasetName)`](#fn-speccollectorvolumesflockerwithdatasetname)
+        * [`fn withDatasetUUID(datasetUUID)`](#fn-speccollectorvolumesflockerwithdatasetuuid)
+      * [`obj spec.collector.volumes.gcePersistentDisk`](#obj-speccollectorvolumesgcepersistentdisk)
+        * [`fn withFsType(fsType)`](#fn-speccollectorvolumesgcepersistentdiskwithfstype)
+        * [`fn withPartition(partition)`](#fn-speccollectorvolumesgcepersistentdiskwithpartition)
+        * [`fn withPdName(pdName)`](#fn-speccollectorvolumesgcepersistentdiskwithpdname)
+        * [`fn withReadOnly(readOnly)`](#fn-speccollectorvolumesgcepersistentdiskwithreadonly)
+      * [`obj spec.collector.volumes.gitRepo`](#obj-speccollectorvolumesgitrepo)
+        * [`fn withDirectory(directory)`](#fn-speccollectorvolumesgitrepowithdirectory)
+        * [`fn withRepository(repository)`](#fn-speccollectorvolumesgitrepowithrepository)
+        * [`fn withRevision(revision)`](#fn-speccollectorvolumesgitrepowithrevision)
+      * [`obj spec.collector.volumes.glusterfs`](#obj-speccollectorvolumesglusterfs)
+        * [`fn withEndpoints(endpoints)`](#fn-speccollectorvolumesglusterfswithendpoints)
+        * [`fn withPath(path)`](#fn-speccollectorvolumesglusterfswithpath)
+        * [`fn withReadOnly(readOnly)`](#fn-speccollectorvolumesglusterfswithreadonly)
+      * [`obj spec.collector.volumes.hostPath`](#obj-speccollectorvolumeshostpath)
+        * [`fn withPath(path)`](#fn-speccollectorvolumeshostpathwithpath)
+        * [`fn withType(type)`](#fn-speccollectorvolumeshostpathwithtype)
+      * [`obj spec.collector.volumes.iscsi`](#obj-speccollectorvolumesiscsi)
+        * [`fn withChapAuthDiscovery(chapAuthDiscovery)`](#fn-speccollectorvolumesiscsiwithchapauthdiscovery)
+        * [`fn withChapAuthSession(chapAuthSession)`](#fn-speccollectorvolumesiscsiwithchapauthsession)
+        * [`fn withFsType(fsType)`](#fn-speccollectorvolumesiscsiwithfstype)
+        * [`fn withInitiatorName(initiatorName)`](#fn-speccollectorvolumesiscsiwithinitiatorname)
+        * [`fn withIqn(iqn)`](#fn-speccollectorvolumesiscsiwithiqn)
+        * [`fn withIscsiInterface(iscsiInterface)`](#fn-speccollectorvolumesiscsiwithiscsiinterface)
+        * [`fn withLun(lun)`](#fn-speccollectorvolumesiscsiwithlun)
+        * [`fn withPortals(portals)`](#fn-speccollectorvolumesiscsiwithportals)
+        * [`fn withPortalsMixin(portals)`](#fn-speccollectorvolumesiscsiwithportalsmixin)
+        * [`fn withReadOnly(readOnly)`](#fn-speccollectorvolumesiscsiwithreadonly)
+        * [`fn withTargetPortal(targetPortal)`](#fn-speccollectorvolumesiscsiwithtargetportal)
+        * [`obj spec.collector.volumes.iscsi.secretRef`](#obj-speccollectorvolumesiscsisecretref)
+          * [`fn withName(name)`](#fn-speccollectorvolumesiscsisecretrefwithname)
+      * [`obj spec.collector.volumes.nfs`](#obj-speccollectorvolumesnfs)
+        * [`fn withPath(path)`](#fn-speccollectorvolumesnfswithpath)
+        * [`fn withReadOnly(readOnly)`](#fn-speccollectorvolumesnfswithreadonly)
+        * [`fn withServer(server)`](#fn-speccollectorvolumesnfswithserver)
+      * [`obj spec.collector.volumes.persistentVolumeClaim`](#obj-speccollectorvolumespersistentvolumeclaim)
+        * [`fn withClaimName(claimName)`](#fn-speccollectorvolumespersistentvolumeclaimwithclaimname)
+        * [`fn withReadOnly(readOnly)`](#fn-speccollectorvolumespersistentvolumeclaimwithreadonly)
+      * [`obj spec.collector.volumes.photonPersistentDisk`](#obj-speccollectorvolumesphotonpersistentdisk)
+        * [`fn withFsType(fsType)`](#fn-speccollectorvolumesphotonpersistentdiskwithfstype)
+        * [`fn withPdID(pdID)`](#fn-speccollectorvolumesphotonpersistentdiskwithpdid)
+      * [`obj spec.collector.volumes.portworxVolume`](#obj-speccollectorvolumesportworxvolume)
+        * [`fn withFsType(fsType)`](#fn-speccollectorvolumesportworxvolumewithfstype)
+        * [`fn withReadOnly(readOnly)`](#fn-speccollectorvolumesportworxvolumewithreadonly)
+        * [`fn withVolumeID(volumeID)`](#fn-speccollectorvolumesportworxvolumewithvolumeid)
+      * [`obj spec.collector.volumes.projected`](#obj-speccollectorvolumesprojected)
+        * [`fn withDefaultMode(defaultMode)`](#fn-speccollectorvolumesprojectedwithdefaultmode)
+        * [`fn withSources(sources)`](#fn-speccollectorvolumesprojectedwithsources)
+        * [`fn withSourcesMixin(sources)`](#fn-speccollectorvolumesprojectedwithsourcesmixin)
+        * [`obj spec.collector.volumes.projected.sources`](#obj-speccollectorvolumesprojectedsources)
+          * [`obj spec.collector.volumes.projected.sources.configMap`](#obj-speccollectorvolumesprojectedsourcesconfigmap)
+            * [`fn withItems(items)`](#fn-speccollectorvolumesprojectedsourcesconfigmapwithitems)
+            * [`fn withItemsMixin(items)`](#fn-speccollectorvolumesprojectedsourcesconfigmapwithitemsmixin)
+            * [`fn withName(name)`](#fn-speccollectorvolumesprojectedsourcesconfigmapwithname)
+            * [`fn withOptional(optional)`](#fn-speccollectorvolumesprojectedsourcesconfigmapwithoptional)
+            * [`obj spec.collector.volumes.projected.sources.configMap.items`](#obj-speccollectorvolumesprojectedsourcesconfigmapitems)
+              * [`fn withKey(key)`](#fn-speccollectorvolumesprojectedsourcesconfigmapitemswithkey)
+              * [`fn withMode(mode)`](#fn-speccollectorvolumesprojectedsourcesconfigmapitemswithmode)
+              * [`fn withPath(path)`](#fn-speccollectorvolumesprojectedsourcesconfigmapitemswithpath)
+          * [`obj spec.collector.volumes.projected.sources.downwardAPI`](#obj-speccollectorvolumesprojectedsourcesdownwardapi)
+            * [`fn withItems(items)`](#fn-speccollectorvolumesprojectedsourcesdownwardapiwithitems)
+            * [`fn withItemsMixin(items)`](#fn-speccollectorvolumesprojectedsourcesdownwardapiwithitemsmixin)
+            * [`obj spec.collector.volumes.projected.sources.downwardAPI.items`](#obj-speccollectorvolumesprojectedsourcesdownwardapiitems)
+              * [`fn withMode(mode)`](#fn-speccollectorvolumesprojectedsourcesdownwardapiitemswithmode)
+              * [`fn withPath(path)`](#fn-speccollectorvolumesprojectedsourcesdownwardapiitemswithpath)
+              * [`obj spec.collector.volumes.projected.sources.downwardAPI.items.fieldRef`](#obj-speccollectorvolumesprojectedsourcesdownwardapiitemsfieldref)
+                * [`fn withApiVersion(apiVersion)`](#fn-speccollectorvolumesprojectedsourcesdownwardapiitemsfieldrefwithapiversion)
+                * [`fn withFieldPath(fieldPath)`](#fn-speccollectorvolumesprojectedsourcesdownwardapiitemsfieldrefwithfieldpath)
+              * [`obj spec.collector.volumes.projected.sources.downwardAPI.items.resourceFieldRef`](#obj-speccollectorvolumesprojectedsourcesdownwardapiitemsresourcefieldref)
+                * [`fn withContainerName(containerName)`](#fn-speccollectorvolumesprojectedsourcesdownwardapiitemsresourcefieldrefwithcontainername)
+                * [`fn withDivisor(divisor)`](#fn-speccollectorvolumesprojectedsourcesdownwardapiitemsresourcefieldrefwithdivisor)
+                * [`fn withResource(resource)`](#fn-speccollectorvolumesprojectedsourcesdownwardapiitemsresourcefieldrefwithresource)
+          * [`obj spec.collector.volumes.projected.sources.secret`](#obj-speccollectorvolumesprojectedsourcessecret)
+            * [`fn withItems(items)`](#fn-speccollectorvolumesprojectedsourcessecretwithitems)
+            * [`fn withItemsMixin(items)`](#fn-speccollectorvolumesprojectedsourcessecretwithitemsmixin)
+            * [`fn withName(name)`](#fn-speccollectorvolumesprojectedsourcessecretwithname)
+            * [`fn withOptional(optional)`](#fn-speccollectorvolumesprojectedsourcessecretwithoptional)
+            * [`obj spec.collector.volumes.projected.sources.secret.items`](#obj-speccollectorvolumesprojectedsourcessecretitems)
+              * [`fn withKey(key)`](#fn-speccollectorvolumesprojectedsourcessecretitemswithkey)
+              * [`fn withMode(mode)`](#fn-speccollectorvolumesprojectedsourcessecretitemswithmode)
+              * [`fn withPath(path)`](#fn-speccollectorvolumesprojectedsourcessecretitemswithpath)
+          * [`obj spec.collector.volumes.projected.sources.serviceAccountToken`](#obj-speccollectorvolumesprojectedsourcesserviceaccounttoken)
+            * [`fn withAudience(audience)`](#fn-speccollectorvolumesprojectedsourcesserviceaccounttokenwithaudience)
+            * [`fn withExpirationSeconds(expirationSeconds)`](#fn-speccollectorvolumesprojectedsourcesserviceaccounttokenwithexpirationseconds)
+            * [`fn withPath(path)`](#fn-speccollectorvolumesprojectedsourcesserviceaccounttokenwithpath)
+      * [`obj spec.collector.volumes.quobyte`](#obj-speccollectorvolumesquobyte)
+        * [`fn withGroup(group)`](#fn-speccollectorvolumesquobytewithgroup)
+        * [`fn withReadOnly(readOnly)`](#fn-speccollectorvolumesquobytewithreadonly)
+        * [`fn withRegistry(registry)`](#fn-speccollectorvolumesquobytewithregistry)
+        * [`fn withTenant(tenant)`](#fn-speccollectorvolumesquobytewithtenant)
+        * [`fn withUser(user)`](#fn-speccollectorvolumesquobytewithuser)
+        * [`fn withVolume(volume)`](#fn-speccollectorvolumesquobytewithvolume)
+      * [`obj spec.collector.volumes.rbd`](#obj-speccollectorvolumesrbd)
+        * [`fn withFsType(fsType)`](#fn-speccollectorvolumesrbdwithfstype)
+        * [`fn withImage(image)`](#fn-speccollectorvolumesrbdwithimage)
+        * [`fn withKeyring(keyring)`](#fn-speccollectorvolumesrbdwithkeyring)
+        * [`fn withMonitors(monitors)`](#fn-speccollectorvolumesrbdwithmonitors)
+        * [`fn withMonitorsMixin(monitors)`](#fn-speccollectorvolumesrbdwithmonitorsmixin)
+        * [`fn withPool(pool)`](#fn-speccollectorvolumesrbdwithpool)
+        * [`fn withReadOnly(readOnly)`](#fn-speccollectorvolumesrbdwithreadonly)
+        * [`fn withUser(user)`](#fn-speccollectorvolumesrbdwithuser)
+        * [`obj spec.collector.volumes.rbd.secretRef`](#obj-speccollectorvolumesrbdsecretref)
+          * [`fn withName(name)`](#fn-speccollectorvolumesrbdsecretrefwithname)
+      * [`obj spec.collector.volumes.scaleIO`](#obj-speccollectorvolumesscaleio)
+        * [`fn withFsType(fsType)`](#fn-speccollectorvolumesscaleiowithfstype)
+        * [`fn withGateway(gateway)`](#fn-speccollectorvolumesscaleiowithgateway)
+        * [`fn withProtectionDomain(protectionDomain)`](#fn-speccollectorvolumesscaleiowithprotectiondomain)
+        * [`fn withReadOnly(readOnly)`](#fn-speccollectorvolumesscaleiowithreadonly)
+        * [`fn withSslEnabled(sslEnabled)`](#fn-speccollectorvolumesscaleiowithsslenabled)
+        * [`fn withStorageMode(storageMode)`](#fn-speccollectorvolumesscaleiowithstoragemode)
+        * [`fn withStoragePool(storagePool)`](#fn-speccollectorvolumesscaleiowithstoragepool)
+        * [`fn withSystem(system)`](#fn-speccollectorvolumesscaleiowithsystem)
+        * [`fn withVolumeName(volumeName)`](#fn-speccollectorvolumesscaleiowithvolumename)
+        * [`obj spec.collector.volumes.scaleIO.secretRef`](#obj-speccollectorvolumesscaleiosecretref)
+          * [`fn withName(name)`](#fn-speccollectorvolumesscaleiosecretrefwithname)
+      * [`obj spec.collector.volumes.secret`](#obj-speccollectorvolumessecret)
+        * [`fn withDefaultMode(defaultMode)`](#fn-speccollectorvolumessecretwithdefaultmode)
+        * [`fn withItems(items)`](#fn-speccollectorvolumessecretwithitems)
+        * [`fn withItemsMixin(items)`](#fn-speccollectorvolumessecretwithitemsmixin)
+        * [`fn withOptional(optional)`](#fn-speccollectorvolumessecretwithoptional)
+        * [`fn withSecretName(secretName)`](#fn-speccollectorvolumessecretwithsecretname)
+        * [`obj spec.collector.volumes.secret.items`](#obj-speccollectorvolumessecretitems)
+          * [`fn withKey(key)`](#fn-speccollectorvolumessecretitemswithkey)
+          * [`fn withMode(mode)`](#fn-speccollectorvolumessecretitemswithmode)
+          * [`fn withPath(path)`](#fn-speccollectorvolumessecretitemswithpath)
+      * [`obj spec.collector.volumes.storageos`](#obj-speccollectorvolumesstorageos)
+        * [`fn withFsType(fsType)`](#fn-speccollectorvolumesstorageoswithfstype)
+        * [`fn withReadOnly(readOnly)`](#fn-speccollectorvolumesstorageoswithreadonly)
+        * [`fn withVolumeName(volumeName)`](#fn-speccollectorvolumesstorageoswithvolumename)
+        * [`fn withVolumeNamespace(volumeNamespace)`](#fn-speccollectorvolumesstorageoswithvolumenamespace)
+        * [`obj spec.collector.volumes.storageos.secretRef`](#obj-speccollectorvolumesstorageossecretref)
+          * [`fn withName(name)`](#fn-speccollectorvolumesstorageossecretrefwithname)
+      * [`obj spec.collector.volumes.vsphereVolume`](#obj-speccollectorvolumesvspherevolume)
+        * [`fn withFsType(fsType)`](#fn-speccollectorvolumesvspherevolumewithfstype)
+        * [`fn withStoragePolicyID(storagePolicyID)`](#fn-speccollectorvolumesvspherevolumewithstoragepolicyid)
+        * [`fn withStoragePolicyName(storagePolicyName)`](#fn-speccollectorvolumesvspherevolumewithstoragepolicyname)
+        * [`fn withVolumePath(volumePath)`](#fn-speccollectorvolumesvspherevolumewithvolumepath)
   * [`obj spec.ingester`](#obj-specingester)
     * [`fn withAnnotations(annotations)`](#fn-specingesterwithannotations)
     * [`fn withAnnotationsMixin(annotations)`](#fn-specingesterwithannotationsmixin)
@@ -317,19 +1492,111 @@ permalink: /1.25/jaegertracing/v1/jaeger/
       * [`obj spec.ingester.affinity.nodeAffinity`](#obj-specingesteraffinitynodeaffinity)
         * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specingesteraffinitynodeaffinitywithpreferredduringschedulingignoredduringexecution)
         * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specingesteraffinitynodeaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
+        * [`obj spec.ingester.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-specingesteraffinitynodeaffinitypreferredduringschedulingignoredduringexecution)
+          * [`fn withWeight(weight)`](#fn-specingesteraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+          * [`obj spec.ingester.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference`](#obj-specingesteraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreference)
+            * [`fn withMatchExpressions(matchExpressions)`](#fn-specingesteraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchexpressions)
+            * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specingesteraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchexpressionsmixin)
+            * [`fn withMatchFields(matchFields)`](#fn-specingesteraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchfields)
+            * [`fn withMatchFieldsMixin(matchFields)`](#fn-specingesteraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchfieldsmixin)
+            * [`obj spec.ingester.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions`](#obj-specingesteraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressions)
+              * [`fn withKey(key)`](#fn-specingesteraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithkey)
+              * [`fn withOperator(operator)`](#fn-specingesteraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithoperator)
+              * [`fn withValues(values)`](#fn-specingesteraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithvalues)
+              * [`fn withValuesMixin(values)`](#fn-specingesteraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithvaluesmixin)
+            * [`obj spec.ingester.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields`](#obj-specingesteraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfields)
+              * [`fn withKey(key)`](#fn-specingesteraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithkey)
+              * [`fn withOperator(operator)`](#fn-specingesteraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithoperator)
+              * [`fn withValues(values)`](#fn-specingesteraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithvalues)
+              * [`fn withValuesMixin(values)`](#fn-specingesteraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithvaluesmixin)
         * [`obj spec.ingester.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-specingesteraffinitynodeaffinityrequiredduringschedulingignoredduringexecution)
           * [`fn withNodeSelectorTerms(nodeSelectorTerms)`](#fn-specingesteraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionwithnodeselectorterms)
           * [`fn withNodeSelectorTermsMixin(nodeSelectorTerms)`](#fn-specingesteraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionwithnodeselectortermsmixin)
+          * [`obj spec.ingester.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms`](#obj-specingesteraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectorterms)
+            * [`fn withMatchExpressions(matchExpressions)`](#fn-specingesteraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchexpressions)
+            * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specingesteraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchexpressionsmixin)
+            * [`fn withMatchFields(matchFields)`](#fn-specingesteraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchfields)
+            * [`fn withMatchFieldsMixin(matchFields)`](#fn-specingesteraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchfieldsmixin)
+            * [`obj spec.ingester.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions`](#obj-specingesteraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressions)
+              * [`fn withKey(key)`](#fn-specingesteraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithkey)
+              * [`fn withOperator(operator)`](#fn-specingesteraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithoperator)
+              * [`fn withValues(values)`](#fn-specingesteraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithvalues)
+              * [`fn withValuesMixin(values)`](#fn-specingesteraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithvaluesmixin)
+            * [`obj spec.ingester.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields`](#obj-specingesteraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfields)
+              * [`fn withKey(key)`](#fn-specingesteraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithkey)
+              * [`fn withOperator(operator)`](#fn-specingesteraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithoperator)
+              * [`fn withValues(values)`](#fn-specingesteraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithvalues)
+              * [`fn withValuesMixin(values)`](#fn-specingesteraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithvaluesmixin)
       * [`obj spec.ingester.affinity.podAffinity`](#obj-specingesteraffinitypodaffinity)
         * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specingesteraffinitypodaffinitywithpreferredduringschedulingignoredduringexecution)
         * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specingesteraffinitypodaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
         * [`fn withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specingesteraffinitypodaffinitywithrequiredduringschedulingignoredduringexecution)
         * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specingesteraffinitypodaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
+        * [`obj spec.ingester.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-specingesteraffinitypodaffinitypreferredduringschedulingignoredduringexecution)
+          * [`fn withWeight(weight)`](#fn-specingesteraffinitypodaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+          * [`obj spec.ingester.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm`](#obj-specingesteraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinityterm)
+            * [`fn withNamespaces(namespaces)`](#fn-specingesteraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespaces)
+            * [`fn withNamespacesMixin(namespaces)`](#fn-specingesteraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespacesmixin)
+            * [`fn withTopologyKey(topologyKey)`](#fn-specingesteraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithtopologykey)
+            * [`obj spec.ingester.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector`](#obj-specingesteraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselector)
+              * [`fn withMatchExpressions(matchExpressions)`](#fn-specingesteraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressions)
+              * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specingesteraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressionsmixin)
+              * [`fn withMatchLabels(matchLabels)`](#fn-specingesteraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabels)
+              * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specingesteraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabelsmixin)
+              * [`obj spec.ingester.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions`](#obj-specingesteraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressions)
+                * [`fn withKey(key)`](#fn-specingesteraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithkey)
+                * [`fn withOperator(operator)`](#fn-specingesteraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithoperator)
+                * [`fn withValues(values)`](#fn-specingesteraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvalues)
+                * [`fn withValuesMixin(values)`](#fn-specingesteraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvaluesmixin)
+        * [`obj spec.ingester.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-specingesteraffinitypodaffinityrequiredduringschedulingignoredduringexecution)
+          * [`fn withNamespaces(namespaces)`](#fn-specingesteraffinitypodaffinityrequiredduringschedulingignoredduringexecutionwithnamespaces)
+          * [`fn withNamespacesMixin(namespaces)`](#fn-specingesteraffinitypodaffinityrequiredduringschedulingignoredduringexecutionwithnamespacesmixin)
+          * [`fn withTopologyKey(topologyKey)`](#fn-specingesteraffinitypodaffinityrequiredduringschedulingignoredduringexecutionwithtopologykey)
+          * [`obj spec.ingester.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector`](#obj-specingesteraffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselector)
+            * [`fn withMatchExpressions(matchExpressions)`](#fn-specingesteraffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressions)
+            * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specingesteraffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressionsmixin)
+            * [`fn withMatchLabels(matchLabels)`](#fn-specingesteraffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabels)
+            * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specingesteraffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabelsmixin)
+            * [`obj spec.ingester.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions`](#obj-specingesteraffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressions)
+              * [`fn withKey(key)`](#fn-specingesteraffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithkey)
+              * [`fn withOperator(operator)`](#fn-specingesteraffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithoperator)
+              * [`fn withValues(values)`](#fn-specingesteraffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvalues)
+              * [`fn withValuesMixin(values)`](#fn-specingesteraffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvaluesmixin)
       * [`obj spec.ingester.affinity.podAntiAffinity`](#obj-specingesteraffinitypodantiaffinity)
         * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specingesteraffinitypodantiaffinitywithpreferredduringschedulingignoredduringexecution)
         * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specingesteraffinitypodantiaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
         * [`fn withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specingesteraffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecution)
         * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specingesteraffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
+        * [`obj spec.ingester.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-specingesteraffinitypodantiaffinitypreferredduringschedulingignoredduringexecution)
+          * [`fn withWeight(weight)`](#fn-specingesteraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+          * [`obj spec.ingester.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm`](#obj-specingesteraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinityterm)
+            * [`fn withNamespaces(namespaces)`](#fn-specingesteraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespaces)
+            * [`fn withNamespacesMixin(namespaces)`](#fn-specingesteraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespacesmixin)
+            * [`fn withTopologyKey(topologyKey)`](#fn-specingesteraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithtopologykey)
+            * [`obj spec.ingester.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector`](#obj-specingesteraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselector)
+              * [`fn withMatchExpressions(matchExpressions)`](#fn-specingesteraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressions)
+              * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specingesteraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressionsmixin)
+              * [`fn withMatchLabels(matchLabels)`](#fn-specingesteraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabels)
+              * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specingesteraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabelsmixin)
+              * [`obj spec.ingester.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions`](#obj-specingesteraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressions)
+                * [`fn withKey(key)`](#fn-specingesteraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithkey)
+                * [`fn withOperator(operator)`](#fn-specingesteraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithoperator)
+                * [`fn withValues(values)`](#fn-specingesteraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvalues)
+                * [`fn withValuesMixin(values)`](#fn-specingesteraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvaluesmixin)
+        * [`obj spec.ingester.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-specingesteraffinitypodantiaffinityrequiredduringschedulingignoredduringexecution)
+          * [`fn withNamespaces(namespaces)`](#fn-specingesteraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionwithnamespaces)
+          * [`fn withNamespacesMixin(namespaces)`](#fn-specingesteraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionwithnamespacesmixin)
+          * [`fn withTopologyKey(topologyKey)`](#fn-specingesteraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionwithtopologykey)
+          * [`obj spec.ingester.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector`](#obj-specingesteraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselector)
+            * [`fn withMatchExpressions(matchExpressions)`](#fn-specingesteraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressions)
+            * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specingesteraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressionsmixin)
+            * [`fn withMatchLabels(matchLabels)`](#fn-specingesteraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabels)
+            * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specingesteraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabelsmixin)
+            * [`obj spec.ingester.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions`](#obj-specingesteraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressions)
+              * [`fn withKey(key)`](#fn-specingesteraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithkey)
+              * [`fn withOperator(operator)`](#fn-specingesteraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithoperator)
+              * [`fn withValues(values)`](#fn-specingesteraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvalues)
+              * [`fn withValuesMixin(values)`](#fn-specingesteraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvaluesmixin)
     * [`obj spec.ingester.resources`](#obj-specingesterresources)
       * [`fn withLimits(limits)`](#fn-specingesterresourceswithlimits)
       * [`fn withLimitsMixin(limits)`](#fn-specingesterresourceswithlimitsmixin)
@@ -353,6 +1620,9 @@ permalink: /1.25/jaegertracing/v1/jaeger/
       * [`obj spec.ingester.securityContext.seccompProfile`](#obj-specingestersecuritycontextseccompprofile)
         * [`fn withLocalhostProfile(localhostProfile)`](#fn-specingestersecuritycontextseccompprofilewithlocalhostprofile)
         * [`fn withType(type)`](#fn-specingestersecuritycontextseccompprofilewithtype)
+      * [`obj spec.ingester.securityContext.sysctls`](#obj-specingestersecuritycontextsysctls)
+        * [`fn withName(name)`](#fn-specingestersecuritycontextsysctlswithname)
+        * [`fn withValue(value)`](#fn-specingestersecuritycontextsysctlswithvalue)
       * [`obj spec.ingester.securityContext.windowsOptions`](#obj-specingestersecuritycontextwindowsoptions)
         * [`fn withGmsaCredentialSpec(gmsaCredentialSpec)`](#fn-specingestersecuritycontextwindowsoptionswithgmsacredentialspec)
         * [`fn withGmsaCredentialSpecName(gmsaCredentialSpecName)`](#fn-specingestersecuritycontextwindowsoptionswithgmsacredentialspecname)
@@ -362,6 +1632,272 @@ permalink: /1.25/jaegertracing/v1/jaeger/
       * [`obj spec.ingester.strategy.rollingUpdate`](#obj-specingesterstrategyrollingupdate)
         * [`fn withMaxSurge(maxSurge)`](#fn-specingesterstrategyrollingupdatewithmaxsurge)
         * [`fn withMaxUnavailable(maxUnavailable)`](#fn-specingesterstrategyrollingupdatewithmaxunavailable)
+    * [`obj spec.ingester.tolerations`](#obj-specingestertolerations)
+      * [`fn withEffect(effect)`](#fn-specingestertolerationswitheffect)
+      * [`fn withKey(key)`](#fn-specingestertolerationswithkey)
+      * [`fn withOperator(operator)`](#fn-specingestertolerationswithoperator)
+      * [`fn withTolerationSeconds(tolerationSeconds)`](#fn-specingestertolerationswithtolerationseconds)
+      * [`fn withValue(value)`](#fn-specingestertolerationswithvalue)
+    * [`obj spec.ingester.volumeMounts`](#obj-specingestervolumemounts)
+      * [`fn withMountPath(mountPath)`](#fn-specingestervolumemountswithmountpath)
+      * [`fn withMountPropagation(mountPropagation)`](#fn-specingestervolumemountswithmountpropagation)
+      * [`fn withName(name)`](#fn-specingestervolumemountswithname)
+      * [`fn withReadOnly(readOnly)`](#fn-specingestervolumemountswithreadonly)
+      * [`fn withSubPath(subPath)`](#fn-specingestervolumemountswithsubpath)
+      * [`fn withSubPathExpr(subPathExpr)`](#fn-specingestervolumemountswithsubpathexpr)
+    * [`obj spec.ingester.volumes`](#obj-specingestervolumes)
+      * [`fn withName(name)`](#fn-specingestervolumeswithname)
+      * [`obj spec.ingester.volumes.awsElasticBlockStore`](#obj-specingestervolumesawselasticblockstore)
+        * [`fn withFsType(fsType)`](#fn-specingestervolumesawselasticblockstorewithfstype)
+        * [`fn withPartition(partition)`](#fn-specingestervolumesawselasticblockstorewithpartition)
+        * [`fn withReadOnly(readOnly)`](#fn-specingestervolumesawselasticblockstorewithreadonly)
+        * [`fn withVolumeID(volumeID)`](#fn-specingestervolumesawselasticblockstorewithvolumeid)
+      * [`obj spec.ingester.volumes.azureDisk`](#obj-specingestervolumesazuredisk)
+        * [`fn withCachingMode(cachingMode)`](#fn-specingestervolumesazurediskwithcachingmode)
+        * [`fn withDiskName(diskName)`](#fn-specingestervolumesazurediskwithdiskname)
+        * [`fn withDiskURI(diskURI)`](#fn-specingestervolumesazurediskwithdiskuri)
+        * [`fn withFsType(fsType)`](#fn-specingestervolumesazurediskwithfstype)
+        * [`fn withKind(kind)`](#fn-specingestervolumesazurediskwithkind)
+        * [`fn withReadOnly(readOnly)`](#fn-specingestervolumesazurediskwithreadonly)
+      * [`obj spec.ingester.volumes.azureFile`](#obj-specingestervolumesazurefile)
+        * [`fn withReadOnly(readOnly)`](#fn-specingestervolumesazurefilewithreadonly)
+        * [`fn withSecretName(secretName)`](#fn-specingestervolumesazurefilewithsecretname)
+        * [`fn withShareName(shareName)`](#fn-specingestervolumesazurefilewithsharename)
+      * [`obj spec.ingester.volumes.cephfs`](#obj-specingestervolumescephfs)
+        * [`fn withMonitors(monitors)`](#fn-specingestervolumescephfswithmonitors)
+        * [`fn withMonitorsMixin(monitors)`](#fn-specingestervolumescephfswithmonitorsmixin)
+        * [`fn withPath(path)`](#fn-specingestervolumescephfswithpath)
+        * [`fn withReadOnly(readOnly)`](#fn-specingestervolumescephfswithreadonly)
+        * [`fn withSecretFile(secretFile)`](#fn-specingestervolumescephfswithsecretfile)
+        * [`fn withUser(user)`](#fn-specingestervolumescephfswithuser)
+        * [`obj spec.ingester.volumes.cephfs.secretRef`](#obj-specingestervolumescephfssecretref)
+          * [`fn withName(name)`](#fn-specingestervolumescephfssecretrefwithname)
+      * [`obj spec.ingester.volumes.cinder`](#obj-specingestervolumescinder)
+        * [`fn withFsType(fsType)`](#fn-specingestervolumescinderwithfstype)
+        * [`fn withReadOnly(readOnly)`](#fn-specingestervolumescinderwithreadonly)
+        * [`fn withVolumeID(volumeID)`](#fn-specingestervolumescinderwithvolumeid)
+        * [`obj spec.ingester.volumes.cinder.secretRef`](#obj-specingestervolumescindersecretref)
+          * [`fn withName(name)`](#fn-specingestervolumescindersecretrefwithname)
+      * [`obj spec.ingester.volumes.configMap`](#obj-specingestervolumesconfigmap)
+        * [`fn withDefaultMode(defaultMode)`](#fn-specingestervolumesconfigmapwithdefaultmode)
+        * [`fn withItems(items)`](#fn-specingestervolumesconfigmapwithitems)
+        * [`fn withItemsMixin(items)`](#fn-specingestervolumesconfigmapwithitemsmixin)
+        * [`fn withName(name)`](#fn-specingestervolumesconfigmapwithname)
+        * [`fn withOptional(optional)`](#fn-specingestervolumesconfigmapwithoptional)
+        * [`obj spec.ingester.volumes.configMap.items`](#obj-specingestervolumesconfigmapitems)
+          * [`fn withKey(key)`](#fn-specingestervolumesconfigmapitemswithkey)
+          * [`fn withMode(mode)`](#fn-specingestervolumesconfigmapitemswithmode)
+          * [`fn withPath(path)`](#fn-specingestervolumesconfigmapitemswithpath)
+      * [`obj spec.ingester.volumes.csi`](#obj-specingestervolumescsi)
+        * [`fn withDriver(driver)`](#fn-specingestervolumescsiwithdriver)
+        * [`fn withFsType(fsType)`](#fn-specingestervolumescsiwithfstype)
+        * [`fn withReadOnly(readOnly)`](#fn-specingestervolumescsiwithreadonly)
+        * [`fn withVolumeAttributes(volumeAttributes)`](#fn-specingestervolumescsiwithvolumeattributes)
+        * [`fn withVolumeAttributesMixin(volumeAttributes)`](#fn-specingestervolumescsiwithvolumeattributesmixin)
+        * [`obj spec.ingester.volumes.csi.nodePublishSecretRef`](#obj-specingestervolumescsinodepublishsecretref)
+          * [`fn withName(name)`](#fn-specingestervolumescsinodepublishsecretrefwithname)
+      * [`obj spec.ingester.volumes.downwardAPI`](#obj-specingestervolumesdownwardapi)
+        * [`fn withDefaultMode(defaultMode)`](#fn-specingestervolumesdownwardapiwithdefaultmode)
+        * [`fn withItems(items)`](#fn-specingestervolumesdownwardapiwithitems)
+        * [`fn withItemsMixin(items)`](#fn-specingestervolumesdownwardapiwithitemsmixin)
+        * [`obj spec.ingester.volumes.downwardAPI.items`](#obj-specingestervolumesdownwardapiitems)
+          * [`fn withMode(mode)`](#fn-specingestervolumesdownwardapiitemswithmode)
+          * [`fn withPath(path)`](#fn-specingestervolumesdownwardapiitemswithpath)
+          * [`obj spec.ingester.volumes.downwardAPI.items.fieldRef`](#obj-specingestervolumesdownwardapiitemsfieldref)
+            * [`fn withApiVersion(apiVersion)`](#fn-specingestervolumesdownwardapiitemsfieldrefwithapiversion)
+            * [`fn withFieldPath(fieldPath)`](#fn-specingestervolumesdownwardapiitemsfieldrefwithfieldpath)
+          * [`obj spec.ingester.volumes.downwardAPI.items.resourceFieldRef`](#obj-specingestervolumesdownwardapiitemsresourcefieldref)
+            * [`fn withContainerName(containerName)`](#fn-specingestervolumesdownwardapiitemsresourcefieldrefwithcontainername)
+            * [`fn withDivisor(divisor)`](#fn-specingestervolumesdownwardapiitemsresourcefieldrefwithdivisor)
+            * [`fn withResource(resource)`](#fn-specingestervolumesdownwardapiitemsresourcefieldrefwithresource)
+      * [`obj spec.ingester.volumes.emptyDir`](#obj-specingestervolumesemptydir)
+        * [`fn withMedium(medium)`](#fn-specingestervolumesemptydirwithmedium)
+        * [`fn withSizeLimit(sizeLimit)`](#fn-specingestervolumesemptydirwithsizelimit)
+      * [`obj spec.ingester.volumes.ephemeral`](#obj-specingestervolumesephemeral)
+        * [`fn withReadOnly(readOnly)`](#fn-specingestervolumesephemeralwithreadonly)
+        * [`obj spec.ingester.volumes.ephemeral.volumeClaimTemplate`](#obj-specingestervolumesephemeralvolumeclaimtemplate)
+          * [`fn withMetadata(metadata)`](#fn-specingestervolumesephemeralvolumeclaimtemplatewithmetadata)
+          * [`fn withMetadataMixin(metadata)`](#fn-specingestervolumesephemeralvolumeclaimtemplatewithmetadatamixin)
+          * [`obj spec.ingester.volumes.ephemeral.volumeClaimTemplate.spec`](#obj-specingestervolumesephemeralvolumeclaimtemplatespec)
+            * [`fn withAccessModes(accessModes)`](#fn-specingestervolumesephemeralvolumeclaimtemplatespecwithaccessmodes)
+            * [`fn withAccessModesMixin(accessModes)`](#fn-specingestervolumesephemeralvolumeclaimtemplatespecwithaccessmodesmixin)
+            * [`fn withStorageClassName(storageClassName)`](#fn-specingestervolumesephemeralvolumeclaimtemplatespecwithstorageclassname)
+            * [`fn withVolumeMode(volumeMode)`](#fn-specingestervolumesephemeralvolumeclaimtemplatespecwithvolumemode)
+            * [`fn withVolumeName(volumeName)`](#fn-specingestervolumesephemeralvolumeclaimtemplatespecwithvolumename)
+            * [`obj spec.ingester.volumes.ephemeral.volumeClaimTemplate.spec.dataSource`](#obj-specingestervolumesephemeralvolumeclaimtemplatespecdatasource)
+              * [`fn withApiGroup(apiGroup)`](#fn-specingestervolumesephemeralvolumeclaimtemplatespecdatasourcewithapigroup)
+              * [`fn withKind(kind)`](#fn-specingestervolumesephemeralvolumeclaimtemplatespecdatasourcewithkind)
+              * [`fn withName(name)`](#fn-specingestervolumesephemeralvolumeclaimtemplatespecdatasourcewithname)
+            * [`obj spec.ingester.volumes.ephemeral.volumeClaimTemplate.spec.resources`](#obj-specingestervolumesephemeralvolumeclaimtemplatespecresources)
+              * [`fn withLimits(limits)`](#fn-specingestervolumesephemeralvolumeclaimtemplatespecresourceswithlimits)
+              * [`fn withLimitsMixin(limits)`](#fn-specingestervolumesephemeralvolumeclaimtemplatespecresourceswithlimitsmixin)
+              * [`fn withRequests(requests)`](#fn-specingestervolumesephemeralvolumeclaimtemplatespecresourceswithrequests)
+              * [`fn withRequestsMixin(requests)`](#fn-specingestervolumesephemeralvolumeclaimtemplatespecresourceswithrequestsmixin)
+            * [`obj spec.ingester.volumes.ephemeral.volumeClaimTemplate.spec.selector`](#obj-specingestervolumesephemeralvolumeclaimtemplatespecselector)
+              * [`fn withMatchExpressions(matchExpressions)`](#fn-specingestervolumesephemeralvolumeclaimtemplatespecselectorwithmatchexpressions)
+              * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specingestervolumesephemeralvolumeclaimtemplatespecselectorwithmatchexpressionsmixin)
+              * [`fn withMatchLabels(matchLabels)`](#fn-specingestervolumesephemeralvolumeclaimtemplatespecselectorwithmatchlabels)
+              * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specingestervolumesephemeralvolumeclaimtemplatespecselectorwithmatchlabelsmixin)
+              * [`obj spec.ingester.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions`](#obj-specingestervolumesephemeralvolumeclaimtemplatespecselectormatchexpressions)
+                * [`fn withKey(key)`](#fn-specingestervolumesephemeralvolumeclaimtemplatespecselectormatchexpressionswithkey)
+                * [`fn withOperator(operator)`](#fn-specingestervolumesephemeralvolumeclaimtemplatespecselectormatchexpressionswithoperator)
+                * [`fn withValues(values)`](#fn-specingestervolumesephemeralvolumeclaimtemplatespecselectormatchexpressionswithvalues)
+                * [`fn withValuesMixin(values)`](#fn-specingestervolumesephemeralvolumeclaimtemplatespecselectormatchexpressionswithvaluesmixin)
+      * [`obj spec.ingester.volumes.fc`](#obj-specingestervolumesfc)
+        * [`fn withFsType(fsType)`](#fn-specingestervolumesfcwithfstype)
+        * [`fn withLun(lun)`](#fn-specingestervolumesfcwithlun)
+        * [`fn withReadOnly(readOnly)`](#fn-specingestervolumesfcwithreadonly)
+        * [`fn withTargetWWNs(targetWWNs)`](#fn-specingestervolumesfcwithtargetwwns)
+        * [`fn withTargetWWNsMixin(targetWWNs)`](#fn-specingestervolumesfcwithtargetwwnsmixin)
+        * [`fn withWwids(wwids)`](#fn-specingestervolumesfcwithwwids)
+        * [`fn withWwidsMixin(wwids)`](#fn-specingestervolumesfcwithwwidsmixin)
+      * [`obj spec.ingester.volumes.flexVolume`](#obj-specingestervolumesflexvolume)
+        * [`fn withDriver(driver)`](#fn-specingestervolumesflexvolumewithdriver)
+        * [`fn withFsType(fsType)`](#fn-specingestervolumesflexvolumewithfstype)
+        * [`fn withOptions(options)`](#fn-specingestervolumesflexvolumewithoptions)
+        * [`fn withOptionsMixin(options)`](#fn-specingestervolumesflexvolumewithoptionsmixin)
+        * [`fn withReadOnly(readOnly)`](#fn-specingestervolumesflexvolumewithreadonly)
+        * [`obj spec.ingester.volumes.flexVolume.secretRef`](#obj-specingestervolumesflexvolumesecretref)
+          * [`fn withName(name)`](#fn-specingestervolumesflexvolumesecretrefwithname)
+      * [`obj spec.ingester.volumes.flocker`](#obj-specingestervolumesflocker)
+        * [`fn withDatasetName(datasetName)`](#fn-specingestervolumesflockerwithdatasetname)
+        * [`fn withDatasetUUID(datasetUUID)`](#fn-specingestervolumesflockerwithdatasetuuid)
+      * [`obj spec.ingester.volumes.gcePersistentDisk`](#obj-specingestervolumesgcepersistentdisk)
+        * [`fn withFsType(fsType)`](#fn-specingestervolumesgcepersistentdiskwithfstype)
+        * [`fn withPartition(partition)`](#fn-specingestervolumesgcepersistentdiskwithpartition)
+        * [`fn withPdName(pdName)`](#fn-specingestervolumesgcepersistentdiskwithpdname)
+        * [`fn withReadOnly(readOnly)`](#fn-specingestervolumesgcepersistentdiskwithreadonly)
+      * [`obj spec.ingester.volumes.gitRepo`](#obj-specingestervolumesgitrepo)
+        * [`fn withDirectory(directory)`](#fn-specingestervolumesgitrepowithdirectory)
+        * [`fn withRepository(repository)`](#fn-specingestervolumesgitrepowithrepository)
+        * [`fn withRevision(revision)`](#fn-specingestervolumesgitrepowithrevision)
+      * [`obj spec.ingester.volumes.glusterfs`](#obj-specingestervolumesglusterfs)
+        * [`fn withEndpoints(endpoints)`](#fn-specingestervolumesglusterfswithendpoints)
+        * [`fn withPath(path)`](#fn-specingestervolumesglusterfswithpath)
+        * [`fn withReadOnly(readOnly)`](#fn-specingestervolumesglusterfswithreadonly)
+      * [`obj spec.ingester.volumes.hostPath`](#obj-specingestervolumeshostpath)
+        * [`fn withPath(path)`](#fn-specingestervolumeshostpathwithpath)
+        * [`fn withType(type)`](#fn-specingestervolumeshostpathwithtype)
+      * [`obj spec.ingester.volumes.iscsi`](#obj-specingestervolumesiscsi)
+        * [`fn withChapAuthDiscovery(chapAuthDiscovery)`](#fn-specingestervolumesiscsiwithchapauthdiscovery)
+        * [`fn withChapAuthSession(chapAuthSession)`](#fn-specingestervolumesiscsiwithchapauthsession)
+        * [`fn withFsType(fsType)`](#fn-specingestervolumesiscsiwithfstype)
+        * [`fn withInitiatorName(initiatorName)`](#fn-specingestervolumesiscsiwithinitiatorname)
+        * [`fn withIqn(iqn)`](#fn-specingestervolumesiscsiwithiqn)
+        * [`fn withIscsiInterface(iscsiInterface)`](#fn-specingestervolumesiscsiwithiscsiinterface)
+        * [`fn withLun(lun)`](#fn-specingestervolumesiscsiwithlun)
+        * [`fn withPortals(portals)`](#fn-specingestervolumesiscsiwithportals)
+        * [`fn withPortalsMixin(portals)`](#fn-specingestervolumesiscsiwithportalsmixin)
+        * [`fn withReadOnly(readOnly)`](#fn-specingestervolumesiscsiwithreadonly)
+        * [`fn withTargetPortal(targetPortal)`](#fn-specingestervolumesiscsiwithtargetportal)
+        * [`obj spec.ingester.volumes.iscsi.secretRef`](#obj-specingestervolumesiscsisecretref)
+          * [`fn withName(name)`](#fn-specingestervolumesiscsisecretrefwithname)
+      * [`obj spec.ingester.volumes.nfs`](#obj-specingestervolumesnfs)
+        * [`fn withPath(path)`](#fn-specingestervolumesnfswithpath)
+        * [`fn withReadOnly(readOnly)`](#fn-specingestervolumesnfswithreadonly)
+        * [`fn withServer(server)`](#fn-specingestervolumesnfswithserver)
+      * [`obj spec.ingester.volumes.persistentVolumeClaim`](#obj-specingestervolumespersistentvolumeclaim)
+        * [`fn withClaimName(claimName)`](#fn-specingestervolumespersistentvolumeclaimwithclaimname)
+        * [`fn withReadOnly(readOnly)`](#fn-specingestervolumespersistentvolumeclaimwithreadonly)
+      * [`obj spec.ingester.volumes.photonPersistentDisk`](#obj-specingestervolumesphotonpersistentdisk)
+        * [`fn withFsType(fsType)`](#fn-specingestervolumesphotonpersistentdiskwithfstype)
+        * [`fn withPdID(pdID)`](#fn-specingestervolumesphotonpersistentdiskwithpdid)
+      * [`obj spec.ingester.volumes.portworxVolume`](#obj-specingestervolumesportworxvolume)
+        * [`fn withFsType(fsType)`](#fn-specingestervolumesportworxvolumewithfstype)
+        * [`fn withReadOnly(readOnly)`](#fn-specingestervolumesportworxvolumewithreadonly)
+        * [`fn withVolumeID(volumeID)`](#fn-specingestervolumesportworxvolumewithvolumeid)
+      * [`obj spec.ingester.volumes.projected`](#obj-specingestervolumesprojected)
+        * [`fn withDefaultMode(defaultMode)`](#fn-specingestervolumesprojectedwithdefaultmode)
+        * [`fn withSources(sources)`](#fn-specingestervolumesprojectedwithsources)
+        * [`fn withSourcesMixin(sources)`](#fn-specingestervolumesprojectedwithsourcesmixin)
+        * [`obj spec.ingester.volumes.projected.sources`](#obj-specingestervolumesprojectedsources)
+          * [`obj spec.ingester.volumes.projected.sources.configMap`](#obj-specingestervolumesprojectedsourcesconfigmap)
+            * [`fn withItems(items)`](#fn-specingestervolumesprojectedsourcesconfigmapwithitems)
+            * [`fn withItemsMixin(items)`](#fn-specingestervolumesprojectedsourcesconfigmapwithitemsmixin)
+            * [`fn withName(name)`](#fn-specingestervolumesprojectedsourcesconfigmapwithname)
+            * [`fn withOptional(optional)`](#fn-specingestervolumesprojectedsourcesconfigmapwithoptional)
+            * [`obj spec.ingester.volumes.projected.sources.configMap.items`](#obj-specingestervolumesprojectedsourcesconfigmapitems)
+              * [`fn withKey(key)`](#fn-specingestervolumesprojectedsourcesconfigmapitemswithkey)
+              * [`fn withMode(mode)`](#fn-specingestervolumesprojectedsourcesconfigmapitemswithmode)
+              * [`fn withPath(path)`](#fn-specingestervolumesprojectedsourcesconfigmapitemswithpath)
+          * [`obj spec.ingester.volumes.projected.sources.downwardAPI`](#obj-specingestervolumesprojectedsourcesdownwardapi)
+            * [`fn withItems(items)`](#fn-specingestervolumesprojectedsourcesdownwardapiwithitems)
+            * [`fn withItemsMixin(items)`](#fn-specingestervolumesprojectedsourcesdownwardapiwithitemsmixin)
+            * [`obj spec.ingester.volumes.projected.sources.downwardAPI.items`](#obj-specingestervolumesprojectedsourcesdownwardapiitems)
+              * [`fn withMode(mode)`](#fn-specingestervolumesprojectedsourcesdownwardapiitemswithmode)
+              * [`fn withPath(path)`](#fn-specingestervolumesprojectedsourcesdownwardapiitemswithpath)
+              * [`obj spec.ingester.volumes.projected.sources.downwardAPI.items.fieldRef`](#obj-specingestervolumesprojectedsourcesdownwardapiitemsfieldref)
+                * [`fn withApiVersion(apiVersion)`](#fn-specingestervolumesprojectedsourcesdownwardapiitemsfieldrefwithapiversion)
+                * [`fn withFieldPath(fieldPath)`](#fn-specingestervolumesprojectedsourcesdownwardapiitemsfieldrefwithfieldpath)
+              * [`obj spec.ingester.volumes.projected.sources.downwardAPI.items.resourceFieldRef`](#obj-specingestervolumesprojectedsourcesdownwardapiitemsresourcefieldref)
+                * [`fn withContainerName(containerName)`](#fn-specingestervolumesprojectedsourcesdownwardapiitemsresourcefieldrefwithcontainername)
+                * [`fn withDivisor(divisor)`](#fn-specingestervolumesprojectedsourcesdownwardapiitemsresourcefieldrefwithdivisor)
+                * [`fn withResource(resource)`](#fn-specingestervolumesprojectedsourcesdownwardapiitemsresourcefieldrefwithresource)
+          * [`obj spec.ingester.volumes.projected.sources.secret`](#obj-specingestervolumesprojectedsourcessecret)
+            * [`fn withItems(items)`](#fn-specingestervolumesprojectedsourcessecretwithitems)
+            * [`fn withItemsMixin(items)`](#fn-specingestervolumesprojectedsourcessecretwithitemsmixin)
+            * [`fn withName(name)`](#fn-specingestervolumesprojectedsourcessecretwithname)
+            * [`fn withOptional(optional)`](#fn-specingestervolumesprojectedsourcessecretwithoptional)
+            * [`obj spec.ingester.volumes.projected.sources.secret.items`](#obj-specingestervolumesprojectedsourcessecretitems)
+              * [`fn withKey(key)`](#fn-specingestervolumesprojectedsourcessecretitemswithkey)
+              * [`fn withMode(mode)`](#fn-specingestervolumesprojectedsourcessecretitemswithmode)
+              * [`fn withPath(path)`](#fn-specingestervolumesprojectedsourcessecretitemswithpath)
+          * [`obj spec.ingester.volumes.projected.sources.serviceAccountToken`](#obj-specingestervolumesprojectedsourcesserviceaccounttoken)
+            * [`fn withAudience(audience)`](#fn-specingestervolumesprojectedsourcesserviceaccounttokenwithaudience)
+            * [`fn withExpirationSeconds(expirationSeconds)`](#fn-specingestervolumesprojectedsourcesserviceaccounttokenwithexpirationseconds)
+            * [`fn withPath(path)`](#fn-specingestervolumesprojectedsourcesserviceaccounttokenwithpath)
+      * [`obj spec.ingester.volumes.quobyte`](#obj-specingestervolumesquobyte)
+        * [`fn withGroup(group)`](#fn-specingestervolumesquobytewithgroup)
+        * [`fn withReadOnly(readOnly)`](#fn-specingestervolumesquobytewithreadonly)
+        * [`fn withRegistry(registry)`](#fn-specingestervolumesquobytewithregistry)
+        * [`fn withTenant(tenant)`](#fn-specingestervolumesquobytewithtenant)
+        * [`fn withUser(user)`](#fn-specingestervolumesquobytewithuser)
+        * [`fn withVolume(volume)`](#fn-specingestervolumesquobytewithvolume)
+      * [`obj spec.ingester.volumes.rbd`](#obj-specingestervolumesrbd)
+        * [`fn withFsType(fsType)`](#fn-specingestervolumesrbdwithfstype)
+        * [`fn withImage(image)`](#fn-specingestervolumesrbdwithimage)
+        * [`fn withKeyring(keyring)`](#fn-specingestervolumesrbdwithkeyring)
+        * [`fn withMonitors(monitors)`](#fn-specingestervolumesrbdwithmonitors)
+        * [`fn withMonitorsMixin(monitors)`](#fn-specingestervolumesrbdwithmonitorsmixin)
+        * [`fn withPool(pool)`](#fn-specingestervolumesrbdwithpool)
+        * [`fn withReadOnly(readOnly)`](#fn-specingestervolumesrbdwithreadonly)
+        * [`fn withUser(user)`](#fn-specingestervolumesrbdwithuser)
+        * [`obj spec.ingester.volumes.rbd.secretRef`](#obj-specingestervolumesrbdsecretref)
+          * [`fn withName(name)`](#fn-specingestervolumesrbdsecretrefwithname)
+      * [`obj spec.ingester.volumes.scaleIO`](#obj-specingestervolumesscaleio)
+        * [`fn withFsType(fsType)`](#fn-specingestervolumesscaleiowithfstype)
+        * [`fn withGateway(gateway)`](#fn-specingestervolumesscaleiowithgateway)
+        * [`fn withProtectionDomain(protectionDomain)`](#fn-specingestervolumesscaleiowithprotectiondomain)
+        * [`fn withReadOnly(readOnly)`](#fn-specingestervolumesscaleiowithreadonly)
+        * [`fn withSslEnabled(sslEnabled)`](#fn-specingestervolumesscaleiowithsslenabled)
+        * [`fn withStorageMode(storageMode)`](#fn-specingestervolumesscaleiowithstoragemode)
+        * [`fn withStoragePool(storagePool)`](#fn-specingestervolumesscaleiowithstoragepool)
+        * [`fn withSystem(system)`](#fn-specingestervolumesscaleiowithsystem)
+        * [`fn withVolumeName(volumeName)`](#fn-specingestervolumesscaleiowithvolumename)
+        * [`obj spec.ingester.volumes.scaleIO.secretRef`](#obj-specingestervolumesscaleiosecretref)
+          * [`fn withName(name)`](#fn-specingestervolumesscaleiosecretrefwithname)
+      * [`obj spec.ingester.volumes.secret`](#obj-specingestervolumessecret)
+        * [`fn withDefaultMode(defaultMode)`](#fn-specingestervolumessecretwithdefaultmode)
+        * [`fn withItems(items)`](#fn-specingestervolumessecretwithitems)
+        * [`fn withItemsMixin(items)`](#fn-specingestervolumessecretwithitemsmixin)
+        * [`fn withOptional(optional)`](#fn-specingestervolumessecretwithoptional)
+        * [`fn withSecretName(secretName)`](#fn-specingestervolumessecretwithsecretname)
+        * [`obj spec.ingester.volumes.secret.items`](#obj-specingestervolumessecretitems)
+          * [`fn withKey(key)`](#fn-specingestervolumessecretitemswithkey)
+          * [`fn withMode(mode)`](#fn-specingestervolumessecretitemswithmode)
+          * [`fn withPath(path)`](#fn-specingestervolumessecretitemswithpath)
+      * [`obj spec.ingester.volumes.storageos`](#obj-specingestervolumesstorageos)
+        * [`fn withFsType(fsType)`](#fn-specingestervolumesstorageoswithfstype)
+        * [`fn withReadOnly(readOnly)`](#fn-specingestervolumesstorageoswithreadonly)
+        * [`fn withVolumeName(volumeName)`](#fn-specingestervolumesstorageoswithvolumename)
+        * [`fn withVolumeNamespace(volumeNamespace)`](#fn-specingestervolumesstorageoswithvolumenamespace)
+        * [`obj spec.ingester.volumes.storageos.secretRef`](#obj-specingestervolumesstorageossecretref)
+          * [`fn withName(name)`](#fn-specingestervolumesstorageossecretrefwithname)
+      * [`obj spec.ingester.volumes.vsphereVolume`](#obj-specingestervolumesvspherevolume)
+        * [`fn withFsType(fsType)`](#fn-specingestervolumesvspherevolumewithfstype)
+        * [`fn withStoragePolicyID(storagePolicyID)`](#fn-specingestervolumesvspherevolumewithstoragepolicyid)
+        * [`fn withStoragePolicyName(storagePolicyName)`](#fn-specingestervolumesvspherevolumewithstoragepolicyname)
+        * [`fn withVolumePath(volumePath)`](#fn-specingestervolumesvspherevolumewithvolumepath)
   * [`obj spec.ingress`](#obj-specingress)
     * [`fn withAnnotations(annotations)`](#fn-specingresswithannotations)
     * [`fn withAnnotationsMixin(annotations)`](#fn-specingresswithannotationsmixin)
@@ -387,19 +1923,111 @@ permalink: /1.25/jaegertracing/v1/jaeger/
       * [`obj spec.ingress.affinity.nodeAffinity`](#obj-specingressaffinitynodeaffinity)
         * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specingressaffinitynodeaffinitywithpreferredduringschedulingignoredduringexecution)
         * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specingressaffinitynodeaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
+        * [`obj spec.ingress.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-specingressaffinitynodeaffinitypreferredduringschedulingignoredduringexecution)
+          * [`fn withWeight(weight)`](#fn-specingressaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+          * [`obj spec.ingress.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference`](#obj-specingressaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreference)
+            * [`fn withMatchExpressions(matchExpressions)`](#fn-specingressaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchexpressions)
+            * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specingressaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchexpressionsmixin)
+            * [`fn withMatchFields(matchFields)`](#fn-specingressaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchfields)
+            * [`fn withMatchFieldsMixin(matchFields)`](#fn-specingressaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchfieldsmixin)
+            * [`obj spec.ingress.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions`](#obj-specingressaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressions)
+              * [`fn withKey(key)`](#fn-specingressaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithkey)
+              * [`fn withOperator(operator)`](#fn-specingressaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithoperator)
+              * [`fn withValues(values)`](#fn-specingressaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithvalues)
+              * [`fn withValuesMixin(values)`](#fn-specingressaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithvaluesmixin)
+            * [`obj spec.ingress.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields`](#obj-specingressaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfields)
+              * [`fn withKey(key)`](#fn-specingressaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithkey)
+              * [`fn withOperator(operator)`](#fn-specingressaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithoperator)
+              * [`fn withValues(values)`](#fn-specingressaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithvalues)
+              * [`fn withValuesMixin(values)`](#fn-specingressaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithvaluesmixin)
         * [`obj spec.ingress.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-specingressaffinitynodeaffinityrequiredduringschedulingignoredduringexecution)
           * [`fn withNodeSelectorTerms(nodeSelectorTerms)`](#fn-specingressaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionwithnodeselectorterms)
           * [`fn withNodeSelectorTermsMixin(nodeSelectorTerms)`](#fn-specingressaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionwithnodeselectortermsmixin)
+          * [`obj spec.ingress.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms`](#obj-specingressaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectorterms)
+            * [`fn withMatchExpressions(matchExpressions)`](#fn-specingressaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchexpressions)
+            * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specingressaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchexpressionsmixin)
+            * [`fn withMatchFields(matchFields)`](#fn-specingressaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchfields)
+            * [`fn withMatchFieldsMixin(matchFields)`](#fn-specingressaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchfieldsmixin)
+            * [`obj spec.ingress.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions`](#obj-specingressaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressions)
+              * [`fn withKey(key)`](#fn-specingressaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithkey)
+              * [`fn withOperator(operator)`](#fn-specingressaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithoperator)
+              * [`fn withValues(values)`](#fn-specingressaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithvalues)
+              * [`fn withValuesMixin(values)`](#fn-specingressaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithvaluesmixin)
+            * [`obj spec.ingress.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields`](#obj-specingressaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfields)
+              * [`fn withKey(key)`](#fn-specingressaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithkey)
+              * [`fn withOperator(operator)`](#fn-specingressaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithoperator)
+              * [`fn withValues(values)`](#fn-specingressaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithvalues)
+              * [`fn withValuesMixin(values)`](#fn-specingressaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithvaluesmixin)
       * [`obj spec.ingress.affinity.podAffinity`](#obj-specingressaffinitypodaffinity)
         * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specingressaffinitypodaffinitywithpreferredduringschedulingignoredduringexecution)
         * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specingressaffinitypodaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
         * [`fn withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specingressaffinitypodaffinitywithrequiredduringschedulingignoredduringexecution)
         * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specingressaffinitypodaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
+        * [`obj spec.ingress.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-specingressaffinitypodaffinitypreferredduringschedulingignoredduringexecution)
+          * [`fn withWeight(weight)`](#fn-specingressaffinitypodaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+          * [`obj spec.ingress.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm`](#obj-specingressaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinityterm)
+            * [`fn withNamespaces(namespaces)`](#fn-specingressaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespaces)
+            * [`fn withNamespacesMixin(namespaces)`](#fn-specingressaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespacesmixin)
+            * [`fn withTopologyKey(topologyKey)`](#fn-specingressaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithtopologykey)
+            * [`obj spec.ingress.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector`](#obj-specingressaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselector)
+              * [`fn withMatchExpressions(matchExpressions)`](#fn-specingressaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressions)
+              * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specingressaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressionsmixin)
+              * [`fn withMatchLabels(matchLabels)`](#fn-specingressaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabels)
+              * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specingressaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabelsmixin)
+              * [`obj spec.ingress.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions`](#obj-specingressaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressions)
+                * [`fn withKey(key)`](#fn-specingressaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithkey)
+                * [`fn withOperator(operator)`](#fn-specingressaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithoperator)
+                * [`fn withValues(values)`](#fn-specingressaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvalues)
+                * [`fn withValuesMixin(values)`](#fn-specingressaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvaluesmixin)
+        * [`obj spec.ingress.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-specingressaffinitypodaffinityrequiredduringschedulingignoredduringexecution)
+          * [`fn withNamespaces(namespaces)`](#fn-specingressaffinitypodaffinityrequiredduringschedulingignoredduringexecutionwithnamespaces)
+          * [`fn withNamespacesMixin(namespaces)`](#fn-specingressaffinitypodaffinityrequiredduringschedulingignoredduringexecutionwithnamespacesmixin)
+          * [`fn withTopologyKey(topologyKey)`](#fn-specingressaffinitypodaffinityrequiredduringschedulingignoredduringexecutionwithtopologykey)
+          * [`obj spec.ingress.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector`](#obj-specingressaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselector)
+            * [`fn withMatchExpressions(matchExpressions)`](#fn-specingressaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressions)
+            * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specingressaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressionsmixin)
+            * [`fn withMatchLabels(matchLabels)`](#fn-specingressaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabels)
+            * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specingressaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabelsmixin)
+            * [`obj spec.ingress.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions`](#obj-specingressaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressions)
+              * [`fn withKey(key)`](#fn-specingressaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithkey)
+              * [`fn withOperator(operator)`](#fn-specingressaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithoperator)
+              * [`fn withValues(values)`](#fn-specingressaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvalues)
+              * [`fn withValuesMixin(values)`](#fn-specingressaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvaluesmixin)
       * [`obj spec.ingress.affinity.podAntiAffinity`](#obj-specingressaffinitypodantiaffinity)
         * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specingressaffinitypodantiaffinitywithpreferredduringschedulingignoredduringexecution)
         * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specingressaffinitypodantiaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
         * [`fn withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specingressaffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecution)
         * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specingressaffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
+        * [`obj spec.ingress.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-specingressaffinitypodantiaffinitypreferredduringschedulingignoredduringexecution)
+          * [`fn withWeight(weight)`](#fn-specingressaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+          * [`obj spec.ingress.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm`](#obj-specingressaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinityterm)
+            * [`fn withNamespaces(namespaces)`](#fn-specingressaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespaces)
+            * [`fn withNamespacesMixin(namespaces)`](#fn-specingressaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespacesmixin)
+            * [`fn withTopologyKey(topologyKey)`](#fn-specingressaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithtopologykey)
+            * [`obj spec.ingress.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector`](#obj-specingressaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselector)
+              * [`fn withMatchExpressions(matchExpressions)`](#fn-specingressaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressions)
+              * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specingressaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressionsmixin)
+              * [`fn withMatchLabels(matchLabels)`](#fn-specingressaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabels)
+              * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specingressaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabelsmixin)
+              * [`obj spec.ingress.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions`](#obj-specingressaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressions)
+                * [`fn withKey(key)`](#fn-specingressaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithkey)
+                * [`fn withOperator(operator)`](#fn-specingressaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithoperator)
+                * [`fn withValues(values)`](#fn-specingressaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvalues)
+                * [`fn withValuesMixin(values)`](#fn-specingressaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvaluesmixin)
+        * [`obj spec.ingress.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-specingressaffinitypodantiaffinityrequiredduringschedulingignoredduringexecution)
+          * [`fn withNamespaces(namespaces)`](#fn-specingressaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionwithnamespaces)
+          * [`fn withNamespacesMixin(namespaces)`](#fn-specingressaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionwithnamespacesmixin)
+          * [`fn withTopologyKey(topologyKey)`](#fn-specingressaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionwithtopologykey)
+          * [`obj spec.ingress.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector`](#obj-specingressaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselector)
+            * [`fn withMatchExpressions(matchExpressions)`](#fn-specingressaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressions)
+            * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specingressaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressionsmixin)
+            * [`fn withMatchLabels(matchLabels)`](#fn-specingressaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabels)
+            * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specingressaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabelsmixin)
+            * [`obj spec.ingress.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions`](#obj-specingressaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressions)
+              * [`fn withKey(key)`](#fn-specingressaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithkey)
+              * [`fn withOperator(operator)`](#fn-specingressaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithoperator)
+              * [`fn withValues(values)`](#fn-specingressaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvalues)
+              * [`fn withValuesMixin(values)`](#fn-specingressaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvaluesmixin)
     * [`obj spec.ingress.openshift`](#obj-specingressopenshift)
       * [`fn withDelegateUrls(delegateUrls)`](#fn-specingressopenshiftwithdelegateurls)
       * [`fn withHtpasswdFile(htpasswdFile)`](#fn-specingressopenshiftwithhtpasswdfile)
@@ -428,10 +2056,283 @@ permalink: /1.25/jaegertracing/v1/jaeger/
       * [`obj spec.ingress.securityContext.seccompProfile`](#obj-specingresssecuritycontextseccompprofile)
         * [`fn withLocalhostProfile(localhostProfile)`](#fn-specingresssecuritycontextseccompprofilewithlocalhostprofile)
         * [`fn withType(type)`](#fn-specingresssecuritycontextseccompprofilewithtype)
+      * [`obj spec.ingress.securityContext.sysctls`](#obj-specingresssecuritycontextsysctls)
+        * [`fn withName(name)`](#fn-specingresssecuritycontextsysctlswithname)
+        * [`fn withValue(value)`](#fn-specingresssecuritycontextsysctlswithvalue)
       * [`obj spec.ingress.securityContext.windowsOptions`](#obj-specingresssecuritycontextwindowsoptions)
         * [`fn withGmsaCredentialSpec(gmsaCredentialSpec)`](#fn-specingresssecuritycontextwindowsoptionswithgmsacredentialspec)
         * [`fn withGmsaCredentialSpecName(gmsaCredentialSpecName)`](#fn-specingresssecuritycontextwindowsoptionswithgmsacredentialspecname)
         * [`fn withRunAsUserName(runAsUserName)`](#fn-specingresssecuritycontextwindowsoptionswithrunasusername)
+    * [`obj spec.ingress.tls`](#obj-specingresstls)
+      * [`fn withHosts(hosts)`](#fn-specingresstlswithhosts)
+      * [`fn withHostsMixin(hosts)`](#fn-specingresstlswithhostsmixin)
+      * [`fn withSecretName(secretName)`](#fn-specingresstlswithsecretname)
+    * [`obj spec.ingress.tolerations`](#obj-specingresstolerations)
+      * [`fn withEffect(effect)`](#fn-specingresstolerationswitheffect)
+      * [`fn withKey(key)`](#fn-specingresstolerationswithkey)
+      * [`fn withOperator(operator)`](#fn-specingresstolerationswithoperator)
+      * [`fn withTolerationSeconds(tolerationSeconds)`](#fn-specingresstolerationswithtolerationseconds)
+      * [`fn withValue(value)`](#fn-specingresstolerationswithvalue)
+    * [`obj spec.ingress.volumeMounts`](#obj-specingressvolumemounts)
+      * [`fn withMountPath(mountPath)`](#fn-specingressvolumemountswithmountpath)
+      * [`fn withMountPropagation(mountPropagation)`](#fn-specingressvolumemountswithmountpropagation)
+      * [`fn withName(name)`](#fn-specingressvolumemountswithname)
+      * [`fn withReadOnly(readOnly)`](#fn-specingressvolumemountswithreadonly)
+      * [`fn withSubPath(subPath)`](#fn-specingressvolumemountswithsubpath)
+      * [`fn withSubPathExpr(subPathExpr)`](#fn-specingressvolumemountswithsubpathexpr)
+    * [`obj spec.ingress.volumes`](#obj-specingressvolumes)
+      * [`fn withName(name)`](#fn-specingressvolumeswithname)
+      * [`obj spec.ingress.volumes.awsElasticBlockStore`](#obj-specingressvolumesawselasticblockstore)
+        * [`fn withFsType(fsType)`](#fn-specingressvolumesawselasticblockstorewithfstype)
+        * [`fn withPartition(partition)`](#fn-specingressvolumesawselasticblockstorewithpartition)
+        * [`fn withReadOnly(readOnly)`](#fn-specingressvolumesawselasticblockstorewithreadonly)
+        * [`fn withVolumeID(volumeID)`](#fn-specingressvolumesawselasticblockstorewithvolumeid)
+      * [`obj spec.ingress.volumes.azureDisk`](#obj-specingressvolumesazuredisk)
+        * [`fn withCachingMode(cachingMode)`](#fn-specingressvolumesazurediskwithcachingmode)
+        * [`fn withDiskName(diskName)`](#fn-specingressvolumesazurediskwithdiskname)
+        * [`fn withDiskURI(diskURI)`](#fn-specingressvolumesazurediskwithdiskuri)
+        * [`fn withFsType(fsType)`](#fn-specingressvolumesazurediskwithfstype)
+        * [`fn withKind(kind)`](#fn-specingressvolumesazurediskwithkind)
+        * [`fn withReadOnly(readOnly)`](#fn-specingressvolumesazurediskwithreadonly)
+      * [`obj spec.ingress.volumes.azureFile`](#obj-specingressvolumesazurefile)
+        * [`fn withReadOnly(readOnly)`](#fn-specingressvolumesazurefilewithreadonly)
+        * [`fn withSecretName(secretName)`](#fn-specingressvolumesazurefilewithsecretname)
+        * [`fn withShareName(shareName)`](#fn-specingressvolumesazurefilewithsharename)
+      * [`obj spec.ingress.volumes.cephfs`](#obj-specingressvolumescephfs)
+        * [`fn withMonitors(monitors)`](#fn-specingressvolumescephfswithmonitors)
+        * [`fn withMonitorsMixin(monitors)`](#fn-specingressvolumescephfswithmonitorsmixin)
+        * [`fn withPath(path)`](#fn-specingressvolumescephfswithpath)
+        * [`fn withReadOnly(readOnly)`](#fn-specingressvolumescephfswithreadonly)
+        * [`fn withSecretFile(secretFile)`](#fn-specingressvolumescephfswithsecretfile)
+        * [`fn withUser(user)`](#fn-specingressvolumescephfswithuser)
+        * [`obj spec.ingress.volumes.cephfs.secretRef`](#obj-specingressvolumescephfssecretref)
+          * [`fn withName(name)`](#fn-specingressvolumescephfssecretrefwithname)
+      * [`obj spec.ingress.volumes.cinder`](#obj-specingressvolumescinder)
+        * [`fn withFsType(fsType)`](#fn-specingressvolumescinderwithfstype)
+        * [`fn withReadOnly(readOnly)`](#fn-specingressvolumescinderwithreadonly)
+        * [`fn withVolumeID(volumeID)`](#fn-specingressvolumescinderwithvolumeid)
+        * [`obj spec.ingress.volumes.cinder.secretRef`](#obj-specingressvolumescindersecretref)
+          * [`fn withName(name)`](#fn-specingressvolumescindersecretrefwithname)
+      * [`obj spec.ingress.volumes.configMap`](#obj-specingressvolumesconfigmap)
+        * [`fn withDefaultMode(defaultMode)`](#fn-specingressvolumesconfigmapwithdefaultmode)
+        * [`fn withItems(items)`](#fn-specingressvolumesconfigmapwithitems)
+        * [`fn withItemsMixin(items)`](#fn-specingressvolumesconfigmapwithitemsmixin)
+        * [`fn withName(name)`](#fn-specingressvolumesconfigmapwithname)
+        * [`fn withOptional(optional)`](#fn-specingressvolumesconfigmapwithoptional)
+        * [`obj spec.ingress.volumes.configMap.items`](#obj-specingressvolumesconfigmapitems)
+          * [`fn withKey(key)`](#fn-specingressvolumesconfigmapitemswithkey)
+          * [`fn withMode(mode)`](#fn-specingressvolumesconfigmapitemswithmode)
+          * [`fn withPath(path)`](#fn-specingressvolumesconfigmapitemswithpath)
+      * [`obj spec.ingress.volumes.csi`](#obj-specingressvolumescsi)
+        * [`fn withDriver(driver)`](#fn-specingressvolumescsiwithdriver)
+        * [`fn withFsType(fsType)`](#fn-specingressvolumescsiwithfstype)
+        * [`fn withReadOnly(readOnly)`](#fn-specingressvolumescsiwithreadonly)
+        * [`fn withVolumeAttributes(volumeAttributes)`](#fn-specingressvolumescsiwithvolumeattributes)
+        * [`fn withVolumeAttributesMixin(volumeAttributes)`](#fn-specingressvolumescsiwithvolumeattributesmixin)
+        * [`obj spec.ingress.volumes.csi.nodePublishSecretRef`](#obj-specingressvolumescsinodepublishsecretref)
+          * [`fn withName(name)`](#fn-specingressvolumescsinodepublishsecretrefwithname)
+      * [`obj spec.ingress.volumes.downwardAPI`](#obj-specingressvolumesdownwardapi)
+        * [`fn withDefaultMode(defaultMode)`](#fn-specingressvolumesdownwardapiwithdefaultmode)
+        * [`fn withItems(items)`](#fn-specingressvolumesdownwardapiwithitems)
+        * [`fn withItemsMixin(items)`](#fn-specingressvolumesdownwardapiwithitemsmixin)
+        * [`obj spec.ingress.volumes.downwardAPI.items`](#obj-specingressvolumesdownwardapiitems)
+          * [`fn withMode(mode)`](#fn-specingressvolumesdownwardapiitemswithmode)
+          * [`fn withPath(path)`](#fn-specingressvolumesdownwardapiitemswithpath)
+          * [`obj spec.ingress.volumes.downwardAPI.items.fieldRef`](#obj-specingressvolumesdownwardapiitemsfieldref)
+            * [`fn withApiVersion(apiVersion)`](#fn-specingressvolumesdownwardapiitemsfieldrefwithapiversion)
+            * [`fn withFieldPath(fieldPath)`](#fn-specingressvolumesdownwardapiitemsfieldrefwithfieldpath)
+          * [`obj spec.ingress.volumes.downwardAPI.items.resourceFieldRef`](#obj-specingressvolumesdownwardapiitemsresourcefieldref)
+            * [`fn withContainerName(containerName)`](#fn-specingressvolumesdownwardapiitemsresourcefieldrefwithcontainername)
+            * [`fn withDivisor(divisor)`](#fn-specingressvolumesdownwardapiitemsresourcefieldrefwithdivisor)
+            * [`fn withResource(resource)`](#fn-specingressvolumesdownwardapiitemsresourcefieldrefwithresource)
+      * [`obj spec.ingress.volumes.emptyDir`](#obj-specingressvolumesemptydir)
+        * [`fn withMedium(medium)`](#fn-specingressvolumesemptydirwithmedium)
+        * [`fn withSizeLimit(sizeLimit)`](#fn-specingressvolumesemptydirwithsizelimit)
+      * [`obj spec.ingress.volumes.ephemeral`](#obj-specingressvolumesephemeral)
+        * [`fn withReadOnly(readOnly)`](#fn-specingressvolumesephemeralwithreadonly)
+        * [`obj spec.ingress.volumes.ephemeral.volumeClaimTemplate`](#obj-specingressvolumesephemeralvolumeclaimtemplate)
+          * [`fn withMetadata(metadata)`](#fn-specingressvolumesephemeralvolumeclaimtemplatewithmetadata)
+          * [`fn withMetadataMixin(metadata)`](#fn-specingressvolumesephemeralvolumeclaimtemplatewithmetadatamixin)
+          * [`obj spec.ingress.volumes.ephemeral.volumeClaimTemplate.spec`](#obj-specingressvolumesephemeralvolumeclaimtemplatespec)
+            * [`fn withAccessModes(accessModes)`](#fn-specingressvolumesephemeralvolumeclaimtemplatespecwithaccessmodes)
+            * [`fn withAccessModesMixin(accessModes)`](#fn-specingressvolumesephemeralvolumeclaimtemplatespecwithaccessmodesmixin)
+            * [`fn withStorageClassName(storageClassName)`](#fn-specingressvolumesephemeralvolumeclaimtemplatespecwithstorageclassname)
+            * [`fn withVolumeMode(volumeMode)`](#fn-specingressvolumesephemeralvolumeclaimtemplatespecwithvolumemode)
+            * [`fn withVolumeName(volumeName)`](#fn-specingressvolumesephemeralvolumeclaimtemplatespecwithvolumename)
+            * [`obj spec.ingress.volumes.ephemeral.volumeClaimTemplate.spec.dataSource`](#obj-specingressvolumesephemeralvolumeclaimtemplatespecdatasource)
+              * [`fn withApiGroup(apiGroup)`](#fn-specingressvolumesephemeralvolumeclaimtemplatespecdatasourcewithapigroup)
+              * [`fn withKind(kind)`](#fn-specingressvolumesephemeralvolumeclaimtemplatespecdatasourcewithkind)
+              * [`fn withName(name)`](#fn-specingressvolumesephemeralvolumeclaimtemplatespecdatasourcewithname)
+            * [`obj spec.ingress.volumes.ephemeral.volumeClaimTemplate.spec.resources`](#obj-specingressvolumesephemeralvolumeclaimtemplatespecresources)
+              * [`fn withLimits(limits)`](#fn-specingressvolumesephemeralvolumeclaimtemplatespecresourceswithlimits)
+              * [`fn withLimitsMixin(limits)`](#fn-specingressvolumesephemeralvolumeclaimtemplatespecresourceswithlimitsmixin)
+              * [`fn withRequests(requests)`](#fn-specingressvolumesephemeralvolumeclaimtemplatespecresourceswithrequests)
+              * [`fn withRequestsMixin(requests)`](#fn-specingressvolumesephemeralvolumeclaimtemplatespecresourceswithrequestsmixin)
+            * [`obj spec.ingress.volumes.ephemeral.volumeClaimTemplate.spec.selector`](#obj-specingressvolumesephemeralvolumeclaimtemplatespecselector)
+              * [`fn withMatchExpressions(matchExpressions)`](#fn-specingressvolumesephemeralvolumeclaimtemplatespecselectorwithmatchexpressions)
+              * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specingressvolumesephemeralvolumeclaimtemplatespecselectorwithmatchexpressionsmixin)
+              * [`fn withMatchLabels(matchLabels)`](#fn-specingressvolumesephemeralvolumeclaimtemplatespecselectorwithmatchlabels)
+              * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specingressvolumesephemeralvolumeclaimtemplatespecselectorwithmatchlabelsmixin)
+              * [`obj spec.ingress.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions`](#obj-specingressvolumesephemeralvolumeclaimtemplatespecselectormatchexpressions)
+                * [`fn withKey(key)`](#fn-specingressvolumesephemeralvolumeclaimtemplatespecselectormatchexpressionswithkey)
+                * [`fn withOperator(operator)`](#fn-specingressvolumesephemeralvolumeclaimtemplatespecselectormatchexpressionswithoperator)
+                * [`fn withValues(values)`](#fn-specingressvolumesephemeralvolumeclaimtemplatespecselectormatchexpressionswithvalues)
+                * [`fn withValuesMixin(values)`](#fn-specingressvolumesephemeralvolumeclaimtemplatespecselectormatchexpressionswithvaluesmixin)
+      * [`obj spec.ingress.volumes.fc`](#obj-specingressvolumesfc)
+        * [`fn withFsType(fsType)`](#fn-specingressvolumesfcwithfstype)
+        * [`fn withLun(lun)`](#fn-specingressvolumesfcwithlun)
+        * [`fn withReadOnly(readOnly)`](#fn-specingressvolumesfcwithreadonly)
+        * [`fn withTargetWWNs(targetWWNs)`](#fn-specingressvolumesfcwithtargetwwns)
+        * [`fn withTargetWWNsMixin(targetWWNs)`](#fn-specingressvolumesfcwithtargetwwnsmixin)
+        * [`fn withWwids(wwids)`](#fn-specingressvolumesfcwithwwids)
+        * [`fn withWwidsMixin(wwids)`](#fn-specingressvolumesfcwithwwidsmixin)
+      * [`obj spec.ingress.volumes.flexVolume`](#obj-specingressvolumesflexvolume)
+        * [`fn withDriver(driver)`](#fn-specingressvolumesflexvolumewithdriver)
+        * [`fn withFsType(fsType)`](#fn-specingressvolumesflexvolumewithfstype)
+        * [`fn withOptions(options)`](#fn-specingressvolumesflexvolumewithoptions)
+        * [`fn withOptionsMixin(options)`](#fn-specingressvolumesflexvolumewithoptionsmixin)
+        * [`fn withReadOnly(readOnly)`](#fn-specingressvolumesflexvolumewithreadonly)
+        * [`obj spec.ingress.volumes.flexVolume.secretRef`](#obj-specingressvolumesflexvolumesecretref)
+          * [`fn withName(name)`](#fn-specingressvolumesflexvolumesecretrefwithname)
+      * [`obj spec.ingress.volumes.flocker`](#obj-specingressvolumesflocker)
+        * [`fn withDatasetName(datasetName)`](#fn-specingressvolumesflockerwithdatasetname)
+        * [`fn withDatasetUUID(datasetUUID)`](#fn-specingressvolumesflockerwithdatasetuuid)
+      * [`obj spec.ingress.volumes.gcePersistentDisk`](#obj-specingressvolumesgcepersistentdisk)
+        * [`fn withFsType(fsType)`](#fn-specingressvolumesgcepersistentdiskwithfstype)
+        * [`fn withPartition(partition)`](#fn-specingressvolumesgcepersistentdiskwithpartition)
+        * [`fn withPdName(pdName)`](#fn-specingressvolumesgcepersistentdiskwithpdname)
+        * [`fn withReadOnly(readOnly)`](#fn-specingressvolumesgcepersistentdiskwithreadonly)
+      * [`obj spec.ingress.volumes.gitRepo`](#obj-specingressvolumesgitrepo)
+        * [`fn withDirectory(directory)`](#fn-specingressvolumesgitrepowithdirectory)
+        * [`fn withRepository(repository)`](#fn-specingressvolumesgitrepowithrepository)
+        * [`fn withRevision(revision)`](#fn-specingressvolumesgitrepowithrevision)
+      * [`obj spec.ingress.volumes.glusterfs`](#obj-specingressvolumesglusterfs)
+        * [`fn withEndpoints(endpoints)`](#fn-specingressvolumesglusterfswithendpoints)
+        * [`fn withPath(path)`](#fn-specingressvolumesglusterfswithpath)
+        * [`fn withReadOnly(readOnly)`](#fn-specingressvolumesglusterfswithreadonly)
+      * [`obj spec.ingress.volumes.hostPath`](#obj-specingressvolumeshostpath)
+        * [`fn withPath(path)`](#fn-specingressvolumeshostpathwithpath)
+        * [`fn withType(type)`](#fn-specingressvolumeshostpathwithtype)
+      * [`obj spec.ingress.volumes.iscsi`](#obj-specingressvolumesiscsi)
+        * [`fn withChapAuthDiscovery(chapAuthDiscovery)`](#fn-specingressvolumesiscsiwithchapauthdiscovery)
+        * [`fn withChapAuthSession(chapAuthSession)`](#fn-specingressvolumesiscsiwithchapauthsession)
+        * [`fn withFsType(fsType)`](#fn-specingressvolumesiscsiwithfstype)
+        * [`fn withInitiatorName(initiatorName)`](#fn-specingressvolumesiscsiwithinitiatorname)
+        * [`fn withIqn(iqn)`](#fn-specingressvolumesiscsiwithiqn)
+        * [`fn withIscsiInterface(iscsiInterface)`](#fn-specingressvolumesiscsiwithiscsiinterface)
+        * [`fn withLun(lun)`](#fn-specingressvolumesiscsiwithlun)
+        * [`fn withPortals(portals)`](#fn-specingressvolumesiscsiwithportals)
+        * [`fn withPortalsMixin(portals)`](#fn-specingressvolumesiscsiwithportalsmixin)
+        * [`fn withReadOnly(readOnly)`](#fn-specingressvolumesiscsiwithreadonly)
+        * [`fn withTargetPortal(targetPortal)`](#fn-specingressvolumesiscsiwithtargetportal)
+        * [`obj spec.ingress.volumes.iscsi.secretRef`](#obj-specingressvolumesiscsisecretref)
+          * [`fn withName(name)`](#fn-specingressvolumesiscsisecretrefwithname)
+      * [`obj spec.ingress.volumes.nfs`](#obj-specingressvolumesnfs)
+        * [`fn withPath(path)`](#fn-specingressvolumesnfswithpath)
+        * [`fn withReadOnly(readOnly)`](#fn-specingressvolumesnfswithreadonly)
+        * [`fn withServer(server)`](#fn-specingressvolumesnfswithserver)
+      * [`obj spec.ingress.volumes.persistentVolumeClaim`](#obj-specingressvolumespersistentvolumeclaim)
+        * [`fn withClaimName(claimName)`](#fn-specingressvolumespersistentvolumeclaimwithclaimname)
+        * [`fn withReadOnly(readOnly)`](#fn-specingressvolumespersistentvolumeclaimwithreadonly)
+      * [`obj spec.ingress.volumes.photonPersistentDisk`](#obj-specingressvolumesphotonpersistentdisk)
+        * [`fn withFsType(fsType)`](#fn-specingressvolumesphotonpersistentdiskwithfstype)
+        * [`fn withPdID(pdID)`](#fn-specingressvolumesphotonpersistentdiskwithpdid)
+      * [`obj spec.ingress.volumes.portworxVolume`](#obj-specingressvolumesportworxvolume)
+        * [`fn withFsType(fsType)`](#fn-specingressvolumesportworxvolumewithfstype)
+        * [`fn withReadOnly(readOnly)`](#fn-specingressvolumesportworxvolumewithreadonly)
+        * [`fn withVolumeID(volumeID)`](#fn-specingressvolumesportworxvolumewithvolumeid)
+      * [`obj spec.ingress.volumes.projected`](#obj-specingressvolumesprojected)
+        * [`fn withDefaultMode(defaultMode)`](#fn-specingressvolumesprojectedwithdefaultmode)
+        * [`fn withSources(sources)`](#fn-specingressvolumesprojectedwithsources)
+        * [`fn withSourcesMixin(sources)`](#fn-specingressvolumesprojectedwithsourcesmixin)
+        * [`obj spec.ingress.volumes.projected.sources`](#obj-specingressvolumesprojectedsources)
+          * [`obj spec.ingress.volumes.projected.sources.configMap`](#obj-specingressvolumesprojectedsourcesconfigmap)
+            * [`fn withItems(items)`](#fn-specingressvolumesprojectedsourcesconfigmapwithitems)
+            * [`fn withItemsMixin(items)`](#fn-specingressvolumesprojectedsourcesconfigmapwithitemsmixin)
+            * [`fn withName(name)`](#fn-specingressvolumesprojectedsourcesconfigmapwithname)
+            * [`fn withOptional(optional)`](#fn-specingressvolumesprojectedsourcesconfigmapwithoptional)
+            * [`obj spec.ingress.volumes.projected.sources.configMap.items`](#obj-specingressvolumesprojectedsourcesconfigmapitems)
+              * [`fn withKey(key)`](#fn-specingressvolumesprojectedsourcesconfigmapitemswithkey)
+              * [`fn withMode(mode)`](#fn-specingressvolumesprojectedsourcesconfigmapitemswithmode)
+              * [`fn withPath(path)`](#fn-specingressvolumesprojectedsourcesconfigmapitemswithpath)
+          * [`obj spec.ingress.volumes.projected.sources.downwardAPI`](#obj-specingressvolumesprojectedsourcesdownwardapi)
+            * [`fn withItems(items)`](#fn-specingressvolumesprojectedsourcesdownwardapiwithitems)
+            * [`fn withItemsMixin(items)`](#fn-specingressvolumesprojectedsourcesdownwardapiwithitemsmixin)
+            * [`obj spec.ingress.volumes.projected.sources.downwardAPI.items`](#obj-specingressvolumesprojectedsourcesdownwardapiitems)
+              * [`fn withMode(mode)`](#fn-specingressvolumesprojectedsourcesdownwardapiitemswithmode)
+              * [`fn withPath(path)`](#fn-specingressvolumesprojectedsourcesdownwardapiitemswithpath)
+              * [`obj spec.ingress.volumes.projected.sources.downwardAPI.items.fieldRef`](#obj-specingressvolumesprojectedsourcesdownwardapiitemsfieldref)
+                * [`fn withApiVersion(apiVersion)`](#fn-specingressvolumesprojectedsourcesdownwardapiitemsfieldrefwithapiversion)
+                * [`fn withFieldPath(fieldPath)`](#fn-specingressvolumesprojectedsourcesdownwardapiitemsfieldrefwithfieldpath)
+              * [`obj spec.ingress.volumes.projected.sources.downwardAPI.items.resourceFieldRef`](#obj-specingressvolumesprojectedsourcesdownwardapiitemsresourcefieldref)
+                * [`fn withContainerName(containerName)`](#fn-specingressvolumesprojectedsourcesdownwardapiitemsresourcefieldrefwithcontainername)
+                * [`fn withDivisor(divisor)`](#fn-specingressvolumesprojectedsourcesdownwardapiitemsresourcefieldrefwithdivisor)
+                * [`fn withResource(resource)`](#fn-specingressvolumesprojectedsourcesdownwardapiitemsresourcefieldrefwithresource)
+          * [`obj spec.ingress.volumes.projected.sources.secret`](#obj-specingressvolumesprojectedsourcessecret)
+            * [`fn withItems(items)`](#fn-specingressvolumesprojectedsourcessecretwithitems)
+            * [`fn withItemsMixin(items)`](#fn-specingressvolumesprojectedsourcessecretwithitemsmixin)
+            * [`fn withName(name)`](#fn-specingressvolumesprojectedsourcessecretwithname)
+            * [`fn withOptional(optional)`](#fn-specingressvolumesprojectedsourcessecretwithoptional)
+            * [`obj spec.ingress.volumes.projected.sources.secret.items`](#obj-specingressvolumesprojectedsourcessecretitems)
+              * [`fn withKey(key)`](#fn-specingressvolumesprojectedsourcessecretitemswithkey)
+              * [`fn withMode(mode)`](#fn-specingressvolumesprojectedsourcessecretitemswithmode)
+              * [`fn withPath(path)`](#fn-specingressvolumesprojectedsourcessecretitemswithpath)
+          * [`obj spec.ingress.volumes.projected.sources.serviceAccountToken`](#obj-specingressvolumesprojectedsourcesserviceaccounttoken)
+            * [`fn withAudience(audience)`](#fn-specingressvolumesprojectedsourcesserviceaccounttokenwithaudience)
+            * [`fn withExpirationSeconds(expirationSeconds)`](#fn-specingressvolumesprojectedsourcesserviceaccounttokenwithexpirationseconds)
+            * [`fn withPath(path)`](#fn-specingressvolumesprojectedsourcesserviceaccounttokenwithpath)
+      * [`obj spec.ingress.volumes.quobyte`](#obj-specingressvolumesquobyte)
+        * [`fn withGroup(group)`](#fn-specingressvolumesquobytewithgroup)
+        * [`fn withReadOnly(readOnly)`](#fn-specingressvolumesquobytewithreadonly)
+        * [`fn withRegistry(registry)`](#fn-specingressvolumesquobytewithregistry)
+        * [`fn withTenant(tenant)`](#fn-specingressvolumesquobytewithtenant)
+        * [`fn withUser(user)`](#fn-specingressvolumesquobytewithuser)
+        * [`fn withVolume(volume)`](#fn-specingressvolumesquobytewithvolume)
+      * [`obj spec.ingress.volumes.rbd`](#obj-specingressvolumesrbd)
+        * [`fn withFsType(fsType)`](#fn-specingressvolumesrbdwithfstype)
+        * [`fn withImage(image)`](#fn-specingressvolumesrbdwithimage)
+        * [`fn withKeyring(keyring)`](#fn-specingressvolumesrbdwithkeyring)
+        * [`fn withMonitors(monitors)`](#fn-specingressvolumesrbdwithmonitors)
+        * [`fn withMonitorsMixin(monitors)`](#fn-specingressvolumesrbdwithmonitorsmixin)
+        * [`fn withPool(pool)`](#fn-specingressvolumesrbdwithpool)
+        * [`fn withReadOnly(readOnly)`](#fn-specingressvolumesrbdwithreadonly)
+        * [`fn withUser(user)`](#fn-specingressvolumesrbdwithuser)
+        * [`obj spec.ingress.volumes.rbd.secretRef`](#obj-specingressvolumesrbdsecretref)
+          * [`fn withName(name)`](#fn-specingressvolumesrbdsecretrefwithname)
+      * [`obj spec.ingress.volumes.scaleIO`](#obj-specingressvolumesscaleio)
+        * [`fn withFsType(fsType)`](#fn-specingressvolumesscaleiowithfstype)
+        * [`fn withGateway(gateway)`](#fn-specingressvolumesscaleiowithgateway)
+        * [`fn withProtectionDomain(protectionDomain)`](#fn-specingressvolumesscaleiowithprotectiondomain)
+        * [`fn withReadOnly(readOnly)`](#fn-specingressvolumesscaleiowithreadonly)
+        * [`fn withSslEnabled(sslEnabled)`](#fn-specingressvolumesscaleiowithsslenabled)
+        * [`fn withStorageMode(storageMode)`](#fn-specingressvolumesscaleiowithstoragemode)
+        * [`fn withStoragePool(storagePool)`](#fn-specingressvolumesscaleiowithstoragepool)
+        * [`fn withSystem(system)`](#fn-specingressvolumesscaleiowithsystem)
+        * [`fn withVolumeName(volumeName)`](#fn-specingressvolumesscaleiowithvolumename)
+        * [`obj spec.ingress.volumes.scaleIO.secretRef`](#obj-specingressvolumesscaleiosecretref)
+          * [`fn withName(name)`](#fn-specingressvolumesscaleiosecretrefwithname)
+      * [`obj spec.ingress.volumes.secret`](#obj-specingressvolumessecret)
+        * [`fn withDefaultMode(defaultMode)`](#fn-specingressvolumessecretwithdefaultmode)
+        * [`fn withItems(items)`](#fn-specingressvolumessecretwithitems)
+        * [`fn withItemsMixin(items)`](#fn-specingressvolumessecretwithitemsmixin)
+        * [`fn withOptional(optional)`](#fn-specingressvolumessecretwithoptional)
+        * [`fn withSecretName(secretName)`](#fn-specingressvolumessecretwithsecretname)
+        * [`obj spec.ingress.volumes.secret.items`](#obj-specingressvolumessecretitems)
+          * [`fn withKey(key)`](#fn-specingressvolumessecretitemswithkey)
+          * [`fn withMode(mode)`](#fn-specingressvolumessecretitemswithmode)
+          * [`fn withPath(path)`](#fn-specingressvolumessecretitemswithpath)
+      * [`obj spec.ingress.volumes.storageos`](#obj-specingressvolumesstorageos)
+        * [`fn withFsType(fsType)`](#fn-specingressvolumesstorageoswithfstype)
+        * [`fn withReadOnly(readOnly)`](#fn-specingressvolumesstorageoswithreadonly)
+        * [`fn withVolumeName(volumeName)`](#fn-specingressvolumesstorageoswithvolumename)
+        * [`fn withVolumeNamespace(volumeNamespace)`](#fn-specingressvolumesstorageoswithvolumenamespace)
+        * [`obj spec.ingress.volumes.storageos.secretRef`](#obj-specingressvolumesstorageossecretref)
+          * [`fn withName(name)`](#fn-specingressvolumesstorageossecretrefwithname)
+      * [`obj spec.ingress.volumes.vsphereVolume`](#obj-specingressvolumesvspherevolume)
+        * [`fn withFsType(fsType)`](#fn-specingressvolumesvspherevolumewithfstype)
+        * [`fn withStoragePolicyID(storagePolicyID)`](#fn-specingressvolumesvspherevolumewithstoragepolicyid)
+        * [`fn withStoragePolicyName(storagePolicyName)`](#fn-specingressvolumesvspherevolumewithstoragepolicyname)
+        * [`fn withVolumePath(volumePath)`](#fn-specingressvolumesvspherevolumewithvolumepath)
   * [`obj spec.query`](#obj-specquery)
     * [`fn withAnnotations(annotations)`](#fn-specquerywithannotations)
     * [`fn withAnnotationsMixin(annotations)`](#fn-specquerywithannotationsmixin)
@@ -457,19 +2358,111 @@ permalink: /1.25/jaegertracing/v1/jaeger/
       * [`obj spec.query.affinity.nodeAffinity`](#obj-specqueryaffinitynodeaffinity)
         * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specqueryaffinitynodeaffinitywithpreferredduringschedulingignoredduringexecution)
         * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specqueryaffinitynodeaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
+        * [`obj spec.query.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-specqueryaffinitynodeaffinitypreferredduringschedulingignoredduringexecution)
+          * [`fn withWeight(weight)`](#fn-specqueryaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+          * [`obj spec.query.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference`](#obj-specqueryaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreference)
+            * [`fn withMatchExpressions(matchExpressions)`](#fn-specqueryaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchexpressions)
+            * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specqueryaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchexpressionsmixin)
+            * [`fn withMatchFields(matchFields)`](#fn-specqueryaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchfields)
+            * [`fn withMatchFieldsMixin(matchFields)`](#fn-specqueryaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchfieldsmixin)
+            * [`obj spec.query.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions`](#obj-specqueryaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressions)
+              * [`fn withKey(key)`](#fn-specqueryaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithkey)
+              * [`fn withOperator(operator)`](#fn-specqueryaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithoperator)
+              * [`fn withValues(values)`](#fn-specqueryaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithvalues)
+              * [`fn withValuesMixin(values)`](#fn-specqueryaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithvaluesmixin)
+            * [`obj spec.query.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields`](#obj-specqueryaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfields)
+              * [`fn withKey(key)`](#fn-specqueryaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithkey)
+              * [`fn withOperator(operator)`](#fn-specqueryaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithoperator)
+              * [`fn withValues(values)`](#fn-specqueryaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithvalues)
+              * [`fn withValuesMixin(values)`](#fn-specqueryaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithvaluesmixin)
         * [`obj spec.query.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-specqueryaffinitynodeaffinityrequiredduringschedulingignoredduringexecution)
           * [`fn withNodeSelectorTerms(nodeSelectorTerms)`](#fn-specqueryaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionwithnodeselectorterms)
           * [`fn withNodeSelectorTermsMixin(nodeSelectorTerms)`](#fn-specqueryaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionwithnodeselectortermsmixin)
+          * [`obj spec.query.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms`](#obj-specqueryaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectorterms)
+            * [`fn withMatchExpressions(matchExpressions)`](#fn-specqueryaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchexpressions)
+            * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specqueryaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchexpressionsmixin)
+            * [`fn withMatchFields(matchFields)`](#fn-specqueryaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchfields)
+            * [`fn withMatchFieldsMixin(matchFields)`](#fn-specqueryaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchfieldsmixin)
+            * [`obj spec.query.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions`](#obj-specqueryaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressions)
+              * [`fn withKey(key)`](#fn-specqueryaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithkey)
+              * [`fn withOperator(operator)`](#fn-specqueryaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithoperator)
+              * [`fn withValues(values)`](#fn-specqueryaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithvalues)
+              * [`fn withValuesMixin(values)`](#fn-specqueryaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithvaluesmixin)
+            * [`obj spec.query.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields`](#obj-specqueryaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfields)
+              * [`fn withKey(key)`](#fn-specqueryaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithkey)
+              * [`fn withOperator(operator)`](#fn-specqueryaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithoperator)
+              * [`fn withValues(values)`](#fn-specqueryaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithvalues)
+              * [`fn withValuesMixin(values)`](#fn-specqueryaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithvaluesmixin)
       * [`obj spec.query.affinity.podAffinity`](#obj-specqueryaffinitypodaffinity)
         * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specqueryaffinitypodaffinitywithpreferredduringschedulingignoredduringexecution)
         * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specqueryaffinitypodaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
         * [`fn withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specqueryaffinitypodaffinitywithrequiredduringschedulingignoredduringexecution)
         * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specqueryaffinitypodaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
+        * [`obj spec.query.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-specqueryaffinitypodaffinitypreferredduringschedulingignoredduringexecution)
+          * [`fn withWeight(weight)`](#fn-specqueryaffinitypodaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+          * [`obj spec.query.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm`](#obj-specqueryaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinityterm)
+            * [`fn withNamespaces(namespaces)`](#fn-specqueryaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespaces)
+            * [`fn withNamespacesMixin(namespaces)`](#fn-specqueryaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespacesmixin)
+            * [`fn withTopologyKey(topologyKey)`](#fn-specqueryaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithtopologykey)
+            * [`obj spec.query.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector`](#obj-specqueryaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselector)
+              * [`fn withMatchExpressions(matchExpressions)`](#fn-specqueryaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressions)
+              * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specqueryaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressionsmixin)
+              * [`fn withMatchLabels(matchLabels)`](#fn-specqueryaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabels)
+              * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specqueryaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabelsmixin)
+              * [`obj spec.query.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions`](#obj-specqueryaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressions)
+                * [`fn withKey(key)`](#fn-specqueryaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithkey)
+                * [`fn withOperator(operator)`](#fn-specqueryaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithoperator)
+                * [`fn withValues(values)`](#fn-specqueryaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvalues)
+                * [`fn withValuesMixin(values)`](#fn-specqueryaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvaluesmixin)
+        * [`obj spec.query.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-specqueryaffinitypodaffinityrequiredduringschedulingignoredduringexecution)
+          * [`fn withNamespaces(namespaces)`](#fn-specqueryaffinitypodaffinityrequiredduringschedulingignoredduringexecutionwithnamespaces)
+          * [`fn withNamespacesMixin(namespaces)`](#fn-specqueryaffinitypodaffinityrequiredduringschedulingignoredduringexecutionwithnamespacesmixin)
+          * [`fn withTopologyKey(topologyKey)`](#fn-specqueryaffinitypodaffinityrequiredduringschedulingignoredduringexecutionwithtopologykey)
+          * [`obj spec.query.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector`](#obj-specqueryaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselector)
+            * [`fn withMatchExpressions(matchExpressions)`](#fn-specqueryaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressions)
+            * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specqueryaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressionsmixin)
+            * [`fn withMatchLabels(matchLabels)`](#fn-specqueryaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabels)
+            * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specqueryaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabelsmixin)
+            * [`obj spec.query.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions`](#obj-specqueryaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressions)
+              * [`fn withKey(key)`](#fn-specqueryaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithkey)
+              * [`fn withOperator(operator)`](#fn-specqueryaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithoperator)
+              * [`fn withValues(values)`](#fn-specqueryaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvalues)
+              * [`fn withValuesMixin(values)`](#fn-specqueryaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvaluesmixin)
       * [`obj spec.query.affinity.podAntiAffinity`](#obj-specqueryaffinitypodantiaffinity)
         * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specqueryaffinitypodantiaffinitywithpreferredduringschedulingignoredduringexecution)
         * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specqueryaffinitypodantiaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
         * [`fn withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specqueryaffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecution)
         * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specqueryaffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
+        * [`obj spec.query.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-specqueryaffinitypodantiaffinitypreferredduringschedulingignoredduringexecution)
+          * [`fn withWeight(weight)`](#fn-specqueryaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+          * [`obj spec.query.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm`](#obj-specqueryaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinityterm)
+            * [`fn withNamespaces(namespaces)`](#fn-specqueryaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespaces)
+            * [`fn withNamespacesMixin(namespaces)`](#fn-specqueryaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespacesmixin)
+            * [`fn withTopologyKey(topologyKey)`](#fn-specqueryaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithtopologykey)
+            * [`obj spec.query.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector`](#obj-specqueryaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselector)
+              * [`fn withMatchExpressions(matchExpressions)`](#fn-specqueryaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressions)
+              * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specqueryaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressionsmixin)
+              * [`fn withMatchLabels(matchLabels)`](#fn-specqueryaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabels)
+              * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specqueryaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabelsmixin)
+              * [`obj spec.query.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions`](#obj-specqueryaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressions)
+                * [`fn withKey(key)`](#fn-specqueryaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithkey)
+                * [`fn withOperator(operator)`](#fn-specqueryaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithoperator)
+                * [`fn withValues(values)`](#fn-specqueryaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvalues)
+                * [`fn withValuesMixin(values)`](#fn-specqueryaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvaluesmixin)
+        * [`obj spec.query.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-specqueryaffinitypodantiaffinityrequiredduringschedulingignoredduringexecution)
+          * [`fn withNamespaces(namespaces)`](#fn-specqueryaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionwithnamespaces)
+          * [`fn withNamespacesMixin(namespaces)`](#fn-specqueryaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionwithnamespacesmixin)
+          * [`fn withTopologyKey(topologyKey)`](#fn-specqueryaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionwithtopologykey)
+          * [`obj spec.query.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector`](#obj-specqueryaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselector)
+            * [`fn withMatchExpressions(matchExpressions)`](#fn-specqueryaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressions)
+            * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specqueryaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressionsmixin)
+            * [`fn withMatchLabels(matchLabels)`](#fn-specqueryaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabels)
+            * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specqueryaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabelsmixin)
+            * [`obj spec.query.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions`](#obj-specqueryaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressions)
+              * [`fn withKey(key)`](#fn-specqueryaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithkey)
+              * [`fn withOperator(operator)`](#fn-specqueryaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithoperator)
+              * [`fn withValues(values)`](#fn-specqueryaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvalues)
+              * [`fn withValuesMixin(values)`](#fn-specqueryaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvaluesmixin)
     * [`obj spec.query.resources`](#obj-specqueryresources)
       * [`fn withLimits(limits)`](#fn-specqueryresourceswithlimits)
       * [`fn withLimitsMixin(limits)`](#fn-specqueryresourceswithlimitsmixin)
@@ -493,6 +2486,9 @@ permalink: /1.25/jaegertracing/v1/jaeger/
       * [`obj spec.query.securityContext.seccompProfile`](#obj-specquerysecuritycontextseccompprofile)
         * [`fn withLocalhostProfile(localhostProfile)`](#fn-specquerysecuritycontextseccompprofilewithlocalhostprofile)
         * [`fn withType(type)`](#fn-specquerysecuritycontextseccompprofilewithtype)
+      * [`obj spec.query.securityContext.sysctls`](#obj-specquerysecuritycontextsysctls)
+        * [`fn withName(name)`](#fn-specquerysecuritycontextsysctlswithname)
+        * [`fn withValue(value)`](#fn-specquerysecuritycontextsysctlswithvalue)
       * [`obj spec.query.securityContext.windowsOptions`](#obj-specquerysecuritycontextwindowsoptions)
         * [`fn withGmsaCredentialSpec(gmsaCredentialSpec)`](#fn-specquerysecuritycontextwindowsoptionswithgmsacredentialspec)
         * [`fn withGmsaCredentialSpecName(gmsaCredentialSpecName)`](#fn-specquerysecuritycontextwindowsoptionswithgmsacredentialspecname)
@@ -502,6 +2498,272 @@ permalink: /1.25/jaegertracing/v1/jaeger/
       * [`obj spec.query.strategy.rollingUpdate`](#obj-specquerystrategyrollingupdate)
         * [`fn withMaxSurge(maxSurge)`](#fn-specquerystrategyrollingupdatewithmaxsurge)
         * [`fn withMaxUnavailable(maxUnavailable)`](#fn-specquerystrategyrollingupdatewithmaxunavailable)
+    * [`obj spec.query.tolerations`](#obj-specquerytolerations)
+      * [`fn withEffect(effect)`](#fn-specquerytolerationswitheffect)
+      * [`fn withKey(key)`](#fn-specquerytolerationswithkey)
+      * [`fn withOperator(operator)`](#fn-specquerytolerationswithoperator)
+      * [`fn withTolerationSeconds(tolerationSeconds)`](#fn-specquerytolerationswithtolerationseconds)
+      * [`fn withValue(value)`](#fn-specquerytolerationswithvalue)
+    * [`obj spec.query.volumeMounts`](#obj-specqueryvolumemounts)
+      * [`fn withMountPath(mountPath)`](#fn-specqueryvolumemountswithmountpath)
+      * [`fn withMountPropagation(mountPropagation)`](#fn-specqueryvolumemountswithmountpropagation)
+      * [`fn withName(name)`](#fn-specqueryvolumemountswithname)
+      * [`fn withReadOnly(readOnly)`](#fn-specqueryvolumemountswithreadonly)
+      * [`fn withSubPath(subPath)`](#fn-specqueryvolumemountswithsubpath)
+      * [`fn withSubPathExpr(subPathExpr)`](#fn-specqueryvolumemountswithsubpathexpr)
+    * [`obj spec.query.volumes`](#obj-specqueryvolumes)
+      * [`fn withName(name)`](#fn-specqueryvolumeswithname)
+      * [`obj spec.query.volumes.awsElasticBlockStore`](#obj-specqueryvolumesawselasticblockstore)
+        * [`fn withFsType(fsType)`](#fn-specqueryvolumesawselasticblockstorewithfstype)
+        * [`fn withPartition(partition)`](#fn-specqueryvolumesawselasticblockstorewithpartition)
+        * [`fn withReadOnly(readOnly)`](#fn-specqueryvolumesawselasticblockstorewithreadonly)
+        * [`fn withVolumeID(volumeID)`](#fn-specqueryvolumesawselasticblockstorewithvolumeid)
+      * [`obj spec.query.volumes.azureDisk`](#obj-specqueryvolumesazuredisk)
+        * [`fn withCachingMode(cachingMode)`](#fn-specqueryvolumesazurediskwithcachingmode)
+        * [`fn withDiskName(diskName)`](#fn-specqueryvolumesazurediskwithdiskname)
+        * [`fn withDiskURI(diskURI)`](#fn-specqueryvolumesazurediskwithdiskuri)
+        * [`fn withFsType(fsType)`](#fn-specqueryvolumesazurediskwithfstype)
+        * [`fn withKind(kind)`](#fn-specqueryvolumesazurediskwithkind)
+        * [`fn withReadOnly(readOnly)`](#fn-specqueryvolumesazurediskwithreadonly)
+      * [`obj spec.query.volumes.azureFile`](#obj-specqueryvolumesazurefile)
+        * [`fn withReadOnly(readOnly)`](#fn-specqueryvolumesazurefilewithreadonly)
+        * [`fn withSecretName(secretName)`](#fn-specqueryvolumesazurefilewithsecretname)
+        * [`fn withShareName(shareName)`](#fn-specqueryvolumesazurefilewithsharename)
+      * [`obj spec.query.volumes.cephfs`](#obj-specqueryvolumescephfs)
+        * [`fn withMonitors(monitors)`](#fn-specqueryvolumescephfswithmonitors)
+        * [`fn withMonitorsMixin(monitors)`](#fn-specqueryvolumescephfswithmonitorsmixin)
+        * [`fn withPath(path)`](#fn-specqueryvolumescephfswithpath)
+        * [`fn withReadOnly(readOnly)`](#fn-specqueryvolumescephfswithreadonly)
+        * [`fn withSecretFile(secretFile)`](#fn-specqueryvolumescephfswithsecretfile)
+        * [`fn withUser(user)`](#fn-specqueryvolumescephfswithuser)
+        * [`obj spec.query.volumes.cephfs.secretRef`](#obj-specqueryvolumescephfssecretref)
+          * [`fn withName(name)`](#fn-specqueryvolumescephfssecretrefwithname)
+      * [`obj spec.query.volumes.cinder`](#obj-specqueryvolumescinder)
+        * [`fn withFsType(fsType)`](#fn-specqueryvolumescinderwithfstype)
+        * [`fn withReadOnly(readOnly)`](#fn-specqueryvolumescinderwithreadonly)
+        * [`fn withVolumeID(volumeID)`](#fn-specqueryvolumescinderwithvolumeid)
+        * [`obj spec.query.volumes.cinder.secretRef`](#obj-specqueryvolumescindersecretref)
+          * [`fn withName(name)`](#fn-specqueryvolumescindersecretrefwithname)
+      * [`obj spec.query.volumes.configMap`](#obj-specqueryvolumesconfigmap)
+        * [`fn withDefaultMode(defaultMode)`](#fn-specqueryvolumesconfigmapwithdefaultmode)
+        * [`fn withItems(items)`](#fn-specqueryvolumesconfigmapwithitems)
+        * [`fn withItemsMixin(items)`](#fn-specqueryvolumesconfigmapwithitemsmixin)
+        * [`fn withName(name)`](#fn-specqueryvolumesconfigmapwithname)
+        * [`fn withOptional(optional)`](#fn-specqueryvolumesconfigmapwithoptional)
+        * [`obj spec.query.volumes.configMap.items`](#obj-specqueryvolumesconfigmapitems)
+          * [`fn withKey(key)`](#fn-specqueryvolumesconfigmapitemswithkey)
+          * [`fn withMode(mode)`](#fn-specqueryvolumesconfigmapitemswithmode)
+          * [`fn withPath(path)`](#fn-specqueryvolumesconfigmapitemswithpath)
+      * [`obj spec.query.volumes.csi`](#obj-specqueryvolumescsi)
+        * [`fn withDriver(driver)`](#fn-specqueryvolumescsiwithdriver)
+        * [`fn withFsType(fsType)`](#fn-specqueryvolumescsiwithfstype)
+        * [`fn withReadOnly(readOnly)`](#fn-specqueryvolumescsiwithreadonly)
+        * [`fn withVolumeAttributes(volumeAttributes)`](#fn-specqueryvolumescsiwithvolumeattributes)
+        * [`fn withVolumeAttributesMixin(volumeAttributes)`](#fn-specqueryvolumescsiwithvolumeattributesmixin)
+        * [`obj spec.query.volumes.csi.nodePublishSecretRef`](#obj-specqueryvolumescsinodepublishsecretref)
+          * [`fn withName(name)`](#fn-specqueryvolumescsinodepublishsecretrefwithname)
+      * [`obj spec.query.volumes.downwardAPI`](#obj-specqueryvolumesdownwardapi)
+        * [`fn withDefaultMode(defaultMode)`](#fn-specqueryvolumesdownwardapiwithdefaultmode)
+        * [`fn withItems(items)`](#fn-specqueryvolumesdownwardapiwithitems)
+        * [`fn withItemsMixin(items)`](#fn-specqueryvolumesdownwardapiwithitemsmixin)
+        * [`obj spec.query.volumes.downwardAPI.items`](#obj-specqueryvolumesdownwardapiitems)
+          * [`fn withMode(mode)`](#fn-specqueryvolumesdownwardapiitemswithmode)
+          * [`fn withPath(path)`](#fn-specqueryvolumesdownwardapiitemswithpath)
+          * [`obj spec.query.volumes.downwardAPI.items.fieldRef`](#obj-specqueryvolumesdownwardapiitemsfieldref)
+            * [`fn withApiVersion(apiVersion)`](#fn-specqueryvolumesdownwardapiitemsfieldrefwithapiversion)
+            * [`fn withFieldPath(fieldPath)`](#fn-specqueryvolumesdownwardapiitemsfieldrefwithfieldpath)
+          * [`obj spec.query.volumes.downwardAPI.items.resourceFieldRef`](#obj-specqueryvolumesdownwardapiitemsresourcefieldref)
+            * [`fn withContainerName(containerName)`](#fn-specqueryvolumesdownwardapiitemsresourcefieldrefwithcontainername)
+            * [`fn withDivisor(divisor)`](#fn-specqueryvolumesdownwardapiitemsresourcefieldrefwithdivisor)
+            * [`fn withResource(resource)`](#fn-specqueryvolumesdownwardapiitemsresourcefieldrefwithresource)
+      * [`obj spec.query.volumes.emptyDir`](#obj-specqueryvolumesemptydir)
+        * [`fn withMedium(medium)`](#fn-specqueryvolumesemptydirwithmedium)
+        * [`fn withSizeLimit(sizeLimit)`](#fn-specqueryvolumesemptydirwithsizelimit)
+      * [`obj spec.query.volumes.ephemeral`](#obj-specqueryvolumesephemeral)
+        * [`fn withReadOnly(readOnly)`](#fn-specqueryvolumesephemeralwithreadonly)
+        * [`obj spec.query.volumes.ephemeral.volumeClaimTemplate`](#obj-specqueryvolumesephemeralvolumeclaimtemplate)
+          * [`fn withMetadata(metadata)`](#fn-specqueryvolumesephemeralvolumeclaimtemplatewithmetadata)
+          * [`fn withMetadataMixin(metadata)`](#fn-specqueryvolumesephemeralvolumeclaimtemplatewithmetadatamixin)
+          * [`obj spec.query.volumes.ephemeral.volumeClaimTemplate.spec`](#obj-specqueryvolumesephemeralvolumeclaimtemplatespec)
+            * [`fn withAccessModes(accessModes)`](#fn-specqueryvolumesephemeralvolumeclaimtemplatespecwithaccessmodes)
+            * [`fn withAccessModesMixin(accessModes)`](#fn-specqueryvolumesephemeralvolumeclaimtemplatespecwithaccessmodesmixin)
+            * [`fn withStorageClassName(storageClassName)`](#fn-specqueryvolumesephemeralvolumeclaimtemplatespecwithstorageclassname)
+            * [`fn withVolumeMode(volumeMode)`](#fn-specqueryvolumesephemeralvolumeclaimtemplatespecwithvolumemode)
+            * [`fn withVolumeName(volumeName)`](#fn-specqueryvolumesephemeralvolumeclaimtemplatespecwithvolumename)
+            * [`obj spec.query.volumes.ephemeral.volumeClaimTemplate.spec.dataSource`](#obj-specqueryvolumesephemeralvolumeclaimtemplatespecdatasource)
+              * [`fn withApiGroup(apiGroup)`](#fn-specqueryvolumesephemeralvolumeclaimtemplatespecdatasourcewithapigroup)
+              * [`fn withKind(kind)`](#fn-specqueryvolumesephemeralvolumeclaimtemplatespecdatasourcewithkind)
+              * [`fn withName(name)`](#fn-specqueryvolumesephemeralvolumeclaimtemplatespecdatasourcewithname)
+            * [`obj spec.query.volumes.ephemeral.volumeClaimTemplate.spec.resources`](#obj-specqueryvolumesephemeralvolumeclaimtemplatespecresources)
+              * [`fn withLimits(limits)`](#fn-specqueryvolumesephemeralvolumeclaimtemplatespecresourceswithlimits)
+              * [`fn withLimitsMixin(limits)`](#fn-specqueryvolumesephemeralvolumeclaimtemplatespecresourceswithlimitsmixin)
+              * [`fn withRequests(requests)`](#fn-specqueryvolumesephemeralvolumeclaimtemplatespecresourceswithrequests)
+              * [`fn withRequestsMixin(requests)`](#fn-specqueryvolumesephemeralvolumeclaimtemplatespecresourceswithrequestsmixin)
+            * [`obj spec.query.volumes.ephemeral.volumeClaimTemplate.spec.selector`](#obj-specqueryvolumesephemeralvolumeclaimtemplatespecselector)
+              * [`fn withMatchExpressions(matchExpressions)`](#fn-specqueryvolumesephemeralvolumeclaimtemplatespecselectorwithmatchexpressions)
+              * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specqueryvolumesephemeralvolumeclaimtemplatespecselectorwithmatchexpressionsmixin)
+              * [`fn withMatchLabels(matchLabels)`](#fn-specqueryvolumesephemeralvolumeclaimtemplatespecselectorwithmatchlabels)
+              * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specqueryvolumesephemeralvolumeclaimtemplatespecselectorwithmatchlabelsmixin)
+              * [`obj spec.query.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions`](#obj-specqueryvolumesephemeralvolumeclaimtemplatespecselectormatchexpressions)
+                * [`fn withKey(key)`](#fn-specqueryvolumesephemeralvolumeclaimtemplatespecselectormatchexpressionswithkey)
+                * [`fn withOperator(operator)`](#fn-specqueryvolumesephemeralvolumeclaimtemplatespecselectormatchexpressionswithoperator)
+                * [`fn withValues(values)`](#fn-specqueryvolumesephemeralvolumeclaimtemplatespecselectormatchexpressionswithvalues)
+                * [`fn withValuesMixin(values)`](#fn-specqueryvolumesephemeralvolumeclaimtemplatespecselectormatchexpressionswithvaluesmixin)
+      * [`obj spec.query.volumes.fc`](#obj-specqueryvolumesfc)
+        * [`fn withFsType(fsType)`](#fn-specqueryvolumesfcwithfstype)
+        * [`fn withLun(lun)`](#fn-specqueryvolumesfcwithlun)
+        * [`fn withReadOnly(readOnly)`](#fn-specqueryvolumesfcwithreadonly)
+        * [`fn withTargetWWNs(targetWWNs)`](#fn-specqueryvolumesfcwithtargetwwns)
+        * [`fn withTargetWWNsMixin(targetWWNs)`](#fn-specqueryvolumesfcwithtargetwwnsmixin)
+        * [`fn withWwids(wwids)`](#fn-specqueryvolumesfcwithwwids)
+        * [`fn withWwidsMixin(wwids)`](#fn-specqueryvolumesfcwithwwidsmixin)
+      * [`obj spec.query.volumes.flexVolume`](#obj-specqueryvolumesflexvolume)
+        * [`fn withDriver(driver)`](#fn-specqueryvolumesflexvolumewithdriver)
+        * [`fn withFsType(fsType)`](#fn-specqueryvolumesflexvolumewithfstype)
+        * [`fn withOptions(options)`](#fn-specqueryvolumesflexvolumewithoptions)
+        * [`fn withOptionsMixin(options)`](#fn-specqueryvolumesflexvolumewithoptionsmixin)
+        * [`fn withReadOnly(readOnly)`](#fn-specqueryvolumesflexvolumewithreadonly)
+        * [`obj spec.query.volumes.flexVolume.secretRef`](#obj-specqueryvolumesflexvolumesecretref)
+          * [`fn withName(name)`](#fn-specqueryvolumesflexvolumesecretrefwithname)
+      * [`obj spec.query.volumes.flocker`](#obj-specqueryvolumesflocker)
+        * [`fn withDatasetName(datasetName)`](#fn-specqueryvolumesflockerwithdatasetname)
+        * [`fn withDatasetUUID(datasetUUID)`](#fn-specqueryvolumesflockerwithdatasetuuid)
+      * [`obj spec.query.volumes.gcePersistentDisk`](#obj-specqueryvolumesgcepersistentdisk)
+        * [`fn withFsType(fsType)`](#fn-specqueryvolumesgcepersistentdiskwithfstype)
+        * [`fn withPartition(partition)`](#fn-specqueryvolumesgcepersistentdiskwithpartition)
+        * [`fn withPdName(pdName)`](#fn-specqueryvolumesgcepersistentdiskwithpdname)
+        * [`fn withReadOnly(readOnly)`](#fn-specqueryvolumesgcepersistentdiskwithreadonly)
+      * [`obj spec.query.volumes.gitRepo`](#obj-specqueryvolumesgitrepo)
+        * [`fn withDirectory(directory)`](#fn-specqueryvolumesgitrepowithdirectory)
+        * [`fn withRepository(repository)`](#fn-specqueryvolumesgitrepowithrepository)
+        * [`fn withRevision(revision)`](#fn-specqueryvolumesgitrepowithrevision)
+      * [`obj spec.query.volumes.glusterfs`](#obj-specqueryvolumesglusterfs)
+        * [`fn withEndpoints(endpoints)`](#fn-specqueryvolumesglusterfswithendpoints)
+        * [`fn withPath(path)`](#fn-specqueryvolumesglusterfswithpath)
+        * [`fn withReadOnly(readOnly)`](#fn-specqueryvolumesglusterfswithreadonly)
+      * [`obj spec.query.volumes.hostPath`](#obj-specqueryvolumeshostpath)
+        * [`fn withPath(path)`](#fn-specqueryvolumeshostpathwithpath)
+        * [`fn withType(type)`](#fn-specqueryvolumeshostpathwithtype)
+      * [`obj spec.query.volumes.iscsi`](#obj-specqueryvolumesiscsi)
+        * [`fn withChapAuthDiscovery(chapAuthDiscovery)`](#fn-specqueryvolumesiscsiwithchapauthdiscovery)
+        * [`fn withChapAuthSession(chapAuthSession)`](#fn-specqueryvolumesiscsiwithchapauthsession)
+        * [`fn withFsType(fsType)`](#fn-specqueryvolumesiscsiwithfstype)
+        * [`fn withInitiatorName(initiatorName)`](#fn-specqueryvolumesiscsiwithinitiatorname)
+        * [`fn withIqn(iqn)`](#fn-specqueryvolumesiscsiwithiqn)
+        * [`fn withIscsiInterface(iscsiInterface)`](#fn-specqueryvolumesiscsiwithiscsiinterface)
+        * [`fn withLun(lun)`](#fn-specqueryvolumesiscsiwithlun)
+        * [`fn withPortals(portals)`](#fn-specqueryvolumesiscsiwithportals)
+        * [`fn withPortalsMixin(portals)`](#fn-specqueryvolumesiscsiwithportalsmixin)
+        * [`fn withReadOnly(readOnly)`](#fn-specqueryvolumesiscsiwithreadonly)
+        * [`fn withTargetPortal(targetPortal)`](#fn-specqueryvolumesiscsiwithtargetportal)
+        * [`obj spec.query.volumes.iscsi.secretRef`](#obj-specqueryvolumesiscsisecretref)
+          * [`fn withName(name)`](#fn-specqueryvolumesiscsisecretrefwithname)
+      * [`obj spec.query.volumes.nfs`](#obj-specqueryvolumesnfs)
+        * [`fn withPath(path)`](#fn-specqueryvolumesnfswithpath)
+        * [`fn withReadOnly(readOnly)`](#fn-specqueryvolumesnfswithreadonly)
+        * [`fn withServer(server)`](#fn-specqueryvolumesnfswithserver)
+      * [`obj spec.query.volumes.persistentVolumeClaim`](#obj-specqueryvolumespersistentvolumeclaim)
+        * [`fn withClaimName(claimName)`](#fn-specqueryvolumespersistentvolumeclaimwithclaimname)
+        * [`fn withReadOnly(readOnly)`](#fn-specqueryvolumespersistentvolumeclaimwithreadonly)
+      * [`obj spec.query.volumes.photonPersistentDisk`](#obj-specqueryvolumesphotonpersistentdisk)
+        * [`fn withFsType(fsType)`](#fn-specqueryvolumesphotonpersistentdiskwithfstype)
+        * [`fn withPdID(pdID)`](#fn-specqueryvolumesphotonpersistentdiskwithpdid)
+      * [`obj spec.query.volumes.portworxVolume`](#obj-specqueryvolumesportworxvolume)
+        * [`fn withFsType(fsType)`](#fn-specqueryvolumesportworxvolumewithfstype)
+        * [`fn withReadOnly(readOnly)`](#fn-specqueryvolumesportworxvolumewithreadonly)
+        * [`fn withVolumeID(volumeID)`](#fn-specqueryvolumesportworxvolumewithvolumeid)
+      * [`obj spec.query.volumes.projected`](#obj-specqueryvolumesprojected)
+        * [`fn withDefaultMode(defaultMode)`](#fn-specqueryvolumesprojectedwithdefaultmode)
+        * [`fn withSources(sources)`](#fn-specqueryvolumesprojectedwithsources)
+        * [`fn withSourcesMixin(sources)`](#fn-specqueryvolumesprojectedwithsourcesmixin)
+        * [`obj spec.query.volumes.projected.sources`](#obj-specqueryvolumesprojectedsources)
+          * [`obj spec.query.volumes.projected.sources.configMap`](#obj-specqueryvolumesprojectedsourcesconfigmap)
+            * [`fn withItems(items)`](#fn-specqueryvolumesprojectedsourcesconfigmapwithitems)
+            * [`fn withItemsMixin(items)`](#fn-specqueryvolumesprojectedsourcesconfigmapwithitemsmixin)
+            * [`fn withName(name)`](#fn-specqueryvolumesprojectedsourcesconfigmapwithname)
+            * [`fn withOptional(optional)`](#fn-specqueryvolumesprojectedsourcesconfigmapwithoptional)
+            * [`obj spec.query.volumes.projected.sources.configMap.items`](#obj-specqueryvolumesprojectedsourcesconfigmapitems)
+              * [`fn withKey(key)`](#fn-specqueryvolumesprojectedsourcesconfigmapitemswithkey)
+              * [`fn withMode(mode)`](#fn-specqueryvolumesprojectedsourcesconfigmapitemswithmode)
+              * [`fn withPath(path)`](#fn-specqueryvolumesprojectedsourcesconfigmapitemswithpath)
+          * [`obj spec.query.volumes.projected.sources.downwardAPI`](#obj-specqueryvolumesprojectedsourcesdownwardapi)
+            * [`fn withItems(items)`](#fn-specqueryvolumesprojectedsourcesdownwardapiwithitems)
+            * [`fn withItemsMixin(items)`](#fn-specqueryvolumesprojectedsourcesdownwardapiwithitemsmixin)
+            * [`obj spec.query.volumes.projected.sources.downwardAPI.items`](#obj-specqueryvolumesprojectedsourcesdownwardapiitems)
+              * [`fn withMode(mode)`](#fn-specqueryvolumesprojectedsourcesdownwardapiitemswithmode)
+              * [`fn withPath(path)`](#fn-specqueryvolumesprojectedsourcesdownwardapiitemswithpath)
+              * [`obj spec.query.volumes.projected.sources.downwardAPI.items.fieldRef`](#obj-specqueryvolumesprojectedsourcesdownwardapiitemsfieldref)
+                * [`fn withApiVersion(apiVersion)`](#fn-specqueryvolumesprojectedsourcesdownwardapiitemsfieldrefwithapiversion)
+                * [`fn withFieldPath(fieldPath)`](#fn-specqueryvolumesprojectedsourcesdownwardapiitemsfieldrefwithfieldpath)
+              * [`obj spec.query.volumes.projected.sources.downwardAPI.items.resourceFieldRef`](#obj-specqueryvolumesprojectedsourcesdownwardapiitemsresourcefieldref)
+                * [`fn withContainerName(containerName)`](#fn-specqueryvolumesprojectedsourcesdownwardapiitemsresourcefieldrefwithcontainername)
+                * [`fn withDivisor(divisor)`](#fn-specqueryvolumesprojectedsourcesdownwardapiitemsresourcefieldrefwithdivisor)
+                * [`fn withResource(resource)`](#fn-specqueryvolumesprojectedsourcesdownwardapiitemsresourcefieldrefwithresource)
+          * [`obj spec.query.volumes.projected.sources.secret`](#obj-specqueryvolumesprojectedsourcessecret)
+            * [`fn withItems(items)`](#fn-specqueryvolumesprojectedsourcessecretwithitems)
+            * [`fn withItemsMixin(items)`](#fn-specqueryvolumesprojectedsourcessecretwithitemsmixin)
+            * [`fn withName(name)`](#fn-specqueryvolumesprojectedsourcessecretwithname)
+            * [`fn withOptional(optional)`](#fn-specqueryvolumesprojectedsourcessecretwithoptional)
+            * [`obj spec.query.volumes.projected.sources.secret.items`](#obj-specqueryvolumesprojectedsourcessecretitems)
+              * [`fn withKey(key)`](#fn-specqueryvolumesprojectedsourcessecretitemswithkey)
+              * [`fn withMode(mode)`](#fn-specqueryvolumesprojectedsourcessecretitemswithmode)
+              * [`fn withPath(path)`](#fn-specqueryvolumesprojectedsourcessecretitemswithpath)
+          * [`obj spec.query.volumes.projected.sources.serviceAccountToken`](#obj-specqueryvolumesprojectedsourcesserviceaccounttoken)
+            * [`fn withAudience(audience)`](#fn-specqueryvolumesprojectedsourcesserviceaccounttokenwithaudience)
+            * [`fn withExpirationSeconds(expirationSeconds)`](#fn-specqueryvolumesprojectedsourcesserviceaccounttokenwithexpirationseconds)
+            * [`fn withPath(path)`](#fn-specqueryvolumesprojectedsourcesserviceaccounttokenwithpath)
+      * [`obj spec.query.volumes.quobyte`](#obj-specqueryvolumesquobyte)
+        * [`fn withGroup(group)`](#fn-specqueryvolumesquobytewithgroup)
+        * [`fn withReadOnly(readOnly)`](#fn-specqueryvolumesquobytewithreadonly)
+        * [`fn withRegistry(registry)`](#fn-specqueryvolumesquobytewithregistry)
+        * [`fn withTenant(tenant)`](#fn-specqueryvolumesquobytewithtenant)
+        * [`fn withUser(user)`](#fn-specqueryvolumesquobytewithuser)
+        * [`fn withVolume(volume)`](#fn-specqueryvolumesquobytewithvolume)
+      * [`obj spec.query.volumes.rbd`](#obj-specqueryvolumesrbd)
+        * [`fn withFsType(fsType)`](#fn-specqueryvolumesrbdwithfstype)
+        * [`fn withImage(image)`](#fn-specqueryvolumesrbdwithimage)
+        * [`fn withKeyring(keyring)`](#fn-specqueryvolumesrbdwithkeyring)
+        * [`fn withMonitors(monitors)`](#fn-specqueryvolumesrbdwithmonitors)
+        * [`fn withMonitorsMixin(monitors)`](#fn-specqueryvolumesrbdwithmonitorsmixin)
+        * [`fn withPool(pool)`](#fn-specqueryvolumesrbdwithpool)
+        * [`fn withReadOnly(readOnly)`](#fn-specqueryvolumesrbdwithreadonly)
+        * [`fn withUser(user)`](#fn-specqueryvolumesrbdwithuser)
+        * [`obj spec.query.volumes.rbd.secretRef`](#obj-specqueryvolumesrbdsecretref)
+          * [`fn withName(name)`](#fn-specqueryvolumesrbdsecretrefwithname)
+      * [`obj spec.query.volumes.scaleIO`](#obj-specqueryvolumesscaleio)
+        * [`fn withFsType(fsType)`](#fn-specqueryvolumesscaleiowithfstype)
+        * [`fn withGateway(gateway)`](#fn-specqueryvolumesscaleiowithgateway)
+        * [`fn withProtectionDomain(protectionDomain)`](#fn-specqueryvolumesscaleiowithprotectiondomain)
+        * [`fn withReadOnly(readOnly)`](#fn-specqueryvolumesscaleiowithreadonly)
+        * [`fn withSslEnabled(sslEnabled)`](#fn-specqueryvolumesscaleiowithsslenabled)
+        * [`fn withStorageMode(storageMode)`](#fn-specqueryvolumesscaleiowithstoragemode)
+        * [`fn withStoragePool(storagePool)`](#fn-specqueryvolumesscaleiowithstoragepool)
+        * [`fn withSystem(system)`](#fn-specqueryvolumesscaleiowithsystem)
+        * [`fn withVolumeName(volumeName)`](#fn-specqueryvolumesscaleiowithvolumename)
+        * [`obj spec.query.volumes.scaleIO.secretRef`](#obj-specqueryvolumesscaleiosecretref)
+          * [`fn withName(name)`](#fn-specqueryvolumesscaleiosecretrefwithname)
+      * [`obj spec.query.volumes.secret`](#obj-specqueryvolumessecret)
+        * [`fn withDefaultMode(defaultMode)`](#fn-specqueryvolumessecretwithdefaultmode)
+        * [`fn withItems(items)`](#fn-specqueryvolumessecretwithitems)
+        * [`fn withItemsMixin(items)`](#fn-specqueryvolumessecretwithitemsmixin)
+        * [`fn withOptional(optional)`](#fn-specqueryvolumessecretwithoptional)
+        * [`fn withSecretName(secretName)`](#fn-specqueryvolumessecretwithsecretname)
+        * [`obj spec.query.volumes.secret.items`](#obj-specqueryvolumessecretitems)
+          * [`fn withKey(key)`](#fn-specqueryvolumessecretitemswithkey)
+          * [`fn withMode(mode)`](#fn-specqueryvolumessecretitemswithmode)
+          * [`fn withPath(path)`](#fn-specqueryvolumessecretitemswithpath)
+      * [`obj spec.query.volumes.storageos`](#obj-specqueryvolumesstorageos)
+        * [`fn withFsType(fsType)`](#fn-specqueryvolumesstorageoswithfstype)
+        * [`fn withReadOnly(readOnly)`](#fn-specqueryvolumesstorageoswithreadonly)
+        * [`fn withVolumeName(volumeName)`](#fn-specqueryvolumesstorageoswithvolumename)
+        * [`fn withVolumeNamespace(volumeNamespace)`](#fn-specqueryvolumesstorageoswithvolumenamespace)
+        * [`obj spec.query.volumes.storageos.secretRef`](#obj-specqueryvolumesstorageossecretref)
+          * [`fn withName(name)`](#fn-specqueryvolumesstorageossecretrefwithname)
+      * [`obj spec.query.volumes.vsphereVolume`](#obj-specqueryvolumesvspherevolume)
+        * [`fn withFsType(fsType)`](#fn-specqueryvolumesvspherevolumewithfstype)
+        * [`fn withStoragePolicyID(storagePolicyID)`](#fn-specqueryvolumesvspherevolumewithstoragepolicyid)
+        * [`fn withStoragePolicyName(storagePolicyName)`](#fn-specqueryvolumesvspherevolumewithstoragepolicyname)
+        * [`fn withVolumePath(volumePath)`](#fn-specqueryvolumesvspherevolumewithvolumepath)
   * [`obj spec.resources`](#obj-specresources)
     * [`fn withLimits(limits)`](#fn-specresourceswithlimits)
     * [`fn withLimitsMixin(limits)`](#fn-specresourceswithlimitsmixin)
@@ -528,6 +2790,9 @@ permalink: /1.25/jaegertracing/v1/jaeger/
     * [`obj spec.securityContext.seccompProfile`](#obj-specsecuritycontextseccompprofile)
       * [`fn withLocalhostProfile(localhostProfile)`](#fn-specsecuritycontextseccompprofilewithlocalhostprofile)
       * [`fn withType(type)`](#fn-specsecuritycontextseccompprofilewithtype)
+    * [`obj spec.securityContext.sysctls`](#obj-specsecuritycontextsysctls)
+      * [`fn withName(name)`](#fn-specsecuritycontextsysctlswithname)
+      * [`fn withValue(value)`](#fn-specsecuritycontextsysctlswithvalue)
     * [`obj spec.securityContext.windowsOptions`](#obj-specsecuritycontextwindowsoptions)
       * [`fn withGmsaCredentialSpec(gmsaCredentialSpec)`](#fn-specsecuritycontextwindowsoptionswithgmsacredentialspec)
       * [`fn withGmsaCredentialSpecName(gmsaCredentialSpecName)`](#fn-specsecuritycontextwindowsoptionswithgmsacredentialspecname)
@@ -549,19 +2814,111 @@ permalink: /1.25/jaegertracing/v1/jaeger/
         * [`obj spec.storage.cassandraCreateSchema.affinity.nodeAffinity`](#obj-specstoragecassandracreateschemaaffinitynodeaffinity)
           * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specstoragecassandracreateschemaaffinitynodeaffinitywithpreferredduringschedulingignoredduringexecution)
           * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specstoragecassandracreateschemaaffinitynodeaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
+          * [`obj spec.storage.cassandraCreateSchema.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-specstoragecassandracreateschemaaffinitynodeaffinitypreferredduringschedulingignoredduringexecution)
+            * [`fn withWeight(weight)`](#fn-specstoragecassandracreateschemaaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+            * [`obj spec.storage.cassandraCreateSchema.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference`](#obj-specstoragecassandracreateschemaaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreference)
+              * [`fn withMatchExpressions(matchExpressions)`](#fn-specstoragecassandracreateschemaaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchexpressions)
+              * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specstoragecassandracreateschemaaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchexpressionsmixin)
+              * [`fn withMatchFields(matchFields)`](#fn-specstoragecassandracreateschemaaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchfields)
+              * [`fn withMatchFieldsMixin(matchFields)`](#fn-specstoragecassandracreateschemaaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchfieldsmixin)
+              * [`obj spec.storage.cassandraCreateSchema.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions`](#obj-specstoragecassandracreateschemaaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressions)
+                * [`fn withKey(key)`](#fn-specstoragecassandracreateschemaaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithkey)
+                * [`fn withOperator(operator)`](#fn-specstoragecassandracreateschemaaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithoperator)
+                * [`fn withValues(values)`](#fn-specstoragecassandracreateschemaaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithvalues)
+                * [`fn withValuesMixin(values)`](#fn-specstoragecassandracreateschemaaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithvaluesmixin)
+              * [`obj spec.storage.cassandraCreateSchema.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields`](#obj-specstoragecassandracreateschemaaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfields)
+                * [`fn withKey(key)`](#fn-specstoragecassandracreateschemaaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithkey)
+                * [`fn withOperator(operator)`](#fn-specstoragecassandracreateschemaaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithoperator)
+                * [`fn withValues(values)`](#fn-specstoragecassandracreateschemaaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithvalues)
+                * [`fn withValuesMixin(values)`](#fn-specstoragecassandracreateschemaaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithvaluesmixin)
           * [`obj spec.storage.cassandraCreateSchema.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-specstoragecassandracreateschemaaffinitynodeaffinityrequiredduringschedulingignoredduringexecution)
             * [`fn withNodeSelectorTerms(nodeSelectorTerms)`](#fn-specstoragecassandracreateschemaaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionwithnodeselectorterms)
             * [`fn withNodeSelectorTermsMixin(nodeSelectorTerms)`](#fn-specstoragecassandracreateschemaaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionwithnodeselectortermsmixin)
+            * [`obj spec.storage.cassandraCreateSchema.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms`](#obj-specstoragecassandracreateschemaaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectorterms)
+              * [`fn withMatchExpressions(matchExpressions)`](#fn-specstoragecassandracreateschemaaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchexpressions)
+              * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specstoragecassandracreateschemaaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchexpressionsmixin)
+              * [`fn withMatchFields(matchFields)`](#fn-specstoragecassandracreateschemaaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchfields)
+              * [`fn withMatchFieldsMixin(matchFields)`](#fn-specstoragecassandracreateschemaaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchfieldsmixin)
+              * [`obj spec.storage.cassandraCreateSchema.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions`](#obj-specstoragecassandracreateschemaaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressions)
+                * [`fn withKey(key)`](#fn-specstoragecassandracreateschemaaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithkey)
+                * [`fn withOperator(operator)`](#fn-specstoragecassandracreateschemaaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithoperator)
+                * [`fn withValues(values)`](#fn-specstoragecassandracreateschemaaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithvalues)
+                * [`fn withValuesMixin(values)`](#fn-specstoragecassandracreateschemaaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithvaluesmixin)
+              * [`obj spec.storage.cassandraCreateSchema.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields`](#obj-specstoragecassandracreateschemaaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfields)
+                * [`fn withKey(key)`](#fn-specstoragecassandracreateschemaaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithkey)
+                * [`fn withOperator(operator)`](#fn-specstoragecassandracreateschemaaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithoperator)
+                * [`fn withValues(values)`](#fn-specstoragecassandracreateschemaaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithvalues)
+                * [`fn withValuesMixin(values)`](#fn-specstoragecassandracreateschemaaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithvaluesmixin)
         * [`obj spec.storage.cassandraCreateSchema.affinity.podAffinity`](#obj-specstoragecassandracreateschemaaffinitypodaffinity)
           * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specstoragecassandracreateschemaaffinitypodaffinitywithpreferredduringschedulingignoredduringexecution)
           * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specstoragecassandracreateschemaaffinitypodaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
           * [`fn withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specstoragecassandracreateschemaaffinitypodaffinitywithrequiredduringschedulingignoredduringexecution)
           * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specstoragecassandracreateschemaaffinitypodaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
+          * [`obj spec.storage.cassandraCreateSchema.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-specstoragecassandracreateschemaaffinitypodaffinitypreferredduringschedulingignoredduringexecution)
+            * [`fn withWeight(weight)`](#fn-specstoragecassandracreateschemaaffinitypodaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+            * [`obj spec.storage.cassandraCreateSchema.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm`](#obj-specstoragecassandracreateschemaaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinityterm)
+              * [`fn withNamespaces(namespaces)`](#fn-specstoragecassandracreateschemaaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespaces)
+              * [`fn withNamespacesMixin(namespaces)`](#fn-specstoragecassandracreateschemaaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespacesmixin)
+              * [`fn withTopologyKey(topologyKey)`](#fn-specstoragecassandracreateschemaaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithtopologykey)
+              * [`obj spec.storage.cassandraCreateSchema.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector`](#obj-specstoragecassandracreateschemaaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselector)
+                * [`fn withMatchExpressions(matchExpressions)`](#fn-specstoragecassandracreateschemaaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressions)
+                * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specstoragecassandracreateschemaaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressionsmixin)
+                * [`fn withMatchLabels(matchLabels)`](#fn-specstoragecassandracreateschemaaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabels)
+                * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specstoragecassandracreateschemaaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabelsmixin)
+                * [`obj spec.storage.cassandraCreateSchema.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions`](#obj-specstoragecassandracreateschemaaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressions)
+                  * [`fn withKey(key)`](#fn-specstoragecassandracreateschemaaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithkey)
+                  * [`fn withOperator(operator)`](#fn-specstoragecassandracreateschemaaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithoperator)
+                  * [`fn withValues(values)`](#fn-specstoragecassandracreateschemaaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvalues)
+                  * [`fn withValuesMixin(values)`](#fn-specstoragecassandracreateschemaaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvaluesmixin)
+          * [`obj spec.storage.cassandraCreateSchema.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-specstoragecassandracreateschemaaffinitypodaffinityrequiredduringschedulingignoredduringexecution)
+            * [`fn withNamespaces(namespaces)`](#fn-specstoragecassandracreateschemaaffinitypodaffinityrequiredduringschedulingignoredduringexecutionwithnamespaces)
+            * [`fn withNamespacesMixin(namespaces)`](#fn-specstoragecassandracreateschemaaffinitypodaffinityrequiredduringschedulingignoredduringexecutionwithnamespacesmixin)
+            * [`fn withTopologyKey(topologyKey)`](#fn-specstoragecassandracreateschemaaffinitypodaffinityrequiredduringschedulingignoredduringexecutionwithtopologykey)
+            * [`obj spec.storage.cassandraCreateSchema.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector`](#obj-specstoragecassandracreateschemaaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselector)
+              * [`fn withMatchExpressions(matchExpressions)`](#fn-specstoragecassandracreateschemaaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressions)
+              * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specstoragecassandracreateschemaaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressionsmixin)
+              * [`fn withMatchLabels(matchLabels)`](#fn-specstoragecassandracreateschemaaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabels)
+              * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specstoragecassandracreateschemaaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabelsmixin)
+              * [`obj spec.storage.cassandraCreateSchema.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions`](#obj-specstoragecassandracreateschemaaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressions)
+                * [`fn withKey(key)`](#fn-specstoragecassandracreateschemaaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithkey)
+                * [`fn withOperator(operator)`](#fn-specstoragecassandracreateschemaaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithoperator)
+                * [`fn withValues(values)`](#fn-specstoragecassandracreateschemaaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvalues)
+                * [`fn withValuesMixin(values)`](#fn-specstoragecassandracreateschemaaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvaluesmixin)
         * [`obj spec.storage.cassandraCreateSchema.affinity.podAntiAffinity`](#obj-specstoragecassandracreateschemaaffinitypodantiaffinity)
           * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specstoragecassandracreateschemaaffinitypodantiaffinitywithpreferredduringschedulingignoredduringexecution)
           * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specstoragecassandracreateschemaaffinitypodantiaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
           * [`fn withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specstoragecassandracreateschemaaffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecution)
           * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specstoragecassandracreateschemaaffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
+          * [`obj spec.storage.cassandraCreateSchema.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-specstoragecassandracreateschemaaffinitypodantiaffinitypreferredduringschedulingignoredduringexecution)
+            * [`fn withWeight(weight)`](#fn-specstoragecassandracreateschemaaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+            * [`obj spec.storage.cassandraCreateSchema.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm`](#obj-specstoragecassandracreateschemaaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinityterm)
+              * [`fn withNamespaces(namespaces)`](#fn-specstoragecassandracreateschemaaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespaces)
+              * [`fn withNamespacesMixin(namespaces)`](#fn-specstoragecassandracreateschemaaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespacesmixin)
+              * [`fn withTopologyKey(topologyKey)`](#fn-specstoragecassandracreateschemaaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithtopologykey)
+              * [`obj spec.storage.cassandraCreateSchema.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector`](#obj-specstoragecassandracreateschemaaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselector)
+                * [`fn withMatchExpressions(matchExpressions)`](#fn-specstoragecassandracreateschemaaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressions)
+                * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specstoragecassandracreateschemaaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressionsmixin)
+                * [`fn withMatchLabels(matchLabels)`](#fn-specstoragecassandracreateschemaaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabels)
+                * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specstoragecassandracreateschemaaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabelsmixin)
+                * [`obj spec.storage.cassandraCreateSchema.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions`](#obj-specstoragecassandracreateschemaaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressions)
+                  * [`fn withKey(key)`](#fn-specstoragecassandracreateschemaaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithkey)
+                  * [`fn withOperator(operator)`](#fn-specstoragecassandracreateschemaaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithoperator)
+                  * [`fn withValues(values)`](#fn-specstoragecassandracreateschemaaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvalues)
+                  * [`fn withValuesMixin(values)`](#fn-specstoragecassandracreateschemaaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvaluesmixin)
+          * [`obj spec.storage.cassandraCreateSchema.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-specstoragecassandracreateschemaaffinitypodantiaffinityrequiredduringschedulingignoredduringexecution)
+            * [`fn withNamespaces(namespaces)`](#fn-specstoragecassandracreateschemaaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionwithnamespaces)
+            * [`fn withNamespacesMixin(namespaces)`](#fn-specstoragecassandracreateschemaaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionwithnamespacesmixin)
+            * [`fn withTopologyKey(topologyKey)`](#fn-specstoragecassandracreateschemaaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionwithtopologykey)
+            * [`obj spec.storage.cassandraCreateSchema.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector`](#obj-specstoragecassandracreateschemaaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselector)
+              * [`fn withMatchExpressions(matchExpressions)`](#fn-specstoragecassandracreateschemaaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressions)
+              * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specstoragecassandracreateschemaaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressionsmixin)
+              * [`fn withMatchLabels(matchLabels)`](#fn-specstoragecassandracreateschemaaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabels)
+              * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specstoragecassandracreateschemaaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabelsmixin)
+              * [`obj spec.storage.cassandraCreateSchema.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions`](#obj-specstoragecassandracreateschemaaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressions)
+                * [`fn withKey(key)`](#fn-specstoragecassandracreateschemaaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithkey)
+                * [`fn withOperator(operator)`](#fn-specstoragecassandracreateschemaaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithoperator)
+                * [`fn withValues(values)`](#fn-specstoragecassandracreateschemaaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvalues)
+                * [`fn withValuesMixin(values)`](#fn-specstoragecassandracreateschemaaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvaluesmixin)
     * [`obj spec.storage.dependencies`](#obj-specstoragedependencies)
       * [`fn withAnnotations(annotations)`](#fn-specstoragedependencieswithannotations)
       * [`fn withAnnotationsMixin(annotations)`](#fn-specstoragedependencieswithannotationsmixin)
@@ -590,19 +2947,111 @@ permalink: /1.25/jaegertracing/v1/jaeger/
         * [`obj spec.storage.dependencies.affinity.nodeAffinity`](#obj-specstoragedependenciesaffinitynodeaffinity)
           * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specstoragedependenciesaffinitynodeaffinitywithpreferredduringschedulingignoredduringexecution)
           * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specstoragedependenciesaffinitynodeaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
+          * [`obj spec.storage.dependencies.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-specstoragedependenciesaffinitynodeaffinitypreferredduringschedulingignoredduringexecution)
+            * [`fn withWeight(weight)`](#fn-specstoragedependenciesaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+            * [`obj spec.storage.dependencies.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference`](#obj-specstoragedependenciesaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreference)
+              * [`fn withMatchExpressions(matchExpressions)`](#fn-specstoragedependenciesaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchexpressions)
+              * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specstoragedependenciesaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchexpressionsmixin)
+              * [`fn withMatchFields(matchFields)`](#fn-specstoragedependenciesaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchfields)
+              * [`fn withMatchFieldsMixin(matchFields)`](#fn-specstoragedependenciesaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchfieldsmixin)
+              * [`obj spec.storage.dependencies.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions`](#obj-specstoragedependenciesaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressions)
+                * [`fn withKey(key)`](#fn-specstoragedependenciesaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithkey)
+                * [`fn withOperator(operator)`](#fn-specstoragedependenciesaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithoperator)
+                * [`fn withValues(values)`](#fn-specstoragedependenciesaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithvalues)
+                * [`fn withValuesMixin(values)`](#fn-specstoragedependenciesaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithvaluesmixin)
+              * [`obj spec.storage.dependencies.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields`](#obj-specstoragedependenciesaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfields)
+                * [`fn withKey(key)`](#fn-specstoragedependenciesaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithkey)
+                * [`fn withOperator(operator)`](#fn-specstoragedependenciesaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithoperator)
+                * [`fn withValues(values)`](#fn-specstoragedependenciesaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithvalues)
+                * [`fn withValuesMixin(values)`](#fn-specstoragedependenciesaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithvaluesmixin)
           * [`obj spec.storage.dependencies.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-specstoragedependenciesaffinitynodeaffinityrequiredduringschedulingignoredduringexecution)
             * [`fn withNodeSelectorTerms(nodeSelectorTerms)`](#fn-specstoragedependenciesaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionwithnodeselectorterms)
             * [`fn withNodeSelectorTermsMixin(nodeSelectorTerms)`](#fn-specstoragedependenciesaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionwithnodeselectortermsmixin)
+            * [`obj spec.storage.dependencies.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms`](#obj-specstoragedependenciesaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectorterms)
+              * [`fn withMatchExpressions(matchExpressions)`](#fn-specstoragedependenciesaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchexpressions)
+              * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specstoragedependenciesaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchexpressionsmixin)
+              * [`fn withMatchFields(matchFields)`](#fn-specstoragedependenciesaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchfields)
+              * [`fn withMatchFieldsMixin(matchFields)`](#fn-specstoragedependenciesaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchfieldsmixin)
+              * [`obj spec.storage.dependencies.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions`](#obj-specstoragedependenciesaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressions)
+                * [`fn withKey(key)`](#fn-specstoragedependenciesaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithkey)
+                * [`fn withOperator(operator)`](#fn-specstoragedependenciesaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithoperator)
+                * [`fn withValues(values)`](#fn-specstoragedependenciesaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithvalues)
+                * [`fn withValuesMixin(values)`](#fn-specstoragedependenciesaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithvaluesmixin)
+              * [`obj spec.storage.dependencies.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields`](#obj-specstoragedependenciesaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfields)
+                * [`fn withKey(key)`](#fn-specstoragedependenciesaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithkey)
+                * [`fn withOperator(operator)`](#fn-specstoragedependenciesaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithoperator)
+                * [`fn withValues(values)`](#fn-specstoragedependenciesaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithvalues)
+                * [`fn withValuesMixin(values)`](#fn-specstoragedependenciesaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithvaluesmixin)
         * [`obj spec.storage.dependencies.affinity.podAffinity`](#obj-specstoragedependenciesaffinitypodaffinity)
           * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specstoragedependenciesaffinitypodaffinitywithpreferredduringschedulingignoredduringexecution)
           * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specstoragedependenciesaffinitypodaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
           * [`fn withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specstoragedependenciesaffinitypodaffinitywithrequiredduringschedulingignoredduringexecution)
           * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specstoragedependenciesaffinitypodaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
+          * [`obj spec.storage.dependencies.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-specstoragedependenciesaffinitypodaffinitypreferredduringschedulingignoredduringexecution)
+            * [`fn withWeight(weight)`](#fn-specstoragedependenciesaffinitypodaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+            * [`obj spec.storage.dependencies.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm`](#obj-specstoragedependenciesaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinityterm)
+              * [`fn withNamespaces(namespaces)`](#fn-specstoragedependenciesaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespaces)
+              * [`fn withNamespacesMixin(namespaces)`](#fn-specstoragedependenciesaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespacesmixin)
+              * [`fn withTopologyKey(topologyKey)`](#fn-specstoragedependenciesaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithtopologykey)
+              * [`obj spec.storage.dependencies.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector`](#obj-specstoragedependenciesaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselector)
+                * [`fn withMatchExpressions(matchExpressions)`](#fn-specstoragedependenciesaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressions)
+                * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specstoragedependenciesaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressionsmixin)
+                * [`fn withMatchLabels(matchLabels)`](#fn-specstoragedependenciesaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabels)
+                * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specstoragedependenciesaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabelsmixin)
+                * [`obj spec.storage.dependencies.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions`](#obj-specstoragedependenciesaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressions)
+                  * [`fn withKey(key)`](#fn-specstoragedependenciesaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithkey)
+                  * [`fn withOperator(operator)`](#fn-specstoragedependenciesaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithoperator)
+                  * [`fn withValues(values)`](#fn-specstoragedependenciesaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvalues)
+                  * [`fn withValuesMixin(values)`](#fn-specstoragedependenciesaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvaluesmixin)
+          * [`obj spec.storage.dependencies.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-specstoragedependenciesaffinitypodaffinityrequiredduringschedulingignoredduringexecution)
+            * [`fn withNamespaces(namespaces)`](#fn-specstoragedependenciesaffinitypodaffinityrequiredduringschedulingignoredduringexecutionwithnamespaces)
+            * [`fn withNamespacesMixin(namespaces)`](#fn-specstoragedependenciesaffinitypodaffinityrequiredduringschedulingignoredduringexecutionwithnamespacesmixin)
+            * [`fn withTopologyKey(topologyKey)`](#fn-specstoragedependenciesaffinitypodaffinityrequiredduringschedulingignoredduringexecutionwithtopologykey)
+            * [`obj spec.storage.dependencies.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector`](#obj-specstoragedependenciesaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselector)
+              * [`fn withMatchExpressions(matchExpressions)`](#fn-specstoragedependenciesaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressions)
+              * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specstoragedependenciesaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressionsmixin)
+              * [`fn withMatchLabels(matchLabels)`](#fn-specstoragedependenciesaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabels)
+              * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specstoragedependenciesaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabelsmixin)
+              * [`obj spec.storage.dependencies.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions`](#obj-specstoragedependenciesaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressions)
+                * [`fn withKey(key)`](#fn-specstoragedependenciesaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithkey)
+                * [`fn withOperator(operator)`](#fn-specstoragedependenciesaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithoperator)
+                * [`fn withValues(values)`](#fn-specstoragedependenciesaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvalues)
+                * [`fn withValuesMixin(values)`](#fn-specstoragedependenciesaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvaluesmixin)
         * [`obj spec.storage.dependencies.affinity.podAntiAffinity`](#obj-specstoragedependenciesaffinitypodantiaffinity)
           * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specstoragedependenciesaffinitypodantiaffinitywithpreferredduringschedulingignoredduringexecution)
           * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specstoragedependenciesaffinitypodantiaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
           * [`fn withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specstoragedependenciesaffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecution)
           * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specstoragedependenciesaffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
+          * [`obj spec.storage.dependencies.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-specstoragedependenciesaffinitypodantiaffinitypreferredduringschedulingignoredduringexecution)
+            * [`fn withWeight(weight)`](#fn-specstoragedependenciesaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+            * [`obj spec.storage.dependencies.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm`](#obj-specstoragedependenciesaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinityterm)
+              * [`fn withNamespaces(namespaces)`](#fn-specstoragedependenciesaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespaces)
+              * [`fn withNamespacesMixin(namespaces)`](#fn-specstoragedependenciesaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespacesmixin)
+              * [`fn withTopologyKey(topologyKey)`](#fn-specstoragedependenciesaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithtopologykey)
+              * [`obj spec.storage.dependencies.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector`](#obj-specstoragedependenciesaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselector)
+                * [`fn withMatchExpressions(matchExpressions)`](#fn-specstoragedependenciesaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressions)
+                * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specstoragedependenciesaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressionsmixin)
+                * [`fn withMatchLabels(matchLabels)`](#fn-specstoragedependenciesaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabels)
+                * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specstoragedependenciesaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabelsmixin)
+                * [`obj spec.storage.dependencies.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions`](#obj-specstoragedependenciesaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressions)
+                  * [`fn withKey(key)`](#fn-specstoragedependenciesaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithkey)
+                  * [`fn withOperator(operator)`](#fn-specstoragedependenciesaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithoperator)
+                  * [`fn withValues(values)`](#fn-specstoragedependenciesaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvalues)
+                  * [`fn withValuesMixin(values)`](#fn-specstoragedependenciesaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvaluesmixin)
+          * [`obj spec.storage.dependencies.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-specstoragedependenciesaffinitypodantiaffinityrequiredduringschedulingignoredduringexecution)
+            * [`fn withNamespaces(namespaces)`](#fn-specstoragedependenciesaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionwithnamespaces)
+            * [`fn withNamespacesMixin(namespaces)`](#fn-specstoragedependenciesaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionwithnamespacesmixin)
+            * [`fn withTopologyKey(topologyKey)`](#fn-specstoragedependenciesaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionwithtopologykey)
+            * [`obj spec.storage.dependencies.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector`](#obj-specstoragedependenciesaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselector)
+              * [`fn withMatchExpressions(matchExpressions)`](#fn-specstoragedependenciesaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressions)
+              * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specstoragedependenciesaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressionsmixin)
+              * [`fn withMatchLabels(matchLabels)`](#fn-specstoragedependenciesaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabels)
+              * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specstoragedependenciesaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabelsmixin)
+              * [`obj spec.storage.dependencies.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions`](#obj-specstoragedependenciesaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressions)
+                * [`fn withKey(key)`](#fn-specstoragedependenciesaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithkey)
+                * [`fn withOperator(operator)`](#fn-specstoragedependenciesaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithoperator)
+                * [`fn withValues(values)`](#fn-specstoragedependenciesaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvalues)
+                * [`fn withValuesMixin(values)`](#fn-specstoragedependenciesaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvaluesmixin)
       * [`obj spec.storage.dependencies.resources`](#obj-specstoragedependenciesresources)
         * [`fn withLimits(limits)`](#fn-specstoragedependenciesresourceswithlimits)
         * [`fn withLimitsMixin(limits)`](#fn-specstoragedependenciesresourceswithlimitsmixin)
@@ -626,10 +3075,279 @@ permalink: /1.25/jaegertracing/v1/jaeger/
         * [`obj spec.storage.dependencies.securityContext.seccompProfile`](#obj-specstoragedependenciessecuritycontextseccompprofile)
           * [`fn withLocalhostProfile(localhostProfile)`](#fn-specstoragedependenciessecuritycontextseccompprofilewithlocalhostprofile)
           * [`fn withType(type)`](#fn-specstoragedependenciessecuritycontextseccompprofilewithtype)
+        * [`obj spec.storage.dependencies.securityContext.sysctls`](#obj-specstoragedependenciessecuritycontextsysctls)
+          * [`fn withName(name)`](#fn-specstoragedependenciessecuritycontextsysctlswithname)
+          * [`fn withValue(value)`](#fn-specstoragedependenciessecuritycontextsysctlswithvalue)
         * [`obj spec.storage.dependencies.securityContext.windowsOptions`](#obj-specstoragedependenciessecuritycontextwindowsoptions)
           * [`fn withGmsaCredentialSpec(gmsaCredentialSpec)`](#fn-specstoragedependenciessecuritycontextwindowsoptionswithgmsacredentialspec)
           * [`fn withGmsaCredentialSpecName(gmsaCredentialSpecName)`](#fn-specstoragedependenciessecuritycontextwindowsoptionswithgmsacredentialspecname)
           * [`fn withRunAsUserName(runAsUserName)`](#fn-specstoragedependenciessecuritycontextwindowsoptionswithrunasusername)
+      * [`obj spec.storage.dependencies.tolerations`](#obj-specstoragedependenciestolerations)
+        * [`fn withEffect(effect)`](#fn-specstoragedependenciestolerationswitheffect)
+        * [`fn withKey(key)`](#fn-specstoragedependenciestolerationswithkey)
+        * [`fn withOperator(operator)`](#fn-specstoragedependenciestolerationswithoperator)
+        * [`fn withTolerationSeconds(tolerationSeconds)`](#fn-specstoragedependenciestolerationswithtolerationseconds)
+        * [`fn withValue(value)`](#fn-specstoragedependenciestolerationswithvalue)
+      * [`obj spec.storage.dependencies.volumeMounts`](#obj-specstoragedependenciesvolumemounts)
+        * [`fn withMountPath(mountPath)`](#fn-specstoragedependenciesvolumemountswithmountpath)
+        * [`fn withMountPropagation(mountPropagation)`](#fn-specstoragedependenciesvolumemountswithmountpropagation)
+        * [`fn withName(name)`](#fn-specstoragedependenciesvolumemountswithname)
+        * [`fn withReadOnly(readOnly)`](#fn-specstoragedependenciesvolumemountswithreadonly)
+        * [`fn withSubPath(subPath)`](#fn-specstoragedependenciesvolumemountswithsubpath)
+        * [`fn withSubPathExpr(subPathExpr)`](#fn-specstoragedependenciesvolumemountswithsubpathexpr)
+      * [`obj spec.storage.dependencies.volumes`](#obj-specstoragedependenciesvolumes)
+        * [`fn withName(name)`](#fn-specstoragedependenciesvolumeswithname)
+        * [`obj spec.storage.dependencies.volumes.awsElasticBlockStore`](#obj-specstoragedependenciesvolumesawselasticblockstore)
+          * [`fn withFsType(fsType)`](#fn-specstoragedependenciesvolumesawselasticblockstorewithfstype)
+          * [`fn withPartition(partition)`](#fn-specstoragedependenciesvolumesawselasticblockstorewithpartition)
+          * [`fn withReadOnly(readOnly)`](#fn-specstoragedependenciesvolumesawselasticblockstorewithreadonly)
+          * [`fn withVolumeID(volumeID)`](#fn-specstoragedependenciesvolumesawselasticblockstorewithvolumeid)
+        * [`obj spec.storage.dependencies.volumes.azureDisk`](#obj-specstoragedependenciesvolumesazuredisk)
+          * [`fn withCachingMode(cachingMode)`](#fn-specstoragedependenciesvolumesazurediskwithcachingmode)
+          * [`fn withDiskName(diskName)`](#fn-specstoragedependenciesvolumesazurediskwithdiskname)
+          * [`fn withDiskURI(diskURI)`](#fn-specstoragedependenciesvolumesazurediskwithdiskuri)
+          * [`fn withFsType(fsType)`](#fn-specstoragedependenciesvolumesazurediskwithfstype)
+          * [`fn withKind(kind)`](#fn-specstoragedependenciesvolumesazurediskwithkind)
+          * [`fn withReadOnly(readOnly)`](#fn-specstoragedependenciesvolumesazurediskwithreadonly)
+        * [`obj spec.storage.dependencies.volumes.azureFile`](#obj-specstoragedependenciesvolumesazurefile)
+          * [`fn withReadOnly(readOnly)`](#fn-specstoragedependenciesvolumesazurefilewithreadonly)
+          * [`fn withSecretName(secretName)`](#fn-specstoragedependenciesvolumesazurefilewithsecretname)
+          * [`fn withShareName(shareName)`](#fn-specstoragedependenciesvolumesazurefilewithsharename)
+        * [`obj spec.storage.dependencies.volumes.cephfs`](#obj-specstoragedependenciesvolumescephfs)
+          * [`fn withMonitors(monitors)`](#fn-specstoragedependenciesvolumescephfswithmonitors)
+          * [`fn withMonitorsMixin(monitors)`](#fn-specstoragedependenciesvolumescephfswithmonitorsmixin)
+          * [`fn withPath(path)`](#fn-specstoragedependenciesvolumescephfswithpath)
+          * [`fn withReadOnly(readOnly)`](#fn-specstoragedependenciesvolumescephfswithreadonly)
+          * [`fn withSecretFile(secretFile)`](#fn-specstoragedependenciesvolumescephfswithsecretfile)
+          * [`fn withUser(user)`](#fn-specstoragedependenciesvolumescephfswithuser)
+          * [`obj spec.storage.dependencies.volumes.cephfs.secretRef`](#obj-specstoragedependenciesvolumescephfssecretref)
+            * [`fn withName(name)`](#fn-specstoragedependenciesvolumescephfssecretrefwithname)
+        * [`obj spec.storage.dependencies.volumes.cinder`](#obj-specstoragedependenciesvolumescinder)
+          * [`fn withFsType(fsType)`](#fn-specstoragedependenciesvolumescinderwithfstype)
+          * [`fn withReadOnly(readOnly)`](#fn-specstoragedependenciesvolumescinderwithreadonly)
+          * [`fn withVolumeID(volumeID)`](#fn-specstoragedependenciesvolumescinderwithvolumeid)
+          * [`obj spec.storage.dependencies.volumes.cinder.secretRef`](#obj-specstoragedependenciesvolumescindersecretref)
+            * [`fn withName(name)`](#fn-specstoragedependenciesvolumescindersecretrefwithname)
+        * [`obj spec.storage.dependencies.volumes.configMap`](#obj-specstoragedependenciesvolumesconfigmap)
+          * [`fn withDefaultMode(defaultMode)`](#fn-specstoragedependenciesvolumesconfigmapwithdefaultmode)
+          * [`fn withItems(items)`](#fn-specstoragedependenciesvolumesconfigmapwithitems)
+          * [`fn withItemsMixin(items)`](#fn-specstoragedependenciesvolumesconfigmapwithitemsmixin)
+          * [`fn withName(name)`](#fn-specstoragedependenciesvolumesconfigmapwithname)
+          * [`fn withOptional(optional)`](#fn-specstoragedependenciesvolumesconfigmapwithoptional)
+          * [`obj spec.storage.dependencies.volumes.configMap.items`](#obj-specstoragedependenciesvolumesconfigmapitems)
+            * [`fn withKey(key)`](#fn-specstoragedependenciesvolumesconfigmapitemswithkey)
+            * [`fn withMode(mode)`](#fn-specstoragedependenciesvolumesconfigmapitemswithmode)
+            * [`fn withPath(path)`](#fn-specstoragedependenciesvolumesconfigmapitemswithpath)
+        * [`obj spec.storage.dependencies.volumes.csi`](#obj-specstoragedependenciesvolumescsi)
+          * [`fn withDriver(driver)`](#fn-specstoragedependenciesvolumescsiwithdriver)
+          * [`fn withFsType(fsType)`](#fn-specstoragedependenciesvolumescsiwithfstype)
+          * [`fn withReadOnly(readOnly)`](#fn-specstoragedependenciesvolumescsiwithreadonly)
+          * [`fn withVolumeAttributes(volumeAttributes)`](#fn-specstoragedependenciesvolumescsiwithvolumeattributes)
+          * [`fn withVolumeAttributesMixin(volumeAttributes)`](#fn-specstoragedependenciesvolumescsiwithvolumeattributesmixin)
+          * [`obj spec.storage.dependencies.volumes.csi.nodePublishSecretRef`](#obj-specstoragedependenciesvolumescsinodepublishsecretref)
+            * [`fn withName(name)`](#fn-specstoragedependenciesvolumescsinodepublishsecretrefwithname)
+        * [`obj spec.storage.dependencies.volumes.downwardAPI`](#obj-specstoragedependenciesvolumesdownwardapi)
+          * [`fn withDefaultMode(defaultMode)`](#fn-specstoragedependenciesvolumesdownwardapiwithdefaultmode)
+          * [`fn withItems(items)`](#fn-specstoragedependenciesvolumesdownwardapiwithitems)
+          * [`fn withItemsMixin(items)`](#fn-specstoragedependenciesvolumesdownwardapiwithitemsmixin)
+          * [`obj spec.storage.dependencies.volumes.downwardAPI.items`](#obj-specstoragedependenciesvolumesdownwardapiitems)
+            * [`fn withMode(mode)`](#fn-specstoragedependenciesvolumesdownwardapiitemswithmode)
+            * [`fn withPath(path)`](#fn-specstoragedependenciesvolumesdownwardapiitemswithpath)
+            * [`obj spec.storage.dependencies.volumes.downwardAPI.items.fieldRef`](#obj-specstoragedependenciesvolumesdownwardapiitemsfieldref)
+              * [`fn withApiVersion(apiVersion)`](#fn-specstoragedependenciesvolumesdownwardapiitemsfieldrefwithapiversion)
+              * [`fn withFieldPath(fieldPath)`](#fn-specstoragedependenciesvolumesdownwardapiitemsfieldrefwithfieldpath)
+            * [`obj spec.storage.dependencies.volumes.downwardAPI.items.resourceFieldRef`](#obj-specstoragedependenciesvolumesdownwardapiitemsresourcefieldref)
+              * [`fn withContainerName(containerName)`](#fn-specstoragedependenciesvolumesdownwardapiitemsresourcefieldrefwithcontainername)
+              * [`fn withDivisor(divisor)`](#fn-specstoragedependenciesvolumesdownwardapiitemsresourcefieldrefwithdivisor)
+              * [`fn withResource(resource)`](#fn-specstoragedependenciesvolumesdownwardapiitemsresourcefieldrefwithresource)
+        * [`obj spec.storage.dependencies.volumes.emptyDir`](#obj-specstoragedependenciesvolumesemptydir)
+          * [`fn withMedium(medium)`](#fn-specstoragedependenciesvolumesemptydirwithmedium)
+          * [`fn withSizeLimit(sizeLimit)`](#fn-specstoragedependenciesvolumesemptydirwithsizelimit)
+        * [`obj spec.storage.dependencies.volumes.ephemeral`](#obj-specstoragedependenciesvolumesephemeral)
+          * [`fn withReadOnly(readOnly)`](#fn-specstoragedependenciesvolumesephemeralwithreadonly)
+          * [`obj spec.storage.dependencies.volumes.ephemeral.volumeClaimTemplate`](#obj-specstoragedependenciesvolumesephemeralvolumeclaimtemplate)
+            * [`fn withMetadata(metadata)`](#fn-specstoragedependenciesvolumesephemeralvolumeclaimtemplatewithmetadata)
+            * [`fn withMetadataMixin(metadata)`](#fn-specstoragedependenciesvolumesephemeralvolumeclaimtemplatewithmetadatamixin)
+            * [`obj spec.storage.dependencies.volumes.ephemeral.volumeClaimTemplate.spec`](#obj-specstoragedependenciesvolumesephemeralvolumeclaimtemplatespec)
+              * [`fn withAccessModes(accessModes)`](#fn-specstoragedependenciesvolumesephemeralvolumeclaimtemplatespecwithaccessmodes)
+              * [`fn withAccessModesMixin(accessModes)`](#fn-specstoragedependenciesvolumesephemeralvolumeclaimtemplatespecwithaccessmodesmixin)
+              * [`fn withStorageClassName(storageClassName)`](#fn-specstoragedependenciesvolumesephemeralvolumeclaimtemplatespecwithstorageclassname)
+              * [`fn withVolumeMode(volumeMode)`](#fn-specstoragedependenciesvolumesephemeralvolumeclaimtemplatespecwithvolumemode)
+              * [`fn withVolumeName(volumeName)`](#fn-specstoragedependenciesvolumesephemeralvolumeclaimtemplatespecwithvolumename)
+              * [`obj spec.storage.dependencies.volumes.ephemeral.volumeClaimTemplate.spec.dataSource`](#obj-specstoragedependenciesvolumesephemeralvolumeclaimtemplatespecdatasource)
+                * [`fn withApiGroup(apiGroup)`](#fn-specstoragedependenciesvolumesephemeralvolumeclaimtemplatespecdatasourcewithapigroup)
+                * [`fn withKind(kind)`](#fn-specstoragedependenciesvolumesephemeralvolumeclaimtemplatespecdatasourcewithkind)
+                * [`fn withName(name)`](#fn-specstoragedependenciesvolumesephemeralvolumeclaimtemplatespecdatasourcewithname)
+              * [`obj spec.storage.dependencies.volumes.ephemeral.volumeClaimTemplate.spec.resources`](#obj-specstoragedependenciesvolumesephemeralvolumeclaimtemplatespecresources)
+                * [`fn withLimits(limits)`](#fn-specstoragedependenciesvolumesephemeralvolumeclaimtemplatespecresourceswithlimits)
+                * [`fn withLimitsMixin(limits)`](#fn-specstoragedependenciesvolumesephemeralvolumeclaimtemplatespecresourceswithlimitsmixin)
+                * [`fn withRequests(requests)`](#fn-specstoragedependenciesvolumesephemeralvolumeclaimtemplatespecresourceswithrequests)
+                * [`fn withRequestsMixin(requests)`](#fn-specstoragedependenciesvolumesephemeralvolumeclaimtemplatespecresourceswithrequestsmixin)
+              * [`obj spec.storage.dependencies.volumes.ephemeral.volumeClaimTemplate.spec.selector`](#obj-specstoragedependenciesvolumesephemeralvolumeclaimtemplatespecselector)
+                * [`fn withMatchExpressions(matchExpressions)`](#fn-specstoragedependenciesvolumesephemeralvolumeclaimtemplatespecselectorwithmatchexpressions)
+                * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specstoragedependenciesvolumesephemeralvolumeclaimtemplatespecselectorwithmatchexpressionsmixin)
+                * [`fn withMatchLabels(matchLabels)`](#fn-specstoragedependenciesvolumesephemeralvolumeclaimtemplatespecselectorwithmatchlabels)
+                * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specstoragedependenciesvolumesephemeralvolumeclaimtemplatespecselectorwithmatchlabelsmixin)
+                * [`obj spec.storage.dependencies.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions`](#obj-specstoragedependenciesvolumesephemeralvolumeclaimtemplatespecselectormatchexpressions)
+                  * [`fn withKey(key)`](#fn-specstoragedependenciesvolumesephemeralvolumeclaimtemplatespecselectormatchexpressionswithkey)
+                  * [`fn withOperator(operator)`](#fn-specstoragedependenciesvolumesephemeralvolumeclaimtemplatespecselectormatchexpressionswithoperator)
+                  * [`fn withValues(values)`](#fn-specstoragedependenciesvolumesephemeralvolumeclaimtemplatespecselectormatchexpressionswithvalues)
+                  * [`fn withValuesMixin(values)`](#fn-specstoragedependenciesvolumesephemeralvolumeclaimtemplatespecselectormatchexpressionswithvaluesmixin)
+        * [`obj spec.storage.dependencies.volumes.fc`](#obj-specstoragedependenciesvolumesfc)
+          * [`fn withFsType(fsType)`](#fn-specstoragedependenciesvolumesfcwithfstype)
+          * [`fn withLun(lun)`](#fn-specstoragedependenciesvolumesfcwithlun)
+          * [`fn withReadOnly(readOnly)`](#fn-specstoragedependenciesvolumesfcwithreadonly)
+          * [`fn withTargetWWNs(targetWWNs)`](#fn-specstoragedependenciesvolumesfcwithtargetwwns)
+          * [`fn withTargetWWNsMixin(targetWWNs)`](#fn-specstoragedependenciesvolumesfcwithtargetwwnsmixin)
+          * [`fn withWwids(wwids)`](#fn-specstoragedependenciesvolumesfcwithwwids)
+          * [`fn withWwidsMixin(wwids)`](#fn-specstoragedependenciesvolumesfcwithwwidsmixin)
+        * [`obj spec.storage.dependencies.volumes.flexVolume`](#obj-specstoragedependenciesvolumesflexvolume)
+          * [`fn withDriver(driver)`](#fn-specstoragedependenciesvolumesflexvolumewithdriver)
+          * [`fn withFsType(fsType)`](#fn-specstoragedependenciesvolumesflexvolumewithfstype)
+          * [`fn withOptions(options)`](#fn-specstoragedependenciesvolumesflexvolumewithoptions)
+          * [`fn withOptionsMixin(options)`](#fn-specstoragedependenciesvolumesflexvolumewithoptionsmixin)
+          * [`fn withReadOnly(readOnly)`](#fn-specstoragedependenciesvolumesflexvolumewithreadonly)
+          * [`obj spec.storage.dependencies.volumes.flexVolume.secretRef`](#obj-specstoragedependenciesvolumesflexvolumesecretref)
+            * [`fn withName(name)`](#fn-specstoragedependenciesvolumesflexvolumesecretrefwithname)
+        * [`obj spec.storage.dependencies.volumes.flocker`](#obj-specstoragedependenciesvolumesflocker)
+          * [`fn withDatasetName(datasetName)`](#fn-specstoragedependenciesvolumesflockerwithdatasetname)
+          * [`fn withDatasetUUID(datasetUUID)`](#fn-specstoragedependenciesvolumesflockerwithdatasetuuid)
+        * [`obj spec.storage.dependencies.volumes.gcePersistentDisk`](#obj-specstoragedependenciesvolumesgcepersistentdisk)
+          * [`fn withFsType(fsType)`](#fn-specstoragedependenciesvolumesgcepersistentdiskwithfstype)
+          * [`fn withPartition(partition)`](#fn-specstoragedependenciesvolumesgcepersistentdiskwithpartition)
+          * [`fn withPdName(pdName)`](#fn-specstoragedependenciesvolumesgcepersistentdiskwithpdname)
+          * [`fn withReadOnly(readOnly)`](#fn-specstoragedependenciesvolumesgcepersistentdiskwithreadonly)
+        * [`obj spec.storage.dependencies.volumes.gitRepo`](#obj-specstoragedependenciesvolumesgitrepo)
+          * [`fn withDirectory(directory)`](#fn-specstoragedependenciesvolumesgitrepowithdirectory)
+          * [`fn withRepository(repository)`](#fn-specstoragedependenciesvolumesgitrepowithrepository)
+          * [`fn withRevision(revision)`](#fn-specstoragedependenciesvolumesgitrepowithrevision)
+        * [`obj spec.storage.dependencies.volumes.glusterfs`](#obj-specstoragedependenciesvolumesglusterfs)
+          * [`fn withEndpoints(endpoints)`](#fn-specstoragedependenciesvolumesglusterfswithendpoints)
+          * [`fn withPath(path)`](#fn-specstoragedependenciesvolumesglusterfswithpath)
+          * [`fn withReadOnly(readOnly)`](#fn-specstoragedependenciesvolumesglusterfswithreadonly)
+        * [`obj spec.storage.dependencies.volumes.hostPath`](#obj-specstoragedependenciesvolumeshostpath)
+          * [`fn withPath(path)`](#fn-specstoragedependenciesvolumeshostpathwithpath)
+          * [`fn withType(type)`](#fn-specstoragedependenciesvolumeshostpathwithtype)
+        * [`obj spec.storage.dependencies.volumes.iscsi`](#obj-specstoragedependenciesvolumesiscsi)
+          * [`fn withChapAuthDiscovery(chapAuthDiscovery)`](#fn-specstoragedependenciesvolumesiscsiwithchapauthdiscovery)
+          * [`fn withChapAuthSession(chapAuthSession)`](#fn-specstoragedependenciesvolumesiscsiwithchapauthsession)
+          * [`fn withFsType(fsType)`](#fn-specstoragedependenciesvolumesiscsiwithfstype)
+          * [`fn withInitiatorName(initiatorName)`](#fn-specstoragedependenciesvolumesiscsiwithinitiatorname)
+          * [`fn withIqn(iqn)`](#fn-specstoragedependenciesvolumesiscsiwithiqn)
+          * [`fn withIscsiInterface(iscsiInterface)`](#fn-specstoragedependenciesvolumesiscsiwithiscsiinterface)
+          * [`fn withLun(lun)`](#fn-specstoragedependenciesvolumesiscsiwithlun)
+          * [`fn withPortals(portals)`](#fn-specstoragedependenciesvolumesiscsiwithportals)
+          * [`fn withPortalsMixin(portals)`](#fn-specstoragedependenciesvolumesiscsiwithportalsmixin)
+          * [`fn withReadOnly(readOnly)`](#fn-specstoragedependenciesvolumesiscsiwithreadonly)
+          * [`fn withTargetPortal(targetPortal)`](#fn-specstoragedependenciesvolumesiscsiwithtargetportal)
+          * [`obj spec.storage.dependencies.volumes.iscsi.secretRef`](#obj-specstoragedependenciesvolumesiscsisecretref)
+            * [`fn withName(name)`](#fn-specstoragedependenciesvolumesiscsisecretrefwithname)
+        * [`obj spec.storage.dependencies.volumes.nfs`](#obj-specstoragedependenciesvolumesnfs)
+          * [`fn withPath(path)`](#fn-specstoragedependenciesvolumesnfswithpath)
+          * [`fn withReadOnly(readOnly)`](#fn-specstoragedependenciesvolumesnfswithreadonly)
+          * [`fn withServer(server)`](#fn-specstoragedependenciesvolumesnfswithserver)
+        * [`obj spec.storage.dependencies.volumes.persistentVolumeClaim`](#obj-specstoragedependenciesvolumespersistentvolumeclaim)
+          * [`fn withClaimName(claimName)`](#fn-specstoragedependenciesvolumespersistentvolumeclaimwithclaimname)
+          * [`fn withReadOnly(readOnly)`](#fn-specstoragedependenciesvolumespersistentvolumeclaimwithreadonly)
+        * [`obj spec.storage.dependencies.volumes.photonPersistentDisk`](#obj-specstoragedependenciesvolumesphotonpersistentdisk)
+          * [`fn withFsType(fsType)`](#fn-specstoragedependenciesvolumesphotonpersistentdiskwithfstype)
+          * [`fn withPdID(pdID)`](#fn-specstoragedependenciesvolumesphotonpersistentdiskwithpdid)
+        * [`obj spec.storage.dependencies.volumes.portworxVolume`](#obj-specstoragedependenciesvolumesportworxvolume)
+          * [`fn withFsType(fsType)`](#fn-specstoragedependenciesvolumesportworxvolumewithfstype)
+          * [`fn withReadOnly(readOnly)`](#fn-specstoragedependenciesvolumesportworxvolumewithreadonly)
+          * [`fn withVolumeID(volumeID)`](#fn-specstoragedependenciesvolumesportworxvolumewithvolumeid)
+        * [`obj spec.storage.dependencies.volumes.projected`](#obj-specstoragedependenciesvolumesprojected)
+          * [`fn withDefaultMode(defaultMode)`](#fn-specstoragedependenciesvolumesprojectedwithdefaultmode)
+          * [`fn withSources(sources)`](#fn-specstoragedependenciesvolumesprojectedwithsources)
+          * [`fn withSourcesMixin(sources)`](#fn-specstoragedependenciesvolumesprojectedwithsourcesmixin)
+          * [`obj spec.storage.dependencies.volumes.projected.sources`](#obj-specstoragedependenciesvolumesprojectedsources)
+            * [`obj spec.storage.dependencies.volumes.projected.sources.configMap`](#obj-specstoragedependenciesvolumesprojectedsourcesconfigmap)
+              * [`fn withItems(items)`](#fn-specstoragedependenciesvolumesprojectedsourcesconfigmapwithitems)
+              * [`fn withItemsMixin(items)`](#fn-specstoragedependenciesvolumesprojectedsourcesconfigmapwithitemsmixin)
+              * [`fn withName(name)`](#fn-specstoragedependenciesvolumesprojectedsourcesconfigmapwithname)
+              * [`fn withOptional(optional)`](#fn-specstoragedependenciesvolumesprojectedsourcesconfigmapwithoptional)
+              * [`obj spec.storage.dependencies.volumes.projected.sources.configMap.items`](#obj-specstoragedependenciesvolumesprojectedsourcesconfigmapitems)
+                * [`fn withKey(key)`](#fn-specstoragedependenciesvolumesprojectedsourcesconfigmapitemswithkey)
+                * [`fn withMode(mode)`](#fn-specstoragedependenciesvolumesprojectedsourcesconfigmapitemswithmode)
+                * [`fn withPath(path)`](#fn-specstoragedependenciesvolumesprojectedsourcesconfigmapitemswithpath)
+            * [`obj spec.storage.dependencies.volumes.projected.sources.downwardAPI`](#obj-specstoragedependenciesvolumesprojectedsourcesdownwardapi)
+              * [`fn withItems(items)`](#fn-specstoragedependenciesvolumesprojectedsourcesdownwardapiwithitems)
+              * [`fn withItemsMixin(items)`](#fn-specstoragedependenciesvolumesprojectedsourcesdownwardapiwithitemsmixin)
+              * [`obj spec.storage.dependencies.volumes.projected.sources.downwardAPI.items`](#obj-specstoragedependenciesvolumesprojectedsourcesdownwardapiitems)
+                * [`fn withMode(mode)`](#fn-specstoragedependenciesvolumesprojectedsourcesdownwardapiitemswithmode)
+                * [`fn withPath(path)`](#fn-specstoragedependenciesvolumesprojectedsourcesdownwardapiitemswithpath)
+                * [`obj spec.storage.dependencies.volumes.projected.sources.downwardAPI.items.fieldRef`](#obj-specstoragedependenciesvolumesprojectedsourcesdownwardapiitemsfieldref)
+                  * [`fn withApiVersion(apiVersion)`](#fn-specstoragedependenciesvolumesprojectedsourcesdownwardapiitemsfieldrefwithapiversion)
+                  * [`fn withFieldPath(fieldPath)`](#fn-specstoragedependenciesvolumesprojectedsourcesdownwardapiitemsfieldrefwithfieldpath)
+                * [`obj spec.storage.dependencies.volumes.projected.sources.downwardAPI.items.resourceFieldRef`](#obj-specstoragedependenciesvolumesprojectedsourcesdownwardapiitemsresourcefieldref)
+                  * [`fn withContainerName(containerName)`](#fn-specstoragedependenciesvolumesprojectedsourcesdownwardapiitemsresourcefieldrefwithcontainername)
+                  * [`fn withDivisor(divisor)`](#fn-specstoragedependenciesvolumesprojectedsourcesdownwardapiitemsresourcefieldrefwithdivisor)
+                  * [`fn withResource(resource)`](#fn-specstoragedependenciesvolumesprojectedsourcesdownwardapiitemsresourcefieldrefwithresource)
+            * [`obj spec.storage.dependencies.volumes.projected.sources.secret`](#obj-specstoragedependenciesvolumesprojectedsourcessecret)
+              * [`fn withItems(items)`](#fn-specstoragedependenciesvolumesprojectedsourcessecretwithitems)
+              * [`fn withItemsMixin(items)`](#fn-specstoragedependenciesvolumesprojectedsourcessecretwithitemsmixin)
+              * [`fn withName(name)`](#fn-specstoragedependenciesvolumesprojectedsourcessecretwithname)
+              * [`fn withOptional(optional)`](#fn-specstoragedependenciesvolumesprojectedsourcessecretwithoptional)
+              * [`obj spec.storage.dependencies.volumes.projected.sources.secret.items`](#obj-specstoragedependenciesvolumesprojectedsourcessecretitems)
+                * [`fn withKey(key)`](#fn-specstoragedependenciesvolumesprojectedsourcessecretitemswithkey)
+                * [`fn withMode(mode)`](#fn-specstoragedependenciesvolumesprojectedsourcessecretitemswithmode)
+                * [`fn withPath(path)`](#fn-specstoragedependenciesvolumesprojectedsourcessecretitemswithpath)
+            * [`obj spec.storage.dependencies.volumes.projected.sources.serviceAccountToken`](#obj-specstoragedependenciesvolumesprojectedsourcesserviceaccounttoken)
+              * [`fn withAudience(audience)`](#fn-specstoragedependenciesvolumesprojectedsourcesserviceaccounttokenwithaudience)
+              * [`fn withExpirationSeconds(expirationSeconds)`](#fn-specstoragedependenciesvolumesprojectedsourcesserviceaccounttokenwithexpirationseconds)
+              * [`fn withPath(path)`](#fn-specstoragedependenciesvolumesprojectedsourcesserviceaccounttokenwithpath)
+        * [`obj spec.storage.dependencies.volumes.quobyte`](#obj-specstoragedependenciesvolumesquobyte)
+          * [`fn withGroup(group)`](#fn-specstoragedependenciesvolumesquobytewithgroup)
+          * [`fn withReadOnly(readOnly)`](#fn-specstoragedependenciesvolumesquobytewithreadonly)
+          * [`fn withRegistry(registry)`](#fn-specstoragedependenciesvolumesquobytewithregistry)
+          * [`fn withTenant(tenant)`](#fn-specstoragedependenciesvolumesquobytewithtenant)
+          * [`fn withUser(user)`](#fn-specstoragedependenciesvolumesquobytewithuser)
+          * [`fn withVolume(volume)`](#fn-specstoragedependenciesvolumesquobytewithvolume)
+        * [`obj spec.storage.dependencies.volumes.rbd`](#obj-specstoragedependenciesvolumesrbd)
+          * [`fn withFsType(fsType)`](#fn-specstoragedependenciesvolumesrbdwithfstype)
+          * [`fn withImage(image)`](#fn-specstoragedependenciesvolumesrbdwithimage)
+          * [`fn withKeyring(keyring)`](#fn-specstoragedependenciesvolumesrbdwithkeyring)
+          * [`fn withMonitors(monitors)`](#fn-specstoragedependenciesvolumesrbdwithmonitors)
+          * [`fn withMonitorsMixin(monitors)`](#fn-specstoragedependenciesvolumesrbdwithmonitorsmixin)
+          * [`fn withPool(pool)`](#fn-specstoragedependenciesvolumesrbdwithpool)
+          * [`fn withReadOnly(readOnly)`](#fn-specstoragedependenciesvolumesrbdwithreadonly)
+          * [`fn withUser(user)`](#fn-specstoragedependenciesvolumesrbdwithuser)
+          * [`obj spec.storage.dependencies.volumes.rbd.secretRef`](#obj-specstoragedependenciesvolumesrbdsecretref)
+            * [`fn withName(name)`](#fn-specstoragedependenciesvolumesrbdsecretrefwithname)
+        * [`obj spec.storage.dependencies.volumes.scaleIO`](#obj-specstoragedependenciesvolumesscaleio)
+          * [`fn withFsType(fsType)`](#fn-specstoragedependenciesvolumesscaleiowithfstype)
+          * [`fn withGateway(gateway)`](#fn-specstoragedependenciesvolumesscaleiowithgateway)
+          * [`fn withProtectionDomain(protectionDomain)`](#fn-specstoragedependenciesvolumesscaleiowithprotectiondomain)
+          * [`fn withReadOnly(readOnly)`](#fn-specstoragedependenciesvolumesscaleiowithreadonly)
+          * [`fn withSslEnabled(sslEnabled)`](#fn-specstoragedependenciesvolumesscaleiowithsslenabled)
+          * [`fn withStorageMode(storageMode)`](#fn-specstoragedependenciesvolumesscaleiowithstoragemode)
+          * [`fn withStoragePool(storagePool)`](#fn-specstoragedependenciesvolumesscaleiowithstoragepool)
+          * [`fn withSystem(system)`](#fn-specstoragedependenciesvolumesscaleiowithsystem)
+          * [`fn withVolumeName(volumeName)`](#fn-specstoragedependenciesvolumesscaleiowithvolumename)
+          * [`obj spec.storage.dependencies.volumes.scaleIO.secretRef`](#obj-specstoragedependenciesvolumesscaleiosecretref)
+            * [`fn withName(name)`](#fn-specstoragedependenciesvolumesscaleiosecretrefwithname)
+        * [`obj spec.storage.dependencies.volumes.secret`](#obj-specstoragedependenciesvolumessecret)
+          * [`fn withDefaultMode(defaultMode)`](#fn-specstoragedependenciesvolumessecretwithdefaultmode)
+          * [`fn withItems(items)`](#fn-specstoragedependenciesvolumessecretwithitems)
+          * [`fn withItemsMixin(items)`](#fn-specstoragedependenciesvolumessecretwithitemsmixin)
+          * [`fn withOptional(optional)`](#fn-specstoragedependenciesvolumessecretwithoptional)
+          * [`fn withSecretName(secretName)`](#fn-specstoragedependenciesvolumessecretwithsecretname)
+          * [`obj spec.storage.dependencies.volumes.secret.items`](#obj-specstoragedependenciesvolumessecretitems)
+            * [`fn withKey(key)`](#fn-specstoragedependenciesvolumessecretitemswithkey)
+            * [`fn withMode(mode)`](#fn-specstoragedependenciesvolumessecretitemswithmode)
+            * [`fn withPath(path)`](#fn-specstoragedependenciesvolumessecretitemswithpath)
+        * [`obj spec.storage.dependencies.volumes.storageos`](#obj-specstoragedependenciesvolumesstorageos)
+          * [`fn withFsType(fsType)`](#fn-specstoragedependenciesvolumesstorageoswithfstype)
+          * [`fn withReadOnly(readOnly)`](#fn-specstoragedependenciesvolumesstorageoswithreadonly)
+          * [`fn withVolumeName(volumeName)`](#fn-specstoragedependenciesvolumesstorageoswithvolumename)
+          * [`fn withVolumeNamespace(volumeNamespace)`](#fn-specstoragedependenciesvolumesstorageoswithvolumenamespace)
+          * [`obj spec.storage.dependencies.volumes.storageos.secretRef`](#obj-specstoragedependenciesvolumesstorageossecretref)
+            * [`fn withName(name)`](#fn-specstoragedependenciesvolumesstorageossecretrefwithname)
+        * [`obj spec.storage.dependencies.volumes.vsphereVolume`](#obj-specstoragedependenciesvolumesvspherevolume)
+          * [`fn withFsType(fsType)`](#fn-specstoragedependenciesvolumesvspherevolumewithfstype)
+          * [`fn withStoragePolicyID(storagePolicyID)`](#fn-specstoragedependenciesvolumesvspherevolumewithstoragepolicyid)
+          * [`fn withStoragePolicyName(storagePolicyName)`](#fn-specstoragedependenciesvolumesvspherevolumewithstoragepolicyname)
+          * [`fn withVolumePath(volumePath)`](#fn-specstoragedependenciesvolumesvspherevolumewithvolumepath)
     * [`obj spec.storage.elasticsearch`](#obj-specstorageelasticsearch)
       * [`fn withImage(image)`](#fn-specstorageelasticsearchwithimage)
       * [`fn withNodeCount(nodeCount)`](#fn-specstorageelasticsearchwithnodecount)
@@ -646,6 +3364,12 @@ permalink: /1.25/jaegertracing/v1/jaeger/
       * [`obj spec.storage.elasticsearch.storage`](#obj-specstorageelasticsearchstorage)
         * [`fn withSize(size)`](#fn-specstorageelasticsearchstoragewithsize)
         * [`fn withStorageClassName(storageClassName)`](#fn-specstorageelasticsearchstoragewithstorageclassname)
+      * [`obj spec.storage.elasticsearch.tolerations`](#obj-specstorageelasticsearchtolerations)
+        * [`fn withEffect(effect)`](#fn-specstorageelasticsearchtolerationswitheffect)
+        * [`fn withKey(key)`](#fn-specstorageelasticsearchtolerationswithkey)
+        * [`fn withOperator(operator)`](#fn-specstorageelasticsearchtolerationswithoperator)
+        * [`fn withTolerationSeconds(tolerationSeconds)`](#fn-specstorageelasticsearchtolerationswithtolerationseconds)
+        * [`fn withValue(value)`](#fn-specstorageelasticsearchtolerationswithvalue)
     * [`obj spec.storage.esIndexCleaner`](#obj-specstorageesindexcleaner)
       * [`fn withAnnotations(annotations)`](#fn-specstorageesindexcleanerwithannotations)
       * [`fn withAnnotationsMixin(annotations)`](#fn-specstorageesindexcleanerwithannotationsmixin)
@@ -669,19 +3393,111 @@ permalink: /1.25/jaegertracing/v1/jaeger/
         * [`obj spec.storage.esIndexCleaner.affinity.nodeAffinity`](#obj-specstorageesindexcleaneraffinitynodeaffinity)
           * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specstorageesindexcleaneraffinitynodeaffinitywithpreferredduringschedulingignoredduringexecution)
           * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specstorageesindexcleaneraffinitynodeaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
+          * [`obj spec.storage.esIndexCleaner.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-specstorageesindexcleaneraffinitynodeaffinitypreferredduringschedulingignoredduringexecution)
+            * [`fn withWeight(weight)`](#fn-specstorageesindexcleaneraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+            * [`obj spec.storage.esIndexCleaner.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference`](#obj-specstorageesindexcleaneraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreference)
+              * [`fn withMatchExpressions(matchExpressions)`](#fn-specstorageesindexcleaneraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchexpressions)
+              * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specstorageesindexcleaneraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchexpressionsmixin)
+              * [`fn withMatchFields(matchFields)`](#fn-specstorageesindexcleaneraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchfields)
+              * [`fn withMatchFieldsMixin(matchFields)`](#fn-specstorageesindexcleaneraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchfieldsmixin)
+              * [`obj spec.storage.esIndexCleaner.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions`](#obj-specstorageesindexcleaneraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressions)
+                * [`fn withKey(key)`](#fn-specstorageesindexcleaneraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithkey)
+                * [`fn withOperator(operator)`](#fn-specstorageesindexcleaneraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithoperator)
+                * [`fn withValues(values)`](#fn-specstorageesindexcleaneraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithvalues)
+                * [`fn withValuesMixin(values)`](#fn-specstorageesindexcleaneraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithvaluesmixin)
+              * [`obj spec.storage.esIndexCleaner.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields`](#obj-specstorageesindexcleaneraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfields)
+                * [`fn withKey(key)`](#fn-specstorageesindexcleaneraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithkey)
+                * [`fn withOperator(operator)`](#fn-specstorageesindexcleaneraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithoperator)
+                * [`fn withValues(values)`](#fn-specstorageesindexcleaneraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithvalues)
+                * [`fn withValuesMixin(values)`](#fn-specstorageesindexcleaneraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithvaluesmixin)
           * [`obj spec.storage.esIndexCleaner.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-specstorageesindexcleaneraffinitynodeaffinityrequiredduringschedulingignoredduringexecution)
             * [`fn withNodeSelectorTerms(nodeSelectorTerms)`](#fn-specstorageesindexcleaneraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionwithnodeselectorterms)
             * [`fn withNodeSelectorTermsMixin(nodeSelectorTerms)`](#fn-specstorageesindexcleaneraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionwithnodeselectortermsmixin)
+            * [`obj spec.storage.esIndexCleaner.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms`](#obj-specstorageesindexcleaneraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectorterms)
+              * [`fn withMatchExpressions(matchExpressions)`](#fn-specstorageesindexcleaneraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchexpressions)
+              * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specstorageesindexcleaneraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchexpressionsmixin)
+              * [`fn withMatchFields(matchFields)`](#fn-specstorageesindexcleaneraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchfields)
+              * [`fn withMatchFieldsMixin(matchFields)`](#fn-specstorageesindexcleaneraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchfieldsmixin)
+              * [`obj spec.storage.esIndexCleaner.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions`](#obj-specstorageesindexcleaneraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressions)
+                * [`fn withKey(key)`](#fn-specstorageesindexcleaneraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithkey)
+                * [`fn withOperator(operator)`](#fn-specstorageesindexcleaneraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithoperator)
+                * [`fn withValues(values)`](#fn-specstorageesindexcleaneraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithvalues)
+                * [`fn withValuesMixin(values)`](#fn-specstorageesindexcleaneraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithvaluesmixin)
+              * [`obj spec.storage.esIndexCleaner.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields`](#obj-specstorageesindexcleaneraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfields)
+                * [`fn withKey(key)`](#fn-specstorageesindexcleaneraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithkey)
+                * [`fn withOperator(operator)`](#fn-specstorageesindexcleaneraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithoperator)
+                * [`fn withValues(values)`](#fn-specstorageesindexcleaneraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithvalues)
+                * [`fn withValuesMixin(values)`](#fn-specstorageesindexcleaneraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithvaluesmixin)
         * [`obj spec.storage.esIndexCleaner.affinity.podAffinity`](#obj-specstorageesindexcleaneraffinitypodaffinity)
           * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specstorageesindexcleaneraffinitypodaffinitywithpreferredduringschedulingignoredduringexecution)
           * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specstorageesindexcleaneraffinitypodaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
           * [`fn withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specstorageesindexcleaneraffinitypodaffinitywithrequiredduringschedulingignoredduringexecution)
           * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specstorageesindexcleaneraffinitypodaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
+          * [`obj spec.storage.esIndexCleaner.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-specstorageesindexcleaneraffinitypodaffinitypreferredduringschedulingignoredduringexecution)
+            * [`fn withWeight(weight)`](#fn-specstorageesindexcleaneraffinitypodaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+            * [`obj spec.storage.esIndexCleaner.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm`](#obj-specstorageesindexcleaneraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinityterm)
+              * [`fn withNamespaces(namespaces)`](#fn-specstorageesindexcleaneraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespaces)
+              * [`fn withNamespacesMixin(namespaces)`](#fn-specstorageesindexcleaneraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespacesmixin)
+              * [`fn withTopologyKey(topologyKey)`](#fn-specstorageesindexcleaneraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithtopologykey)
+              * [`obj spec.storage.esIndexCleaner.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector`](#obj-specstorageesindexcleaneraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselector)
+                * [`fn withMatchExpressions(matchExpressions)`](#fn-specstorageesindexcleaneraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressions)
+                * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specstorageesindexcleaneraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressionsmixin)
+                * [`fn withMatchLabels(matchLabels)`](#fn-specstorageesindexcleaneraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabels)
+                * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specstorageesindexcleaneraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabelsmixin)
+                * [`obj spec.storage.esIndexCleaner.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions`](#obj-specstorageesindexcleaneraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressions)
+                  * [`fn withKey(key)`](#fn-specstorageesindexcleaneraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithkey)
+                  * [`fn withOperator(operator)`](#fn-specstorageesindexcleaneraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithoperator)
+                  * [`fn withValues(values)`](#fn-specstorageesindexcleaneraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvalues)
+                  * [`fn withValuesMixin(values)`](#fn-specstorageesindexcleaneraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvaluesmixin)
+          * [`obj spec.storage.esIndexCleaner.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-specstorageesindexcleaneraffinitypodaffinityrequiredduringschedulingignoredduringexecution)
+            * [`fn withNamespaces(namespaces)`](#fn-specstorageesindexcleaneraffinitypodaffinityrequiredduringschedulingignoredduringexecutionwithnamespaces)
+            * [`fn withNamespacesMixin(namespaces)`](#fn-specstorageesindexcleaneraffinitypodaffinityrequiredduringschedulingignoredduringexecutionwithnamespacesmixin)
+            * [`fn withTopologyKey(topologyKey)`](#fn-specstorageesindexcleaneraffinitypodaffinityrequiredduringschedulingignoredduringexecutionwithtopologykey)
+            * [`obj spec.storage.esIndexCleaner.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector`](#obj-specstorageesindexcleaneraffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselector)
+              * [`fn withMatchExpressions(matchExpressions)`](#fn-specstorageesindexcleaneraffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressions)
+              * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specstorageesindexcleaneraffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressionsmixin)
+              * [`fn withMatchLabels(matchLabels)`](#fn-specstorageesindexcleaneraffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabels)
+              * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specstorageesindexcleaneraffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabelsmixin)
+              * [`obj spec.storage.esIndexCleaner.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions`](#obj-specstorageesindexcleaneraffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressions)
+                * [`fn withKey(key)`](#fn-specstorageesindexcleaneraffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithkey)
+                * [`fn withOperator(operator)`](#fn-specstorageesindexcleaneraffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithoperator)
+                * [`fn withValues(values)`](#fn-specstorageesindexcleaneraffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvalues)
+                * [`fn withValuesMixin(values)`](#fn-specstorageesindexcleaneraffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvaluesmixin)
         * [`obj spec.storage.esIndexCleaner.affinity.podAntiAffinity`](#obj-specstorageesindexcleaneraffinitypodantiaffinity)
           * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specstorageesindexcleaneraffinitypodantiaffinitywithpreferredduringschedulingignoredduringexecution)
           * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specstorageesindexcleaneraffinitypodantiaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
           * [`fn withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specstorageesindexcleaneraffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecution)
           * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specstorageesindexcleaneraffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
+          * [`obj spec.storage.esIndexCleaner.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-specstorageesindexcleaneraffinitypodantiaffinitypreferredduringschedulingignoredduringexecution)
+            * [`fn withWeight(weight)`](#fn-specstorageesindexcleaneraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+            * [`obj spec.storage.esIndexCleaner.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm`](#obj-specstorageesindexcleaneraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinityterm)
+              * [`fn withNamespaces(namespaces)`](#fn-specstorageesindexcleaneraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespaces)
+              * [`fn withNamespacesMixin(namespaces)`](#fn-specstorageesindexcleaneraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespacesmixin)
+              * [`fn withTopologyKey(topologyKey)`](#fn-specstorageesindexcleaneraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithtopologykey)
+              * [`obj spec.storage.esIndexCleaner.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector`](#obj-specstorageesindexcleaneraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselector)
+                * [`fn withMatchExpressions(matchExpressions)`](#fn-specstorageesindexcleaneraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressions)
+                * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specstorageesindexcleaneraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressionsmixin)
+                * [`fn withMatchLabels(matchLabels)`](#fn-specstorageesindexcleaneraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabels)
+                * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specstorageesindexcleaneraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabelsmixin)
+                * [`obj spec.storage.esIndexCleaner.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions`](#obj-specstorageesindexcleaneraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressions)
+                  * [`fn withKey(key)`](#fn-specstorageesindexcleaneraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithkey)
+                  * [`fn withOperator(operator)`](#fn-specstorageesindexcleaneraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithoperator)
+                  * [`fn withValues(values)`](#fn-specstorageesindexcleaneraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvalues)
+                  * [`fn withValuesMixin(values)`](#fn-specstorageesindexcleaneraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvaluesmixin)
+          * [`obj spec.storage.esIndexCleaner.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-specstorageesindexcleaneraffinitypodantiaffinityrequiredduringschedulingignoredduringexecution)
+            * [`fn withNamespaces(namespaces)`](#fn-specstorageesindexcleaneraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionwithnamespaces)
+            * [`fn withNamespacesMixin(namespaces)`](#fn-specstorageesindexcleaneraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionwithnamespacesmixin)
+            * [`fn withTopologyKey(topologyKey)`](#fn-specstorageesindexcleaneraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionwithtopologykey)
+            * [`obj spec.storage.esIndexCleaner.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector`](#obj-specstorageesindexcleaneraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselector)
+              * [`fn withMatchExpressions(matchExpressions)`](#fn-specstorageesindexcleaneraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressions)
+              * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specstorageesindexcleaneraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressionsmixin)
+              * [`fn withMatchLabels(matchLabels)`](#fn-specstorageesindexcleaneraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabels)
+              * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specstorageesindexcleaneraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabelsmixin)
+              * [`obj spec.storage.esIndexCleaner.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions`](#obj-specstorageesindexcleaneraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressions)
+                * [`fn withKey(key)`](#fn-specstorageesindexcleaneraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithkey)
+                * [`fn withOperator(operator)`](#fn-specstorageesindexcleaneraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithoperator)
+                * [`fn withValues(values)`](#fn-specstorageesindexcleaneraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvalues)
+                * [`fn withValuesMixin(values)`](#fn-specstorageesindexcleaneraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvaluesmixin)
       * [`obj spec.storage.esIndexCleaner.resources`](#obj-specstorageesindexcleanerresources)
         * [`fn withLimits(limits)`](#fn-specstorageesindexcleanerresourceswithlimits)
         * [`fn withLimitsMixin(limits)`](#fn-specstorageesindexcleanerresourceswithlimitsmixin)
@@ -705,10 +3521,279 @@ permalink: /1.25/jaegertracing/v1/jaeger/
         * [`obj spec.storage.esIndexCleaner.securityContext.seccompProfile`](#obj-specstorageesindexcleanersecuritycontextseccompprofile)
           * [`fn withLocalhostProfile(localhostProfile)`](#fn-specstorageesindexcleanersecuritycontextseccompprofilewithlocalhostprofile)
           * [`fn withType(type)`](#fn-specstorageesindexcleanersecuritycontextseccompprofilewithtype)
+        * [`obj spec.storage.esIndexCleaner.securityContext.sysctls`](#obj-specstorageesindexcleanersecuritycontextsysctls)
+          * [`fn withName(name)`](#fn-specstorageesindexcleanersecuritycontextsysctlswithname)
+          * [`fn withValue(value)`](#fn-specstorageesindexcleanersecuritycontextsysctlswithvalue)
         * [`obj spec.storage.esIndexCleaner.securityContext.windowsOptions`](#obj-specstorageesindexcleanersecuritycontextwindowsoptions)
           * [`fn withGmsaCredentialSpec(gmsaCredentialSpec)`](#fn-specstorageesindexcleanersecuritycontextwindowsoptionswithgmsacredentialspec)
           * [`fn withGmsaCredentialSpecName(gmsaCredentialSpecName)`](#fn-specstorageesindexcleanersecuritycontextwindowsoptionswithgmsacredentialspecname)
           * [`fn withRunAsUserName(runAsUserName)`](#fn-specstorageesindexcleanersecuritycontextwindowsoptionswithrunasusername)
+      * [`obj spec.storage.esIndexCleaner.tolerations`](#obj-specstorageesindexcleanertolerations)
+        * [`fn withEffect(effect)`](#fn-specstorageesindexcleanertolerationswitheffect)
+        * [`fn withKey(key)`](#fn-specstorageesindexcleanertolerationswithkey)
+        * [`fn withOperator(operator)`](#fn-specstorageesindexcleanertolerationswithoperator)
+        * [`fn withTolerationSeconds(tolerationSeconds)`](#fn-specstorageesindexcleanertolerationswithtolerationseconds)
+        * [`fn withValue(value)`](#fn-specstorageesindexcleanertolerationswithvalue)
+      * [`obj spec.storage.esIndexCleaner.volumeMounts`](#obj-specstorageesindexcleanervolumemounts)
+        * [`fn withMountPath(mountPath)`](#fn-specstorageesindexcleanervolumemountswithmountpath)
+        * [`fn withMountPropagation(mountPropagation)`](#fn-specstorageesindexcleanervolumemountswithmountpropagation)
+        * [`fn withName(name)`](#fn-specstorageesindexcleanervolumemountswithname)
+        * [`fn withReadOnly(readOnly)`](#fn-specstorageesindexcleanervolumemountswithreadonly)
+        * [`fn withSubPath(subPath)`](#fn-specstorageesindexcleanervolumemountswithsubpath)
+        * [`fn withSubPathExpr(subPathExpr)`](#fn-specstorageesindexcleanervolumemountswithsubpathexpr)
+      * [`obj spec.storage.esIndexCleaner.volumes`](#obj-specstorageesindexcleanervolumes)
+        * [`fn withName(name)`](#fn-specstorageesindexcleanervolumeswithname)
+        * [`obj spec.storage.esIndexCleaner.volumes.awsElasticBlockStore`](#obj-specstorageesindexcleanervolumesawselasticblockstore)
+          * [`fn withFsType(fsType)`](#fn-specstorageesindexcleanervolumesawselasticblockstorewithfstype)
+          * [`fn withPartition(partition)`](#fn-specstorageesindexcleanervolumesawselasticblockstorewithpartition)
+          * [`fn withReadOnly(readOnly)`](#fn-specstorageesindexcleanervolumesawselasticblockstorewithreadonly)
+          * [`fn withVolumeID(volumeID)`](#fn-specstorageesindexcleanervolumesawselasticblockstorewithvolumeid)
+        * [`obj spec.storage.esIndexCleaner.volumes.azureDisk`](#obj-specstorageesindexcleanervolumesazuredisk)
+          * [`fn withCachingMode(cachingMode)`](#fn-specstorageesindexcleanervolumesazurediskwithcachingmode)
+          * [`fn withDiskName(diskName)`](#fn-specstorageesindexcleanervolumesazurediskwithdiskname)
+          * [`fn withDiskURI(diskURI)`](#fn-specstorageesindexcleanervolumesazurediskwithdiskuri)
+          * [`fn withFsType(fsType)`](#fn-specstorageesindexcleanervolumesazurediskwithfstype)
+          * [`fn withKind(kind)`](#fn-specstorageesindexcleanervolumesazurediskwithkind)
+          * [`fn withReadOnly(readOnly)`](#fn-specstorageesindexcleanervolumesazurediskwithreadonly)
+        * [`obj spec.storage.esIndexCleaner.volumes.azureFile`](#obj-specstorageesindexcleanervolumesazurefile)
+          * [`fn withReadOnly(readOnly)`](#fn-specstorageesindexcleanervolumesazurefilewithreadonly)
+          * [`fn withSecretName(secretName)`](#fn-specstorageesindexcleanervolumesazurefilewithsecretname)
+          * [`fn withShareName(shareName)`](#fn-specstorageesindexcleanervolumesazurefilewithsharename)
+        * [`obj spec.storage.esIndexCleaner.volumes.cephfs`](#obj-specstorageesindexcleanervolumescephfs)
+          * [`fn withMonitors(monitors)`](#fn-specstorageesindexcleanervolumescephfswithmonitors)
+          * [`fn withMonitorsMixin(monitors)`](#fn-specstorageesindexcleanervolumescephfswithmonitorsmixin)
+          * [`fn withPath(path)`](#fn-specstorageesindexcleanervolumescephfswithpath)
+          * [`fn withReadOnly(readOnly)`](#fn-specstorageesindexcleanervolumescephfswithreadonly)
+          * [`fn withSecretFile(secretFile)`](#fn-specstorageesindexcleanervolumescephfswithsecretfile)
+          * [`fn withUser(user)`](#fn-specstorageesindexcleanervolumescephfswithuser)
+          * [`obj spec.storage.esIndexCleaner.volumes.cephfs.secretRef`](#obj-specstorageesindexcleanervolumescephfssecretref)
+            * [`fn withName(name)`](#fn-specstorageesindexcleanervolumescephfssecretrefwithname)
+        * [`obj spec.storage.esIndexCleaner.volumes.cinder`](#obj-specstorageesindexcleanervolumescinder)
+          * [`fn withFsType(fsType)`](#fn-specstorageesindexcleanervolumescinderwithfstype)
+          * [`fn withReadOnly(readOnly)`](#fn-specstorageesindexcleanervolumescinderwithreadonly)
+          * [`fn withVolumeID(volumeID)`](#fn-specstorageesindexcleanervolumescinderwithvolumeid)
+          * [`obj spec.storage.esIndexCleaner.volumes.cinder.secretRef`](#obj-specstorageesindexcleanervolumescindersecretref)
+            * [`fn withName(name)`](#fn-specstorageesindexcleanervolumescindersecretrefwithname)
+        * [`obj spec.storage.esIndexCleaner.volumes.configMap`](#obj-specstorageesindexcleanervolumesconfigmap)
+          * [`fn withDefaultMode(defaultMode)`](#fn-specstorageesindexcleanervolumesconfigmapwithdefaultmode)
+          * [`fn withItems(items)`](#fn-specstorageesindexcleanervolumesconfigmapwithitems)
+          * [`fn withItemsMixin(items)`](#fn-specstorageesindexcleanervolumesconfigmapwithitemsmixin)
+          * [`fn withName(name)`](#fn-specstorageesindexcleanervolumesconfigmapwithname)
+          * [`fn withOptional(optional)`](#fn-specstorageesindexcleanervolumesconfigmapwithoptional)
+          * [`obj spec.storage.esIndexCleaner.volumes.configMap.items`](#obj-specstorageesindexcleanervolumesconfigmapitems)
+            * [`fn withKey(key)`](#fn-specstorageesindexcleanervolumesconfigmapitemswithkey)
+            * [`fn withMode(mode)`](#fn-specstorageesindexcleanervolumesconfigmapitemswithmode)
+            * [`fn withPath(path)`](#fn-specstorageesindexcleanervolumesconfigmapitemswithpath)
+        * [`obj spec.storage.esIndexCleaner.volumes.csi`](#obj-specstorageesindexcleanervolumescsi)
+          * [`fn withDriver(driver)`](#fn-specstorageesindexcleanervolumescsiwithdriver)
+          * [`fn withFsType(fsType)`](#fn-specstorageesindexcleanervolumescsiwithfstype)
+          * [`fn withReadOnly(readOnly)`](#fn-specstorageesindexcleanervolumescsiwithreadonly)
+          * [`fn withVolumeAttributes(volumeAttributes)`](#fn-specstorageesindexcleanervolumescsiwithvolumeattributes)
+          * [`fn withVolumeAttributesMixin(volumeAttributes)`](#fn-specstorageesindexcleanervolumescsiwithvolumeattributesmixin)
+          * [`obj spec.storage.esIndexCleaner.volumes.csi.nodePublishSecretRef`](#obj-specstorageesindexcleanervolumescsinodepublishsecretref)
+            * [`fn withName(name)`](#fn-specstorageesindexcleanervolumescsinodepublishsecretrefwithname)
+        * [`obj spec.storage.esIndexCleaner.volumes.downwardAPI`](#obj-specstorageesindexcleanervolumesdownwardapi)
+          * [`fn withDefaultMode(defaultMode)`](#fn-specstorageesindexcleanervolumesdownwardapiwithdefaultmode)
+          * [`fn withItems(items)`](#fn-specstorageesindexcleanervolumesdownwardapiwithitems)
+          * [`fn withItemsMixin(items)`](#fn-specstorageesindexcleanervolumesdownwardapiwithitemsmixin)
+          * [`obj spec.storage.esIndexCleaner.volumes.downwardAPI.items`](#obj-specstorageesindexcleanervolumesdownwardapiitems)
+            * [`fn withMode(mode)`](#fn-specstorageesindexcleanervolumesdownwardapiitemswithmode)
+            * [`fn withPath(path)`](#fn-specstorageesindexcleanervolumesdownwardapiitemswithpath)
+            * [`obj spec.storage.esIndexCleaner.volumes.downwardAPI.items.fieldRef`](#obj-specstorageesindexcleanervolumesdownwardapiitemsfieldref)
+              * [`fn withApiVersion(apiVersion)`](#fn-specstorageesindexcleanervolumesdownwardapiitemsfieldrefwithapiversion)
+              * [`fn withFieldPath(fieldPath)`](#fn-specstorageesindexcleanervolumesdownwardapiitemsfieldrefwithfieldpath)
+            * [`obj spec.storage.esIndexCleaner.volumes.downwardAPI.items.resourceFieldRef`](#obj-specstorageesindexcleanervolumesdownwardapiitemsresourcefieldref)
+              * [`fn withContainerName(containerName)`](#fn-specstorageesindexcleanervolumesdownwardapiitemsresourcefieldrefwithcontainername)
+              * [`fn withDivisor(divisor)`](#fn-specstorageesindexcleanervolumesdownwardapiitemsresourcefieldrefwithdivisor)
+              * [`fn withResource(resource)`](#fn-specstorageesindexcleanervolumesdownwardapiitemsresourcefieldrefwithresource)
+        * [`obj spec.storage.esIndexCleaner.volumes.emptyDir`](#obj-specstorageesindexcleanervolumesemptydir)
+          * [`fn withMedium(medium)`](#fn-specstorageesindexcleanervolumesemptydirwithmedium)
+          * [`fn withSizeLimit(sizeLimit)`](#fn-specstorageesindexcleanervolumesemptydirwithsizelimit)
+        * [`obj spec.storage.esIndexCleaner.volumes.ephemeral`](#obj-specstorageesindexcleanervolumesephemeral)
+          * [`fn withReadOnly(readOnly)`](#fn-specstorageesindexcleanervolumesephemeralwithreadonly)
+          * [`obj spec.storage.esIndexCleaner.volumes.ephemeral.volumeClaimTemplate`](#obj-specstorageesindexcleanervolumesephemeralvolumeclaimtemplate)
+            * [`fn withMetadata(metadata)`](#fn-specstorageesindexcleanervolumesephemeralvolumeclaimtemplatewithmetadata)
+            * [`fn withMetadataMixin(metadata)`](#fn-specstorageesindexcleanervolumesephemeralvolumeclaimtemplatewithmetadatamixin)
+            * [`obj spec.storage.esIndexCleaner.volumes.ephemeral.volumeClaimTemplate.spec`](#obj-specstorageesindexcleanervolumesephemeralvolumeclaimtemplatespec)
+              * [`fn withAccessModes(accessModes)`](#fn-specstorageesindexcleanervolumesephemeralvolumeclaimtemplatespecwithaccessmodes)
+              * [`fn withAccessModesMixin(accessModes)`](#fn-specstorageesindexcleanervolumesephemeralvolumeclaimtemplatespecwithaccessmodesmixin)
+              * [`fn withStorageClassName(storageClassName)`](#fn-specstorageesindexcleanervolumesephemeralvolumeclaimtemplatespecwithstorageclassname)
+              * [`fn withVolumeMode(volumeMode)`](#fn-specstorageesindexcleanervolumesephemeralvolumeclaimtemplatespecwithvolumemode)
+              * [`fn withVolumeName(volumeName)`](#fn-specstorageesindexcleanervolumesephemeralvolumeclaimtemplatespecwithvolumename)
+              * [`obj spec.storage.esIndexCleaner.volumes.ephemeral.volumeClaimTemplate.spec.dataSource`](#obj-specstorageesindexcleanervolumesephemeralvolumeclaimtemplatespecdatasource)
+                * [`fn withApiGroup(apiGroup)`](#fn-specstorageesindexcleanervolumesephemeralvolumeclaimtemplatespecdatasourcewithapigroup)
+                * [`fn withKind(kind)`](#fn-specstorageesindexcleanervolumesephemeralvolumeclaimtemplatespecdatasourcewithkind)
+                * [`fn withName(name)`](#fn-specstorageesindexcleanervolumesephemeralvolumeclaimtemplatespecdatasourcewithname)
+              * [`obj spec.storage.esIndexCleaner.volumes.ephemeral.volumeClaimTemplate.spec.resources`](#obj-specstorageesindexcleanervolumesephemeralvolumeclaimtemplatespecresources)
+                * [`fn withLimits(limits)`](#fn-specstorageesindexcleanervolumesephemeralvolumeclaimtemplatespecresourceswithlimits)
+                * [`fn withLimitsMixin(limits)`](#fn-specstorageesindexcleanervolumesephemeralvolumeclaimtemplatespecresourceswithlimitsmixin)
+                * [`fn withRequests(requests)`](#fn-specstorageesindexcleanervolumesephemeralvolumeclaimtemplatespecresourceswithrequests)
+                * [`fn withRequestsMixin(requests)`](#fn-specstorageesindexcleanervolumesephemeralvolumeclaimtemplatespecresourceswithrequestsmixin)
+              * [`obj spec.storage.esIndexCleaner.volumes.ephemeral.volumeClaimTemplate.spec.selector`](#obj-specstorageesindexcleanervolumesephemeralvolumeclaimtemplatespecselector)
+                * [`fn withMatchExpressions(matchExpressions)`](#fn-specstorageesindexcleanervolumesephemeralvolumeclaimtemplatespecselectorwithmatchexpressions)
+                * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specstorageesindexcleanervolumesephemeralvolumeclaimtemplatespecselectorwithmatchexpressionsmixin)
+                * [`fn withMatchLabels(matchLabels)`](#fn-specstorageesindexcleanervolumesephemeralvolumeclaimtemplatespecselectorwithmatchlabels)
+                * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specstorageesindexcleanervolumesephemeralvolumeclaimtemplatespecselectorwithmatchlabelsmixin)
+                * [`obj spec.storage.esIndexCleaner.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions`](#obj-specstorageesindexcleanervolumesephemeralvolumeclaimtemplatespecselectormatchexpressions)
+                  * [`fn withKey(key)`](#fn-specstorageesindexcleanervolumesephemeralvolumeclaimtemplatespecselectormatchexpressionswithkey)
+                  * [`fn withOperator(operator)`](#fn-specstorageesindexcleanervolumesephemeralvolumeclaimtemplatespecselectormatchexpressionswithoperator)
+                  * [`fn withValues(values)`](#fn-specstorageesindexcleanervolumesephemeralvolumeclaimtemplatespecselectormatchexpressionswithvalues)
+                  * [`fn withValuesMixin(values)`](#fn-specstorageesindexcleanervolumesephemeralvolumeclaimtemplatespecselectormatchexpressionswithvaluesmixin)
+        * [`obj spec.storage.esIndexCleaner.volumes.fc`](#obj-specstorageesindexcleanervolumesfc)
+          * [`fn withFsType(fsType)`](#fn-specstorageesindexcleanervolumesfcwithfstype)
+          * [`fn withLun(lun)`](#fn-specstorageesindexcleanervolumesfcwithlun)
+          * [`fn withReadOnly(readOnly)`](#fn-specstorageesindexcleanervolumesfcwithreadonly)
+          * [`fn withTargetWWNs(targetWWNs)`](#fn-specstorageesindexcleanervolumesfcwithtargetwwns)
+          * [`fn withTargetWWNsMixin(targetWWNs)`](#fn-specstorageesindexcleanervolumesfcwithtargetwwnsmixin)
+          * [`fn withWwids(wwids)`](#fn-specstorageesindexcleanervolumesfcwithwwids)
+          * [`fn withWwidsMixin(wwids)`](#fn-specstorageesindexcleanervolumesfcwithwwidsmixin)
+        * [`obj spec.storage.esIndexCleaner.volumes.flexVolume`](#obj-specstorageesindexcleanervolumesflexvolume)
+          * [`fn withDriver(driver)`](#fn-specstorageesindexcleanervolumesflexvolumewithdriver)
+          * [`fn withFsType(fsType)`](#fn-specstorageesindexcleanervolumesflexvolumewithfstype)
+          * [`fn withOptions(options)`](#fn-specstorageesindexcleanervolumesflexvolumewithoptions)
+          * [`fn withOptionsMixin(options)`](#fn-specstorageesindexcleanervolumesflexvolumewithoptionsmixin)
+          * [`fn withReadOnly(readOnly)`](#fn-specstorageesindexcleanervolumesflexvolumewithreadonly)
+          * [`obj spec.storage.esIndexCleaner.volumes.flexVolume.secretRef`](#obj-specstorageesindexcleanervolumesflexvolumesecretref)
+            * [`fn withName(name)`](#fn-specstorageesindexcleanervolumesflexvolumesecretrefwithname)
+        * [`obj spec.storage.esIndexCleaner.volumes.flocker`](#obj-specstorageesindexcleanervolumesflocker)
+          * [`fn withDatasetName(datasetName)`](#fn-specstorageesindexcleanervolumesflockerwithdatasetname)
+          * [`fn withDatasetUUID(datasetUUID)`](#fn-specstorageesindexcleanervolumesflockerwithdatasetuuid)
+        * [`obj spec.storage.esIndexCleaner.volumes.gcePersistentDisk`](#obj-specstorageesindexcleanervolumesgcepersistentdisk)
+          * [`fn withFsType(fsType)`](#fn-specstorageesindexcleanervolumesgcepersistentdiskwithfstype)
+          * [`fn withPartition(partition)`](#fn-specstorageesindexcleanervolumesgcepersistentdiskwithpartition)
+          * [`fn withPdName(pdName)`](#fn-specstorageesindexcleanervolumesgcepersistentdiskwithpdname)
+          * [`fn withReadOnly(readOnly)`](#fn-specstorageesindexcleanervolumesgcepersistentdiskwithreadonly)
+        * [`obj spec.storage.esIndexCleaner.volumes.gitRepo`](#obj-specstorageesindexcleanervolumesgitrepo)
+          * [`fn withDirectory(directory)`](#fn-specstorageesindexcleanervolumesgitrepowithdirectory)
+          * [`fn withRepository(repository)`](#fn-specstorageesindexcleanervolumesgitrepowithrepository)
+          * [`fn withRevision(revision)`](#fn-specstorageesindexcleanervolumesgitrepowithrevision)
+        * [`obj spec.storage.esIndexCleaner.volumes.glusterfs`](#obj-specstorageesindexcleanervolumesglusterfs)
+          * [`fn withEndpoints(endpoints)`](#fn-specstorageesindexcleanervolumesglusterfswithendpoints)
+          * [`fn withPath(path)`](#fn-specstorageesindexcleanervolumesglusterfswithpath)
+          * [`fn withReadOnly(readOnly)`](#fn-specstorageesindexcleanervolumesglusterfswithreadonly)
+        * [`obj spec.storage.esIndexCleaner.volumes.hostPath`](#obj-specstorageesindexcleanervolumeshostpath)
+          * [`fn withPath(path)`](#fn-specstorageesindexcleanervolumeshostpathwithpath)
+          * [`fn withType(type)`](#fn-specstorageesindexcleanervolumeshostpathwithtype)
+        * [`obj spec.storage.esIndexCleaner.volumes.iscsi`](#obj-specstorageesindexcleanervolumesiscsi)
+          * [`fn withChapAuthDiscovery(chapAuthDiscovery)`](#fn-specstorageesindexcleanervolumesiscsiwithchapauthdiscovery)
+          * [`fn withChapAuthSession(chapAuthSession)`](#fn-specstorageesindexcleanervolumesiscsiwithchapauthsession)
+          * [`fn withFsType(fsType)`](#fn-specstorageesindexcleanervolumesiscsiwithfstype)
+          * [`fn withInitiatorName(initiatorName)`](#fn-specstorageesindexcleanervolumesiscsiwithinitiatorname)
+          * [`fn withIqn(iqn)`](#fn-specstorageesindexcleanervolumesiscsiwithiqn)
+          * [`fn withIscsiInterface(iscsiInterface)`](#fn-specstorageesindexcleanervolumesiscsiwithiscsiinterface)
+          * [`fn withLun(lun)`](#fn-specstorageesindexcleanervolumesiscsiwithlun)
+          * [`fn withPortals(portals)`](#fn-specstorageesindexcleanervolumesiscsiwithportals)
+          * [`fn withPortalsMixin(portals)`](#fn-specstorageesindexcleanervolumesiscsiwithportalsmixin)
+          * [`fn withReadOnly(readOnly)`](#fn-specstorageesindexcleanervolumesiscsiwithreadonly)
+          * [`fn withTargetPortal(targetPortal)`](#fn-specstorageesindexcleanervolumesiscsiwithtargetportal)
+          * [`obj spec.storage.esIndexCleaner.volumes.iscsi.secretRef`](#obj-specstorageesindexcleanervolumesiscsisecretref)
+            * [`fn withName(name)`](#fn-specstorageesindexcleanervolumesiscsisecretrefwithname)
+        * [`obj spec.storage.esIndexCleaner.volumes.nfs`](#obj-specstorageesindexcleanervolumesnfs)
+          * [`fn withPath(path)`](#fn-specstorageesindexcleanervolumesnfswithpath)
+          * [`fn withReadOnly(readOnly)`](#fn-specstorageesindexcleanervolumesnfswithreadonly)
+          * [`fn withServer(server)`](#fn-specstorageesindexcleanervolumesnfswithserver)
+        * [`obj spec.storage.esIndexCleaner.volumes.persistentVolumeClaim`](#obj-specstorageesindexcleanervolumespersistentvolumeclaim)
+          * [`fn withClaimName(claimName)`](#fn-specstorageesindexcleanervolumespersistentvolumeclaimwithclaimname)
+          * [`fn withReadOnly(readOnly)`](#fn-specstorageesindexcleanervolumespersistentvolumeclaimwithreadonly)
+        * [`obj spec.storage.esIndexCleaner.volumes.photonPersistentDisk`](#obj-specstorageesindexcleanervolumesphotonpersistentdisk)
+          * [`fn withFsType(fsType)`](#fn-specstorageesindexcleanervolumesphotonpersistentdiskwithfstype)
+          * [`fn withPdID(pdID)`](#fn-specstorageesindexcleanervolumesphotonpersistentdiskwithpdid)
+        * [`obj spec.storage.esIndexCleaner.volumes.portworxVolume`](#obj-specstorageesindexcleanervolumesportworxvolume)
+          * [`fn withFsType(fsType)`](#fn-specstorageesindexcleanervolumesportworxvolumewithfstype)
+          * [`fn withReadOnly(readOnly)`](#fn-specstorageesindexcleanervolumesportworxvolumewithreadonly)
+          * [`fn withVolumeID(volumeID)`](#fn-specstorageesindexcleanervolumesportworxvolumewithvolumeid)
+        * [`obj spec.storage.esIndexCleaner.volumes.projected`](#obj-specstorageesindexcleanervolumesprojected)
+          * [`fn withDefaultMode(defaultMode)`](#fn-specstorageesindexcleanervolumesprojectedwithdefaultmode)
+          * [`fn withSources(sources)`](#fn-specstorageesindexcleanervolumesprojectedwithsources)
+          * [`fn withSourcesMixin(sources)`](#fn-specstorageesindexcleanervolumesprojectedwithsourcesmixin)
+          * [`obj spec.storage.esIndexCleaner.volumes.projected.sources`](#obj-specstorageesindexcleanervolumesprojectedsources)
+            * [`obj spec.storage.esIndexCleaner.volumes.projected.sources.configMap`](#obj-specstorageesindexcleanervolumesprojectedsourcesconfigmap)
+              * [`fn withItems(items)`](#fn-specstorageesindexcleanervolumesprojectedsourcesconfigmapwithitems)
+              * [`fn withItemsMixin(items)`](#fn-specstorageesindexcleanervolumesprojectedsourcesconfigmapwithitemsmixin)
+              * [`fn withName(name)`](#fn-specstorageesindexcleanervolumesprojectedsourcesconfigmapwithname)
+              * [`fn withOptional(optional)`](#fn-specstorageesindexcleanervolumesprojectedsourcesconfigmapwithoptional)
+              * [`obj spec.storage.esIndexCleaner.volumes.projected.sources.configMap.items`](#obj-specstorageesindexcleanervolumesprojectedsourcesconfigmapitems)
+                * [`fn withKey(key)`](#fn-specstorageesindexcleanervolumesprojectedsourcesconfigmapitemswithkey)
+                * [`fn withMode(mode)`](#fn-specstorageesindexcleanervolumesprojectedsourcesconfigmapitemswithmode)
+                * [`fn withPath(path)`](#fn-specstorageesindexcleanervolumesprojectedsourcesconfigmapitemswithpath)
+            * [`obj spec.storage.esIndexCleaner.volumes.projected.sources.downwardAPI`](#obj-specstorageesindexcleanervolumesprojectedsourcesdownwardapi)
+              * [`fn withItems(items)`](#fn-specstorageesindexcleanervolumesprojectedsourcesdownwardapiwithitems)
+              * [`fn withItemsMixin(items)`](#fn-specstorageesindexcleanervolumesprojectedsourcesdownwardapiwithitemsmixin)
+              * [`obj spec.storage.esIndexCleaner.volumes.projected.sources.downwardAPI.items`](#obj-specstorageesindexcleanervolumesprojectedsourcesdownwardapiitems)
+                * [`fn withMode(mode)`](#fn-specstorageesindexcleanervolumesprojectedsourcesdownwardapiitemswithmode)
+                * [`fn withPath(path)`](#fn-specstorageesindexcleanervolumesprojectedsourcesdownwardapiitemswithpath)
+                * [`obj spec.storage.esIndexCleaner.volumes.projected.sources.downwardAPI.items.fieldRef`](#obj-specstorageesindexcleanervolumesprojectedsourcesdownwardapiitemsfieldref)
+                  * [`fn withApiVersion(apiVersion)`](#fn-specstorageesindexcleanervolumesprojectedsourcesdownwardapiitemsfieldrefwithapiversion)
+                  * [`fn withFieldPath(fieldPath)`](#fn-specstorageesindexcleanervolumesprojectedsourcesdownwardapiitemsfieldrefwithfieldpath)
+                * [`obj spec.storage.esIndexCleaner.volumes.projected.sources.downwardAPI.items.resourceFieldRef`](#obj-specstorageesindexcleanervolumesprojectedsourcesdownwardapiitemsresourcefieldref)
+                  * [`fn withContainerName(containerName)`](#fn-specstorageesindexcleanervolumesprojectedsourcesdownwardapiitemsresourcefieldrefwithcontainername)
+                  * [`fn withDivisor(divisor)`](#fn-specstorageesindexcleanervolumesprojectedsourcesdownwardapiitemsresourcefieldrefwithdivisor)
+                  * [`fn withResource(resource)`](#fn-specstorageesindexcleanervolumesprojectedsourcesdownwardapiitemsresourcefieldrefwithresource)
+            * [`obj spec.storage.esIndexCleaner.volumes.projected.sources.secret`](#obj-specstorageesindexcleanervolumesprojectedsourcessecret)
+              * [`fn withItems(items)`](#fn-specstorageesindexcleanervolumesprojectedsourcessecretwithitems)
+              * [`fn withItemsMixin(items)`](#fn-specstorageesindexcleanervolumesprojectedsourcessecretwithitemsmixin)
+              * [`fn withName(name)`](#fn-specstorageesindexcleanervolumesprojectedsourcessecretwithname)
+              * [`fn withOptional(optional)`](#fn-specstorageesindexcleanervolumesprojectedsourcessecretwithoptional)
+              * [`obj spec.storage.esIndexCleaner.volumes.projected.sources.secret.items`](#obj-specstorageesindexcleanervolumesprojectedsourcessecretitems)
+                * [`fn withKey(key)`](#fn-specstorageesindexcleanervolumesprojectedsourcessecretitemswithkey)
+                * [`fn withMode(mode)`](#fn-specstorageesindexcleanervolumesprojectedsourcessecretitemswithmode)
+                * [`fn withPath(path)`](#fn-specstorageesindexcleanervolumesprojectedsourcessecretitemswithpath)
+            * [`obj spec.storage.esIndexCleaner.volumes.projected.sources.serviceAccountToken`](#obj-specstorageesindexcleanervolumesprojectedsourcesserviceaccounttoken)
+              * [`fn withAudience(audience)`](#fn-specstorageesindexcleanervolumesprojectedsourcesserviceaccounttokenwithaudience)
+              * [`fn withExpirationSeconds(expirationSeconds)`](#fn-specstorageesindexcleanervolumesprojectedsourcesserviceaccounttokenwithexpirationseconds)
+              * [`fn withPath(path)`](#fn-specstorageesindexcleanervolumesprojectedsourcesserviceaccounttokenwithpath)
+        * [`obj spec.storage.esIndexCleaner.volumes.quobyte`](#obj-specstorageesindexcleanervolumesquobyte)
+          * [`fn withGroup(group)`](#fn-specstorageesindexcleanervolumesquobytewithgroup)
+          * [`fn withReadOnly(readOnly)`](#fn-specstorageesindexcleanervolumesquobytewithreadonly)
+          * [`fn withRegistry(registry)`](#fn-specstorageesindexcleanervolumesquobytewithregistry)
+          * [`fn withTenant(tenant)`](#fn-specstorageesindexcleanervolumesquobytewithtenant)
+          * [`fn withUser(user)`](#fn-specstorageesindexcleanervolumesquobytewithuser)
+          * [`fn withVolume(volume)`](#fn-specstorageesindexcleanervolumesquobytewithvolume)
+        * [`obj spec.storage.esIndexCleaner.volumes.rbd`](#obj-specstorageesindexcleanervolumesrbd)
+          * [`fn withFsType(fsType)`](#fn-specstorageesindexcleanervolumesrbdwithfstype)
+          * [`fn withImage(image)`](#fn-specstorageesindexcleanervolumesrbdwithimage)
+          * [`fn withKeyring(keyring)`](#fn-specstorageesindexcleanervolumesrbdwithkeyring)
+          * [`fn withMonitors(monitors)`](#fn-specstorageesindexcleanervolumesrbdwithmonitors)
+          * [`fn withMonitorsMixin(monitors)`](#fn-specstorageesindexcleanervolumesrbdwithmonitorsmixin)
+          * [`fn withPool(pool)`](#fn-specstorageesindexcleanervolumesrbdwithpool)
+          * [`fn withReadOnly(readOnly)`](#fn-specstorageesindexcleanervolumesrbdwithreadonly)
+          * [`fn withUser(user)`](#fn-specstorageesindexcleanervolumesrbdwithuser)
+          * [`obj spec.storage.esIndexCleaner.volumes.rbd.secretRef`](#obj-specstorageesindexcleanervolumesrbdsecretref)
+            * [`fn withName(name)`](#fn-specstorageesindexcleanervolumesrbdsecretrefwithname)
+        * [`obj spec.storage.esIndexCleaner.volumes.scaleIO`](#obj-specstorageesindexcleanervolumesscaleio)
+          * [`fn withFsType(fsType)`](#fn-specstorageesindexcleanervolumesscaleiowithfstype)
+          * [`fn withGateway(gateway)`](#fn-specstorageesindexcleanervolumesscaleiowithgateway)
+          * [`fn withProtectionDomain(protectionDomain)`](#fn-specstorageesindexcleanervolumesscaleiowithprotectiondomain)
+          * [`fn withReadOnly(readOnly)`](#fn-specstorageesindexcleanervolumesscaleiowithreadonly)
+          * [`fn withSslEnabled(sslEnabled)`](#fn-specstorageesindexcleanervolumesscaleiowithsslenabled)
+          * [`fn withStorageMode(storageMode)`](#fn-specstorageesindexcleanervolumesscaleiowithstoragemode)
+          * [`fn withStoragePool(storagePool)`](#fn-specstorageesindexcleanervolumesscaleiowithstoragepool)
+          * [`fn withSystem(system)`](#fn-specstorageesindexcleanervolumesscaleiowithsystem)
+          * [`fn withVolumeName(volumeName)`](#fn-specstorageesindexcleanervolumesscaleiowithvolumename)
+          * [`obj spec.storage.esIndexCleaner.volumes.scaleIO.secretRef`](#obj-specstorageesindexcleanervolumesscaleiosecretref)
+            * [`fn withName(name)`](#fn-specstorageesindexcleanervolumesscaleiosecretrefwithname)
+        * [`obj spec.storage.esIndexCleaner.volumes.secret`](#obj-specstorageesindexcleanervolumessecret)
+          * [`fn withDefaultMode(defaultMode)`](#fn-specstorageesindexcleanervolumessecretwithdefaultmode)
+          * [`fn withItems(items)`](#fn-specstorageesindexcleanervolumessecretwithitems)
+          * [`fn withItemsMixin(items)`](#fn-specstorageesindexcleanervolumessecretwithitemsmixin)
+          * [`fn withOptional(optional)`](#fn-specstorageesindexcleanervolumessecretwithoptional)
+          * [`fn withSecretName(secretName)`](#fn-specstorageesindexcleanervolumessecretwithsecretname)
+          * [`obj spec.storage.esIndexCleaner.volumes.secret.items`](#obj-specstorageesindexcleanervolumessecretitems)
+            * [`fn withKey(key)`](#fn-specstorageesindexcleanervolumessecretitemswithkey)
+            * [`fn withMode(mode)`](#fn-specstorageesindexcleanervolumessecretitemswithmode)
+            * [`fn withPath(path)`](#fn-specstorageesindexcleanervolumessecretitemswithpath)
+        * [`obj spec.storage.esIndexCleaner.volumes.storageos`](#obj-specstorageesindexcleanervolumesstorageos)
+          * [`fn withFsType(fsType)`](#fn-specstorageesindexcleanervolumesstorageoswithfstype)
+          * [`fn withReadOnly(readOnly)`](#fn-specstorageesindexcleanervolumesstorageoswithreadonly)
+          * [`fn withVolumeName(volumeName)`](#fn-specstorageesindexcleanervolumesstorageoswithvolumename)
+          * [`fn withVolumeNamespace(volumeNamespace)`](#fn-specstorageesindexcleanervolumesstorageoswithvolumenamespace)
+          * [`obj spec.storage.esIndexCleaner.volumes.storageos.secretRef`](#obj-specstorageesindexcleanervolumesstorageossecretref)
+            * [`fn withName(name)`](#fn-specstorageesindexcleanervolumesstorageossecretrefwithname)
+        * [`obj spec.storage.esIndexCleaner.volumes.vsphereVolume`](#obj-specstorageesindexcleanervolumesvspherevolume)
+          * [`fn withFsType(fsType)`](#fn-specstorageesindexcleanervolumesvspherevolumewithfstype)
+          * [`fn withStoragePolicyID(storagePolicyID)`](#fn-specstorageesindexcleanervolumesvspherevolumewithstoragepolicyid)
+          * [`fn withStoragePolicyName(storagePolicyName)`](#fn-specstorageesindexcleanervolumesvspherevolumewithstoragepolicyname)
+          * [`fn withVolumePath(volumePath)`](#fn-specstorageesindexcleanervolumesvspherevolumewithvolumepath)
     * [`obj spec.storage.esRollover`](#obj-specstorageesrollover)
       * [`fn withAnnotations(annotations)`](#fn-specstorageesrolloverwithannotations)
       * [`fn withAnnotationsMixin(annotations)`](#fn-specstorageesrolloverwithannotationsmixin)
@@ -732,19 +3817,111 @@ permalink: /1.25/jaegertracing/v1/jaeger/
         * [`obj spec.storage.esRollover.affinity.nodeAffinity`](#obj-specstorageesrolloveraffinitynodeaffinity)
           * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specstorageesrolloveraffinitynodeaffinitywithpreferredduringschedulingignoredduringexecution)
           * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specstorageesrolloveraffinitynodeaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
+          * [`obj spec.storage.esRollover.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-specstorageesrolloveraffinitynodeaffinitypreferredduringschedulingignoredduringexecution)
+            * [`fn withWeight(weight)`](#fn-specstorageesrolloveraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+            * [`obj spec.storage.esRollover.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference`](#obj-specstorageesrolloveraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreference)
+              * [`fn withMatchExpressions(matchExpressions)`](#fn-specstorageesrolloveraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchexpressions)
+              * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specstorageesrolloveraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchexpressionsmixin)
+              * [`fn withMatchFields(matchFields)`](#fn-specstorageesrolloveraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchfields)
+              * [`fn withMatchFieldsMixin(matchFields)`](#fn-specstorageesrolloveraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchfieldsmixin)
+              * [`obj spec.storage.esRollover.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions`](#obj-specstorageesrolloveraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressions)
+                * [`fn withKey(key)`](#fn-specstorageesrolloveraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithkey)
+                * [`fn withOperator(operator)`](#fn-specstorageesrolloveraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithoperator)
+                * [`fn withValues(values)`](#fn-specstorageesrolloveraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithvalues)
+                * [`fn withValuesMixin(values)`](#fn-specstorageesrolloveraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithvaluesmixin)
+              * [`obj spec.storage.esRollover.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields`](#obj-specstorageesrolloveraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfields)
+                * [`fn withKey(key)`](#fn-specstorageesrolloveraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithkey)
+                * [`fn withOperator(operator)`](#fn-specstorageesrolloveraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithoperator)
+                * [`fn withValues(values)`](#fn-specstorageesrolloveraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithvalues)
+                * [`fn withValuesMixin(values)`](#fn-specstorageesrolloveraffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithvaluesmixin)
           * [`obj spec.storage.esRollover.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-specstorageesrolloveraffinitynodeaffinityrequiredduringschedulingignoredduringexecution)
             * [`fn withNodeSelectorTerms(nodeSelectorTerms)`](#fn-specstorageesrolloveraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionwithnodeselectorterms)
             * [`fn withNodeSelectorTermsMixin(nodeSelectorTerms)`](#fn-specstorageesrolloveraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionwithnodeselectortermsmixin)
+            * [`obj spec.storage.esRollover.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms`](#obj-specstorageesrolloveraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectorterms)
+              * [`fn withMatchExpressions(matchExpressions)`](#fn-specstorageesrolloveraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchexpressions)
+              * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specstorageesrolloveraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchexpressionsmixin)
+              * [`fn withMatchFields(matchFields)`](#fn-specstorageesrolloveraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchfields)
+              * [`fn withMatchFieldsMixin(matchFields)`](#fn-specstorageesrolloveraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchfieldsmixin)
+              * [`obj spec.storage.esRollover.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions`](#obj-specstorageesrolloveraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressions)
+                * [`fn withKey(key)`](#fn-specstorageesrolloveraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithkey)
+                * [`fn withOperator(operator)`](#fn-specstorageesrolloveraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithoperator)
+                * [`fn withValues(values)`](#fn-specstorageesrolloveraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithvalues)
+                * [`fn withValuesMixin(values)`](#fn-specstorageesrolloveraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithvaluesmixin)
+              * [`obj spec.storage.esRollover.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields`](#obj-specstorageesrolloveraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfields)
+                * [`fn withKey(key)`](#fn-specstorageesrolloveraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithkey)
+                * [`fn withOperator(operator)`](#fn-specstorageesrolloveraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithoperator)
+                * [`fn withValues(values)`](#fn-specstorageesrolloveraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithvalues)
+                * [`fn withValuesMixin(values)`](#fn-specstorageesrolloveraffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithvaluesmixin)
         * [`obj spec.storage.esRollover.affinity.podAffinity`](#obj-specstorageesrolloveraffinitypodaffinity)
           * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specstorageesrolloveraffinitypodaffinitywithpreferredduringschedulingignoredduringexecution)
           * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specstorageesrolloveraffinitypodaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
           * [`fn withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specstorageesrolloveraffinitypodaffinitywithrequiredduringschedulingignoredduringexecution)
           * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specstorageesrolloveraffinitypodaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
+          * [`obj spec.storage.esRollover.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-specstorageesrolloveraffinitypodaffinitypreferredduringschedulingignoredduringexecution)
+            * [`fn withWeight(weight)`](#fn-specstorageesrolloveraffinitypodaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+            * [`obj spec.storage.esRollover.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm`](#obj-specstorageesrolloveraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinityterm)
+              * [`fn withNamespaces(namespaces)`](#fn-specstorageesrolloveraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespaces)
+              * [`fn withNamespacesMixin(namespaces)`](#fn-specstorageesrolloveraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespacesmixin)
+              * [`fn withTopologyKey(topologyKey)`](#fn-specstorageesrolloveraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithtopologykey)
+              * [`obj spec.storage.esRollover.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector`](#obj-specstorageesrolloveraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselector)
+                * [`fn withMatchExpressions(matchExpressions)`](#fn-specstorageesrolloveraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressions)
+                * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specstorageesrolloveraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressionsmixin)
+                * [`fn withMatchLabels(matchLabels)`](#fn-specstorageesrolloveraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabels)
+                * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specstorageesrolloveraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabelsmixin)
+                * [`obj spec.storage.esRollover.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions`](#obj-specstorageesrolloveraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressions)
+                  * [`fn withKey(key)`](#fn-specstorageesrolloveraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithkey)
+                  * [`fn withOperator(operator)`](#fn-specstorageesrolloveraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithoperator)
+                  * [`fn withValues(values)`](#fn-specstorageesrolloveraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvalues)
+                  * [`fn withValuesMixin(values)`](#fn-specstorageesrolloveraffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvaluesmixin)
+          * [`obj spec.storage.esRollover.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-specstorageesrolloveraffinitypodaffinityrequiredduringschedulingignoredduringexecution)
+            * [`fn withNamespaces(namespaces)`](#fn-specstorageesrolloveraffinitypodaffinityrequiredduringschedulingignoredduringexecutionwithnamespaces)
+            * [`fn withNamespacesMixin(namespaces)`](#fn-specstorageesrolloveraffinitypodaffinityrequiredduringschedulingignoredduringexecutionwithnamespacesmixin)
+            * [`fn withTopologyKey(topologyKey)`](#fn-specstorageesrolloveraffinitypodaffinityrequiredduringschedulingignoredduringexecutionwithtopologykey)
+            * [`obj spec.storage.esRollover.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector`](#obj-specstorageesrolloveraffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselector)
+              * [`fn withMatchExpressions(matchExpressions)`](#fn-specstorageesrolloveraffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressions)
+              * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specstorageesrolloveraffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressionsmixin)
+              * [`fn withMatchLabels(matchLabels)`](#fn-specstorageesrolloveraffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabels)
+              * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specstorageesrolloveraffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabelsmixin)
+              * [`obj spec.storage.esRollover.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions`](#obj-specstorageesrolloveraffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressions)
+                * [`fn withKey(key)`](#fn-specstorageesrolloveraffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithkey)
+                * [`fn withOperator(operator)`](#fn-specstorageesrolloveraffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithoperator)
+                * [`fn withValues(values)`](#fn-specstorageesrolloveraffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvalues)
+                * [`fn withValuesMixin(values)`](#fn-specstorageesrolloveraffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvaluesmixin)
         * [`obj spec.storage.esRollover.affinity.podAntiAffinity`](#obj-specstorageesrolloveraffinitypodantiaffinity)
           * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specstorageesrolloveraffinitypodantiaffinitywithpreferredduringschedulingignoredduringexecution)
           * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specstorageesrolloveraffinitypodantiaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
           * [`fn withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specstorageesrolloveraffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecution)
           * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specstorageesrolloveraffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
+          * [`obj spec.storage.esRollover.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-specstorageesrolloveraffinitypodantiaffinitypreferredduringschedulingignoredduringexecution)
+            * [`fn withWeight(weight)`](#fn-specstorageesrolloveraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+            * [`obj spec.storage.esRollover.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm`](#obj-specstorageesrolloveraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinityterm)
+              * [`fn withNamespaces(namespaces)`](#fn-specstorageesrolloveraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespaces)
+              * [`fn withNamespacesMixin(namespaces)`](#fn-specstorageesrolloveraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespacesmixin)
+              * [`fn withTopologyKey(topologyKey)`](#fn-specstorageesrolloveraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithtopologykey)
+              * [`obj spec.storage.esRollover.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector`](#obj-specstorageesrolloveraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselector)
+                * [`fn withMatchExpressions(matchExpressions)`](#fn-specstorageesrolloveraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressions)
+                * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specstorageesrolloveraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressionsmixin)
+                * [`fn withMatchLabels(matchLabels)`](#fn-specstorageesrolloveraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabels)
+                * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specstorageesrolloveraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabelsmixin)
+                * [`obj spec.storage.esRollover.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions`](#obj-specstorageesrolloveraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressions)
+                  * [`fn withKey(key)`](#fn-specstorageesrolloveraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithkey)
+                  * [`fn withOperator(operator)`](#fn-specstorageesrolloveraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithoperator)
+                  * [`fn withValues(values)`](#fn-specstorageesrolloveraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvalues)
+                  * [`fn withValuesMixin(values)`](#fn-specstorageesrolloveraffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvaluesmixin)
+          * [`obj spec.storage.esRollover.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-specstorageesrolloveraffinitypodantiaffinityrequiredduringschedulingignoredduringexecution)
+            * [`fn withNamespaces(namespaces)`](#fn-specstorageesrolloveraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionwithnamespaces)
+            * [`fn withNamespacesMixin(namespaces)`](#fn-specstorageesrolloveraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionwithnamespacesmixin)
+            * [`fn withTopologyKey(topologyKey)`](#fn-specstorageesrolloveraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionwithtopologykey)
+            * [`obj spec.storage.esRollover.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector`](#obj-specstorageesrolloveraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselector)
+              * [`fn withMatchExpressions(matchExpressions)`](#fn-specstorageesrolloveraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressions)
+              * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specstorageesrolloveraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressionsmixin)
+              * [`fn withMatchLabels(matchLabels)`](#fn-specstorageesrolloveraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabels)
+              * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specstorageesrolloveraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabelsmixin)
+              * [`obj spec.storage.esRollover.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions`](#obj-specstorageesrolloveraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressions)
+                * [`fn withKey(key)`](#fn-specstorageesrolloveraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithkey)
+                * [`fn withOperator(operator)`](#fn-specstorageesrolloveraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithoperator)
+                * [`fn withValues(values)`](#fn-specstorageesrolloveraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvalues)
+                * [`fn withValuesMixin(values)`](#fn-specstorageesrolloveraffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvaluesmixin)
       * [`obj spec.storage.esRollover.resources`](#obj-specstorageesrolloverresources)
         * [`fn withLimits(limits)`](#fn-specstorageesrolloverresourceswithlimits)
         * [`fn withLimitsMixin(limits)`](#fn-specstorageesrolloverresourceswithlimitsmixin)
@@ -768,15 +3945,550 @@ permalink: /1.25/jaegertracing/v1/jaeger/
         * [`obj spec.storage.esRollover.securityContext.seccompProfile`](#obj-specstorageesrolloversecuritycontextseccompprofile)
           * [`fn withLocalhostProfile(localhostProfile)`](#fn-specstorageesrolloversecuritycontextseccompprofilewithlocalhostprofile)
           * [`fn withType(type)`](#fn-specstorageesrolloversecuritycontextseccompprofilewithtype)
+        * [`obj spec.storage.esRollover.securityContext.sysctls`](#obj-specstorageesrolloversecuritycontextsysctls)
+          * [`fn withName(name)`](#fn-specstorageesrolloversecuritycontextsysctlswithname)
+          * [`fn withValue(value)`](#fn-specstorageesrolloversecuritycontextsysctlswithvalue)
         * [`obj spec.storage.esRollover.securityContext.windowsOptions`](#obj-specstorageesrolloversecuritycontextwindowsoptions)
           * [`fn withGmsaCredentialSpec(gmsaCredentialSpec)`](#fn-specstorageesrolloversecuritycontextwindowsoptionswithgmsacredentialspec)
           * [`fn withGmsaCredentialSpecName(gmsaCredentialSpecName)`](#fn-specstorageesrolloversecuritycontextwindowsoptionswithgmsacredentialspecname)
           * [`fn withRunAsUserName(runAsUserName)`](#fn-specstorageesrolloversecuritycontextwindowsoptionswithrunasusername)
+      * [`obj spec.storage.esRollover.tolerations`](#obj-specstorageesrollovertolerations)
+        * [`fn withEffect(effect)`](#fn-specstorageesrollovertolerationswitheffect)
+        * [`fn withKey(key)`](#fn-specstorageesrollovertolerationswithkey)
+        * [`fn withOperator(operator)`](#fn-specstorageesrollovertolerationswithoperator)
+        * [`fn withTolerationSeconds(tolerationSeconds)`](#fn-specstorageesrollovertolerationswithtolerationseconds)
+        * [`fn withValue(value)`](#fn-specstorageesrollovertolerationswithvalue)
+      * [`obj spec.storage.esRollover.volumeMounts`](#obj-specstorageesrollovervolumemounts)
+        * [`fn withMountPath(mountPath)`](#fn-specstorageesrollovervolumemountswithmountpath)
+        * [`fn withMountPropagation(mountPropagation)`](#fn-specstorageesrollovervolumemountswithmountpropagation)
+        * [`fn withName(name)`](#fn-specstorageesrollovervolumemountswithname)
+        * [`fn withReadOnly(readOnly)`](#fn-specstorageesrollovervolumemountswithreadonly)
+        * [`fn withSubPath(subPath)`](#fn-specstorageesrollovervolumemountswithsubpath)
+        * [`fn withSubPathExpr(subPathExpr)`](#fn-specstorageesrollovervolumemountswithsubpathexpr)
+      * [`obj spec.storage.esRollover.volumes`](#obj-specstorageesrollovervolumes)
+        * [`fn withName(name)`](#fn-specstorageesrollovervolumeswithname)
+        * [`obj spec.storage.esRollover.volumes.awsElasticBlockStore`](#obj-specstorageesrollovervolumesawselasticblockstore)
+          * [`fn withFsType(fsType)`](#fn-specstorageesrollovervolumesawselasticblockstorewithfstype)
+          * [`fn withPartition(partition)`](#fn-specstorageesrollovervolumesawselasticblockstorewithpartition)
+          * [`fn withReadOnly(readOnly)`](#fn-specstorageesrollovervolumesawselasticblockstorewithreadonly)
+          * [`fn withVolumeID(volumeID)`](#fn-specstorageesrollovervolumesawselasticblockstorewithvolumeid)
+        * [`obj spec.storage.esRollover.volumes.azureDisk`](#obj-specstorageesrollovervolumesazuredisk)
+          * [`fn withCachingMode(cachingMode)`](#fn-specstorageesrollovervolumesazurediskwithcachingmode)
+          * [`fn withDiskName(diskName)`](#fn-specstorageesrollovervolumesazurediskwithdiskname)
+          * [`fn withDiskURI(diskURI)`](#fn-specstorageesrollovervolumesazurediskwithdiskuri)
+          * [`fn withFsType(fsType)`](#fn-specstorageesrollovervolumesazurediskwithfstype)
+          * [`fn withKind(kind)`](#fn-specstorageesrollovervolumesazurediskwithkind)
+          * [`fn withReadOnly(readOnly)`](#fn-specstorageesrollovervolumesazurediskwithreadonly)
+        * [`obj spec.storage.esRollover.volumes.azureFile`](#obj-specstorageesrollovervolumesazurefile)
+          * [`fn withReadOnly(readOnly)`](#fn-specstorageesrollovervolumesazurefilewithreadonly)
+          * [`fn withSecretName(secretName)`](#fn-specstorageesrollovervolumesazurefilewithsecretname)
+          * [`fn withShareName(shareName)`](#fn-specstorageesrollovervolumesazurefilewithsharename)
+        * [`obj spec.storage.esRollover.volumes.cephfs`](#obj-specstorageesrollovervolumescephfs)
+          * [`fn withMonitors(monitors)`](#fn-specstorageesrollovervolumescephfswithmonitors)
+          * [`fn withMonitorsMixin(monitors)`](#fn-specstorageesrollovervolumescephfswithmonitorsmixin)
+          * [`fn withPath(path)`](#fn-specstorageesrollovervolumescephfswithpath)
+          * [`fn withReadOnly(readOnly)`](#fn-specstorageesrollovervolumescephfswithreadonly)
+          * [`fn withSecretFile(secretFile)`](#fn-specstorageesrollovervolumescephfswithsecretfile)
+          * [`fn withUser(user)`](#fn-specstorageesrollovervolumescephfswithuser)
+          * [`obj spec.storage.esRollover.volumes.cephfs.secretRef`](#obj-specstorageesrollovervolumescephfssecretref)
+            * [`fn withName(name)`](#fn-specstorageesrollovervolumescephfssecretrefwithname)
+        * [`obj spec.storage.esRollover.volumes.cinder`](#obj-specstorageesrollovervolumescinder)
+          * [`fn withFsType(fsType)`](#fn-specstorageesrollovervolumescinderwithfstype)
+          * [`fn withReadOnly(readOnly)`](#fn-specstorageesrollovervolumescinderwithreadonly)
+          * [`fn withVolumeID(volumeID)`](#fn-specstorageesrollovervolumescinderwithvolumeid)
+          * [`obj spec.storage.esRollover.volumes.cinder.secretRef`](#obj-specstorageesrollovervolumescindersecretref)
+            * [`fn withName(name)`](#fn-specstorageesrollovervolumescindersecretrefwithname)
+        * [`obj spec.storage.esRollover.volumes.configMap`](#obj-specstorageesrollovervolumesconfigmap)
+          * [`fn withDefaultMode(defaultMode)`](#fn-specstorageesrollovervolumesconfigmapwithdefaultmode)
+          * [`fn withItems(items)`](#fn-specstorageesrollovervolumesconfigmapwithitems)
+          * [`fn withItemsMixin(items)`](#fn-specstorageesrollovervolumesconfigmapwithitemsmixin)
+          * [`fn withName(name)`](#fn-specstorageesrollovervolumesconfigmapwithname)
+          * [`fn withOptional(optional)`](#fn-specstorageesrollovervolumesconfigmapwithoptional)
+          * [`obj spec.storage.esRollover.volumes.configMap.items`](#obj-specstorageesrollovervolumesconfigmapitems)
+            * [`fn withKey(key)`](#fn-specstorageesrollovervolumesconfigmapitemswithkey)
+            * [`fn withMode(mode)`](#fn-specstorageesrollovervolumesconfigmapitemswithmode)
+            * [`fn withPath(path)`](#fn-specstorageesrollovervolumesconfigmapitemswithpath)
+        * [`obj spec.storage.esRollover.volumes.csi`](#obj-specstorageesrollovervolumescsi)
+          * [`fn withDriver(driver)`](#fn-specstorageesrollovervolumescsiwithdriver)
+          * [`fn withFsType(fsType)`](#fn-specstorageesrollovervolumescsiwithfstype)
+          * [`fn withReadOnly(readOnly)`](#fn-specstorageesrollovervolumescsiwithreadonly)
+          * [`fn withVolumeAttributes(volumeAttributes)`](#fn-specstorageesrollovervolumescsiwithvolumeattributes)
+          * [`fn withVolumeAttributesMixin(volumeAttributes)`](#fn-specstorageesrollovervolumescsiwithvolumeattributesmixin)
+          * [`obj spec.storage.esRollover.volumes.csi.nodePublishSecretRef`](#obj-specstorageesrollovervolumescsinodepublishsecretref)
+            * [`fn withName(name)`](#fn-specstorageesrollovervolumescsinodepublishsecretrefwithname)
+        * [`obj spec.storage.esRollover.volumes.downwardAPI`](#obj-specstorageesrollovervolumesdownwardapi)
+          * [`fn withDefaultMode(defaultMode)`](#fn-specstorageesrollovervolumesdownwardapiwithdefaultmode)
+          * [`fn withItems(items)`](#fn-specstorageesrollovervolumesdownwardapiwithitems)
+          * [`fn withItemsMixin(items)`](#fn-specstorageesrollovervolumesdownwardapiwithitemsmixin)
+          * [`obj spec.storage.esRollover.volumes.downwardAPI.items`](#obj-specstorageesrollovervolumesdownwardapiitems)
+            * [`fn withMode(mode)`](#fn-specstorageesrollovervolumesdownwardapiitemswithmode)
+            * [`fn withPath(path)`](#fn-specstorageesrollovervolumesdownwardapiitemswithpath)
+            * [`obj spec.storage.esRollover.volumes.downwardAPI.items.fieldRef`](#obj-specstorageesrollovervolumesdownwardapiitemsfieldref)
+              * [`fn withApiVersion(apiVersion)`](#fn-specstorageesrollovervolumesdownwardapiitemsfieldrefwithapiversion)
+              * [`fn withFieldPath(fieldPath)`](#fn-specstorageesrollovervolumesdownwardapiitemsfieldrefwithfieldpath)
+            * [`obj spec.storage.esRollover.volumes.downwardAPI.items.resourceFieldRef`](#obj-specstorageesrollovervolumesdownwardapiitemsresourcefieldref)
+              * [`fn withContainerName(containerName)`](#fn-specstorageesrollovervolumesdownwardapiitemsresourcefieldrefwithcontainername)
+              * [`fn withDivisor(divisor)`](#fn-specstorageesrollovervolumesdownwardapiitemsresourcefieldrefwithdivisor)
+              * [`fn withResource(resource)`](#fn-specstorageesrollovervolumesdownwardapiitemsresourcefieldrefwithresource)
+        * [`obj spec.storage.esRollover.volumes.emptyDir`](#obj-specstorageesrollovervolumesemptydir)
+          * [`fn withMedium(medium)`](#fn-specstorageesrollovervolumesemptydirwithmedium)
+          * [`fn withSizeLimit(sizeLimit)`](#fn-specstorageesrollovervolumesemptydirwithsizelimit)
+        * [`obj spec.storage.esRollover.volumes.ephemeral`](#obj-specstorageesrollovervolumesephemeral)
+          * [`fn withReadOnly(readOnly)`](#fn-specstorageesrollovervolumesephemeralwithreadonly)
+          * [`obj spec.storage.esRollover.volumes.ephemeral.volumeClaimTemplate`](#obj-specstorageesrollovervolumesephemeralvolumeclaimtemplate)
+            * [`fn withMetadata(metadata)`](#fn-specstorageesrollovervolumesephemeralvolumeclaimtemplatewithmetadata)
+            * [`fn withMetadataMixin(metadata)`](#fn-specstorageesrollovervolumesephemeralvolumeclaimtemplatewithmetadatamixin)
+            * [`obj spec.storage.esRollover.volumes.ephemeral.volumeClaimTemplate.spec`](#obj-specstorageesrollovervolumesephemeralvolumeclaimtemplatespec)
+              * [`fn withAccessModes(accessModes)`](#fn-specstorageesrollovervolumesephemeralvolumeclaimtemplatespecwithaccessmodes)
+              * [`fn withAccessModesMixin(accessModes)`](#fn-specstorageesrollovervolumesephemeralvolumeclaimtemplatespecwithaccessmodesmixin)
+              * [`fn withStorageClassName(storageClassName)`](#fn-specstorageesrollovervolumesephemeralvolumeclaimtemplatespecwithstorageclassname)
+              * [`fn withVolumeMode(volumeMode)`](#fn-specstorageesrollovervolumesephemeralvolumeclaimtemplatespecwithvolumemode)
+              * [`fn withVolumeName(volumeName)`](#fn-specstorageesrollovervolumesephemeralvolumeclaimtemplatespecwithvolumename)
+              * [`obj spec.storage.esRollover.volumes.ephemeral.volumeClaimTemplate.spec.dataSource`](#obj-specstorageesrollovervolumesephemeralvolumeclaimtemplatespecdatasource)
+                * [`fn withApiGroup(apiGroup)`](#fn-specstorageesrollovervolumesephemeralvolumeclaimtemplatespecdatasourcewithapigroup)
+                * [`fn withKind(kind)`](#fn-specstorageesrollovervolumesephemeralvolumeclaimtemplatespecdatasourcewithkind)
+                * [`fn withName(name)`](#fn-specstorageesrollovervolumesephemeralvolumeclaimtemplatespecdatasourcewithname)
+              * [`obj spec.storage.esRollover.volumes.ephemeral.volumeClaimTemplate.spec.resources`](#obj-specstorageesrollovervolumesephemeralvolumeclaimtemplatespecresources)
+                * [`fn withLimits(limits)`](#fn-specstorageesrollovervolumesephemeralvolumeclaimtemplatespecresourceswithlimits)
+                * [`fn withLimitsMixin(limits)`](#fn-specstorageesrollovervolumesephemeralvolumeclaimtemplatespecresourceswithlimitsmixin)
+                * [`fn withRequests(requests)`](#fn-specstorageesrollovervolumesephemeralvolumeclaimtemplatespecresourceswithrequests)
+                * [`fn withRequestsMixin(requests)`](#fn-specstorageesrollovervolumesephemeralvolumeclaimtemplatespecresourceswithrequestsmixin)
+              * [`obj spec.storage.esRollover.volumes.ephemeral.volumeClaimTemplate.spec.selector`](#obj-specstorageesrollovervolumesephemeralvolumeclaimtemplatespecselector)
+                * [`fn withMatchExpressions(matchExpressions)`](#fn-specstorageesrollovervolumesephemeralvolumeclaimtemplatespecselectorwithmatchexpressions)
+                * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specstorageesrollovervolumesephemeralvolumeclaimtemplatespecselectorwithmatchexpressionsmixin)
+                * [`fn withMatchLabels(matchLabels)`](#fn-specstorageesrollovervolumesephemeralvolumeclaimtemplatespecselectorwithmatchlabels)
+                * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specstorageesrollovervolumesephemeralvolumeclaimtemplatespecselectorwithmatchlabelsmixin)
+                * [`obj spec.storage.esRollover.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions`](#obj-specstorageesrollovervolumesephemeralvolumeclaimtemplatespecselectormatchexpressions)
+                  * [`fn withKey(key)`](#fn-specstorageesrollovervolumesephemeralvolumeclaimtemplatespecselectormatchexpressionswithkey)
+                  * [`fn withOperator(operator)`](#fn-specstorageesrollovervolumesephemeralvolumeclaimtemplatespecselectormatchexpressionswithoperator)
+                  * [`fn withValues(values)`](#fn-specstorageesrollovervolumesephemeralvolumeclaimtemplatespecselectormatchexpressionswithvalues)
+                  * [`fn withValuesMixin(values)`](#fn-specstorageesrollovervolumesephemeralvolumeclaimtemplatespecselectormatchexpressionswithvaluesmixin)
+        * [`obj spec.storage.esRollover.volumes.fc`](#obj-specstorageesrollovervolumesfc)
+          * [`fn withFsType(fsType)`](#fn-specstorageesrollovervolumesfcwithfstype)
+          * [`fn withLun(lun)`](#fn-specstorageesrollovervolumesfcwithlun)
+          * [`fn withReadOnly(readOnly)`](#fn-specstorageesrollovervolumesfcwithreadonly)
+          * [`fn withTargetWWNs(targetWWNs)`](#fn-specstorageesrollovervolumesfcwithtargetwwns)
+          * [`fn withTargetWWNsMixin(targetWWNs)`](#fn-specstorageesrollovervolumesfcwithtargetwwnsmixin)
+          * [`fn withWwids(wwids)`](#fn-specstorageesrollovervolumesfcwithwwids)
+          * [`fn withWwidsMixin(wwids)`](#fn-specstorageesrollovervolumesfcwithwwidsmixin)
+        * [`obj spec.storage.esRollover.volumes.flexVolume`](#obj-specstorageesrollovervolumesflexvolume)
+          * [`fn withDriver(driver)`](#fn-specstorageesrollovervolumesflexvolumewithdriver)
+          * [`fn withFsType(fsType)`](#fn-specstorageesrollovervolumesflexvolumewithfstype)
+          * [`fn withOptions(options)`](#fn-specstorageesrollovervolumesflexvolumewithoptions)
+          * [`fn withOptionsMixin(options)`](#fn-specstorageesrollovervolumesflexvolumewithoptionsmixin)
+          * [`fn withReadOnly(readOnly)`](#fn-specstorageesrollovervolumesflexvolumewithreadonly)
+          * [`obj spec.storage.esRollover.volumes.flexVolume.secretRef`](#obj-specstorageesrollovervolumesflexvolumesecretref)
+            * [`fn withName(name)`](#fn-specstorageesrollovervolumesflexvolumesecretrefwithname)
+        * [`obj spec.storage.esRollover.volumes.flocker`](#obj-specstorageesrollovervolumesflocker)
+          * [`fn withDatasetName(datasetName)`](#fn-specstorageesrollovervolumesflockerwithdatasetname)
+          * [`fn withDatasetUUID(datasetUUID)`](#fn-specstorageesrollovervolumesflockerwithdatasetuuid)
+        * [`obj spec.storage.esRollover.volumes.gcePersistentDisk`](#obj-specstorageesrollovervolumesgcepersistentdisk)
+          * [`fn withFsType(fsType)`](#fn-specstorageesrollovervolumesgcepersistentdiskwithfstype)
+          * [`fn withPartition(partition)`](#fn-specstorageesrollovervolumesgcepersistentdiskwithpartition)
+          * [`fn withPdName(pdName)`](#fn-specstorageesrollovervolumesgcepersistentdiskwithpdname)
+          * [`fn withReadOnly(readOnly)`](#fn-specstorageesrollovervolumesgcepersistentdiskwithreadonly)
+        * [`obj spec.storage.esRollover.volumes.gitRepo`](#obj-specstorageesrollovervolumesgitrepo)
+          * [`fn withDirectory(directory)`](#fn-specstorageesrollovervolumesgitrepowithdirectory)
+          * [`fn withRepository(repository)`](#fn-specstorageesrollovervolumesgitrepowithrepository)
+          * [`fn withRevision(revision)`](#fn-specstorageesrollovervolumesgitrepowithrevision)
+        * [`obj spec.storage.esRollover.volumes.glusterfs`](#obj-specstorageesrollovervolumesglusterfs)
+          * [`fn withEndpoints(endpoints)`](#fn-specstorageesrollovervolumesglusterfswithendpoints)
+          * [`fn withPath(path)`](#fn-specstorageesrollovervolumesglusterfswithpath)
+          * [`fn withReadOnly(readOnly)`](#fn-specstorageesrollovervolumesglusterfswithreadonly)
+        * [`obj spec.storage.esRollover.volumes.hostPath`](#obj-specstorageesrollovervolumeshostpath)
+          * [`fn withPath(path)`](#fn-specstorageesrollovervolumeshostpathwithpath)
+          * [`fn withType(type)`](#fn-specstorageesrollovervolumeshostpathwithtype)
+        * [`obj spec.storage.esRollover.volumes.iscsi`](#obj-specstorageesrollovervolumesiscsi)
+          * [`fn withChapAuthDiscovery(chapAuthDiscovery)`](#fn-specstorageesrollovervolumesiscsiwithchapauthdiscovery)
+          * [`fn withChapAuthSession(chapAuthSession)`](#fn-specstorageesrollovervolumesiscsiwithchapauthsession)
+          * [`fn withFsType(fsType)`](#fn-specstorageesrollovervolumesiscsiwithfstype)
+          * [`fn withInitiatorName(initiatorName)`](#fn-specstorageesrollovervolumesiscsiwithinitiatorname)
+          * [`fn withIqn(iqn)`](#fn-specstorageesrollovervolumesiscsiwithiqn)
+          * [`fn withIscsiInterface(iscsiInterface)`](#fn-specstorageesrollovervolumesiscsiwithiscsiinterface)
+          * [`fn withLun(lun)`](#fn-specstorageesrollovervolumesiscsiwithlun)
+          * [`fn withPortals(portals)`](#fn-specstorageesrollovervolumesiscsiwithportals)
+          * [`fn withPortalsMixin(portals)`](#fn-specstorageesrollovervolumesiscsiwithportalsmixin)
+          * [`fn withReadOnly(readOnly)`](#fn-specstorageesrollovervolumesiscsiwithreadonly)
+          * [`fn withTargetPortal(targetPortal)`](#fn-specstorageesrollovervolumesiscsiwithtargetportal)
+          * [`obj spec.storage.esRollover.volumes.iscsi.secretRef`](#obj-specstorageesrollovervolumesiscsisecretref)
+            * [`fn withName(name)`](#fn-specstorageesrollovervolumesiscsisecretrefwithname)
+        * [`obj spec.storage.esRollover.volumes.nfs`](#obj-specstorageesrollovervolumesnfs)
+          * [`fn withPath(path)`](#fn-specstorageesrollovervolumesnfswithpath)
+          * [`fn withReadOnly(readOnly)`](#fn-specstorageesrollovervolumesnfswithreadonly)
+          * [`fn withServer(server)`](#fn-specstorageesrollovervolumesnfswithserver)
+        * [`obj spec.storage.esRollover.volumes.persistentVolumeClaim`](#obj-specstorageesrollovervolumespersistentvolumeclaim)
+          * [`fn withClaimName(claimName)`](#fn-specstorageesrollovervolumespersistentvolumeclaimwithclaimname)
+          * [`fn withReadOnly(readOnly)`](#fn-specstorageesrollovervolumespersistentvolumeclaimwithreadonly)
+        * [`obj spec.storage.esRollover.volumes.photonPersistentDisk`](#obj-specstorageesrollovervolumesphotonpersistentdisk)
+          * [`fn withFsType(fsType)`](#fn-specstorageesrollovervolumesphotonpersistentdiskwithfstype)
+          * [`fn withPdID(pdID)`](#fn-specstorageesrollovervolumesphotonpersistentdiskwithpdid)
+        * [`obj spec.storage.esRollover.volumes.portworxVolume`](#obj-specstorageesrollovervolumesportworxvolume)
+          * [`fn withFsType(fsType)`](#fn-specstorageesrollovervolumesportworxvolumewithfstype)
+          * [`fn withReadOnly(readOnly)`](#fn-specstorageesrollovervolumesportworxvolumewithreadonly)
+          * [`fn withVolumeID(volumeID)`](#fn-specstorageesrollovervolumesportworxvolumewithvolumeid)
+        * [`obj spec.storage.esRollover.volumes.projected`](#obj-specstorageesrollovervolumesprojected)
+          * [`fn withDefaultMode(defaultMode)`](#fn-specstorageesrollovervolumesprojectedwithdefaultmode)
+          * [`fn withSources(sources)`](#fn-specstorageesrollovervolumesprojectedwithsources)
+          * [`fn withSourcesMixin(sources)`](#fn-specstorageesrollovervolumesprojectedwithsourcesmixin)
+          * [`obj spec.storage.esRollover.volumes.projected.sources`](#obj-specstorageesrollovervolumesprojectedsources)
+            * [`obj spec.storage.esRollover.volumes.projected.sources.configMap`](#obj-specstorageesrollovervolumesprojectedsourcesconfigmap)
+              * [`fn withItems(items)`](#fn-specstorageesrollovervolumesprojectedsourcesconfigmapwithitems)
+              * [`fn withItemsMixin(items)`](#fn-specstorageesrollovervolumesprojectedsourcesconfigmapwithitemsmixin)
+              * [`fn withName(name)`](#fn-specstorageesrollovervolumesprojectedsourcesconfigmapwithname)
+              * [`fn withOptional(optional)`](#fn-specstorageesrollovervolumesprojectedsourcesconfigmapwithoptional)
+              * [`obj spec.storage.esRollover.volumes.projected.sources.configMap.items`](#obj-specstorageesrollovervolumesprojectedsourcesconfigmapitems)
+                * [`fn withKey(key)`](#fn-specstorageesrollovervolumesprojectedsourcesconfigmapitemswithkey)
+                * [`fn withMode(mode)`](#fn-specstorageesrollovervolumesprojectedsourcesconfigmapitemswithmode)
+                * [`fn withPath(path)`](#fn-specstorageesrollovervolumesprojectedsourcesconfigmapitemswithpath)
+            * [`obj spec.storage.esRollover.volumes.projected.sources.downwardAPI`](#obj-specstorageesrollovervolumesprojectedsourcesdownwardapi)
+              * [`fn withItems(items)`](#fn-specstorageesrollovervolumesprojectedsourcesdownwardapiwithitems)
+              * [`fn withItemsMixin(items)`](#fn-specstorageesrollovervolumesprojectedsourcesdownwardapiwithitemsmixin)
+              * [`obj spec.storage.esRollover.volumes.projected.sources.downwardAPI.items`](#obj-specstorageesrollovervolumesprojectedsourcesdownwardapiitems)
+                * [`fn withMode(mode)`](#fn-specstorageesrollovervolumesprojectedsourcesdownwardapiitemswithmode)
+                * [`fn withPath(path)`](#fn-specstorageesrollovervolumesprojectedsourcesdownwardapiitemswithpath)
+                * [`obj spec.storage.esRollover.volumes.projected.sources.downwardAPI.items.fieldRef`](#obj-specstorageesrollovervolumesprojectedsourcesdownwardapiitemsfieldref)
+                  * [`fn withApiVersion(apiVersion)`](#fn-specstorageesrollovervolumesprojectedsourcesdownwardapiitemsfieldrefwithapiversion)
+                  * [`fn withFieldPath(fieldPath)`](#fn-specstorageesrollovervolumesprojectedsourcesdownwardapiitemsfieldrefwithfieldpath)
+                * [`obj spec.storage.esRollover.volumes.projected.sources.downwardAPI.items.resourceFieldRef`](#obj-specstorageesrollovervolumesprojectedsourcesdownwardapiitemsresourcefieldref)
+                  * [`fn withContainerName(containerName)`](#fn-specstorageesrollovervolumesprojectedsourcesdownwardapiitemsresourcefieldrefwithcontainername)
+                  * [`fn withDivisor(divisor)`](#fn-specstorageesrollovervolumesprojectedsourcesdownwardapiitemsresourcefieldrefwithdivisor)
+                  * [`fn withResource(resource)`](#fn-specstorageesrollovervolumesprojectedsourcesdownwardapiitemsresourcefieldrefwithresource)
+            * [`obj spec.storage.esRollover.volumes.projected.sources.secret`](#obj-specstorageesrollovervolumesprojectedsourcessecret)
+              * [`fn withItems(items)`](#fn-specstorageesrollovervolumesprojectedsourcessecretwithitems)
+              * [`fn withItemsMixin(items)`](#fn-specstorageesrollovervolumesprojectedsourcessecretwithitemsmixin)
+              * [`fn withName(name)`](#fn-specstorageesrollovervolumesprojectedsourcessecretwithname)
+              * [`fn withOptional(optional)`](#fn-specstorageesrollovervolumesprojectedsourcessecretwithoptional)
+              * [`obj spec.storage.esRollover.volumes.projected.sources.secret.items`](#obj-specstorageesrollovervolumesprojectedsourcessecretitems)
+                * [`fn withKey(key)`](#fn-specstorageesrollovervolumesprojectedsourcessecretitemswithkey)
+                * [`fn withMode(mode)`](#fn-specstorageesrollovervolumesprojectedsourcessecretitemswithmode)
+                * [`fn withPath(path)`](#fn-specstorageesrollovervolumesprojectedsourcessecretitemswithpath)
+            * [`obj spec.storage.esRollover.volumes.projected.sources.serviceAccountToken`](#obj-specstorageesrollovervolumesprojectedsourcesserviceaccounttoken)
+              * [`fn withAudience(audience)`](#fn-specstorageesrollovervolumesprojectedsourcesserviceaccounttokenwithaudience)
+              * [`fn withExpirationSeconds(expirationSeconds)`](#fn-specstorageesrollovervolumesprojectedsourcesserviceaccounttokenwithexpirationseconds)
+              * [`fn withPath(path)`](#fn-specstorageesrollovervolumesprojectedsourcesserviceaccounttokenwithpath)
+        * [`obj spec.storage.esRollover.volumes.quobyte`](#obj-specstorageesrollovervolumesquobyte)
+          * [`fn withGroup(group)`](#fn-specstorageesrollovervolumesquobytewithgroup)
+          * [`fn withReadOnly(readOnly)`](#fn-specstorageesrollovervolumesquobytewithreadonly)
+          * [`fn withRegistry(registry)`](#fn-specstorageesrollovervolumesquobytewithregistry)
+          * [`fn withTenant(tenant)`](#fn-specstorageesrollovervolumesquobytewithtenant)
+          * [`fn withUser(user)`](#fn-specstorageesrollovervolumesquobytewithuser)
+          * [`fn withVolume(volume)`](#fn-specstorageesrollovervolumesquobytewithvolume)
+        * [`obj spec.storage.esRollover.volumes.rbd`](#obj-specstorageesrollovervolumesrbd)
+          * [`fn withFsType(fsType)`](#fn-specstorageesrollovervolumesrbdwithfstype)
+          * [`fn withImage(image)`](#fn-specstorageesrollovervolumesrbdwithimage)
+          * [`fn withKeyring(keyring)`](#fn-specstorageesrollovervolumesrbdwithkeyring)
+          * [`fn withMonitors(monitors)`](#fn-specstorageesrollovervolumesrbdwithmonitors)
+          * [`fn withMonitorsMixin(monitors)`](#fn-specstorageesrollovervolumesrbdwithmonitorsmixin)
+          * [`fn withPool(pool)`](#fn-specstorageesrollovervolumesrbdwithpool)
+          * [`fn withReadOnly(readOnly)`](#fn-specstorageesrollovervolumesrbdwithreadonly)
+          * [`fn withUser(user)`](#fn-specstorageesrollovervolumesrbdwithuser)
+          * [`obj spec.storage.esRollover.volumes.rbd.secretRef`](#obj-specstorageesrollovervolumesrbdsecretref)
+            * [`fn withName(name)`](#fn-specstorageesrollovervolumesrbdsecretrefwithname)
+        * [`obj spec.storage.esRollover.volumes.scaleIO`](#obj-specstorageesrollovervolumesscaleio)
+          * [`fn withFsType(fsType)`](#fn-specstorageesrollovervolumesscaleiowithfstype)
+          * [`fn withGateway(gateway)`](#fn-specstorageesrollovervolumesscaleiowithgateway)
+          * [`fn withProtectionDomain(protectionDomain)`](#fn-specstorageesrollovervolumesscaleiowithprotectiondomain)
+          * [`fn withReadOnly(readOnly)`](#fn-specstorageesrollovervolumesscaleiowithreadonly)
+          * [`fn withSslEnabled(sslEnabled)`](#fn-specstorageesrollovervolumesscaleiowithsslenabled)
+          * [`fn withStorageMode(storageMode)`](#fn-specstorageesrollovervolumesscaleiowithstoragemode)
+          * [`fn withStoragePool(storagePool)`](#fn-specstorageesrollovervolumesscaleiowithstoragepool)
+          * [`fn withSystem(system)`](#fn-specstorageesrollovervolumesscaleiowithsystem)
+          * [`fn withVolumeName(volumeName)`](#fn-specstorageesrollovervolumesscaleiowithvolumename)
+          * [`obj spec.storage.esRollover.volumes.scaleIO.secretRef`](#obj-specstorageesrollovervolumesscaleiosecretref)
+            * [`fn withName(name)`](#fn-specstorageesrollovervolumesscaleiosecretrefwithname)
+        * [`obj spec.storage.esRollover.volumes.secret`](#obj-specstorageesrollovervolumessecret)
+          * [`fn withDefaultMode(defaultMode)`](#fn-specstorageesrollovervolumessecretwithdefaultmode)
+          * [`fn withItems(items)`](#fn-specstorageesrollovervolumessecretwithitems)
+          * [`fn withItemsMixin(items)`](#fn-specstorageesrollovervolumessecretwithitemsmixin)
+          * [`fn withOptional(optional)`](#fn-specstorageesrollovervolumessecretwithoptional)
+          * [`fn withSecretName(secretName)`](#fn-specstorageesrollovervolumessecretwithsecretname)
+          * [`obj spec.storage.esRollover.volumes.secret.items`](#obj-specstorageesrollovervolumessecretitems)
+            * [`fn withKey(key)`](#fn-specstorageesrollovervolumessecretitemswithkey)
+            * [`fn withMode(mode)`](#fn-specstorageesrollovervolumessecretitemswithmode)
+            * [`fn withPath(path)`](#fn-specstorageesrollovervolumessecretitemswithpath)
+        * [`obj spec.storage.esRollover.volumes.storageos`](#obj-specstorageesrollovervolumesstorageos)
+          * [`fn withFsType(fsType)`](#fn-specstorageesrollovervolumesstorageoswithfstype)
+          * [`fn withReadOnly(readOnly)`](#fn-specstorageesrollovervolumesstorageoswithreadonly)
+          * [`fn withVolumeName(volumeName)`](#fn-specstorageesrollovervolumesstorageoswithvolumename)
+          * [`fn withVolumeNamespace(volumeNamespace)`](#fn-specstorageesrollovervolumesstorageoswithvolumenamespace)
+          * [`obj spec.storage.esRollover.volumes.storageos.secretRef`](#obj-specstorageesrollovervolumesstorageossecretref)
+            * [`fn withName(name)`](#fn-specstorageesrollovervolumesstorageossecretrefwithname)
+        * [`obj spec.storage.esRollover.volumes.vsphereVolume`](#obj-specstorageesrollovervolumesvspherevolume)
+          * [`fn withFsType(fsType)`](#fn-specstorageesrollovervolumesvspherevolumewithfstype)
+          * [`fn withStoragePolicyID(storagePolicyID)`](#fn-specstorageesrollovervolumesvspherevolumewithstoragepolicyid)
+          * [`fn withStoragePolicyName(storagePolicyName)`](#fn-specstorageesrollovervolumesvspherevolumewithstoragepolicyname)
+          * [`fn withVolumePath(volumePath)`](#fn-specstorageesrollovervolumesvspherevolumewithvolumepath)
     * [`obj spec.storage.grpcPlugin`](#obj-specstoragegrpcplugin)
       * [`fn withImage(image)`](#fn-specstoragegrpcpluginwithimage)
+  * [`obj spec.tolerations`](#obj-spectolerations)
+    * [`fn withEffect(effect)`](#fn-spectolerationswitheffect)
+    * [`fn withKey(key)`](#fn-spectolerationswithkey)
+    * [`fn withOperator(operator)`](#fn-spectolerationswithoperator)
+    * [`fn withTolerationSeconds(tolerationSeconds)`](#fn-spectolerationswithtolerationseconds)
+    * [`fn withValue(value)`](#fn-spectolerationswithvalue)
   * [`obj spec.ui`](#obj-specui)
     * [`fn withOptions(options)`](#fn-specuiwithoptions)
     * [`fn withOptionsMixin(options)`](#fn-specuiwithoptionsmixin)
+  * [`obj spec.volumeMounts`](#obj-specvolumemounts)
+    * [`fn withMountPath(mountPath)`](#fn-specvolumemountswithmountpath)
+    * [`fn withMountPropagation(mountPropagation)`](#fn-specvolumemountswithmountpropagation)
+    * [`fn withName(name)`](#fn-specvolumemountswithname)
+    * [`fn withReadOnly(readOnly)`](#fn-specvolumemountswithreadonly)
+    * [`fn withSubPath(subPath)`](#fn-specvolumemountswithsubpath)
+    * [`fn withSubPathExpr(subPathExpr)`](#fn-specvolumemountswithsubpathexpr)
+  * [`obj spec.volumes`](#obj-specvolumes)
+    * [`fn withName(name)`](#fn-specvolumeswithname)
+    * [`obj spec.volumes.awsElasticBlockStore`](#obj-specvolumesawselasticblockstore)
+      * [`fn withFsType(fsType)`](#fn-specvolumesawselasticblockstorewithfstype)
+      * [`fn withPartition(partition)`](#fn-specvolumesawselasticblockstorewithpartition)
+      * [`fn withReadOnly(readOnly)`](#fn-specvolumesawselasticblockstorewithreadonly)
+      * [`fn withVolumeID(volumeID)`](#fn-specvolumesawselasticblockstorewithvolumeid)
+    * [`obj spec.volumes.azureDisk`](#obj-specvolumesazuredisk)
+      * [`fn withCachingMode(cachingMode)`](#fn-specvolumesazurediskwithcachingmode)
+      * [`fn withDiskName(diskName)`](#fn-specvolumesazurediskwithdiskname)
+      * [`fn withDiskURI(diskURI)`](#fn-specvolumesazurediskwithdiskuri)
+      * [`fn withFsType(fsType)`](#fn-specvolumesazurediskwithfstype)
+      * [`fn withKind(kind)`](#fn-specvolumesazurediskwithkind)
+      * [`fn withReadOnly(readOnly)`](#fn-specvolumesazurediskwithreadonly)
+    * [`obj spec.volumes.azureFile`](#obj-specvolumesazurefile)
+      * [`fn withReadOnly(readOnly)`](#fn-specvolumesazurefilewithreadonly)
+      * [`fn withSecretName(secretName)`](#fn-specvolumesazurefilewithsecretname)
+      * [`fn withShareName(shareName)`](#fn-specvolumesazurefilewithsharename)
+    * [`obj spec.volumes.cephfs`](#obj-specvolumescephfs)
+      * [`fn withMonitors(monitors)`](#fn-specvolumescephfswithmonitors)
+      * [`fn withMonitorsMixin(monitors)`](#fn-specvolumescephfswithmonitorsmixin)
+      * [`fn withPath(path)`](#fn-specvolumescephfswithpath)
+      * [`fn withReadOnly(readOnly)`](#fn-specvolumescephfswithreadonly)
+      * [`fn withSecretFile(secretFile)`](#fn-specvolumescephfswithsecretfile)
+      * [`fn withUser(user)`](#fn-specvolumescephfswithuser)
+      * [`obj spec.volumes.cephfs.secretRef`](#obj-specvolumescephfssecretref)
+        * [`fn withName(name)`](#fn-specvolumescephfssecretrefwithname)
+    * [`obj spec.volumes.cinder`](#obj-specvolumescinder)
+      * [`fn withFsType(fsType)`](#fn-specvolumescinderwithfstype)
+      * [`fn withReadOnly(readOnly)`](#fn-specvolumescinderwithreadonly)
+      * [`fn withVolumeID(volumeID)`](#fn-specvolumescinderwithvolumeid)
+      * [`obj spec.volumes.cinder.secretRef`](#obj-specvolumescindersecretref)
+        * [`fn withName(name)`](#fn-specvolumescindersecretrefwithname)
+    * [`obj spec.volumes.configMap`](#obj-specvolumesconfigmap)
+      * [`fn withDefaultMode(defaultMode)`](#fn-specvolumesconfigmapwithdefaultmode)
+      * [`fn withItems(items)`](#fn-specvolumesconfigmapwithitems)
+      * [`fn withItemsMixin(items)`](#fn-specvolumesconfigmapwithitemsmixin)
+      * [`fn withName(name)`](#fn-specvolumesconfigmapwithname)
+      * [`fn withOptional(optional)`](#fn-specvolumesconfigmapwithoptional)
+      * [`obj spec.volumes.configMap.items`](#obj-specvolumesconfigmapitems)
+        * [`fn withKey(key)`](#fn-specvolumesconfigmapitemswithkey)
+        * [`fn withMode(mode)`](#fn-specvolumesconfigmapitemswithmode)
+        * [`fn withPath(path)`](#fn-specvolumesconfigmapitemswithpath)
+    * [`obj spec.volumes.csi`](#obj-specvolumescsi)
+      * [`fn withDriver(driver)`](#fn-specvolumescsiwithdriver)
+      * [`fn withFsType(fsType)`](#fn-specvolumescsiwithfstype)
+      * [`fn withReadOnly(readOnly)`](#fn-specvolumescsiwithreadonly)
+      * [`fn withVolumeAttributes(volumeAttributes)`](#fn-specvolumescsiwithvolumeattributes)
+      * [`fn withVolumeAttributesMixin(volumeAttributes)`](#fn-specvolumescsiwithvolumeattributesmixin)
+      * [`obj spec.volumes.csi.nodePublishSecretRef`](#obj-specvolumescsinodepublishsecretref)
+        * [`fn withName(name)`](#fn-specvolumescsinodepublishsecretrefwithname)
+    * [`obj spec.volumes.downwardAPI`](#obj-specvolumesdownwardapi)
+      * [`fn withDefaultMode(defaultMode)`](#fn-specvolumesdownwardapiwithdefaultmode)
+      * [`fn withItems(items)`](#fn-specvolumesdownwardapiwithitems)
+      * [`fn withItemsMixin(items)`](#fn-specvolumesdownwardapiwithitemsmixin)
+      * [`obj spec.volumes.downwardAPI.items`](#obj-specvolumesdownwardapiitems)
+        * [`fn withMode(mode)`](#fn-specvolumesdownwardapiitemswithmode)
+        * [`fn withPath(path)`](#fn-specvolumesdownwardapiitemswithpath)
+        * [`obj spec.volumes.downwardAPI.items.fieldRef`](#obj-specvolumesdownwardapiitemsfieldref)
+          * [`fn withApiVersion(apiVersion)`](#fn-specvolumesdownwardapiitemsfieldrefwithapiversion)
+          * [`fn withFieldPath(fieldPath)`](#fn-specvolumesdownwardapiitemsfieldrefwithfieldpath)
+        * [`obj spec.volumes.downwardAPI.items.resourceFieldRef`](#obj-specvolumesdownwardapiitemsresourcefieldref)
+          * [`fn withContainerName(containerName)`](#fn-specvolumesdownwardapiitemsresourcefieldrefwithcontainername)
+          * [`fn withDivisor(divisor)`](#fn-specvolumesdownwardapiitemsresourcefieldrefwithdivisor)
+          * [`fn withResource(resource)`](#fn-specvolumesdownwardapiitemsresourcefieldrefwithresource)
+    * [`obj spec.volumes.emptyDir`](#obj-specvolumesemptydir)
+      * [`fn withMedium(medium)`](#fn-specvolumesemptydirwithmedium)
+      * [`fn withSizeLimit(sizeLimit)`](#fn-specvolumesemptydirwithsizelimit)
+    * [`obj spec.volumes.ephemeral`](#obj-specvolumesephemeral)
+      * [`fn withReadOnly(readOnly)`](#fn-specvolumesephemeralwithreadonly)
+      * [`obj spec.volumes.ephemeral.volumeClaimTemplate`](#obj-specvolumesephemeralvolumeclaimtemplate)
+        * [`fn withMetadata(metadata)`](#fn-specvolumesephemeralvolumeclaimtemplatewithmetadata)
+        * [`fn withMetadataMixin(metadata)`](#fn-specvolumesephemeralvolumeclaimtemplatewithmetadatamixin)
+        * [`obj spec.volumes.ephemeral.volumeClaimTemplate.spec`](#obj-specvolumesephemeralvolumeclaimtemplatespec)
+          * [`fn withAccessModes(accessModes)`](#fn-specvolumesephemeralvolumeclaimtemplatespecwithaccessmodes)
+          * [`fn withAccessModesMixin(accessModes)`](#fn-specvolumesephemeralvolumeclaimtemplatespecwithaccessmodesmixin)
+          * [`fn withStorageClassName(storageClassName)`](#fn-specvolumesephemeralvolumeclaimtemplatespecwithstorageclassname)
+          * [`fn withVolumeMode(volumeMode)`](#fn-specvolumesephemeralvolumeclaimtemplatespecwithvolumemode)
+          * [`fn withVolumeName(volumeName)`](#fn-specvolumesephemeralvolumeclaimtemplatespecwithvolumename)
+          * [`obj spec.volumes.ephemeral.volumeClaimTemplate.spec.dataSource`](#obj-specvolumesephemeralvolumeclaimtemplatespecdatasource)
+            * [`fn withApiGroup(apiGroup)`](#fn-specvolumesephemeralvolumeclaimtemplatespecdatasourcewithapigroup)
+            * [`fn withKind(kind)`](#fn-specvolumesephemeralvolumeclaimtemplatespecdatasourcewithkind)
+            * [`fn withName(name)`](#fn-specvolumesephemeralvolumeclaimtemplatespecdatasourcewithname)
+          * [`obj spec.volumes.ephemeral.volumeClaimTemplate.spec.resources`](#obj-specvolumesephemeralvolumeclaimtemplatespecresources)
+            * [`fn withLimits(limits)`](#fn-specvolumesephemeralvolumeclaimtemplatespecresourceswithlimits)
+            * [`fn withLimitsMixin(limits)`](#fn-specvolumesephemeralvolumeclaimtemplatespecresourceswithlimitsmixin)
+            * [`fn withRequests(requests)`](#fn-specvolumesephemeralvolumeclaimtemplatespecresourceswithrequests)
+            * [`fn withRequestsMixin(requests)`](#fn-specvolumesephemeralvolumeclaimtemplatespecresourceswithrequestsmixin)
+          * [`obj spec.volumes.ephemeral.volumeClaimTemplate.spec.selector`](#obj-specvolumesephemeralvolumeclaimtemplatespecselector)
+            * [`fn withMatchExpressions(matchExpressions)`](#fn-specvolumesephemeralvolumeclaimtemplatespecselectorwithmatchexpressions)
+            * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specvolumesephemeralvolumeclaimtemplatespecselectorwithmatchexpressionsmixin)
+            * [`fn withMatchLabels(matchLabels)`](#fn-specvolumesephemeralvolumeclaimtemplatespecselectorwithmatchlabels)
+            * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specvolumesephemeralvolumeclaimtemplatespecselectorwithmatchlabelsmixin)
+            * [`obj spec.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions`](#obj-specvolumesephemeralvolumeclaimtemplatespecselectormatchexpressions)
+              * [`fn withKey(key)`](#fn-specvolumesephemeralvolumeclaimtemplatespecselectormatchexpressionswithkey)
+              * [`fn withOperator(operator)`](#fn-specvolumesephemeralvolumeclaimtemplatespecselectormatchexpressionswithoperator)
+              * [`fn withValues(values)`](#fn-specvolumesephemeralvolumeclaimtemplatespecselectormatchexpressionswithvalues)
+              * [`fn withValuesMixin(values)`](#fn-specvolumesephemeralvolumeclaimtemplatespecselectormatchexpressionswithvaluesmixin)
+    * [`obj spec.volumes.fc`](#obj-specvolumesfc)
+      * [`fn withFsType(fsType)`](#fn-specvolumesfcwithfstype)
+      * [`fn withLun(lun)`](#fn-specvolumesfcwithlun)
+      * [`fn withReadOnly(readOnly)`](#fn-specvolumesfcwithreadonly)
+      * [`fn withTargetWWNs(targetWWNs)`](#fn-specvolumesfcwithtargetwwns)
+      * [`fn withTargetWWNsMixin(targetWWNs)`](#fn-specvolumesfcwithtargetwwnsmixin)
+      * [`fn withWwids(wwids)`](#fn-specvolumesfcwithwwids)
+      * [`fn withWwidsMixin(wwids)`](#fn-specvolumesfcwithwwidsmixin)
+    * [`obj spec.volumes.flexVolume`](#obj-specvolumesflexvolume)
+      * [`fn withDriver(driver)`](#fn-specvolumesflexvolumewithdriver)
+      * [`fn withFsType(fsType)`](#fn-specvolumesflexvolumewithfstype)
+      * [`fn withOptions(options)`](#fn-specvolumesflexvolumewithoptions)
+      * [`fn withOptionsMixin(options)`](#fn-specvolumesflexvolumewithoptionsmixin)
+      * [`fn withReadOnly(readOnly)`](#fn-specvolumesflexvolumewithreadonly)
+      * [`obj spec.volumes.flexVolume.secretRef`](#obj-specvolumesflexvolumesecretref)
+        * [`fn withName(name)`](#fn-specvolumesflexvolumesecretrefwithname)
+    * [`obj spec.volumes.flocker`](#obj-specvolumesflocker)
+      * [`fn withDatasetName(datasetName)`](#fn-specvolumesflockerwithdatasetname)
+      * [`fn withDatasetUUID(datasetUUID)`](#fn-specvolumesflockerwithdatasetuuid)
+    * [`obj spec.volumes.gcePersistentDisk`](#obj-specvolumesgcepersistentdisk)
+      * [`fn withFsType(fsType)`](#fn-specvolumesgcepersistentdiskwithfstype)
+      * [`fn withPartition(partition)`](#fn-specvolumesgcepersistentdiskwithpartition)
+      * [`fn withPdName(pdName)`](#fn-specvolumesgcepersistentdiskwithpdname)
+      * [`fn withReadOnly(readOnly)`](#fn-specvolumesgcepersistentdiskwithreadonly)
+    * [`obj spec.volumes.gitRepo`](#obj-specvolumesgitrepo)
+      * [`fn withDirectory(directory)`](#fn-specvolumesgitrepowithdirectory)
+      * [`fn withRepository(repository)`](#fn-specvolumesgitrepowithrepository)
+      * [`fn withRevision(revision)`](#fn-specvolumesgitrepowithrevision)
+    * [`obj spec.volumes.glusterfs`](#obj-specvolumesglusterfs)
+      * [`fn withEndpoints(endpoints)`](#fn-specvolumesglusterfswithendpoints)
+      * [`fn withPath(path)`](#fn-specvolumesglusterfswithpath)
+      * [`fn withReadOnly(readOnly)`](#fn-specvolumesglusterfswithreadonly)
+    * [`obj spec.volumes.hostPath`](#obj-specvolumeshostpath)
+      * [`fn withPath(path)`](#fn-specvolumeshostpathwithpath)
+      * [`fn withType(type)`](#fn-specvolumeshostpathwithtype)
+    * [`obj spec.volumes.iscsi`](#obj-specvolumesiscsi)
+      * [`fn withChapAuthDiscovery(chapAuthDiscovery)`](#fn-specvolumesiscsiwithchapauthdiscovery)
+      * [`fn withChapAuthSession(chapAuthSession)`](#fn-specvolumesiscsiwithchapauthsession)
+      * [`fn withFsType(fsType)`](#fn-specvolumesiscsiwithfstype)
+      * [`fn withInitiatorName(initiatorName)`](#fn-specvolumesiscsiwithinitiatorname)
+      * [`fn withIqn(iqn)`](#fn-specvolumesiscsiwithiqn)
+      * [`fn withIscsiInterface(iscsiInterface)`](#fn-specvolumesiscsiwithiscsiinterface)
+      * [`fn withLun(lun)`](#fn-specvolumesiscsiwithlun)
+      * [`fn withPortals(portals)`](#fn-specvolumesiscsiwithportals)
+      * [`fn withPortalsMixin(portals)`](#fn-specvolumesiscsiwithportalsmixin)
+      * [`fn withReadOnly(readOnly)`](#fn-specvolumesiscsiwithreadonly)
+      * [`fn withTargetPortal(targetPortal)`](#fn-specvolumesiscsiwithtargetportal)
+      * [`obj spec.volumes.iscsi.secretRef`](#obj-specvolumesiscsisecretref)
+        * [`fn withName(name)`](#fn-specvolumesiscsisecretrefwithname)
+    * [`obj spec.volumes.nfs`](#obj-specvolumesnfs)
+      * [`fn withPath(path)`](#fn-specvolumesnfswithpath)
+      * [`fn withReadOnly(readOnly)`](#fn-specvolumesnfswithreadonly)
+      * [`fn withServer(server)`](#fn-specvolumesnfswithserver)
+    * [`obj spec.volumes.persistentVolumeClaim`](#obj-specvolumespersistentvolumeclaim)
+      * [`fn withClaimName(claimName)`](#fn-specvolumespersistentvolumeclaimwithclaimname)
+      * [`fn withReadOnly(readOnly)`](#fn-specvolumespersistentvolumeclaimwithreadonly)
+    * [`obj spec.volumes.photonPersistentDisk`](#obj-specvolumesphotonpersistentdisk)
+      * [`fn withFsType(fsType)`](#fn-specvolumesphotonpersistentdiskwithfstype)
+      * [`fn withPdID(pdID)`](#fn-specvolumesphotonpersistentdiskwithpdid)
+    * [`obj spec.volumes.portworxVolume`](#obj-specvolumesportworxvolume)
+      * [`fn withFsType(fsType)`](#fn-specvolumesportworxvolumewithfstype)
+      * [`fn withReadOnly(readOnly)`](#fn-specvolumesportworxvolumewithreadonly)
+      * [`fn withVolumeID(volumeID)`](#fn-specvolumesportworxvolumewithvolumeid)
+    * [`obj spec.volumes.projected`](#obj-specvolumesprojected)
+      * [`fn withDefaultMode(defaultMode)`](#fn-specvolumesprojectedwithdefaultmode)
+      * [`fn withSources(sources)`](#fn-specvolumesprojectedwithsources)
+      * [`fn withSourcesMixin(sources)`](#fn-specvolumesprojectedwithsourcesmixin)
+      * [`obj spec.volumes.projected.sources`](#obj-specvolumesprojectedsources)
+        * [`obj spec.volumes.projected.sources.configMap`](#obj-specvolumesprojectedsourcesconfigmap)
+          * [`fn withItems(items)`](#fn-specvolumesprojectedsourcesconfigmapwithitems)
+          * [`fn withItemsMixin(items)`](#fn-specvolumesprojectedsourcesconfigmapwithitemsmixin)
+          * [`fn withName(name)`](#fn-specvolumesprojectedsourcesconfigmapwithname)
+          * [`fn withOptional(optional)`](#fn-specvolumesprojectedsourcesconfigmapwithoptional)
+          * [`obj spec.volumes.projected.sources.configMap.items`](#obj-specvolumesprojectedsourcesconfigmapitems)
+            * [`fn withKey(key)`](#fn-specvolumesprojectedsourcesconfigmapitemswithkey)
+            * [`fn withMode(mode)`](#fn-specvolumesprojectedsourcesconfigmapitemswithmode)
+            * [`fn withPath(path)`](#fn-specvolumesprojectedsourcesconfigmapitemswithpath)
+        * [`obj spec.volumes.projected.sources.downwardAPI`](#obj-specvolumesprojectedsourcesdownwardapi)
+          * [`fn withItems(items)`](#fn-specvolumesprojectedsourcesdownwardapiwithitems)
+          * [`fn withItemsMixin(items)`](#fn-specvolumesprojectedsourcesdownwardapiwithitemsmixin)
+          * [`obj spec.volumes.projected.sources.downwardAPI.items`](#obj-specvolumesprojectedsourcesdownwardapiitems)
+            * [`fn withMode(mode)`](#fn-specvolumesprojectedsourcesdownwardapiitemswithmode)
+            * [`fn withPath(path)`](#fn-specvolumesprojectedsourcesdownwardapiitemswithpath)
+            * [`obj spec.volumes.projected.sources.downwardAPI.items.fieldRef`](#obj-specvolumesprojectedsourcesdownwardapiitemsfieldref)
+              * [`fn withApiVersion(apiVersion)`](#fn-specvolumesprojectedsourcesdownwardapiitemsfieldrefwithapiversion)
+              * [`fn withFieldPath(fieldPath)`](#fn-specvolumesprojectedsourcesdownwardapiitemsfieldrefwithfieldpath)
+            * [`obj spec.volumes.projected.sources.downwardAPI.items.resourceFieldRef`](#obj-specvolumesprojectedsourcesdownwardapiitemsresourcefieldref)
+              * [`fn withContainerName(containerName)`](#fn-specvolumesprojectedsourcesdownwardapiitemsresourcefieldrefwithcontainername)
+              * [`fn withDivisor(divisor)`](#fn-specvolumesprojectedsourcesdownwardapiitemsresourcefieldrefwithdivisor)
+              * [`fn withResource(resource)`](#fn-specvolumesprojectedsourcesdownwardapiitemsresourcefieldrefwithresource)
+        * [`obj spec.volumes.projected.sources.secret`](#obj-specvolumesprojectedsourcessecret)
+          * [`fn withItems(items)`](#fn-specvolumesprojectedsourcessecretwithitems)
+          * [`fn withItemsMixin(items)`](#fn-specvolumesprojectedsourcessecretwithitemsmixin)
+          * [`fn withName(name)`](#fn-specvolumesprojectedsourcessecretwithname)
+          * [`fn withOptional(optional)`](#fn-specvolumesprojectedsourcessecretwithoptional)
+          * [`obj spec.volumes.projected.sources.secret.items`](#obj-specvolumesprojectedsourcessecretitems)
+            * [`fn withKey(key)`](#fn-specvolumesprojectedsourcessecretitemswithkey)
+            * [`fn withMode(mode)`](#fn-specvolumesprojectedsourcessecretitemswithmode)
+            * [`fn withPath(path)`](#fn-specvolumesprojectedsourcessecretitemswithpath)
+        * [`obj spec.volumes.projected.sources.serviceAccountToken`](#obj-specvolumesprojectedsourcesserviceaccounttoken)
+          * [`fn withAudience(audience)`](#fn-specvolumesprojectedsourcesserviceaccounttokenwithaudience)
+          * [`fn withExpirationSeconds(expirationSeconds)`](#fn-specvolumesprojectedsourcesserviceaccounttokenwithexpirationseconds)
+          * [`fn withPath(path)`](#fn-specvolumesprojectedsourcesserviceaccounttokenwithpath)
+    * [`obj spec.volumes.quobyte`](#obj-specvolumesquobyte)
+      * [`fn withGroup(group)`](#fn-specvolumesquobytewithgroup)
+      * [`fn withReadOnly(readOnly)`](#fn-specvolumesquobytewithreadonly)
+      * [`fn withRegistry(registry)`](#fn-specvolumesquobytewithregistry)
+      * [`fn withTenant(tenant)`](#fn-specvolumesquobytewithtenant)
+      * [`fn withUser(user)`](#fn-specvolumesquobytewithuser)
+      * [`fn withVolume(volume)`](#fn-specvolumesquobytewithvolume)
+    * [`obj spec.volumes.rbd`](#obj-specvolumesrbd)
+      * [`fn withFsType(fsType)`](#fn-specvolumesrbdwithfstype)
+      * [`fn withImage(image)`](#fn-specvolumesrbdwithimage)
+      * [`fn withKeyring(keyring)`](#fn-specvolumesrbdwithkeyring)
+      * [`fn withMonitors(monitors)`](#fn-specvolumesrbdwithmonitors)
+      * [`fn withMonitorsMixin(monitors)`](#fn-specvolumesrbdwithmonitorsmixin)
+      * [`fn withPool(pool)`](#fn-specvolumesrbdwithpool)
+      * [`fn withReadOnly(readOnly)`](#fn-specvolumesrbdwithreadonly)
+      * [`fn withUser(user)`](#fn-specvolumesrbdwithuser)
+      * [`obj spec.volumes.rbd.secretRef`](#obj-specvolumesrbdsecretref)
+        * [`fn withName(name)`](#fn-specvolumesrbdsecretrefwithname)
+    * [`obj spec.volumes.scaleIO`](#obj-specvolumesscaleio)
+      * [`fn withFsType(fsType)`](#fn-specvolumesscaleiowithfstype)
+      * [`fn withGateway(gateway)`](#fn-specvolumesscaleiowithgateway)
+      * [`fn withProtectionDomain(protectionDomain)`](#fn-specvolumesscaleiowithprotectiondomain)
+      * [`fn withReadOnly(readOnly)`](#fn-specvolumesscaleiowithreadonly)
+      * [`fn withSslEnabled(sslEnabled)`](#fn-specvolumesscaleiowithsslenabled)
+      * [`fn withStorageMode(storageMode)`](#fn-specvolumesscaleiowithstoragemode)
+      * [`fn withStoragePool(storagePool)`](#fn-specvolumesscaleiowithstoragepool)
+      * [`fn withSystem(system)`](#fn-specvolumesscaleiowithsystem)
+      * [`fn withVolumeName(volumeName)`](#fn-specvolumesscaleiowithvolumename)
+      * [`obj spec.volumes.scaleIO.secretRef`](#obj-specvolumesscaleiosecretref)
+        * [`fn withName(name)`](#fn-specvolumesscaleiosecretrefwithname)
+    * [`obj spec.volumes.secret`](#obj-specvolumessecret)
+      * [`fn withDefaultMode(defaultMode)`](#fn-specvolumessecretwithdefaultmode)
+      * [`fn withItems(items)`](#fn-specvolumessecretwithitems)
+      * [`fn withItemsMixin(items)`](#fn-specvolumessecretwithitemsmixin)
+      * [`fn withOptional(optional)`](#fn-specvolumessecretwithoptional)
+      * [`fn withSecretName(secretName)`](#fn-specvolumessecretwithsecretname)
+      * [`obj spec.volumes.secret.items`](#obj-specvolumessecretitems)
+        * [`fn withKey(key)`](#fn-specvolumessecretitemswithkey)
+        * [`fn withMode(mode)`](#fn-specvolumessecretitemswithmode)
+        * [`fn withPath(path)`](#fn-specvolumessecretitemswithpath)
+    * [`obj spec.volumes.storageos`](#obj-specvolumesstorageos)
+      * [`fn withFsType(fsType)`](#fn-specvolumesstorageoswithfstype)
+      * [`fn withReadOnly(readOnly)`](#fn-specvolumesstorageoswithreadonly)
+      * [`fn withVolumeName(volumeName)`](#fn-specvolumesstorageoswithvolumename)
+      * [`fn withVolumeNamespace(volumeNamespace)`](#fn-specvolumesstorageoswithvolumenamespace)
+      * [`obj spec.volumes.storageos.secretRef`](#obj-specvolumesstorageossecretref)
+        * [`fn withName(name)`](#fn-specvolumesstorageossecretrefwithname)
+    * [`obj spec.volumes.vsphereVolume`](#obj-specvolumesvspherevolume)
+      * [`fn withFsType(fsType)`](#fn-specvolumesvspherevolumewithfstype)
+      * [`fn withStoragePolicyID(storagePolicyID)`](#fn-specvolumesvspherevolumewithstoragepolicyid)
+      * [`fn withStoragePolicyName(storagePolicyName)`](#fn-specvolumesvspherevolumewithstoragepolicyname)
+      * [`fn withVolumePath(volumePath)`](#fn-specvolumesvspherevolumewithvolumepath)
 
 ## Fields
 
@@ -891,24 +4603,6 @@ withLabelsMixin(labels)
 ```
 
 "Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels"
-
-**Note:** This function appends passed data to existing values
-
-### fn metadata.withManagedFields
-
-```ts
-withManagedFields(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
-
-### fn metadata.withManagedFieldsMixin
-
-```ts
-withManagedFieldsMixin(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
 
 **Note:** This function appends passed data to existing values
 
@@ -1106,6 +4800,134 @@ withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringScheduli
 
 **Note:** This function appends passed data to existing values
 
+## obj spec.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference
+
+
+
+### fn spec.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchFields
+
+```ts
+withMatchFields(matchFields)
+```
+
+
+
+### fn spec.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchFieldsMixin
+
+```ts
+withMatchFieldsMixin(matchFields)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions
+
+
+
+### fn spec.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields
+
+
+
+### fn spec.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ## obj spec.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution
 
 
@@ -1122,6 +4944,122 @@ withNodeSelectorTerms(nodeSelectorTerms)
 
 ```ts
 withNodeSelectorTermsMixin(nodeSelectorTerms)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms
+
+
+
+### fn spec.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchFields
+
+```ts
+withMatchFields(matchFields)
+```
+
+
+
+### fn spec.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchFieldsMixin
+
+```ts
+withMatchFieldsMixin(matchFields)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions
+
+
+
+### fn spec.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields
+
+
+
+### fn spec.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withValuesMixin
+
+```ts
+withValuesMixin(values)
 ```
 
 
@@ -1168,6 +5106,234 @@ withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringScheduling
 
 **Note:** This function appends passed data to existing values
 
+## obj spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm
+
+
+
+### fn spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector
+
+
+
+### fn spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions
+
+
+
+### fn spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector
+
+
+
+### fn spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions
+
+
+
+### fn spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ## obj spec.affinity.podAntiAffinity
 
 
@@ -1202,6 +5368,234 @@ withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnor
 
 ```ts
 withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm
+
+
+
+### fn spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector
+
+
+
+### fn spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions
+
+
+
+### fn spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector
+
+
+
+### fn spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions
+
+
+
+### fn spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
 ```
 
 
@@ -1430,6 +5824,134 @@ withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringScheduli
 
 **Note:** This function appends passed data to existing values
 
+## obj spec.agent.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.agent.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.agent.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference
+
+
+
+### fn spec.agent.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.agent.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.agent.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchFields
+
+```ts
+withMatchFields(matchFields)
+```
+
+
+
+### fn spec.agent.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchFieldsMixin
+
+```ts
+withMatchFieldsMixin(matchFields)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.agent.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions
+
+
+
+### fn spec.agent.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.agent.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.agent.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.agent.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.agent.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields
+
+
+
+### fn spec.agent.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.agent.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.agent.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.agent.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ## obj spec.agent.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution
 
 
@@ -1446,6 +5968,122 @@ withNodeSelectorTerms(nodeSelectorTerms)
 
 ```ts
 withNodeSelectorTermsMixin(nodeSelectorTerms)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.agent.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms
+
+
+
+### fn spec.agent.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.agent.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.agent.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchFields
+
+```ts
+withMatchFields(matchFields)
+```
+
+
+
+### fn spec.agent.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchFieldsMixin
+
+```ts
+withMatchFieldsMixin(matchFields)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.agent.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions
+
+
+
+### fn spec.agent.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.agent.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.agent.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.agent.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.agent.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields
+
+
+
+### fn spec.agent.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.agent.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.agent.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.agent.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withValuesMixin
+
+```ts
+withValuesMixin(values)
 ```
 
 
@@ -1492,6 +6130,234 @@ withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringScheduling
 
 **Note:** This function appends passed data to existing values
 
+## obj spec.agent.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.agent.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.agent.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm
+
+
+
+### fn spec.agent.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.agent.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.agent.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.agent.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector
+
+
+
+### fn spec.agent.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.agent.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.agent.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.agent.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.agent.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions
+
+
+
+### fn spec.agent.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.agent.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.agent.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.agent.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.agent.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.agent.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.agent.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.agent.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.agent.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector
+
+
+
+### fn spec.agent.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.agent.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.agent.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.agent.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.agent.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions
+
+
+
+### fn spec.agent.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.agent.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.agent.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.agent.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ## obj spec.agent.affinity.podAntiAffinity
 
 
@@ -1531,6 +6397,246 @@ withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringScheduling
 
 
 **Note:** This function appends passed data to existing values
+
+## obj spec.agent.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.agent.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.agent.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm
+
+
+
+### fn spec.agent.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.agent.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.agent.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.agent.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector
+
+
+
+### fn spec.agent.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.agent.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.agent.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.agent.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.agent.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions
+
+
+
+### fn spec.agent.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.agent.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.agent.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.agent.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.agent.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.agent.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.agent.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.agent.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.agent.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector
+
+
+
+### fn spec.agent.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.agent.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.agent.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.agent.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.agent.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions
+
+
+
+### fn spec.agent.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.agent.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.agent.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.agent.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.agent.imagePullSecrets
+
+
+
+### fn spec.agent.imagePullSecrets.withName
+
+```ts
+withName(name)
+```
+
+
 
 ## obj spec.agent.resources
 
@@ -1704,6 +6810,26 @@ withLocalhostProfile(localhostProfile)
 
 ```ts
 withType(type)
+```
+
+
+
+## obj spec.agent.securityContext.sysctls
+
+
+
+### fn spec.agent.securityContext.sysctls.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.agent.securityContext.sysctls.withValue
+
+```ts
+withValue(value)
 ```
 
 
@@ -1920,6 +7046,1932 @@ withRunAsUserName(runAsUserName)
 
 
 
+## obj spec.agent.tolerations
+
+
+
+### fn spec.agent.tolerations.withEffect
+
+```ts
+withEffect(effect)
+```
+
+
+
+### fn spec.agent.tolerations.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.agent.tolerations.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.agent.tolerations.withTolerationSeconds
+
+```ts
+withTolerationSeconds(tolerationSeconds)
+```
+
+
+
+### fn spec.agent.tolerations.withValue
+
+```ts
+withValue(value)
+```
+
+
+
+## obj spec.agent.volumeMounts
+
+
+
+### fn spec.agent.volumeMounts.withMountPath
+
+```ts
+withMountPath(mountPath)
+```
+
+
+
+### fn spec.agent.volumeMounts.withMountPropagation
+
+```ts
+withMountPropagation(mountPropagation)
+```
+
+
+
+### fn spec.agent.volumeMounts.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.agent.volumeMounts.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.agent.volumeMounts.withSubPath
+
+```ts
+withSubPath(subPath)
+```
+
+
+
+### fn spec.agent.volumeMounts.withSubPathExpr
+
+```ts
+withSubPathExpr(subPathExpr)
+```
+
+
+
+## obj spec.agent.volumes
+
+
+
+### fn spec.agent.volumes.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.agent.volumes.awsElasticBlockStore
+
+
+
+### fn spec.agent.volumes.awsElasticBlockStore.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.agent.volumes.awsElasticBlockStore.withPartition
+
+```ts
+withPartition(partition)
+```
+
+
+
+### fn spec.agent.volumes.awsElasticBlockStore.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.agent.volumes.awsElasticBlockStore.withVolumeID
+
+```ts
+withVolumeID(volumeID)
+```
+
+
+
+## obj spec.agent.volumes.azureDisk
+
+
+
+### fn spec.agent.volumes.azureDisk.withCachingMode
+
+```ts
+withCachingMode(cachingMode)
+```
+
+
+
+### fn spec.agent.volumes.azureDisk.withDiskName
+
+```ts
+withDiskName(diskName)
+```
+
+
+
+### fn spec.agent.volumes.azureDisk.withDiskURI
+
+```ts
+withDiskURI(diskURI)
+```
+
+
+
+### fn spec.agent.volumes.azureDisk.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.agent.volumes.azureDisk.withKind
+
+```ts
+withKind(kind)
+```
+
+
+
+### fn spec.agent.volumes.azureDisk.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.agent.volumes.azureFile
+
+
+
+### fn spec.agent.volumes.azureFile.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.agent.volumes.azureFile.withSecretName
+
+```ts
+withSecretName(secretName)
+```
+
+
+
+### fn spec.agent.volumes.azureFile.withShareName
+
+```ts
+withShareName(shareName)
+```
+
+
+
+## obj spec.agent.volumes.cephfs
+
+
+
+### fn spec.agent.volumes.cephfs.withMonitors
+
+```ts
+withMonitors(monitors)
+```
+
+
+
+### fn spec.agent.volumes.cephfs.withMonitorsMixin
+
+```ts
+withMonitorsMixin(monitors)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.agent.volumes.cephfs.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+### fn spec.agent.volumes.cephfs.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.agent.volumes.cephfs.withSecretFile
+
+```ts
+withSecretFile(secretFile)
+```
+
+
+
+### fn spec.agent.volumes.cephfs.withUser
+
+```ts
+withUser(user)
+```
+
+
+
+## obj spec.agent.volumes.cephfs.secretRef
+
+
+
+### fn spec.agent.volumes.cephfs.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.agent.volumes.cinder
+
+
+
+### fn spec.agent.volumes.cinder.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.agent.volumes.cinder.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.agent.volumes.cinder.withVolumeID
+
+```ts
+withVolumeID(volumeID)
+```
+
+
+
+## obj spec.agent.volumes.cinder.secretRef
+
+
+
+### fn spec.agent.volumes.cinder.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.agent.volumes.configMap
+
+
+
+### fn spec.agent.volumes.configMap.withDefaultMode
+
+```ts
+withDefaultMode(defaultMode)
+```
+
+
+
+### fn spec.agent.volumes.configMap.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.agent.volumes.configMap.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.agent.volumes.configMap.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.agent.volumes.configMap.withOptional
+
+```ts
+withOptional(optional)
+```
+
+
+
+## obj spec.agent.volumes.configMap.items
+
+
+
+### fn spec.agent.volumes.configMap.items.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.agent.volumes.configMap.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.agent.volumes.configMap.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.agent.volumes.csi
+
+
+
+### fn spec.agent.volumes.csi.withDriver
+
+```ts
+withDriver(driver)
+```
+
+
+
+### fn spec.agent.volumes.csi.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.agent.volumes.csi.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.agent.volumes.csi.withVolumeAttributes
+
+```ts
+withVolumeAttributes(volumeAttributes)
+```
+
+
+
+### fn spec.agent.volumes.csi.withVolumeAttributesMixin
+
+```ts
+withVolumeAttributesMixin(volumeAttributes)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.agent.volumes.csi.nodePublishSecretRef
+
+
+
+### fn spec.agent.volumes.csi.nodePublishSecretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.agent.volumes.downwardAPI
+
+
+
+### fn spec.agent.volumes.downwardAPI.withDefaultMode
+
+```ts
+withDefaultMode(defaultMode)
+```
+
+
+
+### fn spec.agent.volumes.downwardAPI.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.agent.volumes.downwardAPI.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.agent.volumes.downwardAPI.items
+
+
+
+### fn spec.agent.volumes.downwardAPI.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.agent.volumes.downwardAPI.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.agent.volumes.downwardAPI.items.fieldRef
+
+
+
+### fn spec.agent.volumes.downwardAPI.items.fieldRef.withApiVersion
+
+```ts
+withApiVersion(apiVersion)
+```
+
+
+
+### fn spec.agent.volumes.downwardAPI.items.fieldRef.withFieldPath
+
+```ts
+withFieldPath(fieldPath)
+```
+
+
+
+## obj spec.agent.volumes.downwardAPI.items.resourceFieldRef
+
+
+
+### fn spec.agent.volumes.downwardAPI.items.resourceFieldRef.withContainerName
+
+```ts
+withContainerName(containerName)
+```
+
+
+
+### fn spec.agent.volumes.downwardAPI.items.resourceFieldRef.withDivisor
+
+```ts
+withDivisor(divisor)
+```
+
+
+
+### fn spec.agent.volumes.downwardAPI.items.resourceFieldRef.withResource
+
+```ts
+withResource(resource)
+```
+
+
+
+## obj spec.agent.volumes.emptyDir
+
+
+
+### fn spec.agent.volumes.emptyDir.withMedium
+
+```ts
+withMedium(medium)
+```
+
+
+
+### fn spec.agent.volumes.emptyDir.withSizeLimit
+
+```ts
+withSizeLimit(sizeLimit)
+```
+
+
+
+## obj spec.agent.volumes.ephemeral
+
+
+
+### fn spec.agent.volumes.ephemeral.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.agent.volumes.ephemeral.volumeClaimTemplate
+
+
+
+### fn spec.agent.volumes.ephemeral.volumeClaimTemplate.withMetadata
+
+```ts
+withMetadata(metadata)
+```
+
+
+
+### fn spec.agent.volumes.ephemeral.volumeClaimTemplate.withMetadataMixin
+
+```ts
+withMetadataMixin(metadata)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.agent.volumes.ephemeral.volumeClaimTemplate.spec
+
+
+
+### fn spec.agent.volumes.ephemeral.volumeClaimTemplate.spec.withAccessModes
+
+```ts
+withAccessModes(accessModes)
+```
+
+
+
+### fn spec.agent.volumes.ephemeral.volumeClaimTemplate.spec.withAccessModesMixin
+
+```ts
+withAccessModesMixin(accessModes)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.agent.volumes.ephemeral.volumeClaimTemplate.spec.withStorageClassName
+
+```ts
+withStorageClassName(storageClassName)
+```
+
+
+
+### fn spec.agent.volumes.ephemeral.volumeClaimTemplate.spec.withVolumeMode
+
+```ts
+withVolumeMode(volumeMode)
+```
+
+
+
+### fn spec.agent.volumes.ephemeral.volumeClaimTemplate.spec.withVolumeName
+
+```ts
+withVolumeName(volumeName)
+```
+
+
+
+## obj spec.agent.volumes.ephemeral.volumeClaimTemplate.spec.dataSource
+
+
+
+### fn spec.agent.volumes.ephemeral.volumeClaimTemplate.spec.dataSource.withApiGroup
+
+```ts
+withApiGroup(apiGroup)
+```
+
+
+
+### fn spec.agent.volumes.ephemeral.volumeClaimTemplate.spec.dataSource.withKind
+
+```ts
+withKind(kind)
+```
+
+
+
+### fn spec.agent.volumes.ephemeral.volumeClaimTemplate.spec.dataSource.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.agent.volumes.ephemeral.volumeClaimTemplate.spec.resources
+
+
+
+### fn spec.agent.volumes.ephemeral.volumeClaimTemplate.spec.resources.withLimits
+
+```ts
+withLimits(limits)
+```
+
+
+
+### fn spec.agent.volumes.ephemeral.volumeClaimTemplate.spec.resources.withLimitsMixin
+
+```ts
+withLimitsMixin(limits)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.agent.volumes.ephemeral.volumeClaimTemplate.spec.resources.withRequests
+
+```ts
+withRequests(requests)
+```
+
+
+
+### fn spec.agent.volumes.ephemeral.volumeClaimTemplate.spec.resources.withRequestsMixin
+
+```ts
+withRequestsMixin(requests)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.agent.volumes.ephemeral.volumeClaimTemplate.spec.selector
+
+
+
+### fn spec.agent.volumes.ephemeral.volumeClaimTemplate.spec.selector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.agent.volumes.ephemeral.volumeClaimTemplate.spec.selector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.agent.volumes.ephemeral.volumeClaimTemplate.spec.selector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.agent.volumes.ephemeral.volumeClaimTemplate.spec.selector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.agent.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions
+
+
+
+### fn spec.agent.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.agent.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.agent.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.agent.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.agent.volumes.fc
+
+
+
+### fn spec.agent.volumes.fc.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.agent.volumes.fc.withLun
+
+```ts
+withLun(lun)
+```
+
+
+
+### fn spec.agent.volumes.fc.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.agent.volumes.fc.withTargetWWNs
+
+```ts
+withTargetWWNs(targetWWNs)
+```
+
+
+
+### fn spec.agent.volumes.fc.withTargetWWNsMixin
+
+```ts
+withTargetWWNsMixin(targetWWNs)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.agent.volumes.fc.withWwids
+
+```ts
+withWwids(wwids)
+```
+
+
+
+### fn spec.agent.volumes.fc.withWwidsMixin
+
+```ts
+withWwidsMixin(wwids)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.agent.volumes.flexVolume
+
+
+
+### fn spec.agent.volumes.flexVolume.withDriver
+
+```ts
+withDriver(driver)
+```
+
+
+
+### fn spec.agent.volumes.flexVolume.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.agent.volumes.flexVolume.withOptions
+
+```ts
+withOptions(options)
+```
+
+
+
+### fn spec.agent.volumes.flexVolume.withOptionsMixin
+
+```ts
+withOptionsMixin(options)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.agent.volumes.flexVolume.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.agent.volumes.flexVolume.secretRef
+
+
+
+### fn spec.agent.volumes.flexVolume.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.agent.volumes.flocker
+
+
+
+### fn spec.agent.volumes.flocker.withDatasetName
+
+```ts
+withDatasetName(datasetName)
+```
+
+
+
+### fn spec.agent.volumes.flocker.withDatasetUUID
+
+```ts
+withDatasetUUID(datasetUUID)
+```
+
+
+
+## obj spec.agent.volumes.gcePersistentDisk
+
+
+
+### fn spec.agent.volumes.gcePersistentDisk.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.agent.volumes.gcePersistentDisk.withPartition
+
+```ts
+withPartition(partition)
+```
+
+
+
+### fn spec.agent.volumes.gcePersistentDisk.withPdName
+
+```ts
+withPdName(pdName)
+```
+
+
+
+### fn spec.agent.volumes.gcePersistentDisk.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.agent.volumes.gitRepo
+
+
+
+### fn spec.agent.volumes.gitRepo.withDirectory
+
+```ts
+withDirectory(directory)
+```
+
+
+
+### fn spec.agent.volumes.gitRepo.withRepository
+
+```ts
+withRepository(repository)
+```
+
+
+
+### fn spec.agent.volumes.gitRepo.withRevision
+
+```ts
+withRevision(revision)
+```
+
+
+
+## obj spec.agent.volumes.glusterfs
+
+
+
+### fn spec.agent.volumes.glusterfs.withEndpoints
+
+```ts
+withEndpoints(endpoints)
+```
+
+
+
+### fn spec.agent.volumes.glusterfs.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+### fn spec.agent.volumes.glusterfs.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.agent.volumes.hostPath
+
+
+
+### fn spec.agent.volumes.hostPath.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+### fn spec.agent.volumes.hostPath.withType
+
+```ts
+withType(type)
+```
+
+
+
+## obj spec.agent.volumes.iscsi
+
+
+
+### fn spec.agent.volumes.iscsi.withChapAuthDiscovery
+
+```ts
+withChapAuthDiscovery(chapAuthDiscovery)
+```
+
+
+
+### fn spec.agent.volumes.iscsi.withChapAuthSession
+
+```ts
+withChapAuthSession(chapAuthSession)
+```
+
+
+
+### fn spec.agent.volumes.iscsi.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.agent.volumes.iscsi.withInitiatorName
+
+```ts
+withInitiatorName(initiatorName)
+```
+
+
+
+### fn spec.agent.volumes.iscsi.withIqn
+
+```ts
+withIqn(iqn)
+```
+
+
+
+### fn spec.agent.volumes.iscsi.withIscsiInterface
+
+```ts
+withIscsiInterface(iscsiInterface)
+```
+
+
+
+### fn spec.agent.volumes.iscsi.withLun
+
+```ts
+withLun(lun)
+```
+
+
+
+### fn spec.agent.volumes.iscsi.withPortals
+
+```ts
+withPortals(portals)
+```
+
+
+
+### fn spec.agent.volumes.iscsi.withPortalsMixin
+
+```ts
+withPortalsMixin(portals)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.agent.volumes.iscsi.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.agent.volumes.iscsi.withTargetPortal
+
+```ts
+withTargetPortal(targetPortal)
+```
+
+
+
+## obj spec.agent.volumes.iscsi.secretRef
+
+
+
+### fn spec.agent.volumes.iscsi.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.agent.volumes.nfs
+
+
+
+### fn spec.agent.volumes.nfs.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+### fn spec.agent.volumes.nfs.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.agent.volumes.nfs.withServer
+
+```ts
+withServer(server)
+```
+
+
+
+## obj spec.agent.volumes.persistentVolumeClaim
+
+
+
+### fn spec.agent.volumes.persistentVolumeClaim.withClaimName
+
+```ts
+withClaimName(claimName)
+```
+
+
+
+### fn spec.agent.volumes.persistentVolumeClaim.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.agent.volumes.photonPersistentDisk
+
+
+
+### fn spec.agent.volumes.photonPersistentDisk.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.agent.volumes.photonPersistentDisk.withPdID
+
+```ts
+withPdID(pdID)
+```
+
+
+
+## obj spec.agent.volumes.portworxVolume
+
+
+
+### fn spec.agent.volumes.portworxVolume.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.agent.volumes.portworxVolume.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.agent.volumes.portworxVolume.withVolumeID
+
+```ts
+withVolumeID(volumeID)
+```
+
+
+
+## obj spec.agent.volumes.projected
+
+
+
+### fn spec.agent.volumes.projected.withDefaultMode
+
+```ts
+withDefaultMode(defaultMode)
+```
+
+
+
+### fn spec.agent.volumes.projected.withSources
+
+```ts
+withSources(sources)
+```
+
+
+
+### fn spec.agent.volumes.projected.withSourcesMixin
+
+```ts
+withSourcesMixin(sources)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.agent.volumes.projected.sources
+
+
+
+## obj spec.agent.volumes.projected.sources.configMap
+
+
+
+### fn spec.agent.volumes.projected.sources.configMap.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.agent.volumes.projected.sources.configMap.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.agent.volumes.projected.sources.configMap.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.agent.volumes.projected.sources.configMap.withOptional
+
+```ts
+withOptional(optional)
+```
+
+
+
+## obj spec.agent.volumes.projected.sources.configMap.items
+
+
+
+### fn spec.agent.volumes.projected.sources.configMap.items.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.agent.volumes.projected.sources.configMap.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.agent.volumes.projected.sources.configMap.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.agent.volumes.projected.sources.downwardAPI
+
+
+
+### fn spec.agent.volumes.projected.sources.downwardAPI.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.agent.volumes.projected.sources.downwardAPI.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.agent.volumes.projected.sources.downwardAPI.items
+
+
+
+### fn spec.agent.volumes.projected.sources.downwardAPI.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.agent.volumes.projected.sources.downwardAPI.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.agent.volumes.projected.sources.downwardAPI.items.fieldRef
+
+
+
+### fn spec.agent.volumes.projected.sources.downwardAPI.items.fieldRef.withApiVersion
+
+```ts
+withApiVersion(apiVersion)
+```
+
+
+
+### fn spec.agent.volumes.projected.sources.downwardAPI.items.fieldRef.withFieldPath
+
+```ts
+withFieldPath(fieldPath)
+```
+
+
+
+## obj spec.agent.volumes.projected.sources.downwardAPI.items.resourceFieldRef
+
+
+
+### fn spec.agent.volumes.projected.sources.downwardAPI.items.resourceFieldRef.withContainerName
+
+```ts
+withContainerName(containerName)
+```
+
+
+
+### fn spec.agent.volumes.projected.sources.downwardAPI.items.resourceFieldRef.withDivisor
+
+```ts
+withDivisor(divisor)
+```
+
+
+
+### fn spec.agent.volumes.projected.sources.downwardAPI.items.resourceFieldRef.withResource
+
+```ts
+withResource(resource)
+```
+
+
+
+## obj spec.agent.volumes.projected.sources.secret
+
+
+
+### fn spec.agent.volumes.projected.sources.secret.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.agent.volumes.projected.sources.secret.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.agent.volumes.projected.sources.secret.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.agent.volumes.projected.sources.secret.withOptional
+
+```ts
+withOptional(optional)
+```
+
+
+
+## obj spec.agent.volumes.projected.sources.secret.items
+
+
+
+### fn spec.agent.volumes.projected.sources.secret.items.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.agent.volumes.projected.sources.secret.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.agent.volumes.projected.sources.secret.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.agent.volumes.projected.sources.serviceAccountToken
+
+
+
+### fn spec.agent.volumes.projected.sources.serviceAccountToken.withAudience
+
+```ts
+withAudience(audience)
+```
+
+
+
+### fn spec.agent.volumes.projected.sources.serviceAccountToken.withExpirationSeconds
+
+```ts
+withExpirationSeconds(expirationSeconds)
+```
+
+
+
+### fn spec.agent.volumes.projected.sources.serviceAccountToken.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.agent.volumes.quobyte
+
+
+
+### fn spec.agent.volumes.quobyte.withGroup
+
+```ts
+withGroup(group)
+```
+
+
+
+### fn spec.agent.volumes.quobyte.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.agent.volumes.quobyte.withRegistry
+
+```ts
+withRegistry(registry)
+```
+
+
+
+### fn spec.agent.volumes.quobyte.withTenant
+
+```ts
+withTenant(tenant)
+```
+
+
+
+### fn spec.agent.volumes.quobyte.withUser
+
+```ts
+withUser(user)
+```
+
+
+
+### fn spec.agent.volumes.quobyte.withVolume
+
+```ts
+withVolume(volume)
+```
+
+
+
+## obj spec.agent.volumes.rbd
+
+
+
+### fn spec.agent.volumes.rbd.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.agent.volumes.rbd.withImage
+
+```ts
+withImage(image)
+```
+
+
+
+### fn spec.agent.volumes.rbd.withKeyring
+
+```ts
+withKeyring(keyring)
+```
+
+
+
+### fn spec.agent.volumes.rbd.withMonitors
+
+```ts
+withMonitors(monitors)
+```
+
+
+
+### fn spec.agent.volumes.rbd.withMonitorsMixin
+
+```ts
+withMonitorsMixin(monitors)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.agent.volumes.rbd.withPool
+
+```ts
+withPool(pool)
+```
+
+
+
+### fn spec.agent.volumes.rbd.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.agent.volumes.rbd.withUser
+
+```ts
+withUser(user)
+```
+
+
+
+## obj spec.agent.volumes.rbd.secretRef
+
+
+
+### fn spec.agent.volumes.rbd.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.agent.volumes.scaleIO
+
+
+
+### fn spec.agent.volumes.scaleIO.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.agent.volumes.scaleIO.withGateway
+
+```ts
+withGateway(gateway)
+```
+
+
+
+### fn spec.agent.volumes.scaleIO.withProtectionDomain
+
+```ts
+withProtectionDomain(protectionDomain)
+```
+
+
+
+### fn spec.agent.volumes.scaleIO.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.agent.volumes.scaleIO.withSslEnabled
+
+```ts
+withSslEnabled(sslEnabled)
+```
+
+
+
+### fn spec.agent.volumes.scaleIO.withStorageMode
+
+```ts
+withStorageMode(storageMode)
+```
+
+
+
+### fn spec.agent.volumes.scaleIO.withStoragePool
+
+```ts
+withStoragePool(storagePool)
+```
+
+
+
+### fn spec.agent.volumes.scaleIO.withSystem
+
+```ts
+withSystem(system)
+```
+
+
+
+### fn spec.agent.volumes.scaleIO.withVolumeName
+
+```ts
+withVolumeName(volumeName)
+```
+
+
+
+## obj spec.agent.volumes.scaleIO.secretRef
+
+
+
+### fn spec.agent.volumes.scaleIO.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.agent.volumes.secret
+
+
+
+### fn spec.agent.volumes.secret.withDefaultMode
+
+```ts
+withDefaultMode(defaultMode)
+```
+
+
+
+### fn spec.agent.volumes.secret.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.agent.volumes.secret.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.agent.volumes.secret.withOptional
+
+```ts
+withOptional(optional)
+```
+
+
+
+### fn spec.agent.volumes.secret.withSecretName
+
+```ts
+withSecretName(secretName)
+```
+
+
+
+## obj spec.agent.volumes.secret.items
+
+
+
+### fn spec.agent.volumes.secret.items.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.agent.volumes.secret.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.agent.volumes.secret.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.agent.volumes.storageos
+
+
+
+### fn spec.agent.volumes.storageos.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.agent.volumes.storageos.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.agent.volumes.storageos.withVolumeName
+
+```ts
+withVolumeName(volumeName)
+```
+
+
+
+### fn spec.agent.volumes.storageos.withVolumeNamespace
+
+```ts
+withVolumeNamespace(volumeNamespace)
+```
+
+
+
+## obj spec.agent.volumes.storageos.secretRef
+
+
+
+### fn spec.agent.volumes.storageos.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.agent.volumes.vsphereVolume
+
+
+
+### fn spec.agent.volumes.vsphereVolume.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.agent.volumes.vsphereVolume.withStoragePolicyID
+
+```ts
+withStoragePolicyID(storagePolicyID)
+```
+
+
+
+### fn spec.agent.volumes.vsphereVolume.withStoragePolicyName
+
+```ts
+withStoragePolicyName(storagePolicyName)
+```
+
+
+
+### fn spec.agent.volumes.vsphereVolume.withVolumePath
+
+```ts
+withVolumePath(volumePath)
+```
+
+
+
 ## obj spec.allInOne
 
 
@@ -2100,6 +9152,134 @@ withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringScheduli
 
 **Note:** This function appends passed data to existing values
 
+## obj spec.allInOne.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.allInOne.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.allInOne.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference
+
+
+
+### fn spec.allInOne.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.allInOne.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.allInOne.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchFields
+
+```ts
+withMatchFields(matchFields)
+```
+
+
+
+### fn spec.allInOne.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchFieldsMixin
+
+```ts
+withMatchFieldsMixin(matchFields)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.allInOne.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions
+
+
+
+### fn spec.allInOne.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.allInOne.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.allInOne.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.allInOne.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.allInOne.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields
+
+
+
+### fn spec.allInOne.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.allInOne.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.allInOne.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.allInOne.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ## obj spec.allInOne.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution
 
 
@@ -2116,6 +9296,122 @@ withNodeSelectorTerms(nodeSelectorTerms)
 
 ```ts
 withNodeSelectorTermsMixin(nodeSelectorTerms)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.allInOne.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms
+
+
+
+### fn spec.allInOne.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.allInOne.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.allInOne.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchFields
+
+```ts
+withMatchFields(matchFields)
+```
+
+
+
+### fn spec.allInOne.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchFieldsMixin
+
+```ts
+withMatchFieldsMixin(matchFields)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.allInOne.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions
+
+
+
+### fn spec.allInOne.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.allInOne.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.allInOne.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.allInOne.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.allInOne.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields
+
+
+
+### fn spec.allInOne.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.allInOne.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.allInOne.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.allInOne.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withValuesMixin
+
+```ts
+withValuesMixin(values)
 ```
 
 
@@ -2162,6 +9458,234 @@ withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringScheduling
 
 **Note:** This function appends passed data to existing values
 
+## obj spec.allInOne.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.allInOne.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.allInOne.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm
+
+
+
+### fn spec.allInOne.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.allInOne.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.allInOne.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.allInOne.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector
+
+
+
+### fn spec.allInOne.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.allInOne.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.allInOne.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.allInOne.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.allInOne.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions
+
+
+
+### fn spec.allInOne.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.allInOne.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.allInOne.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.allInOne.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.allInOne.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.allInOne.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.allInOne.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.allInOne.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.allInOne.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector
+
+
+
+### fn spec.allInOne.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.allInOne.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.allInOne.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.allInOne.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.allInOne.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions
+
+
+
+### fn spec.allInOne.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.allInOne.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.allInOne.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.allInOne.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ## obj spec.allInOne.affinity.podAntiAffinity
 
 
@@ -2196,6 +9720,234 @@ withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnor
 
 ```ts
 withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.allInOne.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.allInOne.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.allInOne.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm
+
+
+
+### fn spec.allInOne.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.allInOne.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.allInOne.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.allInOne.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector
+
+
+
+### fn spec.allInOne.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.allInOne.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.allInOne.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.allInOne.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.allInOne.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions
+
+
+
+### fn spec.allInOne.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.allInOne.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.allInOne.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.allInOne.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.allInOne.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.allInOne.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.allInOne.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.allInOne.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.allInOne.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector
+
+
+
+### fn spec.allInOne.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.allInOne.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.allInOne.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.allInOne.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.allInOne.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions
+
+
+
+### fn spec.allInOne.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.allInOne.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.allInOne.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.allInOne.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
 ```
 
 
@@ -2378,6 +10130,26 @@ withType(type)
 
 
 
+## obj spec.allInOne.securityContext.sysctls
+
+
+
+### fn spec.allInOne.securityContext.sysctls.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.allInOne.securityContext.sysctls.withValue
+
+```ts
+withValue(value)
+```
+
+
+
 ## obj spec.allInOne.securityContext.windowsOptions
 
 
@@ -2434,6 +10206,1932 @@ withMaxSurge(maxSurge)
 
 ```ts
 withMaxUnavailable(maxUnavailable)
+```
+
+
+
+## obj spec.allInOne.tolerations
+
+
+
+### fn spec.allInOne.tolerations.withEffect
+
+```ts
+withEffect(effect)
+```
+
+
+
+### fn spec.allInOne.tolerations.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.allInOne.tolerations.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.allInOne.tolerations.withTolerationSeconds
+
+```ts
+withTolerationSeconds(tolerationSeconds)
+```
+
+
+
+### fn spec.allInOne.tolerations.withValue
+
+```ts
+withValue(value)
+```
+
+
+
+## obj spec.allInOne.volumeMounts
+
+
+
+### fn spec.allInOne.volumeMounts.withMountPath
+
+```ts
+withMountPath(mountPath)
+```
+
+
+
+### fn spec.allInOne.volumeMounts.withMountPropagation
+
+```ts
+withMountPropagation(mountPropagation)
+```
+
+
+
+### fn spec.allInOne.volumeMounts.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.allInOne.volumeMounts.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.allInOne.volumeMounts.withSubPath
+
+```ts
+withSubPath(subPath)
+```
+
+
+
+### fn spec.allInOne.volumeMounts.withSubPathExpr
+
+```ts
+withSubPathExpr(subPathExpr)
+```
+
+
+
+## obj spec.allInOne.volumes
+
+
+
+### fn spec.allInOne.volumes.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.allInOne.volumes.awsElasticBlockStore
+
+
+
+### fn spec.allInOne.volumes.awsElasticBlockStore.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.allInOne.volumes.awsElasticBlockStore.withPartition
+
+```ts
+withPartition(partition)
+```
+
+
+
+### fn spec.allInOne.volumes.awsElasticBlockStore.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.allInOne.volumes.awsElasticBlockStore.withVolumeID
+
+```ts
+withVolumeID(volumeID)
+```
+
+
+
+## obj spec.allInOne.volumes.azureDisk
+
+
+
+### fn spec.allInOne.volumes.azureDisk.withCachingMode
+
+```ts
+withCachingMode(cachingMode)
+```
+
+
+
+### fn spec.allInOne.volumes.azureDisk.withDiskName
+
+```ts
+withDiskName(diskName)
+```
+
+
+
+### fn spec.allInOne.volumes.azureDisk.withDiskURI
+
+```ts
+withDiskURI(diskURI)
+```
+
+
+
+### fn spec.allInOne.volumes.azureDisk.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.allInOne.volumes.azureDisk.withKind
+
+```ts
+withKind(kind)
+```
+
+
+
+### fn spec.allInOne.volumes.azureDisk.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.allInOne.volumes.azureFile
+
+
+
+### fn spec.allInOne.volumes.azureFile.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.allInOne.volumes.azureFile.withSecretName
+
+```ts
+withSecretName(secretName)
+```
+
+
+
+### fn spec.allInOne.volumes.azureFile.withShareName
+
+```ts
+withShareName(shareName)
+```
+
+
+
+## obj spec.allInOne.volumes.cephfs
+
+
+
+### fn spec.allInOne.volumes.cephfs.withMonitors
+
+```ts
+withMonitors(monitors)
+```
+
+
+
+### fn spec.allInOne.volumes.cephfs.withMonitorsMixin
+
+```ts
+withMonitorsMixin(monitors)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.allInOne.volumes.cephfs.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+### fn spec.allInOne.volumes.cephfs.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.allInOne.volumes.cephfs.withSecretFile
+
+```ts
+withSecretFile(secretFile)
+```
+
+
+
+### fn spec.allInOne.volumes.cephfs.withUser
+
+```ts
+withUser(user)
+```
+
+
+
+## obj spec.allInOne.volumes.cephfs.secretRef
+
+
+
+### fn spec.allInOne.volumes.cephfs.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.allInOne.volumes.cinder
+
+
+
+### fn spec.allInOne.volumes.cinder.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.allInOne.volumes.cinder.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.allInOne.volumes.cinder.withVolumeID
+
+```ts
+withVolumeID(volumeID)
+```
+
+
+
+## obj spec.allInOne.volumes.cinder.secretRef
+
+
+
+### fn spec.allInOne.volumes.cinder.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.allInOne.volumes.configMap
+
+
+
+### fn spec.allInOne.volumes.configMap.withDefaultMode
+
+```ts
+withDefaultMode(defaultMode)
+```
+
+
+
+### fn spec.allInOne.volumes.configMap.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.allInOne.volumes.configMap.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.allInOne.volumes.configMap.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.allInOne.volumes.configMap.withOptional
+
+```ts
+withOptional(optional)
+```
+
+
+
+## obj spec.allInOne.volumes.configMap.items
+
+
+
+### fn spec.allInOne.volumes.configMap.items.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.allInOne.volumes.configMap.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.allInOne.volumes.configMap.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.allInOne.volumes.csi
+
+
+
+### fn spec.allInOne.volumes.csi.withDriver
+
+```ts
+withDriver(driver)
+```
+
+
+
+### fn spec.allInOne.volumes.csi.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.allInOne.volumes.csi.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.allInOne.volumes.csi.withVolumeAttributes
+
+```ts
+withVolumeAttributes(volumeAttributes)
+```
+
+
+
+### fn spec.allInOne.volumes.csi.withVolumeAttributesMixin
+
+```ts
+withVolumeAttributesMixin(volumeAttributes)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.allInOne.volumes.csi.nodePublishSecretRef
+
+
+
+### fn spec.allInOne.volumes.csi.nodePublishSecretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.allInOne.volumes.downwardAPI
+
+
+
+### fn spec.allInOne.volumes.downwardAPI.withDefaultMode
+
+```ts
+withDefaultMode(defaultMode)
+```
+
+
+
+### fn spec.allInOne.volumes.downwardAPI.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.allInOne.volumes.downwardAPI.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.allInOne.volumes.downwardAPI.items
+
+
+
+### fn spec.allInOne.volumes.downwardAPI.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.allInOne.volumes.downwardAPI.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.allInOne.volumes.downwardAPI.items.fieldRef
+
+
+
+### fn spec.allInOne.volumes.downwardAPI.items.fieldRef.withApiVersion
+
+```ts
+withApiVersion(apiVersion)
+```
+
+
+
+### fn spec.allInOne.volumes.downwardAPI.items.fieldRef.withFieldPath
+
+```ts
+withFieldPath(fieldPath)
+```
+
+
+
+## obj spec.allInOne.volumes.downwardAPI.items.resourceFieldRef
+
+
+
+### fn spec.allInOne.volumes.downwardAPI.items.resourceFieldRef.withContainerName
+
+```ts
+withContainerName(containerName)
+```
+
+
+
+### fn spec.allInOne.volumes.downwardAPI.items.resourceFieldRef.withDivisor
+
+```ts
+withDivisor(divisor)
+```
+
+
+
+### fn spec.allInOne.volumes.downwardAPI.items.resourceFieldRef.withResource
+
+```ts
+withResource(resource)
+```
+
+
+
+## obj spec.allInOne.volumes.emptyDir
+
+
+
+### fn spec.allInOne.volumes.emptyDir.withMedium
+
+```ts
+withMedium(medium)
+```
+
+
+
+### fn spec.allInOne.volumes.emptyDir.withSizeLimit
+
+```ts
+withSizeLimit(sizeLimit)
+```
+
+
+
+## obj spec.allInOne.volumes.ephemeral
+
+
+
+### fn spec.allInOne.volumes.ephemeral.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.allInOne.volumes.ephemeral.volumeClaimTemplate
+
+
+
+### fn spec.allInOne.volumes.ephemeral.volumeClaimTemplate.withMetadata
+
+```ts
+withMetadata(metadata)
+```
+
+
+
+### fn spec.allInOne.volumes.ephemeral.volumeClaimTemplate.withMetadataMixin
+
+```ts
+withMetadataMixin(metadata)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.allInOne.volumes.ephemeral.volumeClaimTemplate.spec
+
+
+
+### fn spec.allInOne.volumes.ephemeral.volumeClaimTemplate.spec.withAccessModes
+
+```ts
+withAccessModes(accessModes)
+```
+
+
+
+### fn spec.allInOne.volumes.ephemeral.volumeClaimTemplate.spec.withAccessModesMixin
+
+```ts
+withAccessModesMixin(accessModes)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.allInOne.volumes.ephemeral.volumeClaimTemplate.spec.withStorageClassName
+
+```ts
+withStorageClassName(storageClassName)
+```
+
+
+
+### fn spec.allInOne.volumes.ephemeral.volumeClaimTemplate.spec.withVolumeMode
+
+```ts
+withVolumeMode(volumeMode)
+```
+
+
+
+### fn spec.allInOne.volumes.ephemeral.volumeClaimTemplate.spec.withVolumeName
+
+```ts
+withVolumeName(volumeName)
+```
+
+
+
+## obj spec.allInOne.volumes.ephemeral.volumeClaimTemplate.spec.dataSource
+
+
+
+### fn spec.allInOne.volumes.ephemeral.volumeClaimTemplate.spec.dataSource.withApiGroup
+
+```ts
+withApiGroup(apiGroup)
+```
+
+
+
+### fn spec.allInOne.volumes.ephemeral.volumeClaimTemplate.spec.dataSource.withKind
+
+```ts
+withKind(kind)
+```
+
+
+
+### fn spec.allInOne.volumes.ephemeral.volumeClaimTemplate.spec.dataSource.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.allInOne.volumes.ephemeral.volumeClaimTemplate.spec.resources
+
+
+
+### fn spec.allInOne.volumes.ephemeral.volumeClaimTemplate.spec.resources.withLimits
+
+```ts
+withLimits(limits)
+```
+
+
+
+### fn spec.allInOne.volumes.ephemeral.volumeClaimTemplate.spec.resources.withLimitsMixin
+
+```ts
+withLimitsMixin(limits)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.allInOne.volumes.ephemeral.volumeClaimTemplate.spec.resources.withRequests
+
+```ts
+withRequests(requests)
+```
+
+
+
+### fn spec.allInOne.volumes.ephemeral.volumeClaimTemplate.spec.resources.withRequestsMixin
+
+```ts
+withRequestsMixin(requests)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.allInOne.volumes.ephemeral.volumeClaimTemplate.spec.selector
+
+
+
+### fn spec.allInOne.volumes.ephemeral.volumeClaimTemplate.spec.selector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.allInOne.volumes.ephemeral.volumeClaimTemplate.spec.selector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.allInOne.volumes.ephemeral.volumeClaimTemplate.spec.selector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.allInOne.volumes.ephemeral.volumeClaimTemplate.spec.selector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.allInOne.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions
+
+
+
+### fn spec.allInOne.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.allInOne.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.allInOne.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.allInOne.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.allInOne.volumes.fc
+
+
+
+### fn spec.allInOne.volumes.fc.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.allInOne.volumes.fc.withLun
+
+```ts
+withLun(lun)
+```
+
+
+
+### fn spec.allInOne.volumes.fc.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.allInOne.volumes.fc.withTargetWWNs
+
+```ts
+withTargetWWNs(targetWWNs)
+```
+
+
+
+### fn spec.allInOne.volumes.fc.withTargetWWNsMixin
+
+```ts
+withTargetWWNsMixin(targetWWNs)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.allInOne.volumes.fc.withWwids
+
+```ts
+withWwids(wwids)
+```
+
+
+
+### fn spec.allInOne.volumes.fc.withWwidsMixin
+
+```ts
+withWwidsMixin(wwids)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.allInOne.volumes.flexVolume
+
+
+
+### fn spec.allInOne.volumes.flexVolume.withDriver
+
+```ts
+withDriver(driver)
+```
+
+
+
+### fn spec.allInOne.volumes.flexVolume.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.allInOne.volumes.flexVolume.withOptions
+
+```ts
+withOptions(options)
+```
+
+
+
+### fn spec.allInOne.volumes.flexVolume.withOptionsMixin
+
+```ts
+withOptionsMixin(options)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.allInOne.volumes.flexVolume.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.allInOne.volumes.flexVolume.secretRef
+
+
+
+### fn spec.allInOne.volumes.flexVolume.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.allInOne.volumes.flocker
+
+
+
+### fn spec.allInOne.volumes.flocker.withDatasetName
+
+```ts
+withDatasetName(datasetName)
+```
+
+
+
+### fn spec.allInOne.volumes.flocker.withDatasetUUID
+
+```ts
+withDatasetUUID(datasetUUID)
+```
+
+
+
+## obj spec.allInOne.volumes.gcePersistentDisk
+
+
+
+### fn spec.allInOne.volumes.gcePersistentDisk.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.allInOne.volumes.gcePersistentDisk.withPartition
+
+```ts
+withPartition(partition)
+```
+
+
+
+### fn spec.allInOne.volumes.gcePersistentDisk.withPdName
+
+```ts
+withPdName(pdName)
+```
+
+
+
+### fn spec.allInOne.volumes.gcePersistentDisk.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.allInOne.volumes.gitRepo
+
+
+
+### fn spec.allInOne.volumes.gitRepo.withDirectory
+
+```ts
+withDirectory(directory)
+```
+
+
+
+### fn spec.allInOne.volumes.gitRepo.withRepository
+
+```ts
+withRepository(repository)
+```
+
+
+
+### fn spec.allInOne.volumes.gitRepo.withRevision
+
+```ts
+withRevision(revision)
+```
+
+
+
+## obj spec.allInOne.volumes.glusterfs
+
+
+
+### fn spec.allInOne.volumes.glusterfs.withEndpoints
+
+```ts
+withEndpoints(endpoints)
+```
+
+
+
+### fn spec.allInOne.volumes.glusterfs.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+### fn spec.allInOne.volumes.glusterfs.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.allInOne.volumes.hostPath
+
+
+
+### fn spec.allInOne.volumes.hostPath.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+### fn spec.allInOne.volumes.hostPath.withType
+
+```ts
+withType(type)
+```
+
+
+
+## obj spec.allInOne.volumes.iscsi
+
+
+
+### fn spec.allInOne.volumes.iscsi.withChapAuthDiscovery
+
+```ts
+withChapAuthDiscovery(chapAuthDiscovery)
+```
+
+
+
+### fn spec.allInOne.volumes.iscsi.withChapAuthSession
+
+```ts
+withChapAuthSession(chapAuthSession)
+```
+
+
+
+### fn spec.allInOne.volumes.iscsi.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.allInOne.volumes.iscsi.withInitiatorName
+
+```ts
+withInitiatorName(initiatorName)
+```
+
+
+
+### fn spec.allInOne.volumes.iscsi.withIqn
+
+```ts
+withIqn(iqn)
+```
+
+
+
+### fn spec.allInOne.volumes.iscsi.withIscsiInterface
+
+```ts
+withIscsiInterface(iscsiInterface)
+```
+
+
+
+### fn spec.allInOne.volumes.iscsi.withLun
+
+```ts
+withLun(lun)
+```
+
+
+
+### fn spec.allInOne.volumes.iscsi.withPortals
+
+```ts
+withPortals(portals)
+```
+
+
+
+### fn spec.allInOne.volumes.iscsi.withPortalsMixin
+
+```ts
+withPortalsMixin(portals)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.allInOne.volumes.iscsi.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.allInOne.volumes.iscsi.withTargetPortal
+
+```ts
+withTargetPortal(targetPortal)
+```
+
+
+
+## obj spec.allInOne.volumes.iscsi.secretRef
+
+
+
+### fn spec.allInOne.volumes.iscsi.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.allInOne.volumes.nfs
+
+
+
+### fn spec.allInOne.volumes.nfs.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+### fn spec.allInOne.volumes.nfs.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.allInOne.volumes.nfs.withServer
+
+```ts
+withServer(server)
+```
+
+
+
+## obj spec.allInOne.volumes.persistentVolumeClaim
+
+
+
+### fn spec.allInOne.volumes.persistentVolumeClaim.withClaimName
+
+```ts
+withClaimName(claimName)
+```
+
+
+
+### fn spec.allInOne.volumes.persistentVolumeClaim.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.allInOne.volumes.photonPersistentDisk
+
+
+
+### fn spec.allInOne.volumes.photonPersistentDisk.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.allInOne.volumes.photonPersistentDisk.withPdID
+
+```ts
+withPdID(pdID)
+```
+
+
+
+## obj spec.allInOne.volumes.portworxVolume
+
+
+
+### fn spec.allInOne.volumes.portworxVolume.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.allInOne.volumes.portworxVolume.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.allInOne.volumes.portworxVolume.withVolumeID
+
+```ts
+withVolumeID(volumeID)
+```
+
+
+
+## obj spec.allInOne.volumes.projected
+
+
+
+### fn spec.allInOne.volumes.projected.withDefaultMode
+
+```ts
+withDefaultMode(defaultMode)
+```
+
+
+
+### fn spec.allInOne.volumes.projected.withSources
+
+```ts
+withSources(sources)
+```
+
+
+
+### fn spec.allInOne.volumes.projected.withSourcesMixin
+
+```ts
+withSourcesMixin(sources)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.allInOne.volumes.projected.sources
+
+
+
+## obj spec.allInOne.volumes.projected.sources.configMap
+
+
+
+### fn spec.allInOne.volumes.projected.sources.configMap.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.allInOne.volumes.projected.sources.configMap.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.allInOne.volumes.projected.sources.configMap.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.allInOne.volumes.projected.sources.configMap.withOptional
+
+```ts
+withOptional(optional)
+```
+
+
+
+## obj spec.allInOne.volumes.projected.sources.configMap.items
+
+
+
+### fn spec.allInOne.volumes.projected.sources.configMap.items.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.allInOne.volumes.projected.sources.configMap.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.allInOne.volumes.projected.sources.configMap.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.allInOne.volumes.projected.sources.downwardAPI
+
+
+
+### fn spec.allInOne.volumes.projected.sources.downwardAPI.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.allInOne.volumes.projected.sources.downwardAPI.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.allInOne.volumes.projected.sources.downwardAPI.items
+
+
+
+### fn spec.allInOne.volumes.projected.sources.downwardAPI.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.allInOne.volumes.projected.sources.downwardAPI.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.allInOne.volumes.projected.sources.downwardAPI.items.fieldRef
+
+
+
+### fn spec.allInOne.volumes.projected.sources.downwardAPI.items.fieldRef.withApiVersion
+
+```ts
+withApiVersion(apiVersion)
+```
+
+
+
+### fn spec.allInOne.volumes.projected.sources.downwardAPI.items.fieldRef.withFieldPath
+
+```ts
+withFieldPath(fieldPath)
+```
+
+
+
+## obj spec.allInOne.volumes.projected.sources.downwardAPI.items.resourceFieldRef
+
+
+
+### fn spec.allInOne.volumes.projected.sources.downwardAPI.items.resourceFieldRef.withContainerName
+
+```ts
+withContainerName(containerName)
+```
+
+
+
+### fn spec.allInOne.volumes.projected.sources.downwardAPI.items.resourceFieldRef.withDivisor
+
+```ts
+withDivisor(divisor)
+```
+
+
+
+### fn spec.allInOne.volumes.projected.sources.downwardAPI.items.resourceFieldRef.withResource
+
+```ts
+withResource(resource)
+```
+
+
+
+## obj spec.allInOne.volumes.projected.sources.secret
+
+
+
+### fn spec.allInOne.volumes.projected.sources.secret.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.allInOne.volumes.projected.sources.secret.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.allInOne.volumes.projected.sources.secret.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.allInOne.volumes.projected.sources.secret.withOptional
+
+```ts
+withOptional(optional)
+```
+
+
+
+## obj spec.allInOne.volumes.projected.sources.secret.items
+
+
+
+### fn spec.allInOne.volumes.projected.sources.secret.items.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.allInOne.volumes.projected.sources.secret.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.allInOne.volumes.projected.sources.secret.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.allInOne.volumes.projected.sources.serviceAccountToken
+
+
+
+### fn spec.allInOne.volumes.projected.sources.serviceAccountToken.withAudience
+
+```ts
+withAudience(audience)
+```
+
+
+
+### fn spec.allInOne.volumes.projected.sources.serviceAccountToken.withExpirationSeconds
+
+```ts
+withExpirationSeconds(expirationSeconds)
+```
+
+
+
+### fn spec.allInOne.volumes.projected.sources.serviceAccountToken.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.allInOne.volumes.quobyte
+
+
+
+### fn spec.allInOne.volumes.quobyte.withGroup
+
+```ts
+withGroup(group)
+```
+
+
+
+### fn spec.allInOne.volumes.quobyte.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.allInOne.volumes.quobyte.withRegistry
+
+```ts
+withRegistry(registry)
+```
+
+
+
+### fn spec.allInOne.volumes.quobyte.withTenant
+
+```ts
+withTenant(tenant)
+```
+
+
+
+### fn spec.allInOne.volumes.quobyte.withUser
+
+```ts
+withUser(user)
+```
+
+
+
+### fn spec.allInOne.volumes.quobyte.withVolume
+
+```ts
+withVolume(volume)
+```
+
+
+
+## obj spec.allInOne.volumes.rbd
+
+
+
+### fn spec.allInOne.volumes.rbd.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.allInOne.volumes.rbd.withImage
+
+```ts
+withImage(image)
+```
+
+
+
+### fn spec.allInOne.volumes.rbd.withKeyring
+
+```ts
+withKeyring(keyring)
+```
+
+
+
+### fn spec.allInOne.volumes.rbd.withMonitors
+
+```ts
+withMonitors(monitors)
+```
+
+
+
+### fn spec.allInOne.volumes.rbd.withMonitorsMixin
+
+```ts
+withMonitorsMixin(monitors)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.allInOne.volumes.rbd.withPool
+
+```ts
+withPool(pool)
+```
+
+
+
+### fn spec.allInOne.volumes.rbd.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.allInOne.volumes.rbd.withUser
+
+```ts
+withUser(user)
+```
+
+
+
+## obj spec.allInOne.volumes.rbd.secretRef
+
+
+
+### fn spec.allInOne.volumes.rbd.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.allInOne.volumes.scaleIO
+
+
+
+### fn spec.allInOne.volumes.scaleIO.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.allInOne.volumes.scaleIO.withGateway
+
+```ts
+withGateway(gateway)
+```
+
+
+
+### fn spec.allInOne.volumes.scaleIO.withProtectionDomain
+
+```ts
+withProtectionDomain(protectionDomain)
+```
+
+
+
+### fn spec.allInOne.volumes.scaleIO.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.allInOne.volumes.scaleIO.withSslEnabled
+
+```ts
+withSslEnabled(sslEnabled)
+```
+
+
+
+### fn spec.allInOne.volumes.scaleIO.withStorageMode
+
+```ts
+withStorageMode(storageMode)
+```
+
+
+
+### fn spec.allInOne.volumes.scaleIO.withStoragePool
+
+```ts
+withStoragePool(storagePool)
+```
+
+
+
+### fn spec.allInOne.volumes.scaleIO.withSystem
+
+```ts
+withSystem(system)
+```
+
+
+
+### fn spec.allInOne.volumes.scaleIO.withVolumeName
+
+```ts
+withVolumeName(volumeName)
+```
+
+
+
+## obj spec.allInOne.volumes.scaleIO.secretRef
+
+
+
+### fn spec.allInOne.volumes.scaleIO.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.allInOne.volumes.secret
+
+
+
+### fn spec.allInOne.volumes.secret.withDefaultMode
+
+```ts
+withDefaultMode(defaultMode)
+```
+
+
+
+### fn spec.allInOne.volumes.secret.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.allInOne.volumes.secret.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.allInOne.volumes.secret.withOptional
+
+```ts
+withOptional(optional)
+```
+
+
+
+### fn spec.allInOne.volumes.secret.withSecretName
+
+```ts
+withSecretName(secretName)
+```
+
+
+
+## obj spec.allInOne.volumes.secret.items
+
+
+
+### fn spec.allInOne.volumes.secret.items.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.allInOne.volumes.secret.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.allInOne.volumes.secret.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.allInOne.volumes.storageos
+
+
+
+### fn spec.allInOne.volumes.storageos.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.allInOne.volumes.storageos.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.allInOne.volumes.storageos.withVolumeName
+
+```ts
+withVolumeName(volumeName)
+```
+
+
+
+### fn spec.allInOne.volumes.storageos.withVolumeNamespace
+
+```ts
+withVolumeNamespace(volumeNamespace)
+```
+
+
+
+## obj spec.allInOne.volumes.storageos.secretRef
+
+
+
+### fn spec.allInOne.volumes.storageos.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.allInOne.volumes.vsphereVolume
+
+
+
+### fn spec.allInOne.volumes.vsphereVolume.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.allInOne.volumes.vsphereVolume.withStoragePolicyID
+
+```ts
+withStoragePolicyID(storagePolicyID)
+```
+
+
+
+### fn spec.allInOne.volumes.vsphereVolume.withStoragePolicyName
+
+```ts
+withStoragePolicyName(storagePolicyName)
+```
+
+
+
+### fn spec.allInOne.volumes.vsphereVolume.withVolumePath
+
+```ts
+withVolumePath(volumePath)
 ```
 
 
@@ -2658,6 +12356,134 @@ withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringScheduli
 
 **Note:** This function appends passed data to existing values
 
+## obj spec.collector.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.collector.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.collector.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference
+
+
+
+### fn spec.collector.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.collector.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.collector.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchFields
+
+```ts
+withMatchFields(matchFields)
+```
+
+
+
+### fn spec.collector.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchFieldsMixin
+
+```ts
+withMatchFieldsMixin(matchFields)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.collector.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions
+
+
+
+### fn spec.collector.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.collector.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.collector.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.collector.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.collector.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields
+
+
+
+### fn spec.collector.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.collector.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.collector.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.collector.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ## obj spec.collector.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution
 
 
@@ -2674,6 +12500,122 @@ withNodeSelectorTerms(nodeSelectorTerms)
 
 ```ts
 withNodeSelectorTermsMixin(nodeSelectorTerms)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.collector.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms
+
+
+
+### fn spec.collector.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.collector.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.collector.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchFields
+
+```ts
+withMatchFields(matchFields)
+```
+
+
+
+### fn spec.collector.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchFieldsMixin
+
+```ts
+withMatchFieldsMixin(matchFields)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.collector.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions
+
+
+
+### fn spec.collector.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.collector.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.collector.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.collector.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.collector.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields
+
+
+
+### fn spec.collector.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.collector.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.collector.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.collector.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withValuesMixin
+
+```ts
+withValuesMixin(values)
 ```
 
 
@@ -2720,6 +12662,234 @@ withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringScheduling
 
 **Note:** This function appends passed data to existing values
 
+## obj spec.collector.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.collector.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.collector.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm
+
+
+
+### fn spec.collector.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.collector.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.collector.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.collector.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector
+
+
+
+### fn spec.collector.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.collector.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.collector.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.collector.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.collector.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions
+
+
+
+### fn spec.collector.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.collector.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.collector.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.collector.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.collector.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.collector.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.collector.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.collector.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.collector.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector
+
+
+
+### fn spec.collector.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.collector.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.collector.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.collector.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.collector.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions
+
+
+
+### fn spec.collector.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.collector.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.collector.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.collector.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ## obj spec.collector.affinity.podAntiAffinity
 
 
@@ -2754,6 +12924,234 @@ withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnor
 
 ```ts
 withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.collector.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.collector.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.collector.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm
+
+
+
+### fn spec.collector.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.collector.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.collector.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.collector.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector
+
+
+
+### fn spec.collector.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.collector.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.collector.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.collector.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.collector.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions
+
+
+
+### fn spec.collector.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.collector.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.collector.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.collector.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.collector.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.collector.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.collector.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.collector.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.collector.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector
+
+
+
+### fn spec.collector.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.collector.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.collector.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.collector.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.collector.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions
+
+
+
+### fn spec.collector.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.collector.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.collector.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.collector.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
 ```
 
 
@@ -2936,6 +13334,26 @@ withType(type)
 
 
 
+## obj spec.collector.securityContext.sysctls
+
+
+
+### fn spec.collector.securityContext.sysctls.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.collector.securityContext.sysctls.withValue
+
+```ts
+withValue(value)
+```
+
+
+
 ## obj spec.collector.securityContext.windowsOptions
 
 
@@ -2992,6 +13410,1932 @@ withMaxSurge(maxSurge)
 
 ```ts
 withMaxUnavailable(maxUnavailable)
+```
+
+
+
+## obj spec.collector.tolerations
+
+
+
+### fn spec.collector.tolerations.withEffect
+
+```ts
+withEffect(effect)
+```
+
+
+
+### fn spec.collector.tolerations.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.collector.tolerations.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.collector.tolerations.withTolerationSeconds
+
+```ts
+withTolerationSeconds(tolerationSeconds)
+```
+
+
+
+### fn spec.collector.tolerations.withValue
+
+```ts
+withValue(value)
+```
+
+
+
+## obj spec.collector.volumeMounts
+
+
+
+### fn spec.collector.volumeMounts.withMountPath
+
+```ts
+withMountPath(mountPath)
+```
+
+
+
+### fn spec.collector.volumeMounts.withMountPropagation
+
+```ts
+withMountPropagation(mountPropagation)
+```
+
+
+
+### fn spec.collector.volumeMounts.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.collector.volumeMounts.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.collector.volumeMounts.withSubPath
+
+```ts
+withSubPath(subPath)
+```
+
+
+
+### fn spec.collector.volumeMounts.withSubPathExpr
+
+```ts
+withSubPathExpr(subPathExpr)
+```
+
+
+
+## obj spec.collector.volumes
+
+
+
+### fn spec.collector.volumes.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.collector.volumes.awsElasticBlockStore
+
+
+
+### fn spec.collector.volumes.awsElasticBlockStore.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.collector.volumes.awsElasticBlockStore.withPartition
+
+```ts
+withPartition(partition)
+```
+
+
+
+### fn spec.collector.volumes.awsElasticBlockStore.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.collector.volumes.awsElasticBlockStore.withVolumeID
+
+```ts
+withVolumeID(volumeID)
+```
+
+
+
+## obj spec.collector.volumes.azureDisk
+
+
+
+### fn spec.collector.volumes.azureDisk.withCachingMode
+
+```ts
+withCachingMode(cachingMode)
+```
+
+
+
+### fn spec.collector.volumes.azureDisk.withDiskName
+
+```ts
+withDiskName(diskName)
+```
+
+
+
+### fn spec.collector.volumes.azureDisk.withDiskURI
+
+```ts
+withDiskURI(diskURI)
+```
+
+
+
+### fn spec.collector.volumes.azureDisk.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.collector.volumes.azureDisk.withKind
+
+```ts
+withKind(kind)
+```
+
+
+
+### fn spec.collector.volumes.azureDisk.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.collector.volumes.azureFile
+
+
+
+### fn spec.collector.volumes.azureFile.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.collector.volumes.azureFile.withSecretName
+
+```ts
+withSecretName(secretName)
+```
+
+
+
+### fn spec.collector.volumes.azureFile.withShareName
+
+```ts
+withShareName(shareName)
+```
+
+
+
+## obj spec.collector.volumes.cephfs
+
+
+
+### fn spec.collector.volumes.cephfs.withMonitors
+
+```ts
+withMonitors(monitors)
+```
+
+
+
+### fn spec.collector.volumes.cephfs.withMonitorsMixin
+
+```ts
+withMonitorsMixin(monitors)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.collector.volumes.cephfs.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+### fn spec.collector.volumes.cephfs.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.collector.volumes.cephfs.withSecretFile
+
+```ts
+withSecretFile(secretFile)
+```
+
+
+
+### fn spec.collector.volumes.cephfs.withUser
+
+```ts
+withUser(user)
+```
+
+
+
+## obj spec.collector.volumes.cephfs.secretRef
+
+
+
+### fn spec.collector.volumes.cephfs.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.collector.volumes.cinder
+
+
+
+### fn spec.collector.volumes.cinder.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.collector.volumes.cinder.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.collector.volumes.cinder.withVolumeID
+
+```ts
+withVolumeID(volumeID)
+```
+
+
+
+## obj spec.collector.volumes.cinder.secretRef
+
+
+
+### fn spec.collector.volumes.cinder.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.collector.volumes.configMap
+
+
+
+### fn spec.collector.volumes.configMap.withDefaultMode
+
+```ts
+withDefaultMode(defaultMode)
+```
+
+
+
+### fn spec.collector.volumes.configMap.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.collector.volumes.configMap.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.collector.volumes.configMap.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.collector.volumes.configMap.withOptional
+
+```ts
+withOptional(optional)
+```
+
+
+
+## obj spec.collector.volumes.configMap.items
+
+
+
+### fn spec.collector.volumes.configMap.items.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.collector.volumes.configMap.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.collector.volumes.configMap.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.collector.volumes.csi
+
+
+
+### fn spec.collector.volumes.csi.withDriver
+
+```ts
+withDriver(driver)
+```
+
+
+
+### fn spec.collector.volumes.csi.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.collector.volumes.csi.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.collector.volumes.csi.withVolumeAttributes
+
+```ts
+withVolumeAttributes(volumeAttributes)
+```
+
+
+
+### fn spec.collector.volumes.csi.withVolumeAttributesMixin
+
+```ts
+withVolumeAttributesMixin(volumeAttributes)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.collector.volumes.csi.nodePublishSecretRef
+
+
+
+### fn spec.collector.volumes.csi.nodePublishSecretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.collector.volumes.downwardAPI
+
+
+
+### fn spec.collector.volumes.downwardAPI.withDefaultMode
+
+```ts
+withDefaultMode(defaultMode)
+```
+
+
+
+### fn spec.collector.volumes.downwardAPI.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.collector.volumes.downwardAPI.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.collector.volumes.downwardAPI.items
+
+
+
+### fn spec.collector.volumes.downwardAPI.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.collector.volumes.downwardAPI.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.collector.volumes.downwardAPI.items.fieldRef
+
+
+
+### fn spec.collector.volumes.downwardAPI.items.fieldRef.withApiVersion
+
+```ts
+withApiVersion(apiVersion)
+```
+
+
+
+### fn spec.collector.volumes.downwardAPI.items.fieldRef.withFieldPath
+
+```ts
+withFieldPath(fieldPath)
+```
+
+
+
+## obj spec.collector.volumes.downwardAPI.items.resourceFieldRef
+
+
+
+### fn spec.collector.volumes.downwardAPI.items.resourceFieldRef.withContainerName
+
+```ts
+withContainerName(containerName)
+```
+
+
+
+### fn spec.collector.volumes.downwardAPI.items.resourceFieldRef.withDivisor
+
+```ts
+withDivisor(divisor)
+```
+
+
+
+### fn spec.collector.volumes.downwardAPI.items.resourceFieldRef.withResource
+
+```ts
+withResource(resource)
+```
+
+
+
+## obj spec.collector.volumes.emptyDir
+
+
+
+### fn spec.collector.volumes.emptyDir.withMedium
+
+```ts
+withMedium(medium)
+```
+
+
+
+### fn spec.collector.volumes.emptyDir.withSizeLimit
+
+```ts
+withSizeLimit(sizeLimit)
+```
+
+
+
+## obj spec.collector.volumes.ephemeral
+
+
+
+### fn spec.collector.volumes.ephemeral.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.collector.volumes.ephemeral.volumeClaimTemplate
+
+
+
+### fn spec.collector.volumes.ephemeral.volumeClaimTemplate.withMetadata
+
+```ts
+withMetadata(metadata)
+```
+
+
+
+### fn spec.collector.volumes.ephemeral.volumeClaimTemplate.withMetadataMixin
+
+```ts
+withMetadataMixin(metadata)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.collector.volumes.ephemeral.volumeClaimTemplate.spec
+
+
+
+### fn spec.collector.volumes.ephemeral.volumeClaimTemplate.spec.withAccessModes
+
+```ts
+withAccessModes(accessModes)
+```
+
+
+
+### fn spec.collector.volumes.ephemeral.volumeClaimTemplate.spec.withAccessModesMixin
+
+```ts
+withAccessModesMixin(accessModes)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.collector.volumes.ephemeral.volumeClaimTemplate.spec.withStorageClassName
+
+```ts
+withStorageClassName(storageClassName)
+```
+
+
+
+### fn spec.collector.volumes.ephemeral.volumeClaimTemplate.spec.withVolumeMode
+
+```ts
+withVolumeMode(volumeMode)
+```
+
+
+
+### fn spec.collector.volumes.ephemeral.volumeClaimTemplate.spec.withVolumeName
+
+```ts
+withVolumeName(volumeName)
+```
+
+
+
+## obj spec.collector.volumes.ephemeral.volumeClaimTemplate.spec.dataSource
+
+
+
+### fn spec.collector.volumes.ephemeral.volumeClaimTemplate.spec.dataSource.withApiGroup
+
+```ts
+withApiGroup(apiGroup)
+```
+
+
+
+### fn spec.collector.volumes.ephemeral.volumeClaimTemplate.spec.dataSource.withKind
+
+```ts
+withKind(kind)
+```
+
+
+
+### fn spec.collector.volumes.ephemeral.volumeClaimTemplate.spec.dataSource.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.collector.volumes.ephemeral.volumeClaimTemplate.spec.resources
+
+
+
+### fn spec.collector.volumes.ephemeral.volumeClaimTemplate.spec.resources.withLimits
+
+```ts
+withLimits(limits)
+```
+
+
+
+### fn spec.collector.volumes.ephemeral.volumeClaimTemplate.spec.resources.withLimitsMixin
+
+```ts
+withLimitsMixin(limits)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.collector.volumes.ephemeral.volumeClaimTemplate.spec.resources.withRequests
+
+```ts
+withRequests(requests)
+```
+
+
+
+### fn spec.collector.volumes.ephemeral.volumeClaimTemplate.spec.resources.withRequestsMixin
+
+```ts
+withRequestsMixin(requests)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.collector.volumes.ephemeral.volumeClaimTemplate.spec.selector
+
+
+
+### fn spec.collector.volumes.ephemeral.volumeClaimTemplate.spec.selector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.collector.volumes.ephemeral.volumeClaimTemplate.spec.selector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.collector.volumes.ephemeral.volumeClaimTemplate.spec.selector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.collector.volumes.ephemeral.volumeClaimTemplate.spec.selector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.collector.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions
+
+
+
+### fn spec.collector.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.collector.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.collector.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.collector.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.collector.volumes.fc
+
+
+
+### fn spec.collector.volumes.fc.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.collector.volumes.fc.withLun
+
+```ts
+withLun(lun)
+```
+
+
+
+### fn spec.collector.volumes.fc.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.collector.volumes.fc.withTargetWWNs
+
+```ts
+withTargetWWNs(targetWWNs)
+```
+
+
+
+### fn spec.collector.volumes.fc.withTargetWWNsMixin
+
+```ts
+withTargetWWNsMixin(targetWWNs)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.collector.volumes.fc.withWwids
+
+```ts
+withWwids(wwids)
+```
+
+
+
+### fn spec.collector.volumes.fc.withWwidsMixin
+
+```ts
+withWwidsMixin(wwids)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.collector.volumes.flexVolume
+
+
+
+### fn spec.collector.volumes.flexVolume.withDriver
+
+```ts
+withDriver(driver)
+```
+
+
+
+### fn spec.collector.volumes.flexVolume.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.collector.volumes.flexVolume.withOptions
+
+```ts
+withOptions(options)
+```
+
+
+
+### fn spec.collector.volumes.flexVolume.withOptionsMixin
+
+```ts
+withOptionsMixin(options)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.collector.volumes.flexVolume.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.collector.volumes.flexVolume.secretRef
+
+
+
+### fn spec.collector.volumes.flexVolume.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.collector.volumes.flocker
+
+
+
+### fn spec.collector.volumes.flocker.withDatasetName
+
+```ts
+withDatasetName(datasetName)
+```
+
+
+
+### fn spec.collector.volumes.flocker.withDatasetUUID
+
+```ts
+withDatasetUUID(datasetUUID)
+```
+
+
+
+## obj spec.collector.volumes.gcePersistentDisk
+
+
+
+### fn spec.collector.volumes.gcePersistentDisk.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.collector.volumes.gcePersistentDisk.withPartition
+
+```ts
+withPartition(partition)
+```
+
+
+
+### fn spec.collector.volumes.gcePersistentDisk.withPdName
+
+```ts
+withPdName(pdName)
+```
+
+
+
+### fn spec.collector.volumes.gcePersistentDisk.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.collector.volumes.gitRepo
+
+
+
+### fn spec.collector.volumes.gitRepo.withDirectory
+
+```ts
+withDirectory(directory)
+```
+
+
+
+### fn spec.collector.volumes.gitRepo.withRepository
+
+```ts
+withRepository(repository)
+```
+
+
+
+### fn spec.collector.volumes.gitRepo.withRevision
+
+```ts
+withRevision(revision)
+```
+
+
+
+## obj spec.collector.volumes.glusterfs
+
+
+
+### fn spec.collector.volumes.glusterfs.withEndpoints
+
+```ts
+withEndpoints(endpoints)
+```
+
+
+
+### fn spec.collector.volumes.glusterfs.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+### fn spec.collector.volumes.glusterfs.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.collector.volumes.hostPath
+
+
+
+### fn spec.collector.volumes.hostPath.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+### fn spec.collector.volumes.hostPath.withType
+
+```ts
+withType(type)
+```
+
+
+
+## obj spec.collector.volumes.iscsi
+
+
+
+### fn spec.collector.volumes.iscsi.withChapAuthDiscovery
+
+```ts
+withChapAuthDiscovery(chapAuthDiscovery)
+```
+
+
+
+### fn spec.collector.volumes.iscsi.withChapAuthSession
+
+```ts
+withChapAuthSession(chapAuthSession)
+```
+
+
+
+### fn spec.collector.volumes.iscsi.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.collector.volumes.iscsi.withInitiatorName
+
+```ts
+withInitiatorName(initiatorName)
+```
+
+
+
+### fn spec.collector.volumes.iscsi.withIqn
+
+```ts
+withIqn(iqn)
+```
+
+
+
+### fn spec.collector.volumes.iscsi.withIscsiInterface
+
+```ts
+withIscsiInterface(iscsiInterface)
+```
+
+
+
+### fn spec.collector.volumes.iscsi.withLun
+
+```ts
+withLun(lun)
+```
+
+
+
+### fn spec.collector.volumes.iscsi.withPortals
+
+```ts
+withPortals(portals)
+```
+
+
+
+### fn spec.collector.volumes.iscsi.withPortalsMixin
+
+```ts
+withPortalsMixin(portals)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.collector.volumes.iscsi.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.collector.volumes.iscsi.withTargetPortal
+
+```ts
+withTargetPortal(targetPortal)
+```
+
+
+
+## obj spec.collector.volumes.iscsi.secretRef
+
+
+
+### fn spec.collector.volumes.iscsi.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.collector.volumes.nfs
+
+
+
+### fn spec.collector.volumes.nfs.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+### fn spec.collector.volumes.nfs.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.collector.volumes.nfs.withServer
+
+```ts
+withServer(server)
+```
+
+
+
+## obj spec.collector.volumes.persistentVolumeClaim
+
+
+
+### fn spec.collector.volumes.persistentVolumeClaim.withClaimName
+
+```ts
+withClaimName(claimName)
+```
+
+
+
+### fn spec.collector.volumes.persistentVolumeClaim.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.collector.volumes.photonPersistentDisk
+
+
+
+### fn spec.collector.volumes.photonPersistentDisk.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.collector.volumes.photonPersistentDisk.withPdID
+
+```ts
+withPdID(pdID)
+```
+
+
+
+## obj spec.collector.volumes.portworxVolume
+
+
+
+### fn spec.collector.volumes.portworxVolume.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.collector.volumes.portworxVolume.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.collector.volumes.portworxVolume.withVolumeID
+
+```ts
+withVolumeID(volumeID)
+```
+
+
+
+## obj spec.collector.volumes.projected
+
+
+
+### fn spec.collector.volumes.projected.withDefaultMode
+
+```ts
+withDefaultMode(defaultMode)
+```
+
+
+
+### fn spec.collector.volumes.projected.withSources
+
+```ts
+withSources(sources)
+```
+
+
+
+### fn spec.collector.volumes.projected.withSourcesMixin
+
+```ts
+withSourcesMixin(sources)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.collector.volumes.projected.sources
+
+
+
+## obj spec.collector.volumes.projected.sources.configMap
+
+
+
+### fn spec.collector.volumes.projected.sources.configMap.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.collector.volumes.projected.sources.configMap.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.collector.volumes.projected.sources.configMap.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.collector.volumes.projected.sources.configMap.withOptional
+
+```ts
+withOptional(optional)
+```
+
+
+
+## obj spec.collector.volumes.projected.sources.configMap.items
+
+
+
+### fn spec.collector.volumes.projected.sources.configMap.items.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.collector.volumes.projected.sources.configMap.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.collector.volumes.projected.sources.configMap.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.collector.volumes.projected.sources.downwardAPI
+
+
+
+### fn spec.collector.volumes.projected.sources.downwardAPI.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.collector.volumes.projected.sources.downwardAPI.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.collector.volumes.projected.sources.downwardAPI.items
+
+
+
+### fn spec.collector.volumes.projected.sources.downwardAPI.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.collector.volumes.projected.sources.downwardAPI.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.collector.volumes.projected.sources.downwardAPI.items.fieldRef
+
+
+
+### fn spec.collector.volumes.projected.sources.downwardAPI.items.fieldRef.withApiVersion
+
+```ts
+withApiVersion(apiVersion)
+```
+
+
+
+### fn spec.collector.volumes.projected.sources.downwardAPI.items.fieldRef.withFieldPath
+
+```ts
+withFieldPath(fieldPath)
+```
+
+
+
+## obj spec.collector.volumes.projected.sources.downwardAPI.items.resourceFieldRef
+
+
+
+### fn spec.collector.volumes.projected.sources.downwardAPI.items.resourceFieldRef.withContainerName
+
+```ts
+withContainerName(containerName)
+```
+
+
+
+### fn spec.collector.volumes.projected.sources.downwardAPI.items.resourceFieldRef.withDivisor
+
+```ts
+withDivisor(divisor)
+```
+
+
+
+### fn spec.collector.volumes.projected.sources.downwardAPI.items.resourceFieldRef.withResource
+
+```ts
+withResource(resource)
+```
+
+
+
+## obj spec.collector.volumes.projected.sources.secret
+
+
+
+### fn spec.collector.volumes.projected.sources.secret.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.collector.volumes.projected.sources.secret.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.collector.volumes.projected.sources.secret.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.collector.volumes.projected.sources.secret.withOptional
+
+```ts
+withOptional(optional)
+```
+
+
+
+## obj spec.collector.volumes.projected.sources.secret.items
+
+
+
+### fn spec.collector.volumes.projected.sources.secret.items.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.collector.volumes.projected.sources.secret.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.collector.volumes.projected.sources.secret.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.collector.volumes.projected.sources.serviceAccountToken
+
+
+
+### fn spec.collector.volumes.projected.sources.serviceAccountToken.withAudience
+
+```ts
+withAudience(audience)
+```
+
+
+
+### fn spec.collector.volumes.projected.sources.serviceAccountToken.withExpirationSeconds
+
+```ts
+withExpirationSeconds(expirationSeconds)
+```
+
+
+
+### fn spec.collector.volumes.projected.sources.serviceAccountToken.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.collector.volumes.quobyte
+
+
+
+### fn spec.collector.volumes.quobyte.withGroup
+
+```ts
+withGroup(group)
+```
+
+
+
+### fn spec.collector.volumes.quobyte.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.collector.volumes.quobyte.withRegistry
+
+```ts
+withRegistry(registry)
+```
+
+
+
+### fn spec.collector.volumes.quobyte.withTenant
+
+```ts
+withTenant(tenant)
+```
+
+
+
+### fn spec.collector.volumes.quobyte.withUser
+
+```ts
+withUser(user)
+```
+
+
+
+### fn spec.collector.volumes.quobyte.withVolume
+
+```ts
+withVolume(volume)
+```
+
+
+
+## obj spec.collector.volumes.rbd
+
+
+
+### fn spec.collector.volumes.rbd.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.collector.volumes.rbd.withImage
+
+```ts
+withImage(image)
+```
+
+
+
+### fn spec.collector.volumes.rbd.withKeyring
+
+```ts
+withKeyring(keyring)
+```
+
+
+
+### fn spec.collector.volumes.rbd.withMonitors
+
+```ts
+withMonitors(monitors)
+```
+
+
+
+### fn spec.collector.volumes.rbd.withMonitorsMixin
+
+```ts
+withMonitorsMixin(monitors)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.collector.volumes.rbd.withPool
+
+```ts
+withPool(pool)
+```
+
+
+
+### fn spec.collector.volumes.rbd.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.collector.volumes.rbd.withUser
+
+```ts
+withUser(user)
+```
+
+
+
+## obj spec.collector.volumes.rbd.secretRef
+
+
+
+### fn spec.collector.volumes.rbd.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.collector.volumes.scaleIO
+
+
+
+### fn spec.collector.volumes.scaleIO.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.collector.volumes.scaleIO.withGateway
+
+```ts
+withGateway(gateway)
+```
+
+
+
+### fn spec.collector.volumes.scaleIO.withProtectionDomain
+
+```ts
+withProtectionDomain(protectionDomain)
+```
+
+
+
+### fn spec.collector.volumes.scaleIO.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.collector.volumes.scaleIO.withSslEnabled
+
+```ts
+withSslEnabled(sslEnabled)
+```
+
+
+
+### fn spec.collector.volumes.scaleIO.withStorageMode
+
+```ts
+withStorageMode(storageMode)
+```
+
+
+
+### fn spec.collector.volumes.scaleIO.withStoragePool
+
+```ts
+withStoragePool(storagePool)
+```
+
+
+
+### fn spec.collector.volumes.scaleIO.withSystem
+
+```ts
+withSystem(system)
+```
+
+
+
+### fn spec.collector.volumes.scaleIO.withVolumeName
+
+```ts
+withVolumeName(volumeName)
+```
+
+
+
+## obj spec.collector.volumes.scaleIO.secretRef
+
+
+
+### fn spec.collector.volumes.scaleIO.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.collector.volumes.secret
+
+
+
+### fn spec.collector.volumes.secret.withDefaultMode
+
+```ts
+withDefaultMode(defaultMode)
+```
+
+
+
+### fn spec.collector.volumes.secret.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.collector.volumes.secret.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.collector.volumes.secret.withOptional
+
+```ts
+withOptional(optional)
+```
+
+
+
+### fn spec.collector.volumes.secret.withSecretName
+
+```ts
+withSecretName(secretName)
+```
+
+
+
+## obj spec.collector.volumes.secret.items
+
+
+
+### fn spec.collector.volumes.secret.items.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.collector.volumes.secret.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.collector.volumes.secret.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.collector.volumes.storageos
+
+
+
+### fn spec.collector.volumes.storageos.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.collector.volumes.storageos.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.collector.volumes.storageos.withVolumeName
+
+```ts
+withVolumeName(volumeName)
+```
+
+
+
+### fn spec.collector.volumes.storageos.withVolumeNamespace
+
+```ts
+withVolumeNamespace(volumeNamespace)
+```
+
+
+
+## obj spec.collector.volumes.storageos.secretRef
+
+
+
+### fn spec.collector.volumes.storageos.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.collector.volumes.vsphereVolume
+
+
+
+### fn spec.collector.volumes.vsphereVolume.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.collector.volumes.vsphereVolume.withStoragePolicyID
+
+```ts
+withStoragePolicyID(storagePolicyID)
+```
+
+
+
+### fn spec.collector.volumes.vsphereVolume.withStoragePolicyName
+
+```ts
+withStoragePolicyName(storagePolicyName)
+```
+
+
+
+### fn spec.collector.volumes.vsphereVolume.withVolumePath
+
+```ts
+withVolumePath(volumePath)
 ```
 
 
@@ -3200,6 +15544,134 @@ withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringScheduli
 
 **Note:** This function appends passed data to existing values
 
+## obj spec.ingester.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.ingester.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.ingester.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference
+
+
+
+### fn spec.ingester.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.ingester.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingester.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchFields
+
+```ts
+withMatchFields(matchFields)
+```
+
+
+
+### fn spec.ingester.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchFieldsMixin
+
+```ts
+withMatchFieldsMixin(matchFields)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.ingester.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions
+
+
+
+### fn spec.ingester.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.ingester.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.ingester.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.ingester.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.ingester.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields
+
+
+
+### fn spec.ingester.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.ingester.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.ingester.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.ingester.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ## obj spec.ingester.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution
 
 
@@ -3216,6 +15688,122 @@ withNodeSelectorTerms(nodeSelectorTerms)
 
 ```ts
 withNodeSelectorTermsMixin(nodeSelectorTerms)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.ingester.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms
+
+
+
+### fn spec.ingester.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.ingester.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingester.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchFields
+
+```ts
+withMatchFields(matchFields)
+```
+
+
+
+### fn spec.ingester.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchFieldsMixin
+
+```ts
+withMatchFieldsMixin(matchFields)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.ingester.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions
+
+
+
+### fn spec.ingester.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.ingester.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.ingester.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.ingester.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.ingester.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields
+
+
+
+### fn spec.ingester.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.ingester.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.ingester.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.ingester.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withValuesMixin
+
+```ts
+withValuesMixin(values)
 ```
 
 
@@ -3262,6 +15850,234 @@ withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringScheduling
 
 **Note:** This function appends passed data to existing values
 
+## obj spec.ingester.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.ingester.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.ingester.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm
+
+
+
+### fn spec.ingester.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.ingester.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingester.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.ingester.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector
+
+
+
+### fn spec.ingester.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.ingester.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingester.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.ingester.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.ingester.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions
+
+
+
+### fn spec.ingester.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.ingester.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.ingester.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.ingester.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.ingester.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.ingester.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.ingester.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingester.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.ingester.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector
+
+
+
+### fn spec.ingester.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.ingester.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingester.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.ingester.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.ingester.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions
+
+
+
+### fn spec.ingester.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.ingester.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.ingester.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.ingester.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ## obj spec.ingester.affinity.podAntiAffinity
 
 
@@ -3296,6 +16112,234 @@ withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnor
 
 ```ts
 withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.ingester.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.ingester.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.ingester.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm
+
+
+
+### fn spec.ingester.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.ingester.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingester.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.ingester.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector
+
+
+
+### fn spec.ingester.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.ingester.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingester.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.ingester.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.ingester.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions
+
+
+
+### fn spec.ingester.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.ingester.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.ingester.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.ingester.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.ingester.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.ingester.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.ingester.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingester.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.ingester.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector
+
+
+
+### fn spec.ingester.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.ingester.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingester.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.ingester.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.ingester.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions
+
+
+
+### fn spec.ingester.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.ingester.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.ingester.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.ingester.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
 ```
 
 
@@ -3478,6 +16522,26 @@ withType(type)
 
 
 
+## obj spec.ingester.securityContext.sysctls
+
+
+
+### fn spec.ingester.securityContext.sysctls.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.ingester.securityContext.sysctls.withValue
+
+```ts
+withValue(value)
+```
+
+
+
 ## obj spec.ingester.securityContext.windowsOptions
 
 
@@ -3534,6 +16598,1932 @@ withMaxSurge(maxSurge)
 
 ```ts
 withMaxUnavailable(maxUnavailable)
+```
+
+
+
+## obj spec.ingester.tolerations
+
+
+
+### fn spec.ingester.tolerations.withEffect
+
+```ts
+withEffect(effect)
+```
+
+
+
+### fn spec.ingester.tolerations.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.ingester.tolerations.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.ingester.tolerations.withTolerationSeconds
+
+```ts
+withTolerationSeconds(tolerationSeconds)
+```
+
+
+
+### fn spec.ingester.tolerations.withValue
+
+```ts
+withValue(value)
+```
+
+
+
+## obj spec.ingester.volumeMounts
+
+
+
+### fn spec.ingester.volumeMounts.withMountPath
+
+```ts
+withMountPath(mountPath)
+```
+
+
+
+### fn spec.ingester.volumeMounts.withMountPropagation
+
+```ts
+withMountPropagation(mountPropagation)
+```
+
+
+
+### fn spec.ingester.volumeMounts.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.ingester.volumeMounts.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.ingester.volumeMounts.withSubPath
+
+```ts
+withSubPath(subPath)
+```
+
+
+
+### fn spec.ingester.volumeMounts.withSubPathExpr
+
+```ts
+withSubPathExpr(subPathExpr)
+```
+
+
+
+## obj spec.ingester.volumes
+
+
+
+### fn spec.ingester.volumes.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.ingester.volumes.awsElasticBlockStore
+
+
+
+### fn spec.ingester.volumes.awsElasticBlockStore.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.ingester.volumes.awsElasticBlockStore.withPartition
+
+```ts
+withPartition(partition)
+```
+
+
+
+### fn spec.ingester.volumes.awsElasticBlockStore.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.ingester.volumes.awsElasticBlockStore.withVolumeID
+
+```ts
+withVolumeID(volumeID)
+```
+
+
+
+## obj spec.ingester.volumes.azureDisk
+
+
+
+### fn spec.ingester.volumes.azureDisk.withCachingMode
+
+```ts
+withCachingMode(cachingMode)
+```
+
+
+
+### fn spec.ingester.volumes.azureDisk.withDiskName
+
+```ts
+withDiskName(diskName)
+```
+
+
+
+### fn spec.ingester.volumes.azureDisk.withDiskURI
+
+```ts
+withDiskURI(diskURI)
+```
+
+
+
+### fn spec.ingester.volumes.azureDisk.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.ingester.volumes.azureDisk.withKind
+
+```ts
+withKind(kind)
+```
+
+
+
+### fn spec.ingester.volumes.azureDisk.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.ingester.volumes.azureFile
+
+
+
+### fn spec.ingester.volumes.azureFile.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.ingester.volumes.azureFile.withSecretName
+
+```ts
+withSecretName(secretName)
+```
+
+
+
+### fn spec.ingester.volumes.azureFile.withShareName
+
+```ts
+withShareName(shareName)
+```
+
+
+
+## obj spec.ingester.volumes.cephfs
+
+
+
+### fn spec.ingester.volumes.cephfs.withMonitors
+
+```ts
+withMonitors(monitors)
+```
+
+
+
+### fn spec.ingester.volumes.cephfs.withMonitorsMixin
+
+```ts
+withMonitorsMixin(monitors)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingester.volumes.cephfs.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+### fn spec.ingester.volumes.cephfs.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.ingester.volumes.cephfs.withSecretFile
+
+```ts
+withSecretFile(secretFile)
+```
+
+
+
+### fn spec.ingester.volumes.cephfs.withUser
+
+```ts
+withUser(user)
+```
+
+
+
+## obj spec.ingester.volumes.cephfs.secretRef
+
+
+
+### fn spec.ingester.volumes.cephfs.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.ingester.volumes.cinder
+
+
+
+### fn spec.ingester.volumes.cinder.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.ingester.volumes.cinder.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.ingester.volumes.cinder.withVolumeID
+
+```ts
+withVolumeID(volumeID)
+```
+
+
+
+## obj spec.ingester.volumes.cinder.secretRef
+
+
+
+### fn spec.ingester.volumes.cinder.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.ingester.volumes.configMap
+
+
+
+### fn spec.ingester.volumes.configMap.withDefaultMode
+
+```ts
+withDefaultMode(defaultMode)
+```
+
+
+
+### fn spec.ingester.volumes.configMap.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.ingester.volumes.configMap.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingester.volumes.configMap.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.ingester.volumes.configMap.withOptional
+
+```ts
+withOptional(optional)
+```
+
+
+
+## obj spec.ingester.volumes.configMap.items
+
+
+
+### fn spec.ingester.volumes.configMap.items.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.ingester.volumes.configMap.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.ingester.volumes.configMap.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.ingester.volumes.csi
+
+
+
+### fn spec.ingester.volumes.csi.withDriver
+
+```ts
+withDriver(driver)
+```
+
+
+
+### fn spec.ingester.volumes.csi.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.ingester.volumes.csi.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.ingester.volumes.csi.withVolumeAttributes
+
+```ts
+withVolumeAttributes(volumeAttributes)
+```
+
+
+
+### fn spec.ingester.volumes.csi.withVolumeAttributesMixin
+
+```ts
+withVolumeAttributesMixin(volumeAttributes)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.ingester.volumes.csi.nodePublishSecretRef
+
+
+
+### fn spec.ingester.volumes.csi.nodePublishSecretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.ingester.volumes.downwardAPI
+
+
+
+### fn spec.ingester.volumes.downwardAPI.withDefaultMode
+
+```ts
+withDefaultMode(defaultMode)
+```
+
+
+
+### fn spec.ingester.volumes.downwardAPI.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.ingester.volumes.downwardAPI.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.ingester.volumes.downwardAPI.items
+
+
+
+### fn spec.ingester.volumes.downwardAPI.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.ingester.volumes.downwardAPI.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.ingester.volumes.downwardAPI.items.fieldRef
+
+
+
+### fn spec.ingester.volumes.downwardAPI.items.fieldRef.withApiVersion
+
+```ts
+withApiVersion(apiVersion)
+```
+
+
+
+### fn spec.ingester.volumes.downwardAPI.items.fieldRef.withFieldPath
+
+```ts
+withFieldPath(fieldPath)
+```
+
+
+
+## obj spec.ingester.volumes.downwardAPI.items.resourceFieldRef
+
+
+
+### fn spec.ingester.volumes.downwardAPI.items.resourceFieldRef.withContainerName
+
+```ts
+withContainerName(containerName)
+```
+
+
+
+### fn spec.ingester.volumes.downwardAPI.items.resourceFieldRef.withDivisor
+
+```ts
+withDivisor(divisor)
+```
+
+
+
+### fn spec.ingester.volumes.downwardAPI.items.resourceFieldRef.withResource
+
+```ts
+withResource(resource)
+```
+
+
+
+## obj spec.ingester.volumes.emptyDir
+
+
+
+### fn spec.ingester.volumes.emptyDir.withMedium
+
+```ts
+withMedium(medium)
+```
+
+
+
+### fn spec.ingester.volumes.emptyDir.withSizeLimit
+
+```ts
+withSizeLimit(sizeLimit)
+```
+
+
+
+## obj spec.ingester.volumes.ephemeral
+
+
+
+### fn spec.ingester.volumes.ephemeral.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.ingester.volumes.ephemeral.volumeClaimTemplate
+
+
+
+### fn spec.ingester.volumes.ephemeral.volumeClaimTemplate.withMetadata
+
+```ts
+withMetadata(metadata)
+```
+
+
+
+### fn spec.ingester.volumes.ephemeral.volumeClaimTemplate.withMetadataMixin
+
+```ts
+withMetadataMixin(metadata)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.ingester.volumes.ephemeral.volumeClaimTemplate.spec
+
+
+
+### fn spec.ingester.volumes.ephemeral.volumeClaimTemplate.spec.withAccessModes
+
+```ts
+withAccessModes(accessModes)
+```
+
+
+
+### fn spec.ingester.volumes.ephemeral.volumeClaimTemplate.spec.withAccessModesMixin
+
+```ts
+withAccessModesMixin(accessModes)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingester.volumes.ephemeral.volumeClaimTemplate.spec.withStorageClassName
+
+```ts
+withStorageClassName(storageClassName)
+```
+
+
+
+### fn spec.ingester.volumes.ephemeral.volumeClaimTemplate.spec.withVolumeMode
+
+```ts
+withVolumeMode(volumeMode)
+```
+
+
+
+### fn spec.ingester.volumes.ephemeral.volumeClaimTemplate.spec.withVolumeName
+
+```ts
+withVolumeName(volumeName)
+```
+
+
+
+## obj spec.ingester.volumes.ephemeral.volumeClaimTemplate.spec.dataSource
+
+
+
+### fn spec.ingester.volumes.ephemeral.volumeClaimTemplate.spec.dataSource.withApiGroup
+
+```ts
+withApiGroup(apiGroup)
+```
+
+
+
+### fn spec.ingester.volumes.ephemeral.volumeClaimTemplate.spec.dataSource.withKind
+
+```ts
+withKind(kind)
+```
+
+
+
+### fn spec.ingester.volumes.ephemeral.volumeClaimTemplate.spec.dataSource.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.ingester.volumes.ephemeral.volumeClaimTemplate.spec.resources
+
+
+
+### fn spec.ingester.volumes.ephemeral.volumeClaimTemplate.spec.resources.withLimits
+
+```ts
+withLimits(limits)
+```
+
+
+
+### fn spec.ingester.volumes.ephemeral.volumeClaimTemplate.spec.resources.withLimitsMixin
+
+```ts
+withLimitsMixin(limits)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingester.volumes.ephemeral.volumeClaimTemplate.spec.resources.withRequests
+
+```ts
+withRequests(requests)
+```
+
+
+
+### fn spec.ingester.volumes.ephemeral.volumeClaimTemplate.spec.resources.withRequestsMixin
+
+```ts
+withRequestsMixin(requests)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.ingester.volumes.ephemeral.volumeClaimTemplate.spec.selector
+
+
+
+### fn spec.ingester.volumes.ephemeral.volumeClaimTemplate.spec.selector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.ingester.volumes.ephemeral.volumeClaimTemplate.spec.selector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingester.volumes.ephemeral.volumeClaimTemplate.spec.selector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.ingester.volumes.ephemeral.volumeClaimTemplate.spec.selector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.ingester.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions
+
+
+
+### fn spec.ingester.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.ingester.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.ingester.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.ingester.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.ingester.volumes.fc
+
+
+
+### fn spec.ingester.volumes.fc.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.ingester.volumes.fc.withLun
+
+```ts
+withLun(lun)
+```
+
+
+
+### fn spec.ingester.volumes.fc.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.ingester.volumes.fc.withTargetWWNs
+
+```ts
+withTargetWWNs(targetWWNs)
+```
+
+
+
+### fn spec.ingester.volumes.fc.withTargetWWNsMixin
+
+```ts
+withTargetWWNsMixin(targetWWNs)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingester.volumes.fc.withWwids
+
+```ts
+withWwids(wwids)
+```
+
+
+
+### fn spec.ingester.volumes.fc.withWwidsMixin
+
+```ts
+withWwidsMixin(wwids)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.ingester.volumes.flexVolume
+
+
+
+### fn spec.ingester.volumes.flexVolume.withDriver
+
+```ts
+withDriver(driver)
+```
+
+
+
+### fn spec.ingester.volumes.flexVolume.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.ingester.volumes.flexVolume.withOptions
+
+```ts
+withOptions(options)
+```
+
+
+
+### fn spec.ingester.volumes.flexVolume.withOptionsMixin
+
+```ts
+withOptionsMixin(options)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingester.volumes.flexVolume.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.ingester.volumes.flexVolume.secretRef
+
+
+
+### fn spec.ingester.volumes.flexVolume.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.ingester.volumes.flocker
+
+
+
+### fn spec.ingester.volumes.flocker.withDatasetName
+
+```ts
+withDatasetName(datasetName)
+```
+
+
+
+### fn spec.ingester.volumes.flocker.withDatasetUUID
+
+```ts
+withDatasetUUID(datasetUUID)
+```
+
+
+
+## obj spec.ingester.volumes.gcePersistentDisk
+
+
+
+### fn spec.ingester.volumes.gcePersistentDisk.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.ingester.volumes.gcePersistentDisk.withPartition
+
+```ts
+withPartition(partition)
+```
+
+
+
+### fn spec.ingester.volumes.gcePersistentDisk.withPdName
+
+```ts
+withPdName(pdName)
+```
+
+
+
+### fn spec.ingester.volumes.gcePersistentDisk.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.ingester.volumes.gitRepo
+
+
+
+### fn spec.ingester.volumes.gitRepo.withDirectory
+
+```ts
+withDirectory(directory)
+```
+
+
+
+### fn spec.ingester.volumes.gitRepo.withRepository
+
+```ts
+withRepository(repository)
+```
+
+
+
+### fn spec.ingester.volumes.gitRepo.withRevision
+
+```ts
+withRevision(revision)
+```
+
+
+
+## obj spec.ingester.volumes.glusterfs
+
+
+
+### fn spec.ingester.volumes.glusterfs.withEndpoints
+
+```ts
+withEndpoints(endpoints)
+```
+
+
+
+### fn spec.ingester.volumes.glusterfs.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+### fn spec.ingester.volumes.glusterfs.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.ingester.volumes.hostPath
+
+
+
+### fn spec.ingester.volumes.hostPath.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+### fn spec.ingester.volumes.hostPath.withType
+
+```ts
+withType(type)
+```
+
+
+
+## obj spec.ingester.volumes.iscsi
+
+
+
+### fn spec.ingester.volumes.iscsi.withChapAuthDiscovery
+
+```ts
+withChapAuthDiscovery(chapAuthDiscovery)
+```
+
+
+
+### fn spec.ingester.volumes.iscsi.withChapAuthSession
+
+```ts
+withChapAuthSession(chapAuthSession)
+```
+
+
+
+### fn spec.ingester.volumes.iscsi.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.ingester.volumes.iscsi.withInitiatorName
+
+```ts
+withInitiatorName(initiatorName)
+```
+
+
+
+### fn spec.ingester.volumes.iscsi.withIqn
+
+```ts
+withIqn(iqn)
+```
+
+
+
+### fn spec.ingester.volumes.iscsi.withIscsiInterface
+
+```ts
+withIscsiInterface(iscsiInterface)
+```
+
+
+
+### fn spec.ingester.volumes.iscsi.withLun
+
+```ts
+withLun(lun)
+```
+
+
+
+### fn spec.ingester.volumes.iscsi.withPortals
+
+```ts
+withPortals(portals)
+```
+
+
+
+### fn spec.ingester.volumes.iscsi.withPortalsMixin
+
+```ts
+withPortalsMixin(portals)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingester.volumes.iscsi.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.ingester.volumes.iscsi.withTargetPortal
+
+```ts
+withTargetPortal(targetPortal)
+```
+
+
+
+## obj spec.ingester.volumes.iscsi.secretRef
+
+
+
+### fn spec.ingester.volumes.iscsi.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.ingester.volumes.nfs
+
+
+
+### fn spec.ingester.volumes.nfs.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+### fn spec.ingester.volumes.nfs.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.ingester.volumes.nfs.withServer
+
+```ts
+withServer(server)
+```
+
+
+
+## obj spec.ingester.volumes.persistentVolumeClaim
+
+
+
+### fn spec.ingester.volumes.persistentVolumeClaim.withClaimName
+
+```ts
+withClaimName(claimName)
+```
+
+
+
+### fn spec.ingester.volumes.persistentVolumeClaim.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.ingester.volumes.photonPersistentDisk
+
+
+
+### fn spec.ingester.volumes.photonPersistentDisk.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.ingester.volumes.photonPersistentDisk.withPdID
+
+```ts
+withPdID(pdID)
+```
+
+
+
+## obj spec.ingester.volumes.portworxVolume
+
+
+
+### fn spec.ingester.volumes.portworxVolume.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.ingester.volumes.portworxVolume.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.ingester.volumes.portworxVolume.withVolumeID
+
+```ts
+withVolumeID(volumeID)
+```
+
+
+
+## obj spec.ingester.volumes.projected
+
+
+
+### fn spec.ingester.volumes.projected.withDefaultMode
+
+```ts
+withDefaultMode(defaultMode)
+```
+
+
+
+### fn spec.ingester.volumes.projected.withSources
+
+```ts
+withSources(sources)
+```
+
+
+
+### fn spec.ingester.volumes.projected.withSourcesMixin
+
+```ts
+withSourcesMixin(sources)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.ingester.volumes.projected.sources
+
+
+
+## obj spec.ingester.volumes.projected.sources.configMap
+
+
+
+### fn spec.ingester.volumes.projected.sources.configMap.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.ingester.volumes.projected.sources.configMap.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingester.volumes.projected.sources.configMap.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.ingester.volumes.projected.sources.configMap.withOptional
+
+```ts
+withOptional(optional)
+```
+
+
+
+## obj spec.ingester.volumes.projected.sources.configMap.items
+
+
+
+### fn spec.ingester.volumes.projected.sources.configMap.items.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.ingester.volumes.projected.sources.configMap.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.ingester.volumes.projected.sources.configMap.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.ingester.volumes.projected.sources.downwardAPI
+
+
+
+### fn spec.ingester.volumes.projected.sources.downwardAPI.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.ingester.volumes.projected.sources.downwardAPI.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.ingester.volumes.projected.sources.downwardAPI.items
+
+
+
+### fn spec.ingester.volumes.projected.sources.downwardAPI.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.ingester.volumes.projected.sources.downwardAPI.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.ingester.volumes.projected.sources.downwardAPI.items.fieldRef
+
+
+
+### fn spec.ingester.volumes.projected.sources.downwardAPI.items.fieldRef.withApiVersion
+
+```ts
+withApiVersion(apiVersion)
+```
+
+
+
+### fn spec.ingester.volumes.projected.sources.downwardAPI.items.fieldRef.withFieldPath
+
+```ts
+withFieldPath(fieldPath)
+```
+
+
+
+## obj spec.ingester.volumes.projected.sources.downwardAPI.items.resourceFieldRef
+
+
+
+### fn spec.ingester.volumes.projected.sources.downwardAPI.items.resourceFieldRef.withContainerName
+
+```ts
+withContainerName(containerName)
+```
+
+
+
+### fn spec.ingester.volumes.projected.sources.downwardAPI.items.resourceFieldRef.withDivisor
+
+```ts
+withDivisor(divisor)
+```
+
+
+
+### fn spec.ingester.volumes.projected.sources.downwardAPI.items.resourceFieldRef.withResource
+
+```ts
+withResource(resource)
+```
+
+
+
+## obj spec.ingester.volumes.projected.sources.secret
+
+
+
+### fn spec.ingester.volumes.projected.sources.secret.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.ingester.volumes.projected.sources.secret.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingester.volumes.projected.sources.secret.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.ingester.volumes.projected.sources.secret.withOptional
+
+```ts
+withOptional(optional)
+```
+
+
+
+## obj spec.ingester.volumes.projected.sources.secret.items
+
+
+
+### fn spec.ingester.volumes.projected.sources.secret.items.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.ingester.volumes.projected.sources.secret.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.ingester.volumes.projected.sources.secret.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.ingester.volumes.projected.sources.serviceAccountToken
+
+
+
+### fn spec.ingester.volumes.projected.sources.serviceAccountToken.withAudience
+
+```ts
+withAudience(audience)
+```
+
+
+
+### fn spec.ingester.volumes.projected.sources.serviceAccountToken.withExpirationSeconds
+
+```ts
+withExpirationSeconds(expirationSeconds)
+```
+
+
+
+### fn spec.ingester.volumes.projected.sources.serviceAccountToken.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.ingester.volumes.quobyte
+
+
+
+### fn spec.ingester.volumes.quobyte.withGroup
+
+```ts
+withGroup(group)
+```
+
+
+
+### fn spec.ingester.volumes.quobyte.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.ingester.volumes.quobyte.withRegistry
+
+```ts
+withRegistry(registry)
+```
+
+
+
+### fn spec.ingester.volumes.quobyte.withTenant
+
+```ts
+withTenant(tenant)
+```
+
+
+
+### fn spec.ingester.volumes.quobyte.withUser
+
+```ts
+withUser(user)
+```
+
+
+
+### fn spec.ingester.volumes.quobyte.withVolume
+
+```ts
+withVolume(volume)
+```
+
+
+
+## obj spec.ingester.volumes.rbd
+
+
+
+### fn spec.ingester.volumes.rbd.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.ingester.volumes.rbd.withImage
+
+```ts
+withImage(image)
+```
+
+
+
+### fn spec.ingester.volumes.rbd.withKeyring
+
+```ts
+withKeyring(keyring)
+```
+
+
+
+### fn spec.ingester.volumes.rbd.withMonitors
+
+```ts
+withMonitors(monitors)
+```
+
+
+
+### fn spec.ingester.volumes.rbd.withMonitorsMixin
+
+```ts
+withMonitorsMixin(monitors)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingester.volumes.rbd.withPool
+
+```ts
+withPool(pool)
+```
+
+
+
+### fn spec.ingester.volumes.rbd.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.ingester.volumes.rbd.withUser
+
+```ts
+withUser(user)
+```
+
+
+
+## obj spec.ingester.volumes.rbd.secretRef
+
+
+
+### fn spec.ingester.volumes.rbd.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.ingester.volumes.scaleIO
+
+
+
+### fn spec.ingester.volumes.scaleIO.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.ingester.volumes.scaleIO.withGateway
+
+```ts
+withGateway(gateway)
+```
+
+
+
+### fn spec.ingester.volumes.scaleIO.withProtectionDomain
+
+```ts
+withProtectionDomain(protectionDomain)
+```
+
+
+
+### fn spec.ingester.volumes.scaleIO.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.ingester.volumes.scaleIO.withSslEnabled
+
+```ts
+withSslEnabled(sslEnabled)
+```
+
+
+
+### fn spec.ingester.volumes.scaleIO.withStorageMode
+
+```ts
+withStorageMode(storageMode)
+```
+
+
+
+### fn spec.ingester.volumes.scaleIO.withStoragePool
+
+```ts
+withStoragePool(storagePool)
+```
+
+
+
+### fn spec.ingester.volumes.scaleIO.withSystem
+
+```ts
+withSystem(system)
+```
+
+
+
+### fn spec.ingester.volumes.scaleIO.withVolumeName
+
+```ts
+withVolumeName(volumeName)
+```
+
+
+
+## obj spec.ingester.volumes.scaleIO.secretRef
+
+
+
+### fn spec.ingester.volumes.scaleIO.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.ingester.volumes.secret
+
+
+
+### fn spec.ingester.volumes.secret.withDefaultMode
+
+```ts
+withDefaultMode(defaultMode)
+```
+
+
+
+### fn spec.ingester.volumes.secret.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.ingester.volumes.secret.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingester.volumes.secret.withOptional
+
+```ts
+withOptional(optional)
+```
+
+
+
+### fn spec.ingester.volumes.secret.withSecretName
+
+```ts
+withSecretName(secretName)
+```
+
+
+
+## obj spec.ingester.volumes.secret.items
+
+
+
+### fn spec.ingester.volumes.secret.items.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.ingester.volumes.secret.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.ingester.volumes.secret.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.ingester.volumes.storageos
+
+
+
+### fn spec.ingester.volumes.storageos.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.ingester.volumes.storageos.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.ingester.volumes.storageos.withVolumeName
+
+```ts
+withVolumeName(volumeName)
+```
+
+
+
+### fn spec.ingester.volumes.storageos.withVolumeNamespace
+
+```ts
+withVolumeNamespace(volumeNamespace)
+```
+
+
+
+## obj spec.ingester.volumes.storageos.secretRef
+
+
+
+### fn spec.ingester.volumes.storageos.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.ingester.volumes.vsphereVolume
+
+
+
+### fn spec.ingester.volumes.vsphereVolume.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.ingester.volumes.vsphereVolume.withStoragePolicyID
+
+```ts
+withStoragePolicyID(storagePolicyID)
+```
+
+
+
+### fn spec.ingester.volumes.vsphereVolume.withStoragePolicyName
+
+```ts
+withStoragePolicyName(storagePolicyName)
+```
+
+
+
+### fn spec.ingester.volumes.vsphereVolume.withVolumePath
+
+```ts
+withVolumePath(volumePath)
 ```
 
 
@@ -3744,6 +18734,134 @@ withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringScheduli
 
 **Note:** This function appends passed data to existing values
 
+## obj spec.ingress.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.ingress.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.ingress.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference
+
+
+
+### fn spec.ingress.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.ingress.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingress.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchFields
+
+```ts
+withMatchFields(matchFields)
+```
+
+
+
+### fn spec.ingress.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchFieldsMixin
+
+```ts
+withMatchFieldsMixin(matchFields)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.ingress.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions
+
+
+
+### fn spec.ingress.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.ingress.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.ingress.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.ingress.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.ingress.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields
+
+
+
+### fn spec.ingress.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.ingress.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.ingress.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.ingress.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ## obj spec.ingress.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution
 
 
@@ -3760,6 +18878,122 @@ withNodeSelectorTerms(nodeSelectorTerms)
 
 ```ts
 withNodeSelectorTermsMixin(nodeSelectorTerms)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.ingress.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms
+
+
+
+### fn spec.ingress.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.ingress.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingress.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchFields
+
+```ts
+withMatchFields(matchFields)
+```
+
+
+
+### fn spec.ingress.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchFieldsMixin
+
+```ts
+withMatchFieldsMixin(matchFields)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.ingress.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions
+
+
+
+### fn spec.ingress.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.ingress.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.ingress.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.ingress.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.ingress.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields
+
+
+
+### fn spec.ingress.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.ingress.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.ingress.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.ingress.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withValuesMixin
+
+```ts
+withValuesMixin(values)
 ```
 
 
@@ -3806,6 +19040,234 @@ withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringScheduling
 
 **Note:** This function appends passed data to existing values
 
+## obj spec.ingress.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.ingress.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.ingress.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm
+
+
+
+### fn spec.ingress.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.ingress.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingress.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.ingress.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector
+
+
+
+### fn spec.ingress.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.ingress.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingress.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.ingress.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.ingress.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions
+
+
+
+### fn spec.ingress.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.ingress.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.ingress.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.ingress.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.ingress.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.ingress.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.ingress.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingress.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.ingress.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector
+
+
+
+### fn spec.ingress.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.ingress.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingress.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.ingress.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.ingress.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions
+
+
+
+### fn spec.ingress.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.ingress.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.ingress.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.ingress.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ## obj spec.ingress.affinity.podAntiAffinity
 
 
@@ -3840,6 +19302,234 @@ withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnor
 
 ```ts
 withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.ingress.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.ingress.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.ingress.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm
+
+
+
+### fn spec.ingress.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.ingress.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingress.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.ingress.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector
+
+
+
+### fn spec.ingress.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.ingress.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingress.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.ingress.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.ingress.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions
+
+
+
+### fn spec.ingress.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.ingress.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.ingress.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.ingress.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.ingress.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.ingress.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.ingress.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingress.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.ingress.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector
+
+
+
+### fn spec.ingress.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.ingress.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingress.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.ingress.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.ingress.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions
+
+
+
+### fn spec.ingress.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.ingress.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.ingress.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.ingress.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
 ```
 
 
@@ -4058,6 +19748,26 @@ withType(type)
 
 
 
+## obj spec.ingress.securityContext.sysctls
+
+
+
+### fn spec.ingress.securityContext.sysctls.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.ingress.securityContext.sysctls.withValue
+
+```ts
+withValue(value)
+```
+
+
+
 ## obj spec.ingress.securityContext.windowsOptions
 
 
@@ -4082,6 +19792,1962 @@ withGmsaCredentialSpecName(gmsaCredentialSpecName)
 
 ```ts
 withRunAsUserName(runAsUserName)
+```
+
+
+
+## obj spec.ingress.tls
+
+
+
+### fn spec.ingress.tls.withHosts
+
+```ts
+withHosts(hosts)
+```
+
+
+
+### fn spec.ingress.tls.withHostsMixin
+
+```ts
+withHostsMixin(hosts)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingress.tls.withSecretName
+
+```ts
+withSecretName(secretName)
+```
+
+
+
+## obj spec.ingress.tolerations
+
+
+
+### fn spec.ingress.tolerations.withEffect
+
+```ts
+withEffect(effect)
+```
+
+
+
+### fn spec.ingress.tolerations.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.ingress.tolerations.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.ingress.tolerations.withTolerationSeconds
+
+```ts
+withTolerationSeconds(tolerationSeconds)
+```
+
+
+
+### fn spec.ingress.tolerations.withValue
+
+```ts
+withValue(value)
+```
+
+
+
+## obj spec.ingress.volumeMounts
+
+
+
+### fn spec.ingress.volumeMounts.withMountPath
+
+```ts
+withMountPath(mountPath)
+```
+
+
+
+### fn spec.ingress.volumeMounts.withMountPropagation
+
+```ts
+withMountPropagation(mountPropagation)
+```
+
+
+
+### fn spec.ingress.volumeMounts.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.ingress.volumeMounts.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.ingress.volumeMounts.withSubPath
+
+```ts
+withSubPath(subPath)
+```
+
+
+
+### fn spec.ingress.volumeMounts.withSubPathExpr
+
+```ts
+withSubPathExpr(subPathExpr)
+```
+
+
+
+## obj spec.ingress.volumes
+
+
+
+### fn spec.ingress.volumes.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.ingress.volumes.awsElasticBlockStore
+
+
+
+### fn spec.ingress.volumes.awsElasticBlockStore.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.ingress.volumes.awsElasticBlockStore.withPartition
+
+```ts
+withPartition(partition)
+```
+
+
+
+### fn spec.ingress.volumes.awsElasticBlockStore.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.ingress.volumes.awsElasticBlockStore.withVolumeID
+
+```ts
+withVolumeID(volumeID)
+```
+
+
+
+## obj spec.ingress.volumes.azureDisk
+
+
+
+### fn spec.ingress.volumes.azureDisk.withCachingMode
+
+```ts
+withCachingMode(cachingMode)
+```
+
+
+
+### fn spec.ingress.volumes.azureDisk.withDiskName
+
+```ts
+withDiskName(diskName)
+```
+
+
+
+### fn spec.ingress.volumes.azureDisk.withDiskURI
+
+```ts
+withDiskURI(diskURI)
+```
+
+
+
+### fn spec.ingress.volumes.azureDisk.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.ingress.volumes.azureDisk.withKind
+
+```ts
+withKind(kind)
+```
+
+
+
+### fn spec.ingress.volumes.azureDisk.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.ingress.volumes.azureFile
+
+
+
+### fn spec.ingress.volumes.azureFile.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.ingress.volumes.azureFile.withSecretName
+
+```ts
+withSecretName(secretName)
+```
+
+
+
+### fn spec.ingress.volumes.azureFile.withShareName
+
+```ts
+withShareName(shareName)
+```
+
+
+
+## obj spec.ingress.volumes.cephfs
+
+
+
+### fn spec.ingress.volumes.cephfs.withMonitors
+
+```ts
+withMonitors(monitors)
+```
+
+
+
+### fn spec.ingress.volumes.cephfs.withMonitorsMixin
+
+```ts
+withMonitorsMixin(monitors)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingress.volumes.cephfs.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+### fn spec.ingress.volumes.cephfs.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.ingress.volumes.cephfs.withSecretFile
+
+```ts
+withSecretFile(secretFile)
+```
+
+
+
+### fn spec.ingress.volumes.cephfs.withUser
+
+```ts
+withUser(user)
+```
+
+
+
+## obj spec.ingress.volumes.cephfs.secretRef
+
+
+
+### fn spec.ingress.volumes.cephfs.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.ingress.volumes.cinder
+
+
+
+### fn spec.ingress.volumes.cinder.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.ingress.volumes.cinder.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.ingress.volumes.cinder.withVolumeID
+
+```ts
+withVolumeID(volumeID)
+```
+
+
+
+## obj spec.ingress.volumes.cinder.secretRef
+
+
+
+### fn spec.ingress.volumes.cinder.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.ingress.volumes.configMap
+
+
+
+### fn spec.ingress.volumes.configMap.withDefaultMode
+
+```ts
+withDefaultMode(defaultMode)
+```
+
+
+
+### fn spec.ingress.volumes.configMap.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.ingress.volumes.configMap.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingress.volumes.configMap.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.ingress.volumes.configMap.withOptional
+
+```ts
+withOptional(optional)
+```
+
+
+
+## obj spec.ingress.volumes.configMap.items
+
+
+
+### fn spec.ingress.volumes.configMap.items.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.ingress.volumes.configMap.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.ingress.volumes.configMap.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.ingress.volumes.csi
+
+
+
+### fn spec.ingress.volumes.csi.withDriver
+
+```ts
+withDriver(driver)
+```
+
+
+
+### fn spec.ingress.volumes.csi.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.ingress.volumes.csi.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.ingress.volumes.csi.withVolumeAttributes
+
+```ts
+withVolumeAttributes(volumeAttributes)
+```
+
+
+
+### fn spec.ingress.volumes.csi.withVolumeAttributesMixin
+
+```ts
+withVolumeAttributesMixin(volumeAttributes)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.ingress.volumes.csi.nodePublishSecretRef
+
+
+
+### fn spec.ingress.volumes.csi.nodePublishSecretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.ingress.volumes.downwardAPI
+
+
+
+### fn spec.ingress.volumes.downwardAPI.withDefaultMode
+
+```ts
+withDefaultMode(defaultMode)
+```
+
+
+
+### fn spec.ingress.volumes.downwardAPI.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.ingress.volumes.downwardAPI.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.ingress.volumes.downwardAPI.items
+
+
+
+### fn spec.ingress.volumes.downwardAPI.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.ingress.volumes.downwardAPI.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.ingress.volumes.downwardAPI.items.fieldRef
+
+
+
+### fn spec.ingress.volumes.downwardAPI.items.fieldRef.withApiVersion
+
+```ts
+withApiVersion(apiVersion)
+```
+
+
+
+### fn spec.ingress.volumes.downwardAPI.items.fieldRef.withFieldPath
+
+```ts
+withFieldPath(fieldPath)
+```
+
+
+
+## obj spec.ingress.volumes.downwardAPI.items.resourceFieldRef
+
+
+
+### fn spec.ingress.volumes.downwardAPI.items.resourceFieldRef.withContainerName
+
+```ts
+withContainerName(containerName)
+```
+
+
+
+### fn spec.ingress.volumes.downwardAPI.items.resourceFieldRef.withDivisor
+
+```ts
+withDivisor(divisor)
+```
+
+
+
+### fn spec.ingress.volumes.downwardAPI.items.resourceFieldRef.withResource
+
+```ts
+withResource(resource)
+```
+
+
+
+## obj spec.ingress.volumes.emptyDir
+
+
+
+### fn spec.ingress.volumes.emptyDir.withMedium
+
+```ts
+withMedium(medium)
+```
+
+
+
+### fn spec.ingress.volumes.emptyDir.withSizeLimit
+
+```ts
+withSizeLimit(sizeLimit)
+```
+
+
+
+## obj spec.ingress.volumes.ephemeral
+
+
+
+### fn spec.ingress.volumes.ephemeral.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.ingress.volumes.ephemeral.volumeClaimTemplate
+
+
+
+### fn spec.ingress.volumes.ephemeral.volumeClaimTemplate.withMetadata
+
+```ts
+withMetadata(metadata)
+```
+
+
+
+### fn spec.ingress.volumes.ephemeral.volumeClaimTemplate.withMetadataMixin
+
+```ts
+withMetadataMixin(metadata)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.ingress.volumes.ephemeral.volumeClaimTemplate.spec
+
+
+
+### fn spec.ingress.volumes.ephemeral.volumeClaimTemplate.spec.withAccessModes
+
+```ts
+withAccessModes(accessModes)
+```
+
+
+
+### fn spec.ingress.volumes.ephemeral.volumeClaimTemplate.spec.withAccessModesMixin
+
+```ts
+withAccessModesMixin(accessModes)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingress.volumes.ephemeral.volumeClaimTemplate.spec.withStorageClassName
+
+```ts
+withStorageClassName(storageClassName)
+```
+
+
+
+### fn spec.ingress.volumes.ephemeral.volumeClaimTemplate.spec.withVolumeMode
+
+```ts
+withVolumeMode(volumeMode)
+```
+
+
+
+### fn spec.ingress.volumes.ephemeral.volumeClaimTemplate.spec.withVolumeName
+
+```ts
+withVolumeName(volumeName)
+```
+
+
+
+## obj spec.ingress.volumes.ephemeral.volumeClaimTemplate.spec.dataSource
+
+
+
+### fn spec.ingress.volumes.ephemeral.volumeClaimTemplate.spec.dataSource.withApiGroup
+
+```ts
+withApiGroup(apiGroup)
+```
+
+
+
+### fn spec.ingress.volumes.ephemeral.volumeClaimTemplate.spec.dataSource.withKind
+
+```ts
+withKind(kind)
+```
+
+
+
+### fn spec.ingress.volumes.ephemeral.volumeClaimTemplate.spec.dataSource.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.ingress.volumes.ephemeral.volumeClaimTemplate.spec.resources
+
+
+
+### fn spec.ingress.volumes.ephemeral.volumeClaimTemplate.spec.resources.withLimits
+
+```ts
+withLimits(limits)
+```
+
+
+
+### fn spec.ingress.volumes.ephemeral.volumeClaimTemplate.spec.resources.withLimitsMixin
+
+```ts
+withLimitsMixin(limits)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingress.volumes.ephemeral.volumeClaimTemplate.spec.resources.withRequests
+
+```ts
+withRequests(requests)
+```
+
+
+
+### fn spec.ingress.volumes.ephemeral.volumeClaimTemplate.spec.resources.withRequestsMixin
+
+```ts
+withRequestsMixin(requests)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.ingress.volumes.ephemeral.volumeClaimTemplate.spec.selector
+
+
+
+### fn spec.ingress.volumes.ephemeral.volumeClaimTemplate.spec.selector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.ingress.volumes.ephemeral.volumeClaimTemplate.spec.selector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingress.volumes.ephemeral.volumeClaimTemplate.spec.selector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.ingress.volumes.ephemeral.volumeClaimTemplate.spec.selector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.ingress.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions
+
+
+
+### fn spec.ingress.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.ingress.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.ingress.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.ingress.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.ingress.volumes.fc
+
+
+
+### fn spec.ingress.volumes.fc.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.ingress.volumes.fc.withLun
+
+```ts
+withLun(lun)
+```
+
+
+
+### fn spec.ingress.volumes.fc.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.ingress.volumes.fc.withTargetWWNs
+
+```ts
+withTargetWWNs(targetWWNs)
+```
+
+
+
+### fn spec.ingress.volumes.fc.withTargetWWNsMixin
+
+```ts
+withTargetWWNsMixin(targetWWNs)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingress.volumes.fc.withWwids
+
+```ts
+withWwids(wwids)
+```
+
+
+
+### fn spec.ingress.volumes.fc.withWwidsMixin
+
+```ts
+withWwidsMixin(wwids)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.ingress.volumes.flexVolume
+
+
+
+### fn spec.ingress.volumes.flexVolume.withDriver
+
+```ts
+withDriver(driver)
+```
+
+
+
+### fn spec.ingress.volumes.flexVolume.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.ingress.volumes.flexVolume.withOptions
+
+```ts
+withOptions(options)
+```
+
+
+
+### fn spec.ingress.volumes.flexVolume.withOptionsMixin
+
+```ts
+withOptionsMixin(options)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingress.volumes.flexVolume.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.ingress.volumes.flexVolume.secretRef
+
+
+
+### fn spec.ingress.volumes.flexVolume.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.ingress.volumes.flocker
+
+
+
+### fn spec.ingress.volumes.flocker.withDatasetName
+
+```ts
+withDatasetName(datasetName)
+```
+
+
+
+### fn spec.ingress.volumes.flocker.withDatasetUUID
+
+```ts
+withDatasetUUID(datasetUUID)
+```
+
+
+
+## obj spec.ingress.volumes.gcePersistentDisk
+
+
+
+### fn spec.ingress.volumes.gcePersistentDisk.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.ingress.volumes.gcePersistentDisk.withPartition
+
+```ts
+withPartition(partition)
+```
+
+
+
+### fn spec.ingress.volumes.gcePersistentDisk.withPdName
+
+```ts
+withPdName(pdName)
+```
+
+
+
+### fn spec.ingress.volumes.gcePersistentDisk.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.ingress.volumes.gitRepo
+
+
+
+### fn spec.ingress.volumes.gitRepo.withDirectory
+
+```ts
+withDirectory(directory)
+```
+
+
+
+### fn spec.ingress.volumes.gitRepo.withRepository
+
+```ts
+withRepository(repository)
+```
+
+
+
+### fn spec.ingress.volumes.gitRepo.withRevision
+
+```ts
+withRevision(revision)
+```
+
+
+
+## obj spec.ingress.volumes.glusterfs
+
+
+
+### fn spec.ingress.volumes.glusterfs.withEndpoints
+
+```ts
+withEndpoints(endpoints)
+```
+
+
+
+### fn spec.ingress.volumes.glusterfs.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+### fn spec.ingress.volumes.glusterfs.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.ingress.volumes.hostPath
+
+
+
+### fn spec.ingress.volumes.hostPath.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+### fn spec.ingress.volumes.hostPath.withType
+
+```ts
+withType(type)
+```
+
+
+
+## obj spec.ingress.volumes.iscsi
+
+
+
+### fn spec.ingress.volumes.iscsi.withChapAuthDiscovery
+
+```ts
+withChapAuthDiscovery(chapAuthDiscovery)
+```
+
+
+
+### fn spec.ingress.volumes.iscsi.withChapAuthSession
+
+```ts
+withChapAuthSession(chapAuthSession)
+```
+
+
+
+### fn spec.ingress.volumes.iscsi.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.ingress.volumes.iscsi.withInitiatorName
+
+```ts
+withInitiatorName(initiatorName)
+```
+
+
+
+### fn spec.ingress.volumes.iscsi.withIqn
+
+```ts
+withIqn(iqn)
+```
+
+
+
+### fn spec.ingress.volumes.iscsi.withIscsiInterface
+
+```ts
+withIscsiInterface(iscsiInterface)
+```
+
+
+
+### fn spec.ingress.volumes.iscsi.withLun
+
+```ts
+withLun(lun)
+```
+
+
+
+### fn spec.ingress.volumes.iscsi.withPortals
+
+```ts
+withPortals(portals)
+```
+
+
+
+### fn spec.ingress.volumes.iscsi.withPortalsMixin
+
+```ts
+withPortalsMixin(portals)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingress.volumes.iscsi.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.ingress.volumes.iscsi.withTargetPortal
+
+```ts
+withTargetPortal(targetPortal)
+```
+
+
+
+## obj spec.ingress.volumes.iscsi.secretRef
+
+
+
+### fn spec.ingress.volumes.iscsi.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.ingress.volumes.nfs
+
+
+
+### fn spec.ingress.volumes.nfs.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+### fn spec.ingress.volumes.nfs.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.ingress.volumes.nfs.withServer
+
+```ts
+withServer(server)
+```
+
+
+
+## obj spec.ingress.volumes.persistentVolumeClaim
+
+
+
+### fn spec.ingress.volumes.persistentVolumeClaim.withClaimName
+
+```ts
+withClaimName(claimName)
+```
+
+
+
+### fn spec.ingress.volumes.persistentVolumeClaim.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.ingress.volumes.photonPersistentDisk
+
+
+
+### fn spec.ingress.volumes.photonPersistentDisk.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.ingress.volumes.photonPersistentDisk.withPdID
+
+```ts
+withPdID(pdID)
+```
+
+
+
+## obj spec.ingress.volumes.portworxVolume
+
+
+
+### fn spec.ingress.volumes.portworxVolume.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.ingress.volumes.portworxVolume.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.ingress.volumes.portworxVolume.withVolumeID
+
+```ts
+withVolumeID(volumeID)
+```
+
+
+
+## obj spec.ingress.volumes.projected
+
+
+
+### fn spec.ingress.volumes.projected.withDefaultMode
+
+```ts
+withDefaultMode(defaultMode)
+```
+
+
+
+### fn spec.ingress.volumes.projected.withSources
+
+```ts
+withSources(sources)
+```
+
+
+
+### fn spec.ingress.volumes.projected.withSourcesMixin
+
+```ts
+withSourcesMixin(sources)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.ingress.volumes.projected.sources
+
+
+
+## obj spec.ingress.volumes.projected.sources.configMap
+
+
+
+### fn spec.ingress.volumes.projected.sources.configMap.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.ingress.volumes.projected.sources.configMap.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingress.volumes.projected.sources.configMap.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.ingress.volumes.projected.sources.configMap.withOptional
+
+```ts
+withOptional(optional)
+```
+
+
+
+## obj spec.ingress.volumes.projected.sources.configMap.items
+
+
+
+### fn spec.ingress.volumes.projected.sources.configMap.items.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.ingress.volumes.projected.sources.configMap.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.ingress.volumes.projected.sources.configMap.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.ingress.volumes.projected.sources.downwardAPI
+
+
+
+### fn spec.ingress.volumes.projected.sources.downwardAPI.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.ingress.volumes.projected.sources.downwardAPI.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.ingress.volumes.projected.sources.downwardAPI.items
+
+
+
+### fn spec.ingress.volumes.projected.sources.downwardAPI.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.ingress.volumes.projected.sources.downwardAPI.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.ingress.volumes.projected.sources.downwardAPI.items.fieldRef
+
+
+
+### fn spec.ingress.volumes.projected.sources.downwardAPI.items.fieldRef.withApiVersion
+
+```ts
+withApiVersion(apiVersion)
+```
+
+
+
+### fn spec.ingress.volumes.projected.sources.downwardAPI.items.fieldRef.withFieldPath
+
+```ts
+withFieldPath(fieldPath)
+```
+
+
+
+## obj spec.ingress.volumes.projected.sources.downwardAPI.items.resourceFieldRef
+
+
+
+### fn spec.ingress.volumes.projected.sources.downwardAPI.items.resourceFieldRef.withContainerName
+
+```ts
+withContainerName(containerName)
+```
+
+
+
+### fn spec.ingress.volumes.projected.sources.downwardAPI.items.resourceFieldRef.withDivisor
+
+```ts
+withDivisor(divisor)
+```
+
+
+
+### fn spec.ingress.volumes.projected.sources.downwardAPI.items.resourceFieldRef.withResource
+
+```ts
+withResource(resource)
+```
+
+
+
+## obj spec.ingress.volumes.projected.sources.secret
+
+
+
+### fn spec.ingress.volumes.projected.sources.secret.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.ingress.volumes.projected.sources.secret.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingress.volumes.projected.sources.secret.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.ingress.volumes.projected.sources.secret.withOptional
+
+```ts
+withOptional(optional)
+```
+
+
+
+## obj spec.ingress.volumes.projected.sources.secret.items
+
+
+
+### fn spec.ingress.volumes.projected.sources.secret.items.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.ingress.volumes.projected.sources.secret.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.ingress.volumes.projected.sources.secret.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.ingress.volumes.projected.sources.serviceAccountToken
+
+
+
+### fn spec.ingress.volumes.projected.sources.serviceAccountToken.withAudience
+
+```ts
+withAudience(audience)
+```
+
+
+
+### fn spec.ingress.volumes.projected.sources.serviceAccountToken.withExpirationSeconds
+
+```ts
+withExpirationSeconds(expirationSeconds)
+```
+
+
+
+### fn spec.ingress.volumes.projected.sources.serviceAccountToken.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.ingress.volumes.quobyte
+
+
+
+### fn spec.ingress.volumes.quobyte.withGroup
+
+```ts
+withGroup(group)
+```
+
+
+
+### fn spec.ingress.volumes.quobyte.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.ingress.volumes.quobyte.withRegistry
+
+```ts
+withRegistry(registry)
+```
+
+
+
+### fn spec.ingress.volumes.quobyte.withTenant
+
+```ts
+withTenant(tenant)
+```
+
+
+
+### fn spec.ingress.volumes.quobyte.withUser
+
+```ts
+withUser(user)
+```
+
+
+
+### fn spec.ingress.volumes.quobyte.withVolume
+
+```ts
+withVolume(volume)
+```
+
+
+
+## obj spec.ingress.volumes.rbd
+
+
+
+### fn spec.ingress.volumes.rbd.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.ingress.volumes.rbd.withImage
+
+```ts
+withImage(image)
+```
+
+
+
+### fn spec.ingress.volumes.rbd.withKeyring
+
+```ts
+withKeyring(keyring)
+```
+
+
+
+### fn spec.ingress.volumes.rbd.withMonitors
+
+```ts
+withMonitors(monitors)
+```
+
+
+
+### fn spec.ingress.volumes.rbd.withMonitorsMixin
+
+```ts
+withMonitorsMixin(monitors)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingress.volumes.rbd.withPool
+
+```ts
+withPool(pool)
+```
+
+
+
+### fn spec.ingress.volumes.rbd.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.ingress.volumes.rbd.withUser
+
+```ts
+withUser(user)
+```
+
+
+
+## obj spec.ingress.volumes.rbd.secretRef
+
+
+
+### fn spec.ingress.volumes.rbd.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.ingress.volumes.scaleIO
+
+
+
+### fn spec.ingress.volumes.scaleIO.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.ingress.volumes.scaleIO.withGateway
+
+```ts
+withGateway(gateway)
+```
+
+
+
+### fn spec.ingress.volumes.scaleIO.withProtectionDomain
+
+```ts
+withProtectionDomain(protectionDomain)
+```
+
+
+
+### fn spec.ingress.volumes.scaleIO.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.ingress.volumes.scaleIO.withSslEnabled
+
+```ts
+withSslEnabled(sslEnabled)
+```
+
+
+
+### fn spec.ingress.volumes.scaleIO.withStorageMode
+
+```ts
+withStorageMode(storageMode)
+```
+
+
+
+### fn spec.ingress.volumes.scaleIO.withStoragePool
+
+```ts
+withStoragePool(storagePool)
+```
+
+
+
+### fn spec.ingress.volumes.scaleIO.withSystem
+
+```ts
+withSystem(system)
+```
+
+
+
+### fn spec.ingress.volumes.scaleIO.withVolumeName
+
+```ts
+withVolumeName(volumeName)
+```
+
+
+
+## obj spec.ingress.volumes.scaleIO.secretRef
+
+
+
+### fn spec.ingress.volumes.scaleIO.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.ingress.volumes.secret
+
+
+
+### fn spec.ingress.volumes.secret.withDefaultMode
+
+```ts
+withDefaultMode(defaultMode)
+```
+
+
+
+### fn spec.ingress.volumes.secret.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.ingress.volumes.secret.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingress.volumes.secret.withOptional
+
+```ts
+withOptional(optional)
+```
+
+
+
+### fn spec.ingress.volumes.secret.withSecretName
+
+```ts
+withSecretName(secretName)
+```
+
+
+
+## obj spec.ingress.volumes.secret.items
+
+
+
+### fn spec.ingress.volumes.secret.items.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.ingress.volumes.secret.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.ingress.volumes.secret.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.ingress.volumes.storageos
+
+
+
+### fn spec.ingress.volumes.storageos.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.ingress.volumes.storageos.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.ingress.volumes.storageos.withVolumeName
+
+```ts
+withVolumeName(volumeName)
+```
+
+
+
+### fn spec.ingress.volumes.storageos.withVolumeNamespace
+
+```ts
+withVolumeNamespace(volumeNamespace)
+```
+
+
+
+## obj spec.ingress.volumes.storageos.secretRef
+
+
+
+### fn spec.ingress.volumes.storageos.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.ingress.volumes.vsphereVolume
+
+
+
+### fn spec.ingress.volumes.vsphereVolume.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.ingress.volumes.vsphereVolume.withStoragePolicyID
+
+```ts
+withStoragePolicyID(storagePolicyID)
+```
+
+
+
+### fn spec.ingress.volumes.vsphereVolume.withStoragePolicyName
+
+```ts
+withStoragePolicyName(storagePolicyName)
+```
+
+
+
+### fn spec.ingress.volumes.vsphereVolume.withVolumePath
+
+```ts
+withVolumePath(volumePath)
 ```
 
 
@@ -4288,6 +21954,134 @@ withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringScheduli
 
 **Note:** This function appends passed data to existing values
 
+## obj spec.query.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.query.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.query.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference
+
+
+
+### fn spec.query.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.query.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.query.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchFields
+
+```ts
+withMatchFields(matchFields)
+```
+
+
+
+### fn spec.query.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchFieldsMixin
+
+```ts
+withMatchFieldsMixin(matchFields)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.query.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions
+
+
+
+### fn spec.query.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.query.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.query.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.query.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.query.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields
+
+
+
+### fn spec.query.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.query.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.query.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.query.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ## obj spec.query.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution
 
 
@@ -4304,6 +22098,122 @@ withNodeSelectorTerms(nodeSelectorTerms)
 
 ```ts
 withNodeSelectorTermsMixin(nodeSelectorTerms)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.query.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms
+
+
+
+### fn spec.query.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.query.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.query.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchFields
+
+```ts
+withMatchFields(matchFields)
+```
+
+
+
+### fn spec.query.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchFieldsMixin
+
+```ts
+withMatchFieldsMixin(matchFields)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.query.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions
+
+
+
+### fn spec.query.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.query.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.query.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.query.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.query.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields
+
+
+
+### fn spec.query.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.query.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.query.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.query.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withValuesMixin
+
+```ts
+withValuesMixin(values)
 ```
 
 
@@ -4350,6 +22260,234 @@ withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringScheduling
 
 **Note:** This function appends passed data to existing values
 
+## obj spec.query.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.query.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.query.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm
+
+
+
+### fn spec.query.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.query.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.query.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.query.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector
+
+
+
+### fn spec.query.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.query.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.query.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.query.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.query.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions
+
+
+
+### fn spec.query.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.query.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.query.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.query.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.query.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.query.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.query.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.query.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.query.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector
+
+
+
+### fn spec.query.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.query.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.query.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.query.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.query.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions
+
+
+
+### fn spec.query.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.query.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.query.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.query.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ## obj spec.query.affinity.podAntiAffinity
 
 
@@ -4384,6 +22522,234 @@ withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnor
 
 ```ts
 withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.query.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.query.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.query.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm
+
+
+
+### fn spec.query.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.query.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.query.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.query.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector
+
+
+
+### fn spec.query.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.query.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.query.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.query.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.query.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions
+
+
+
+### fn spec.query.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.query.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.query.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.query.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.query.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.query.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.query.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.query.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.query.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector
+
+
+
+### fn spec.query.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.query.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.query.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.query.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.query.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions
+
+
+
+### fn spec.query.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.query.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.query.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.query.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
 ```
 
 
@@ -4566,6 +22932,26 @@ withType(type)
 
 
 
+## obj spec.query.securityContext.sysctls
+
+
+
+### fn spec.query.securityContext.sysctls.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.query.securityContext.sysctls.withValue
+
+```ts
+withValue(value)
+```
+
+
+
 ## obj spec.query.securityContext.windowsOptions
 
 
@@ -4622,6 +23008,1932 @@ withMaxSurge(maxSurge)
 
 ```ts
 withMaxUnavailable(maxUnavailable)
+```
+
+
+
+## obj spec.query.tolerations
+
+
+
+### fn spec.query.tolerations.withEffect
+
+```ts
+withEffect(effect)
+```
+
+
+
+### fn spec.query.tolerations.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.query.tolerations.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.query.tolerations.withTolerationSeconds
+
+```ts
+withTolerationSeconds(tolerationSeconds)
+```
+
+
+
+### fn spec.query.tolerations.withValue
+
+```ts
+withValue(value)
+```
+
+
+
+## obj spec.query.volumeMounts
+
+
+
+### fn spec.query.volumeMounts.withMountPath
+
+```ts
+withMountPath(mountPath)
+```
+
+
+
+### fn spec.query.volumeMounts.withMountPropagation
+
+```ts
+withMountPropagation(mountPropagation)
+```
+
+
+
+### fn spec.query.volumeMounts.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.query.volumeMounts.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.query.volumeMounts.withSubPath
+
+```ts
+withSubPath(subPath)
+```
+
+
+
+### fn spec.query.volumeMounts.withSubPathExpr
+
+```ts
+withSubPathExpr(subPathExpr)
+```
+
+
+
+## obj spec.query.volumes
+
+
+
+### fn spec.query.volumes.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.query.volumes.awsElasticBlockStore
+
+
+
+### fn spec.query.volumes.awsElasticBlockStore.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.query.volumes.awsElasticBlockStore.withPartition
+
+```ts
+withPartition(partition)
+```
+
+
+
+### fn spec.query.volumes.awsElasticBlockStore.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.query.volumes.awsElasticBlockStore.withVolumeID
+
+```ts
+withVolumeID(volumeID)
+```
+
+
+
+## obj spec.query.volumes.azureDisk
+
+
+
+### fn spec.query.volumes.azureDisk.withCachingMode
+
+```ts
+withCachingMode(cachingMode)
+```
+
+
+
+### fn spec.query.volumes.azureDisk.withDiskName
+
+```ts
+withDiskName(diskName)
+```
+
+
+
+### fn spec.query.volumes.azureDisk.withDiskURI
+
+```ts
+withDiskURI(diskURI)
+```
+
+
+
+### fn spec.query.volumes.azureDisk.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.query.volumes.azureDisk.withKind
+
+```ts
+withKind(kind)
+```
+
+
+
+### fn spec.query.volumes.azureDisk.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.query.volumes.azureFile
+
+
+
+### fn spec.query.volumes.azureFile.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.query.volumes.azureFile.withSecretName
+
+```ts
+withSecretName(secretName)
+```
+
+
+
+### fn spec.query.volumes.azureFile.withShareName
+
+```ts
+withShareName(shareName)
+```
+
+
+
+## obj spec.query.volumes.cephfs
+
+
+
+### fn spec.query.volumes.cephfs.withMonitors
+
+```ts
+withMonitors(monitors)
+```
+
+
+
+### fn spec.query.volumes.cephfs.withMonitorsMixin
+
+```ts
+withMonitorsMixin(monitors)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.query.volumes.cephfs.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+### fn spec.query.volumes.cephfs.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.query.volumes.cephfs.withSecretFile
+
+```ts
+withSecretFile(secretFile)
+```
+
+
+
+### fn spec.query.volumes.cephfs.withUser
+
+```ts
+withUser(user)
+```
+
+
+
+## obj spec.query.volumes.cephfs.secretRef
+
+
+
+### fn spec.query.volumes.cephfs.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.query.volumes.cinder
+
+
+
+### fn spec.query.volumes.cinder.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.query.volumes.cinder.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.query.volumes.cinder.withVolumeID
+
+```ts
+withVolumeID(volumeID)
+```
+
+
+
+## obj spec.query.volumes.cinder.secretRef
+
+
+
+### fn spec.query.volumes.cinder.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.query.volumes.configMap
+
+
+
+### fn spec.query.volumes.configMap.withDefaultMode
+
+```ts
+withDefaultMode(defaultMode)
+```
+
+
+
+### fn spec.query.volumes.configMap.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.query.volumes.configMap.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.query.volumes.configMap.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.query.volumes.configMap.withOptional
+
+```ts
+withOptional(optional)
+```
+
+
+
+## obj spec.query.volumes.configMap.items
+
+
+
+### fn spec.query.volumes.configMap.items.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.query.volumes.configMap.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.query.volumes.configMap.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.query.volumes.csi
+
+
+
+### fn spec.query.volumes.csi.withDriver
+
+```ts
+withDriver(driver)
+```
+
+
+
+### fn spec.query.volumes.csi.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.query.volumes.csi.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.query.volumes.csi.withVolumeAttributes
+
+```ts
+withVolumeAttributes(volumeAttributes)
+```
+
+
+
+### fn spec.query.volumes.csi.withVolumeAttributesMixin
+
+```ts
+withVolumeAttributesMixin(volumeAttributes)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.query.volumes.csi.nodePublishSecretRef
+
+
+
+### fn spec.query.volumes.csi.nodePublishSecretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.query.volumes.downwardAPI
+
+
+
+### fn spec.query.volumes.downwardAPI.withDefaultMode
+
+```ts
+withDefaultMode(defaultMode)
+```
+
+
+
+### fn spec.query.volumes.downwardAPI.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.query.volumes.downwardAPI.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.query.volumes.downwardAPI.items
+
+
+
+### fn spec.query.volumes.downwardAPI.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.query.volumes.downwardAPI.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.query.volumes.downwardAPI.items.fieldRef
+
+
+
+### fn spec.query.volumes.downwardAPI.items.fieldRef.withApiVersion
+
+```ts
+withApiVersion(apiVersion)
+```
+
+
+
+### fn spec.query.volumes.downwardAPI.items.fieldRef.withFieldPath
+
+```ts
+withFieldPath(fieldPath)
+```
+
+
+
+## obj spec.query.volumes.downwardAPI.items.resourceFieldRef
+
+
+
+### fn spec.query.volumes.downwardAPI.items.resourceFieldRef.withContainerName
+
+```ts
+withContainerName(containerName)
+```
+
+
+
+### fn spec.query.volumes.downwardAPI.items.resourceFieldRef.withDivisor
+
+```ts
+withDivisor(divisor)
+```
+
+
+
+### fn spec.query.volumes.downwardAPI.items.resourceFieldRef.withResource
+
+```ts
+withResource(resource)
+```
+
+
+
+## obj spec.query.volumes.emptyDir
+
+
+
+### fn spec.query.volumes.emptyDir.withMedium
+
+```ts
+withMedium(medium)
+```
+
+
+
+### fn spec.query.volumes.emptyDir.withSizeLimit
+
+```ts
+withSizeLimit(sizeLimit)
+```
+
+
+
+## obj spec.query.volumes.ephemeral
+
+
+
+### fn spec.query.volumes.ephemeral.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.query.volumes.ephemeral.volumeClaimTemplate
+
+
+
+### fn spec.query.volumes.ephemeral.volumeClaimTemplate.withMetadata
+
+```ts
+withMetadata(metadata)
+```
+
+
+
+### fn spec.query.volumes.ephemeral.volumeClaimTemplate.withMetadataMixin
+
+```ts
+withMetadataMixin(metadata)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.query.volumes.ephemeral.volumeClaimTemplate.spec
+
+
+
+### fn spec.query.volumes.ephemeral.volumeClaimTemplate.spec.withAccessModes
+
+```ts
+withAccessModes(accessModes)
+```
+
+
+
+### fn spec.query.volumes.ephemeral.volumeClaimTemplate.spec.withAccessModesMixin
+
+```ts
+withAccessModesMixin(accessModes)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.query.volumes.ephemeral.volumeClaimTemplate.spec.withStorageClassName
+
+```ts
+withStorageClassName(storageClassName)
+```
+
+
+
+### fn spec.query.volumes.ephemeral.volumeClaimTemplate.spec.withVolumeMode
+
+```ts
+withVolumeMode(volumeMode)
+```
+
+
+
+### fn spec.query.volumes.ephemeral.volumeClaimTemplate.spec.withVolumeName
+
+```ts
+withVolumeName(volumeName)
+```
+
+
+
+## obj spec.query.volumes.ephemeral.volumeClaimTemplate.spec.dataSource
+
+
+
+### fn spec.query.volumes.ephemeral.volumeClaimTemplate.spec.dataSource.withApiGroup
+
+```ts
+withApiGroup(apiGroup)
+```
+
+
+
+### fn spec.query.volumes.ephemeral.volumeClaimTemplate.spec.dataSource.withKind
+
+```ts
+withKind(kind)
+```
+
+
+
+### fn spec.query.volumes.ephemeral.volumeClaimTemplate.spec.dataSource.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.query.volumes.ephemeral.volumeClaimTemplate.spec.resources
+
+
+
+### fn spec.query.volumes.ephemeral.volumeClaimTemplate.spec.resources.withLimits
+
+```ts
+withLimits(limits)
+```
+
+
+
+### fn spec.query.volumes.ephemeral.volumeClaimTemplate.spec.resources.withLimitsMixin
+
+```ts
+withLimitsMixin(limits)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.query.volumes.ephemeral.volumeClaimTemplate.spec.resources.withRequests
+
+```ts
+withRequests(requests)
+```
+
+
+
+### fn spec.query.volumes.ephemeral.volumeClaimTemplate.spec.resources.withRequestsMixin
+
+```ts
+withRequestsMixin(requests)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.query.volumes.ephemeral.volumeClaimTemplate.spec.selector
+
+
+
+### fn spec.query.volumes.ephemeral.volumeClaimTemplate.spec.selector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.query.volumes.ephemeral.volumeClaimTemplate.spec.selector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.query.volumes.ephemeral.volumeClaimTemplate.spec.selector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.query.volumes.ephemeral.volumeClaimTemplate.spec.selector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.query.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions
+
+
+
+### fn spec.query.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.query.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.query.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.query.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.query.volumes.fc
+
+
+
+### fn spec.query.volumes.fc.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.query.volumes.fc.withLun
+
+```ts
+withLun(lun)
+```
+
+
+
+### fn spec.query.volumes.fc.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.query.volumes.fc.withTargetWWNs
+
+```ts
+withTargetWWNs(targetWWNs)
+```
+
+
+
+### fn spec.query.volumes.fc.withTargetWWNsMixin
+
+```ts
+withTargetWWNsMixin(targetWWNs)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.query.volumes.fc.withWwids
+
+```ts
+withWwids(wwids)
+```
+
+
+
+### fn spec.query.volumes.fc.withWwidsMixin
+
+```ts
+withWwidsMixin(wwids)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.query.volumes.flexVolume
+
+
+
+### fn spec.query.volumes.flexVolume.withDriver
+
+```ts
+withDriver(driver)
+```
+
+
+
+### fn spec.query.volumes.flexVolume.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.query.volumes.flexVolume.withOptions
+
+```ts
+withOptions(options)
+```
+
+
+
+### fn spec.query.volumes.flexVolume.withOptionsMixin
+
+```ts
+withOptionsMixin(options)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.query.volumes.flexVolume.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.query.volumes.flexVolume.secretRef
+
+
+
+### fn spec.query.volumes.flexVolume.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.query.volumes.flocker
+
+
+
+### fn spec.query.volumes.flocker.withDatasetName
+
+```ts
+withDatasetName(datasetName)
+```
+
+
+
+### fn spec.query.volumes.flocker.withDatasetUUID
+
+```ts
+withDatasetUUID(datasetUUID)
+```
+
+
+
+## obj spec.query.volumes.gcePersistentDisk
+
+
+
+### fn spec.query.volumes.gcePersistentDisk.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.query.volumes.gcePersistentDisk.withPartition
+
+```ts
+withPartition(partition)
+```
+
+
+
+### fn spec.query.volumes.gcePersistentDisk.withPdName
+
+```ts
+withPdName(pdName)
+```
+
+
+
+### fn spec.query.volumes.gcePersistentDisk.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.query.volumes.gitRepo
+
+
+
+### fn spec.query.volumes.gitRepo.withDirectory
+
+```ts
+withDirectory(directory)
+```
+
+
+
+### fn spec.query.volumes.gitRepo.withRepository
+
+```ts
+withRepository(repository)
+```
+
+
+
+### fn spec.query.volumes.gitRepo.withRevision
+
+```ts
+withRevision(revision)
+```
+
+
+
+## obj spec.query.volumes.glusterfs
+
+
+
+### fn spec.query.volumes.glusterfs.withEndpoints
+
+```ts
+withEndpoints(endpoints)
+```
+
+
+
+### fn spec.query.volumes.glusterfs.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+### fn spec.query.volumes.glusterfs.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.query.volumes.hostPath
+
+
+
+### fn spec.query.volumes.hostPath.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+### fn spec.query.volumes.hostPath.withType
+
+```ts
+withType(type)
+```
+
+
+
+## obj spec.query.volumes.iscsi
+
+
+
+### fn spec.query.volumes.iscsi.withChapAuthDiscovery
+
+```ts
+withChapAuthDiscovery(chapAuthDiscovery)
+```
+
+
+
+### fn spec.query.volumes.iscsi.withChapAuthSession
+
+```ts
+withChapAuthSession(chapAuthSession)
+```
+
+
+
+### fn spec.query.volumes.iscsi.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.query.volumes.iscsi.withInitiatorName
+
+```ts
+withInitiatorName(initiatorName)
+```
+
+
+
+### fn spec.query.volumes.iscsi.withIqn
+
+```ts
+withIqn(iqn)
+```
+
+
+
+### fn spec.query.volumes.iscsi.withIscsiInterface
+
+```ts
+withIscsiInterface(iscsiInterface)
+```
+
+
+
+### fn spec.query.volumes.iscsi.withLun
+
+```ts
+withLun(lun)
+```
+
+
+
+### fn spec.query.volumes.iscsi.withPortals
+
+```ts
+withPortals(portals)
+```
+
+
+
+### fn spec.query.volumes.iscsi.withPortalsMixin
+
+```ts
+withPortalsMixin(portals)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.query.volumes.iscsi.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.query.volumes.iscsi.withTargetPortal
+
+```ts
+withTargetPortal(targetPortal)
+```
+
+
+
+## obj spec.query.volumes.iscsi.secretRef
+
+
+
+### fn spec.query.volumes.iscsi.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.query.volumes.nfs
+
+
+
+### fn spec.query.volumes.nfs.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+### fn spec.query.volumes.nfs.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.query.volumes.nfs.withServer
+
+```ts
+withServer(server)
+```
+
+
+
+## obj spec.query.volumes.persistentVolumeClaim
+
+
+
+### fn spec.query.volumes.persistentVolumeClaim.withClaimName
+
+```ts
+withClaimName(claimName)
+```
+
+
+
+### fn spec.query.volumes.persistentVolumeClaim.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.query.volumes.photonPersistentDisk
+
+
+
+### fn spec.query.volumes.photonPersistentDisk.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.query.volumes.photonPersistentDisk.withPdID
+
+```ts
+withPdID(pdID)
+```
+
+
+
+## obj spec.query.volumes.portworxVolume
+
+
+
+### fn spec.query.volumes.portworxVolume.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.query.volumes.portworxVolume.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.query.volumes.portworxVolume.withVolumeID
+
+```ts
+withVolumeID(volumeID)
+```
+
+
+
+## obj spec.query.volumes.projected
+
+
+
+### fn spec.query.volumes.projected.withDefaultMode
+
+```ts
+withDefaultMode(defaultMode)
+```
+
+
+
+### fn spec.query.volumes.projected.withSources
+
+```ts
+withSources(sources)
+```
+
+
+
+### fn spec.query.volumes.projected.withSourcesMixin
+
+```ts
+withSourcesMixin(sources)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.query.volumes.projected.sources
+
+
+
+## obj spec.query.volumes.projected.sources.configMap
+
+
+
+### fn spec.query.volumes.projected.sources.configMap.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.query.volumes.projected.sources.configMap.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.query.volumes.projected.sources.configMap.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.query.volumes.projected.sources.configMap.withOptional
+
+```ts
+withOptional(optional)
+```
+
+
+
+## obj spec.query.volumes.projected.sources.configMap.items
+
+
+
+### fn spec.query.volumes.projected.sources.configMap.items.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.query.volumes.projected.sources.configMap.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.query.volumes.projected.sources.configMap.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.query.volumes.projected.sources.downwardAPI
+
+
+
+### fn spec.query.volumes.projected.sources.downwardAPI.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.query.volumes.projected.sources.downwardAPI.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.query.volumes.projected.sources.downwardAPI.items
+
+
+
+### fn spec.query.volumes.projected.sources.downwardAPI.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.query.volumes.projected.sources.downwardAPI.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.query.volumes.projected.sources.downwardAPI.items.fieldRef
+
+
+
+### fn spec.query.volumes.projected.sources.downwardAPI.items.fieldRef.withApiVersion
+
+```ts
+withApiVersion(apiVersion)
+```
+
+
+
+### fn spec.query.volumes.projected.sources.downwardAPI.items.fieldRef.withFieldPath
+
+```ts
+withFieldPath(fieldPath)
+```
+
+
+
+## obj spec.query.volumes.projected.sources.downwardAPI.items.resourceFieldRef
+
+
+
+### fn spec.query.volumes.projected.sources.downwardAPI.items.resourceFieldRef.withContainerName
+
+```ts
+withContainerName(containerName)
+```
+
+
+
+### fn spec.query.volumes.projected.sources.downwardAPI.items.resourceFieldRef.withDivisor
+
+```ts
+withDivisor(divisor)
+```
+
+
+
+### fn spec.query.volumes.projected.sources.downwardAPI.items.resourceFieldRef.withResource
+
+```ts
+withResource(resource)
+```
+
+
+
+## obj spec.query.volumes.projected.sources.secret
+
+
+
+### fn spec.query.volumes.projected.sources.secret.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.query.volumes.projected.sources.secret.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.query.volumes.projected.sources.secret.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.query.volumes.projected.sources.secret.withOptional
+
+```ts
+withOptional(optional)
+```
+
+
+
+## obj spec.query.volumes.projected.sources.secret.items
+
+
+
+### fn spec.query.volumes.projected.sources.secret.items.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.query.volumes.projected.sources.secret.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.query.volumes.projected.sources.secret.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.query.volumes.projected.sources.serviceAccountToken
+
+
+
+### fn spec.query.volumes.projected.sources.serviceAccountToken.withAudience
+
+```ts
+withAudience(audience)
+```
+
+
+
+### fn spec.query.volumes.projected.sources.serviceAccountToken.withExpirationSeconds
+
+```ts
+withExpirationSeconds(expirationSeconds)
+```
+
+
+
+### fn spec.query.volumes.projected.sources.serviceAccountToken.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.query.volumes.quobyte
+
+
+
+### fn spec.query.volumes.quobyte.withGroup
+
+```ts
+withGroup(group)
+```
+
+
+
+### fn spec.query.volumes.quobyte.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.query.volumes.quobyte.withRegistry
+
+```ts
+withRegistry(registry)
+```
+
+
+
+### fn spec.query.volumes.quobyte.withTenant
+
+```ts
+withTenant(tenant)
+```
+
+
+
+### fn spec.query.volumes.quobyte.withUser
+
+```ts
+withUser(user)
+```
+
+
+
+### fn spec.query.volumes.quobyte.withVolume
+
+```ts
+withVolume(volume)
+```
+
+
+
+## obj spec.query.volumes.rbd
+
+
+
+### fn spec.query.volumes.rbd.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.query.volumes.rbd.withImage
+
+```ts
+withImage(image)
+```
+
+
+
+### fn spec.query.volumes.rbd.withKeyring
+
+```ts
+withKeyring(keyring)
+```
+
+
+
+### fn spec.query.volumes.rbd.withMonitors
+
+```ts
+withMonitors(monitors)
+```
+
+
+
+### fn spec.query.volumes.rbd.withMonitorsMixin
+
+```ts
+withMonitorsMixin(monitors)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.query.volumes.rbd.withPool
+
+```ts
+withPool(pool)
+```
+
+
+
+### fn spec.query.volumes.rbd.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.query.volumes.rbd.withUser
+
+```ts
+withUser(user)
+```
+
+
+
+## obj spec.query.volumes.rbd.secretRef
+
+
+
+### fn spec.query.volumes.rbd.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.query.volumes.scaleIO
+
+
+
+### fn spec.query.volumes.scaleIO.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.query.volumes.scaleIO.withGateway
+
+```ts
+withGateway(gateway)
+```
+
+
+
+### fn spec.query.volumes.scaleIO.withProtectionDomain
+
+```ts
+withProtectionDomain(protectionDomain)
+```
+
+
+
+### fn spec.query.volumes.scaleIO.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.query.volumes.scaleIO.withSslEnabled
+
+```ts
+withSslEnabled(sslEnabled)
+```
+
+
+
+### fn spec.query.volumes.scaleIO.withStorageMode
+
+```ts
+withStorageMode(storageMode)
+```
+
+
+
+### fn spec.query.volumes.scaleIO.withStoragePool
+
+```ts
+withStoragePool(storagePool)
+```
+
+
+
+### fn spec.query.volumes.scaleIO.withSystem
+
+```ts
+withSystem(system)
+```
+
+
+
+### fn spec.query.volumes.scaleIO.withVolumeName
+
+```ts
+withVolumeName(volumeName)
+```
+
+
+
+## obj spec.query.volumes.scaleIO.secretRef
+
+
+
+### fn spec.query.volumes.scaleIO.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.query.volumes.secret
+
+
+
+### fn spec.query.volumes.secret.withDefaultMode
+
+```ts
+withDefaultMode(defaultMode)
+```
+
+
+
+### fn spec.query.volumes.secret.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.query.volumes.secret.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.query.volumes.secret.withOptional
+
+```ts
+withOptional(optional)
+```
+
+
+
+### fn spec.query.volumes.secret.withSecretName
+
+```ts
+withSecretName(secretName)
+```
+
+
+
+## obj spec.query.volumes.secret.items
+
+
+
+### fn spec.query.volumes.secret.items.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.query.volumes.secret.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.query.volumes.secret.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.query.volumes.storageos
+
+
+
+### fn spec.query.volumes.storageos.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.query.volumes.storageos.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.query.volumes.storageos.withVolumeName
+
+```ts
+withVolumeName(volumeName)
+```
+
+
+
+### fn spec.query.volumes.storageos.withVolumeNamespace
+
+```ts
+withVolumeNamespace(volumeNamespace)
+```
+
+
+
+## obj spec.query.volumes.storageos.secretRef
+
+
+
+### fn spec.query.volumes.storageos.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.query.volumes.vsphereVolume
+
+
+
+### fn spec.query.volumes.vsphereVolume.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.query.volumes.vsphereVolume.withStoragePolicyID
+
+```ts
+withStoragePolicyID(storagePolicyID)
+```
+
+
+
+### fn spec.query.volumes.vsphereVolume.withStoragePolicyName
+
+```ts
+withStoragePolicyName(storagePolicyName)
+```
+
+
+
+### fn spec.query.volumes.vsphereVolume.withVolumePath
+
+```ts
+withVolumePath(volumePath)
 ```
 
 
@@ -4824,6 +25136,26 @@ withType(type)
 
 
 
+## obj spec.securityContext.sysctls
+
+
+
+### fn spec.securityContext.sysctls.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.securityContext.sysctls.withValue
+
+```ts
+withValue(value)
+```
+
+
+
 ## obj spec.securityContext.windowsOptions
 
 
@@ -4976,6 +25308,134 @@ withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringScheduli
 
 **Note:** This function appends passed data to existing values
 
+## obj spec.storage.cassandraCreateSchema.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.storage.cassandraCreateSchema.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.cassandraCreateSchema.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchFields
+
+```ts
+withMatchFields(matchFields)
+```
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchFieldsMixin
+
+```ts
+withMatchFieldsMixin(matchFields)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.cassandraCreateSchema.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.cassandraCreateSchema.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ## obj spec.storage.cassandraCreateSchema.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution
 
 
@@ -4992,6 +25452,122 @@ withNodeSelectorTerms(nodeSelectorTerms)
 
 ```ts
 withNodeSelectorTermsMixin(nodeSelectorTerms)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.cassandraCreateSchema.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.cassandraCreateSchema.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchFields
+
+```ts
+withMatchFields(matchFields)
+```
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchFieldsMixin
+
+```ts
+withMatchFieldsMixin(matchFields)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.cassandraCreateSchema.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.cassandraCreateSchema.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withValuesMixin
+
+```ts
+withValuesMixin(values)
 ```
 
 
@@ -5038,6 +25614,234 @@ withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringScheduling
 
 **Note:** This function appends passed data to existing values
 
+## obj spec.storage.cassandraCreateSchema.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.storage.cassandraCreateSchema.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.cassandraCreateSchema.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.storage.cassandraCreateSchema.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.cassandraCreateSchema.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.cassandraCreateSchema.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.cassandraCreateSchema.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.cassandraCreateSchema.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.storage.cassandraCreateSchema.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.cassandraCreateSchema.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.cassandraCreateSchema.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ## obj spec.storage.cassandraCreateSchema.affinity.podAntiAffinity
 
 
@@ -5072,6 +25876,234 @@ withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnor
 
 ```ts
 withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.cassandraCreateSchema.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.storage.cassandraCreateSchema.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.cassandraCreateSchema.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.storage.cassandraCreateSchema.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.cassandraCreateSchema.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.cassandraCreateSchema.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.cassandraCreateSchema.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.cassandraCreateSchema.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.storage.cassandraCreateSchema.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.cassandraCreateSchema.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.cassandraCreateSchema.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.storage.cassandraCreateSchema.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
 ```
 
 
@@ -5302,6 +26334,134 @@ withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringScheduli
 
 **Note:** This function appends passed data to existing values
 
+## obj spec.storage.dependencies.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.storage.dependencies.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.storage.dependencies.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference
+
+
+
+### fn spec.storage.dependencies.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.storage.dependencies.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.dependencies.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchFields
+
+```ts
+withMatchFields(matchFields)
+```
+
+
+
+### fn spec.storage.dependencies.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchFieldsMixin
+
+```ts
+withMatchFieldsMixin(matchFields)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.dependencies.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions
+
+
+
+### fn spec.storage.dependencies.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.storage.dependencies.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.storage.dependencies.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.storage.dependencies.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.dependencies.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields
+
+
+
+### fn spec.storage.dependencies.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.storage.dependencies.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.storage.dependencies.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.storage.dependencies.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ## obj spec.storage.dependencies.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution
 
 
@@ -5318,6 +26478,122 @@ withNodeSelectorTerms(nodeSelectorTerms)
 
 ```ts
 withNodeSelectorTermsMixin(nodeSelectorTerms)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.dependencies.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms
+
+
+
+### fn spec.storage.dependencies.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.storage.dependencies.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.dependencies.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchFields
+
+```ts
+withMatchFields(matchFields)
+```
+
+
+
+### fn spec.storage.dependencies.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchFieldsMixin
+
+```ts
+withMatchFieldsMixin(matchFields)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.dependencies.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions
+
+
+
+### fn spec.storage.dependencies.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.storage.dependencies.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.storage.dependencies.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.storage.dependencies.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.dependencies.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields
+
+
+
+### fn spec.storage.dependencies.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.storage.dependencies.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.storage.dependencies.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.storage.dependencies.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withValuesMixin
+
+```ts
+withValuesMixin(values)
 ```
 
 
@@ -5364,6 +26640,234 @@ withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringScheduling
 
 **Note:** This function appends passed data to existing values
 
+## obj spec.storage.dependencies.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.storage.dependencies.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.storage.dependencies.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm
+
+
+
+### fn spec.storage.dependencies.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.storage.dependencies.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.dependencies.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.storage.dependencies.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector
+
+
+
+### fn spec.storage.dependencies.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.storage.dependencies.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.dependencies.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.storage.dependencies.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.dependencies.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions
+
+
+
+### fn spec.storage.dependencies.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.storage.dependencies.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.storage.dependencies.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.storage.dependencies.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.dependencies.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.storage.dependencies.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.storage.dependencies.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.dependencies.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.storage.dependencies.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector
+
+
+
+### fn spec.storage.dependencies.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.storage.dependencies.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.dependencies.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.storage.dependencies.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.dependencies.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions
+
+
+
+### fn spec.storage.dependencies.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.storage.dependencies.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.storage.dependencies.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.storage.dependencies.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ## obj spec.storage.dependencies.affinity.podAntiAffinity
 
 
@@ -5398,6 +26902,234 @@ withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnor
 
 ```ts
 withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.dependencies.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.storage.dependencies.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.storage.dependencies.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm
+
+
+
+### fn spec.storage.dependencies.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.storage.dependencies.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.dependencies.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.storage.dependencies.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector
+
+
+
+### fn spec.storage.dependencies.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.storage.dependencies.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.dependencies.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.storage.dependencies.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.dependencies.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions
+
+
+
+### fn spec.storage.dependencies.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.storage.dependencies.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.storage.dependencies.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.storage.dependencies.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.dependencies.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.storage.dependencies.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.storage.dependencies.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.dependencies.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.storage.dependencies.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector
+
+
+
+### fn spec.storage.dependencies.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.storage.dependencies.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.dependencies.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.storage.dependencies.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.dependencies.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions
+
+
+
+### fn spec.storage.dependencies.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.storage.dependencies.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.storage.dependencies.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.storage.dependencies.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
 ```
 
 
@@ -5580,6 +27312,26 @@ withType(type)
 
 
 
+## obj spec.storage.dependencies.securityContext.sysctls
+
+
+
+### fn spec.storage.dependencies.securityContext.sysctls.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.storage.dependencies.securityContext.sysctls.withValue
+
+```ts
+withValue(value)
+```
+
+
+
 ## obj spec.storage.dependencies.securityContext.windowsOptions
 
 
@@ -5604,6 +27356,1932 @@ withGmsaCredentialSpecName(gmsaCredentialSpecName)
 
 ```ts
 withRunAsUserName(runAsUserName)
+```
+
+
+
+## obj spec.storage.dependencies.tolerations
+
+
+
+### fn spec.storage.dependencies.tolerations.withEffect
+
+```ts
+withEffect(effect)
+```
+
+
+
+### fn spec.storage.dependencies.tolerations.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.storage.dependencies.tolerations.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.storage.dependencies.tolerations.withTolerationSeconds
+
+```ts
+withTolerationSeconds(tolerationSeconds)
+```
+
+
+
+### fn spec.storage.dependencies.tolerations.withValue
+
+```ts
+withValue(value)
+```
+
+
+
+## obj spec.storage.dependencies.volumeMounts
+
+
+
+### fn spec.storage.dependencies.volumeMounts.withMountPath
+
+```ts
+withMountPath(mountPath)
+```
+
+
+
+### fn spec.storage.dependencies.volumeMounts.withMountPropagation
+
+```ts
+withMountPropagation(mountPropagation)
+```
+
+
+
+### fn spec.storage.dependencies.volumeMounts.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.storage.dependencies.volumeMounts.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.storage.dependencies.volumeMounts.withSubPath
+
+```ts
+withSubPath(subPath)
+```
+
+
+
+### fn spec.storage.dependencies.volumeMounts.withSubPathExpr
+
+```ts
+withSubPathExpr(subPathExpr)
+```
+
+
+
+## obj spec.storage.dependencies.volumes
+
+
+
+### fn spec.storage.dependencies.volumes.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.storage.dependencies.volumes.awsElasticBlockStore
+
+
+
+### fn spec.storage.dependencies.volumes.awsElasticBlockStore.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.awsElasticBlockStore.withPartition
+
+```ts
+withPartition(partition)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.awsElasticBlockStore.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.awsElasticBlockStore.withVolumeID
+
+```ts
+withVolumeID(volumeID)
+```
+
+
+
+## obj spec.storage.dependencies.volumes.azureDisk
+
+
+
+### fn spec.storage.dependencies.volumes.azureDisk.withCachingMode
+
+```ts
+withCachingMode(cachingMode)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.azureDisk.withDiskName
+
+```ts
+withDiskName(diskName)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.azureDisk.withDiskURI
+
+```ts
+withDiskURI(diskURI)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.azureDisk.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.azureDisk.withKind
+
+```ts
+withKind(kind)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.azureDisk.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.storage.dependencies.volumes.azureFile
+
+
+
+### fn spec.storage.dependencies.volumes.azureFile.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.azureFile.withSecretName
+
+```ts
+withSecretName(secretName)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.azureFile.withShareName
+
+```ts
+withShareName(shareName)
+```
+
+
+
+## obj spec.storage.dependencies.volumes.cephfs
+
+
+
+### fn spec.storage.dependencies.volumes.cephfs.withMonitors
+
+```ts
+withMonitors(monitors)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.cephfs.withMonitorsMixin
+
+```ts
+withMonitorsMixin(monitors)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.dependencies.volumes.cephfs.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.cephfs.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.cephfs.withSecretFile
+
+```ts
+withSecretFile(secretFile)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.cephfs.withUser
+
+```ts
+withUser(user)
+```
+
+
+
+## obj spec.storage.dependencies.volumes.cephfs.secretRef
+
+
+
+### fn spec.storage.dependencies.volumes.cephfs.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.storage.dependencies.volumes.cinder
+
+
+
+### fn spec.storage.dependencies.volumes.cinder.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.cinder.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.cinder.withVolumeID
+
+```ts
+withVolumeID(volumeID)
+```
+
+
+
+## obj spec.storage.dependencies.volumes.cinder.secretRef
+
+
+
+### fn spec.storage.dependencies.volumes.cinder.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.storage.dependencies.volumes.configMap
+
+
+
+### fn spec.storage.dependencies.volumes.configMap.withDefaultMode
+
+```ts
+withDefaultMode(defaultMode)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.configMap.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.configMap.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.dependencies.volumes.configMap.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.configMap.withOptional
+
+```ts
+withOptional(optional)
+```
+
+
+
+## obj spec.storage.dependencies.volumes.configMap.items
+
+
+
+### fn spec.storage.dependencies.volumes.configMap.items.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.configMap.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.configMap.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.storage.dependencies.volumes.csi
+
+
+
+### fn spec.storage.dependencies.volumes.csi.withDriver
+
+```ts
+withDriver(driver)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.csi.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.csi.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.csi.withVolumeAttributes
+
+```ts
+withVolumeAttributes(volumeAttributes)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.csi.withVolumeAttributesMixin
+
+```ts
+withVolumeAttributesMixin(volumeAttributes)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.dependencies.volumes.csi.nodePublishSecretRef
+
+
+
+### fn spec.storage.dependencies.volumes.csi.nodePublishSecretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.storage.dependencies.volumes.downwardAPI
+
+
+
+### fn spec.storage.dependencies.volumes.downwardAPI.withDefaultMode
+
+```ts
+withDefaultMode(defaultMode)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.downwardAPI.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.downwardAPI.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.dependencies.volumes.downwardAPI.items
+
+
+
+### fn spec.storage.dependencies.volumes.downwardAPI.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.downwardAPI.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.storage.dependencies.volumes.downwardAPI.items.fieldRef
+
+
+
+### fn spec.storage.dependencies.volumes.downwardAPI.items.fieldRef.withApiVersion
+
+```ts
+withApiVersion(apiVersion)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.downwardAPI.items.fieldRef.withFieldPath
+
+```ts
+withFieldPath(fieldPath)
+```
+
+
+
+## obj spec.storage.dependencies.volumes.downwardAPI.items.resourceFieldRef
+
+
+
+### fn spec.storage.dependencies.volumes.downwardAPI.items.resourceFieldRef.withContainerName
+
+```ts
+withContainerName(containerName)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.downwardAPI.items.resourceFieldRef.withDivisor
+
+```ts
+withDivisor(divisor)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.downwardAPI.items.resourceFieldRef.withResource
+
+```ts
+withResource(resource)
+```
+
+
+
+## obj spec.storage.dependencies.volumes.emptyDir
+
+
+
+### fn spec.storage.dependencies.volumes.emptyDir.withMedium
+
+```ts
+withMedium(medium)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.emptyDir.withSizeLimit
+
+```ts
+withSizeLimit(sizeLimit)
+```
+
+
+
+## obj spec.storage.dependencies.volumes.ephemeral
+
+
+
+### fn spec.storage.dependencies.volumes.ephemeral.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.storage.dependencies.volumes.ephemeral.volumeClaimTemplate
+
+
+
+### fn spec.storage.dependencies.volumes.ephemeral.volumeClaimTemplate.withMetadata
+
+```ts
+withMetadata(metadata)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.ephemeral.volumeClaimTemplate.withMetadataMixin
+
+```ts
+withMetadataMixin(metadata)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.dependencies.volumes.ephemeral.volumeClaimTemplate.spec
+
+
+
+### fn spec.storage.dependencies.volumes.ephemeral.volumeClaimTemplate.spec.withAccessModes
+
+```ts
+withAccessModes(accessModes)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.ephemeral.volumeClaimTemplate.spec.withAccessModesMixin
+
+```ts
+withAccessModesMixin(accessModes)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.dependencies.volumes.ephemeral.volumeClaimTemplate.spec.withStorageClassName
+
+```ts
+withStorageClassName(storageClassName)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.ephemeral.volumeClaimTemplate.spec.withVolumeMode
+
+```ts
+withVolumeMode(volumeMode)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.ephemeral.volumeClaimTemplate.spec.withVolumeName
+
+```ts
+withVolumeName(volumeName)
+```
+
+
+
+## obj spec.storage.dependencies.volumes.ephemeral.volumeClaimTemplate.spec.dataSource
+
+
+
+### fn spec.storage.dependencies.volumes.ephemeral.volumeClaimTemplate.spec.dataSource.withApiGroup
+
+```ts
+withApiGroup(apiGroup)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.ephemeral.volumeClaimTemplate.spec.dataSource.withKind
+
+```ts
+withKind(kind)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.ephemeral.volumeClaimTemplate.spec.dataSource.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.storage.dependencies.volumes.ephemeral.volumeClaimTemplate.spec.resources
+
+
+
+### fn spec.storage.dependencies.volumes.ephemeral.volumeClaimTemplate.spec.resources.withLimits
+
+```ts
+withLimits(limits)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.ephemeral.volumeClaimTemplate.spec.resources.withLimitsMixin
+
+```ts
+withLimitsMixin(limits)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.dependencies.volumes.ephemeral.volumeClaimTemplate.spec.resources.withRequests
+
+```ts
+withRequests(requests)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.ephemeral.volumeClaimTemplate.spec.resources.withRequestsMixin
+
+```ts
+withRequestsMixin(requests)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.dependencies.volumes.ephemeral.volumeClaimTemplate.spec.selector
+
+
+
+### fn spec.storage.dependencies.volumes.ephemeral.volumeClaimTemplate.spec.selector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.ephemeral.volumeClaimTemplate.spec.selector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.dependencies.volumes.ephemeral.volumeClaimTemplate.spec.selector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.ephemeral.volumeClaimTemplate.spec.selector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.dependencies.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions
+
+
+
+### fn spec.storage.dependencies.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.dependencies.volumes.fc
+
+
+
+### fn spec.storage.dependencies.volumes.fc.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.fc.withLun
+
+```ts
+withLun(lun)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.fc.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.fc.withTargetWWNs
+
+```ts
+withTargetWWNs(targetWWNs)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.fc.withTargetWWNsMixin
+
+```ts
+withTargetWWNsMixin(targetWWNs)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.dependencies.volumes.fc.withWwids
+
+```ts
+withWwids(wwids)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.fc.withWwidsMixin
+
+```ts
+withWwidsMixin(wwids)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.dependencies.volumes.flexVolume
+
+
+
+### fn spec.storage.dependencies.volumes.flexVolume.withDriver
+
+```ts
+withDriver(driver)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.flexVolume.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.flexVolume.withOptions
+
+```ts
+withOptions(options)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.flexVolume.withOptionsMixin
+
+```ts
+withOptionsMixin(options)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.dependencies.volumes.flexVolume.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.storage.dependencies.volumes.flexVolume.secretRef
+
+
+
+### fn spec.storage.dependencies.volumes.flexVolume.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.storage.dependencies.volumes.flocker
+
+
+
+### fn spec.storage.dependencies.volumes.flocker.withDatasetName
+
+```ts
+withDatasetName(datasetName)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.flocker.withDatasetUUID
+
+```ts
+withDatasetUUID(datasetUUID)
+```
+
+
+
+## obj spec.storage.dependencies.volumes.gcePersistentDisk
+
+
+
+### fn spec.storage.dependencies.volumes.gcePersistentDisk.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.gcePersistentDisk.withPartition
+
+```ts
+withPartition(partition)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.gcePersistentDisk.withPdName
+
+```ts
+withPdName(pdName)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.gcePersistentDisk.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.storage.dependencies.volumes.gitRepo
+
+
+
+### fn spec.storage.dependencies.volumes.gitRepo.withDirectory
+
+```ts
+withDirectory(directory)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.gitRepo.withRepository
+
+```ts
+withRepository(repository)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.gitRepo.withRevision
+
+```ts
+withRevision(revision)
+```
+
+
+
+## obj spec.storage.dependencies.volumes.glusterfs
+
+
+
+### fn spec.storage.dependencies.volumes.glusterfs.withEndpoints
+
+```ts
+withEndpoints(endpoints)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.glusterfs.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.glusterfs.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.storage.dependencies.volumes.hostPath
+
+
+
+### fn spec.storage.dependencies.volumes.hostPath.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.hostPath.withType
+
+```ts
+withType(type)
+```
+
+
+
+## obj spec.storage.dependencies.volumes.iscsi
+
+
+
+### fn spec.storage.dependencies.volumes.iscsi.withChapAuthDiscovery
+
+```ts
+withChapAuthDiscovery(chapAuthDiscovery)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.iscsi.withChapAuthSession
+
+```ts
+withChapAuthSession(chapAuthSession)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.iscsi.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.iscsi.withInitiatorName
+
+```ts
+withInitiatorName(initiatorName)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.iscsi.withIqn
+
+```ts
+withIqn(iqn)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.iscsi.withIscsiInterface
+
+```ts
+withIscsiInterface(iscsiInterface)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.iscsi.withLun
+
+```ts
+withLun(lun)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.iscsi.withPortals
+
+```ts
+withPortals(portals)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.iscsi.withPortalsMixin
+
+```ts
+withPortalsMixin(portals)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.dependencies.volumes.iscsi.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.iscsi.withTargetPortal
+
+```ts
+withTargetPortal(targetPortal)
+```
+
+
+
+## obj spec.storage.dependencies.volumes.iscsi.secretRef
+
+
+
+### fn spec.storage.dependencies.volumes.iscsi.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.storage.dependencies.volumes.nfs
+
+
+
+### fn spec.storage.dependencies.volumes.nfs.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.nfs.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.nfs.withServer
+
+```ts
+withServer(server)
+```
+
+
+
+## obj spec.storage.dependencies.volumes.persistentVolumeClaim
+
+
+
+### fn spec.storage.dependencies.volumes.persistentVolumeClaim.withClaimName
+
+```ts
+withClaimName(claimName)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.persistentVolumeClaim.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.storage.dependencies.volumes.photonPersistentDisk
+
+
+
+### fn spec.storage.dependencies.volumes.photonPersistentDisk.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.photonPersistentDisk.withPdID
+
+```ts
+withPdID(pdID)
+```
+
+
+
+## obj spec.storage.dependencies.volumes.portworxVolume
+
+
+
+### fn spec.storage.dependencies.volumes.portworxVolume.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.portworxVolume.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.portworxVolume.withVolumeID
+
+```ts
+withVolumeID(volumeID)
+```
+
+
+
+## obj spec.storage.dependencies.volumes.projected
+
+
+
+### fn spec.storage.dependencies.volumes.projected.withDefaultMode
+
+```ts
+withDefaultMode(defaultMode)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.projected.withSources
+
+```ts
+withSources(sources)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.projected.withSourcesMixin
+
+```ts
+withSourcesMixin(sources)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.dependencies.volumes.projected.sources
+
+
+
+## obj spec.storage.dependencies.volumes.projected.sources.configMap
+
+
+
+### fn spec.storage.dependencies.volumes.projected.sources.configMap.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.projected.sources.configMap.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.dependencies.volumes.projected.sources.configMap.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.projected.sources.configMap.withOptional
+
+```ts
+withOptional(optional)
+```
+
+
+
+## obj spec.storage.dependencies.volumes.projected.sources.configMap.items
+
+
+
+### fn spec.storage.dependencies.volumes.projected.sources.configMap.items.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.projected.sources.configMap.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.projected.sources.configMap.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.storage.dependencies.volumes.projected.sources.downwardAPI
+
+
+
+### fn spec.storage.dependencies.volumes.projected.sources.downwardAPI.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.projected.sources.downwardAPI.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.dependencies.volumes.projected.sources.downwardAPI.items
+
+
+
+### fn spec.storage.dependencies.volumes.projected.sources.downwardAPI.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.projected.sources.downwardAPI.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.storage.dependencies.volumes.projected.sources.downwardAPI.items.fieldRef
+
+
+
+### fn spec.storage.dependencies.volumes.projected.sources.downwardAPI.items.fieldRef.withApiVersion
+
+```ts
+withApiVersion(apiVersion)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.projected.sources.downwardAPI.items.fieldRef.withFieldPath
+
+```ts
+withFieldPath(fieldPath)
+```
+
+
+
+## obj spec.storage.dependencies.volumes.projected.sources.downwardAPI.items.resourceFieldRef
+
+
+
+### fn spec.storage.dependencies.volumes.projected.sources.downwardAPI.items.resourceFieldRef.withContainerName
+
+```ts
+withContainerName(containerName)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.projected.sources.downwardAPI.items.resourceFieldRef.withDivisor
+
+```ts
+withDivisor(divisor)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.projected.sources.downwardAPI.items.resourceFieldRef.withResource
+
+```ts
+withResource(resource)
+```
+
+
+
+## obj spec.storage.dependencies.volumes.projected.sources.secret
+
+
+
+### fn spec.storage.dependencies.volumes.projected.sources.secret.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.projected.sources.secret.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.dependencies.volumes.projected.sources.secret.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.projected.sources.secret.withOptional
+
+```ts
+withOptional(optional)
+```
+
+
+
+## obj spec.storage.dependencies.volumes.projected.sources.secret.items
+
+
+
+### fn spec.storage.dependencies.volumes.projected.sources.secret.items.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.projected.sources.secret.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.projected.sources.secret.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.storage.dependencies.volumes.projected.sources.serviceAccountToken
+
+
+
+### fn spec.storage.dependencies.volumes.projected.sources.serviceAccountToken.withAudience
+
+```ts
+withAudience(audience)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.projected.sources.serviceAccountToken.withExpirationSeconds
+
+```ts
+withExpirationSeconds(expirationSeconds)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.projected.sources.serviceAccountToken.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.storage.dependencies.volumes.quobyte
+
+
+
+### fn spec.storage.dependencies.volumes.quobyte.withGroup
+
+```ts
+withGroup(group)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.quobyte.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.quobyte.withRegistry
+
+```ts
+withRegistry(registry)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.quobyte.withTenant
+
+```ts
+withTenant(tenant)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.quobyte.withUser
+
+```ts
+withUser(user)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.quobyte.withVolume
+
+```ts
+withVolume(volume)
+```
+
+
+
+## obj spec.storage.dependencies.volumes.rbd
+
+
+
+### fn spec.storage.dependencies.volumes.rbd.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.rbd.withImage
+
+```ts
+withImage(image)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.rbd.withKeyring
+
+```ts
+withKeyring(keyring)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.rbd.withMonitors
+
+```ts
+withMonitors(monitors)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.rbd.withMonitorsMixin
+
+```ts
+withMonitorsMixin(monitors)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.dependencies.volumes.rbd.withPool
+
+```ts
+withPool(pool)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.rbd.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.rbd.withUser
+
+```ts
+withUser(user)
+```
+
+
+
+## obj spec.storage.dependencies.volumes.rbd.secretRef
+
+
+
+### fn spec.storage.dependencies.volumes.rbd.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.storage.dependencies.volumes.scaleIO
+
+
+
+### fn spec.storage.dependencies.volumes.scaleIO.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.scaleIO.withGateway
+
+```ts
+withGateway(gateway)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.scaleIO.withProtectionDomain
+
+```ts
+withProtectionDomain(protectionDomain)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.scaleIO.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.scaleIO.withSslEnabled
+
+```ts
+withSslEnabled(sslEnabled)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.scaleIO.withStorageMode
+
+```ts
+withStorageMode(storageMode)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.scaleIO.withStoragePool
+
+```ts
+withStoragePool(storagePool)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.scaleIO.withSystem
+
+```ts
+withSystem(system)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.scaleIO.withVolumeName
+
+```ts
+withVolumeName(volumeName)
+```
+
+
+
+## obj spec.storage.dependencies.volumes.scaleIO.secretRef
+
+
+
+### fn spec.storage.dependencies.volumes.scaleIO.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.storage.dependencies.volumes.secret
+
+
+
+### fn spec.storage.dependencies.volumes.secret.withDefaultMode
+
+```ts
+withDefaultMode(defaultMode)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.secret.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.secret.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.dependencies.volumes.secret.withOptional
+
+```ts
+withOptional(optional)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.secret.withSecretName
+
+```ts
+withSecretName(secretName)
+```
+
+
+
+## obj spec.storage.dependencies.volumes.secret.items
+
+
+
+### fn spec.storage.dependencies.volumes.secret.items.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.secret.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.secret.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.storage.dependencies.volumes.storageos
+
+
+
+### fn spec.storage.dependencies.volumes.storageos.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.storageos.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.storageos.withVolumeName
+
+```ts
+withVolumeName(volumeName)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.storageos.withVolumeNamespace
+
+```ts
+withVolumeNamespace(volumeNamespace)
+```
+
+
+
+## obj spec.storage.dependencies.volumes.storageos.secretRef
+
+
+
+### fn spec.storage.dependencies.volumes.storageos.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.storage.dependencies.volumes.vsphereVolume
+
+
+
+### fn spec.storage.dependencies.volumes.vsphereVolume.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.vsphereVolume.withStoragePolicyID
+
+```ts
+withStoragePolicyID(storagePolicyID)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.vsphereVolume.withStoragePolicyName
+
+```ts
+withStoragePolicyName(storagePolicyName)
+```
+
+
+
+### fn spec.storage.dependencies.volumes.vsphereVolume.withVolumePath
+
+```ts
+withVolumePath(volumePath)
 ```
 
 
@@ -5728,6 +29406,50 @@ withSize(size)
 
 ```ts
 withStorageClassName(storageClassName)
+```
+
+
+
+## obj spec.storage.elasticsearch.tolerations
+
+
+
+### fn spec.storage.elasticsearch.tolerations.withEffect
+
+```ts
+withEffect(effect)
+```
+
+
+
+### fn spec.storage.elasticsearch.tolerations.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.storage.elasticsearch.tolerations.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.storage.elasticsearch.tolerations.withTolerationSeconds
+
+```ts
+withTolerationSeconds(tolerationSeconds)
+```
+
+
+
+### fn spec.storage.elasticsearch.tolerations.withValue
+
+```ts
+withValue(value)
 ```
 
 
@@ -5916,6 +29638,134 @@ withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringScheduli
 
 **Note:** This function appends passed data to existing values
 
+## obj spec.storage.esIndexCleaner.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.esIndexCleaner.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchFields
+
+```ts
+withMatchFields(matchFields)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchFieldsMixin
+
+```ts
+withMatchFieldsMixin(matchFields)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.esIndexCleaner.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.esIndexCleaner.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ## obj spec.storage.esIndexCleaner.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution
 
 
@@ -5932,6 +29782,122 @@ withNodeSelectorTerms(nodeSelectorTerms)
 
 ```ts
 withNodeSelectorTermsMixin(nodeSelectorTerms)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.esIndexCleaner.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.esIndexCleaner.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchFields
+
+```ts
+withMatchFields(matchFields)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchFieldsMixin
+
+```ts
+withMatchFieldsMixin(matchFields)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.esIndexCleaner.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.esIndexCleaner.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withValuesMixin
+
+```ts
+withValuesMixin(values)
 ```
 
 
@@ -5978,6 +29944,234 @@ withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringScheduling
 
 **Note:** This function appends passed data to existing values
 
+## obj spec.storage.esIndexCleaner.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.esIndexCleaner.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.esIndexCleaner.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.esIndexCleaner.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.esIndexCleaner.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.esIndexCleaner.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.esIndexCleaner.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.esIndexCleaner.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ## obj spec.storage.esIndexCleaner.affinity.podAntiAffinity
 
 
@@ -6012,6 +30206,234 @@ withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnor
 
 ```ts
 withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.esIndexCleaner.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.esIndexCleaner.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.esIndexCleaner.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.esIndexCleaner.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.esIndexCleaner.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.esIndexCleaner.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.esIndexCleaner.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.esIndexCleaner.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
 ```
 
 
@@ -6194,6 +30616,26 @@ withType(type)
 
 
 
+## obj spec.storage.esIndexCleaner.securityContext.sysctls
+
+
+
+### fn spec.storage.esIndexCleaner.securityContext.sysctls.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.securityContext.sysctls.withValue
+
+```ts
+withValue(value)
+```
+
+
+
 ## obj spec.storage.esIndexCleaner.securityContext.windowsOptions
 
 
@@ -6218,6 +30660,1932 @@ withGmsaCredentialSpecName(gmsaCredentialSpecName)
 
 ```ts
 withRunAsUserName(runAsUserName)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.tolerations
+
+
+
+### fn spec.storage.esIndexCleaner.tolerations.withEffect
+
+```ts
+withEffect(effect)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.tolerations.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.tolerations.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.tolerations.withTolerationSeconds
+
+```ts
+withTolerationSeconds(tolerationSeconds)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.tolerations.withValue
+
+```ts
+withValue(value)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.volumeMounts
+
+
+
+### fn spec.storage.esIndexCleaner.volumeMounts.withMountPath
+
+```ts
+withMountPath(mountPath)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumeMounts.withMountPropagation
+
+```ts
+withMountPropagation(mountPropagation)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumeMounts.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumeMounts.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumeMounts.withSubPath
+
+```ts
+withSubPath(subPath)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumeMounts.withSubPathExpr
+
+```ts
+withSubPathExpr(subPathExpr)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.volumes
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.volumes.awsElasticBlockStore
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.awsElasticBlockStore.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.awsElasticBlockStore.withPartition
+
+```ts
+withPartition(partition)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.awsElasticBlockStore.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.awsElasticBlockStore.withVolumeID
+
+```ts
+withVolumeID(volumeID)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.volumes.azureDisk
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.azureDisk.withCachingMode
+
+```ts
+withCachingMode(cachingMode)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.azureDisk.withDiskName
+
+```ts
+withDiskName(diskName)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.azureDisk.withDiskURI
+
+```ts
+withDiskURI(diskURI)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.azureDisk.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.azureDisk.withKind
+
+```ts
+withKind(kind)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.azureDisk.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.volumes.azureFile
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.azureFile.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.azureFile.withSecretName
+
+```ts
+withSecretName(secretName)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.azureFile.withShareName
+
+```ts
+withShareName(shareName)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.volumes.cephfs
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.cephfs.withMonitors
+
+```ts
+withMonitors(monitors)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.cephfs.withMonitorsMixin
+
+```ts
+withMonitorsMixin(monitors)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.esIndexCleaner.volumes.cephfs.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.cephfs.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.cephfs.withSecretFile
+
+```ts
+withSecretFile(secretFile)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.cephfs.withUser
+
+```ts
+withUser(user)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.volumes.cephfs.secretRef
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.cephfs.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.volumes.cinder
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.cinder.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.cinder.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.cinder.withVolumeID
+
+```ts
+withVolumeID(volumeID)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.volumes.cinder.secretRef
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.cinder.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.volumes.configMap
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.configMap.withDefaultMode
+
+```ts
+withDefaultMode(defaultMode)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.configMap.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.configMap.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.esIndexCleaner.volumes.configMap.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.configMap.withOptional
+
+```ts
+withOptional(optional)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.volumes.configMap.items
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.configMap.items.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.configMap.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.configMap.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.volumes.csi
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.csi.withDriver
+
+```ts
+withDriver(driver)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.csi.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.csi.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.csi.withVolumeAttributes
+
+```ts
+withVolumeAttributes(volumeAttributes)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.csi.withVolumeAttributesMixin
+
+```ts
+withVolumeAttributesMixin(volumeAttributes)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.esIndexCleaner.volumes.csi.nodePublishSecretRef
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.csi.nodePublishSecretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.volumes.downwardAPI
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.downwardAPI.withDefaultMode
+
+```ts
+withDefaultMode(defaultMode)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.downwardAPI.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.downwardAPI.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.esIndexCleaner.volumes.downwardAPI.items
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.downwardAPI.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.downwardAPI.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.volumes.downwardAPI.items.fieldRef
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.downwardAPI.items.fieldRef.withApiVersion
+
+```ts
+withApiVersion(apiVersion)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.downwardAPI.items.fieldRef.withFieldPath
+
+```ts
+withFieldPath(fieldPath)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.volumes.downwardAPI.items.resourceFieldRef
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.downwardAPI.items.resourceFieldRef.withContainerName
+
+```ts
+withContainerName(containerName)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.downwardAPI.items.resourceFieldRef.withDivisor
+
+```ts
+withDivisor(divisor)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.downwardAPI.items.resourceFieldRef.withResource
+
+```ts
+withResource(resource)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.volumes.emptyDir
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.emptyDir.withMedium
+
+```ts
+withMedium(medium)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.emptyDir.withSizeLimit
+
+```ts
+withSizeLimit(sizeLimit)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.volumes.ephemeral
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.ephemeral.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.volumes.ephemeral.volumeClaimTemplate
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.ephemeral.volumeClaimTemplate.withMetadata
+
+```ts
+withMetadata(metadata)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.ephemeral.volumeClaimTemplate.withMetadataMixin
+
+```ts
+withMetadataMixin(metadata)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.esIndexCleaner.volumes.ephemeral.volumeClaimTemplate.spec
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.ephemeral.volumeClaimTemplate.spec.withAccessModes
+
+```ts
+withAccessModes(accessModes)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.ephemeral.volumeClaimTemplate.spec.withAccessModesMixin
+
+```ts
+withAccessModesMixin(accessModes)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.esIndexCleaner.volumes.ephemeral.volumeClaimTemplate.spec.withStorageClassName
+
+```ts
+withStorageClassName(storageClassName)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.ephemeral.volumeClaimTemplate.spec.withVolumeMode
+
+```ts
+withVolumeMode(volumeMode)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.ephemeral.volumeClaimTemplate.spec.withVolumeName
+
+```ts
+withVolumeName(volumeName)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.volumes.ephemeral.volumeClaimTemplate.spec.dataSource
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.ephemeral.volumeClaimTemplate.spec.dataSource.withApiGroup
+
+```ts
+withApiGroup(apiGroup)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.ephemeral.volumeClaimTemplate.spec.dataSource.withKind
+
+```ts
+withKind(kind)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.ephemeral.volumeClaimTemplate.spec.dataSource.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.volumes.ephemeral.volumeClaimTemplate.spec.resources
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.ephemeral.volumeClaimTemplate.spec.resources.withLimits
+
+```ts
+withLimits(limits)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.ephemeral.volumeClaimTemplate.spec.resources.withLimitsMixin
+
+```ts
+withLimitsMixin(limits)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.esIndexCleaner.volumes.ephemeral.volumeClaimTemplate.spec.resources.withRequests
+
+```ts
+withRequests(requests)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.ephemeral.volumeClaimTemplate.spec.resources.withRequestsMixin
+
+```ts
+withRequestsMixin(requests)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.esIndexCleaner.volumes.ephemeral.volumeClaimTemplate.spec.selector
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.ephemeral.volumeClaimTemplate.spec.selector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.ephemeral.volumeClaimTemplate.spec.selector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.esIndexCleaner.volumes.ephemeral.volumeClaimTemplate.spec.selector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.ephemeral.volumeClaimTemplate.spec.selector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.esIndexCleaner.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.esIndexCleaner.volumes.fc
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.fc.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.fc.withLun
+
+```ts
+withLun(lun)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.fc.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.fc.withTargetWWNs
+
+```ts
+withTargetWWNs(targetWWNs)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.fc.withTargetWWNsMixin
+
+```ts
+withTargetWWNsMixin(targetWWNs)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.esIndexCleaner.volumes.fc.withWwids
+
+```ts
+withWwids(wwids)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.fc.withWwidsMixin
+
+```ts
+withWwidsMixin(wwids)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.esIndexCleaner.volumes.flexVolume
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.flexVolume.withDriver
+
+```ts
+withDriver(driver)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.flexVolume.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.flexVolume.withOptions
+
+```ts
+withOptions(options)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.flexVolume.withOptionsMixin
+
+```ts
+withOptionsMixin(options)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.esIndexCleaner.volumes.flexVolume.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.volumes.flexVolume.secretRef
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.flexVolume.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.volumes.flocker
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.flocker.withDatasetName
+
+```ts
+withDatasetName(datasetName)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.flocker.withDatasetUUID
+
+```ts
+withDatasetUUID(datasetUUID)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.volumes.gcePersistentDisk
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.gcePersistentDisk.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.gcePersistentDisk.withPartition
+
+```ts
+withPartition(partition)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.gcePersistentDisk.withPdName
+
+```ts
+withPdName(pdName)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.gcePersistentDisk.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.volumes.gitRepo
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.gitRepo.withDirectory
+
+```ts
+withDirectory(directory)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.gitRepo.withRepository
+
+```ts
+withRepository(repository)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.gitRepo.withRevision
+
+```ts
+withRevision(revision)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.volumes.glusterfs
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.glusterfs.withEndpoints
+
+```ts
+withEndpoints(endpoints)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.glusterfs.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.glusterfs.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.volumes.hostPath
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.hostPath.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.hostPath.withType
+
+```ts
+withType(type)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.volumes.iscsi
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.iscsi.withChapAuthDiscovery
+
+```ts
+withChapAuthDiscovery(chapAuthDiscovery)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.iscsi.withChapAuthSession
+
+```ts
+withChapAuthSession(chapAuthSession)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.iscsi.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.iscsi.withInitiatorName
+
+```ts
+withInitiatorName(initiatorName)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.iscsi.withIqn
+
+```ts
+withIqn(iqn)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.iscsi.withIscsiInterface
+
+```ts
+withIscsiInterface(iscsiInterface)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.iscsi.withLun
+
+```ts
+withLun(lun)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.iscsi.withPortals
+
+```ts
+withPortals(portals)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.iscsi.withPortalsMixin
+
+```ts
+withPortalsMixin(portals)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.esIndexCleaner.volumes.iscsi.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.iscsi.withTargetPortal
+
+```ts
+withTargetPortal(targetPortal)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.volumes.iscsi.secretRef
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.iscsi.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.volumes.nfs
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.nfs.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.nfs.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.nfs.withServer
+
+```ts
+withServer(server)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.volumes.persistentVolumeClaim
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.persistentVolumeClaim.withClaimName
+
+```ts
+withClaimName(claimName)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.persistentVolumeClaim.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.volumes.photonPersistentDisk
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.photonPersistentDisk.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.photonPersistentDisk.withPdID
+
+```ts
+withPdID(pdID)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.volumes.portworxVolume
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.portworxVolume.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.portworxVolume.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.portworxVolume.withVolumeID
+
+```ts
+withVolumeID(volumeID)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.volumes.projected
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.projected.withDefaultMode
+
+```ts
+withDefaultMode(defaultMode)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.projected.withSources
+
+```ts
+withSources(sources)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.projected.withSourcesMixin
+
+```ts
+withSourcesMixin(sources)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.esIndexCleaner.volumes.projected.sources
+
+
+
+## obj spec.storage.esIndexCleaner.volumes.projected.sources.configMap
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.projected.sources.configMap.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.projected.sources.configMap.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.esIndexCleaner.volumes.projected.sources.configMap.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.projected.sources.configMap.withOptional
+
+```ts
+withOptional(optional)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.volumes.projected.sources.configMap.items
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.projected.sources.configMap.items.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.projected.sources.configMap.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.projected.sources.configMap.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.volumes.projected.sources.downwardAPI
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.projected.sources.downwardAPI.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.projected.sources.downwardAPI.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.esIndexCleaner.volumes.projected.sources.downwardAPI.items
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.projected.sources.downwardAPI.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.projected.sources.downwardAPI.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.volumes.projected.sources.downwardAPI.items.fieldRef
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.projected.sources.downwardAPI.items.fieldRef.withApiVersion
+
+```ts
+withApiVersion(apiVersion)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.projected.sources.downwardAPI.items.fieldRef.withFieldPath
+
+```ts
+withFieldPath(fieldPath)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.volumes.projected.sources.downwardAPI.items.resourceFieldRef
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.projected.sources.downwardAPI.items.resourceFieldRef.withContainerName
+
+```ts
+withContainerName(containerName)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.projected.sources.downwardAPI.items.resourceFieldRef.withDivisor
+
+```ts
+withDivisor(divisor)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.projected.sources.downwardAPI.items.resourceFieldRef.withResource
+
+```ts
+withResource(resource)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.volumes.projected.sources.secret
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.projected.sources.secret.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.projected.sources.secret.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.esIndexCleaner.volumes.projected.sources.secret.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.projected.sources.secret.withOptional
+
+```ts
+withOptional(optional)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.volumes.projected.sources.secret.items
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.projected.sources.secret.items.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.projected.sources.secret.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.projected.sources.secret.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.volumes.projected.sources.serviceAccountToken
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.projected.sources.serviceAccountToken.withAudience
+
+```ts
+withAudience(audience)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.projected.sources.serviceAccountToken.withExpirationSeconds
+
+```ts
+withExpirationSeconds(expirationSeconds)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.projected.sources.serviceAccountToken.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.volumes.quobyte
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.quobyte.withGroup
+
+```ts
+withGroup(group)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.quobyte.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.quobyte.withRegistry
+
+```ts
+withRegistry(registry)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.quobyte.withTenant
+
+```ts
+withTenant(tenant)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.quobyte.withUser
+
+```ts
+withUser(user)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.quobyte.withVolume
+
+```ts
+withVolume(volume)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.volumes.rbd
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.rbd.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.rbd.withImage
+
+```ts
+withImage(image)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.rbd.withKeyring
+
+```ts
+withKeyring(keyring)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.rbd.withMonitors
+
+```ts
+withMonitors(monitors)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.rbd.withMonitorsMixin
+
+```ts
+withMonitorsMixin(monitors)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.esIndexCleaner.volumes.rbd.withPool
+
+```ts
+withPool(pool)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.rbd.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.rbd.withUser
+
+```ts
+withUser(user)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.volumes.rbd.secretRef
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.rbd.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.volumes.scaleIO
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.scaleIO.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.scaleIO.withGateway
+
+```ts
+withGateway(gateway)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.scaleIO.withProtectionDomain
+
+```ts
+withProtectionDomain(protectionDomain)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.scaleIO.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.scaleIO.withSslEnabled
+
+```ts
+withSslEnabled(sslEnabled)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.scaleIO.withStorageMode
+
+```ts
+withStorageMode(storageMode)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.scaleIO.withStoragePool
+
+```ts
+withStoragePool(storagePool)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.scaleIO.withSystem
+
+```ts
+withSystem(system)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.scaleIO.withVolumeName
+
+```ts
+withVolumeName(volumeName)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.volumes.scaleIO.secretRef
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.scaleIO.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.volumes.secret
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.secret.withDefaultMode
+
+```ts
+withDefaultMode(defaultMode)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.secret.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.secret.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.esIndexCleaner.volumes.secret.withOptional
+
+```ts
+withOptional(optional)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.secret.withSecretName
+
+```ts
+withSecretName(secretName)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.volumes.secret.items
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.secret.items.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.secret.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.secret.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.volumes.storageos
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.storageos.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.storageos.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.storageos.withVolumeName
+
+```ts
+withVolumeName(volumeName)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.storageos.withVolumeNamespace
+
+```ts
+withVolumeNamespace(volumeNamespace)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.volumes.storageos.secretRef
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.storageos.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.storage.esIndexCleaner.volumes.vsphereVolume
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.vsphereVolume.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.vsphereVolume.withStoragePolicyID
+
+```ts
+withStoragePolicyID(storagePolicyID)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.vsphereVolume.withStoragePolicyName
+
+```ts
+withStoragePolicyName(storagePolicyName)
+```
+
+
+
+### fn spec.storage.esIndexCleaner.volumes.vsphereVolume.withVolumePath
+
+```ts
+withVolumePath(volumePath)
 ```
 
 
@@ -6406,6 +32774,134 @@ withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringScheduli
 
 **Note:** This function appends passed data to existing values
 
+## obj spec.storage.esRollover.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.storage.esRollover.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.storage.esRollover.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference
+
+
+
+### fn spec.storage.esRollover.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.storage.esRollover.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.esRollover.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchFields
+
+```ts
+withMatchFields(matchFields)
+```
+
+
+
+### fn spec.storage.esRollover.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchFieldsMixin
+
+```ts
+withMatchFieldsMixin(matchFields)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.esRollover.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions
+
+
+
+### fn spec.storage.esRollover.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.storage.esRollover.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.storage.esRollover.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.storage.esRollover.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.esRollover.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields
+
+
+
+### fn spec.storage.esRollover.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.storage.esRollover.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.storage.esRollover.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.storage.esRollover.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ## obj spec.storage.esRollover.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution
 
 
@@ -6422,6 +32918,122 @@ withNodeSelectorTerms(nodeSelectorTerms)
 
 ```ts
 withNodeSelectorTermsMixin(nodeSelectorTerms)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.esRollover.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms
+
+
+
+### fn spec.storage.esRollover.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.storage.esRollover.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.esRollover.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchFields
+
+```ts
+withMatchFields(matchFields)
+```
+
+
+
+### fn spec.storage.esRollover.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchFieldsMixin
+
+```ts
+withMatchFieldsMixin(matchFields)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.esRollover.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions
+
+
+
+### fn spec.storage.esRollover.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.storage.esRollover.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.storage.esRollover.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.storage.esRollover.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.esRollover.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields
+
+
+
+### fn spec.storage.esRollover.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.storage.esRollover.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.storage.esRollover.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.storage.esRollover.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withValuesMixin
+
+```ts
+withValuesMixin(values)
 ```
 
 
@@ -6468,6 +33080,234 @@ withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringScheduling
 
 **Note:** This function appends passed data to existing values
 
+## obj spec.storage.esRollover.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.storage.esRollover.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.storage.esRollover.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm
+
+
+
+### fn spec.storage.esRollover.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.storage.esRollover.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.esRollover.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.storage.esRollover.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector
+
+
+
+### fn spec.storage.esRollover.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.storage.esRollover.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.esRollover.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.storage.esRollover.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.esRollover.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions
+
+
+
+### fn spec.storage.esRollover.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.storage.esRollover.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.storage.esRollover.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.storage.esRollover.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.esRollover.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.storage.esRollover.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.storage.esRollover.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.esRollover.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.storage.esRollover.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector
+
+
+
+### fn spec.storage.esRollover.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.storage.esRollover.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.esRollover.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.storage.esRollover.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.esRollover.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions
+
+
+
+### fn spec.storage.esRollover.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.storage.esRollover.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.storage.esRollover.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.storage.esRollover.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ## obj spec.storage.esRollover.affinity.podAntiAffinity
 
 
@@ -6502,6 +33342,234 @@ withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnor
 
 ```ts
 withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.esRollover.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.storage.esRollover.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.storage.esRollover.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm
+
+
+
+### fn spec.storage.esRollover.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.storage.esRollover.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.esRollover.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.storage.esRollover.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector
+
+
+
+### fn spec.storage.esRollover.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.storage.esRollover.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.esRollover.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.storage.esRollover.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.esRollover.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions
+
+
+
+### fn spec.storage.esRollover.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.storage.esRollover.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.storage.esRollover.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.storage.esRollover.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.esRollover.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.storage.esRollover.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.storage.esRollover.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.esRollover.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.storage.esRollover.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector
+
+
+
+### fn spec.storage.esRollover.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.storage.esRollover.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.esRollover.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.storage.esRollover.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.esRollover.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions
+
+
+
+### fn spec.storage.esRollover.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.storage.esRollover.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.storage.esRollover.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.storage.esRollover.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
 ```
 
 
@@ -6684,6 +33752,26 @@ withType(type)
 
 
 
+## obj spec.storage.esRollover.securityContext.sysctls
+
+
+
+### fn spec.storage.esRollover.securityContext.sysctls.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.storage.esRollover.securityContext.sysctls.withValue
+
+```ts
+withValue(value)
+```
+
+
+
 ## obj spec.storage.esRollover.securityContext.windowsOptions
 
 
@@ -6712,6 +33800,1932 @@ withRunAsUserName(runAsUserName)
 
 
 
+## obj spec.storage.esRollover.tolerations
+
+
+
+### fn spec.storage.esRollover.tolerations.withEffect
+
+```ts
+withEffect(effect)
+```
+
+
+
+### fn spec.storage.esRollover.tolerations.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.storage.esRollover.tolerations.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.storage.esRollover.tolerations.withTolerationSeconds
+
+```ts
+withTolerationSeconds(tolerationSeconds)
+```
+
+
+
+### fn spec.storage.esRollover.tolerations.withValue
+
+```ts
+withValue(value)
+```
+
+
+
+## obj spec.storage.esRollover.volumeMounts
+
+
+
+### fn spec.storage.esRollover.volumeMounts.withMountPath
+
+```ts
+withMountPath(mountPath)
+```
+
+
+
+### fn spec.storage.esRollover.volumeMounts.withMountPropagation
+
+```ts
+withMountPropagation(mountPropagation)
+```
+
+
+
+### fn spec.storage.esRollover.volumeMounts.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.storage.esRollover.volumeMounts.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.storage.esRollover.volumeMounts.withSubPath
+
+```ts
+withSubPath(subPath)
+```
+
+
+
+### fn spec.storage.esRollover.volumeMounts.withSubPathExpr
+
+```ts
+withSubPathExpr(subPathExpr)
+```
+
+
+
+## obj spec.storage.esRollover.volumes
+
+
+
+### fn spec.storage.esRollover.volumes.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.storage.esRollover.volumes.awsElasticBlockStore
+
+
+
+### fn spec.storage.esRollover.volumes.awsElasticBlockStore.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.awsElasticBlockStore.withPartition
+
+```ts
+withPartition(partition)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.awsElasticBlockStore.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.awsElasticBlockStore.withVolumeID
+
+```ts
+withVolumeID(volumeID)
+```
+
+
+
+## obj spec.storage.esRollover.volumes.azureDisk
+
+
+
+### fn spec.storage.esRollover.volumes.azureDisk.withCachingMode
+
+```ts
+withCachingMode(cachingMode)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.azureDisk.withDiskName
+
+```ts
+withDiskName(diskName)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.azureDisk.withDiskURI
+
+```ts
+withDiskURI(diskURI)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.azureDisk.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.azureDisk.withKind
+
+```ts
+withKind(kind)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.azureDisk.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.storage.esRollover.volumes.azureFile
+
+
+
+### fn spec.storage.esRollover.volumes.azureFile.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.azureFile.withSecretName
+
+```ts
+withSecretName(secretName)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.azureFile.withShareName
+
+```ts
+withShareName(shareName)
+```
+
+
+
+## obj spec.storage.esRollover.volumes.cephfs
+
+
+
+### fn spec.storage.esRollover.volumes.cephfs.withMonitors
+
+```ts
+withMonitors(monitors)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.cephfs.withMonitorsMixin
+
+```ts
+withMonitorsMixin(monitors)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.esRollover.volumes.cephfs.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.cephfs.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.cephfs.withSecretFile
+
+```ts
+withSecretFile(secretFile)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.cephfs.withUser
+
+```ts
+withUser(user)
+```
+
+
+
+## obj spec.storage.esRollover.volumes.cephfs.secretRef
+
+
+
+### fn spec.storage.esRollover.volumes.cephfs.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.storage.esRollover.volumes.cinder
+
+
+
+### fn spec.storage.esRollover.volumes.cinder.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.cinder.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.cinder.withVolumeID
+
+```ts
+withVolumeID(volumeID)
+```
+
+
+
+## obj spec.storage.esRollover.volumes.cinder.secretRef
+
+
+
+### fn spec.storage.esRollover.volumes.cinder.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.storage.esRollover.volumes.configMap
+
+
+
+### fn spec.storage.esRollover.volumes.configMap.withDefaultMode
+
+```ts
+withDefaultMode(defaultMode)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.configMap.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.configMap.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.esRollover.volumes.configMap.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.configMap.withOptional
+
+```ts
+withOptional(optional)
+```
+
+
+
+## obj spec.storage.esRollover.volumes.configMap.items
+
+
+
+### fn spec.storage.esRollover.volumes.configMap.items.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.configMap.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.configMap.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.storage.esRollover.volumes.csi
+
+
+
+### fn spec.storage.esRollover.volumes.csi.withDriver
+
+```ts
+withDriver(driver)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.csi.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.csi.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.csi.withVolumeAttributes
+
+```ts
+withVolumeAttributes(volumeAttributes)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.csi.withVolumeAttributesMixin
+
+```ts
+withVolumeAttributesMixin(volumeAttributes)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.esRollover.volumes.csi.nodePublishSecretRef
+
+
+
+### fn spec.storage.esRollover.volumes.csi.nodePublishSecretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.storage.esRollover.volumes.downwardAPI
+
+
+
+### fn spec.storage.esRollover.volumes.downwardAPI.withDefaultMode
+
+```ts
+withDefaultMode(defaultMode)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.downwardAPI.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.downwardAPI.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.esRollover.volumes.downwardAPI.items
+
+
+
+### fn spec.storage.esRollover.volumes.downwardAPI.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.downwardAPI.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.storage.esRollover.volumes.downwardAPI.items.fieldRef
+
+
+
+### fn spec.storage.esRollover.volumes.downwardAPI.items.fieldRef.withApiVersion
+
+```ts
+withApiVersion(apiVersion)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.downwardAPI.items.fieldRef.withFieldPath
+
+```ts
+withFieldPath(fieldPath)
+```
+
+
+
+## obj spec.storage.esRollover.volumes.downwardAPI.items.resourceFieldRef
+
+
+
+### fn spec.storage.esRollover.volumes.downwardAPI.items.resourceFieldRef.withContainerName
+
+```ts
+withContainerName(containerName)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.downwardAPI.items.resourceFieldRef.withDivisor
+
+```ts
+withDivisor(divisor)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.downwardAPI.items.resourceFieldRef.withResource
+
+```ts
+withResource(resource)
+```
+
+
+
+## obj spec.storage.esRollover.volumes.emptyDir
+
+
+
+### fn spec.storage.esRollover.volumes.emptyDir.withMedium
+
+```ts
+withMedium(medium)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.emptyDir.withSizeLimit
+
+```ts
+withSizeLimit(sizeLimit)
+```
+
+
+
+## obj spec.storage.esRollover.volumes.ephemeral
+
+
+
+### fn spec.storage.esRollover.volumes.ephemeral.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.storage.esRollover.volumes.ephemeral.volumeClaimTemplate
+
+
+
+### fn spec.storage.esRollover.volumes.ephemeral.volumeClaimTemplate.withMetadata
+
+```ts
+withMetadata(metadata)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.ephemeral.volumeClaimTemplate.withMetadataMixin
+
+```ts
+withMetadataMixin(metadata)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.esRollover.volumes.ephemeral.volumeClaimTemplate.spec
+
+
+
+### fn spec.storage.esRollover.volumes.ephemeral.volumeClaimTemplate.spec.withAccessModes
+
+```ts
+withAccessModes(accessModes)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.ephemeral.volumeClaimTemplate.spec.withAccessModesMixin
+
+```ts
+withAccessModesMixin(accessModes)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.esRollover.volumes.ephemeral.volumeClaimTemplate.spec.withStorageClassName
+
+```ts
+withStorageClassName(storageClassName)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.ephemeral.volumeClaimTemplate.spec.withVolumeMode
+
+```ts
+withVolumeMode(volumeMode)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.ephemeral.volumeClaimTemplate.spec.withVolumeName
+
+```ts
+withVolumeName(volumeName)
+```
+
+
+
+## obj spec.storage.esRollover.volumes.ephemeral.volumeClaimTemplate.spec.dataSource
+
+
+
+### fn spec.storage.esRollover.volumes.ephemeral.volumeClaimTemplate.spec.dataSource.withApiGroup
+
+```ts
+withApiGroup(apiGroup)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.ephemeral.volumeClaimTemplate.spec.dataSource.withKind
+
+```ts
+withKind(kind)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.ephemeral.volumeClaimTemplate.spec.dataSource.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.storage.esRollover.volumes.ephemeral.volumeClaimTemplate.spec.resources
+
+
+
+### fn spec.storage.esRollover.volumes.ephemeral.volumeClaimTemplate.spec.resources.withLimits
+
+```ts
+withLimits(limits)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.ephemeral.volumeClaimTemplate.spec.resources.withLimitsMixin
+
+```ts
+withLimitsMixin(limits)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.esRollover.volumes.ephemeral.volumeClaimTemplate.spec.resources.withRequests
+
+```ts
+withRequests(requests)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.ephemeral.volumeClaimTemplate.spec.resources.withRequestsMixin
+
+```ts
+withRequestsMixin(requests)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.esRollover.volumes.ephemeral.volumeClaimTemplate.spec.selector
+
+
+
+### fn spec.storage.esRollover.volumes.ephemeral.volumeClaimTemplate.spec.selector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.ephemeral.volumeClaimTemplate.spec.selector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.esRollover.volumes.ephemeral.volumeClaimTemplate.spec.selector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.ephemeral.volumeClaimTemplate.spec.selector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.esRollover.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions
+
+
+
+### fn spec.storage.esRollover.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.esRollover.volumes.fc
+
+
+
+### fn spec.storage.esRollover.volumes.fc.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.fc.withLun
+
+```ts
+withLun(lun)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.fc.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.fc.withTargetWWNs
+
+```ts
+withTargetWWNs(targetWWNs)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.fc.withTargetWWNsMixin
+
+```ts
+withTargetWWNsMixin(targetWWNs)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.esRollover.volumes.fc.withWwids
+
+```ts
+withWwids(wwids)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.fc.withWwidsMixin
+
+```ts
+withWwidsMixin(wwids)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.esRollover.volumes.flexVolume
+
+
+
+### fn spec.storage.esRollover.volumes.flexVolume.withDriver
+
+```ts
+withDriver(driver)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.flexVolume.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.flexVolume.withOptions
+
+```ts
+withOptions(options)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.flexVolume.withOptionsMixin
+
+```ts
+withOptionsMixin(options)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.esRollover.volumes.flexVolume.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.storage.esRollover.volumes.flexVolume.secretRef
+
+
+
+### fn spec.storage.esRollover.volumes.flexVolume.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.storage.esRollover.volumes.flocker
+
+
+
+### fn spec.storage.esRollover.volumes.flocker.withDatasetName
+
+```ts
+withDatasetName(datasetName)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.flocker.withDatasetUUID
+
+```ts
+withDatasetUUID(datasetUUID)
+```
+
+
+
+## obj spec.storage.esRollover.volumes.gcePersistentDisk
+
+
+
+### fn spec.storage.esRollover.volumes.gcePersistentDisk.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.gcePersistentDisk.withPartition
+
+```ts
+withPartition(partition)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.gcePersistentDisk.withPdName
+
+```ts
+withPdName(pdName)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.gcePersistentDisk.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.storage.esRollover.volumes.gitRepo
+
+
+
+### fn spec.storage.esRollover.volumes.gitRepo.withDirectory
+
+```ts
+withDirectory(directory)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.gitRepo.withRepository
+
+```ts
+withRepository(repository)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.gitRepo.withRevision
+
+```ts
+withRevision(revision)
+```
+
+
+
+## obj spec.storage.esRollover.volumes.glusterfs
+
+
+
+### fn spec.storage.esRollover.volumes.glusterfs.withEndpoints
+
+```ts
+withEndpoints(endpoints)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.glusterfs.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.glusterfs.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.storage.esRollover.volumes.hostPath
+
+
+
+### fn spec.storage.esRollover.volumes.hostPath.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.hostPath.withType
+
+```ts
+withType(type)
+```
+
+
+
+## obj spec.storage.esRollover.volumes.iscsi
+
+
+
+### fn spec.storage.esRollover.volumes.iscsi.withChapAuthDiscovery
+
+```ts
+withChapAuthDiscovery(chapAuthDiscovery)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.iscsi.withChapAuthSession
+
+```ts
+withChapAuthSession(chapAuthSession)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.iscsi.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.iscsi.withInitiatorName
+
+```ts
+withInitiatorName(initiatorName)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.iscsi.withIqn
+
+```ts
+withIqn(iqn)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.iscsi.withIscsiInterface
+
+```ts
+withIscsiInterface(iscsiInterface)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.iscsi.withLun
+
+```ts
+withLun(lun)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.iscsi.withPortals
+
+```ts
+withPortals(portals)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.iscsi.withPortalsMixin
+
+```ts
+withPortalsMixin(portals)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.esRollover.volumes.iscsi.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.iscsi.withTargetPortal
+
+```ts
+withTargetPortal(targetPortal)
+```
+
+
+
+## obj spec.storage.esRollover.volumes.iscsi.secretRef
+
+
+
+### fn spec.storage.esRollover.volumes.iscsi.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.storage.esRollover.volumes.nfs
+
+
+
+### fn spec.storage.esRollover.volumes.nfs.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.nfs.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.nfs.withServer
+
+```ts
+withServer(server)
+```
+
+
+
+## obj spec.storage.esRollover.volumes.persistentVolumeClaim
+
+
+
+### fn spec.storage.esRollover.volumes.persistentVolumeClaim.withClaimName
+
+```ts
+withClaimName(claimName)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.persistentVolumeClaim.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.storage.esRollover.volumes.photonPersistentDisk
+
+
+
+### fn spec.storage.esRollover.volumes.photonPersistentDisk.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.photonPersistentDisk.withPdID
+
+```ts
+withPdID(pdID)
+```
+
+
+
+## obj spec.storage.esRollover.volumes.portworxVolume
+
+
+
+### fn spec.storage.esRollover.volumes.portworxVolume.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.portworxVolume.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.portworxVolume.withVolumeID
+
+```ts
+withVolumeID(volumeID)
+```
+
+
+
+## obj spec.storage.esRollover.volumes.projected
+
+
+
+### fn spec.storage.esRollover.volumes.projected.withDefaultMode
+
+```ts
+withDefaultMode(defaultMode)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.projected.withSources
+
+```ts
+withSources(sources)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.projected.withSourcesMixin
+
+```ts
+withSourcesMixin(sources)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.esRollover.volumes.projected.sources
+
+
+
+## obj spec.storage.esRollover.volumes.projected.sources.configMap
+
+
+
+### fn spec.storage.esRollover.volumes.projected.sources.configMap.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.projected.sources.configMap.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.esRollover.volumes.projected.sources.configMap.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.projected.sources.configMap.withOptional
+
+```ts
+withOptional(optional)
+```
+
+
+
+## obj spec.storage.esRollover.volumes.projected.sources.configMap.items
+
+
+
+### fn spec.storage.esRollover.volumes.projected.sources.configMap.items.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.projected.sources.configMap.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.projected.sources.configMap.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.storage.esRollover.volumes.projected.sources.downwardAPI
+
+
+
+### fn spec.storage.esRollover.volumes.projected.sources.downwardAPI.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.projected.sources.downwardAPI.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.storage.esRollover.volumes.projected.sources.downwardAPI.items
+
+
+
+### fn spec.storage.esRollover.volumes.projected.sources.downwardAPI.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.projected.sources.downwardAPI.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.storage.esRollover.volumes.projected.sources.downwardAPI.items.fieldRef
+
+
+
+### fn spec.storage.esRollover.volumes.projected.sources.downwardAPI.items.fieldRef.withApiVersion
+
+```ts
+withApiVersion(apiVersion)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.projected.sources.downwardAPI.items.fieldRef.withFieldPath
+
+```ts
+withFieldPath(fieldPath)
+```
+
+
+
+## obj spec.storage.esRollover.volumes.projected.sources.downwardAPI.items.resourceFieldRef
+
+
+
+### fn spec.storage.esRollover.volumes.projected.sources.downwardAPI.items.resourceFieldRef.withContainerName
+
+```ts
+withContainerName(containerName)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.projected.sources.downwardAPI.items.resourceFieldRef.withDivisor
+
+```ts
+withDivisor(divisor)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.projected.sources.downwardAPI.items.resourceFieldRef.withResource
+
+```ts
+withResource(resource)
+```
+
+
+
+## obj spec.storage.esRollover.volumes.projected.sources.secret
+
+
+
+### fn spec.storage.esRollover.volumes.projected.sources.secret.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.projected.sources.secret.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.esRollover.volumes.projected.sources.secret.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.projected.sources.secret.withOptional
+
+```ts
+withOptional(optional)
+```
+
+
+
+## obj spec.storage.esRollover.volumes.projected.sources.secret.items
+
+
+
+### fn spec.storage.esRollover.volumes.projected.sources.secret.items.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.projected.sources.secret.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.projected.sources.secret.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.storage.esRollover.volumes.projected.sources.serviceAccountToken
+
+
+
+### fn spec.storage.esRollover.volumes.projected.sources.serviceAccountToken.withAudience
+
+```ts
+withAudience(audience)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.projected.sources.serviceAccountToken.withExpirationSeconds
+
+```ts
+withExpirationSeconds(expirationSeconds)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.projected.sources.serviceAccountToken.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.storage.esRollover.volumes.quobyte
+
+
+
+### fn spec.storage.esRollover.volumes.quobyte.withGroup
+
+```ts
+withGroup(group)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.quobyte.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.quobyte.withRegistry
+
+```ts
+withRegistry(registry)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.quobyte.withTenant
+
+```ts
+withTenant(tenant)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.quobyte.withUser
+
+```ts
+withUser(user)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.quobyte.withVolume
+
+```ts
+withVolume(volume)
+```
+
+
+
+## obj spec.storage.esRollover.volumes.rbd
+
+
+
+### fn spec.storage.esRollover.volumes.rbd.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.rbd.withImage
+
+```ts
+withImage(image)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.rbd.withKeyring
+
+```ts
+withKeyring(keyring)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.rbd.withMonitors
+
+```ts
+withMonitors(monitors)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.rbd.withMonitorsMixin
+
+```ts
+withMonitorsMixin(monitors)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.esRollover.volumes.rbd.withPool
+
+```ts
+withPool(pool)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.rbd.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.rbd.withUser
+
+```ts
+withUser(user)
+```
+
+
+
+## obj spec.storage.esRollover.volumes.rbd.secretRef
+
+
+
+### fn spec.storage.esRollover.volumes.rbd.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.storage.esRollover.volumes.scaleIO
+
+
+
+### fn spec.storage.esRollover.volumes.scaleIO.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.scaleIO.withGateway
+
+```ts
+withGateway(gateway)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.scaleIO.withProtectionDomain
+
+```ts
+withProtectionDomain(protectionDomain)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.scaleIO.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.scaleIO.withSslEnabled
+
+```ts
+withSslEnabled(sslEnabled)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.scaleIO.withStorageMode
+
+```ts
+withStorageMode(storageMode)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.scaleIO.withStoragePool
+
+```ts
+withStoragePool(storagePool)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.scaleIO.withSystem
+
+```ts
+withSystem(system)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.scaleIO.withVolumeName
+
+```ts
+withVolumeName(volumeName)
+```
+
+
+
+## obj spec.storage.esRollover.volumes.scaleIO.secretRef
+
+
+
+### fn spec.storage.esRollover.volumes.scaleIO.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.storage.esRollover.volumes.secret
+
+
+
+### fn spec.storage.esRollover.volumes.secret.withDefaultMode
+
+```ts
+withDefaultMode(defaultMode)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.secret.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.secret.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.storage.esRollover.volumes.secret.withOptional
+
+```ts
+withOptional(optional)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.secret.withSecretName
+
+```ts
+withSecretName(secretName)
+```
+
+
+
+## obj spec.storage.esRollover.volumes.secret.items
+
+
+
+### fn spec.storage.esRollover.volumes.secret.items.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.secret.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.secret.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.storage.esRollover.volumes.storageos
+
+
+
+### fn spec.storage.esRollover.volumes.storageos.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.storageos.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.storageos.withVolumeName
+
+```ts
+withVolumeName(volumeName)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.storageos.withVolumeNamespace
+
+```ts
+withVolumeNamespace(volumeNamespace)
+```
+
+
+
+## obj spec.storage.esRollover.volumes.storageos.secretRef
+
+
+
+### fn spec.storage.esRollover.volumes.storageos.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.storage.esRollover.volumes.vsphereVolume
+
+
+
+### fn spec.storage.esRollover.volumes.vsphereVolume.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.vsphereVolume.withStoragePolicyID
+
+```ts
+withStoragePolicyID(storagePolicyID)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.vsphereVolume.withStoragePolicyName
+
+```ts
+withStoragePolicyName(storagePolicyName)
+```
+
+
+
+### fn spec.storage.esRollover.volumes.vsphereVolume.withVolumePath
+
+```ts
+withVolumePath(volumePath)
+```
+
+
+
 ## obj spec.storage.grpcPlugin
 
 
@@ -6720,6 +35734,50 @@ withRunAsUserName(runAsUserName)
 
 ```ts
 withImage(image)
+```
+
+
+
+## obj spec.tolerations
+
+
+
+### fn spec.tolerations.withEffect
+
+```ts
+withEffect(effect)
+```
+
+
+
+### fn spec.tolerations.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.tolerations.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.tolerations.withTolerationSeconds
+
+```ts
+withTolerationSeconds(tolerationSeconds)
+```
+
+
+
+### fn spec.tolerations.withValue
+
+```ts
+withValue(value)
 ```
 
 
@@ -6745,3 +35803,1884 @@ withOptionsMixin(options)
 
 
 **Note:** This function appends passed data to existing values
+
+## obj spec.volumeMounts
+
+
+
+### fn spec.volumeMounts.withMountPath
+
+```ts
+withMountPath(mountPath)
+```
+
+
+
+### fn spec.volumeMounts.withMountPropagation
+
+```ts
+withMountPropagation(mountPropagation)
+```
+
+
+
+### fn spec.volumeMounts.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.volumeMounts.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.volumeMounts.withSubPath
+
+```ts
+withSubPath(subPath)
+```
+
+
+
+### fn spec.volumeMounts.withSubPathExpr
+
+```ts
+withSubPathExpr(subPathExpr)
+```
+
+
+
+## obj spec.volumes
+
+
+
+### fn spec.volumes.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.volumes.awsElasticBlockStore
+
+
+
+### fn spec.volumes.awsElasticBlockStore.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.volumes.awsElasticBlockStore.withPartition
+
+```ts
+withPartition(partition)
+```
+
+
+
+### fn spec.volumes.awsElasticBlockStore.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.volumes.awsElasticBlockStore.withVolumeID
+
+```ts
+withVolumeID(volumeID)
+```
+
+
+
+## obj spec.volumes.azureDisk
+
+
+
+### fn spec.volumes.azureDisk.withCachingMode
+
+```ts
+withCachingMode(cachingMode)
+```
+
+
+
+### fn spec.volumes.azureDisk.withDiskName
+
+```ts
+withDiskName(diskName)
+```
+
+
+
+### fn spec.volumes.azureDisk.withDiskURI
+
+```ts
+withDiskURI(diskURI)
+```
+
+
+
+### fn spec.volumes.azureDisk.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.volumes.azureDisk.withKind
+
+```ts
+withKind(kind)
+```
+
+
+
+### fn spec.volumes.azureDisk.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.volumes.azureFile
+
+
+
+### fn spec.volumes.azureFile.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.volumes.azureFile.withSecretName
+
+```ts
+withSecretName(secretName)
+```
+
+
+
+### fn spec.volumes.azureFile.withShareName
+
+```ts
+withShareName(shareName)
+```
+
+
+
+## obj spec.volumes.cephfs
+
+
+
+### fn spec.volumes.cephfs.withMonitors
+
+```ts
+withMonitors(monitors)
+```
+
+
+
+### fn spec.volumes.cephfs.withMonitorsMixin
+
+```ts
+withMonitorsMixin(monitors)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.volumes.cephfs.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+### fn spec.volumes.cephfs.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.volumes.cephfs.withSecretFile
+
+```ts
+withSecretFile(secretFile)
+```
+
+
+
+### fn spec.volumes.cephfs.withUser
+
+```ts
+withUser(user)
+```
+
+
+
+## obj spec.volumes.cephfs.secretRef
+
+
+
+### fn spec.volumes.cephfs.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.volumes.cinder
+
+
+
+### fn spec.volumes.cinder.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.volumes.cinder.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.volumes.cinder.withVolumeID
+
+```ts
+withVolumeID(volumeID)
+```
+
+
+
+## obj spec.volumes.cinder.secretRef
+
+
+
+### fn spec.volumes.cinder.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.volumes.configMap
+
+
+
+### fn spec.volumes.configMap.withDefaultMode
+
+```ts
+withDefaultMode(defaultMode)
+```
+
+
+
+### fn spec.volumes.configMap.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.volumes.configMap.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.volumes.configMap.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.volumes.configMap.withOptional
+
+```ts
+withOptional(optional)
+```
+
+
+
+## obj spec.volumes.configMap.items
+
+
+
+### fn spec.volumes.configMap.items.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.volumes.configMap.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.volumes.configMap.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.volumes.csi
+
+
+
+### fn spec.volumes.csi.withDriver
+
+```ts
+withDriver(driver)
+```
+
+
+
+### fn spec.volumes.csi.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.volumes.csi.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.volumes.csi.withVolumeAttributes
+
+```ts
+withVolumeAttributes(volumeAttributes)
+```
+
+
+
+### fn spec.volumes.csi.withVolumeAttributesMixin
+
+```ts
+withVolumeAttributesMixin(volumeAttributes)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.volumes.csi.nodePublishSecretRef
+
+
+
+### fn spec.volumes.csi.nodePublishSecretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.volumes.downwardAPI
+
+
+
+### fn spec.volumes.downwardAPI.withDefaultMode
+
+```ts
+withDefaultMode(defaultMode)
+```
+
+
+
+### fn spec.volumes.downwardAPI.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.volumes.downwardAPI.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.volumes.downwardAPI.items
+
+
+
+### fn spec.volumes.downwardAPI.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.volumes.downwardAPI.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.volumes.downwardAPI.items.fieldRef
+
+
+
+### fn spec.volumes.downwardAPI.items.fieldRef.withApiVersion
+
+```ts
+withApiVersion(apiVersion)
+```
+
+
+
+### fn spec.volumes.downwardAPI.items.fieldRef.withFieldPath
+
+```ts
+withFieldPath(fieldPath)
+```
+
+
+
+## obj spec.volumes.downwardAPI.items.resourceFieldRef
+
+
+
+### fn spec.volumes.downwardAPI.items.resourceFieldRef.withContainerName
+
+```ts
+withContainerName(containerName)
+```
+
+
+
+### fn spec.volumes.downwardAPI.items.resourceFieldRef.withDivisor
+
+```ts
+withDivisor(divisor)
+```
+
+
+
+### fn spec.volumes.downwardAPI.items.resourceFieldRef.withResource
+
+```ts
+withResource(resource)
+```
+
+
+
+## obj spec.volumes.emptyDir
+
+
+
+### fn spec.volumes.emptyDir.withMedium
+
+```ts
+withMedium(medium)
+```
+
+
+
+### fn spec.volumes.emptyDir.withSizeLimit
+
+```ts
+withSizeLimit(sizeLimit)
+```
+
+
+
+## obj spec.volumes.ephemeral
+
+
+
+### fn spec.volumes.ephemeral.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.volumes.ephemeral.volumeClaimTemplate
+
+
+
+### fn spec.volumes.ephemeral.volumeClaimTemplate.withMetadata
+
+```ts
+withMetadata(metadata)
+```
+
+
+
+### fn spec.volumes.ephemeral.volumeClaimTemplate.withMetadataMixin
+
+```ts
+withMetadataMixin(metadata)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.volumes.ephemeral.volumeClaimTemplate.spec
+
+
+
+### fn spec.volumes.ephemeral.volumeClaimTemplate.spec.withAccessModes
+
+```ts
+withAccessModes(accessModes)
+```
+
+
+
+### fn spec.volumes.ephemeral.volumeClaimTemplate.spec.withAccessModesMixin
+
+```ts
+withAccessModesMixin(accessModes)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.volumes.ephemeral.volumeClaimTemplate.spec.withStorageClassName
+
+```ts
+withStorageClassName(storageClassName)
+```
+
+
+
+### fn spec.volumes.ephemeral.volumeClaimTemplate.spec.withVolumeMode
+
+```ts
+withVolumeMode(volumeMode)
+```
+
+
+
+### fn spec.volumes.ephemeral.volumeClaimTemplate.spec.withVolumeName
+
+```ts
+withVolumeName(volumeName)
+```
+
+
+
+## obj spec.volumes.ephemeral.volumeClaimTemplate.spec.dataSource
+
+
+
+### fn spec.volumes.ephemeral.volumeClaimTemplate.spec.dataSource.withApiGroup
+
+```ts
+withApiGroup(apiGroup)
+```
+
+
+
+### fn spec.volumes.ephemeral.volumeClaimTemplate.spec.dataSource.withKind
+
+```ts
+withKind(kind)
+```
+
+
+
+### fn spec.volumes.ephemeral.volumeClaimTemplate.spec.dataSource.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.volumes.ephemeral.volumeClaimTemplate.spec.resources
+
+
+
+### fn spec.volumes.ephemeral.volumeClaimTemplate.spec.resources.withLimits
+
+```ts
+withLimits(limits)
+```
+
+
+
+### fn spec.volumes.ephemeral.volumeClaimTemplate.spec.resources.withLimitsMixin
+
+```ts
+withLimitsMixin(limits)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.volumes.ephemeral.volumeClaimTemplate.spec.resources.withRequests
+
+```ts
+withRequests(requests)
+```
+
+
+
+### fn spec.volumes.ephemeral.volumeClaimTemplate.spec.resources.withRequestsMixin
+
+```ts
+withRequestsMixin(requests)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.volumes.ephemeral.volumeClaimTemplate.spec.selector
+
+
+
+### fn spec.volumes.ephemeral.volumeClaimTemplate.spec.selector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.volumes.ephemeral.volumeClaimTemplate.spec.selector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.volumes.ephemeral.volumeClaimTemplate.spec.selector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.volumes.ephemeral.volumeClaimTemplate.spec.selector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions
+
+
+
+### fn spec.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.volumes.ephemeral.volumeClaimTemplate.spec.selector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.volumes.fc
+
+
+
+### fn spec.volumes.fc.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.volumes.fc.withLun
+
+```ts
+withLun(lun)
+```
+
+
+
+### fn spec.volumes.fc.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.volumes.fc.withTargetWWNs
+
+```ts
+withTargetWWNs(targetWWNs)
+```
+
+
+
+### fn spec.volumes.fc.withTargetWWNsMixin
+
+```ts
+withTargetWWNsMixin(targetWWNs)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.volumes.fc.withWwids
+
+```ts
+withWwids(wwids)
+```
+
+
+
+### fn spec.volumes.fc.withWwidsMixin
+
+```ts
+withWwidsMixin(wwids)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.volumes.flexVolume
+
+
+
+### fn spec.volumes.flexVolume.withDriver
+
+```ts
+withDriver(driver)
+```
+
+
+
+### fn spec.volumes.flexVolume.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.volumes.flexVolume.withOptions
+
+```ts
+withOptions(options)
+```
+
+
+
+### fn spec.volumes.flexVolume.withOptionsMixin
+
+```ts
+withOptionsMixin(options)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.volumes.flexVolume.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.volumes.flexVolume.secretRef
+
+
+
+### fn spec.volumes.flexVolume.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.volumes.flocker
+
+
+
+### fn spec.volumes.flocker.withDatasetName
+
+```ts
+withDatasetName(datasetName)
+```
+
+
+
+### fn spec.volumes.flocker.withDatasetUUID
+
+```ts
+withDatasetUUID(datasetUUID)
+```
+
+
+
+## obj spec.volumes.gcePersistentDisk
+
+
+
+### fn spec.volumes.gcePersistentDisk.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.volumes.gcePersistentDisk.withPartition
+
+```ts
+withPartition(partition)
+```
+
+
+
+### fn spec.volumes.gcePersistentDisk.withPdName
+
+```ts
+withPdName(pdName)
+```
+
+
+
+### fn spec.volumes.gcePersistentDisk.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.volumes.gitRepo
+
+
+
+### fn spec.volumes.gitRepo.withDirectory
+
+```ts
+withDirectory(directory)
+```
+
+
+
+### fn spec.volumes.gitRepo.withRepository
+
+```ts
+withRepository(repository)
+```
+
+
+
+### fn spec.volumes.gitRepo.withRevision
+
+```ts
+withRevision(revision)
+```
+
+
+
+## obj spec.volumes.glusterfs
+
+
+
+### fn spec.volumes.glusterfs.withEndpoints
+
+```ts
+withEndpoints(endpoints)
+```
+
+
+
+### fn spec.volumes.glusterfs.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+### fn spec.volumes.glusterfs.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.volumes.hostPath
+
+
+
+### fn spec.volumes.hostPath.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+### fn spec.volumes.hostPath.withType
+
+```ts
+withType(type)
+```
+
+
+
+## obj spec.volumes.iscsi
+
+
+
+### fn spec.volumes.iscsi.withChapAuthDiscovery
+
+```ts
+withChapAuthDiscovery(chapAuthDiscovery)
+```
+
+
+
+### fn spec.volumes.iscsi.withChapAuthSession
+
+```ts
+withChapAuthSession(chapAuthSession)
+```
+
+
+
+### fn spec.volumes.iscsi.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.volumes.iscsi.withInitiatorName
+
+```ts
+withInitiatorName(initiatorName)
+```
+
+
+
+### fn spec.volumes.iscsi.withIqn
+
+```ts
+withIqn(iqn)
+```
+
+
+
+### fn spec.volumes.iscsi.withIscsiInterface
+
+```ts
+withIscsiInterface(iscsiInterface)
+```
+
+
+
+### fn spec.volumes.iscsi.withLun
+
+```ts
+withLun(lun)
+```
+
+
+
+### fn spec.volumes.iscsi.withPortals
+
+```ts
+withPortals(portals)
+```
+
+
+
+### fn spec.volumes.iscsi.withPortalsMixin
+
+```ts
+withPortalsMixin(portals)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.volumes.iscsi.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.volumes.iscsi.withTargetPortal
+
+```ts
+withTargetPortal(targetPortal)
+```
+
+
+
+## obj spec.volumes.iscsi.secretRef
+
+
+
+### fn spec.volumes.iscsi.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.volumes.nfs
+
+
+
+### fn spec.volumes.nfs.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+### fn spec.volumes.nfs.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.volumes.nfs.withServer
+
+```ts
+withServer(server)
+```
+
+
+
+## obj spec.volumes.persistentVolumeClaim
+
+
+
+### fn spec.volumes.persistentVolumeClaim.withClaimName
+
+```ts
+withClaimName(claimName)
+```
+
+
+
+### fn spec.volumes.persistentVolumeClaim.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+## obj spec.volumes.photonPersistentDisk
+
+
+
+### fn spec.volumes.photonPersistentDisk.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.volumes.photonPersistentDisk.withPdID
+
+```ts
+withPdID(pdID)
+```
+
+
+
+## obj spec.volumes.portworxVolume
+
+
+
+### fn spec.volumes.portworxVolume.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.volumes.portworxVolume.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.volumes.portworxVolume.withVolumeID
+
+```ts
+withVolumeID(volumeID)
+```
+
+
+
+## obj spec.volumes.projected
+
+
+
+### fn spec.volumes.projected.withDefaultMode
+
+```ts
+withDefaultMode(defaultMode)
+```
+
+
+
+### fn spec.volumes.projected.withSources
+
+```ts
+withSources(sources)
+```
+
+
+
+### fn spec.volumes.projected.withSourcesMixin
+
+```ts
+withSourcesMixin(sources)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.volumes.projected.sources
+
+
+
+## obj spec.volumes.projected.sources.configMap
+
+
+
+### fn spec.volumes.projected.sources.configMap.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.volumes.projected.sources.configMap.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.volumes.projected.sources.configMap.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.volumes.projected.sources.configMap.withOptional
+
+```ts
+withOptional(optional)
+```
+
+
+
+## obj spec.volumes.projected.sources.configMap.items
+
+
+
+### fn spec.volumes.projected.sources.configMap.items.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.volumes.projected.sources.configMap.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.volumes.projected.sources.configMap.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.volumes.projected.sources.downwardAPI
+
+
+
+### fn spec.volumes.projected.sources.downwardAPI.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.volumes.projected.sources.downwardAPI.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.volumes.projected.sources.downwardAPI.items
+
+
+
+### fn spec.volumes.projected.sources.downwardAPI.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.volumes.projected.sources.downwardAPI.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.volumes.projected.sources.downwardAPI.items.fieldRef
+
+
+
+### fn spec.volumes.projected.sources.downwardAPI.items.fieldRef.withApiVersion
+
+```ts
+withApiVersion(apiVersion)
+```
+
+
+
+### fn spec.volumes.projected.sources.downwardAPI.items.fieldRef.withFieldPath
+
+```ts
+withFieldPath(fieldPath)
+```
+
+
+
+## obj spec.volumes.projected.sources.downwardAPI.items.resourceFieldRef
+
+
+
+### fn spec.volumes.projected.sources.downwardAPI.items.resourceFieldRef.withContainerName
+
+```ts
+withContainerName(containerName)
+```
+
+
+
+### fn spec.volumes.projected.sources.downwardAPI.items.resourceFieldRef.withDivisor
+
+```ts
+withDivisor(divisor)
+```
+
+
+
+### fn spec.volumes.projected.sources.downwardAPI.items.resourceFieldRef.withResource
+
+```ts
+withResource(resource)
+```
+
+
+
+## obj spec.volumes.projected.sources.secret
+
+
+
+### fn spec.volumes.projected.sources.secret.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.volumes.projected.sources.secret.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.volumes.projected.sources.secret.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.volumes.projected.sources.secret.withOptional
+
+```ts
+withOptional(optional)
+```
+
+
+
+## obj spec.volumes.projected.sources.secret.items
+
+
+
+### fn spec.volumes.projected.sources.secret.items.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.volumes.projected.sources.secret.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.volumes.projected.sources.secret.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.volumes.projected.sources.serviceAccountToken
+
+
+
+### fn spec.volumes.projected.sources.serviceAccountToken.withAudience
+
+```ts
+withAudience(audience)
+```
+
+
+
+### fn spec.volumes.projected.sources.serviceAccountToken.withExpirationSeconds
+
+```ts
+withExpirationSeconds(expirationSeconds)
+```
+
+
+
+### fn spec.volumes.projected.sources.serviceAccountToken.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.volumes.quobyte
+
+
+
+### fn spec.volumes.quobyte.withGroup
+
+```ts
+withGroup(group)
+```
+
+
+
+### fn spec.volumes.quobyte.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.volumes.quobyte.withRegistry
+
+```ts
+withRegistry(registry)
+```
+
+
+
+### fn spec.volumes.quobyte.withTenant
+
+```ts
+withTenant(tenant)
+```
+
+
+
+### fn spec.volumes.quobyte.withUser
+
+```ts
+withUser(user)
+```
+
+
+
+### fn spec.volumes.quobyte.withVolume
+
+```ts
+withVolume(volume)
+```
+
+
+
+## obj spec.volumes.rbd
+
+
+
+### fn spec.volumes.rbd.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.volumes.rbd.withImage
+
+```ts
+withImage(image)
+```
+
+
+
+### fn spec.volumes.rbd.withKeyring
+
+```ts
+withKeyring(keyring)
+```
+
+
+
+### fn spec.volumes.rbd.withMonitors
+
+```ts
+withMonitors(monitors)
+```
+
+
+
+### fn spec.volumes.rbd.withMonitorsMixin
+
+```ts
+withMonitorsMixin(monitors)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.volumes.rbd.withPool
+
+```ts
+withPool(pool)
+```
+
+
+
+### fn spec.volumes.rbd.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.volumes.rbd.withUser
+
+```ts
+withUser(user)
+```
+
+
+
+## obj spec.volumes.rbd.secretRef
+
+
+
+### fn spec.volumes.rbd.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.volumes.scaleIO
+
+
+
+### fn spec.volumes.scaleIO.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.volumes.scaleIO.withGateway
+
+```ts
+withGateway(gateway)
+```
+
+
+
+### fn spec.volumes.scaleIO.withProtectionDomain
+
+```ts
+withProtectionDomain(protectionDomain)
+```
+
+
+
+### fn spec.volumes.scaleIO.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.volumes.scaleIO.withSslEnabled
+
+```ts
+withSslEnabled(sslEnabled)
+```
+
+
+
+### fn spec.volumes.scaleIO.withStorageMode
+
+```ts
+withStorageMode(storageMode)
+```
+
+
+
+### fn spec.volumes.scaleIO.withStoragePool
+
+```ts
+withStoragePool(storagePool)
+```
+
+
+
+### fn spec.volumes.scaleIO.withSystem
+
+```ts
+withSystem(system)
+```
+
+
+
+### fn spec.volumes.scaleIO.withVolumeName
+
+```ts
+withVolumeName(volumeName)
+```
+
+
+
+## obj spec.volumes.scaleIO.secretRef
+
+
+
+### fn spec.volumes.scaleIO.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.volumes.secret
+
+
+
+### fn spec.volumes.secret.withDefaultMode
+
+```ts
+withDefaultMode(defaultMode)
+```
+
+
+
+### fn spec.volumes.secret.withItems
+
+```ts
+withItems(items)
+```
+
+
+
+### fn spec.volumes.secret.withItemsMixin
+
+```ts
+withItemsMixin(items)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.volumes.secret.withOptional
+
+```ts
+withOptional(optional)
+```
+
+
+
+### fn spec.volumes.secret.withSecretName
+
+```ts
+withSecretName(secretName)
+```
+
+
+
+## obj spec.volumes.secret.items
+
+
+
+### fn spec.volumes.secret.items.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.volumes.secret.items.withMode
+
+```ts
+withMode(mode)
+```
+
+
+
+### fn spec.volumes.secret.items.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+## obj spec.volumes.storageos
+
+
+
+### fn spec.volumes.storageos.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.volumes.storageos.withReadOnly
+
+```ts
+withReadOnly(readOnly)
+```
+
+
+
+### fn spec.volumes.storageos.withVolumeName
+
+```ts
+withVolumeName(volumeName)
+```
+
+
+
+### fn spec.volumes.storageos.withVolumeNamespace
+
+```ts
+withVolumeNamespace(volumeNamespace)
+```
+
+
+
+## obj spec.volumes.storageos.secretRef
+
+
+
+### fn spec.volumes.storageos.secretRef.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.volumes.vsphereVolume
+
+
+
+### fn spec.volumes.vsphereVolume.withFsType
+
+```ts
+withFsType(fsType)
+```
+
+
+
+### fn spec.volumes.vsphereVolume.withStoragePolicyID
+
+```ts
+withStoragePolicyID(storagePolicyID)
+```
+
+
+
+### fn spec.volumes.vsphereVolume.withStoragePolicyName
+
+```ts
+withStoragePolicyName(storagePolicyName)
+```
+
+
+
+### fn spec.volumes.vsphereVolume.withVolumePath
+
+```ts
+withVolumePath(volumePath)
+```
+

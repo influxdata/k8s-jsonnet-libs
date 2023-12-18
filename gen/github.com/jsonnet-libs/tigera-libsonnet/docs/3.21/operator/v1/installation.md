@@ -22,8 +22,6 @@ permalink: /3.21/operator/v1/installation/
   * [`fn withGeneration(generation)`](#fn-metadatawithgeneration)
   * [`fn withLabels(labels)`](#fn-metadatawithlabels)
   * [`fn withLabelsMixin(labels)`](#fn-metadatawithlabelsmixin)
-  * [`fn withManagedFields(managedFields)`](#fn-metadatawithmanagedfields)
-  * [`fn withManagedFieldsMixin(managedFields)`](#fn-metadatawithmanagedfieldsmixin)
   * [`fn withName(name)`](#fn-metadatawithname)
   * [`fn withNamespace(namespace)`](#fn-metadatawithnamespace)
   * [`fn withOwnerReferences(ownerReferences)`](#fn-metadatawithownerreferences)
@@ -59,6 +57,12 @@ permalink: /3.21/operator/v1/installation/
     * [`fn withLinuxDataplane(linuxDataplane)`](#fn-speccaliconetworkwithlinuxdataplane)
     * [`fn withMtu(mtu)`](#fn-speccaliconetworkwithmtu)
     * [`fn withMultiInterfaceMode(multiInterfaceMode)`](#fn-speccaliconetworkwithmultiinterfacemode)
+    * [`obj spec.calicoNetwork.ipPools`](#obj-speccaliconetworkippools)
+      * [`fn withBlockSize(blockSize)`](#fn-speccaliconetworkippoolswithblocksize)
+      * [`fn withCidr(cidr)`](#fn-speccaliconetworkippoolswithcidr)
+      * [`fn withEncapsulation(encapsulation)`](#fn-speccaliconetworkippoolswithencapsulation)
+      * [`fn withNatOutgoing(natOutgoing)`](#fn-speccaliconetworkippoolswithnatoutgoing)
+      * [`fn withNodeSelector(nodeSelector)`](#fn-speccaliconetworkippoolswithnodeselector)
     * [`obj spec.calicoNetwork.nodeAddressAutodetectionV4`](#obj-speccaliconetworknodeaddressautodetectionv4)
       * [`fn withCanReach(canReach)`](#fn-speccaliconetworknodeaddressautodetectionv4withcanreach)
       * [`fn withCidrs(cidrs)`](#fn-speccaliconetworknodeaddressautodetectionv4withcidrs)
@@ -82,6 +86,21 @@ permalink: /3.21/operator/v1/installation/
     * [`fn withType(type)`](#fn-speccniwithtype)
     * [`obj spec.cni.ipam`](#obj-speccniipam)
       * [`fn withType(type)`](#fn-speccniipamwithtype)
+  * [`obj spec.componentResources`](#obj-speccomponentresources)
+    * [`fn withComponentName(componentName)`](#fn-speccomponentresourceswithcomponentname)
+    * [`obj spec.componentResources.resourceRequirements`](#obj-speccomponentresourcesresourcerequirements)
+      * [`fn withLimits(limits)`](#fn-speccomponentresourcesresourcerequirementswithlimits)
+      * [`fn withLimitsMixin(limits)`](#fn-speccomponentresourcesresourcerequirementswithlimitsmixin)
+      * [`fn withRequests(requests)`](#fn-speccomponentresourcesresourcerequirementswithrequests)
+      * [`fn withRequestsMixin(requests)`](#fn-speccomponentresourcesresourcerequirementswithrequestsmixin)
+  * [`obj spec.controlPlaneTolerations`](#obj-speccontrolplanetolerations)
+    * [`fn withEffect(effect)`](#fn-speccontrolplanetolerationswitheffect)
+    * [`fn withKey(key)`](#fn-speccontrolplanetolerationswithkey)
+    * [`fn withOperator(operator)`](#fn-speccontrolplanetolerationswithoperator)
+    * [`fn withTolerationSeconds(tolerationSeconds)`](#fn-speccontrolplanetolerationswithtolerationseconds)
+    * [`fn withValue(value)`](#fn-speccontrolplanetolerationswithvalue)
+  * [`obj spec.imagePullSecrets`](#obj-specimagepullsecrets)
+    * [`fn withName(name)`](#fn-specimagepullsecretswithname)
   * [`obj spec.nodeUpdateStrategy`](#obj-specnodeupdatestrategy)
     * [`fn withType(type)`](#fn-specnodeupdatestrategywithtype)
     * [`obj spec.nodeUpdateStrategy.rollingUpdate`](#obj-specnodeupdatestrategyrollingupdate)
@@ -90,9 +109,41 @@ permalink: /3.21/operator/v1/installation/
     * [`obj spec.typhaAffinity.nodeAffinity`](#obj-spectyphaaffinitynodeaffinity)
       * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-spectyphaaffinitynodeaffinitywithpreferredduringschedulingignoredduringexecution)
       * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-spectyphaaffinitynodeaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
+      * [`obj spec.typhaAffinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-spectyphaaffinitynodeaffinitypreferredduringschedulingignoredduringexecution)
+        * [`fn withWeight(weight)`](#fn-spectyphaaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+        * [`obj spec.typhaAffinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference`](#obj-spectyphaaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreference)
+          * [`fn withMatchExpressions(matchExpressions)`](#fn-spectyphaaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchexpressions)
+          * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-spectyphaaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchexpressionsmixin)
+          * [`fn withMatchFields(matchFields)`](#fn-spectyphaaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchfields)
+          * [`fn withMatchFieldsMixin(matchFields)`](#fn-spectyphaaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchfieldsmixin)
+          * [`obj spec.typhaAffinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions`](#obj-spectyphaaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressions)
+            * [`fn withKey(key)`](#fn-spectyphaaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithkey)
+            * [`fn withOperator(operator)`](#fn-spectyphaaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithoperator)
+            * [`fn withValues(values)`](#fn-spectyphaaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithvalues)
+            * [`fn withValuesMixin(values)`](#fn-spectyphaaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithvaluesmixin)
+          * [`obj spec.typhaAffinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields`](#obj-spectyphaaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfields)
+            * [`fn withKey(key)`](#fn-spectyphaaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithkey)
+            * [`fn withOperator(operator)`](#fn-spectyphaaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithoperator)
+            * [`fn withValues(values)`](#fn-spectyphaaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithvalues)
+            * [`fn withValuesMixin(values)`](#fn-spectyphaaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithvaluesmixin)
       * [`obj spec.typhaAffinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-spectyphaaffinitynodeaffinityrequiredduringschedulingignoredduringexecution)
         * [`fn withNodeSelectorTerms(nodeSelectorTerms)`](#fn-spectyphaaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionwithnodeselectorterms)
         * [`fn withNodeSelectorTermsMixin(nodeSelectorTerms)`](#fn-spectyphaaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionwithnodeselectortermsmixin)
+        * [`obj spec.typhaAffinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms`](#obj-spectyphaaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectorterms)
+          * [`fn withMatchExpressions(matchExpressions)`](#fn-spectyphaaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchexpressions)
+          * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-spectyphaaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchexpressionsmixin)
+          * [`fn withMatchFields(matchFields)`](#fn-spectyphaaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchfields)
+          * [`fn withMatchFieldsMixin(matchFields)`](#fn-spectyphaaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchfieldsmixin)
+          * [`obj spec.typhaAffinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions`](#obj-spectyphaaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressions)
+            * [`fn withKey(key)`](#fn-spectyphaaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithkey)
+            * [`fn withOperator(operator)`](#fn-spectyphaaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithoperator)
+            * [`fn withValues(values)`](#fn-spectyphaaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithvalues)
+            * [`fn withValuesMixin(values)`](#fn-spectyphaaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithvaluesmixin)
+          * [`obj spec.typhaAffinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields`](#obj-spectyphaaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfields)
+            * [`fn withKey(key)`](#fn-spectyphaaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithkey)
+            * [`fn withOperator(operator)`](#fn-spectyphaaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithoperator)
+            * [`fn withValues(values)`](#fn-spectyphaaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithvalues)
+            * [`fn withValuesMixin(values)`](#fn-spectyphaaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithvaluesmixin)
 
 ## Fields
 
@@ -207,24 +258,6 @@ withLabelsMixin(labels)
 ```
 
 "Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels"
-
-**Note:** This function appends passed data to existing values
-
-### fn metadata.withManagedFields
-
-```ts
-withManagedFields(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
-
-### fn metadata.withManagedFieldsMixin
-
-```ts
-withManagedFieldsMixin(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
 
 **Note:** This function appends passed data to existing values
 
@@ -512,6 +545,50 @@ withMultiInterfaceMode(multiInterfaceMode)
 
 "MultiInterfaceMode configures what will configure multiple interface per pod. Only valid for Calico Enterprise installations using the Calico CNI plugin. Default: None"
 
+## obj spec.calicoNetwork.ipPools
+
+"IPPools contains a list of IP pools to create if none exist. At most one IP pool of each address family may be specified. If omitted, a single pool will be configured if needed."
+
+### fn spec.calicoNetwork.ipPools.withBlockSize
+
+```ts
+withBlockSize(blockSize)
+```
+
+"BlockSize specifies the CIDR prefex length to use when allocating per-node IP blocks from the main IP pool CIDR. Default: 26 (IPv4), 122 (IPv6)"
+
+### fn spec.calicoNetwork.ipPools.withCidr
+
+```ts
+withCidr(cidr)
+```
+
+"CIDR contains the address range for the IP Pool in classless inter-domain routing format."
+
+### fn spec.calicoNetwork.ipPools.withEncapsulation
+
+```ts
+withEncapsulation(encapsulation)
+```
+
+"Encapsulation specifies the encapsulation type that will be used with the IP Pool. Default: IPIP"
+
+### fn spec.calicoNetwork.ipPools.withNatOutgoing
+
+```ts
+withNatOutgoing(natOutgoing)
+```
+
+"NATOutgoing specifies if NAT will be enabled or disabled for outgoing traffic. Default: Enabled"
+
+### fn spec.calicoNetwork.ipPools.withNodeSelector
+
+```ts
+withNodeSelector(nodeSelector)
+```
+
+"NodeSelector specifies the node selector that will be set for the IP Pool. Default: 'all()'"
+
 ## obj spec.calicoNetwork.nodeAddressAutodetectionV4
 
 "NodeAddressAutodetectionV4 specifies an approach to automatically detect node IPv4 addresses. If not specified, will use default auto-detection settings to acquire an IPv4 address for each node."
@@ -680,6 +757,114 @@ withType(type)
 
 "Specifies the IPAM plugin that will be used in the Calico or Calico Enterprise installation. * For CNI Plugin Calico, this field defaults to Calico. * For CNI Plugin GKE, this field defaults to HostLocal. * For CNI Plugin AzureVNET, this field defaults to AzureVNET. * For CNI Plugin AmazonVPC, this field defaults to AmazonVPC. \n The IPAM plugin is installed and configured only if the CNI plugin is set to Calico, for all other values of the CNI plugin the plugin binaries and CNI config is a dependency that is expected to be installed separately. \n Default: Calico"
 
+## obj spec.componentResources
+
+"ComponentResources can be used to customize the resource requirements for each component. Node, Typha, and KubeControllers are supported for installations."
+
+### fn spec.componentResources.withComponentName
+
+```ts
+withComponentName(componentName)
+```
+
+"ComponentName is an enum which identifies the component"
+
+## obj spec.componentResources.resourceRequirements
+
+"ResourceRequirements allows customization of limits and requests for compute resources such as cpu and memory."
+
+### fn spec.componentResources.resourceRequirements.withLimits
+
+```ts
+withLimits(limits)
+```
+
+"Limits describes the maximum amount of compute resources allowed. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/"
+
+### fn spec.componentResources.resourceRequirements.withLimitsMixin
+
+```ts
+withLimitsMixin(limits)
+```
+
+"Limits describes the maximum amount of compute resources allowed. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/"
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.componentResources.resourceRequirements.withRequests
+
+```ts
+withRequests(requests)
+```
+
+"Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/"
+
+### fn spec.componentResources.resourceRequirements.withRequestsMixin
+
+```ts
+withRequestsMixin(requests)
+```
+
+"Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/"
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.controlPlaneTolerations
+
+"ControlPlaneTolerations specify tolerations which are then globally applied to all resources created by the operator."
+
+### fn spec.controlPlaneTolerations.withEffect
+
+```ts
+withEffect(effect)
+```
+
+"Effect indicates the taint effect to match. Empty means match all taint effects. When specified, allowed values are NoSchedule, PreferNoSchedule and NoExecute."
+
+### fn spec.controlPlaneTolerations.withKey
+
+```ts
+withKey(key)
+```
+
+"Key is the taint key that the toleration applies to. Empty means match all taint keys. If the key is empty, operator must be Exists; this combination means to match all values and all keys."
+
+### fn spec.controlPlaneTolerations.withOperator
+
+```ts
+withOperator(operator)
+```
+
+"Operator represents a key's relationship to the value. Valid operators are Exists and Equal. Defaults to Equal. Exists is equivalent to wildcard for value, so that a pod can tolerate all taints of a particular category."
+
+### fn spec.controlPlaneTolerations.withTolerationSeconds
+
+```ts
+withTolerationSeconds(tolerationSeconds)
+```
+
+"TolerationSeconds represents the period of time the toleration (which must be of effect NoExecute, otherwise this field is ignored) tolerates the taint. By default, it is not set, which means tolerate the taint forever (do not evict). Zero and negative values will be treated as 0 (evict immediately) by the system."
+
+### fn spec.controlPlaneTolerations.withValue
+
+```ts
+withValue(value)
+```
+
+"Value is the taint value the toleration matches to. If the operator is Exists, the value should be empty, otherwise just a regular string."
+
+## obj spec.imagePullSecrets
+
+"ImagePullSecrets is an array of references to container registry pull secrets to use. These are applied to all images to be pulled."
+
+### fn spec.imagePullSecrets.withName
+
+```ts
+withName(name)
+```
+
+"Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names TODO: Add other useful fields. apiVersion, kind, uid?"
+
 ## obj spec.nodeUpdateStrategy
 
 "NodeUpdateStrategy can be used to customize the desired update strategy, such as the MaxUnavailable field."
@@ -730,6 +915,134 @@ withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringScheduli
 
 **Note:** This function appends passed data to existing values
 
+## obj spec.typhaAffinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+"The scheduler will prefer to schedule pods to nodes that satisfy the affinity expressions specified by this field, but it may choose a node that violates one or more of the expressions."
+
+### fn spec.typhaAffinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+"Weight associated with matching the corresponding nodeSelectorTerm, in the range 1-100."
+
+## obj spec.typhaAffinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference
+
+"A node selector term, associated with the corresponding weight."
+
+### fn spec.typhaAffinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+"A list of node selector requirements by node's labels."
+
+### fn spec.typhaAffinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+"A list of node selector requirements by node's labels."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.typhaAffinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchFields
+
+```ts
+withMatchFields(matchFields)
+```
+
+"A list of node selector requirements by node's fields."
+
+### fn spec.typhaAffinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchFieldsMixin
+
+```ts
+withMatchFieldsMixin(matchFields)
+```
+
+"A list of node selector requirements by node's fields."
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.typhaAffinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions
+
+"A list of node selector requirements by node's labels."
+
+### fn spec.typhaAffinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+"The label key that the selector applies to."
+
+### fn spec.typhaAffinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+"Represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists, DoesNotExist. Gt, and Lt."
+
+### fn spec.typhaAffinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+"An array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. If the operator is Gt or Lt, the values array must have a single element, which will be interpreted as an integer. This array is replaced during a strategic merge patch."
+
+### fn spec.typhaAffinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+"An array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. If the operator is Gt or Lt, the values array must have a single element, which will be interpreted as an integer. This array is replaced during a strategic merge patch."
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.typhaAffinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields
+
+"A list of node selector requirements by node's fields."
+
+### fn spec.typhaAffinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withKey
+
+```ts
+withKey(key)
+```
+
+"The label key that the selector applies to."
+
+### fn spec.typhaAffinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withOperator
+
+```ts
+withOperator(operator)
+```
+
+"Represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists, DoesNotExist. Gt, and Lt."
+
+### fn spec.typhaAffinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withValues
+
+```ts
+withValues(values)
+```
+
+"An array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. If the operator is Gt or Lt, the values array must have a single element, which will be interpreted as an integer. This array is replaced during a strategic merge patch."
+
+### fn spec.typhaAffinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+"An array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. If the operator is Gt or Lt, the values array must have a single element, which will be interpreted as an integer. This array is replaced during a strategic merge patch."
+
+**Note:** This function appends passed data to existing values
+
 ## obj spec.typhaAffinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution
 
 "WARNING: Please note that if the affinity requirements specified by this field are not met at scheduling time, the pod will NOT be scheduled onto the node. There is no fallback to another affinity rules with this setting. This may cause networking disruption or even catastrophic failure! PreferredDuringSchedulingIgnoredDuringExecution should be used for affinity unless there is a specific well understood reason to use RequiredDuringSchedulingIgnoredDuringExecution and you can guarantee that the RequiredDuringSchedulingIgnoredDuringExecution will always have sufficient nodes to satisfy the requirement. NOTE: RequiredDuringSchedulingIgnoredDuringExecution is set by default for AKS nodes, to avoid scheduling Typhas on virtual-nodes. If the affinity requirements specified by this field cease to be met at some point during pod execution (e.g. due to an update), the system may or may not try to eventually evict the pod from its node."
@@ -749,5 +1062,121 @@ withNodeSelectorTermsMixin(nodeSelectorTerms)
 ```
 
 "Required. A list of node selector terms. The terms are ORed."
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.typhaAffinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms
+
+"Required. A list of node selector terms. The terms are ORed."
+
+### fn spec.typhaAffinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+"A list of node selector requirements by node's labels."
+
+### fn spec.typhaAffinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+"A list of node selector requirements by node's labels."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.typhaAffinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchFields
+
+```ts
+withMatchFields(matchFields)
+```
+
+"A list of node selector requirements by node's fields."
+
+### fn spec.typhaAffinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchFieldsMixin
+
+```ts
+withMatchFieldsMixin(matchFields)
+```
+
+"A list of node selector requirements by node's fields."
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.typhaAffinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions
+
+"A list of node selector requirements by node's labels."
+
+### fn spec.typhaAffinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+"The label key that the selector applies to."
+
+### fn spec.typhaAffinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+"Represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists, DoesNotExist. Gt, and Lt."
+
+### fn spec.typhaAffinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+"An array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. If the operator is Gt or Lt, the values array must have a single element, which will be interpreted as an integer. This array is replaced during a strategic merge patch."
+
+### fn spec.typhaAffinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+"An array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. If the operator is Gt or Lt, the values array must have a single element, which will be interpreted as an integer. This array is replaced during a strategic merge patch."
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.typhaAffinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields
+
+"A list of node selector requirements by node's fields."
+
+### fn spec.typhaAffinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withKey
+
+```ts
+withKey(key)
+```
+
+"The label key that the selector applies to."
+
+### fn spec.typhaAffinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withOperator
+
+```ts
+withOperator(operator)
+```
+
+"Represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists, DoesNotExist. Gt, and Lt."
+
+### fn spec.typhaAffinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withValues
+
+```ts
+withValues(values)
+```
+
+"An array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. If the operator is Gt or Lt, the values array must have a single element, which will be interpreted as an integer. This array is replaced during a strategic merge patch."
+
+### fn spec.typhaAffinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+"An array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. If the operator is Gt or Lt, the values array must have a single element, which will be interpreted as an integer. This array is replaced during a strategic merge patch."
 
 **Note:** This function appends passed data to existing values

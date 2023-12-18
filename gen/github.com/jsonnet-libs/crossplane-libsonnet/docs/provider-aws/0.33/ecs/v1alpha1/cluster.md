@@ -22,8 +22,6 @@ permalink: /provider-aws/0.33/ecs/v1alpha1/cluster/
   * [`fn withGeneration(generation)`](#fn-metadatawithgeneration)
   * [`fn withLabels(labels)`](#fn-metadatawithlabels)
   * [`fn withLabelsMixin(labels)`](#fn-metadatawithlabelsmixin)
-  * [`fn withManagedFields(managedFields)`](#fn-metadatawithmanagedfields)
-  * [`fn withManagedFieldsMixin(managedFields)`](#fn-metadatawithmanagedfieldsmixin)
   * [`fn withName(name)`](#fn-metadatawithname)
   * [`fn withNamespace(namespace)`](#fn-metadatawithnamespace)
   * [`fn withOwnerReferences(ownerReferences)`](#fn-metadatawithownerreferences)
@@ -54,6 +52,16 @@ permalink: /provider-aws/0.33/ecs/v1alpha1/cluster/
           * [`fn withS3BucketName(s3BucketName)`](#fn-specforproviderconfigurationexecutecommandconfigurationlogconfigurationwiths3bucketname)
           * [`fn withS3EncryptionEnabled(s3EncryptionEnabled)`](#fn-specforproviderconfigurationexecutecommandconfigurationlogconfigurationwiths3encryptionenabled)
           * [`fn withS3KeyPrefix(s3KeyPrefix)`](#fn-specforproviderconfigurationexecutecommandconfigurationlogconfigurationwiths3keyprefix)
+    * [`obj spec.forProvider.defaultCapacityProviderStrategy`](#obj-specforproviderdefaultcapacityproviderstrategy)
+      * [`fn withBase(base)`](#fn-specforproviderdefaultcapacityproviderstrategywithbase)
+      * [`fn withCapacityProvider(capacityProvider)`](#fn-specforproviderdefaultcapacityproviderstrategywithcapacityprovider)
+      * [`fn withWeight(weight)`](#fn-specforproviderdefaultcapacityproviderstrategywithweight)
+    * [`obj spec.forProvider.settings`](#obj-specforprovidersettings)
+      * [`fn withName(name)`](#fn-specforprovidersettingswithname)
+      * [`fn withValue(value)`](#fn-specforprovidersettingswithvalue)
+    * [`obj spec.forProvider.tags`](#obj-specforprovidertags)
+      * [`fn withKey(key)`](#fn-specforprovidertagswithkey)
+      * [`fn withValue(value)`](#fn-specforprovidertagswithvalue)
   * [`obj spec.providerConfigRef`](#obj-specproviderconfigref)
     * [`fn withName(name)`](#fn-specproviderconfigrefwithname)
     * [`obj spec.providerConfigRef.policy`](#obj-specproviderconfigrefpolicy)
@@ -194,24 +202,6 @@ withLabelsMixin(labels)
 ```
 
 "Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels"
-
-**Note:** This function appends passed data to existing values
-
-### fn metadata.withManagedFields
-
-```ts
-withManagedFields(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
-
-### fn metadata.withManagedFieldsMixin
-
-```ts
-withManagedFieldsMixin(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
 
 **Note:** This function appends passed data to existing values
 
@@ -441,6 +431,74 @@ withS3EncryptionEnabled(s3EncryptionEnabled)
 
 ```ts
 withS3KeyPrefix(s3KeyPrefix)
+```
+
+
+
+## obj spec.forProvider.defaultCapacityProviderStrategy
+
+"The capacity provider strategy to set as the default for the cluster. When a default capacity provider strategy is set for a cluster, when calling the RunTask or CreateService APIs with no capacity provider strategy or launch type specified, the default capacity provider strategy for the cluster is used. \n If a default capacity provider strategy is not defined for a cluster during creation, it can be defined later with the PutClusterCapacityProviders API operation."
+
+### fn spec.forProvider.defaultCapacityProviderStrategy.withBase
+
+```ts
+withBase(base)
+```
+
+
+
+### fn spec.forProvider.defaultCapacityProviderStrategy.withCapacityProvider
+
+```ts
+withCapacityProvider(capacityProvider)
+```
+
+
+
+### fn spec.forProvider.defaultCapacityProviderStrategy.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.forProvider.settings
+
+"The setting to use when creating a cluster. This parameter is used to enable CloudWatch Container Insights for a cluster. If this value is specified, it will override the containerInsights value set with PutAccountSetting or PutAccountSettingDefault."
+
+### fn spec.forProvider.settings.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.forProvider.settings.withValue
+
+```ts
+withValue(value)
+```
+
+
+
+## obj spec.forProvider.tags
+
+"The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. \n The following basic restrictions apply to tags: \n * Maximum number of tags per resource - 50 \n * For each resource, each tag key must be unique, and each tag key can have only one value. \n * Maximum key length - 128 Unicode characters in UTF-8 \n * Maximum value length - 256 Unicode characters in UTF-8 \n * If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @. \n * Tag keys and values are case-sensitive. \n * Do not use aws:, AWS:, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit."
+
+### fn spec.forProvider.tags.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.forProvider.tags.withValue
+
+```ts
+withValue(value)
 ```
 
 

@@ -22,8 +22,6 @@ permalink: /provider-aws/0.33/eks/v1beta1/cluster/
   * [`fn withGeneration(generation)`](#fn-metadatawithgeneration)
   * [`fn withLabels(labels)`](#fn-metadatawithlabels)
   * [`fn withLabelsMixin(labels)`](#fn-metadatawithlabelsmixin)
-  * [`fn withManagedFields(managedFields)`](#fn-metadatawithmanagedfields)
-  * [`fn withManagedFieldsMixin(managedFields)`](#fn-metadatawithmanagedfieldsmixin)
   * [`fn withName(name)`](#fn-metadatawithname)
   * [`fn withNamespace(namespace)`](#fn-metadatawithnamespace)
   * [`fn withOwnerReferences(ownerReferences)`](#fn-metadatawithownerreferences)
@@ -41,9 +39,18 @@ permalink: /provider-aws/0.33/eks/v1beta1/cluster/
     * [`fn withTags(tags)`](#fn-specforproviderwithtags)
     * [`fn withTagsMixin(tags)`](#fn-specforproviderwithtagsmixin)
     * [`fn withVersion(version)`](#fn-specforproviderwithversion)
+    * [`obj spec.forProvider.encryptionConfig`](#obj-specforproviderencryptionconfig)
+      * [`fn withResources(resources)`](#fn-specforproviderencryptionconfigwithresources)
+      * [`fn withResourcesMixin(resources)`](#fn-specforproviderencryptionconfigwithresourcesmixin)
+      * [`obj spec.forProvider.encryptionConfig.provider`](#obj-specforproviderencryptionconfigprovider)
+        * [`fn withKeyArn(keyArn)`](#fn-specforproviderencryptionconfigproviderwithkeyarn)
     * [`obj spec.forProvider.logging`](#obj-specforproviderlogging)
       * [`fn withClusterLogging(clusterLogging)`](#fn-specforproviderloggingwithclusterlogging)
       * [`fn withClusterLoggingMixin(clusterLogging)`](#fn-specforproviderloggingwithclusterloggingmixin)
+      * [`obj spec.forProvider.logging.clusterLogging`](#obj-specforproviderloggingclusterlogging)
+        * [`fn withEnabled(enabled)`](#fn-specforproviderloggingclusterloggingwithenabled)
+        * [`fn withTypes(types)`](#fn-specforproviderloggingclusterloggingwithtypes)
+        * [`fn withTypesMixin(types)`](#fn-specforproviderloggingclusterloggingwithtypesmixin)
     * [`obj spec.forProvider.resourcesVpcConfig`](#obj-specforproviderresourcesvpcconfig)
       * [`fn withEndpointPrivateAccess(endpointPrivateAccess)`](#fn-specforproviderresourcesvpcconfigwithendpointprivateaccess)
       * [`fn withEndpointPublicAccess(endpointPublicAccess)`](#fn-specforproviderresourcesvpcconfigwithendpointpublicaccess)
@@ -57,6 +64,11 @@ permalink: /provider-aws/0.33/eks/v1beta1/cluster/
       * [`fn withSubnetIdRefsMixin(subnetIdRefs)`](#fn-specforproviderresourcesvpcconfigwithsubnetidrefsmixin)
       * [`fn withSubnetIds(subnetIds)`](#fn-specforproviderresourcesvpcconfigwithsubnetids)
       * [`fn withSubnetIdsMixin(subnetIds)`](#fn-specforproviderresourcesvpcconfigwithsubnetidsmixin)
+      * [`obj spec.forProvider.resourcesVpcConfig.securityGroupIdRefs`](#obj-specforproviderresourcesvpcconfigsecuritygroupidrefs)
+        * [`fn withName(name)`](#fn-specforproviderresourcesvpcconfigsecuritygroupidrefswithname)
+        * [`obj spec.forProvider.resourcesVpcConfig.securityGroupIdRefs.policy`](#obj-specforproviderresourcesvpcconfigsecuritygroupidrefspolicy)
+          * [`fn withResolution(resolution)`](#fn-specforproviderresourcesvpcconfigsecuritygroupidrefspolicywithresolution)
+          * [`fn withResolve(resolve)`](#fn-specforproviderresourcesvpcconfigsecuritygroupidrefspolicywithresolve)
       * [`obj spec.forProvider.resourcesVpcConfig.securityGroupIdSelector`](#obj-specforproviderresourcesvpcconfigsecuritygroupidselector)
         * [`fn withMatchControllerRef(matchControllerRef)`](#fn-specforproviderresourcesvpcconfigsecuritygroupidselectorwithmatchcontrollerref)
         * [`fn withMatchLabels(matchLabels)`](#fn-specforproviderresourcesvpcconfigsecuritygroupidselectorwithmatchlabels)
@@ -64,6 +76,11 @@ permalink: /provider-aws/0.33/eks/v1beta1/cluster/
         * [`obj spec.forProvider.resourcesVpcConfig.securityGroupIdSelector.policy`](#obj-specforproviderresourcesvpcconfigsecuritygroupidselectorpolicy)
           * [`fn withResolution(resolution)`](#fn-specforproviderresourcesvpcconfigsecuritygroupidselectorpolicywithresolution)
           * [`fn withResolve(resolve)`](#fn-specforproviderresourcesvpcconfigsecuritygroupidselectorpolicywithresolve)
+      * [`obj spec.forProvider.resourcesVpcConfig.subnetIdRefs`](#obj-specforproviderresourcesvpcconfigsubnetidrefs)
+        * [`fn withName(name)`](#fn-specforproviderresourcesvpcconfigsubnetidrefswithname)
+        * [`obj spec.forProvider.resourcesVpcConfig.subnetIdRefs.policy`](#obj-specforproviderresourcesvpcconfigsubnetidrefspolicy)
+          * [`fn withResolution(resolution)`](#fn-specforproviderresourcesvpcconfigsubnetidrefspolicywithresolution)
+          * [`fn withResolve(resolve)`](#fn-specforproviderresourcesvpcconfigsubnetidrefspolicywithresolve)
       * [`obj spec.forProvider.resourcesVpcConfig.subnetIdSelector`](#obj-specforproviderresourcesvpcconfigsubnetidselector)
         * [`fn withMatchControllerRef(matchControllerRef)`](#fn-specforproviderresourcesvpcconfigsubnetidselectorwithmatchcontrollerref)
         * [`fn withMatchLabels(matchLabels)`](#fn-specforproviderresourcesvpcconfigsubnetidselectorwithmatchlabels)
@@ -226,24 +243,6 @@ withLabelsMixin(labels)
 
 **Note:** This function appends passed data to existing values
 
-### fn metadata.withManagedFields
-
-```ts
-withManagedFields(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
-
-### fn metadata.withManagedFieldsMixin
-
-```ts
-withManagedFieldsMixin(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
-
-**Note:** This function appends passed data to existing values
-
 ### fn metadata.withName
 
 ```ts
@@ -378,6 +377,40 @@ withVersion(version)
 
 "The desired Kubernetes version for your cluster. If you don't specify a value here, the latest version available in Amazon EKS is used. Example: 1.15"
 
+## obj spec.forProvider.encryptionConfig
+
+"The encryption configuration for the cluster."
+
+### fn spec.forProvider.encryptionConfig.withResources
+
+```ts
+withResources(resources)
+```
+
+"Specifies the resources to be encrypted. The only supported value is \"secrets\"."
+
+### fn spec.forProvider.encryptionConfig.withResourcesMixin
+
+```ts
+withResourcesMixin(resources)
+```
+
+"Specifies the resources to be encrypted. The only supported value is \"secrets\"."
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.forProvider.encryptionConfig.provider
+
+"AWS Key Management Service (AWS KMS) customer master key (CMK). Either the ARN or the alias can be used."
+
+### fn spec.forProvider.encryptionConfig.provider.withKeyArn
+
+```ts
+withKeyArn(keyArn)
+```
+
+"Amazon Resource Name (ARN) or alias of the customer master key (CMK). The CMK must be symmetric, created in the same region as the cluster, and if the CMK was created in a different account, the user must have access to the CMK. For more information, see Allowing Users in Other Accounts to Use a CMK (https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html) in the AWS Key Management Service Developer Guide."
+
 ## obj spec.forProvider.logging
 
 "Enable or disable exporting the Kubernetes control plane logs for your cluster to CloudWatch Logs. By default, cluster control plane logs aren't exported to CloudWatch Logs. For more information, see Amazon EKS Cluster Control Plane Logs (https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html) in the Amazon EKS User Guide . \n CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported control plane logs. For more information, see Amazon CloudWatch Pricing (http://aws.amazon.com/cloudwatch/pricing/)."
@@ -397,6 +430,36 @@ withClusterLoggingMixin(clusterLogging)
 ```
 
 "The cluster control plane logging configuration for your cluster."
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.forProvider.logging.clusterLogging
+
+"The cluster control plane logging configuration for your cluster."
+
+### fn spec.forProvider.logging.clusterLogging.withEnabled
+
+```ts
+withEnabled(enabled)
+```
+
+"If a log type is enabled, that log type exports its control plane logs to CloudWatch Logs. If a log type isn't enabled, that log type doesn't export its control plane logs. Each individual log type can be enabled or disabled independently."
+
+### fn spec.forProvider.logging.clusterLogging.withTypes
+
+```ts
+withTypes(types)
+```
+
+"The available cluster control plane log types."
+
+### fn spec.forProvider.logging.clusterLogging.withTypesMixin
+
+```ts
+withTypesMixin(types)
+```
+
+"The available cluster control plane log types."
 
 **Note:** This function appends passed data to existing values
 
@@ -510,6 +573,38 @@ withSubnetIdsMixin(subnetIds)
 
 **Note:** This function appends passed data to existing values
 
+## obj spec.forProvider.resourcesVpcConfig.securityGroupIdRefs
+
+"SecurityGroupIDRefs are references to SecurityGroups used to set the SecurityGroupIDs."
+
+### fn spec.forProvider.resourcesVpcConfig.securityGroupIdRefs.withName
+
+```ts
+withName(name)
+```
+
+"Name of the referenced object."
+
+## obj spec.forProvider.resourcesVpcConfig.securityGroupIdRefs.policy
+
+"Policies for referencing."
+
+### fn spec.forProvider.resourcesVpcConfig.securityGroupIdRefs.policy.withResolution
+
+```ts
+withResolution(resolution)
+```
+
+"Resolution specifies whether resolution of this reference is required. The default is 'Required', which means the reconcile will fail if the reference cannot be resolved. 'Optional' means this reference will be a no-op if it cannot be resolved."
+
+### fn spec.forProvider.resourcesVpcConfig.securityGroupIdRefs.policy.withResolve
+
+```ts
+withResolve(resolve)
+```
+
+"Resolve specifies when this reference should be resolved. The default is 'IfNotPresent', which will attempt to resolve the reference only when the corresponding field is not present. Use 'Always' to resolve the reference on every reconcile."
+
 ## obj spec.forProvider.resourcesVpcConfig.securityGroupIdSelector
 
 "SecurityGroupIDSelector selects references to SecurityGroups used to set the SecurityGroupIDs."
@@ -553,6 +648,38 @@ withResolution(resolution)
 "Resolution specifies whether resolution of this reference is required. The default is 'Required', which means the reconcile will fail if the reference cannot be resolved. 'Optional' means this reference will be a no-op if it cannot be resolved."
 
 ### fn spec.forProvider.resourcesVpcConfig.securityGroupIdSelector.policy.withResolve
+
+```ts
+withResolve(resolve)
+```
+
+"Resolve specifies when this reference should be resolved. The default is 'IfNotPresent', which will attempt to resolve the reference only when the corresponding field is not present. Use 'Always' to resolve the reference on every reconcile."
+
+## obj spec.forProvider.resourcesVpcConfig.subnetIdRefs
+
+"SubnetIDRefs are references to Subnets used to set the SubnetIDs."
+
+### fn spec.forProvider.resourcesVpcConfig.subnetIdRefs.withName
+
+```ts
+withName(name)
+```
+
+"Name of the referenced object."
+
+## obj spec.forProvider.resourcesVpcConfig.subnetIdRefs.policy
+
+"Policies for referencing."
+
+### fn spec.forProvider.resourcesVpcConfig.subnetIdRefs.policy.withResolution
+
+```ts
+withResolution(resolution)
+```
+
+"Resolution specifies whether resolution of this reference is required. The default is 'Required', which means the reconcile will fail if the reference cannot be resolved. 'Optional' means this reference will be a no-op if it cannot be resolved."
+
+### fn spec.forProvider.resourcesVpcConfig.subnetIdRefs.policy.withResolve
 
 ```ts
 withResolve(resolve)

@@ -27,10 +27,6 @@
     withLabels(labels): { metadata+: { labels: labels } },
     '#withLabelsMixin':: d.fn(help='"Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels"\n\n**Note:** This function appends passed data to existing values', args=[d.arg(name='labels', type=d.T.object)]),
     withLabelsMixin(labels): { metadata+: { labels+: labels } },
-    '#withManagedFields':: d.fn(help="\"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \\\"ci-cd\\\". The set of fields is always in the version that the workflow used when modifying the object.\"", args=[d.arg(name='managedFields', type=d.T.array)]),
-    withManagedFields(managedFields): { metadata+: { managedFields: if std.isArray(v=managedFields) then managedFields else [managedFields] } },
-    '#withManagedFieldsMixin':: d.fn(help="\"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \\\"ci-cd\\\". The set of fields is always in the version that the workflow used when modifying the object.\"\n\n**Note:** This function appends passed data to existing values", args=[d.arg(name='managedFields', type=d.T.array)]),
-    withManagedFieldsMixin(managedFields): { metadata+: { managedFields+: if std.isArray(v=managedFields) then managedFields else [managedFields] } },
     '#withName':: d.fn(help='"Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names"', args=[d.arg(name='name', type=d.T.string)]),
     withName(name): { metadata+: { name: name } },
     '#withNamespace':: d.fn(help='"Namespace defines the space within which each name must be unique. An empty namespace is equivalent to the \\"default\\" namespace, but \\"default\\" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty.\\n\\nMust be a DNS_LABEL. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/namespaces"', args=[d.arg(name='namespace', type=d.T.string)]),
@@ -50,7 +46,9 @@
   new(name): {
     apiVersion: 'eks.aws.crossplane.io/v1alpha1',
     kind: 'NodeGroup',
-  } + self.metadata.withName(name=name),
+  } + self.metadata.withName(name=name) + self.metadata.withAnnotations(annotations={
+    'tanka.dev/namespaced': 'false',
+  }),
   '#spec':: d.obj(help='"A NodeGroupSpec defines the desired state of an EKS NodeGroup."'),
   spec: {
     '#forProvider':: d.obj(help='"NodeGroupParameters define the desired state of an AWS Elastic Kubernetes Service NodeGroup."'),
@@ -178,6 +176,18 @@
       },
       '#remoteAccess':: d.obj(help='"The remote access (SSH) configuration to use with your node group."'),
       remoteAccess: {
+        '#sourceSecurityGroupRefs':: d.obj(help='"SourceSecurityGroupRefs are references to SecurityGroups used to set the SourceSecurityGroups."'),
+        sourceSecurityGroupRefs: {
+          '#policy':: d.obj(help='"Policies for referencing."'),
+          policy: {
+            '#withResolution':: d.fn(help="\"Resolution specifies whether resolution of this reference is required. The default is 'Required', which means the reconcile will fail if the reference cannot be resolved. 'Optional' means this reference will be a no-op if it cannot be resolved.\"", args=[d.arg(name='resolution', type=d.T.string)]),
+            withResolution(resolution): { policy+: { resolution: resolution } },
+            '#withResolve':: d.fn(help="\"Resolve specifies when this reference should be resolved. The default is 'IfNotPresent', which will attempt to resolve the reference only when the corresponding field is not present. Use 'Always' to resolve the reference on every reconcile.\"", args=[d.arg(name='resolve', type=d.T.string)]),
+            withResolve(resolve): { policy+: { resolve: resolve } },
+          },
+          '#withName':: d.fn(help='"Name of the referenced object."', args=[d.arg(name='name', type=d.T.string)]),
+          withName(name): { name: name },
+        },
         '#sourceSecurityGroupSelector':: d.obj(help='"SourceSecurityGroupSelector selects references to SecurityGroups used to set the SourceSecurityGroups."'),
         sourceSecurityGroupSelector: {
           '#policy':: d.obj(help='"Policies for selection."'),
@@ -214,6 +224,18 @@
         '#withMinSize':: d.fn(help='"The minimum number of worker nodes that the managed node group can scale in to. This number must be greater than zero."', args=[d.arg(name='minSize', type=d.T.integer)]),
         withMinSize(minSize): { spec+: { forProvider+: { scalingConfig+: { minSize: minSize } } } },
       },
+      '#subnetRefs':: d.obj(help='"SubnetRefs are references to Subnets used to set the Subnets."'),
+      subnetRefs: {
+        '#policy':: d.obj(help='"Policies for referencing."'),
+        policy: {
+          '#withResolution':: d.fn(help="\"Resolution specifies whether resolution of this reference is required. The default is 'Required', which means the reconcile will fail if the reference cannot be resolved. 'Optional' means this reference will be a no-op if it cannot be resolved.\"", args=[d.arg(name='resolution', type=d.T.string)]),
+          withResolution(resolution): { policy+: { resolution: resolution } },
+          '#withResolve':: d.fn(help="\"Resolve specifies when this reference should be resolved. The default is 'IfNotPresent', which will attempt to resolve the reference only when the corresponding field is not present. Use 'Always' to resolve the reference on every reconcile.\"", args=[d.arg(name='resolve', type=d.T.string)]),
+          withResolve(resolve): { policy+: { resolve: resolve } },
+        },
+        '#withName':: d.fn(help='"Name of the referenced object."', args=[d.arg(name='name', type=d.T.string)]),
+        withName(name): { name: name },
+      },
       '#subnetSelector':: d.obj(help='"SubnetSelector selects references to Subnets used to set the Subnets."'),
       subnetSelector: {
         '#policy':: d.obj(help='"Policies for selection."'),
@@ -229,6 +251,15 @@
         withMatchLabels(matchLabels): { spec+: { forProvider+: { subnetSelector+: { matchLabels: matchLabels } } } },
         '#withMatchLabelsMixin':: d.fn(help='"MatchLabels ensures an object with matching labels is selected."\n\n**Note:** This function appends passed data to existing values', args=[d.arg(name='matchLabels', type=d.T.object)]),
         withMatchLabelsMixin(matchLabels): { spec+: { forProvider+: { subnetSelector+: { matchLabels+: matchLabels } } } },
+      },
+      '#taints':: d.obj(help='"The Kubernetes taints to be applied to the nodes in the node group."'),
+      taints: {
+        '#withEffect':: d.fn(help='"The effect of the taint."', args=[d.arg(name='effect', type=d.T.string)]),
+        withEffect(effect): { effect: effect },
+        '#withKey':: d.fn(help='"The key of the taint."', args=[d.arg(name='key', type=d.T.string)]),
+        withKey(key): { key: key },
+        '#withValue':: d.fn(help='"The value of the taint."', args=[d.arg(name='value', type=d.T.string)]),
+        withValue(value): { value: value },
       },
       '#updateConfig':: d.obj(help='"Specifies details on how the Nodes in this NodeGroup should be updated."'),
       updateConfig: {

@@ -22,8 +22,6 @@ permalink: /provider-aws/0.33/servicediscovery/v1alpha1/privateDNSNamespace/
   * [`fn withGeneration(generation)`](#fn-metadatawithgeneration)
   * [`fn withLabels(labels)`](#fn-metadatawithlabels)
   * [`fn withLabelsMixin(labels)`](#fn-metadatawithlabelsmixin)
-  * [`fn withManagedFields(managedFields)`](#fn-metadatawithmanagedfields)
-  * [`fn withManagedFieldsMixin(managedFields)`](#fn-metadatawithmanagedfieldsmixin)
   * [`fn withName(name)`](#fn-metadatawithname)
   * [`fn withNamespace(namespace)`](#fn-metadatawithnamespace)
   * [`fn withOwnerReferences(ownerReferences)`](#fn-metadatawithownerreferences)
@@ -44,6 +42,9 @@ permalink: /provider-aws/0.33/servicediscovery/v1alpha1/privateDNSNamespace/
       * [`obj spec.forProvider.properties.dnsProperties`](#obj-specforproviderpropertiesdnsproperties)
         * [`obj spec.forProvider.properties.dnsProperties.sOA`](#obj-specforproviderpropertiesdnspropertiessoa)
           * [`fn withTTL(tTL)`](#fn-specforproviderpropertiesdnspropertiessoawithttl)
+    * [`obj spec.forProvider.tags`](#obj-specforprovidertags)
+      * [`fn withKey(key)`](#fn-specforprovidertagswithkey)
+      * [`fn withValue(value)`](#fn-specforprovidertagswithvalue)
     * [`obj spec.forProvider.vpcRef`](#obj-specforprovidervpcref)
       * [`fn withName(name)`](#fn-specforprovidervpcrefwithname)
       * [`obj spec.forProvider.vpcRef.policy`](#obj-specforprovidervpcrefpolicy)
@@ -199,24 +200,6 @@ withLabelsMixin(labels)
 
 **Note:** This function appends passed data to existing values
 
-### fn metadata.withManagedFields
-
-```ts
-withManagedFields(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
-
-### fn metadata.withManagedFieldsMixin
-
-```ts
-withManagedFieldsMixin(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
-
-**Note:** This function appends passed data to existing values
-
 ### fn metadata.withName
 
 ```ts
@@ -357,6 +340,26 @@ withVpc(vpc)
 
 ```ts
 withTTL(tTL)
+```
+
+
+
+## obj spec.forProvider.tags
+
+"The tags to add to the namespace. Each tag consists of a key and an optional value that you define. Tags keys can be up to 128 characters in length, and tag values can be up to 256 characters in length."
+
+### fn spec.forProvider.tags.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.forProvider.tags.withValue
+
+```ts
+withValue(value)
 ```
 
 

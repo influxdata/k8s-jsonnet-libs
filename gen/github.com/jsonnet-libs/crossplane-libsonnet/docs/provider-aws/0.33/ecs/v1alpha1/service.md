@@ -22,8 +22,6 @@ permalink: /provider-aws/0.33/ecs/v1alpha1/service/
   * [`fn withGeneration(generation)`](#fn-metadatawithgeneration)
   * [`fn withLabels(labels)`](#fn-metadatawithlabels)
   * [`fn withLabelsMixin(labels)`](#fn-metadatawithlabelsmixin)
-  * [`fn withManagedFields(managedFields)`](#fn-metadatawithmanagedfields)
-  * [`fn withManagedFieldsMixin(managedFields)`](#fn-metadatawithmanagedfieldsmixin)
   * [`fn withName(name)`](#fn-metadatawithname)
   * [`fn withNamespace(namespace)`](#fn-metadatawithnamespace)
   * [`fn withOwnerReferences(ownerReferences)`](#fn-metadatawithownerreferences)
@@ -58,6 +56,10 @@ permalink: /provider-aws/0.33/ecs/v1alpha1/service/
     * [`fn withTags(tags)`](#fn-specforproviderwithtags)
     * [`fn withTagsMixin(tags)`](#fn-specforproviderwithtagsmixin)
     * [`fn withTaskDefinition(taskDefinition)`](#fn-specforproviderwithtaskdefinition)
+    * [`obj spec.forProvider.capacityProviderStrategy`](#obj-specforprovidercapacityproviderstrategy)
+      * [`fn withBase(base)`](#fn-specforprovidercapacityproviderstrategywithbase)
+      * [`fn withCapacityProvider(capacityProvider)`](#fn-specforprovidercapacityproviderstrategywithcapacityprovider)
+      * [`fn withWeight(weight)`](#fn-specforprovidercapacityproviderstrategywithweight)
     * [`obj spec.forProvider.clusterRef`](#obj-specforproviderclusterref)
       * [`fn withName(name)`](#fn-specforproviderclusterrefwithname)
       * [`obj spec.forProvider.clusterRef.policy`](#obj-specforproviderclusterrefpolicy)
@@ -78,6 +80,35 @@ permalink: /provider-aws/0.33/ecs/v1alpha1/service/
         * [`fn withRollback(rollback)`](#fn-specforproviderdeploymentconfigurationdeploymentcircuitbreakerwithrollback)
     * [`obj spec.forProvider.deploymentController`](#obj-specforproviderdeploymentcontroller)
       * [`fn withType_(type_)`](#fn-specforproviderdeploymentcontrollerwithtype_)
+    * [`obj spec.forProvider.loadBalancers`](#obj-specforproviderloadbalancers)
+      * [`fn withContainerName(containerName)`](#fn-specforproviderloadbalancerswithcontainername)
+      * [`fn withContainerPort(containerPort)`](#fn-specforproviderloadbalancerswithcontainerport)
+      * [`fn withLoadBalancerName(loadBalancerName)`](#fn-specforproviderloadbalancerswithloadbalancername)
+      * [`fn withTargetGroupARN(targetGroupARN)`](#fn-specforproviderloadbalancerswithtargetgrouparn)
+      * [`obj spec.forProvider.loadBalancers.loadBalancerNameRef`](#obj-specforproviderloadbalancersloadbalancernameref)
+        * [`fn withName(name)`](#fn-specforproviderloadbalancersloadbalancernamerefwithname)
+        * [`obj spec.forProvider.loadBalancers.loadBalancerNameRef.policy`](#obj-specforproviderloadbalancersloadbalancernamerefpolicy)
+          * [`fn withResolution(resolution)`](#fn-specforproviderloadbalancersloadbalancernamerefpolicywithresolution)
+          * [`fn withResolve(resolve)`](#fn-specforproviderloadbalancersloadbalancernamerefpolicywithresolve)
+      * [`obj spec.forProvider.loadBalancers.loadBalancerNameSelector`](#obj-specforproviderloadbalancersloadbalancernameselector)
+        * [`fn withMatchControllerRef(matchControllerRef)`](#fn-specforproviderloadbalancersloadbalancernameselectorwithmatchcontrollerref)
+        * [`fn withMatchLabels(matchLabels)`](#fn-specforproviderloadbalancersloadbalancernameselectorwithmatchlabels)
+        * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specforproviderloadbalancersloadbalancernameselectorwithmatchlabelsmixin)
+        * [`obj spec.forProvider.loadBalancers.loadBalancerNameSelector.policy`](#obj-specforproviderloadbalancersloadbalancernameselectorpolicy)
+          * [`fn withResolution(resolution)`](#fn-specforproviderloadbalancersloadbalancernameselectorpolicywithresolution)
+          * [`fn withResolve(resolve)`](#fn-specforproviderloadbalancersloadbalancernameselectorpolicywithresolve)
+      * [`obj spec.forProvider.loadBalancers.targetGroupARNRef`](#obj-specforproviderloadbalancerstargetgrouparnref)
+        * [`fn withName(name)`](#fn-specforproviderloadbalancerstargetgrouparnrefwithname)
+        * [`obj spec.forProvider.loadBalancers.targetGroupARNRef.policy`](#obj-specforproviderloadbalancerstargetgrouparnrefpolicy)
+          * [`fn withResolution(resolution)`](#fn-specforproviderloadbalancerstargetgrouparnrefpolicywithresolution)
+          * [`fn withResolve(resolve)`](#fn-specforproviderloadbalancerstargetgrouparnrefpolicywithresolve)
+      * [`obj spec.forProvider.loadBalancers.targetGroupARNSelector`](#obj-specforproviderloadbalancerstargetgrouparnselector)
+        * [`fn withMatchControllerRef(matchControllerRef)`](#fn-specforproviderloadbalancerstargetgrouparnselectorwithmatchcontrollerref)
+        * [`fn withMatchLabels(matchLabels)`](#fn-specforproviderloadbalancerstargetgrouparnselectorwithmatchlabels)
+        * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specforproviderloadbalancerstargetgrouparnselectorwithmatchlabelsmixin)
+        * [`obj spec.forProvider.loadBalancers.targetGroupARNSelector.policy`](#obj-specforproviderloadbalancerstargetgrouparnselectorpolicy)
+          * [`fn withResolution(resolution)`](#fn-specforproviderloadbalancerstargetgrouparnselectorpolicywithresolution)
+          * [`fn withResolve(resolve)`](#fn-specforproviderloadbalancerstargetgrouparnselectorpolicywithresolve)
     * [`obj spec.forProvider.networkConfiguration`](#obj-specforprovidernetworkconfiguration)
       * [`obj spec.forProvider.networkConfiguration.awsvpcConfiguration`](#obj-specforprovidernetworkconfigurationawsvpcconfiguration)
         * [`fn withAssignPublicIP(assignPublicIP)`](#fn-specforprovidernetworkconfigurationawsvpcconfigurationwithassignpublicip)
@@ -89,6 +120,11 @@ permalink: /provider-aws/0.33/ecs/v1alpha1/service/
         * [`fn withSubnetRefsMixin(subnetRefs)`](#fn-specforprovidernetworkconfigurationawsvpcconfigurationwithsubnetrefsmixin)
         * [`fn withSubnets(subnets)`](#fn-specforprovidernetworkconfigurationawsvpcconfigurationwithsubnets)
         * [`fn withSubnetsMixin(subnets)`](#fn-specforprovidernetworkconfigurationawsvpcconfigurationwithsubnetsmixin)
+        * [`obj spec.forProvider.networkConfiguration.awsvpcConfiguration.securityGroupRefs`](#obj-specforprovidernetworkconfigurationawsvpcconfigurationsecuritygrouprefs)
+          * [`fn withName(name)`](#fn-specforprovidernetworkconfigurationawsvpcconfigurationsecuritygrouprefswithname)
+          * [`obj spec.forProvider.networkConfiguration.awsvpcConfiguration.securityGroupRefs.policy`](#obj-specforprovidernetworkconfigurationawsvpcconfigurationsecuritygrouprefspolicy)
+            * [`fn withResolution(resolution)`](#fn-specforprovidernetworkconfigurationawsvpcconfigurationsecuritygrouprefspolicywithresolution)
+            * [`fn withResolve(resolve)`](#fn-specforprovidernetworkconfigurationawsvpcconfigurationsecuritygrouprefspolicywithresolve)
         * [`obj spec.forProvider.networkConfiguration.awsvpcConfiguration.securityGroupSelector`](#obj-specforprovidernetworkconfigurationawsvpcconfigurationsecuritygroupselector)
           * [`fn withMatchControllerRef(matchControllerRef)`](#fn-specforprovidernetworkconfigurationawsvpcconfigurationsecuritygroupselectorwithmatchcontrollerref)
           * [`fn withMatchLabels(matchLabels)`](#fn-specforprovidernetworkconfigurationawsvpcconfigurationsecuritygroupselectorwithmatchlabels)
@@ -96,6 +132,11 @@ permalink: /provider-aws/0.33/ecs/v1alpha1/service/
           * [`obj spec.forProvider.networkConfiguration.awsvpcConfiguration.securityGroupSelector.policy`](#obj-specforprovidernetworkconfigurationawsvpcconfigurationsecuritygroupselectorpolicy)
             * [`fn withResolution(resolution)`](#fn-specforprovidernetworkconfigurationawsvpcconfigurationsecuritygroupselectorpolicywithresolution)
             * [`fn withResolve(resolve)`](#fn-specforprovidernetworkconfigurationawsvpcconfigurationsecuritygroupselectorpolicywithresolve)
+        * [`obj spec.forProvider.networkConfiguration.awsvpcConfiguration.subnetRefs`](#obj-specforprovidernetworkconfigurationawsvpcconfigurationsubnetrefs)
+          * [`fn withName(name)`](#fn-specforprovidernetworkconfigurationawsvpcconfigurationsubnetrefswithname)
+          * [`obj spec.forProvider.networkConfiguration.awsvpcConfiguration.subnetRefs.policy`](#obj-specforprovidernetworkconfigurationawsvpcconfigurationsubnetrefspolicy)
+            * [`fn withResolution(resolution)`](#fn-specforprovidernetworkconfigurationawsvpcconfigurationsubnetrefspolicywithresolution)
+            * [`fn withResolve(resolve)`](#fn-specforprovidernetworkconfigurationawsvpcconfigurationsubnetrefspolicywithresolve)
         * [`obj spec.forProvider.networkConfiguration.awsvpcConfiguration.subnetSelector`](#obj-specforprovidernetworkconfigurationawsvpcconfigurationsubnetselector)
           * [`fn withMatchControllerRef(matchControllerRef)`](#fn-specforprovidernetworkconfigurationawsvpcconfigurationsubnetselectorwithmatchcontrollerref)
           * [`fn withMatchLabels(matchLabels)`](#fn-specforprovidernetworkconfigurationawsvpcconfigurationsubnetselectorwithmatchlabels)
@@ -103,6 +144,20 @@ permalink: /provider-aws/0.33/ecs/v1alpha1/service/
           * [`obj spec.forProvider.networkConfiguration.awsvpcConfiguration.subnetSelector.policy`](#obj-specforprovidernetworkconfigurationawsvpcconfigurationsubnetselectorpolicy)
             * [`fn withResolution(resolution)`](#fn-specforprovidernetworkconfigurationawsvpcconfigurationsubnetselectorpolicywithresolution)
             * [`fn withResolve(resolve)`](#fn-specforprovidernetworkconfigurationawsvpcconfigurationsubnetselectorpolicywithresolve)
+    * [`obj spec.forProvider.placementConstraints`](#obj-specforproviderplacementconstraints)
+      * [`fn withExpression(expression)`](#fn-specforproviderplacementconstraintswithexpression)
+      * [`fn withType_(type_)`](#fn-specforproviderplacementconstraintswithtype_)
+    * [`obj spec.forProvider.placementStrategy`](#obj-specforproviderplacementstrategy)
+      * [`fn withField(field)`](#fn-specforproviderplacementstrategywithfield)
+      * [`fn withType_(type_)`](#fn-specforproviderplacementstrategywithtype_)
+    * [`obj spec.forProvider.serviceRegistries`](#obj-specforproviderserviceregistries)
+      * [`fn withContainerName(containerName)`](#fn-specforproviderserviceregistrieswithcontainername)
+      * [`fn withContainerPort(containerPort)`](#fn-specforproviderserviceregistrieswithcontainerport)
+      * [`fn withPort(port)`](#fn-specforproviderserviceregistrieswithport)
+      * [`fn withRegistryARN(registryARN)`](#fn-specforproviderserviceregistrieswithregistryarn)
+    * [`obj spec.forProvider.tags`](#obj-specforprovidertags)
+      * [`fn withKey(key)`](#fn-specforprovidertagswithkey)
+      * [`fn withValue(value)`](#fn-specforprovidertagswithvalue)
     * [`obj spec.forProvider.taskDefinitionRef`](#obj-specforprovidertaskdefinitionref)
       * [`fn withName(name)`](#fn-specforprovidertaskdefinitionrefwithname)
       * [`obj spec.forProvider.taskDefinitionRef.policy`](#obj-specforprovidertaskdefinitionrefpolicy)
@@ -255,24 +310,6 @@ withLabelsMixin(labels)
 ```
 
 "Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels"
-
-**Note:** This function appends passed data to existing values
-
-### fn metadata.withManagedFields
-
-```ts
-withManagedFields(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
-
-### fn metadata.withManagedFieldsMixin
-
-```ts
-withManagedFieldsMixin(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
 
 **Note:** This function appends passed data to existing values
 
@@ -554,6 +591,34 @@ withTaskDefinition(taskDefinition)
 
 "The family and revision (family:revision) or full ARN of the task definition to run in your service. If a revision is not specified, the latest ACTIVE revision is used. \n A task definition must be specified if the service is using either the ECS or CODE_DEPLOY deployment controllers."
 
+## obj spec.forProvider.capacityProviderStrategy
+
+"The capacity provider strategy to use for the service. \n If a capacityProviderStrategy is specified, the launchType parameter must be omitted. If no capacityProviderStrategy or launchType is specified, the defaultCapacityProviderStrategy for the cluster is used. \n A capacity provider strategy may contain a maximum of 6 capacity providers."
+
+### fn spec.forProvider.capacityProviderStrategy.withBase
+
+```ts
+withBase(base)
+```
+
+
+
+### fn spec.forProvider.capacityProviderStrategy.withCapacityProvider
+
+```ts
+withCapacityProvider(capacityProvider)
+```
+
+
+
+### fn spec.forProvider.capacityProviderStrategy.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
 ## obj spec.forProvider.clusterRef
 
 "A Reference to a named object."
@@ -688,6 +753,206 @@ withType_(type_)
 
 
 
+## obj spec.forProvider.loadBalancers
+
+"A load balancer object representing the load balancers to use with your service. For more information, see Service Load Balancing (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html) in the Amazon Elastic Container Service Developer Guide. \n If the service is using the rolling update (ECS) deployment controller and using either an Application Load Balancer or Network Load Balancer, you must specify one or more target group ARNs to attach to the service. The service-linked role is required for services that make use of multiple target groups. For more information, see Using service-linked roles for Amazon ECS (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html) in the Amazon Elastic Container Service Developer Guide. \n If the service is using the CODE_DEPLOY deployment controller, the service is required to use either an Application Load Balancer or Network Load Balancer. When creating an CodeDeploy deployment group, you specify two target groups (referred to as a targetGroupPair). During a deployment, CodeDeploy determines which task set in your service has the status PRIMARY and associates one target group with it, and then associates the other target group with the replacement task set. The load balancer can also have up to two listeners: a required listener for production traffic and an optional listener that allows you perform validation tests with Lambda functions before routing production traffic to it. \n After you create a service using the ECS deployment controller, the load balancer name or target group ARN, container name, and container port specified in the service definition are immutable. If you are using the CODE_DEPLOY deployment controller, these values can be changed when updating the service. \n For Application Load Balancers and Network Load Balancers, this object must contain the load balancer target group ARN, the container name (as it appears in a container definition), and the container port to access from the load balancer. The load balancer name parameter must be omitted. When a task from this service is placed on a container instance, the container instance and port combination is registered as a target in the target group specified here. \n For Classic Load Balancers, this object must contain the load balancer name, the container name (as it appears in a container definition), and the container port to access from the load balancer. The target group ARN parameter must be omitted. When a task from this service is placed on a container instance, the container instance is registered with the load balancer specified here. \n Services with tasks that use the awsvpc network mode (for example, those with the Fargate launch type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers are not supported. Also, when you create any target groups for these services, you must choose ip as the target type, not instance, because tasks that use the awsvpc network mode are associated with an elastic network interface, not an Amazon EC2 instance."
+
+### fn spec.forProvider.loadBalancers.withContainerName
+
+```ts
+withContainerName(containerName)
+```
+
+"The name of the container (as it appears in a container definition) to associate with the load balancer."
+
+### fn spec.forProvider.loadBalancers.withContainerPort
+
+```ts
+withContainerPort(containerPort)
+```
+
+"The port on the container to associate with the load balancer. This port must correspond to a containerPort in the task definition the tasks in the service are using. For tasks that use the EC2 launch type, the container instance they're launched on must allow ingress traffic on the hostPort of the port mapping."
+
+### fn spec.forProvider.loadBalancers.withLoadBalancerName
+
+```ts
+withLoadBalancerName(loadBalancerName)
+```
+
+"The name of the load balancer to associate with the Amazon ECS service or task set. \n A load balancer name is only specified when using a Classic Load Balancer. If you are using an Application Load Balancer or a Network Load Balancer the load balancer name parameter should be omitted."
+
+### fn spec.forProvider.loadBalancers.withTargetGroupARN
+
+```ts
+withTargetGroupARN(targetGroupARN)
+```
+
+"The full Amazon Resource Name (ARN) of the Elastic Load Balancing target group or groups associated with a service or task set. \n A target group ARN is only specified when using an Application Load Balancer or Network Load Balancer. If you're using a Classic Load Balancer, omit the target group ARN. \n For services using the ECS deployment controller, you can specify one or multiple target groups. For more information, see Registering multiple target groups with a service (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/register-multiple-targetgroups.html) in the Amazon Elastic Container Service Developer Guide. \n For services using the CODE_DEPLOY deployment controller, you're required to define two target groups for the load balancer. For more information, see Blue/green deployment with CodeDeploy (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-bluegreen.html) in the Amazon Elastic Container Service Developer Guide. \n If your service's task definition uses the awsvpc network mode, you must choose ip as the target type, not instance. Do this when creating your target groups because tasks that use the awsvpc network mode are associated with an elastic network interface, not an Amazon EC2 instance. This network mode is required for the Fargate launch type."
+
+## obj spec.forProvider.loadBalancers.loadBalancerNameRef
+
+"A Reference to a named object."
+
+### fn spec.forProvider.loadBalancers.loadBalancerNameRef.withName
+
+```ts
+withName(name)
+```
+
+"Name of the referenced object."
+
+## obj spec.forProvider.loadBalancers.loadBalancerNameRef.policy
+
+"Policies for referencing."
+
+### fn spec.forProvider.loadBalancers.loadBalancerNameRef.policy.withResolution
+
+```ts
+withResolution(resolution)
+```
+
+"Resolution specifies whether resolution of this reference is required. The default is 'Required', which means the reconcile will fail if the reference cannot be resolved. 'Optional' means this reference will be a no-op if it cannot be resolved."
+
+### fn spec.forProvider.loadBalancers.loadBalancerNameRef.policy.withResolve
+
+```ts
+withResolve(resolve)
+```
+
+"Resolve specifies when this reference should be resolved. The default is 'IfNotPresent', which will attempt to resolve the reference only when the corresponding field is not present. Use 'Always' to resolve the reference on every reconcile."
+
+## obj spec.forProvider.loadBalancers.loadBalancerNameSelector
+
+"A Selector selects an object."
+
+### fn spec.forProvider.loadBalancers.loadBalancerNameSelector.withMatchControllerRef
+
+```ts
+withMatchControllerRef(matchControllerRef)
+```
+
+"MatchControllerRef ensures an object with the same controller reference as the selecting object is selected."
+
+### fn spec.forProvider.loadBalancers.loadBalancerNameSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+"MatchLabels ensures an object with matching labels is selected."
+
+### fn spec.forProvider.loadBalancers.loadBalancerNameSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+"MatchLabels ensures an object with matching labels is selected."
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.forProvider.loadBalancers.loadBalancerNameSelector.policy
+
+"Policies for selection."
+
+### fn spec.forProvider.loadBalancers.loadBalancerNameSelector.policy.withResolution
+
+```ts
+withResolution(resolution)
+```
+
+"Resolution specifies whether resolution of this reference is required. The default is 'Required', which means the reconcile will fail if the reference cannot be resolved. 'Optional' means this reference will be a no-op if it cannot be resolved."
+
+### fn spec.forProvider.loadBalancers.loadBalancerNameSelector.policy.withResolve
+
+```ts
+withResolve(resolve)
+```
+
+"Resolve specifies when this reference should be resolved. The default is 'IfNotPresent', which will attempt to resolve the reference only when the corresponding field is not present. Use 'Always' to resolve the reference on every reconcile."
+
+## obj spec.forProvider.loadBalancers.targetGroupARNRef
+
+"A Reference to a named object."
+
+### fn spec.forProvider.loadBalancers.targetGroupARNRef.withName
+
+```ts
+withName(name)
+```
+
+"Name of the referenced object."
+
+## obj spec.forProvider.loadBalancers.targetGroupARNRef.policy
+
+"Policies for referencing."
+
+### fn spec.forProvider.loadBalancers.targetGroupARNRef.policy.withResolution
+
+```ts
+withResolution(resolution)
+```
+
+"Resolution specifies whether resolution of this reference is required. The default is 'Required', which means the reconcile will fail if the reference cannot be resolved. 'Optional' means this reference will be a no-op if it cannot be resolved."
+
+### fn spec.forProvider.loadBalancers.targetGroupARNRef.policy.withResolve
+
+```ts
+withResolve(resolve)
+```
+
+"Resolve specifies when this reference should be resolved. The default is 'IfNotPresent', which will attempt to resolve the reference only when the corresponding field is not present. Use 'Always' to resolve the reference on every reconcile."
+
+## obj spec.forProvider.loadBalancers.targetGroupARNSelector
+
+"A Selector selects an object."
+
+### fn spec.forProvider.loadBalancers.targetGroupARNSelector.withMatchControllerRef
+
+```ts
+withMatchControllerRef(matchControllerRef)
+```
+
+"MatchControllerRef ensures an object with the same controller reference as the selecting object is selected."
+
+### fn spec.forProvider.loadBalancers.targetGroupARNSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+"MatchLabels ensures an object with matching labels is selected."
+
+### fn spec.forProvider.loadBalancers.targetGroupARNSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+"MatchLabels ensures an object with matching labels is selected."
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.forProvider.loadBalancers.targetGroupARNSelector.policy
+
+"Policies for selection."
+
+### fn spec.forProvider.loadBalancers.targetGroupARNSelector.policy.withResolution
+
+```ts
+withResolution(resolution)
+```
+
+"Resolution specifies whether resolution of this reference is required. The default is 'Required', which means the reconcile will fail if the reference cannot be resolved. 'Optional' means this reference will be a no-op if it cannot be resolved."
+
+### fn spec.forProvider.loadBalancers.targetGroupARNSelector.policy.withResolve
+
+```ts
+withResolve(resolve)
+```
+
+"Resolve specifies when this reference should be resolved. The default is 'IfNotPresent', which will attempt to resolve the reference only when the corresponding field is not present. Use 'Always' to resolve the reference on every reconcile."
+
 ## obj spec.forProvider.networkConfiguration
 
 "The network configuration for the service. This parameter is required for task definitions that use the awsvpc network mode to receive their own elastic network interface, and it is not supported for other network modes. For more information, see Task networking (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html) in the Amazon Elastic Container Service Developer Guide."
@@ -776,6 +1041,38 @@ withSubnetsMixin(subnets)
 
 **Note:** This function appends passed data to existing values
 
+## obj spec.forProvider.networkConfiguration.awsvpcConfiguration.securityGroupRefs
+
+
+
+### fn spec.forProvider.networkConfiguration.awsvpcConfiguration.securityGroupRefs.withName
+
+```ts
+withName(name)
+```
+
+"Name of the referenced object."
+
+## obj spec.forProvider.networkConfiguration.awsvpcConfiguration.securityGroupRefs.policy
+
+"Policies for referencing."
+
+### fn spec.forProvider.networkConfiguration.awsvpcConfiguration.securityGroupRefs.policy.withResolution
+
+```ts
+withResolution(resolution)
+```
+
+"Resolution specifies whether resolution of this reference is required. The default is 'Required', which means the reconcile will fail if the reference cannot be resolved. 'Optional' means this reference will be a no-op if it cannot be resolved."
+
+### fn spec.forProvider.networkConfiguration.awsvpcConfiguration.securityGroupRefs.policy.withResolve
+
+```ts
+withResolve(resolve)
+```
+
+"Resolve specifies when this reference should be resolved. The default is 'IfNotPresent', which will attempt to resolve the reference only when the corresponding field is not present. Use 'Always' to resolve the reference on every reconcile."
+
 ## obj spec.forProvider.networkConfiguration.awsvpcConfiguration.securityGroupSelector
 
 "A Selector selects an object."
@@ -819,6 +1116,38 @@ withResolution(resolution)
 "Resolution specifies whether resolution of this reference is required. The default is 'Required', which means the reconcile will fail if the reference cannot be resolved. 'Optional' means this reference will be a no-op if it cannot be resolved."
 
 ### fn spec.forProvider.networkConfiguration.awsvpcConfiguration.securityGroupSelector.policy.withResolve
+
+```ts
+withResolve(resolve)
+```
+
+"Resolve specifies when this reference should be resolved. The default is 'IfNotPresent', which will attempt to resolve the reference only when the corresponding field is not present. Use 'Always' to resolve the reference on every reconcile."
+
+## obj spec.forProvider.networkConfiguration.awsvpcConfiguration.subnetRefs
+
+
+
+### fn spec.forProvider.networkConfiguration.awsvpcConfiguration.subnetRefs.withName
+
+```ts
+withName(name)
+```
+
+"Name of the referenced object."
+
+## obj spec.forProvider.networkConfiguration.awsvpcConfiguration.subnetRefs.policy
+
+"Policies for referencing."
+
+### fn spec.forProvider.networkConfiguration.awsvpcConfiguration.subnetRefs.policy.withResolution
+
+```ts
+withResolution(resolution)
+```
+
+"Resolution specifies whether resolution of this reference is required. The default is 'Required', which means the reconcile will fail if the reference cannot be resolved. 'Optional' means this reference will be a no-op if it cannot be resolved."
+
+### fn spec.forProvider.networkConfiguration.awsvpcConfiguration.subnetRefs.policy.withResolve
 
 ```ts
 withResolve(resolve)
@@ -875,6 +1204,102 @@ withResolve(resolve)
 ```
 
 "Resolve specifies when this reference should be resolved. The default is 'IfNotPresent', which will attempt to resolve the reference only when the corresponding field is not present. Use 'Always' to resolve the reference on every reconcile."
+
+## obj spec.forProvider.placementConstraints
+
+"An array of placement constraint objects to use for tasks in your service. You can specify a maximum of 10 constraints per task (this limit includes constraints in the task definition and those specified at runtime)."
+
+### fn spec.forProvider.placementConstraints.withExpression
+
+```ts
+withExpression(expression)
+```
+
+
+
+### fn spec.forProvider.placementConstraints.withType_
+
+```ts
+withType_(type_)
+```
+
+
+
+## obj spec.forProvider.placementStrategy
+
+"The placement strategy objects to use for tasks in your service. You can specify a maximum of 5 strategy rules per service."
+
+### fn spec.forProvider.placementStrategy.withField
+
+```ts
+withField(field)
+```
+
+
+
+### fn spec.forProvider.placementStrategy.withType_
+
+```ts
+withType_(type_)
+```
+
+
+
+## obj spec.forProvider.serviceRegistries
+
+"The details of the service discovery registry to associate with this service. For more information, see Service discovery (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html). \n Each service may be associated with one service registry. Multiple service registries per service isn't supported."
+
+### fn spec.forProvider.serviceRegistries.withContainerName
+
+```ts
+withContainerName(containerName)
+```
+
+
+
+### fn spec.forProvider.serviceRegistries.withContainerPort
+
+```ts
+withContainerPort(containerPort)
+```
+
+
+
+### fn spec.forProvider.serviceRegistries.withPort
+
+```ts
+withPort(port)
+```
+
+
+
+### fn spec.forProvider.serviceRegistries.withRegistryARN
+
+```ts
+withRegistryARN(registryARN)
+```
+
+
+
+## obj spec.forProvider.tags
+
+"The metadata that you apply to the service to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. When a service is deleted, the tags are deleted as well. \n The following basic restrictions apply to tags: \n * Maximum number of tags per resource - 50 \n * For each resource, each tag key must be unique, and each tag key can have only one value. \n * Maximum key length - 128 Unicode characters in UTF-8 \n * Maximum value length - 256 Unicode characters in UTF-8 \n * If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @. \n * Tag keys and values are case-sensitive. \n * Do not use aws:, AWS:, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit."
+
+### fn spec.forProvider.tags.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.forProvider.tags.withValue
+
+```ts
+withValue(value)
+```
+
+
 
 ## obj spec.forProvider.taskDefinitionRef
 

@@ -22,8 +22,6 @@ permalink: /provider-aws/0.33/transfer/v1alpha1/user/
   * [`fn withGeneration(generation)`](#fn-metadatawithgeneration)
   * [`fn withLabels(labels)`](#fn-metadatawithlabels)
   * [`fn withLabelsMixin(labels)`](#fn-metadatawithlabelsmixin)
-  * [`fn withManagedFields(managedFields)`](#fn-metadatawithmanagedfields)
-  * [`fn withManagedFieldsMixin(managedFields)`](#fn-metadatawithmanagedfieldsmixin)
   * [`fn withName(name)`](#fn-metadatawithname)
   * [`fn withNamespace(namespace)`](#fn-metadatawithnamespace)
   * [`fn withOwnerReferences(ownerReferences)`](#fn-metadatawithownerreferences)
@@ -45,6 +43,9 @@ permalink: /provider-aws/0.33/transfer/v1alpha1/user/
     * [`fn withSshPublicKeyBody(sshPublicKeyBody)`](#fn-specforproviderwithsshpublickeybody)
     * [`fn withTags(tags)`](#fn-specforproviderwithtags)
     * [`fn withTagsMixin(tags)`](#fn-specforproviderwithtagsmixin)
+    * [`obj spec.forProvider.homeDirectoryMappings`](#obj-specforproviderhomedirectorymappings)
+      * [`fn withEntry(entry)`](#fn-specforproviderhomedirectorymappingswithentry)
+      * [`fn withTarget(target)`](#fn-specforproviderhomedirectorymappingswithtarget)
     * [`obj spec.forProvider.posixProfile`](#obj-specforproviderposixprofile)
       * [`fn withGid(gid)`](#fn-specforproviderposixprofilewithgid)
       * [`fn withSecondaryGids(secondaryGids)`](#fn-specforproviderposixprofilewithsecondarygids)
@@ -74,6 +75,9 @@ permalink: /provider-aws/0.33/transfer/v1alpha1/user/
       * [`obj spec.forProvider.serverIDSelector.policy`](#obj-specforproviderserveridselectorpolicy)
         * [`fn withResolution(resolution)`](#fn-specforproviderserveridselectorpolicywithresolution)
         * [`fn withResolve(resolve)`](#fn-specforproviderserveridselectorpolicywithresolve)
+    * [`obj spec.forProvider.tags`](#obj-specforprovidertags)
+      * [`fn withKey(key)`](#fn-specforprovidertagswithkey)
+      * [`fn withValue(value)`](#fn-specforprovidertagswithvalue)
   * [`obj spec.providerConfigRef`](#obj-specproviderconfigref)
     * [`fn withName(name)`](#fn-specproviderconfigrefwithname)
     * [`obj spec.providerConfigRef.policy`](#obj-specproviderconfigrefpolicy)
@@ -214,24 +218,6 @@ withLabelsMixin(labels)
 ```
 
 "Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels"
-
-**Note:** This function appends passed data to existing values
-
-### fn metadata.withManagedFields
-
-```ts
-withManagedFields(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
-
-### fn metadata.withManagedFieldsMixin
-
-```ts
-withManagedFieldsMixin(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
 
 **Note:** This function appends passed data to existing values
 
@@ -400,6 +386,26 @@ withTagsMixin(tags)
 "Key-value pairs that can be used to group and search for users. Tags are metadata attached to users for any purpose."
 
 **Note:** This function appends passed data to existing values
+
+## obj spec.forProvider.homeDirectoryMappings
+
+"Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the Entry and Target pair, where Entry shows how the path is made visible and Target is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM) role provides access to paths in Target. This value can only be set when HomeDirectoryType is set to LOGICAL. \n The following is an Entry and Target pair example. \n [ { \"Entry\": \"/directory1\", \"Target\": \"/bucket_name/home/mydirectory\" } ] \n In most cases, you can use this value instead of the session policy to lock your user down to the designated home directory (\"chroot\"). To do this, you can set Entry to / and set Target to the HomeDirectory parameter value. \n The following is an Entry and Target pair example for chroot. \n [ { \"Entry:\": \"/\", \"Target\": \"/bucket_name/home/mydirectory\" } ] \n If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your directory. If using the CLI, use the s3api or efsapi call instead of s3 or efs so you can use the put-object operation. For example, you use the following: aws s3api put-object --bucket bucketname --key path/to/folder/. Make sure that the end of the key name ends in a / for it to be considered a folder."
+
+### fn spec.forProvider.homeDirectoryMappings.withEntry
+
+```ts
+withEntry(entry)
+```
+
+
+
+### fn spec.forProvider.homeDirectoryMappings.withTarget
+
+```ts
+withTarget(target)
+```
+
+
 
 ## obj spec.forProvider.posixProfile
 
@@ -602,6 +608,26 @@ withResolve(resolve)
 ```
 
 "Resolve specifies when this reference should be resolved. The default is 'IfNotPresent', which will attempt to resolve the reference only when the corresponding field is not present. Use 'Always' to resolve the reference on every reconcile."
+
+## obj spec.forProvider.tags
+
+"Key-value pairs that can be used to group and search for users. Tags are metadata attached to users for any purpose."
+
+### fn spec.forProvider.tags.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.forProvider.tags.withValue
+
+```ts
+withValue(value)
+```
+
+
 
 ## obj spec.providerConfigRef
 

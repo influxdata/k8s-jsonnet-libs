@@ -22,8 +22,6 @@ permalink: /provider-aws/0.33/glue/v1alpha1/job/
   * [`fn withGeneration(generation)`](#fn-metadatawithgeneration)
   * [`fn withLabels(labels)`](#fn-metadatawithlabels)
   * [`fn withLabelsMixin(labels)`](#fn-metadatawithlabelsmixin)
-  * [`fn withManagedFields(managedFields)`](#fn-metadatawithmanagedfields)
-  * [`fn withManagedFieldsMixin(managedFields)`](#fn-metadatawithmanagedfieldsmixin)
   * [`fn withName(name)`](#fn-metadatawithname)
   * [`fn withNamespace(namespace)`](#fn-metadatawithnamespace)
   * [`fn withOwnerReferences(ownerReferences)`](#fn-metadatawithownerreferences)
@@ -60,6 +58,11 @@ permalink: /provider-aws/0.33/glue/v1alpha1/job/
       * [`fn withName(name)`](#fn-specforprovidercommandwithname)
       * [`fn withPythonVersion(pythonVersion)`](#fn-specforprovidercommandwithpythonversion)
       * [`fn withScriptLocation(scriptLocation)`](#fn-specforprovidercommandwithscriptlocation)
+    * [`obj spec.forProvider.connectionRefs`](#obj-specforproviderconnectionrefs)
+      * [`fn withName(name)`](#fn-specforproviderconnectionrefswithname)
+      * [`obj spec.forProvider.connectionRefs.policy`](#obj-specforproviderconnectionrefspolicy)
+        * [`fn withResolution(resolution)`](#fn-specforproviderconnectionrefspolicywithresolution)
+        * [`fn withResolve(resolve)`](#fn-specforproviderconnectionrefspolicywithresolve)
     * [`obj spec.forProvider.connectionSelector`](#obj-specforproviderconnectionselector)
       * [`fn withMatchControllerRef(matchControllerRef)`](#fn-specforproviderconnectionselectorwithmatchcontrollerref)
       * [`fn withMatchLabels(matchLabels)`](#fn-specforproviderconnectionselectorwithmatchlabels)
@@ -235,24 +238,6 @@ withLabelsMixin(labels)
 ```
 
 "Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels"
-
-**Note:** This function appends passed data to existing values
-
-### fn metadata.withManagedFields
-
-```ts
-withManagedFields(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
-
-### fn metadata.withManagedFieldsMixin
-
-```ts
-withManagedFieldsMixin(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
 
 **Note:** This function appends passed data to existing values
 
@@ -543,6 +528,38 @@ withScriptLocation(scriptLocation)
 ```
 
 
+
+## obj spec.forProvider.connectionRefs
+
+"ConnectionRefs is a list of references to Connections used to set the Connections."
+
+### fn spec.forProvider.connectionRefs.withName
+
+```ts
+withName(name)
+```
+
+"Name of the referenced object."
+
+## obj spec.forProvider.connectionRefs.policy
+
+"Policies for referencing."
+
+### fn spec.forProvider.connectionRefs.policy.withResolution
+
+```ts
+withResolution(resolution)
+```
+
+"Resolution specifies whether resolution of this reference is required. The default is 'Required', which means the reconcile will fail if the reference cannot be resolved. 'Optional' means this reference will be a no-op if it cannot be resolved."
+
+### fn spec.forProvider.connectionRefs.policy.withResolve
+
+```ts
+withResolve(resolve)
+```
+
+"Resolve specifies when this reference should be resolved. The default is 'IfNotPresent', which will attempt to resolve the reference only when the corresponding field is not present. Use 'Always' to resolve the reference on every reconcile."
 
 ## obj spec.forProvider.connectionSelector
 

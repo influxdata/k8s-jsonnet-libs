@@ -22,8 +22,6 @@ permalink: /provider-aws/0.33/glue/v1alpha1/crawler/
   * [`fn withGeneration(generation)`](#fn-metadatawithgeneration)
   * [`fn withLabels(labels)`](#fn-metadatawithlabels)
   * [`fn withLabelsMixin(labels)`](#fn-metadatawithlabelsmixin)
-  * [`fn withManagedFields(managedFields)`](#fn-metadatawithmanagedfields)
-  * [`fn withManagedFieldsMixin(managedFields)`](#fn-metadatawithmanagedfieldsmixin)
   * [`fn withName(name)`](#fn-metadatawithname)
   * [`fn withNamespace(namespace)`](#fn-metadatawithnamespace)
   * [`fn withOwnerReferences(ownerReferences)`](#fn-metadatawithownerreferences)
@@ -48,6 +46,11 @@ permalink: /provider-aws/0.33/glue/v1alpha1/crawler/
     * [`fn withTablePrefix(tablePrefix)`](#fn-specforproviderwithtableprefix)
     * [`fn withTags(tags)`](#fn-specforproviderwithtags)
     * [`fn withTagsMixin(tags)`](#fn-specforproviderwithtagsmixin)
+    * [`obj spec.forProvider.classifierRefs`](#obj-specforproviderclassifierrefs)
+      * [`fn withName(name)`](#fn-specforproviderclassifierrefswithname)
+      * [`obj spec.forProvider.classifierRefs.policy`](#obj-specforproviderclassifierrefspolicy)
+        * [`fn withResolution(resolution)`](#fn-specforproviderclassifierrefspolicywithresolution)
+        * [`fn withResolve(resolve)`](#fn-specforproviderclassifierrefspolicywithresolve)
     * [`obj spec.forProvider.classifierSelector`](#obj-specforproviderclassifierselector)
       * [`fn withMatchControllerRef(matchControllerRef)`](#fn-specforproviderclassifierselectorwithmatchcontrollerref)
       * [`fn withMatchLabels(matchLabels)`](#fn-specforproviderclassifierselectorwithmatchlabels)
@@ -109,6 +112,103 @@ permalink: /provider-aws/0.33/glue/v1alpha1/crawler/
       * [`fn withMongoDBTargetsMixin(mongoDBTargets)`](#fn-specforprovidertargetswithmongodbtargetsmixin)
       * [`fn withS3Targets(s3Targets)`](#fn-specforprovidertargetswiths3targets)
       * [`fn withS3TargetsMixin(s3Targets)`](#fn-specforprovidertargetswiths3targetsmixin)
+      * [`obj spec.forProvider.targets.catalogTargets`](#obj-specforprovidertargetscatalogtargets)
+        * [`fn withDatabaseName(databaseName)`](#fn-specforprovidertargetscatalogtargetswithdatabasename)
+        * [`fn withTables(tables)`](#fn-specforprovidertargetscatalogtargetswithtables)
+        * [`fn withTablesMixin(tables)`](#fn-specforprovidertargetscatalogtargetswithtablesmixin)
+        * [`obj spec.forProvider.targets.catalogTargets.databaseNameRef`](#obj-specforprovidertargetscatalogtargetsdatabasenameref)
+          * [`fn withName(name)`](#fn-specforprovidertargetscatalogtargetsdatabasenamerefwithname)
+          * [`obj spec.forProvider.targets.catalogTargets.databaseNameRef.policy`](#obj-specforprovidertargetscatalogtargetsdatabasenamerefpolicy)
+            * [`fn withResolution(resolution)`](#fn-specforprovidertargetscatalogtargetsdatabasenamerefpolicywithresolution)
+            * [`fn withResolve(resolve)`](#fn-specforprovidertargetscatalogtargetsdatabasenamerefpolicywithresolve)
+        * [`obj spec.forProvider.targets.catalogTargets.databaseNameSelector`](#obj-specforprovidertargetscatalogtargetsdatabasenameselector)
+          * [`fn withMatchControllerRef(matchControllerRef)`](#fn-specforprovidertargetscatalogtargetsdatabasenameselectorwithmatchcontrollerref)
+          * [`fn withMatchLabels(matchLabels)`](#fn-specforprovidertargetscatalogtargetsdatabasenameselectorwithmatchlabels)
+          * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specforprovidertargetscatalogtargetsdatabasenameselectorwithmatchlabelsmixin)
+          * [`obj spec.forProvider.targets.catalogTargets.databaseNameSelector.policy`](#obj-specforprovidertargetscatalogtargetsdatabasenameselectorpolicy)
+            * [`fn withResolution(resolution)`](#fn-specforprovidertargetscatalogtargetsdatabasenameselectorpolicywithresolution)
+            * [`fn withResolve(resolve)`](#fn-specforprovidertargetscatalogtargetsdatabasenameselectorpolicywithresolve)
+      * [`obj spec.forProvider.targets.dynamoDBTargets`](#obj-specforprovidertargetsdynamodbtargets)
+        * [`fn withPath(path)`](#fn-specforprovidertargetsdynamodbtargetswithpath)
+        * [`fn withScanAll(scanAll)`](#fn-specforprovidertargetsdynamodbtargetswithscanall)
+        * [`fn withScanRate(scanRate)`](#fn-specforprovidertargetsdynamodbtargetswithscanrate)
+      * [`obj spec.forProvider.targets.jdbcTargets`](#obj-specforprovidertargetsjdbctargets)
+        * [`fn withConnectionName(connectionName)`](#fn-specforprovidertargetsjdbctargetswithconnectionname)
+        * [`fn withExclusions(exclusions)`](#fn-specforprovidertargetsjdbctargetswithexclusions)
+        * [`fn withExclusionsMixin(exclusions)`](#fn-specforprovidertargetsjdbctargetswithexclusionsmixin)
+        * [`fn withPath(path)`](#fn-specforprovidertargetsjdbctargetswithpath)
+        * [`obj spec.forProvider.targets.jdbcTargets.connectionNameRef`](#obj-specforprovidertargetsjdbctargetsconnectionnameref)
+          * [`fn withName(name)`](#fn-specforprovidertargetsjdbctargetsconnectionnamerefwithname)
+          * [`obj spec.forProvider.targets.jdbcTargets.connectionNameRef.policy`](#obj-specforprovidertargetsjdbctargetsconnectionnamerefpolicy)
+            * [`fn withResolution(resolution)`](#fn-specforprovidertargetsjdbctargetsconnectionnamerefpolicywithresolution)
+            * [`fn withResolve(resolve)`](#fn-specforprovidertargetsjdbctargetsconnectionnamerefpolicywithresolve)
+        * [`obj spec.forProvider.targets.jdbcTargets.connectionNameSelector`](#obj-specforprovidertargetsjdbctargetsconnectionnameselector)
+          * [`fn withMatchControllerRef(matchControllerRef)`](#fn-specforprovidertargetsjdbctargetsconnectionnameselectorwithmatchcontrollerref)
+          * [`fn withMatchLabels(matchLabels)`](#fn-specforprovidertargetsjdbctargetsconnectionnameselectorwithmatchlabels)
+          * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specforprovidertargetsjdbctargetsconnectionnameselectorwithmatchlabelsmixin)
+          * [`obj spec.forProvider.targets.jdbcTargets.connectionNameSelector.policy`](#obj-specforprovidertargetsjdbctargetsconnectionnameselectorpolicy)
+            * [`fn withResolution(resolution)`](#fn-specforprovidertargetsjdbctargetsconnectionnameselectorpolicywithresolution)
+            * [`fn withResolve(resolve)`](#fn-specforprovidertargetsjdbctargetsconnectionnameselectorpolicywithresolve)
+      * [`obj spec.forProvider.targets.mongoDBTargets`](#obj-specforprovidertargetsmongodbtargets)
+        * [`fn withConnectionName(connectionName)`](#fn-specforprovidertargetsmongodbtargetswithconnectionname)
+        * [`fn withPath(path)`](#fn-specforprovidertargetsmongodbtargetswithpath)
+        * [`fn withScanAll(scanAll)`](#fn-specforprovidertargetsmongodbtargetswithscanall)
+        * [`obj spec.forProvider.targets.mongoDBTargets.connectionNameRef`](#obj-specforprovidertargetsmongodbtargetsconnectionnameref)
+          * [`fn withName(name)`](#fn-specforprovidertargetsmongodbtargetsconnectionnamerefwithname)
+          * [`obj spec.forProvider.targets.mongoDBTargets.connectionNameRef.policy`](#obj-specforprovidertargetsmongodbtargetsconnectionnamerefpolicy)
+            * [`fn withResolution(resolution)`](#fn-specforprovidertargetsmongodbtargetsconnectionnamerefpolicywithresolution)
+            * [`fn withResolve(resolve)`](#fn-specforprovidertargetsmongodbtargetsconnectionnamerefpolicywithresolve)
+        * [`obj spec.forProvider.targets.mongoDBTargets.connectionNameSelector`](#obj-specforprovidertargetsmongodbtargetsconnectionnameselector)
+          * [`fn withMatchControllerRef(matchControllerRef)`](#fn-specforprovidertargetsmongodbtargetsconnectionnameselectorwithmatchcontrollerref)
+          * [`fn withMatchLabels(matchLabels)`](#fn-specforprovidertargetsmongodbtargetsconnectionnameselectorwithmatchlabels)
+          * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specforprovidertargetsmongodbtargetsconnectionnameselectorwithmatchlabelsmixin)
+          * [`obj spec.forProvider.targets.mongoDBTargets.connectionNameSelector.policy`](#obj-specforprovidertargetsmongodbtargetsconnectionnameselectorpolicy)
+            * [`fn withResolution(resolution)`](#fn-specforprovidertargetsmongodbtargetsconnectionnameselectorpolicywithresolution)
+            * [`fn withResolve(resolve)`](#fn-specforprovidertargetsmongodbtargetsconnectionnameselectorpolicywithresolve)
+      * [`obj spec.forProvider.targets.s3Targets`](#obj-specforprovidertargetss3targets)
+        * [`fn withConnectionName(connectionName)`](#fn-specforprovidertargetss3targetswithconnectionname)
+        * [`fn withDlqEventQueueArn(dlqEventQueueArn)`](#fn-specforprovidertargetss3targetswithdlqeventqueuearn)
+        * [`fn withEventQueueArn(eventQueueArn)`](#fn-specforprovidertargetss3targetswitheventqueuearn)
+        * [`fn withExclusions(exclusions)`](#fn-specforprovidertargetss3targetswithexclusions)
+        * [`fn withExclusionsMixin(exclusions)`](#fn-specforprovidertargetss3targetswithexclusionsmixin)
+        * [`fn withPath(path)`](#fn-specforprovidertargetss3targetswithpath)
+        * [`fn withSampleSize(sampleSize)`](#fn-specforprovidertargetss3targetswithsamplesize)
+        * [`obj spec.forProvider.targets.s3Targets.connectionNameRef`](#obj-specforprovidertargetss3targetsconnectionnameref)
+          * [`fn withName(name)`](#fn-specforprovidertargetss3targetsconnectionnamerefwithname)
+          * [`obj spec.forProvider.targets.s3Targets.connectionNameRef.policy`](#obj-specforprovidertargetss3targetsconnectionnamerefpolicy)
+            * [`fn withResolution(resolution)`](#fn-specforprovidertargetss3targetsconnectionnamerefpolicywithresolution)
+            * [`fn withResolve(resolve)`](#fn-specforprovidertargetss3targetsconnectionnamerefpolicywithresolve)
+        * [`obj spec.forProvider.targets.s3Targets.connectionNameSelector`](#obj-specforprovidertargetss3targetsconnectionnameselector)
+          * [`fn withMatchControllerRef(matchControllerRef)`](#fn-specforprovidertargetss3targetsconnectionnameselectorwithmatchcontrollerref)
+          * [`fn withMatchLabels(matchLabels)`](#fn-specforprovidertargetss3targetsconnectionnameselectorwithmatchlabels)
+          * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specforprovidertargetss3targetsconnectionnameselectorwithmatchlabelsmixin)
+          * [`obj spec.forProvider.targets.s3Targets.connectionNameSelector.policy`](#obj-specforprovidertargetss3targetsconnectionnameselectorpolicy)
+            * [`fn withResolution(resolution)`](#fn-specforprovidertargetss3targetsconnectionnameselectorpolicywithresolution)
+            * [`fn withResolve(resolve)`](#fn-specforprovidertargetss3targetsconnectionnameselectorpolicywithresolve)
+        * [`obj spec.forProvider.targets.s3Targets.dlqEventQueueArnRef`](#obj-specforprovidertargetss3targetsdlqeventqueuearnref)
+          * [`fn withName(name)`](#fn-specforprovidertargetss3targetsdlqeventqueuearnrefwithname)
+          * [`obj spec.forProvider.targets.s3Targets.dlqEventQueueArnRef.policy`](#obj-specforprovidertargetss3targetsdlqeventqueuearnrefpolicy)
+            * [`fn withResolution(resolution)`](#fn-specforprovidertargetss3targetsdlqeventqueuearnrefpolicywithresolution)
+            * [`fn withResolve(resolve)`](#fn-specforprovidertargetss3targetsdlqeventqueuearnrefpolicywithresolve)
+        * [`obj spec.forProvider.targets.s3Targets.dlqEventQueueArnSelector`](#obj-specforprovidertargetss3targetsdlqeventqueuearnselector)
+          * [`fn withMatchControllerRef(matchControllerRef)`](#fn-specforprovidertargetss3targetsdlqeventqueuearnselectorwithmatchcontrollerref)
+          * [`fn withMatchLabels(matchLabels)`](#fn-specforprovidertargetss3targetsdlqeventqueuearnselectorwithmatchlabels)
+          * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specforprovidertargetss3targetsdlqeventqueuearnselectorwithmatchlabelsmixin)
+          * [`obj spec.forProvider.targets.s3Targets.dlqEventQueueArnSelector.policy`](#obj-specforprovidertargetss3targetsdlqeventqueuearnselectorpolicy)
+            * [`fn withResolution(resolution)`](#fn-specforprovidertargetss3targetsdlqeventqueuearnselectorpolicywithresolution)
+            * [`fn withResolve(resolve)`](#fn-specforprovidertargetss3targetsdlqeventqueuearnselectorpolicywithresolve)
+        * [`obj spec.forProvider.targets.s3Targets.eventQueueArnRef`](#obj-specforprovidertargetss3targetseventqueuearnref)
+          * [`fn withName(name)`](#fn-specforprovidertargetss3targetseventqueuearnrefwithname)
+          * [`obj spec.forProvider.targets.s3Targets.eventQueueArnRef.policy`](#obj-specforprovidertargetss3targetseventqueuearnrefpolicy)
+            * [`fn withResolution(resolution)`](#fn-specforprovidertargetss3targetseventqueuearnrefpolicywithresolution)
+            * [`fn withResolve(resolve)`](#fn-specforprovidertargetss3targetseventqueuearnrefpolicywithresolve)
+        * [`obj spec.forProvider.targets.s3Targets.eventQueueArnSelector`](#obj-specforprovidertargetss3targetseventqueuearnselector)
+          * [`fn withMatchControllerRef(matchControllerRef)`](#fn-specforprovidertargetss3targetseventqueuearnselectorwithmatchcontrollerref)
+          * [`fn withMatchLabels(matchLabels)`](#fn-specforprovidertargetss3targetseventqueuearnselectorwithmatchlabels)
+          * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specforprovidertargetss3targetseventqueuearnselectorwithmatchlabelsmixin)
+          * [`obj spec.forProvider.targets.s3Targets.eventQueueArnSelector.policy`](#obj-specforprovidertargetss3targetseventqueuearnselectorpolicy)
+            * [`fn withResolution(resolution)`](#fn-specforprovidertargetss3targetseventqueuearnselectorpolicywithresolution)
+            * [`fn withResolve(resolve)`](#fn-specforprovidertargetss3targetseventqueuearnselectorpolicywithresolve)
   * [`obj spec.providerConfigRef`](#obj-specproviderconfigref)
     * [`fn withName(name)`](#fn-specproviderconfigrefwithname)
     * [`obj spec.providerConfigRef.policy`](#obj-specproviderconfigrefpolicy)
@@ -249,24 +349,6 @@ withLabelsMixin(labels)
 ```
 
 "Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels"
-
-**Note:** This function appends passed data to existing values
-
-### fn metadata.withManagedFields
-
-```ts
-withManagedFields(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
-
-### fn metadata.withManagedFieldsMixin
-
-```ts
-withManagedFieldsMixin(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
 
 **Note:** This function appends passed data to existing values
 
@@ -461,6 +543,38 @@ withTagsMixin(tags)
 "The tags to use with this crawler request. You may use tags to limit access to the crawler. For more information about tags in Glue, see Amazon Web Services Tags in Glue (https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html) in the developer guide."
 
 **Note:** This function appends passed data to existing values
+
+## obj spec.forProvider.classifierRefs
+
+"ClassifierRefs is a list of references to Classifiers used to set the Classifiers."
+
+### fn spec.forProvider.classifierRefs.withName
+
+```ts
+withName(name)
+```
+
+"Name of the referenced object."
+
+## obj spec.forProvider.classifierRefs.policy
+
+"Policies for referencing."
+
+### fn spec.forProvider.classifierRefs.policy.withResolution
+
+```ts
+withResolution(resolution)
+```
+
+"Resolution specifies whether resolution of this reference is required. The default is 'Required', which means the reconcile will fail if the reference cannot be resolved. 'Optional' means this reference will be a no-op if it cannot be resolved."
+
+### fn spec.forProvider.classifierRefs.policy.withResolve
+
+```ts
+withResolve(resolve)
+```
+
+"Resolve specifies when this reference should be resolved. The default is 'IfNotPresent', which will attempt to resolve the reference only when the corresponding field is not present. Use 'Always' to resolve the reference on every reconcile."
 
 ## obj spec.forProvider.classifierSelector
 
@@ -895,6 +1009,684 @@ withS3TargetsMixin(s3Targets)
 "Specifies Amazon Simple Storage Service (Amazon S3) targets."
 
 **Note:** This function appends passed data to existing values
+
+## obj spec.forProvider.targets.catalogTargets
+
+"Specifies Glue Data Catalog targets."
+
+### fn spec.forProvider.targets.catalogTargets.withDatabaseName
+
+```ts
+withDatabaseName(databaseName)
+```
+
+"The name of the database to be synchronized. \n DatabaseName is a required field"
+
+### fn spec.forProvider.targets.catalogTargets.withTables
+
+```ts
+withTables(tables)
+```
+
+"A list of the tables to be synchronized. \n Tables is a required field"
+
+### fn spec.forProvider.targets.catalogTargets.withTablesMixin
+
+```ts
+withTablesMixin(tables)
+```
+
+"A list of the tables to be synchronized. \n Tables is a required field"
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.forProvider.targets.catalogTargets.databaseNameRef
+
+"DatabaseNameRef is a reference to an Database used to set the DatabaseName."
+
+### fn spec.forProvider.targets.catalogTargets.databaseNameRef.withName
+
+```ts
+withName(name)
+```
+
+"Name of the referenced object."
+
+## obj spec.forProvider.targets.catalogTargets.databaseNameRef.policy
+
+"Policies for referencing."
+
+### fn spec.forProvider.targets.catalogTargets.databaseNameRef.policy.withResolution
+
+```ts
+withResolution(resolution)
+```
+
+"Resolution specifies whether resolution of this reference is required. The default is 'Required', which means the reconcile will fail if the reference cannot be resolved. 'Optional' means this reference will be a no-op if it cannot be resolved."
+
+### fn spec.forProvider.targets.catalogTargets.databaseNameRef.policy.withResolve
+
+```ts
+withResolve(resolve)
+```
+
+"Resolve specifies when this reference should be resolved. The default is 'IfNotPresent', which will attempt to resolve the reference only when the corresponding field is not present. Use 'Always' to resolve the reference on every reconcile."
+
+## obj spec.forProvider.targets.catalogTargets.databaseNameSelector
+
+"DatabaseNamesSelector selects references to Database used to set the DatabaseName."
+
+### fn spec.forProvider.targets.catalogTargets.databaseNameSelector.withMatchControllerRef
+
+```ts
+withMatchControllerRef(matchControllerRef)
+```
+
+"MatchControllerRef ensures an object with the same controller reference as the selecting object is selected."
+
+### fn spec.forProvider.targets.catalogTargets.databaseNameSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+"MatchLabels ensures an object with matching labels is selected."
+
+### fn spec.forProvider.targets.catalogTargets.databaseNameSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+"MatchLabels ensures an object with matching labels is selected."
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.forProvider.targets.catalogTargets.databaseNameSelector.policy
+
+"Policies for selection."
+
+### fn spec.forProvider.targets.catalogTargets.databaseNameSelector.policy.withResolution
+
+```ts
+withResolution(resolution)
+```
+
+"Resolution specifies whether resolution of this reference is required. The default is 'Required', which means the reconcile will fail if the reference cannot be resolved. 'Optional' means this reference will be a no-op if it cannot be resolved."
+
+### fn spec.forProvider.targets.catalogTargets.databaseNameSelector.policy.withResolve
+
+```ts
+withResolve(resolve)
+```
+
+"Resolve specifies when this reference should be resolved. The default is 'IfNotPresent', which will attempt to resolve the reference only when the corresponding field is not present. Use 'Always' to resolve the reference on every reconcile."
+
+## obj spec.forProvider.targets.dynamoDBTargets
+
+"Specifies Amazon DynamoDB targets."
+
+### fn spec.forProvider.targets.dynamoDBTargets.withPath
+
+```ts
+withPath(path)
+```
+
+
+
+### fn spec.forProvider.targets.dynamoDBTargets.withScanAll
+
+```ts
+withScanAll(scanAll)
+```
+
+
+
+### fn spec.forProvider.targets.dynamoDBTargets.withScanRate
+
+```ts
+withScanRate(scanRate)
+```
+
+
+
+## obj spec.forProvider.targets.jdbcTargets
+
+"Specifies JDBC targets."
+
+### fn spec.forProvider.targets.jdbcTargets.withConnectionName
+
+```ts
+withConnectionName(connectionName)
+```
+
+"The name of the connection to use to connect to the JDBC target."
+
+### fn spec.forProvider.targets.jdbcTargets.withExclusions
+
+```ts
+withExclusions(exclusions)
+```
+
+"A list of glob patterns used to exclude from the crawl. For more information, see Catalog Tables with a Crawler (https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html)."
+
+### fn spec.forProvider.targets.jdbcTargets.withExclusionsMixin
+
+```ts
+withExclusionsMixin(exclusions)
+```
+
+"A list of glob patterns used to exclude from the crawl. For more information, see Catalog Tables with a Crawler (https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html)."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.forProvider.targets.jdbcTargets.withPath
+
+```ts
+withPath(path)
+```
+
+"The path of the JDBC target."
+
+## obj spec.forProvider.targets.jdbcTargets.connectionNameRef
+
+"ConnectionNameRef is a reference to an Connection used to set the ConnectionName."
+
+### fn spec.forProvider.targets.jdbcTargets.connectionNameRef.withName
+
+```ts
+withName(name)
+```
+
+"Name of the referenced object."
+
+## obj spec.forProvider.targets.jdbcTargets.connectionNameRef.policy
+
+"Policies for referencing."
+
+### fn spec.forProvider.targets.jdbcTargets.connectionNameRef.policy.withResolution
+
+```ts
+withResolution(resolution)
+```
+
+"Resolution specifies whether resolution of this reference is required. The default is 'Required', which means the reconcile will fail if the reference cannot be resolved. 'Optional' means this reference will be a no-op if it cannot be resolved."
+
+### fn spec.forProvider.targets.jdbcTargets.connectionNameRef.policy.withResolve
+
+```ts
+withResolve(resolve)
+```
+
+"Resolve specifies when this reference should be resolved. The default is 'IfNotPresent', which will attempt to resolve the reference only when the corresponding field is not present. Use 'Always' to resolve the reference on every reconcile."
+
+## obj spec.forProvider.targets.jdbcTargets.connectionNameSelector
+
+"ConnectionNamesSelector selects references to Connection used to set the ConnectionName."
+
+### fn spec.forProvider.targets.jdbcTargets.connectionNameSelector.withMatchControllerRef
+
+```ts
+withMatchControllerRef(matchControllerRef)
+```
+
+"MatchControllerRef ensures an object with the same controller reference as the selecting object is selected."
+
+### fn spec.forProvider.targets.jdbcTargets.connectionNameSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+"MatchLabels ensures an object with matching labels is selected."
+
+### fn spec.forProvider.targets.jdbcTargets.connectionNameSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+"MatchLabels ensures an object with matching labels is selected."
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.forProvider.targets.jdbcTargets.connectionNameSelector.policy
+
+"Policies for selection."
+
+### fn spec.forProvider.targets.jdbcTargets.connectionNameSelector.policy.withResolution
+
+```ts
+withResolution(resolution)
+```
+
+"Resolution specifies whether resolution of this reference is required. The default is 'Required', which means the reconcile will fail if the reference cannot be resolved. 'Optional' means this reference will be a no-op if it cannot be resolved."
+
+### fn spec.forProvider.targets.jdbcTargets.connectionNameSelector.policy.withResolve
+
+```ts
+withResolve(resolve)
+```
+
+"Resolve specifies when this reference should be resolved. The default is 'IfNotPresent', which will attempt to resolve the reference only when the corresponding field is not present. Use 'Always' to resolve the reference on every reconcile."
+
+## obj spec.forProvider.targets.mongoDBTargets
+
+"Specifies Amazon DocumentDB or MongoDB targets."
+
+### fn spec.forProvider.targets.mongoDBTargets.withConnectionName
+
+```ts
+withConnectionName(connectionName)
+```
+
+"The name of the connection to use to connect to the Amazon DocumentDB or MongoDB target."
+
+### fn spec.forProvider.targets.mongoDBTargets.withPath
+
+```ts
+withPath(path)
+```
+
+"The path of the Amazon DocumentDB or MongoDB target (database/collection)."
+
+### fn spec.forProvider.targets.mongoDBTargets.withScanAll
+
+```ts
+withScanAll(scanAll)
+```
+
+"Indicates whether to scan all the records, or to sample rows from the table. Scanning all the records can take a long time when the table is not a high throughput table. \n A value of true means to scan all records, while a value of false means to sample the records. If no value is specified, the value defaults to true."
+
+## obj spec.forProvider.targets.mongoDBTargets.connectionNameRef
+
+"ConnectionNameRef is a reference to an Connection used to set the ConnectionName."
+
+### fn spec.forProvider.targets.mongoDBTargets.connectionNameRef.withName
+
+```ts
+withName(name)
+```
+
+"Name of the referenced object."
+
+## obj spec.forProvider.targets.mongoDBTargets.connectionNameRef.policy
+
+"Policies for referencing."
+
+### fn spec.forProvider.targets.mongoDBTargets.connectionNameRef.policy.withResolution
+
+```ts
+withResolution(resolution)
+```
+
+"Resolution specifies whether resolution of this reference is required. The default is 'Required', which means the reconcile will fail if the reference cannot be resolved. 'Optional' means this reference will be a no-op if it cannot be resolved."
+
+### fn spec.forProvider.targets.mongoDBTargets.connectionNameRef.policy.withResolve
+
+```ts
+withResolve(resolve)
+```
+
+"Resolve specifies when this reference should be resolved. The default is 'IfNotPresent', which will attempt to resolve the reference only when the corresponding field is not present. Use 'Always' to resolve the reference on every reconcile."
+
+## obj spec.forProvider.targets.mongoDBTargets.connectionNameSelector
+
+"ConnectionNamesSelector selects references to Connection used to set the ConnectionName."
+
+### fn spec.forProvider.targets.mongoDBTargets.connectionNameSelector.withMatchControllerRef
+
+```ts
+withMatchControllerRef(matchControllerRef)
+```
+
+"MatchControllerRef ensures an object with the same controller reference as the selecting object is selected."
+
+### fn spec.forProvider.targets.mongoDBTargets.connectionNameSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+"MatchLabels ensures an object with matching labels is selected."
+
+### fn spec.forProvider.targets.mongoDBTargets.connectionNameSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+"MatchLabels ensures an object with matching labels is selected."
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.forProvider.targets.mongoDBTargets.connectionNameSelector.policy
+
+"Policies for selection."
+
+### fn spec.forProvider.targets.mongoDBTargets.connectionNameSelector.policy.withResolution
+
+```ts
+withResolution(resolution)
+```
+
+"Resolution specifies whether resolution of this reference is required. The default is 'Required', which means the reconcile will fail if the reference cannot be resolved. 'Optional' means this reference will be a no-op if it cannot be resolved."
+
+### fn spec.forProvider.targets.mongoDBTargets.connectionNameSelector.policy.withResolve
+
+```ts
+withResolve(resolve)
+```
+
+"Resolve specifies when this reference should be resolved. The default is 'IfNotPresent', which will attempt to resolve the reference only when the corresponding field is not present. Use 'Always' to resolve the reference on every reconcile."
+
+## obj spec.forProvider.targets.s3Targets
+
+"Specifies Amazon Simple Storage Service (Amazon S3) targets."
+
+### fn spec.forProvider.targets.s3Targets.withConnectionName
+
+```ts
+withConnectionName(connectionName)
+```
+
+"The name of a connection which allows a job or crawler to access data in Amazon S3 within an Amazon Virtual Private Cloud environment (Amazon VPC)."
+
+### fn spec.forProvider.targets.s3Targets.withDlqEventQueueArn
+
+```ts
+withDlqEventQueueArn(dlqEventQueueArn)
+```
+
+"A valid Amazon dead-letter SQS ARN. For example, arn:aws:sqs:region:account:deadLetterQueue."
+
+### fn spec.forProvider.targets.s3Targets.withEventQueueArn
+
+```ts
+withEventQueueArn(eventQueueArn)
+```
+
+"A valid Amazon SQS ARN. For example, arn:aws:sqs:region:account:sqs."
+
+### fn spec.forProvider.targets.s3Targets.withExclusions
+
+```ts
+withExclusions(exclusions)
+```
+
+"A list of glob patterns used to exclude from the crawl. For more information, see Catalog Tables with a Crawler (https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html)."
+
+### fn spec.forProvider.targets.s3Targets.withExclusionsMixin
+
+```ts
+withExclusionsMixin(exclusions)
+```
+
+"A list of glob patterns used to exclude from the crawl. For more information, see Catalog Tables with a Crawler (https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html)."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.forProvider.targets.s3Targets.withPath
+
+```ts
+withPath(path)
+```
+
+"The path to the Amazon S3 target."
+
+### fn spec.forProvider.targets.s3Targets.withSampleSize
+
+```ts
+withSampleSize(sampleSize)
+```
+
+"Sets the number of files in each leaf folder to be crawled when crawling sample files in a dataset. If not set, all the files are crawled. A valid value is an integer between 1 and 249."
+
+## obj spec.forProvider.targets.s3Targets.connectionNameRef
+
+"ConnectionNameRef is a reference to an Connection used to set the ConnectionName."
+
+### fn spec.forProvider.targets.s3Targets.connectionNameRef.withName
+
+```ts
+withName(name)
+```
+
+"Name of the referenced object."
+
+## obj spec.forProvider.targets.s3Targets.connectionNameRef.policy
+
+"Policies for referencing."
+
+### fn spec.forProvider.targets.s3Targets.connectionNameRef.policy.withResolution
+
+```ts
+withResolution(resolution)
+```
+
+"Resolution specifies whether resolution of this reference is required. The default is 'Required', which means the reconcile will fail if the reference cannot be resolved. 'Optional' means this reference will be a no-op if it cannot be resolved."
+
+### fn spec.forProvider.targets.s3Targets.connectionNameRef.policy.withResolve
+
+```ts
+withResolve(resolve)
+```
+
+"Resolve specifies when this reference should be resolved. The default is 'IfNotPresent', which will attempt to resolve the reference only when the corresponding field is not present. Use 'Always' to resolve the reference on every reconcile."
+
+## obj spec.forProvider.targets.s3Targets.connectionNameSelector
+
+"ConnectionNamesSelector selects references to Connection used to set the ConnectionName."
+
+### fn spec.forProvider.targets.s3Targets.connectionNameSelector.withMatchControllerRef
+
+```ts
+withMatchControllerRef(matchControllerRef)
+```
+
+"MatchControllerRef ensures an object with the same controller reference as the selecting object is selected."
+
+### fn spec.forProvider.targets.s3Targets.connectionNameSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+"MatchLabels ensures an object with matching labels is selected."
+
+### fn spec.forProvider.targets.s3Targets.connectionNameSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+"MatchLabels ensures an object with matching labels is selected."
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.forProvider.targets.s3Targets.connectionNameSelector.policy
+
+"Policies for selection."
+
+### fn spec.forProvider.targets.s3Targets.connectionNameSelector.policy.withResolution
+
+```ts
+withResolution(resolution)
+```
+
+"Resolution specifies whether resolution of this reference is required. The default is 'Required', which means the reconcile will fail if the reference cannot be resolved. 'Optional' means this reference will be a no-op if it cannot be resolved."
+
+### fn spec.forProvider.targets.s3Targets.connectionNameSelector.policy.withResolve
+
+```ts
+withResolve(resolve)
+```
+
+"Resolve specifies when this reference should be resolved. The default is 'IfNotPresent', which will attempt to resolve the reference only when the corresponding field is not present. Use 'Always' to resolve the reference on every reconcile."
+
+## obj spec.forProvider.targets.s3Targets.dlqEventQueueArnRef
+
+"DlqEventQueueARNRef is a reference to an SQSEventQueue used to set the DlqEventQueueARN."
+
+### fn spec.forProvider.targets.s3Targets.dlqEventQueueArnRef.withName
+
+```ts
+withName(name)
+```
+
+"Name of the referenced object."
+
+## obj spec.forProvider.targets.s3Targets.dlqEventQueueArnRef.policy
+
+"Policies for referencing."
+
+### fn spec.forProvider.targets.s3Targets.dlqEventQueueArnRef.policy.withResolution
+
+```ts
+withResolution(resolution)
+```
+
+"Resolution specifies whether resolution of this reference is required. The default is 'Required', which means the reconcile will fail if the reference cannot be resolved. 'Optional' means this reference will be a no-op if it cannot be resolved."
+
+### fn spec.forProvider.targets.s3Targets.dlqEventQueueArnRef.policy.withResolve
+
+```ts
+withResolve(resolve)
+```
+
+"Resolve specifies when this reference should be resolved. The default is 'IfNotPresent', which will attempt to resolve the reference only when the corresponding field is not present. Use 'Always' to resolve the reference on every reconcile."
+
+## obj spec.forProvider.targets.s3Targets.dlqEventQueueArnSelector
+
+"DlqEventQueueARNSelector selects references to SQSEventQueue used to set the DlqEventQueueARN."
+
+### fn spec.forProvider.targets.s3Targets.dlqEventQueueArnSelector.withMatchControllerRef
+
+```ts
+withMatchControllerRef(matchControllerRef)
+```
+
+"MatchControllerRef ensures an object with the same controller reference as the selecting object is selected."
+
+### fn spec.forProvider.targets.s3Targets.dlqEventQueueArnSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+"MatchLabels ensures an object with matching labels is selected."
+
+### fn spec.forProvider.targets.s3Targets.dlqEventQueueArnSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+"MatchLabels ensures an object with matching labels is selected."
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.forProvider.targets.s3Targets.dlqEventQueueArnSelector.policy
+
+"Policies for selection."
+
+### fn spec.forProvider.targets.s3Targets.dlqEventQueueArnSelector.policy.withResolution
+
+```ts
+withResolution(resolution)
+```
+
+"Resolution specifies whether resolution of this reference is required. The default is 'Required', which means the reconcile will fail if the reference cannot be resolved. 'Optional' means this reference will be a no-op if it cannot be resolved."
+
+### fn spec.forProvider.targets.s3Targets.dlqEventQueueArnSelector.policy.withResolve
+
+```ts
+withResolve(resolve)
+```
+
+"Resolve specifies when this reference should be resolved. The default is 'IfNotPresent', which will attempt to resolve the reference only when the corresponding field is not present. Use 'Always' to resolve the reference on every reconcile."
+
+## obj spec.forProvider.targets.s3Targets.eventQueueArnRef
+
+"EventQueueARNRef is a reference to an SQSEventQueue used to set the EventQueueARN."
+
+### fn spec.forProvider.targets.s3Targets.eventQueueArnRef.withName
+
+```ts
+withName(name)
+```
+
+"Name of the referenced object."
+
+## obj spec.forProvider.targets.s3Targets.eventQueueArnRef.policy
+
+"Policies for referencing."
+
+### fn spec.forProvider.targets.s3Targets.eventQueueArnRef.policy.withResolution
+
+```ts
+withResolution(resolution)
+```
+
+"Resolution specifies whether resolution of this reference is required. The default is 'Required', which means the reconcile will fail if the reference cannot be resolved. 'Optional' means this reference will be a no-op if it cannot be resolved."
+
+### fn spec.forProvider.targets.s3Targets.eventQueueArnRef.policy.withResolve
+
+```ts
+withResolve(resolve)
+```
+
+"Resolve specifies when this reference should be resolved. The default is 'IfNotPresent', which will attempt to resolve the reference only when the corresponding field is not present. Use 'Always' to resolve the reference on every reconcile."
+
+## obj spec.forProvider.targets.s3Targets.eventQueueArnSelector
+
+"EventQueueARNSelector selects references to SQSEventQueue used to set the EventQueueARN."
+
+### fn spec.forProvider.targets.s3Targets.eventQueueArnSelector.withMatchControllerRef
+
+```ts
+withMatchControllerRef(matchControllerRef)
+```
+
+"MatchControllerRef ensures an object with the same controller reference as the selecting object is selected."
+
+### fn spec.forProvider.targets.s3Targets.eventQueueArnSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+"MatchLabels ensures an object with matching labels is selected."
+
+### fn spec.forProvider.targets.s3Targets.eventQueueArnSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+"MatchLabels ensures an object with matching labels is selected."
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.forProvider.targets.s3Targets.eventQueueArnSelector.policy
+
+"Policies for selection."
+
+### fn spec.forProvider.targets.s3Targets.eventQueueArnSelector.policy.withResolution
+
+```ts
+withResolution(resolution)
+```
+
+"Resolution specifies whether resolution of this reference is required. The default is 'Required', which means the reconcile will fail if the reference cannot be resolved. 'Optional' means this reference will be a no-op if it cannot be resolved."
+
+### fn spec.forProvider.targets.s3Targets.eventQueueArnSelector.policy.withResolve
+
+```ts
+withResolve(resolve)
+```
+
+"Resolve specifies when this reference should be resolved. The default is 'IfNotPresent', which will attempt to resolve the reference only when the corresponding field is not present. Use 'Always' to resolve the reference on every reconcile."
 
 ## obj spec.providerConfigRef
 

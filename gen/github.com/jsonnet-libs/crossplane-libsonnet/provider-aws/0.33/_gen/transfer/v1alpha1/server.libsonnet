@@ -27,10 +27,6 @@
     withLabels(labels): { metadata+: { labels: labels } },
     '#withLabelsMixin':: d.fn(help='"Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels"\n\n**Note:** This function appends passed data to existing values', args=[d.arg(name='labels', type=d.T.object)]),
     withLabelsMixin(labels): { metadata+: { labels+: labels } },
-    '#withManagedFields':: d.fn(help="\"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \\\"ci-cd\\\". The set of fields is always in the version that the workflow used when modifying the object.\"", args=[d.arg(name='managedFields', type=d.T.array)]),
-    withManagedFields(managedFields): { metadata+: { managedFields: if std.isArray(v=managedFields) then managedFields else [managedFields] } },
-    '#withManagedFieldsMixin':: d.fn(help="\"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \\\"ci-cd\\\". The set of fields is always in the version that the workflow used when modifying the object.\"\n\n**Note:** This function appends passed data to existing values", args=[d.arg(name='managedFields', type=d.T.array)]),
-    withManagedFieldsMixin(managedFields): { metadata+: { managedFields+: if std.isArray(v=managedFields) then managedFields else [managedFields] } },
     '#withName':: d.fn(help='"Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names"', args=[d.arg(name='name', type=d.T.string)]),
     withName(name): { metadata+: { name: name } },
     '#withNamespace':: d.fn(help='"Namespace defines the space within which each name must be unique. An empty namespace is equivalent to the \\"default\\" namespace, but \\"default\\" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty.\\n\\nMust be a DNS_LABEL. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/namespaces"', args=[d.arg(name='namespace', type=d.T.string)]),
@@ -50,7 +46,9 @@
   new(name): {
     apiVersion: 'transfer.aws.crossplane.io/v1alpha1',
     kind: 'Server',
-  } + self.metadata.withName(name=name),
+  } + self.metadata.withName(name=name) + self.metadata.withAnnotations(annotations={
+    'tanka.dev/namespaced': 'false',
+  }),
   '#spec':: d.obj(help='"ServerSpec defines the desired state of Server"'),
   spec: {
     '#forProvider':: d.obj(help='"ServerParameters defines the desired state of Server"'),
@@ -85,6 +83,18 @@
       },
       '#endpointDetails':: d.obj(help="\"The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach Elastic IPs and make it accessible to clients over the internet. Your VPC's default security groups are automatically assigned to your endpoint.\""),
       endpointDetails: {
+        '#addressAllocationIDRefs':: d.obj(help='"AddressAllocationIDRefs is a list of references to AddressAllocationID used to set the AddressAllocationIDs."'),
+        addressAllocationIDRefs: {
+          '#policy':: d.obj(help='"Policies for referencing."'),
+          policy: {
+            '#withResolution':: d.fn(help="\"Resolution specifies whether resolution of this reference is required. The default is 'Required', which means the reconcile will fail if the reference cannot be resolved. 'Optional' means this reference will be a no-op if it cannot be resolved.\"", args=[d.arg(name='resolution', type=d.T.string)]),
+            withResolution(resolution): { policy+: { resolution: resolution } },
+            '#withResolve':: d.fn(help="\"Resolve specifies when this reference should be resolved. The default is 'IfNotPresent', which will attempt to resolve the reference only when the corresponding field is not present. Use 'Always' to resolve the reference on every reconcile.\"", args=[d.arg(name='resolve', type=d.T.string)]),
+            withResolve(resolve): { policy+: { resolve: resolve } },
+          },
+          '#withName':: d.fn(help='"Name of the referenced object."', args=[d.arg(name='name', type=d.T.string)]),
+          withName(name): { name: name },
+        },
         '#addressAllocationIDSelector':: d.obj(help='"AddressAllocationIDSelector selects references to AddressAllocationID used to set the AddressAllocationIDs."'),
         addressAllocationIDSelector: {
           '#policy':: d.obj(help='"Policies for selection."'),
@@ -101,6 +111,18 @@
           '#withMatchLabelsMixin':: d.fn(help='"MatchLabels ensures an object with matching labels is selected."\n\n**Note:** This function appends passed data to existing values', args=[d.arg(name='matchLabels', type=d.T.object)]),
           withMatchLabelsMixin(matchLabels): { spec+: { forProvider+: { endpointDetails+: { addressAllocationIDSelector+: { matchLabels+: matchLabels } } } } },
         },
+        '#securityGroupIDRefs':: d.obj(help='"SecurityGroupIDRefs is a list of references to SecurityGroups used to set the SecurityGroupIDs."'),
+        securityGroupIDRefs: {
+          '#policy':: d.obj(help='"Policies for referencing."'),
+          policy: {
+            '#withResolution':: d.fn(help="\"Resolution specifies whether resolution of this reference is required. The default is 'Required', which means the reconcile will fail if the reference cannot be resolved. 'Optional' means this reference will be a no-op if it cannot be resolved.\"", args=[d.arg(name='resolution', type=d.T.string)]),
+            withResolution(resolution): { policy+: { resolution: resolution } },
+            '#withResolve':: d.fn(help="\"Resolve specifies when this reference should be resolved. The default is 'IfNotPresent', which will attempt to resolve the reference only when the corresponding field is not present. Use 'Always' to resolve the reference on every reconcile.\"", args=[d.arg(name='resolve', type=d.T.string)]),
+            withResolve(resolve): { policy+: { resolve: resolve } },
+          },
+          '#withName':: d.fn(help='"Name of the referenced object."', args=[d.arg(name='name', type=d.T.string)]),
+          withName(name): { name: name },
+        },
         '#securityGroupIDSelector':: d.obj(help='"SecurityGroupIDsSelector selects references to SecurityGroupID used to set the SecurityGroupIDs."'),
         securityGroupIDSelector: {
           '#policy':: d.obj(help='"Policies for selection."'),
@@ -116,6 +138,18 @@
           withMatchLabels(matchLabels): { spec+: { forProvider+: { endpointDetails+: { securityGroupIDSelector+: { matchLabels: matchLabels } } } } },
           '#withMatchLabelsMixin':: d.fn(help='"MatchLabels ensures an object with matching labels is selected."\n\n**Note:** This function appends passed data to existing values', args=[d.arg(name='matchLabels', type=d.T.object)]),
           withMatchLabelsMixin(matchLabels): { spec+: { forProvider+: { endpointDetails+: { securityGroupIDSelector+: { matchLabels+: matchLabels } } } } },
+        },
+        '#subnetIDRefs':: d.obj(help='"SubnetIDRefs is a list of references to Subnets used to set the SubnetIDs."'),
+        subnetIDRefs: {
+          '#policy':: d.obj(help='"Policies for referencing."'),
+          policy: {
+            '#withResolution':: d.fn(help="\"Resolution specifies whether resolution of this reference is required. The default is 'Required', which means the reconcile will fail if the reference cannot be resolved. 'Optional' means this reference will be a no-op if it cannot be resolved.\"", args=[d.arg(name='resolution', type=d.T.string)]),
+            withResolution(resolution): { policy+: { resolution: resolution } },
+            '#withResolve':: d.fn(help="\"Resolve specifies when this reference should be resolved. The default is 'IfNotPresent', which will attempt to resolve the reference only when the corresponding field is not present. Use 'Always' to resolve the reference on every reconcile.\"", args=[d.arg(name='resolve', type=d.T.string)]),
+            withResolve(resolve): { policy+: { resolve: resolve } },
+          },
+          '#withName':: d.fn(help='"Name of the referenced object."', args=[d.arg(name='name', type=d.T.string)]),
+          withName(name): { name: name },
         },
         '#subnetIDSelector':: d.obj(help='"SubnetIDSelector selects references to Subnets used to set the SubnetIds."'),
         subnetIDSelector: {
@@ -255,6 +289,13 @@
         '#withMatchLabelsMixin':: d.fn(help='"MatchLabels ensures an object with matching labels is selected."\n\n**Note:** This function appends passed data to existing values', args=[d.arg(name='matchLabels', type=d.T.object)]),
         withMatchLabelsMixin(matchLabels): { spec+: { forProvider+: { loggingRoleSelector+: { matchLabels+: matchLabels } } } },
       },
+      '#tags':: d.obj(help='"Key-value pairs that can be used to group and search for servers."'),
+      tags: {
+        '#withKey':: d.fn(help='', args=[d.arg(name='key', type=d.T.string)]),
+        withKey(key): { key: key },
+        '#withValue':: d.fn(help='', args=[d.arg(name='value', type=d.T.string)]),
+        withValue(value): { value: value },
+      },
       '#withCertificate':: d.fn(help='"The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM) certificate. Required when Protocols is set to FTPS. \\n To request a new public certificate, see Request a public certificate (https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html) in the AWS Certificate Manager User Guide. \\n To import an existing certificate into ACM, see Importing certificates into ACM (https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html) in the AWS Certificate Manager User Guide. \\n To request a private certificate to use FTPS through private IP addresses, see Request a private certificate (https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html) in the AWS Certificate Manager User Guide. \\n Certificates with the following cryptographic algorithms and key sizes are supported: \\n * 2048-bit RSA (RSA_2048) \\n * 4096-bit RSA (RSA_4096) \\n * Elliptic Prime Curve 256 bit (EC_prime256v1) \\n * Elliptic Prime Curve 384 bit (EC_secp384r1) \\n * Elliptic Prime Curve 521 bit (EC_secp521r1) \\n The certificate must be a valid SSL/TLS X.509 version 3 certificate with FQDN or IP address specified and information about the issuer."', args=[d.arg(name='certificate', type=d.T.string)]),
       withCertificate(certificate): { spec+: { forProvider+: { certificate: certificate } } },
       '#withDomain':: d.fn(help='"The domain of the storage system that is used for file transfers. There are two domains available: Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The default value is S3. \\n After the server is created, the domain cannot be changed."', args=[d.arg(name='domain', type=d.T.string)]),
@@ -281,6 +322,13 @@
       withTagsMixin(tags): { spec+: { forProvider+: { tags+: if std.isArray(v=tags) then tags else [tags] } } },
       '#workflowDetails':: d.obj(help='"Specifies the workflow ID for the workflow to assign and the execution role used for executing the workflow."'),
       workflowDetails: {
+        '#onUpload':: d.obj(help=''),
+        onUpload: {
+          '#withExecutionRole':: d.fn(help='', args=[d.arg(name='executionRole', type=d.T.string)]),
+          withExecutionRole(executionRole): { executionRole: executionRole },
+          '#withWorkflowID':: d.fn(help='', args=[d.arg(name='workflowID', type=d.T.string)]),
+          withWorkflowID(workflowID): { workflowID: workflowID },
+        },
         '#withOnUpload':: d.fn(help='', args=[d.arg(name='onUpload', type=d.T.array)]),
         withOnUpload(onUpload): { spec+: { forProvider+: { workflowDetails+: { onUpload: if std.isArray(v=onUpload) then onUpload else [onUpload] } } } },
         '#withOnUploadMixin':: d.fn(help='\n\n**Note:** This function appends passed data to existing values', args=[d.arg(name='onUpload', type=d.T.array)]),
