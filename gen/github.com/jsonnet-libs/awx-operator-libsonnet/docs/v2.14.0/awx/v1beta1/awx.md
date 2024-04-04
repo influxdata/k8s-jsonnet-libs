@@ -1,5 +1,5 @@
 ---
-permalink: /v2.7.0/awx/v1beta1/awx/
+permalink: /v2.14.0/awx/v1beta1/awx/
 ---
 
 # awx.v1beta1.awx
@@ -69,6 +69,8 @@ permalink: /v2.7.0/awx/v1beta1/awx/
   * [`fn withIngress_api_version(ingress_api_version)`](#fn-specwithingress_api_version)
   * [`fn withIngress_class_name(ingress_class_name)`](#fn-specwithingress_class_name)
   * [`fn withIngress_controller(ingress_controller)`](#fn-specwithingress_controller)
+  * [`fn withIngress_hosts(ingress_hosts)`](#fn-specwithingress_hosts)
+  * [`fn withIngress_hostsMixin(ingress_hosts)`](#fn-specwithingress_hostsmixin)
   * [`fn withIngress_path(ingress_path)`](#fn-specwithingress_path)
   * [`fn withIngress_path_type(ingress_path_type)`](#fn-specwithingress_path_type)
   * [`fn withIngress_tls_secret(ingress_tls_secret)`](#fn-specwithingress_tls_secret)
@@ -82,9 +84,20 @@ permalink: /v2.7.0/awx/v1beta1/awx/
   * [`fn withKind(kind)`](#fn-specwithkind)
   * [`fn withLdap_cacert_secret(ldap_cacert_secret)`](#fn-specwithldap_cacert_secret)
   * [`fn withLdap_password_secret(ldap_password_secret)`](#fn-specwithldap_password_secret)
+  * [`fn withLoadbalancer_class(loadbalancer_class)`](#fn-specwithloadbalancer_class)
   * [`fn withLoadbalancer_ip(loadbalancer_ip)`](#fn-specwithloadbalancer_ip)
   * [`fn withLoadbalancer_port(loadbalancer_port)`](#fn-specwithloadbalancer_port)
   * [`fn withLoadbalancer_protocol(loadbalancer_protocol)`](#fn-specwithloadbalancer_protocol)
+  * [`fn withMetrics_utility_configmap(metrics_utility_configmap)`](#fn-specwithmetrics_utility_configmap)
+  * [`fn withMetrics_utility_cronjob_gather_schedule(metrics_utility_cronjob_gather_schedule)`](#fn-specwithmetrics_utility_cronjob_gather_schedule)
+  * [`fn withMetrics_utility_cronjob_report_schedule(metrics_utility_cronjob_report_schedule)`](#fn-specwithmetrics_utility_cronjob_report_schedule)
+  * [`fn withMetrics_utility_enabled(metrics_utility_enabled)`](#fn-specwithmetrics_utility_enabled)
+  * [`fn withMetrics_utility_image(metrics_utility_image)`](#fn-specwithmetrics_utility_image)
+  * [`fn withMetrics_utility_image_pull_policy(metrics_utility_image_pull_policy)`](#fn-specwithmetrics_utility_image_pull_policy)
+  * [`fn withMetrics_utility_image_version(metrics_utility_image_version)`](#fn-specwithmetrics_utility_image_version)
+  * [`fn withMetrics_utility_pvc_claim(metrics_utility_pvc_claim)`](#fn-specwithmetrics_utility_pvc_claim)
+  * [`fn withMetrics_utility_pvc_claim_size(metrics_utility_pvc_claim_size)`](#fn-specwithmetrics_utility_pvc_claim_size)
+  * [`fn withMetrics_utility_pvc_claim_storage_class(metrics_utility_pvc_claim_storage_class)`](#fn-specwithmetrics_utility_pvc_claim_storage_class)
   * [`fn withNginx_listen_queue_size(nginx_listen_queue_size)`](#fn-specwithnginx_listen_queue_size)
   * [`fn withNginx_worker_connections(nginx_worker_connections)`](#fn-specwithnginx_worker_connections)
   * [`fn withNginx_worker_cpu_affinity(nginx_worker_cpu_affinity)`](#fn-specwithnginx_worker_cpu_affinity)
@@ -97,6 +110,8 @@ permalink: /v2.7.0/awx/v1beta1/awx/
   * [`fn withPostgres_data_path(postgres_data_path)`](#fn-specwithpostgres_data_path)
   * [`fn withPostgres_extra_args(postgres_extra_args)`](#fn-specwithpostgres_extra_args)
   * [`fn withPostgres_extra_argsMixin(postgres_extra_args)`](#fn-specwithpostgres_extra_argsmixin)
+  * [`fn withPostgres_extra_volume_mounts(postgres_extra_volume_mounts)`](#fn-specwithpostgres_extra_volume_mounts)
+  * [`fn withPostgres_extra_volumes(postgres_extra_volumes)`](#fn-specwithpostgres_extra_volumes)
   * [`fn withPostgres_image(postgres_image)`](#fn-specwithpostgres_image)
   * [`fn withPostgres_image_version(postgres_image_version)`](#fn-specwithpostgres_image_version)
   * [`fn withPostgres_keep_pvc_after_upgrade(postgres_keep_pvc_after_upgrade)`](#fn-specwithpostgres_keep_pvc_after_upgrade)
@@ -149,8 +164,16 @@ permalink: /v2.7.0/awx/v1beta1/awx/
   * [`fn withTask_commandMixin(task_command)`](#fn-specwithtask_commandmixin)
   * [`fn withTask_extra_env(task_extra_env)`](#fn-specwithtask_extra_env)
   * [`fn withTask_extra_volume_mounts(task_extra_volume_mounts)`](#fn-specwithtask_extra_volume_mounts)
+  * [`fn withTask_liveness_failure_threshold(task_liveness_failure_threshold)`](#fn-specwithtask_liveness_failure_threshold)
+  * [`fn withTask_liveness_initial_delay(task_liveness_initial_delay)`](#fn-specwithtask_liveness_initial_delay)
+  * [`fn withTask_liveness_period(task_liveness_period)`](#fn-specwithtask_liveness_period)
+  * [`fn withTask_liveness_timeout(task_liveness_timeout)`](#fn-specwithtask_liveness_timeout)
   * [`fn withTask_node_selector(task_node_selector)`](#fn-specwithtask_node_selector)
   * [`fn withTask_privileged(task_privileged)`](#fn-specwithtask_privileged)
+  * [`fn withTask_readiness_failure_threshold(task_readiness_failure_threshold)`](#fn-specwithtask_readiness_failure_threshold)
+  * [`fn withTask_readiness_initial_delay(task_readiness_initial_delay)`](#fn-specwithtask_readiness_initial_delay)
+  * [`fn withTask_readiness_period(task_readiness_period)`](#fn-specwithtask_readiness_period)
+  * [`fn withTask_readiness_timeout(task_readiness_timeout)`](#fn-specwithtask_readiness_timeout)
   * [`fn withTask_replicas(task_replicas)`](#fn-specwithtask_replicas)
   * [`fn withTask_tolerations(task_tolerations)`](#fn-specwithtask_tolerations)
   * [`fn withTask_topology_spread_constraints(task_topology_spread_constraints)`](#fn-specwithtask_topology_spread_constraints)
@@ -166,7 +189,15 @@ permalink: /v2.7.0/awx/v1beta1/awx/
   * [`fn withWeb_commandMixin(web_command)`](#fn-specwithweb_commandmixin)
   * [`fn withWeb_extra_env(web_extra_env)`](#fn-specwithweb_extra_env)
   * [`fn withWeb_extra_volume_mounts(web_extra_volume_mounts)`](#fn-specwithweb_extra_volume_mounts)
+  * [`fn withWeb_liveness_failure_threshold(web_liveness_failure_threshold)`](#fn-specwithweb_liveness_failure_threshold)
+  * [`fn withWeb_liveness_initial_delay(web_liveness_initial_delay)`](#fn-specwithweb_liveness_initial_delay)
+  * [`fn withWeb_liveness_period(web_liveness_period)`](#fn-specwithweb_liveness_period)
+  * [`fn withWeb_liveness_timeout(web_liveness_timeout)`](#fn-specwithweb_liveness_timeout)
   * [`fn withWeb_node_selector(web_node_selector)`](#fn-specwithweb_node_selector)
+  * [`fn withWeb_readiness_failure_threshold(web_readiness_failure_threshold)`](#fn-specwithweb_readiness_failure_threshold)
+  * [`fn withWeb_readiness_initial_delay(web_readiness_initial_delay)`](#fn-specwithweb_readiness_initial_delay)
+  * [`fn withWeb_readiness_period(web_readiness_period)`](#fn-specwithweb_readiness_period)
+  * [`fn withWeb_readiness_timeout(web_readiness_timeout)`](#fn-specwithweb_readiness_timeout)
   * [`fn withWeb_replicas(web_replicas)`](#fn-specwithweb_replicas)
   * [`fn withWeb_tolerations(web_tolerations)`](#fn-specwithweb_tolerations)
   * [`fn withWeb_topology_spread_constraints(web_topology_spread_constraints)`](#fn-specwithweb_topology_spread_constraints)
@@ -340,6 +371,9 @@ permalink: /v2.7.0/awx/v1beta1/awx/
     * [`fn withHostnames(hostnames)`](#fn-spechost_aliaseswithhostnames)
     * [`fn withHostnamesMixin(hostnames)`](#fn-spechost_aliaseswithhostnamesmixin)
     * [`fn withIp(ip)`](#fn-spechost_aliaseswithip)
+  * [`obj spec.ingress_hosts`](#obj-specingress_hosts)
+    * [`fn withHostname(hostname)`](#fn-specingress_hostswithhostname)
+    * [`fn withTls_secret(tls_secret)`](#fn-specingress_hostswithtls_secret)
   * [`obj spec.init_container_resource_requirements`](#obj-specinit_container_resource_requirements)
     * [`obj spec.init_container_resource_requirements.limits`](#obj-specinit_container_resource_requirementslimits)
       * [`fn withCpu(cpu)`](#fn-specinit_container_resource_requirementslimitswithcpu)
@@ -1079,7 +1113,7 @@ withEe_pull_credentials_secret(ee_pull_credentials_secret)
 withExtra_settings(extra_settings)
 ```
 
-"Extra settings to specify for the API"
+"Extra settings to specify for AWX"
 
 ### fn spec.withExtra_settingsMixin
 
@@ -1087,7 +1121,7 @@ withExtra_settings(extra_settings)
 withExtra_settingsMixin(extra_settings)
 ```
 
-"Extra settings to specify for the API"
+"Extra settings to specify for AWX"
 
 **Note:** This function appends passed data to existing values
 
@@ -1131,7 +1165,7 @@ withHost_aliasesMixin(host_aliases)
 withHostname(hostname)
 ```
 
-"The hostname of the instance"
+"(Deprecated) The hostname of the instance"
 
 ### fn spec.withImage
 
@@ -1215,6 +1249,24 @@ withIngress_controller(ingress_controller)
 
 "Special configuration for specific Ingress Controllers"
 
+### fn spec.withIngress_hosts
+
+```ts
+withIngress_hosts(ingress_hosts)
+```
+
+"Ingress hostnames of the instance"
+
+### fn spec.withIngress_hostsMixin
+
+```ts
+withIngress_hostsMixin(ingress_hosts)
+```
+
+"Ingress hostnames of the instance"
+
+**Note:** This function appends passed data to existing values
+
 ### fn spec.withIngress_path
 
 ```ts
@@ -1237,7 +1289,7 @@ withIngress_path_type(ingress_path_type)
 withIngress_tls_secret(ingress_tls_secret)
 ```
 
-"Secret where the Ingress TLS secret can be found"
+"(Deprecated) Secret where the Ingress TLS secret can be found"
 
 ### fn spec.withIngress_type
 
@@ -1319,6 +1371,14 @@ withLdap_password_secret(ldap_password_secret)
 
 "Secret where can be found the LDAP bind password"
 
+### fn spec.withLoadbalancer_class
+
+```ts
+withLoadbalancer_class(loadbalancer_class)
+```
+
+"Class of LoadBalancer to use"
+
 ### fn spec.withLoadbalancer_ip
 
 ```ts
@@ -1342,6 +1402,86 @@ withLoadbalancer_protocol(loadbalancer_protocol)
 ```
 
 "Protocol to use for the loadbalancer"
+
+### fn spec.withMetrics_utility_configmap
+
+```ts
+withMetrics_utility_configmap(metrics_utility_configmap)
+```
+
+"Metrics-Utlity ConfigMap"
+
+### fn spec.withMetrics_utility_cronjob_gather_schedule
+
+```ts
+withMetrics_utility_cronjob_gather_schedule(metrics_utility_cronjob_gather_schedule)
+```
+
+"Metrics-Utlity Gather Data CronJob Schedule"
+
+### fn spec.withMetrics_utility_cronjob_report_schedule
+
+```ts
+withMetrics_utility_cronjob_report_schedule(metrics_utility_cronjob_report_schedule)
+```
+
+"Metrics-Utlity Report CronJob Schedule"
+
+### fn spec.withMetrics_utility_enabled
+
+```ts
+withMetrics_utility_enabled(metrics_utility_enabled)
+```
+
+"Enable metrics utility"
+
+### fn spec.withMetrics_utility_image
+
+```ts
+withMetrics_utility_image(metrics_utility_image)
+```
+
+"Metrics-Utility Image"
+
+### fn spec.withMetrics_utility_image_pull_policy
+
+```ts
+withMetrics_utility_image_pull_policy(metrics_utility_image_pull_policy)
+```
+
+"Metrics-Utility Image PullPolicy"
+
+### fn spec.withMetrics_utility_image_version
+
+```ts
+withMetrics_utility_image_version(metrics_utility_image_version)
+```
+
+"Metrics-Utility Image Version"
+
+### fn spec.withMetrics_utility_pvc_claim
+
+```ts
+withMetrics_utility_pvc_claim(metrics_utility_pvc_claim)
+```
+
+"Metrics-Utlity PVC Claim"
+
+### fn spec.withMetrics_utility_pvc_claim_size
+
+```ts
+withMetrics_utility_pvc_claim_size(metrics_utility_pvc_claim_size)
+```
+
+"Metrics-Utlity PVC Claim Size"
+
+### fn spec.withMetrics_utility_pvc_claim_storage_class
+
+```ts
+withMetrics_utility_pvc_claim_storage_class(metrics_utility_pvc_claim_storage_class)
+```
+
+"Metrics-Utlity PVC Claim Storage Class"
 
 ### fn spec.withNginx_listen_queue_size
 
@@ -1440,6 +1580,22 @@ withPostgres_extra_argsMixin(postgres_extra_args)
 
 
 **Note:** This function appends passed data to existing values
+
+### fn spec.withPostgres_extra_volume_mounts
+
+```ts
+withPostgres_extra_volume_mounts(postgres_extra_volume_mounts)
+```
+
+"Specify volume mounts to be added to Postgres container"
+
+### fn spec.withPostgres_extra_volumes
+
+```ts
+withPostgres_extra_volumes(postgres_extra_volumes)
+```
+
+"Specify extra volumes to add to the application pod"
 
 ### fn spec.withPostgres_image
 
@@ -1871,6 +2027,38 @@ withTask_extra_volume_mounts(task_extra_volume_mounts)
 
 "Specify volume mounts to be added to Task container"
 
+### fn spec.withTask_liveness_failure_threshold
+
+```ts
+withTask_liveness_failure_threshold(task_liveness_failure_threshold)
+```
+
+"Number of consecutive failure events to identify failure of task pod"
+
+### fn spec.withTask_liveness_initial_delay
+
+```ts
+withTask_liveness_initial_delay(task_liveness_initial_delay)
+```
+
+"Initial delay before starting liveness checks on task pod"
+
+### fn spec.withTask_liveness_period
+
+```ts
+withTask_liveness_period(task_liveness_period)
+```
+
+"Time period in seconds between each liveness check for the task pod"
+
+### fn spec.withTask_liveness_timeout
+
+```ts
+withTask_liveness_timeout(task_liveness_timeout)
+```
+
+"Number of seconds to wait for a probe response from task pod"
+
 ### fn spec.withTask_node_selector
 
 ```ts
@@ -1886,6 +2074,38 @@ withTask_privileged(task_privileged)
 ```
 
 "If a privileged security context should be enabled"
+
+### fn spec.withTask_readiness_failure_threshold
+
+```ts
+withTask_readiness_failure_threshold(task_readiness_failure_threshold)
+```
+
+"Number of consecutive failure events to identify failure of task pod"
+
+### fn spec.withTask_readiness_initial_delay
+
+```ts
+withTask_readiness_initial_delay(task_readiness_initial_delay)
+```
+
+"Initial delay before starting readiness checks on task pod"
+
+### fn spec.withTask_readiness_period
+
+```ts
+withTask_readiness_period(task_readiness_period)
+```
+
+"Time period in seconds between each readiness check for the task pod"
+
+### fn spec.withTask_readiness_timeout
+
+```ts
+withTask_readiness_timeout(task_readiness_timeout)
+```
+
+"Number of seconds to wait for a probe response from task pod"
 
 ### fn spec.withTask_replicas
 
@@ -2011,6 +2231,38 @@ withWeb_extra_volume_mounts(web_extra_volume_mounts)
 
 "Specify volume mounts to be added to the Web container"
 
+### fn spec.withWeb_liveness_failure_threshold
+
+```ts
+withWeb_liveness_failure_threshold(web_liveness_failure_threshold)
+```
+
+"Number of consecutive failure events to identify failure of web pod"
+
+### fn spec.withWeb_liveness_initial_delay
+
+```ts
+withWeb_liveness_initial_delay(web_liveness_initial_delay)
+```
+
+"Initial delay before starting liveness checks on web pod"
+
+### fn spec.withWeb_liveness_period
+
+```ts
+withWeb_liveness_period(web_liveness_period)
+```
+
+"Time period in seconds between each liveness check for the web pod"
+
+### fn spec.withWeb_liveness_timeout
+
+```ts
+withWeb_liveness_timeout(web_liveness_timeout)
+```
+
+"Number of seconds to wait for a probe response from web pod"
+
 ### fn spec.withWeb_node_selector
 
 ```ts
@@ -2018,6 +2270,38 @@ withWeb_node_selector(web_node_selector)
 ```
 
 "nodeSelector for the web pods"
+
+### fn spec.withWeb_readiness_failure_threshold
+
+```ts
+withWeb_readiness_failure_threshold(web_readiness_failure_threshold)
+```
+
+"Number of consecutive failure events to identify failure of web pod"
+
+### fn spec.withWeb_readiness_initial_delay
+
+```ts
+withWeb_readiness_initial_delay(web_readiness_initial_delay)
+```
+
+"Initial delay before starting readiness checks on web pod"
+
+### fn spec.withWeb_readiness_period
+
+```ts
+withWeb_readiness_period(web_readiness_period)
+```
+
+"Time period in seconds between each readiness check for the web pod"
+
+### fn spec.withWeb_readiness_timeout
+
+```ts
+withWeb_readiness_timeout(web_readiness_timeout)
+```
+
+"Number of seconds to wait for a probe response from web pod"
 
 ### fn spec.withWeb_replicas
 
@@ -3281,7 +3565,7 @@ withStorage(storage)
 
 ## obj spec.extra_settings
 
-"Extra settings to specify for the API"
+"Extra settings to specify for AWX"
 
 ### fn spec.extra_settings.withSetting
 
@@ -3328,6 +3612,26 @@ withIp(ip)
 ```
 
 
+
+## obj spec.ingress_hosts
+
+"Ingress hostnames of the instance"
+
+### fn spec.ingress_hosts.withHostname
+
+```ts
+withHostname(hostname)
+```
+
+"Hostname of the instance"
+
+### fn spec.ingress_hosts.withTls_secret
+
+```ts
+withTls_secret(tls_secret)
+```
+
+"Secret where the Ingress TLS secret can be found"
 
 ## obj spec.init_container_resource_requirements
 
