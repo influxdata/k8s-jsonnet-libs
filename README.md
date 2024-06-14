@@ -138,3 +138,6 @@ config.new(
   ]
 )
 ```
+
+### Github actions
+A tag release on pull request merge action has been implemented to increase the tag value by 0.0.1, this will roll over when the minor or patch version reaches 10.
