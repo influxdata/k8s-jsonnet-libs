@@ -1,5 +1,5 @@
 ---
-permalink: /v2.13.1/awx/v1beta1/awx/
+permalink: /v2.18.0/awx/v1beta1/awx/
 ---
 
 # awx.v1beta1.awx
@@ -36,6 +36,7 @@ permalink: /v2.13.1/awx/v1beta1/awx/
   * [`fn withAdmin_password_secret(admin_password_secret)`](#fn-specwithadmin_password_secret)
   * [`fn withAdmin_user(admin_user)`](#fn-specwithadmin_user)
   * [`fn withAnnotations(annotations)`](#fn-specwithannotations)
+  * [`fn withApi_urlpattern_prefix(api_urlpattern_prefix)`](#fn-specwithapi_urlpattern_prefix)
   * [`fn withApi_version(api_version)`](#fn-specwithapi_version)
   * [`fn withAuto_upgrade(auto_upgrade)`](#fn-specwithauto_upgrade)
   * [`fn withBroadcast_websocket_secret(broadcast_websocket_secret)`](#fn-specwithbroadcast_websocket_secret)
@@ -88,6 +89,19 @@ permalink: /v2.13.1/awx/v1beta1/awx/
   * [`fn withLoadbalancer_ip(loadbalancer_ip)`](#fn-specwithloadbalancer_ip)
   * [`fn withLoadbalancer_port(loadbalancer_port)`](#fn-specwithloadbalancer_port)
   * [`fn withLoadbalancer_protocol(loadbalancer_protocol)`](#fn-specwithloadbalancer_protocol)
+  * [`fn withMetrics_utility_configmap(metrics_utility_configmap)`](#fn-specwithmetrics_utility_configmap)
+  * [`fn withMetrics_utility_console_enabled(metrics_utility_console_enabled)`](#fn-specwithmetrics_utility_console_enabled)
+  * [`fn withMetrics_utility_cronjob_gather_schedule(metrics_utility_cronjob_gather_schedule)`](#fn-specwithmetrics_utility_cronjob_gather_schedule)
+  * [`fn withMetrics_utility_cronjob_report_schedule(metrics_utility_cronjob_report_schedule)`](#fn-specwithmetrics_utility_cronjob_report_schedule)
+  * [`fn withMetrics_utility_enabled(metrics_utility_enabled)`](#fn-specwithmetrics_utility_enabled)
+  * [`fn withMetrics_utility_image(metrics_utility_image)`](#fn-specwithmetrics_utility_image)
+  * [`fn withMetrics_utility_image_pull_policy(metrics_utility_image_pull_policy)`](#fn-specwithmetrics_utility_image_pull_policy)
+  * [`fn withMetrics_utility_image_version(metrics_utility_image_version)`](#fn-specwithmetrics_utility_image_version)
+  * [`fn withMetrics_utility_pvc_claim(metrics_utility_pvc_claim)`](#fn-specwithmetrics_utility_pvc_claim)
+  * [`fn withMetrics_utility_pvc_claim_size(metrics_utility_pvc_claim_size)`](#fn-specwithmetrics_utility_pvc_claim_size)
+  * [`fn withMetrics_utility_pvc_claim_storage_class(metrics_utility_pvc_claim_storage_class)`](#fn-specwithmetrics_utility_pvc_claim_storage_class)
+  * [`fn withMetrics_utility_secret(metrics_utility_secret)`](#fn-specwithmetrics_utility_secret)
+  * [`fn withMetrics_utility_ship_target(metrics_utility_ship_target)`](#fn-specwithmetrics_utility_ship_target)
   * [`fn withNginx_listen_queue_size(nginx_listen_queue_size)`](#fn-specwithnginx_listen_queue_size)
   * [`fn withNginx_worker_connections(nginx_worker_connections)`](#fn-specwithnginx_worker_connections)
   * [`fn withNginx_worker_cpu_affinity(nginx_worker_cpu_affinity)`](#fn-specwithnginx_worker_cpu_affinity)
@@ -97,13 +111,14 @@ permalink: /v2.13.1/awx/v1beta1/awx/
   * [`fn withNodeport_port(nodeport_port)`](#fn-specwithnodeport_port)
   * [`fn withOld_postgres_configuration_secret(old_postgres_configuration_secret)`](#fn-specwithold_postgres_configuration_secret)
   * [`fn withPostgres_configuration_secret(postgres_configuration_secret)`](#fn-specwithpostgres_configuration_secret)
-  * [`fn withPostgres_data_path(postgres_data_path)`](#fn-specwithpostgres_data_path)
+  * [`fn withPostgres_data_volume_init(postgres_data_volume_init)`](#fn-specwithpostgres_data_volume_init)
   * [`fn withPostgres_extra_args(postgres_extra_args)`](#fn-specwithpostgres_extra_args)
   * [`fn withPostgres_extra_argsMixin(postgres_extra_args)`](#fn-specwithpostgres_extra_argsmixin)
   * [`fn withPostgres_extra_volume_mounts(postgres_extra_volume_mounts)`](#fn-specwithpostgres_extra_volume_mounts)
   * [`fn withPostgres_extra_volumes(postgres_extra_volumes)`](#fn-specwithpostgres_extra_volumes)
   * [`fn withPostgres_image(postgres_image)`](#fn-specwithpostgres_image)
   * [`fn withPostgres_image_version(postgres_image_version)`](#fn-specwithpostgres_image_version)
+  * [`fn withPostgres_init_container_commands(postgres_init_container_commands)`](#fn-specwithpostgres_init_container_commands)
   * [`fn withPostgres_keep_pvc_after_upgrade(postgres_keep_pvc_after_upgrade)`](#fn-specwithpostgres_keep_pvc_after_upgrade)
   * [`fn withPostgres_keepalives(postgres_keepalives)`](#fn-specwithpostgres_keepalives)
   * [`fn withPostgres_keepalives_count(postgres_keepalives_count)`](#fn-specwithpostgres_keepalives_count)
@@ -158,6 +173,7 @@ permalink: /v2.13.1/awx/v1beta1/awx/
   * [`fn withTask_liveness_initial_delay(task_liveness_initial_delay)`](#fn-specwithtask_liveness_initial_delay)
   * [`fn withTask_liveness_period(task_liveness_period)`](#fn-specwithtask_liveness_period)
   * [`fn withTask_liveness_timeout(task_liveness_timeout)`](#fn-specwithtask_liveness_timeout)
+  * [`fn withTask_manage_replicas(task_manage_replicas)`](#fn-specwithtask_manage_replicas)
   * [`fn withTask_node_selector(task_node_selector)`](#fn-specwithtask_node_selector)
   * [`fn withTask_privileged(task_privileged)`](#fn-specwithtask_privileged)
   * [`fn withTask_readiness_failure_threshold(task_readiness_failure_threshold)`](#fn-specwithtask_readiness_failure_threshold)
@@ -183,6 +199,7 @@ permalink: /v2.13.1/awx/v1beta1/awx/
   * [`fn withWeb_liveness_initial_delay(web_liveness_initial_delay)`](#fn-specwithweb_liveness_initial_delay)
   * [`fn withWeb_liveness_period(web_liveness_period)`](#fn-specwithweb_liveness_period)
   * [`fn withWeb_liveness_timeout(web_liveness_timeout)`](#fn-specwithweb_liveness_timeout)
+  * [`fn withWeb_manage_replicas(web_manage_replicas)`](#fn-specwithweb_manage_replicas)
   * [`fn withWeb_node_selector(web_node_selector)`](#fn-specwithweb_node_selector)
   * [`fn withWeb_readiness_failure_threshold(web_readiness_failure_threshold)`](#fn-specwithweb_readiness_failure_threshold)
   * [`fn withWeb_readiness_initial_delay(web_readiness_initial_delay)`](#fn-specwithweb_readiness_initial_delay)
@@ -357,6 +374,17 @@ permalink: /v2.13.1/awx/v1beta1/awx/
   * [`obj spec.extra_settings`](#obj-specextra_settings)
     * [`fn withSetting(setting)`](#fn-specextra_settingswithsetting)
     * [`fn withValue(value)`](#fn-specextra_settingswithvalue)
+  * [`obj spec.extra_settings_files`](#obj-specextra_settings_files)
+    * [`fn withConfigmaps(configmaps)`](#fn-specextra_settings_fileswithconfigmaps)
+    * [`fn withConfigmapsMixin(configmaps)`](#fn-specextra_settings_fileswithconfigmapsmixin)
+    * [`fn withSecrets(secrets)`](#fn-specextra_settings_fileswithsecrets)
+    * [`fn withSecretsMixin(secrets)`](#fn-specextra_settings_fileswithsecretsmixin)
+    * [`obj spec.extra_settings_files.configmaps`](#obj-specextra_settings_filesconfigmaps)
+      * [`fn withKey(key)`](#fn-specextra_settings_filesconfigmapswithkey)
+      * [`fn withName(name)`](#fn-specextra_settings_filesconfigmapswithname)
+    * [`obj spec.extra_settings_files.secrets`](#obj-specextra_settings_filessecrets)
+      * [`fn withKey(key)`](#fn-specextra_settings_filessecretswithkey)
+      * [`fn withName(name)`](#fn-specextra_settings_filessecretswithname)
   * [`obj spec.host_aliases`](#obj-spechost_aliases)
     * [`fn withHostnames(hostnames)`](#fn-spechost_aliaseswithhostnames)
     * [`fn withHostnamesMixin(hostnames)`](#fn-spechost_aliaseswithhostnamesmixin)
@@ -967,6 +995,14 @@ withAnnotations(annotations)
 
 "Common annotations for both Web and Task deployments."
 
+### fn spec.withApi_urlpattern_prefix
+
+```ts
+withApi_urlpattern_prefix(api_urlpattern_prefix)
+```
+
+"An optional configuration to add a prefix in the API URL path"
+
 ### fn spec.withApi_version
 
 ```ts
@@ -1393,6 +1429,110 @@ withLoadbalancer_protocol(loadbalancer_protocol)
 
 "Protocol to use for the loadbalancer"
 
+### fn spec.withMetrics_utility_configmap
+
+```ts
+withMetrics_utility_configmap(metrics_utility_configmap)
+```
+
+"Metrics-Utility ConfigMap"
+
+### fn spec.withMetrics_utility_console_enabled
+
+```ts
+withMetrics_utility_console_enabled(metrics_utility_console_enabled)
+```
+
+"Enable metrics utility shipping to Red Hat Hybrid Cloud Console"
+
+### fn spec.withMetrics_utility_cronjob_gather_schedule
+
+```ts
+withMetrics_utility_cronjob_gather_schedule(metrics_utility_cronjob_gather_schedule)
+```
+
+"Metrics-Utility Gather Data CronJob Schedule"
+
+### fn spec.withMetrics_utility_cronjob_report_schedule
+
+```ts
+withMetrics_utility_cronjob_report_schedule(metrics_utility_cronjob_report_schedule)
+```
+
+"Metrics-Utility Report CronJob Schedule"
+
+### fn spec.withMetrics_utility_enabled
+
+```ts
+withMetrics_utility_enabled(metrics_utility_enabled)
+```
+
+"Enable metrics utility"
+
+### fn spec.withMetrics_utility_image
+
+```ts
+withMetrics_utility_image(metrics_utility_image)
+```
+
+"Metrics-Utility Image"
+
+### fn spec.withMetrics_utility_image_pull_policy
+
+```ts
+withMetrics_utility_image_pull_policy(metrics_utility_image_pull_policy)
+```
+
+"Metrics-Utility Image PullPolicy"
+
+### fn spec.withMetrics_utility_image_version
+
+```ts
+withMetrics_utility_image_version(metrics_utility_image_version)
+```
+
+"Metrics-Utility Image Version"
+
+### fn spec.withMetrics_utility_pvc_claim
+
+```ts
+withMetrics_utility_pvc_claim(metrics_utility_pvc_claim)
+```
+
+"Metrics-Utility PVC Claim"
+
+### fn spec.withMetrics_utility_pvc_claim_size
+
+```ts
+withMetrics_utility_pvc_claim_size(metrics_utility_pvc_claim_size)
+```
+
+"Metrics-Utility PVC Claim Size"
+
+### fn spec.withMetrics_utility_pvc_claim_storage_class
+
+```ts
+withMetrics_utility_pvc_claim_storage_class(metrics_utility_pvc_claim_storage_class)
+```
+
+"Metrics-Utility PVC Claim Storage Class"
+
+### fn spec.withMetrics_utility_secret
+
+```ts
+withMetrics_utility_secret(metrics_utility_secret)
+```
+
+"Metrics-Utility Secret"
+
+### fn spec.withMetrics_utility_ship_target
+
+```ts
+withMetrics_utility_ship_target(metrics_utility_ship_target)
+```
+
+"Metrics-Utility Ship Target"
+
 ### fn spec.withNginx_listen_queue_size
 
 ```ts
@@ -1465,13 +1605,13 @@ withPostgres_configuration_secret(postgres_configuration_secret)
 
 "Secret where the database configuration can be found"
 
-### fn spec.withPostgres_data_path
+### fn spec.withPostgres_data_volume_init
 
 ```ts
-withPostgres_data_path(postgres_data_path)
+withPostgres_data_volume_init(postgres_data_volume_init)
 ```
 
-"Path where the PostgreSQL data are located"
+"Sets permissions on the /var/lib/pgdata/data for postgres container using an init container (not Openshift)"
 
 ### fn spec.withPostgres_extra_args
 
@@ -1522,6 +1662,14 @@ withPostgres_image_version(postgres_image_version)
 ```
 
 "PostgreSQL container image version to use"
+
+### fn spec.withPostgres_init_container_commands
+
+```ts
+withPostgres_init_container_commands(postgres_init_container_commands)
+```
+
+"Customize the postgres init container commands (Non Openshift)"
 
 ### fn spec.withPostgres_keep_pvc_after_upgrade
 
@@ -1969,6 +2117,14 @@ withTask_liveness_timeout(task_liveness_timeout)
 
 "Number of seconds to wait for a probe response from task pod"
 
+### fn spec.withTask_manage_replicas
+
+```ts
+withTask_manage_replicas(task_manage_replicas)
+```
+
+"Enables operator control of replicas count for the task deployment when set to 'true'"
+
 ### fn spec.withTask_node_selector
 
 ```ts
@@ -2172,6 +2328,14 @@ withWeb_liveness_timeout(web_liveness_timeout)
 ```
 
 "Number of seconds to wait for a probe response from web pod"
+
+### fn spec.withWeb_manage_replicas
+
+```ts
+withWeb_manage_replicas(web_manage_replicas)
+```
+
+"Enables operator control of replicas count for the web deployment when set to 'true'"
 
 ### fn spec.withWeb_node_selector
 
@@ -3493,6 +3657,86 @@ withValue(value)
 
 
 
+## obj spec.extra_settings_files
+
+"Extra ConfigMaps or Secrets of settings files to specify for AWX"
+
+### fn spec.extra_settings_files.withConfigmaps
+
+```ts
+withConfigmaps(configmaps)
+```
+
+
+
+### fn spec.extra_settings_files.withConfigmapsMixin
+
+```ts
+withConfigmapsMixin(configmaps)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.extra_settings_files.withSecrets
+
+```ts
+withSecrets(secrets)
+```
+
+
+
+### fn spec.extra_settings_files.withSecretsMixin
+
+```ts
+withSecretsMixin(secrets)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.extra_settings_files.configmaps
+
+
+
+### fn spec.extra_settings_files.configmaps.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.extra_settings_files.configmaps.withName
+
+```ts
+withName(name)
+```
+
+
+
+## obj spec.extra_settings_files.secrets
+
+
+
+### fn spec.extra_settings_files.secrets.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.extra_settings_files.secrets.withName
+
+```ts
+withName(name)
+```
+
+
+
 ## obj spec.host_aliases
 
 "HostAliases for app containers"
@@ -3621,7 +3865,7 @@ withStorage(storage)
 
 ## obj spec.postgres_init_container_resource_requirements
 
-"Resource requirements for the postgres init container"
+"(Deprecated, use postgres_resource_requirements parameter) Resource requirements for the postgres init container"
 
 ## obj spec.postgres_init_container_resource_requirements.limits
 
