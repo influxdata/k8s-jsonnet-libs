@@ -53,7 +53,7 @@ local libJob(name) = {
   steps: [
     { uses: 'actions/checkout@v2' },
     {
-      uses: 'actions/download-artifact@v2',
+      uses: 'actions/download-artifact@v4',
       with: {
         name: 'docker-artifact',
         path: 'artifacts',
@@ -82,7 +82,7 @@ local build = {
     { uses: 'actions/checkout@v2' },
     { run: 'make build save' },
     {
-      uses: 'actions/upload-artifact@v2',
+      uses: 'actions/upload-artifact@v4',
       with: {
         name: 'docker-artifact',
         path: 'artifacts',
