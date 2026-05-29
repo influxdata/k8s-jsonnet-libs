@@ -6,13 +6,26 @@ local d = import 'doc-util/main.libsonnet';
   local volume = $.core.v1.volume,
 
   local patch = {
+    local withVolumeMountsMixin(values) = (
+      if std.objectHasAll(super.spec, 'jobTemplate') then
+        super.spec.jobTemplate.spec.template.spec.withVolumesMixin(values)
+      else
+        super.spec.template.spec.withVolumesMixin(values)
+    ),
+
+    local withPodAnnotationMixin(values) = (
+      if std.objectHasAll(super.spec, 'jobTemplate') then
+        super.spec.jobTemplate.spec.template.metadata.withAnnotationsMixin(values)
+      else
+        super.spec.template.metadata.withAnnotationsMixin(values)
+    ),
+
     local volumeMountDescription =
       |||
         This helper function can be augmented with a `volumeMountsMixin. For example,
         passing "k.core.v1.volumeMount.withSubPath(subpath)" will result in a subpath
         mixin.
       |||,
-
 
     '#configVolumeMount': d.fn(
       '`configVolumeMount` mounts a ConfigMap by `name` into all container on `path`.'
@@ -23,6 +36,7 @@ local d = import 'doc-util/main.libsonnet';
         d.arg('volumeMountMixin', d.T.object),
       ]
     ),
+
     configVolumeMount(name, path, volumeMountMixin={})::
       local addMount(c) = c + container.withVolumeMountsMixin(
         volumeMount.new(name, path) +
@@ -30,7 +44,7 @@ local d = import 'doc-util/main.libsonnet';
       );
 
       super.mapContainers(addMount) +
-      super.spec.template.spec.withVolumesMixin([
+      withVolumeMountsMixin([
         volume.fromConfigMap(name, name),
       ]),
 
@@ -57,10 +71,10 @@ local d = import 'doc-util/main.libsonnet';
       );
 
       super.mapContainers(addMount) +
-      super.spec.template.spec.withVolumesMixin([
+      withVolumeMountsMixin([
         volume.fromConfigMap(name, name),
       ]) +
-      super.spec.template.metadata.withAnnotationsMixin({
+      withPodAnnotationMixin({
         ['%s-hash' % name]: hash,
       }),
 
@@ -83,7 +97,7 @@ local d = import 'doc-util/main.libsonnet';
       );
 
       super.mapContainers(addMount) +
-      super.spec.template.spec.withVolumesMixin([
+      withVolumeMountsMixin([
         volume.fromHostPath(name, hostPath),
       ]),
 
@@ -105,7 +119,7 @@ local d = import 'doc-util/main.libsonnet';
       );
 
       super.mapContainers(addMount) +
-      super.spec.template.spec.withVolumesMixin([
+      withVolumeMountsMixin([
         volume.fromPersistentVolumeClaim(name, name),
       ]),
 
@@ -127,7 +141,7 @@ local d = import 'doc-util/main.libsonnet';
       );
 
       super.mapContainers(addMount) +
-      super.spec.template.spec.withVolumesMixin([
+      withVolumeMountsMixin([
         volume.fromSecret(name, secretName=name) +
         volume.secret.withDefaultMode(defaultMode),
       ]),
@@ -150,7 +164,7 @@ local d = import 'doc-util/main.libsonnet';
       );
 
       super.mapContainers(addMount) +
-      super.spec.template.spec.withVolumesMixin([
+      withVolumeMountsMixin([
         volume.fromEmptyDir(name) + volumeMixin,
       ]),
   },
@@ -158,6 +172,9 @@ local d = import 'doc-util/main.libsonnet';
   batch+: {
     v1+: {
       job+: patch,
+    },
+    v1beta1+: {
+      cronJob+: patch,
     },
   },
   apps+: { v1+: {
